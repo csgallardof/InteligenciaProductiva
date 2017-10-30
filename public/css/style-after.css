@@ -1,0 +1,12 @@
+/* AGREGADOS */
+
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+    white-space: normal;
+}
+
+.buttons-copy, .buttons-csv, .buttons-excel, .buttons-print {
+      color: #fff !important;
+      font-weight: 400;
+      background: #00acac !important;
+      border-color: #ffffff !important;
+}
