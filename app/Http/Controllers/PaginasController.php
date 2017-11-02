@@ -18,4 +18,12 @@ class PaginasController extends Controller
     	return view('reportes.reportegeneralccpt');
     }
 
+    public function cifrasccpt(){
+    	return view('publico.cifras');
+    }
+
+    public function vocaciones(){
+    	return view('publico.indice');
+    }
+
 }

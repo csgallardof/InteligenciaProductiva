@@ -30,18 +30,16 @@
                 </div>
                 <!-- begin col-9 -->
                 <div class="col-md-10">
-                    <div class="panel-body col-md-offset-3">
+                    <div class="panel-body col-md-offset-1">
                     
+                    <button type="button" class="btn btn-info m-r-5 m-b-5">Cifras</button>
                     <button type="button" class="btn btn-info m-r-5 m-b-5">Indices competitividad</button>
                     <button type="button" class="btn btn-info m-r-5 m-b-5">Vocaciones Provinciales</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Mesas</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Cifras</button>
+                    <button type="button" class="btn btn-info m-r-5 m-b-5">Despliegue Territorial</button>
+                    
                     
                     </div>
-                    <div class="panel-body col-md-offset-5">
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Inversiones</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">ZEDES</button>
-                    </div>
+                   
                 </div>
 
 

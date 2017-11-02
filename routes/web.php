@@ -29,11 +29,25 @@ Route::resource('vsectors','VsectorsController');
 
 Route::resource('ambits','AmbitsController');
 
+
+Route::resource('provincias','ProvinciasController');
+
+Route::resource('eventos','EventosController');
+
+
+
 Route::resource('pajustadas','PajustadasController');
 
 
 Route::get('/visorgeneral', 'PaginasController@visorgeneral');
+
 Route::get('/reportegeneralccpt', 'PaginasController@reportegeneralccpt');
+
+Route::get('/cifras', 'PaginasController@cifrasccpt');
+
+Route::get('/vocaciones', 'PaginasController@vocaciones');
+
+Route::get('/indice', 'PaginasController@vocaciones');
 
 
 Auth::routes();
