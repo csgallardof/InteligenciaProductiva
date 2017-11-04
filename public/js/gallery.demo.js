@@ -64,7 +64,6 @@ var handleIsotopesGallery = function() {
 	});
 };
 
-
 var Gallery = function () {
 	"use strict";
     return {
@@ -74,3 +73,6 @@ var Gallery = function () {
         }
     };
 }();
+
+
+

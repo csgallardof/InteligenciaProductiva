@@ -23,7 +23,7 @@ class PaginasController extends Controller
     }
 
     public function vocaciones(){
-    	return view('publico.indice');
+    	return view('publico.vocaciones');
     }
 
 }
