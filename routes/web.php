@@ -47,7 +47,7 @@ Route::get('/cifras', 'PaginasController@cifrasccpt');
 
 Route::get('/vocaciones', 'PaginasController@vocaciones');
 
-Route::get('/indice', 'PaginasController@vocaciones');
+Route::get('/indice', 'PaginasController@indices');
 
 
 Auth::routes();

@@ -26,4 +26,8 @@ class PaginasController extends Controller
     	return view('publico.vocaciones');
     }
 
+    public function indices(){
+        return view('publico.indice');
+    }
+
 }
