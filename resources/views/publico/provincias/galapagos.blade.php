@@ -2,7 +2,7 @@
 <ul class="media-list media-list-with-divider">
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_01.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_01.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -14,7 +14,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_02.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_02.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -24,7 +24,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_03.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_03.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -34,7 +34,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_04.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_04.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -44,7 +44,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_05.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_05.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -54,7 +54,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_06.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_06.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -64,7 +64,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_07.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_07.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -74,7 +74,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_08.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_08.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -84,7 +84,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_09.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_09.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -94,7 +94,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_10.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_10.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -104,7 +104,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_11.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_11.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -114,7 +114,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_12.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_12.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -124,7 +124,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_13.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_13.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -134,7 +134,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_14.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_14.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -144,7 +144,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_15.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_15.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -154,7 +154,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_16.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_16.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -164,7 +164,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_17.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/20.Galapagos/20_17.png') }}" alt="" />
         </a>
         
         <div class="media-body">

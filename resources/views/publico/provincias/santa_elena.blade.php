@@ -1,4 +1,4 @@
-<div class="height-sm" data-scrollbar="true">
+<div class="panel-body">
 <ul class="media-list media-list-with-divider">
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">

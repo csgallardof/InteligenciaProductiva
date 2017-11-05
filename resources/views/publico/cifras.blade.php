@@ -67,7 +67,7 @@
 										<div class="tab-content">
 											<!-- COSTA-->
 											<div class="tab-pane fade active in " id="default-tab-1">
-												<div class="col-md-12 col-md-offset-3">
+												<div class="col-md-12">
 													<ul class="nav nav-pills center-block text-center">
 														<li class="active"><a href="#nav-pills-tab-ElOro" data-toggle="tab">El Oro</a></li>
 														<li><a href="#nav-pills-tab-Esmeraldas" data-toggle="tab">Esmeraldas</a></li>
@@ -123,7 +123,7 @@
 
 											<!-- SIERRA-->
 											<div class="tab-pane fade active" id="default-tab-2">
-												<div class="col-md-11 col-md-offset-1">
+												<div class="col-md-12">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Azuay" data-toggle="tab">Azuay</a></li>
 														<li><a href="#nav-pills-tab-Bolivar" data-toggle="tab">Bolivar</a></li>
@@ -211,7 +211,7 @@
 
 											<!-- ORIENTE-->
 											<div class="tab-pane fade" id="default-tab-3">
-												<div class="col-md-12 col-md-offset-1">
+												<div class="col-md-12">
 												<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-MoronaSantiago" data-toggle="tab">Morona Santiago</a></li>
 														<li><a href="#nav-pills-tab-Napo" data-toggle="tab">Napo</a></li>
@@ -266,7 +266,7 @@
 
 											<!-- INSULAR-->
 											<div class="tab-pane fade" id="default-tab-4">
-												<div class="col-md-12 col-md-offset-6">
+												<div class="col-md-12">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Galapagos" data-toggle="tab">Galápagos</a></li>
 													</ul>
@@ -275,20 +275,7 @@
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
 													    <h3 class="m-t-10">Galápagos</h3>
 													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
-																	est diam sagittis orci, a ornare nisi quam elementum tortor.
-																	Proin interdum ante porta est convallis dapibus dictum in nibh.
-																	Aenean quis massa congue metus mollis fermentum eget et tellus.
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
-																	nec eleifend orci eros id lectus.
-																</p>
-													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="Galápagos"s>
-													    	</div>
+													    	@include('publico.provincias.galapagos')
 													    </div>
 													</div>
 

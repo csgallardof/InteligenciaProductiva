@@ -1,4 +1,4 @@
-<div class="height-sm" data-scrollbar="true">
+<div class="panel-body">
 <ul class="media-list media-list-with-divider">
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
@@ -152,25 +152,6 @@
             <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</small></h6>
         </div>
     </li>
-    <li class="media media-lg">
-        <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/19.ZamoraChinchipe/19_16.png') }}" alt="" />
-        </a>
-        
-        <div class="media-body">
-            <h5 class="media-heading">Exportaciones (millones de USD).</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</small></h6>
-        </div>
-    </li>
-    <li class="media media-lg">
-        <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/19.ZamoraChinchipe/19_17.png') }}" alt="" />
-        </a>
-        
-        <div class="media-body">
-            <h5 class="media-heading">Exportaciones de la provincia según la actividad económica (participación).</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</small></h6>
-        </div>
-    </li>
+   
 </ul>
 </div>

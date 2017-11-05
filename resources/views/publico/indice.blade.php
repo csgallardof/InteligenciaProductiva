@@ -17,7 +17,7 @@
 					<!-- begin row -->
 				<div class="row">
 
-					<div class="col-md-12">
+					<div class="col-md-12 m-t-20">
 
 						<!-- begin breadcrumb -->
 						<ol class="breadcrumb pull-right">
@@ -53,11 +53,11 @@
 							<div class="panel bg-yellow">
 								<div class="col-md-12">
 									<div class="dropdown">
-										<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Pilares
+										<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilares
 										<span class="caret"></span></button>
 										<ul class="dropdown-menu">
 										    <li><a href="#" data-toggle="modal" data-target="#modal1">Desarrollo Integral de las personas</a></li>
-											<li><a href="#" data-toggle="modal" data-target="#modal2">Desempe&ntilde;o Econ&oacute;mico</a></li>			
+											<li><a href="#" data-toggle="modal" data-target="#modal2">Desempe&ntilde;o Econ&oacute;mico</a></li>
 										    <li><a href="#" data-toggle="modal" data-target="#modal3">Empleo</a></li>
 									    	<li><a href="#" data-toggle="modal" data-target="#modal4">Gesti&oacute;n Empresarial</a></li>
 									    	<li><a href="#" data-toggle="modal" data-target="#modal5">Gesti&oacute;n, Gobiernos e Instituciones</a></li>
@@ -67,20 +67,20 @@
 									    	<li><a href="#" data-toggle="modal" data-target="#modal9">Mercados Financieros</a></li>
 									    	<li><a href="#" data-toggle="modal" data-target="#modal10">Recursos Naturales y Ambientes</a></li>
 									    	<li><a href="#" data-toggle="modal" data-target="#modal11">Seguridad Jur&iacute;dica</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal12">Urbanizaci&oacute;n</a></li>									    	
+									    	<li><a href="#" data-toggle="modal" data-target="#modal12">Urbanizaci&oacute;n</a></li>
 										</ul>
 									</div>
-					                	
+
 				                </div>
 							</div>
 							<!-- begin page-header -->
 							<br>
-							<h3>Competitividad Global</h3><br>
+							<h3 class="m-t-20">Competitividad Global</h3><br><br>
 							<div class="col-md-12">
 					    		<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/global.png') }}" alt="">
-					    	</div> 	
+					    	</div>
 						</div>
-						<br><br>	
+						<br><br>
 
 						<!-- METODOLOGIA-->
 						<div class="col-md-5">
@@ -91,7 +91,7 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-											    <i class="fa fa-plus-circle pull-right"></i> 
+											    <i class="fa fa-plus-circle pull-right"></i>
 												&Iacute;ndice de Competitividad.
 											</a>
 										</h3>
@@ -116,7 +116,7 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-											    <i class="fa fa-plus-circle pull-right"></i> 
+											    <i class="fa fa-plus-circle pull-right"></i>
 												Metodolog&iacute;a de c&aacute;lculo
 											</a>
 										</h3>
@@ -134,7 +134,7 @@
 													<br><br>
 													<div class="col-md-12">
 													   	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/metodologiaCalculo.jpg') }}">
-													</div> 
+													</div>
 												</li>
 											</ul>
 										</div>
@@ -144,7 +144,7 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-											    <i class="fa fa-plus-circle pull-right"></i> 
+											    <i class="fa fa-plus-circle pull-right"></i>
 												Composici&oacute;n del &iacute;ndice &uacute;nico de competitividad provincial
 											</a>
 										</h3>
@@ -155,14 +155,14 @@
 											<br><br>
 											<div class="col-md-12">
 												<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/tablaIndicadores.png') }}">
-											
+
                                             </div>
 
 
 										</div>
 									</div>
 								</div>
-								
+
 							</div>
 					    </div>
 						<!-- FIN DE METODOLOGIA-->
@@ -173,7 +173,7 @@
 							<!-- begin col-4 -->
 						<div class="col-md-12">
 							<div class="panel bg-yellow">
-								
+
 							</div>
 							<!-- begin page-header -->
 						</div>
@@ -193,7 +193,7 @@
 
 							<!-- begin row -->
 							<div class="row">
-									
+
 							</div>
 							<!-- end row -->
 
@@ -211,13 +211,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Desarrollo Integral de las personas</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/desarrollo.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -226,13 +226,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Desempe&ntilde;o Econ&oacute;mico</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/desempeno.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>s
         </div>
     </div>
@@ -241,13 +241,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Empleo</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/empleo.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -256,13 +256,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Gesti&oacute;n Empresarial</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/gestionEmpresarial.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -271,13 +271,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Gesti&oacute;n, Gobiernos e Instituciones</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/gestionGobiernos.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -287,13 +287,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Habitantes de Innovaci&oacute;n, Ciencia y Tecnolog&iacute;a</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/habitantes.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -303,13 +303,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Infraestructura y Localizaci&oacute;n</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/infraestructura.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -318,13 +318,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Internacionalizaci&oacute;n y Apertura</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/internacionalizacion.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -333,13 +333,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Mercados Financieros</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/mercados.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -348,13 +348,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Recursos Naturales y Ambientes</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/recursosNaturales.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -363,13 +363,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <br> 
+                    <br>
                     <h4>Seguridad Jur&iacute;dica</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/seguridad.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -378,17 +378,17 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                	<br>   
+                	<br>
                     <h4>Urbanizaci&oacute;n</h4>
                 </div>
                 <div class="modal-body">
                 	<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/urbanizacion.png') }}" alt="">
                 	<br>
-                </div>          
+                </div>
             </div>
         </div>
     </div>
-     
+
 @section('end_js')
   @parent
 
@@ -401,7 +401,7 @@
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
 
-	
+
 @endsection
 
 @section('init_scripts')
@@ -410,7 +410,7 @@
     $(document).ready(function() {
       Dashboard.init();
 
-     
+
 
     });
   </script>

@@ -6466,3 +6466,36 @@ div.dataTables_wrapper div.dataTables_filter {
   position: relative;
   display: inline-block;
 }
+
+/*Navbar Custom*/
+
+.nav-tabs > li > a {
+    color: #ffffff;
+}
+
+.nav-pills > li > a {
+    color: #ffffff;
+}
+
+.nav-tabs {
+    background: #0c3c55;
+}
+
+.nav-pills {
+    margin-bottom: 30px;
+    background-color: #00acac;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 3px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    background-color: #e8e8e8;
+}
+
+/*Otros*/
+
+.social-list > a > i {
+  color: #ffffff;
+}

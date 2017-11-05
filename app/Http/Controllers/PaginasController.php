@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class PaginasController extends Controller
 {
-    public function visorgeneral(){
-    	return view('visorgeneral');
+    public function despliegueterritorial(){
+    	return view('despliegueterritorial');
     }
 
     public function inicio(){

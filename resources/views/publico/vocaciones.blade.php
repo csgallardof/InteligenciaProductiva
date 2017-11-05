@@ -63,7 +63,7 @@
 										<div class="tab-content">
 											<!-- COSTA-->
 											<div class="tab-pane fade active in " id="default-tab-1">
-												<div class="col-md-12 col-md-offset-3">
+												<div class="col-md-12">
 													<ul class="nav nav-pills center-block text-center">
 														<li class="active"><a href="#nav-pills-tab-ElOro" data-toggle="tab">El Oro</a></li>
 														<li><a href="#nav-pills-tab-Esmeraldas" data-toggle="tab">Esmeraldas</a></li>
@@ -76,7 +76,7 @@
 
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
-													    <h3 class="m-t-10">El Oro</h3>
+													    <h3 class="m-t-10 m-b-20">El Oro</h3>
 													    <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_eloro.jpg') }}" alt="El Oro">
@@ -84,7 +84,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Esmeraldas">
-													    <h3 class="m-t-10">Esmeraldas</h3>
+													    <h3 class="m-t-10 m-b-20">Esmeraldas</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_esmeraldas.jpg') }}" alt="Esmeraldas">
@@ -92,7 +92,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Guayas">
-													    <h3 class="m-t-10">Guayas</h3>
+													    <h3 class="m-t-10 m-b-20">Guayas</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_guayas.jpg') }}" alt="Guayas">
@@ -100,7 +100,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-LosRios">
-													    <h3 class="m-t-10">Los Ríos</h3>
+													    <h3 class="m-t-10 m-b-20">Los Ríos</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_losrios.jpg') }}" alt="Los Rios">
@@ -108,7 +108,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Manabi">
-													    <h3 class="m-t-10">Manabí</h3>
+													    <h3 class="m-t-10 m-b-20">Manabí</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_manabi.jpg') }}" alt="Manabi">
@@ -116,7 +116,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantaElena">
-													    <h3 class="m-t-10">Santa Elena</h3>
+													    <h3 class="m-t-10 m-b-20">Santa Elena</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santaelena.jpg') }}" alt="Santa Elena">
@@ -130,7 +130,7 @@
 
 											<!-- SIERRA-->
 											<div class="tab-pane fade" id="default-tab-2">
-												<div class="col-md-11 col-md-offset-1">
+												<div class="col-md-12">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Azuay" data-toggle="tab">Azuay</a></li>
 														<li><a href="#nav-pills-tab-Bolivar" data-toggle="tab">Bolivar</a></li>
@@ -147,7 +147,7 @@
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Azuay">
-													    <h3 class="m-t-10">Azuay</h3>
+													    <h3 class="m-t-10 m-b-20">Azuay</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_azuay.jpg') }}" alt="Azuay">
@@ -155,7 +155,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Bolivar">
-													    <h3 class="m-t-10">Bolivar</h3>
+													    <h3 class="m-t-10 m-b-20">Bolivar</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_bolivar.jpg') }}" alt="Bolivar">
@@ -163,7 +163,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Canar">
-													    <h3 class="m-t-10">Cañar</h3>
+													    <h3 class="m-t-10 m-b-20">Cañar</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_canar.jpg') }}" alt="Canar">
@@ -171,7 +171,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Carchi">
-													    <h3 class="m-t-10">Carchi</h3>
+													    <h3 class="m-t-10 m-b-20">Carchi</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_carchi.jpg') }}" alt="Carchi">
@@ -179,7 +179,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Chimborazo">
-													    <h3 class="m-t-10">Chimborazo</h3>
+													    <h3 class="m-t-10 m-b-20">Chimborazo</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_chimborazo.jpg') }}" alt="Chimborazo">
@@ -187,7 +187,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Cotopaxi">
-													    <h3 class="m-t-10">Cotopaxi</h3>
+													    <h3 class="m-t-10 m-b-20">Cotopaxi</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_cotopaxi.jpg') }}" alt="Cotopaxi">
@@ -195,7 +195,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Imbabura">
-													    <h3 class="m-t-10">Imbabura</h3>
+													    <h3 class="m-t-10 m-b-20">Imbabura</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_imbabura.jpg') }}" alt="Imbabura">
@@ -203,7 +203,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Loja">
-													    <h3 class="m-t-10">Loja</h3>
+													    <h3 class="m-t-10 m-b-20">Loja</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_loja.jpg') }}" alt="Loja">
@@ -211,7 +211,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pichincha">
-													    <h3 class="m-t-10">Pichincha</h3>
+													    <h3 class="m-t-10 m-b-20">Pichincha</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pichincha.jpg') }}" alt="Pichincha">
@@ -219,7 +219,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantoDomingo">
-													    <h3 class="m-t-10">Santo Domingo</h3>
+													    <h3 class="m-t-10 m-b-20">Santo Domingo</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santodomingo.jpg') }}" alt="Santo Domingo">
@@ -227,7 +227,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Tungurahua">
-													    <h3 class="m-t-10">Tungurahua</h3>
+													    <h3 class="m-t-10 m-b-20">Tungurahua</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_tungurahua.jpg') }}" alt="Tungurahua">
@@ -240,7 +240,7 @@
 
 											<!-- ORIENTE-->
 											<div class="tab-pane fade" id="default-tab-3">
-												<div class="col-md-12 col-md-offset-3">
+												<div class="col-md-12">
 												<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-MoronaSantiago" data-toggle="tab">Morona Santiago</a></li>
 														<li><a href="#nav-pills-tab-Napo" data-toggle="tab">Napo</a></li>
@@ -252,7 +252,7 @@
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-MoronaSantiago">
-													    <h3 class="m-t-10">Morona Santiago</h3>
+													    <h3 class="m-t-10 m-b-20">Morona Santiago</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_moronasantiago.jpg') }}" alt="Morona Santiago">
@@ -260,7 +260,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Napo">
-													    <h3 class="m-t-10">Napo</h3>
+													    <h3 class="m-t-10 m-b-20">Napo</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_napo.jpg') }}" alt="Napo">
@@ -268,7 +268,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Orellana">
-													    <h3 class="m-t-10">Orelllana</h3>
+													    <h3 class="m-t-10 m-b-20">Orelllana</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_orellana.jpg') }}" alt="Orellana">
@@ -276,7 +276,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pastaza">
-													    <h3 class="m-t-10">Pastaza</h3>
+													    <h3 class="m-t-10 m-b-20">Pastaza</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pastaza.jpg') }}" alt="Pastaza">
@@ -284,7 +284,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Sucumbios">
-													    <h3 class="m-t-10">Sucumbios</h3>
+													    <h3 class="m-t-10 m-b-20">Sucumbios</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_sucumbios.jpg') }}" alt="Sucumbios">
@@ -292,7 +292,7 @@
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-ZamoraChinchipe">
-													    <h3 class="m-t-10">Zamora Chinchipe</h3>
+													    <h3 class="m-t-10 m-b-20">Zamora Chinchipe</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_zamorachinchipe.jpg') }}" alt="Zamora Chinchipe">
@@ -307,14 +307,14 @@
 
 											<!-- INSULAR-->
 											<div class="tab-pane fade" id="default-tab-4">
-												<div class="col-md-12 col-md-offset-6">
+												<div class="col-md-12">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Galapagos" data-toggle="tab">Galápagos</a></li>
 													</ul>
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
-													    <h3 class="m-t-10">Galápagos</h3>
+													    <h3 class="m-t-10 m-b-20">Galápagos</h3>
                               <div class="row">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_galapagos.jpg') }}" alt="Galapagos">

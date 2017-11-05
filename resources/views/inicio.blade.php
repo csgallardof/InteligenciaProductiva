@@ -41,7 +41,7 @@
                 <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
-                      <a href="/visorgeneral" class="btn btn-inverse"><i class="fa fa-comments-o pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
+                      <a href="/despliegueterritorial" class="btn btn-inverse"><i class="fa fa-comments-o pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
                       <a href="http://192.168.2.190" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Biblioteca</a>
 
                     </div>

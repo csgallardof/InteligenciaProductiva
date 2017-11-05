@@ -35,7 +35,7 @@ Route::resource('eventos','EventosController');
 
 Route::resource('pajustadas','PajustadasController');
 
-Route::get('/visorgeneral', 'PaginasController@visorgeneral');
+Route::get('/despliegueterritorial', 'PaginasController@despliegueterritorial');
 
 Route::get('/reportegeneralccpt', 'PaginasController@reportegeneralccpt');
 
