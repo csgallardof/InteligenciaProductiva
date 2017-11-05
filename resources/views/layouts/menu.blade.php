@@ -19,14 +19,14 @@
 				<!-- begin navbar-collapse -->
 				<div class="collapse navbar-collapse" id="header-navbar">
 						<ul class="nav navbar-nav navbar-right">
-								<li><a href="#about" data-click="scroll-to-target">AGENDA DE DESARROLLO PRODUCTIVO</a></li>
+								<!-- <li><a href="#about" data-click="scroll-to-target">AGENDA DE DESARROLLO PRODUCTIVO</a></li>
 								<li class="active dropdown">
 										<a href="#home" data-click="scroll-to-target" data-target="#" data-toggle="dropdown">REPORTE<b class="caret"></b></a>
 										<ul class="dropdown-menu dropdown-menu-left animated fadeInDown">
 												<li><a href="reportegeneralccpt">Propuestas Obtenidas</a></li>
 
 										</ul>
-								</li>
+								</li> -->
 								<li><a href="#login-mipro-dialog" data-toggle="modal">INGRESAR</a></li>
 						</ul>
 				</div>

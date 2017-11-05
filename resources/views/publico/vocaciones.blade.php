@@ -51,7 +51,7 @@
 							<!-- begin col-4 -->
 						<div class="col-md-12">
 							<div class="panel bg-yellow">
-							
+
 								<div class="col-md-12">
 				                	<ul class="nav nav-tabs">
 										<li class="active"><a href="#default-tab-1" data-toggle="tab">Costa</a></li>
@@ -73,129 +73,63 @@
 														<li><a href="#nav-pills-tab-SantaElena" data-toggle="tab">Santa Elena</a></li>
 													</ul>
 												</div>
-												
+
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
 													    <h3 class="m-t-10">El Oro</h3>
 													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_eloro.jpg') }}" alt="El Oro">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Esmeraldas">
 													    <h3 class="m-t-10">Esmeraldas</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_esmeraldas.jpg') }}" alt="Esmeraldas">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Guayas">
 													    <h3 class="m-t-10">Guayas</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_guayas.jpg') }}" alt="Guayas">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-LosRios">
 													    <h3 class="m-t-10">Los Ríos</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_losrios.jpg') }}" alt="Los Rios">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Manabi">
 													    <h3 class="m-t-10">Manabí</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_manabi.jpg') }}" alt="Manabi">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantaElena">
 													    <h3 class="m-t-10">Santa Elena</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santaelena.jpg') }}" alt="Santa Elena">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 												</div>
-											
+
 											</div>
 											<!--FIN COSTA-->
-											
+
 											<!-- SIERRA-->
-											<div class="tab-pane fade active in ol-md-12" id="default-tab-2">
+											<div class="tab-pane fade" id="default-tab-2">
 												<div class="col-md-11 col-md-offset-1">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Azuay" data-toggle="tab">Azuay</a></li>
@@ -214,211 +148,90 @@
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Azuay">
 													    <h3 class="m-t-10">Azuay</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_azuay.jpg') }}" alt="Azuay">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Bolivar">
 													    <h3 class="m-t-10">Bolivar</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_bolivar.jpg') }}" alt="Bolivar">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Canar">
 													    <h3 class="m-t-10">Cañar</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_canar.jpg') }}" alt="Canar">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Carchi">
 													    <h3 class="m-t-10">Carchi</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_carchi.jpg') }}" alt="Carchi">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Chimborazo">
 													    <h3 class="m-t-10">Chimborazo</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_chimborazo.jpg') }}" alt="Chimborazo">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Cotopaxi">
 													    <h3 class="m-t-10">Cotopaxi</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_cotopaxi.jpg') }}" alt="Cotopaxi">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Imbabura">
 													    <h3 class="m-t-10">Imbabura</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_imbabura.jpg') }}" alt="Imbabura">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Loja">
 													    <h3 class="m-t-10">Loja</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_loja.jpg') }}" alt="Loja">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pichincha">
 													    <h3 class="m-t-10">Pichincha</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pichincha.jpg') }}" alt="Pichincha">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantoDomingo">
 													    <h3 class="m-t-10">Santo Domingo</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santodomingo.jpg') }}" alt="Santo Domingo">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Tungurahua">
 													    <h3 class="m-t-10">Tungurahua</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_tungurahua.jpg') }}" alt="Tungurahua">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 												</div>
@@ -426,140 +239,74 @@
 											<!-- FIN SIERRA-->
 
 											<!-- ORIENTE-->
-											<div class="tab-pane fade active in " id="default-tab-3">
+											<div class="tab-pane fade" id="default-tab-3">
 												<div class="col-md-12 col-md-offset-3">
 												<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-MoronaSantiago" data-toggle="tab">Morona Santiago</a></li>
 														<li><a href="#nav-pills-tab-Napo" data-toggle="tab">Napo</a></li>
 														<li><a href="#nav-pills-tab-Orellana" data-toggle="tab">Orellana</a></li>
 														<li><a href="#nav-pills-tab-Pastaza" data-toggle="tab">Pastaza</a></li>
-														<li><a href="#nav-pills-tab-Sucunbios" data-toggle="tab">Sucumbios</a></li>
+														<li><a href="#nav-pills-tab-Sucumbios" data-toggle="tab">Sucumbios</a></li>
 														<li><a href="#nav-pills-tab-ZamoraChinchipe" data-toggle="tab">Zamora Chinchipe</a></li>
 													</ul>
 												</div>
 												<div class="tab-content">
-													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Mç">
+													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-MoronaSantiago">
 													    <h3 class="m-t-10">Morona Santiago</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_moronasantiago.jpg') }}" alt="Morona Santiago">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Napo">
 													    <h3 class="m-t-10">Napo</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_napo.jpg') }}" alt="Napo">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Orellana">
 													    <h3 class="m-t-10">Orelllana</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_orellana.jpg') }}" alt="Orellana">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pastaza">
 													    <h3 class="m-t-10">Pastaza</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pastaza.jpg') }}" alt="Pastaza">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
-													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Sucunbios">
+													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Sucumbios">
 													    <h3 class="m-t-10">Sucumbios</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_sucumbios.jpg') }}" alt="Sucumbios">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-ZamoraChinchipe">
 													    <h3 class="m-t-10">Zamora Chinchipe</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_zamorachinchipe.jpg') }}" alt="Zamora Chinchipe">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="El Oro">
-													    	</div> 	
 													    </div>
 													</div>
 												</div>
-											
+
 											</div>
 											<!--FIN ORIENTE-->
 
 
 											<!-- INSULAR-->
-											<div class="tab-pane fade active in " id="default-tab-4">
+											<div class="tab-pane fade" id="default-tab-4">
 												<div class="col-md-12 col-md-offset-6">
 													<ul class="nav nav-pills">
 														<li class="active"><a href="#nav-pills-tab-Galapagos" data-toggle="tab">Galápagos</a></li>
@@ -568,33 +315,22 @@
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
 													    <h3 class="m-t-10">Galápagos</h3>
-													    <div class="row">
-													    	<div class="col-md-6">
-													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
-																	nec eleifend orci eros id lectus.
-																</p>	
+                              <div class="row">
+													    	<div class="col-md-12">
+													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_galapagos.jpg') }}" alt="Galapagos">
 													    	</div>
-													    	<div class="col-md-6">
-													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="Galápagos"s>
-													    	</div> 	
 													    </div>
 													</div>
-													
+
 												</div>
-											
+
 											</div>
 											<!--FIN INSULAR-->
-											
+
 										</div>
 									</div>
 
-					                	
+
 				                </div>
 							</div>
 							<!-- begin page-header -->
@@ -606,7 +342,7 @@
 							<!-- begin col-4 -->
 						<div class="col-md-12">
 							<div class="panel bg-yellow">
-								
+
 							</div>
 							<!-- begin page-header -->
 						</div>
@@ -626,7 +362,7 @@
 
 							<!-- begin row -->
 							<div class="row">
-									
+
 							</div>
 							<!-- end row -->
 
@@ -652,7 +388,7 @@
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
 
-	
+
 @endsection
 
 @section('init_scripts')
@@ -661,7 +397,7 @@
     $(document).ready(function() {
       Dashboard.init();
 
-     
+
 
     });
   </script>
