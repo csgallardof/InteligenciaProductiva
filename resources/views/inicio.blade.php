@@ -15,64 +15,56 @@
         <div id="about" class="content row-m-t-3" data-scrollview="true">
             <!-- begin container -->
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <div class="col-9">
-                    <div class="panel-body col-md-offset-3">
 
-                        <h2><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0b3c55">MESAS DE COMPETITIVIDAD</span></strong> </h2>
-                        <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;en el marco del acuerdo por la producción y el empleo
-                          </h4>
-                        
-                    </div>
+                <div class="col-12">
+
                     <div class="brand">
                         <img src="{{ asset('imagenes/inteligencia_productiva_home.png') }}" class="center-block img-responsive" alt="Cinque Terre" width="450px" height="73px">
                     </div>
-                   
-                </div>
-                <!-- begin col-9 -->
-                <div class="col-md-10">
-                    <div class="panel-body col-md-offset-1">
-                    
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Cifras</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Indices competitividad</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Vocaciones Provinciales</button>
-                    <button type="button" class="btn btn-info m-r-5 m-b-5">Despliegue Territorial</button>
-                    
-                    
+
+                    <div class="panel-body">
+                        <h4 style="font-style: italic;" class="text-center">Mesas de Competitividad en el marco del acuerdo por la producción y el empleo</h4>
                     </div>
-                   
+
                 </div>
 
+                <div class="col-md-12">
+                    <div class="panel-body text-center">
 
-                    
-            </div>   
-                
+                      <a href="/cifras" class="btn btn-inverse"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Cifras</a>
+                      <a href="/indice" class="btn btn-inverse"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Índice Único de Competitividad</a>
+                      <a href="/vocaciones" class="btn btn-inverse"><i class="fa fa-cog pull-left" aria-hidden="true"></i>Vocaciones Productivas</a>
 
-            
+                    </div>
+                </div>
 
+                <div class="col-md-12 row-m-t-minus-25">
+                    <div class="panel-body text-center">
 
+                      <a href="/visorgeneral" class="btn btn-inverse"><i class="fa fa-comments-o pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
+                      <a href="http://192.168.2.190" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Biblioteca</a>
 
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
         <div class="bg-cover"></div>
 
-                    
-                    
-                
                 </div>
                    <!-- begin col-3 -->
-             
-                
         <!-- end #about -->
 
-        
-{{-- 
+
+{{--
         <!-- begin #team -->
         <div id="team" class="content" data-scrollview="true">
             <!-- begin container -->
             <div class="container row-m-t-4">
 
-               
+
             </div>
             <!-- end container -->
         </div>

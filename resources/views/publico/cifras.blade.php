@@ -77,7 +77,7 @@
 														<li><a href="#nav-pills-tab-SantaElena" data-toggle="tab">Santa Elena</a></li>
 													</ul>
 												</div>
-												
+
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
 													    <h3 class="m-t-10">El Oro</h3>
@@ -116,11 +116,11 @@
 													    </div>
 													</div>
 												</div>
-											
+
 											</div>
-											
+
 											<!--FIN COSTA-->
-											
+
 											<!-- SIERRA-->
 											<div class="tab-pane fade active" id="default-tab-2">
 												<div class="col-md-11 col-md-offset-1">
@@ -148,7 +148,7 @@
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Bolivar">
 													    <h3 class="m-t-10">Bolivar</h3>
 													    <div class="row">
-													    	@include('publico.provincias.bolivar') 	
+													    	@include('publico.provincias.bolivar')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Canar">
@@ -160,7 +160,7 @@
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Carchi">
 													    <h3 class="m-t-10">Carchi</h3>
 													    <div class="row">
-													    	@include('publico.provincias.carchi')	
+													    	@include('publico.provincias.carchi')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Chimborazo">
@@ -172,19 +172,19 @@
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Cotopaxi">
 													    <h3 class="m-t-10">Cotopaxi</h3>
 													    <div class="row">
-													    	@include('publico.provincias.cotopaxi')	
+													    	@include('publico.provincias.cotopaxi')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Imbabura">
 													    <h3 class="m-t-10">Imbabura</h3>
 													    <div class="row">
-													    	@include('publico.provincias.imbabura')	
+													    	@include('publico.provincias.imbabura')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Loja">
 													    <h3 class="m-t-10">Loja</h3>
 													    <div class="row">
-													    	@include('publico.provincias.loja')	
+													    	@include('publico.provincias.loja')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pichincha">
@@ -225,41 +225,41 @@
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Mç">
 													    <h3 class="m-t-10">Morona Santiago</h3>
 													    <div class="row">
-													    	@include('publico.provincias.morona_santiago') 	
+													    	@include('publico.provincias.morona_santiago')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Napo">
 													    <h3 class="m-t-10">Napo</h3>
 													    <div class="row">
-													    	@include('publico.provincias.napo') 	
+													    	@include('publico.provincias.napo')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Orellana">
 													    <h3 class="m-t-10">Orelllana</h3>
 													    <div class="row">
-													    	@include('publico.provincias.orellana') 	
+													    	@include('publico.provincias.orellana')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pastaza">
 													    <h3 class="m-t-10">Pastaza</h3>
 													    <div class="row">
-													    	@include('publico.provincias.pastaza') 	
+													    	@include('publico.provincias.pastaza')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Sucunbios">
 													    <h3 class="m-t-10">Sucumbios</h3>
 													    <div class="row">
-													    	@include('publico.provincias.sucumbios') 	
+													    	@include('publico.provincias.sucumbios')
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-ZamoraChinchipe">
 													    <h3 class="m-t-10">Zamora Chinchipe</h3>
 													    <div class="row">
-													    	@include('publico.provincias.zamora') 	
+													    	@include('publico.provincias.zamora')
 													    </div>
 													</div>
 												</div>
-											
+
 											</div>
 											<!--FIN ORIENTE-->
 
@@ -277,36 +277,36 @@
 													    <div class="row">
 													    	<div class="col-md-6">
 													    		<p class="text-justify">
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor, 
-																	est diam sagittis orci, a ornare nisi quam elementum tortor. 
-																	Proin interdum ante porta est convallis dapibus dictum in nibh. 
-																	Aenean quis massa congue metus mollis fermentum eget et tellus. 
-																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien, 
+																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+																	Integer ac dui eu felis hendrerit lobortis. Phasellus elementum, nibh eget adipiscing porttitor,
+																	est diam sagittis orci, a ornare nisi quam elementum tortor.
+																	Proin interdum ante porta est convallis dapibus dictum in nibh.
+																	Aenean quis massa congue metus mollis fermentum eget et tellus.
+																	Aenean tincidunt, mauris ut dignissim lacinia, nisi urna consectetur sapien,
 																	nec eleifend orci eros id lectus.
-																</p>	
+																</p>
 													    	</div>
 													    	<div class="col-md-6">
 													    		<img class="img-responsive center-block"  src="http://www.cedatos.com.ec/images/mapa-elecciones2017.jpg" alt="Galápagos"s>
-													    	</div> 	
+													    	</div>
 													    </div>
 													</div>
-													
+
 												</div>
-											
+
 											</div>
 											<!--FIN INSULAR-->
-											
+
 										</div>
 									</div>
 
-					                	
+
 				                </div>
 							</div>
 							<!-- begin page-header -->
 						</div>
 
-						
+
 						<!-- end col-4 -->
 					</div>
 						<!-- end row -->
@@ -314,7 +314,7 @@
 							<!-- begin col-4 -->
 						<div class="col-md-12">
 							<div class="panel bg-yellow">
-								
+
 							</div>
 							<!-- begin page-header -->
 						</div>
@@ -334,7 +334,7 @@
 
 							<!-- begin row -->
 							<div class="row">
-									
+
 							</div>
 							<!-- end row -->
 
@@ -363,24 +363,24 @@
 	<script src="{{ asset('plugins/isotope/jquery.isotope.min.js') }}"></script>
   	<script src="{{ asset('plugins/lightbox/js/lightbox-2.6.min.js') }}"></script>
 	<script src="{{ asset('js/gallery.demo.js') }}"></script>
-	
 
-	
+
+
 @endsection
 
 @section('init_scripts')
 
   <script>
     $(document).ready(function() {
-      
+
       Gallery.init();
- 
 
 
-     
+
+
 
     });
   </script>
-  
+
 
 @endsection

@@ -10,7 +10,7 @@
 								<span class="icon-bar"></span>
 						</button>
 
-						<a href="{{ url('/app') }}" class="navbar-brand">
+						<a href="{{ url('/') }}" class="navbar-brand">
 								<img src="{{ asset('imagenes/logo_mipro.png') }}" class="center-block img-responsive" alt="Cinque Terre" width="130px" height="46px">
 						</a>
 
@@ -27,6 +27,12 @@
 
 										</ul>
 								</li> -->
+								<li><a href="/" data-toggle="modal">Inicio</a></li>
+								<li><a href="/cifras" data-toggle="modal">Cifras</a></li>
+								<li><a href="/indice" data-toggle="modal">Índice Único de Competitividad</a></li>
+								<li><a href="/vocaciones" data-toggle="modal">Vocaciones Productivas</a></li>
+								<li><a href="/visorgeneral" data-toggle="modal">Despliegue Territorial</a></li>
+								<li><a href="http://192.168.2.190" data-toggle="modal">Biblioteca</a></li>
 								<li><a href="#login-mipro-dialog" data-toggle="modal">INGRESAR</a></li>
 						</ul>
 				</div>

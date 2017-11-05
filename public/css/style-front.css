@@ -3104,3 +3104,13 @@ a.list-group-item.active:focus {
 .row-m-t-4 {
     margin-top: 80px;
 }
+
+.row-m-t-minus-25 {
+    margin-top: -25px;
+}
+
+/*Otros*/
+
+.social-list > a > i {
+  color: #ffffff;
+}
