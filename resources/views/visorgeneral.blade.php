@@ -52,15 +52,21 @@
 						<div class="col-md-12">
 							<div class="panel bg-yellow">
 								<div class="panel-body bg-yellow">
-									<h3 class="text-white"><strong>Seleccione el sector para su consulta</strong></h3>
+									<h3 class="text-white"><strong>Consultar</strong></h3>
 										<br>
+									
 									<form class="form-horizontal form-bordered" action = "dashboard.php" method="GET">
 										<div class="col-md-5">
 											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info">
 											<option value="0">Seleccione el sector</option>
 
-												<option value="1">Calzado </option>
-												<option value="2">treessss </option>
+												<option value="1">Agroindustria </option>
+												<option value="2">Acuícola </option>
+												<option value="2">Turismo </option>
+												<option value="2">Transporte </option>
+												<option value="2">Comercio </option>
+												<option value="2">Industria </option>
+
 
 											</select>
 
@@ -69,9 +75,14 @@
 										<div class="col-md-2 m-l-10">
 
 											<select class="form-control" name = "rec_id" data-size="15" data-live-search="true" data-style="btn-info">
-											<option value="0">Eje temático</option>
+											<option value="0">Provincia</option>
 
-											<option value=""></option>
+											<option value="1">Pichincha </option>
+											<option value="2">Guayas</option>
+											<option value="2">Los Ríos</option>
+											<option value="2">Tungurahua</option>
+											<option value="2">Mananí</option>
+
 
 											</select>
 
@@ -81,9 +92,9 @@
 											<input type="hidden" name="accion" value="nuevo">
 										</div>
 
-										<div class="col-md-1 m-l-10">
+										{{-- <div class="col-md-1 m-l-10">
 											<a href="add-fichas.php" class="btn btn-success m-r-5 m-b-5"><i class="fa fa-plus m-r-10"></i>Agregar</a>
-										</div>
+										</div> --}}
 									</form>
 								</div>
 							</div>
@@ -113,6 +124,10 @@
 
 											<h4 class="modal-title fit-m-t-2">Cadena Productiva
 											</h4>
+											
+											<span class="badge badge-info">Incio de las mesas 13 de Nov.</span></td>
+												
+					                        
 
 											</div>
 											<div class="modal-body">
