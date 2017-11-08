@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Evento;
+//use App\Http\Controllers\Controller;
+use App\Instrumento;
 
-class EventosController extends Controller
+class InstrumentosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class EventosController extends Controller
     public function index()
     {
         //
-        $eventos = evento::all();
-        return view('admin.eventos.home', compact('eventos'));
-
+        $instrumentos = instrumento::all();
+        return view('admin.instrumentos.home', compact('instrumentos'));
     }
 
     /**
@@ -28,7 +28,7 @@ class EventosController extends Controller
     public function create()
     {
         //
-        return view('admin.eventos.create');
+        return view('admin.instrumentos.create');
     }
 
     /**
@@ -40,14 +40,13 @@ class EventosController extends Controller
     public function store(Request $request)
     {
         //
-        $eventos = new evento;
+        $instrumento = new instrumento;
         $this ->validate($request,[
-            'nombre_evento' =>'required|unique:eventos'
+            'nombre_instrumento' =>'required|unique:instrumentos'
         ]);
-        
-        $eventos->nombre_evento = $request->nombre_eventos;
-        $eventos->save();
-        return redirect('EventosController');
+        $instrumento->nombre_instrumento = $request->nombre_instrumento;
+        $instrumento->save();
+        return redirect('instrumentos');
     }
 
     /**
@@ -70,6 +69,10 @@ class EventosController extends Controller
     public function edit($id)
     {
         //
+        $item = instrumento::find($id);
+        
+
+        return view('admin.instrumentos.edit', compact('item'));
     }
 
     /**
@@ -82,6 +85,13 @@ class EventosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $instrumento = instrumento::find($id);
+        $this ->validate($request,[
+            'nombre_instrumento' =>'required'
+        ]);
+        $instrumento->nombre_instrumento = $request->nombre_instrumento;
+        $instrumento->save();
+        return redirect('instrumentos');
     }
 
     /**

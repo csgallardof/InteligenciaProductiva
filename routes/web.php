@@ -11,9 +11,19 @@
 |
 */
 
+<<<<<<< HEAD
  Route::get('/', function () {
      return view('home');
  });
+
+// Route::get('/', function(){
+// 	return view('inicio');
+// });
+=======
+Route::get('/', function () {
+    return view('home');
+});
+>>>>>>> f7b50640e563085ef333cc571a83d609898e0b95
 
 // Route::get('/', function(){
 // 	return view('inicio');
@@ -40,6 +50,7 @@ Route::resource('pajustadas','PajustadasController');
 
 Route::resource('pajustadas','PajustadasController');
 
+<<<<<<< HEAD
 //Route::get('soluciones','SolucionesController@create');
 //Route::post('soluciones/guardar','SolucionesController@store');
 
@@ -47,6 +58,11 @@ Route::resource('soluciones','SolucionesController');
 
 
 Route::get('/visorgeneral', 'PaginasController@visorgeneral');
+=======
+Route::resource('instrumentos','InstrumentosController');
+
+Route::get('/despliegueterritorial', 'PaginasController@despliegueterritorial');
+>>>>>>> f7b50640e563085ef333cc571a83d609898e0b95
 
 Route::get('/reportegeneralccpt', 'PaginasController@reportegeneralccpt');
 
