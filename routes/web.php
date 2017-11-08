@@ -11,13 +11,13 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
-Route::get('/', function(){
-	return view('inicio');
+Route::get('/', function () {
+    return view('home');
 });
+
+// Route::get('/', function(){
+// 	return view('inicio');
+// });
 
 Route::resource('sipocs','SipocsController');
 
@@ -34,6 +34,8 @@ Route::resource('provincias','ProvinciasController');
 Route::resource('eventos','EventosController');
 
 Route::resource('pajustadas','PajustadasController');
+
+Route::resource('instrumentos','InstrumentosController');
 
 Route::get('/despliegueterritorial', 'PaginasController@despliegueterritorial');
 

@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vsector extends Model
+class Instrumento extends Model
 {
     //
 
-	protected $table = 'vsectors';
-
+	protected $table = 'instrumentos';
 
     public function solucion(){
 

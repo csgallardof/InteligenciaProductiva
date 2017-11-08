@@ -51,6 +51,8 @@
                             <li><a href="{{ route('vsectors.index') }}">Variable Sectorial</a></li>
                             <li><a href="{{ route('ambits.index') }}">Ambito</a></li>
                             <li><a href="{{ route('pajustadas.index') }}">Palabra Ajustada</a></li>
+                            <li><a href="{{ route('provincias.index') }}">Provincia</a></li>
+                            <li><a href="{{ route('instrumentos.index') }}">Instrumentos</a></li>
 
                         @else
                             <li class="dropdown">
