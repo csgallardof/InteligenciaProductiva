@@ -11,13 +11,13 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+ Route::get('/', function () {
+     return view('home');
+ });
 
-Route::get('/', function(){
-	return view('inicio');
-});
+// Route::get('/', function(){
+// 	return view('inicio');
+// });
 
 Route::resource('sipocs','SipocsController');
 
@@ -29,13 +29,24 @@ Route::resource('vsectors','VsectorsController');
 
 Route::resource('ambits','AmbitsController');
 
+
 Route::resource('provincias','ProvinciasController');
 
 Route::resource('eventos','EventosController');
 
+
+
 Route::resource('pajustadas','PajustadasController');
 
-Route::get('/despliegueterritorial', 'PaginasController@despliegueterritorial');
+Route::resource('pajustadas','PajustadasController');
+
+//Route::get('soluciones','SolucionesController@create');
+//Route::post('soluciones/guardar','SolucionesController@store');
+
+Route::resource('soluciones','SolucionesController');
+
+
+Route::get('/visorgeneral', 'PaginasController@visorgeneral');
 
 Route::get('/reportegeneralccpt', 'PaginasController@reportegeneralccpt');
 
@@ -45,6 +56,9 @@ Route::get('/vocaciones', 'PaginasController@vocaciones');
 
 Route::get('/indice', 'PaginasController@indices');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

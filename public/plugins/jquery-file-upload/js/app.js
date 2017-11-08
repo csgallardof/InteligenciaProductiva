@@ -39,6 +39,7 @@
                             .test(window.navigator.userAgent),
                         maxFileSize: 5000000,
                         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+                        //acceptFileTypes: /(\.|\/)(xlsx)$/i
                     });
                 }
             }

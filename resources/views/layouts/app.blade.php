@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('start_css')
 </head>
 <body>
     <div id="app">
@@ -51,6 +52,7 @@
                             <li><a href="{{ route('vsectors.index') }}">Variable Sectorial</a></li>
                             <li><a href="{{ route('ambits.index') }}">Ambito</a></li>
                             <li><a href="{{ route('pajustadas.index') }}">Palabra Ajustada</a></li>
+                            <li><a href="{{ route('soluciones.index') }}">Soluciones</a></li>
 
                         @else
                             <li class="dropdown">
@@ -83,5 +85,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('end_js')
 </body>
 </html>

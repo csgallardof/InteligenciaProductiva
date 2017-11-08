@@ -60,6 +60,7 @@
             // The limit of files to be uploaded:
             maxNumberOfFiles: 10,
             */
+            //acceptFileTypes: /(\.|\/)(xlsx)$/i,
 
             // Function returning the current number of files,
             // has to be overriden for maxNumberOfFiles validation:
