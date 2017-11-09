@@ -37,7 +37,6 @@
                         <form>
                             <div class="form-group">
                                 <label for="exampleInputFile">Subir Matriz</label>
-                                <i class="fa fa-plus"></i>
                                 <input type="file" id="exampleInputFile">
                             </div>
                             <button type="submit" class="btn btn-default">Registrar</button>
@@ -99,7 +98,7 @@
 
  
     <!-- The template to display files available for upload -->
-    
+    <!--
     <script id="template-upload" type="text/x-tmpl">
         {% for (var i=0, file; file=o.files[i]; i++) { %}
             <tr class="template-upload fade">
@@ -121,7 +120,7 @@
     </script>
     
     <!-- The template to display files available for download -->
-    
+    <!--
     <script id="template-download" type="text/x-tmpl">
         {% for (var i=0, file; file=o.files[i]; i++) { %}
             <tr class="template-download fade">
@@ -140,6 +139,7 @@
             </tr>
         {% } %}
     </script>
+    -->
     
 
     <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>

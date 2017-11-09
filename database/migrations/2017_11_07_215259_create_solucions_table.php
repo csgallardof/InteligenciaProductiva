@@ -25,6 +25,7 @@ class CreateSolucionsTable extends Migration
             $table->string('corresponsable_solucion');
             $table->string('sistematizador_solucion');
             $table->string('lider_mesa_solucion');
+            $table->integer('tipo_fuente');
             
 
             // inicio de relaciones 
