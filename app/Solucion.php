@@ -51,6 +51,6 @@ class Solucion extends Model
     public function sipoc(){
 
         return $this->belongsTo('App\Sipoc');
-    }    
+    }
 
 }

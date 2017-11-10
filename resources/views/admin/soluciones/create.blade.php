@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">@yield('edit_titulo') Problem&aacute;ticas y Soluciones <a href="{{ route('eventos.index') }}" class="btn btn-primary pull-right">Regresar</a>
+                <div class="panel-heading">@yield('edit_titulo') Problem&aacute;ticas y Soluciones <a href="{{ route('soluciones.index') }}" class="btn btn-primary pull-right">Regresar</a>
                 </div>
 
                 <div class="panel panel-inverse">
@@ -34,14 +34,7 @@
                             Supports cross-domain, chunked and resumable file uploads and client-side image resizing.<br>
                             Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.</p>
                         </blockquote>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputFile">Subir Matriz</label>
-                                <input type="file" id="exampleInputFile">
-                            </div>
-                            <button type="submit" class="btn btn-default">Registrar</button>
-                        </form>
-                        <form id="fileupload" action="{{ url('soluciones') }}" method="POST" files="true" enctype="multipart/form-data">
+                        <form id="fileupload" action="{{ url('soluciones/vistaPreviaMesas') }}" method="POST" files="true" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row fileupload-buttonbar">
                                 <div class="col-md-7">

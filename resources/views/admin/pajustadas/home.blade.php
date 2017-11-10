@@ -20,10 +20,10 @@
 					            </tr>
 					        </thead>
 					        <tbody>
-					        	@foreach($soluciones as $solucion)
+					        	@foreach($pajustadas as $pajustada)
 								<tr>
-					                <td>{{ $solucion->id }}</td>
-					                <td>{{ $solucion->verbo." ".$solucion->sujeto." ".$solucion->complemento  }}</td>
+					                <td>{{ $pajustada->id }}</td>
+					                <td>{{ $pajustada->nombre_pajustada  }}</td>
 					                <td><a href="{{ '/pajustadas/'.$pajustada->id.'/edit' }}" class="btn btn-primary">Editar</a>  <a href="" class="btn btn-danger">Eliminar</a></td>
 					            </tr>
 					            @endforeach

@@ -7,20 +7,23 @@
     <div class="row">
         <div class="col-md-12 col-md-offset-1">
             <div class="panel panel-default">
+	            
 	            <div class="panel-heading">
-	            	Lista de Soluciones
-	            	<div class="panel-body">
-	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
-                        	<div class="form-group">
-								<input type="text" name="solucion" id="solucion" class="form-control" placeholder="Solucion">
-							</div>
-							<button type="submit" class="btn btn-sm btn-default">Buscar</button>
-						</form>
-                    </div>
+	            	Se han encontrado {{ count($errores) }} errores.
+				</div>
+	            <div class="panel-body">
+					<ul>
+						@foreach($errores as $error)
+							<li>{{ $error  }}</li>
+				        @endforeach	
+						
+					</ul>
+				</div>
 
-
-	            	<a href="{{ route('soluciones.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
-				</div>	            
+				<div class="panel-heading">
+	            	Vista Previa de Soluciones
+				</div>
+					            
 	            <div class="panel-body">
 				  	<table class="table table-hover">
 				        <thead>
@@ -36,12 +39,11 @@
 				                <th class="text-center">&Aacute;MBITO</th>
 				                <th class="text-center">RESPONSABLE DE EJECUCI&Oacute;N</th>
 				                <th class="text-center">CO-RESPONSABLES DE EJECUCIÓN</th>
-				                <th>Acci&oacute;n</th>
 
 				            </tr>
 				        </thead>
 				        <tbody>
-				        	@foreach($soluciones as $solucion)
+				        	@foreach($datos as $solucion)
 							<tr>
 				                <td class="text-center">{{ $solucion->id }}</td>
 				                <td class="text-center">{{ $solucion->evento->nombre_evento}}</td>
@@ -55,20 +57,11 @@
 								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
 								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
 
-				                <td>
-				                	<a href="{{ '/soluciones/'.$solucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  
-				                	<button type="button" onclick="borrarSolucion( {{ $solucion->id }} , {{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }});" class="btn btn-danger" data-toggle="modal" data-target="#ventanaBorrarSolucion">Borrar</button>
-				                	
-				                </td>
 				            </tr>
 				            @endforeach		            
 				        </tbody>
 			    	</table>
-				    <div class="row">
-				    	<div class="col-md-offset-5">
-				    		{!! $soluciones->render() !!}
-				    	</div>
-				    </div>
+				    
 				</div>
 			</div>
 		</div>				    
@@ -78,37 +71,9 @@
 </div>
 
 	
-<!-- VENTANA MODAL PARA ELIMINAR SOLUCION -->
-
-<div class="modal fade" id="ventanaBorrarSolucion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<p id="nombre_solucion"></p>
-			</div>
-			<div class="modal-body">
-				<div id="nombre_solucion2"></div>
-				
-			</div>
-			<br><br>
-			<div class="modal-footer">
-				
-				<input id="botonBorrarSolucion" type="button" class="btn btn-primary" value="Borrar">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>   					
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- FIN VENTANA MODAL -->
 @endsection
 
 
-
 @section('end_js')
-  
-    <script src="{{ asset('js/miJavascript.js') }}"></script>
 
 @endsection
