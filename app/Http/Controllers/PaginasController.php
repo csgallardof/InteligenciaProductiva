@@ -30,4 +30,8 @@ class PaginasController extends Controller
         return view('publico.indice');
     }
 
+    public function contratosinversion(){
+        return view('publico.contratos-de-inversion');
+    }
+
 }

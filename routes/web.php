@@ -13,7 +13,7 @@
 
 
  Route::get('/', function () {
-     return view('home');
+     return view('inicio');
  });
 
 
@@ -67,4 +67,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/soluciones/vistaPreviaMesas',['uses'=>'SolucionesController@vistaPreviaMesas','as'=>'soluciones.vistaPreviaMesas']);  //J. Arcos -- vista Previa Matriz Mesas
+
+// Rutas de contratos de inversion 
+
+
+Route::get('/contratos-de-inversion', 'PaginasController@contratosinversion');
 

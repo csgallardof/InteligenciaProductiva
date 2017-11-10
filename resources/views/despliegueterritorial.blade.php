@@ -82,7 +82,7 @@
 											<option value="2">Guayas</option>
 											<option value="2">Los Ríos</option>
 											<option value="2">Tungurahua</option>
-											<option value="2">Mananí</option>
+											<option value="2">Manabí</option>
 
 
 											</select>
@@ -125,7 +125,7 @@
 
 											<h4 class="modal-title fit-m-t-2">Cadena Productiva</h4>
 
-											<span class="badge badge-info f-s-14 p-5">Incio del diálogo en las mesas provinciales: 13 de Noviembre de 2017</span></td>
+											<span class="badge badge-info f-s-14 p-5">Inicio del diálogo en las mesas provinciales: 13 de Noviembre de 2017</span></td>
 
                       <br /><br /><br />
 
