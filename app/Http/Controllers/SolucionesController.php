@@ -8,8 +8,11 @@ use PHPExcel_IOFactory;
 use PHPExcel_Shared_Date;
 use App\Solucion;
 use App\Evento;
+use File;
 use DB;
 use Illuminate\Support\Collection as Collection;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Input;
 
 class SolucionesController extends Controller
 {
@@ -43,23 +46,13 @@ class SolucionesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        /*
-         *
-         * Guardar Archivo Excel en el storage de laravel
-         *
-        */   
-        $file = $request->file('archivo');   //obtenemos el campo file definido en el formulario
-        $nombre = $file->getClientOriginalName();   //obtenemos el nombre del archivo
-        $nombre = strtotime("now")."-".$nombre;     // agregamos la fecha actual unix al inicio del nombre del archivo
-        \Storage::disk('local')->put($nombre,  \File::get($file));   //indicamos que queremos guardar un nuevo archivo en el disco local
-        
+    {        
         /*
          *
          * Cargamos el  Archivo Excel para trabajarlo 
          *
         */ 
-        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$nombre ); 
+        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$request-> nombreArchivo ); 
         
         
         /*
@@ -138,7 +131,7 @@ class SolucionesController extends Controller
         $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
         
-        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia."-".strtotime("now");    //obtenemos el nombre del evento
+        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
         $evento = new Evento;
         $evento-> nombre_evento = $nombreEvento;
         $evento-> save();
@@ -301,12 +294,14 @@ class SolucionesController extends Controller
 
     public function vistaPreviaMesas(Request $request)
     {
+        $errores[] = array();
+
         $file = $request->file('archivo');   //obtenemos el campo file definido en el formulario
-        $nombre = $file->getClientOriginalName();   //obtenemos el nombre del archivo
-        $nombre = strtotime("now")."-".$nombre;     // agregamos la fecha actual unix al inicio del nombre del archivo
-        \Storage::disk('local')->put($nombre,  \File::get($file));   //indicamos que queremos guardar un nuevo archivo en el disco local
+        $nombreArchivo = $file->getClientOriginalName();   //obtenemos el nombre del archivo
+        $nombreArchivo = strtotime("now")."-".$nombreArchivo;     // agregamos la fecha actual unix al inicio del nombre del archivo
+        \Storage::disk('local')->put($nombreArchivo,  \File::get($file));   //indicamos que queremos guardar un nuevo archivo en el disco local
         
-        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$nombre ); 
+        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$nombreArchivo ); 
         
         $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
         $objWorksheet = $objPHPExcel->getActiveSheet();  //
@@ -321,10 +316,13 @@ class SolucionesController extends Controller
         $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
         
-        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia."-".strtotime("now");    //obtenemos el nombre del evento
-        $evento = new Evento;
-        $evento-> nombre_evento = $nombreEvento;
-        $evento-> save();
+        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
+        $nombreEventoAuxiliar= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento], /*['provincia_id', '=', $provincia->id]*/ ])->first();
+        if( $nombreEventoAuxiliar != null){
+            $error = "El nombre del evento ya se encuentra registrado";
+            array_push($errores, $error); 
+        }
+        
 
         $liderMesa= $objWorksheet->getCell("B2")->getValue();     //obtenemos al lider de mesa
         
@@ -360,7 +358,6 @@ class SolucionesController extends Controller
 
         
         $soluciones[] = array();  
-        $errores[] = array();
         $countOK = 0;
         $arrayValProblemas[] = array(); 
 
@@ -401,7 +398,7 @@ class SolucionesController extends Controller
                 $solucion-> responsable_solucion = $fila["responsable"];
                 $solucion-> corresponsable_solucion = $fila["coresponsables"];
 
-                $solucion-> evento_id = $evento-> id;
+                $solucion-> evento_id =  0;
                 $solucion-> lider_mesa_solucion = $liderMesa;
                 $solucion-> sistematizador_solucion = $sistematizador;
                 $solucion-> provincia_id= $provincia-> id;
@@ -422,21 +419,26 @@ class SolucionesController extends Controller
                 
                 $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
                 if( $solucionAuxiliar != null){                        
-                    $error = "Fila ". $fila['numFila'].": La problem&aacute;tica :\"".$fila['problematica']."\" ya se encuentra registrada";
+                    $error = "Fila ". $fila['numFila'].": La problem&aacute;tica: \"".$fila['problematica']."\"  ya se encuentra registrada.";
                     array_push($errores, $error);   
                 }
 
             }else{
-                $error = "Se encontraron campos vacios en la Fila ". $fila['numFila'];
+                $error = "Fila ". $fila['numFila'].": Se encontraron campos vacios.";
                 array_push($errores, $error); 
             }       
         }//FIN del foreach
-
+        
         unset($soluciones[0]);
         unset($errores[0]);
+        if(count($errores) > 0){
+            File::delete( storage_path('app').'/storage/'.$nombreArchivo);
+        }
+
         $datos = Collection::make($soluciones);
         $errores = Collection::make($errores);
-        return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores]); 
+        return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento]); 
+        
     } 
 
 

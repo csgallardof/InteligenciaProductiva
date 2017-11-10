@@ -5,10 +5,10 @@
 			
 <div class="container">
     <div class="row">
-        <div class="col-md-12 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-1" style="margin-left: 0%;">
             <div class="panel panel-default">
 	            <div class="panel-heading">
-	            	Lista de Soluciones
+	            	<h3>Lista de Soluciones</h3>
 	            	<div class="panel-body">
 	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
                         	<div class="form-group">
@@ -36,7 +36,7 @@
 				                <th class="text-center">&Aacute;MBITO</th>
 				                <th class="text-center">RESPONSABLE DE EJECUCI&Oacute;N</th>
 				                <th class="text-center">CO-RESPONSABLES DE EJECUCIÓN</th>
-				                <th>Acci&oacute;n</th>
+				                <!--  <th>Acci&oacute;n</th>  -->
 
 				            </tr>
 				        </thead>
@@ -55,11 +55,13 @@
 								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
 								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
 
+								<!--
 				                <td>
-				                	<a href="{{ '/soluciones/'.$solucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  
-				                	<button type="button" onclick="borrarSolucion( {{ $solucion->id }} , {{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }});" class="btn btn-danger" data-toggle="modal" data-target="#ventanaBorrarSolucion">Borrar</button>
+				                	<a href="   '/soluciones/'.$solucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  
+				                	<button type="button" onclick="borrarSolucion(  $solucion->id }} , $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }});" class="btn btn-danger" data-toggle="modal" data-target="#ventanaBorrarSolucion">Borrar</button>
 				                	
 				                </td>
+				            	-->
 				            </tr>
 				            @endforeach		            
 				        </tbody>
