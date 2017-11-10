@@ -166,6 +166,336 @@
 							</div>
 					    </div>
 						<!-- FIN DE METODOLOGIA-->
+
+                        <!-- INDICES-->
+                        <div class="col-md-5">
+                        <hr> </hr>
+                            <h4 class="modal-title">Indicadores por pilar de competitividad</h4>
+                            <br>
+                            <div class="panel-group" id="accordion1">
+                                <div class="panel panel-inverse overflow-hidden">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion1" href="#collapseIuno">
+                                                <i class="fa fa-plus-circle pull-right"></i>
+                                                Desarrollo Integral de las personas
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapseIuno" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <h6>(6 Indicadores) Supone que a mayor educación, menor pobreza y menor mortalidad más competitividad</h6>
+                                            <ul>
+                                                <li class="text-justify">Años de escolaridad.</li>
+                                                <li class="text-justify">Pobreza</li>
+                                                <li class="text-justify">Tasa bruta de asistencia secundaria</li>
+                                                <li class="text-justify">Tasa bruta de asistencia superior</li>
+                                                <li class="text-justify">Tasa de mortalidad infantil</li>
+                                                <li class="text-justify">Tasa de Repitencia y Deserción Escolar</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-inverse overflow-hidden">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIdos">
+                                                <i class="fa fa-plus-circle pull-right"></i>
+                                                Desempeño Económico
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapseIdos" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                             <h6>( 9 indicadores) A mayor producción, mayor valor agregado, menor concentración y menor desigualdad; mayor competitividad </h6>
+                                            <ul>
+                                                <li class="text-justify">Coeficiente de Gini</li>
+                                                <li class="text-justify">Impuestos pagados</li>
+                                                <li class="text-justify">Índice de concentración</li>
+                                                <li class="text-justify">Producción</li>
+                                                <li class="text-justify">Producción Per Cápita (No petrolera)</li>
+                                                <li class="text-justify">Productividad Media del trabajo según</li>
+                                                <li class="text-justify">Producción Total</li>
+                                                <li class="text-justify">Productividad Media del trabajo según </li>
+                                                <li class="text-justify">Valor Agregado</li>
+                                                <li class="text-justify">Valor Agregado Per Cápita (No Petrolero)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-inverse overflow-hidden">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">
+                                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseItres">
+                                                <i class="fa fa-plus-circle pull-right"></i>
+                                                Empleo
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <div id="collapseItres" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                           (4 indicadores) A más empleo, y menor desempleo; mayor competitividad
+                                            <ul>
+                                                <li class="text-justify">Tasa de empleo rural</li>
+                                                <li class="text-justify">Tasa de empleo urbano</li>
+                                                <li class="text-justify">Tasa de subempleo rural</li>
+                                                <li class="text-justify">Tasa de subempleo urbano</li>
+                                                
+                                            </ul>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIcuatro">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Gestión Empresarial
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIcuatro" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (4 indicadores) A mayor cantidad de activos , empresas, industrias y Pymes; mayor competitividad provincial
+                                                <ul>
+                                                    <li class="text-justify">Activos empresariales</li>
+                                                    <li class="text-justify">Empresas registradas</li>
+                                                    <li class="text-justify">Industrias</li>
+                                                    <li class="text-justify">PYMES</li>
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+                               
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIcinco">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Infraestructura y Localización
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIcinco" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (4 indicadores) A mayor cobertura de telefonía, mayor cantidad de vías asfaltadas , menor distancia a puertos y aeropuertos; mayor competitividad
+                                                <ul>
+                                                    <li class="text-justify">Cobertura teléfono fijo</li>
+                                                    <li class="text-justify">Distancia a aeropuertos inter</li>
+                                                    <li class="text-justify">Distancia a puertos inter.</li>
+                                                    <li class="text-justify">Km vías asfaltadas</li>
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                          
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIseis">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Seguridad Jurídica
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIseis" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (4 Indicadores) A mayor capacidad de recursos físicos y de personal; y menor cantidad de delitos ; mayor competitividad.
+                                                <ul>
+                                                    <li class="text-justify">Delitos a personas y propiedad</li>
+                                                    <li class="text-justify">Efectividad detenciones</li>
+                                                    <li class="text-justify">Personal de justicia</li>
+                                                    <li class="text-justify">Unidades judiciales y servicios</li>
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                              
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIsiete">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Internacionalización y Apertura
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIsiete" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (4 Indicadores)A mayor capacidad exportadora e inversión mayor competitividad
+                                                <ul>
+                                                    <li class="text-justify">Empresas exportadoras</li>
+                                                    <li class="text-justify">Exportación (No petroleros) per cápita</li>
+                                                    <li class="text-justify">Exportaciones (No petroleros)</li>
+                                                    <li class="text-justify">Inversión Extranjera</li>
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIsiete">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Gestión, Gobiernos e Instituciones
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIsiete" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (5 Indicadores) A mayor gastos , capacidad de generar ingresos e inversión; y número de gobiernos mayor competitividad 
+                                                <ul>
+                                                    <li class="text-justify">Endeudamiento</li>
+                                                    <li class="text-justify">Gasto social</li>
+                                                    <li class="text-justify">Gobiernos Sub-nacionales</li>
+                                                    <li class="text-justify">Ingresos propios</li>
+                                                    <li class="text-justify">Inversión</li>
+
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIocho">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Mercados financieros
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIocho" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (9 Indicadores) A mayor cantidad de recursos colocados y desembolsados, menor nivel de morosidad y mayor cobertura con sucursales bancarias; mejor competitividad.
+                                                <ul>
+                                                    <li class="text-justify">Cartera a sistema financiero</li>
+                                                    <li class="text-justify">Cartera productiva en la provincia</li>
+                                                    <li class="text-justify">Cartera productiva per cápita</li>
+                                                    <li class="text-justify">Depósitos en sistema financiero</li>
+                                                    <li class="text-justify">Depósitos en sistema financiero para población</li>
+                                                    <li class="text-justify">Microcrédito en provincia</li>
+                                                    <li class="text-justify">Microcrédito para población</li>
+                                                    <li class="text-justify">Morosidad en provincia</li>
+                                                    <li class="text-justify">No. Sucursales bancarias</li> 
+
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseInueve">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Recursos Naturales y Ambiente
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseInueve" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (2 indicadores)A mayor cantidad de recursos naturales mayor competitividad 
+                                                <ul>
+                                                    <li class="text-justify">Bosques y páramos</li>
+                                                    <li class="text-justify">Superficie cultivada</li>
+                                                    
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseInueve">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Urbanización
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseInueve" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (6 indicadores) Mientras más urbanizada sea la provincia y mejor cobertura de servicios; mayor competitividad
+                                                <ul>
+                                                    <li class="text-justify">% Fuerza laboral</li>
+                                                    <li class="text-justify">% Población urbana</li>
+                                                    <li class="text-justify">Cobertura agua potable</li>
+                                                    <li class="text-justify">Cobertura electricidad</li>
+                                                    <li class="text-justify">Costo electricidad</li>
+                                                    <li class="text-justify">Densidad poblacional</li>
+                                                                                                        
+                                                    
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="panel panel-inverse overflow-hidden">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseIdiez">
+                                                    <i class="fa fa-plus-circle pull-right"></i>
+                                                    Habilitantes de Innovación, Ciencia y Tecnología
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapseIdiez" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                               (6 indicadores) Mientras más profesionales, cobertura de internet, telefonía celular y número de universidades y carreras universitarias, mayor competitividad
+                                                <ul>
+                                                    <li class="text-justify">Cobertura internet</li>
+                                                    <li class="text-justify">Cobertura teléfono celular</li>
+                                                    <li class="text-justify">Inversión de IyD de empresas</li>
+                                                    <li class="text-justify">Investigadores por provincia</li>
+                                                    <li class="text-justify">Personas con Postgrado</li>
+                                                    <li class="text-justify">Universidades e instit. Superiores</li>
+                                                    <li class="text-justify">Número de Carreras Universitarias</li>
+                                                                                                                                                            
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+                                </div>
+
+                                
+                        </div>
+                        <!-- FIN DE INDICES-->
+
 							<!-- end col-4 -->
 					</div>
 						<!-- end row -->
@@ -406,13 +736,6 @@
 
 @section('init_scripts')
 
-  <script>
-    $(document).ready(function() {
-      Dashboard.init();
 
-
-
-    });
-  </script>
 
 @endsection

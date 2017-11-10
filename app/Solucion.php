@@ -48,4 +48,9 @@ class Solucion extends Model
     	return $this->belongsTo('App\Vsector');
     }
 
+    public function sipoc(){
+
+        return $this->belongsTo('App\Sipoc');
+    }    
+
 }
