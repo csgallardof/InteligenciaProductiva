@@ -53,4 +53,9 @@ class Solucion extends Model
         return $this->belongsTo('App\Sipoc');
     }
 
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('problema_solucion','LIKE',"%$name%");
+    }
+    
 }

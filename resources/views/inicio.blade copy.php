@@ -3,8 +3,7 @@
 @section('title', 'Inicio')
 
 @section('start_css')
-  <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
-  <link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
+  <link href="{{ asset('plugins/bootstrap/css/bootstrap.min-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/style-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/style-responsive-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />

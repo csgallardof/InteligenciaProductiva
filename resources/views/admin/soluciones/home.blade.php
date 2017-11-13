@@ -9,17 +9,19 @@
             <div class="panel panel-default">
 	            <div class="panel-heading">
 	            	<h3>Lista de Soluciones</h3>
-	            	<div class="panel-body">
+	       			@include('flash::message')
+                	<div class="panel-body pull-right">
 	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
                         	<div class="form-group">
-								<input type="text" name="solucion" id="solucion" class="form-control" placeholder="Solucion">
+								<input type="text" name="problema_solucion" id="solucion" class="form-control" placeholder="Solucion">
 							</div>
 							<button type="submit" class="btn btn-sm btn-default">Buscar</button>
 						</form>
                     </div>
+                    <br><br><br><br>
 
 
-	            	<a href="{{ route('soluciones.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
+	            	<a href="{{ route('soluciones.create') }}" class="btn btn-info pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
 				</div>	            
 	            <div class="panel-body">
 				  	<table class="table table-hover">

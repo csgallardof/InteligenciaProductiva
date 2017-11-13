@@ -13,18 +13,20 @@ use DB;
 use Illuminate\Support\Collection as Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Input;
+use Laracasts\Flash\Flash;
 
 class SolucionesController extends Controller
 {
-	/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $soluciones = Solucion::paginate(3);
+
+        $soluciones = Solucion::search($request->problema_solucion)->orderBy('problema_solucion','DESC')->paginate(15);
         return view('admin.soluciones.home', compact('soluciones'));
     }
 
@@ -175,9 +177,6 @@ class SolucionesController extends Controller
                 && $fila["pcomplemento"] != "" && $fila["instrumentos"] != "" && $fila["clasificacionEmpresa"] != "" 
                 && $fila["ambito"] != "" && $fila["responsable"] != "" && $fila["coresponsables"] != ""){    //validamos que todos los campos de cada registro no se encuentren vacios
 
-                
-                $countOK++ ;
-                
                 $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
                 $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
                 $variableSectorial = DB::table('vsectors')->where('nombre_vsector', $fila["clasificacionEmpresa"] )->first();
@@ -218,15 +217,17 @@ class SolucionesController extends Controller
                 $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo    
                 
                 $solucion-> save(); 
-                array_push($arrayValProblemas, $fila["problematicaValidacion"]);   
+                array_push($arrayValProblemas, $fila["problematicaValidacion"]); 
+                $countOK++ ;  
                                     
             }else{
                 $countError++;
             }           
         }
-
+        //flash('Message')->success(): Set the flash theme to "success".
+        Flash::success("Se han registrado ".$countOK." soluciones correctamente.");
         return redirect('soluciones');
-        
+        //return redirect()->route('soluciones',[$countOK]);
     }
 
     /**
@@ -402,7 +403,7 @@ class SolucionesController extends Controller
                 $solucion-> lider_mesa_solucion = $liderMesa;
                 $solucion-> sistematizador_solucion = $sistematizador;
                 $solucion-> provincia_id= $provincia-> id;
-                $solucion-> sector_id= $sector-> id;   
+                //$solucion-> sector_id= $sector-> id;   
                 
                 //Hoja -- registros
                 $solucion-> coordinador_zonal_solucion= $coordinador;
