@@ -6,8 +6,9 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Evolución Según Área Geográfica (Miles De Personas).</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+           <h5 class="media-heading"><strong>Gráfico 1</strong><br> Evolución Según Área Geográfica (Miles De Personas).</h5>
+            <br>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
         </div>
         
 
@@ -18,8 +19,9 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Evolución Según Área Geográfica (Miles De Personas).</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 2:</strong><br>Estructura poblacional según rangos de edad, año 2016. (Miles de Personas)</h5> 
+            <br>
+            <strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.
         </div>
     </li>
     <li class="media media-lg">
@@ -28,8 +30,9 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Evolución Según Sexo (Miles De Personas).</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+           <h5 class="media-heading"><strong>Gráfico 3</strong><br>Evolución Según Sexo (Miles De Personas).</h5>
+            <br>
+            <small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small>
         </div>
     </li>
     <li class="media media-lg">
@@ -38,8 +41,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Tasa de empleo.</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU.</small></h6>
+           <h5 class="media-heading"><strong>Gráfico 4</strong>Evolución del empleo. (Tasas).</h5>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU</h7>
         </div>
     </li>
     <li class="media media-lg">
