@@ -13,7 +13,7 @@
                 	<div class="panel-body pull-right">
 	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
                         	<div class="form-group">
-								<input type="text" name="problema_solucion" id="solucion" class="form-control" placeholder="Solucion">
+								<input type="text" name="problema_solucion" id="solucion" class="form-control" placeholder="Problema">
 							</div>
 							<button type="submit" class="btn btn-sm btn-default">Buscar</button>
 						</form>
