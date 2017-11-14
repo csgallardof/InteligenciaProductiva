@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -26,4 +27,34 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roles(){
+
+        return $this->belongsToMany(role::class); 
+    
+    }
+
+
+    public function evento() {
+
+        return $this->belongsToMany('App\Evento', 'user_evento_solucion', 'user_id','evento_id');
+    }
+
+
+    public function solucions() {
+         return $this->belongsToMany('App\Solucion', 'user_evento_solucion','user_id','solucion_id');
+    }
+
+
+      public function sector(){
+
+        return $this->belongsTo('App\Sector');
+    }
+
+     public function vsector(){
+
+        return $this->belongsTo('App\Vsector');
+    }
+
+    
 }

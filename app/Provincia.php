@@ -16,5 +16,10 @@ class Provincia extends Model
     }
 
 
+    public function evento(){
+    	return $this->hasMany('App\Evento');
+    }
+
+
 
 }

@@ -6,7 +6,12 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 1</strong><br> Evolución Según Área Geográfica (Miles De Personas).</h5>
+            <br>
+=======
             <h5 class="media-heading"><strong>Gráfico 1:</strong><br> Evolución de población según área geográfica (Miles de Personas)</h5>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
         </div>
         
@@ -18,8 +23,15 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+           <h5 class="media-heading"><strong>Gráfico 2:</strong><br>Estructura poblacional según rangos de edad, año 2016. (Miles de Personas)</h5> 
+            <br>
+            <strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.
+        </div>
+=======
             <h5 class="media-heading"><strong>Gráfico 2:</strong><br> Estructura poblacional según rangos de edad, año 2016. (Miles de Personas).</h7>
         </div>  
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
@@ -27,8 +39,14 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 3</strong><br>Evolución Según Sexo (Miles De Personas).</h5>
+            <br>
+            <small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small>
+=======
             <h5 class="media-heading"><strong>Gráfico 3:</strong><br>Evolución de la población según sexo. (Miles de Personas).</h5>
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
@@ -37,8 +55,13 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 4</strong>Evolución del empleo. (Tasas).</h5>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU</h7>
+=======
             <h5 class="media-heading"><strong>Gráfico 4:</strong><br>Evolución del empleo. (Tasas)</h5>
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">

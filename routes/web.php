@@ -73,8 +73,18 @@ Route::post('/soluciones/vistaPreviaMesas',['uses'=>'SolucionesController@vistaP
 
 Route::get('/contratos-de-inversion', 'PaginasController@contratosinversion');
 
+<<<<<<< HEAD
 Route::post('/participantes/vistaPreviaRegistro',['uses'=>'ParticipantesController@vistaPreviaRegistro','as'=>'participantes.vistaPreviaRegistro']);  //J. Arcos -- vista Previa Matriz Registro Participante
 
 Route::resource('participantes','ParticipantesController');  //J. Arcos -- rutas para UsersController
 
 
+=======
+
+
+// rutas pruebas usuarios
+
+Route::get('/usuarios','PaginasController@usuarios');
+
+Route::get('/EventosParticipantes','PaginasController@participantes');
+>>>>>>> ed9e9f58b77d12737771b27bc9ee34934aeabec8
