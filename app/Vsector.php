@@ -12,4 +12,10 @@ class Vsector extends Model
     	return $this->hasMany('App\Solucion');
     }
 
+
+    public function user(){
+
+    	return $this->hasMany('App\User');
+    }
+
 }

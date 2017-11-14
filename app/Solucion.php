@@ -53,4 +53,15 @@ class Solucion extends Model
         return $this->belongsTo('App\Sipoc');
     }
 
+
+    public function eventos() {
+        return $this->belongsToMany('Evento', 'user_evento_solucion','solucion_id','evento_id');
+    }
+
+
+    public function usuarios() {
+        return $this->belongsToMany('User', 'user_evento_solucion','solucion_id','user_id');
+    }
+
+
 }

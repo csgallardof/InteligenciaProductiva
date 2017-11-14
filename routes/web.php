@@ -73,3 +73,10 @@ Route::post('/soluciones/vistaPreviaMesas',['uses'=>'SolucionesController@vistaP
 
 Route::get('/contratos-de-inversion', 'PaginasController@contratosinversion');
 
+
+
+// rutas pruebas usuarios
+
+Route::get('/usuarios','PaginasController@usuarios');
+
+Route::get('/EventosParticipantes','PaginasController@participantes');
