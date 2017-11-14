@@ -17,14 +17,14 @@
 
 @endsection
 
-@section('edit_titulo')Registrar @endsection
+@section('edit_titulo')Registro de participantes @endsection
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">@yield('edit_titulo') Problem&aacute;ticas y Soluciones <a href="{{ route('soluciones.index') }}" class="btn btn-primary pull-right">Regresar</a>
+                <div class="panel-heading">@yield('edit_titulo') Registro de participantes <a href="{{ route('participantes.index') }}" class="btn btn-primary pull-right">Regresar</a>
                 </div>
 
                 <div class="panel panel-inverse">
@@ -32,10 +32,10 @@
                         <blockquote class="f-s-14">
                             <ol>
                                 <li>A&ntilde;ada la matriz.</li>
-                                <li>Haga click en vista previa para visualizar errores o subir las soluciones.</li>
+                                <li>Haga click en vista previa para visualizar errores o subir los participantes.</li>
                             </ol>
                         </blockquote>
-                        <form id="fileupload" action="{{ url('soluciones/vistaPreviaMesas') }}" method="POST" files="true" enctype="multipart/form-data">
+                        <form id="fileupload" action="{{ url('participantes/vistaPreviaRegistro') }}" method="POST" files="true" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row fileupload-buttonbar">
                                 <div class="col-md-8 col-md-offset-4">

@@ -55,7 +55,50 @@ class Solucion extends Model
 
     public function scopeSearch($query, $name)
     {
-        return $query->where('problema_solucion','LIKE',"%$name%");
+        $query->where('problema_solucion','LIKE',"%$name%")
+                    ->orwhere('verbo_solucion','LIKE',"%$name%")
+                    ->orwhere('sujeto_solucion','LIKE',"%$name%")
+                    ->orwhere('complemento_solucion','LIKE',"%$name%")
+                    ->orwhere('responsable_solucion','LIKE',"%$name%")
+                    ->orwhere('corresponsable_solucion','LIKE',"%$name%");
+        
+        $provincias = Provincia::where('nombre_provincia','LIKE',"%$name%")->get();
+        if(count($provincias) > 0){
+            foreach ($provincias as $provincia) {
+                $query->orwhere('provincia_id', '=',"$provincia->id" );
+            }
+        }
+
+        $instrumentos= Instrumento::where('nombre_instrumento','LIKE',"%$name%")->get();
+        if(count($instrumentos) > 0){
+            foreach ($instrumentos as $instrumento) {
+                $query->orwhere('instrumento_id', '=',"$instrumento->id" );
+            }
+        }   
+
+        $sipocs= Sipoc::where('nombre_sipoc','LIKE',"%$name%")->get();
+        if(count($sipocs) > 0){
+            foreach ($sipocs as $sipoc) {
+                $query->orwhere('sipoc_id', '=',"$sipoc->id" );
+            }
+        } 
+
+        $eventos= Evento::where('nombre_evento','LIKE',"%$name%")->get();
+        if(count($eventos) > 0){
+            foreach ($eventos as $evento) {
+                $query->orwhere('evento_id', '=',"$evento->id" );
+            }
+        } 
+
+        $ambitos= Ambit::where('nombre_ambit','LIKE',"%$name%")->get();
+        if(count($ambitos) > 0){
+            foreach ($ambitos as $ambito) {
+                $query->orwhere('ambit_id', '=',"$ambito->id" );
+            }
+        }           
+        
+        return $query;
+        
     }
     
 }

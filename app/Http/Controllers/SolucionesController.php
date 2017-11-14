@@ -26,9 +26,8 @@ class SolucionesController extends Controller
     {
         //
 
-        $soluciones = Solucion::search($request->problema_solucion)->orderBy('problema_solucion','DESC')->paginate(15);
-        return view('admin.soluciones.home', compact('soluciones'));
-    }
+        $soluciones = Solucion::search($request->parametro)->where('tipo_fuente','=','1')->orderBy('id','DESC')->paginate(15);
+        return view('admin.soluciones.home')->with(["soluciones"=>$soluciones, "parametro"=>$request->parametro]);    }
 
     /**
      * Show the form for creating a new resource.
@@ -307,8 +306,6 @@ class SolucionesController extends Controller
         $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
         $objWorksheet = $objPHPExcel->getActiveSheet();  //
         
-        //$nombreEvento= $objWorksheet->getCell("B1");    //obtenemos el nombre del evento
-        
         $coordinador= $objWorksheet->getCell("B2")->getValue();     //obtenemos el coordinador    
 
         $objPHPExcel->setActiveSheetIndex(1);   //indicamos que vamos a trabajar en la hoja 0 que es la de mesas
@@ -316,6 +313,10 @@ class SolucionesController extends Controller
 
         $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
+        if( $provincia == null){
+            $error = "Ingrese una provincia v&aacute;lida";
+            array_push($errores, $error); 
+        }
         
         $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
         $nombreEventoAuxiliar= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento], /*['provincia_id', '=', $provincia->id]*/ ])->first();
@@ -358,15 +359,14 @@ class SolucionesController extends Controller
         }
 
         
-        $soluciones[] = array();  
-        $countOK = 0;
+        $soluciones[] = array(); 
+        $arrayProblemas[] = array(); 
         $arrayValProblemas[] = array(); 
 
 
         foreach ($informacion2 as $fila) {   //recorremos todos los registros recogidos
-            if( $fila["eslabonCP"] != "" && $fila["problematica"] != "" && $fila["pverbo"] != "" && $fila["psujeto"] != "" 
-                && $fila["pcomplemento"] != "" && $fila["instrumentos"] != "" && $fila["clasificacionEmpresa"] != "" 
-                && $fila["ambito"] != "" && $fila["responsable"] != "" && $fila["coresponsables"] != ""){    //validamos que todos los campos de cada registro no se encuentren vacios
+            if( $fila["eslabonCP"] != "" && $fila["problematica"] != "" && $fila["pverbo"] != "" && $fila["psujeto"] != "" && $fila["pcomplemento"] != "" && $fila["instrumentos"] != "" && $fila["clasificacionEmpresa"] != "" && $fila["ambito"] != "" && $fila["responsable"] != "" && $fila["coresponsables"] != "") 
+            {    //validamos que todos los campos de cada registro no se encuentren vacios
                 
                 $solucion = new Solucion;
                 $solucion-> problema_solucion= $fila["problematica"];
@@ -379,17 +379,6 @@ class SolucionesController extends Controller
                 
                 
                 $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva
-                $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
-                if (!in_array($fila["problematicaValidacion"], $arrayValProblemas)) {
-                    $solucion-> problema_solucion= $fila["problematica"];
-                }
-                else{
-                    //$solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
-                    //$solucion-> problema_solucion= $solucionAuxiliar-> problema_solucion;
-
-                    $solucion-> problema_solucion= $fila["problematica"];
-
-                }                                             
                 $solucion-> verbo_solucion = $fila["pverbo"];
                 $solucion-> sujeto_solucion = $fila["psujeto"];
                 $solucion-> complemento_solucion = $fila["pcomplemento"];
@@ -411,13 +400,20 @@ class SolucionesController extends Controller
                 //quemados
                 $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
                 $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
-                $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo    
-                
+                $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
+
+                $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
+                if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {
+                    $solucion-> problema_solucion= $fila["problematica"];
+                    array_push($arrayProblemas, $fila["problematica"] );
+                    array_push($arrayValProblemas, $fila["problematicaValidacion"] );
+                }
+                else{
+                    $posicion = array_search($fila["problematicaValidacion"], $arrayValProblemas);
+                    $solucion-> problema_solucion= $arrayProblemas[$posicion];
+                }   
                 //$solucion-> save();
                 array_push($soluciones, $solucion); 
-                array_push($arrayValProblemas, $fila["problematicaValidacion"]);  
-
-                
                 $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
                 if( $solucionAuxiliar != null){                        
                     $error = "Fila ". $fila['numFila'].": La problem&aacute;tica: \"".$fila['problematica']."\"  ya se encuentra registrada.";
@@ -427,17 +423,21 @@ class SolucionesController extends Controller
             }else{
                 $error = "Fila ". $fila['numFila'].": Se encontraron campos vacios.";
                 array_push($errores, $error); 
-            }       
+            }      
         }//FIN del foreach
         
         unset($soluciones[0]);
         unset($errores[0]);
         if(count($errores) > 0){
             File::delete( storage_path('app').'/storage/'.$nombreArchivo);
+            Flash::error("Se han encontrado ". count($errores)." errores detallados a continuaci&oacute;n:");
+        }else{
+            Flash::info("Se han encontrado ". count($informacion2)." soluciones. Haga click en \"Cargar Datos \" para confirmar.");
         }
 
         $datos = Collection::make($soluciones);
         $errores = Collection::make($errores);
+
         return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento]); 
         
     } 
