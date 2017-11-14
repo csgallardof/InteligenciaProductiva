@@ -53,6 +53,7 @@ class Solucion extends Model
         return $this->belongsTo('App\Sipoc');
     }
 
+<<<<<<< HEAD
 
     public function eventos() {
         return $this->belongsToMany('Evento', 'user_evento_solucion','solucion_id','evento_id');
@@ -64,4 +65,11 @@ class Solucion extends Model
     }
 
 
+=======
+    public function scopeSearch($query, $name)
+    {
+        return $query->where('problema_solucion','LIKE',"%$name%");
+    }
+    
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 }

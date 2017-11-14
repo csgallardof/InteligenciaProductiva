@@ -6,8 +6,12 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
             <h5 class="media-heading"><strong>Gráfico 1</strong><br> Evolución Según Área Geográfica (Miles De Personas).</h5>
             <br>
+=======
+            <h5 class="media-heading"><strong>Gráfico 1:</strong><br> Evolución de población según área geográfica (Miles de Personas)</h5>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
         </div>
         
@@ -19,9 +23,13 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
             <h5 class="media-heading"><strong>Gráfico 2:</strong><br>Estructura poblacional según rangos de edad, año 2016. (Miles de Personas)</h5> 
             <br>
             <strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.
+=======
+            <h5 class="media-heading"><strong>Gráfico 2:</strong><br> Estructura poblacional según rangos de edad, año 2016. (Miles de Personas).</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
@@ -30,9 +38,14 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
             <h5 class="media-heading"><strong>Gráfico 3</strong><br>Evolución Según Sexo (Miles De Personas).</h5>
             <br>
             <small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small>
+=======
+            <h5 class="media-heading"><strong>Gráfico 3:</strong><br>Evolución de la población según sexo. (Miles de Personas).</h5>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
@@ -41,8 +54,13 @@
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
             <h5 class="media-heading"><strong>Gráfico 4</strong>Evolución del empleo. (Tasas).</h5>
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU</h7>
+=======
+            <h5 class="media-heading"><strong>Gráfico 4:</strong><br>Evolución del empleo. (Tasas)</h5>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
@@ -51,8 +69,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Tasa de Desempleo.</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 5:</strong><br><strong>Gráfico 5:</strong><br>Evolución del subempleo. (Tasas)</h5>
+            <h7><strong>Fuente:</strong>Instituto Nacional de Estadística y Censos-ENEMDU</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -61,8 +79,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Tasa de Subempleo.</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 6:</strong><br>Evolución del subempleo. (Tasas)</h5>
+            <h7><strong>Fuente:</strong>Instituto Nacional de Estadística y Censos-ENEMDU</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -71,8 +89,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">VAB provincial (millones de USD) .</h5>
-            <h6><small><strong>Fuente:</strong>Banco Central del Ecuador - Cuentas regionales y provinciales.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 7:</strong><br>Evolución del VAB Provincial. (Millones de USD) </h5>
+            <h7><strong>Fuente:</strong>Banco Central del Ecuador - Cuentas regionales y provinciales.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -81,8 +99,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">VAB provincial según actividad económica (participación).</h5>
-            <h6><small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 8:</strong><br>Evolución del VAB Provincial según actividad económica. (Participación)</h5>
+			<h7><strong>Fuente:</strong>Banco Central del Ecuador - Cuentas regionales y provinciales.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -91,8 +109,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Ventas totales de la provincia (millones de USD).</h5>
-            <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 8:</strong><br>Evolución del VAB Provincial según actividad económica. (Participación)</h5>
+			<h7><strong>Fuente:</strong>Banco Central del Ecuador - Cuentas regionales y provinciales.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -101,8 +119,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Participación de las ventas en la provincia por subsector.</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 10:</strong><br>Evolución de ventas por subsector. (Participación)</h5>
+            <h7><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -111,8 +129,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Recaudación de la provincia según tipo de impuestos (millones USD).</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Boletín de recaudación.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 11:</strong><br>Evolución de recaudación de impuestos por tipo. (Millones de USD)</h5>
+            <h7><strong>Fuente:</strong> Servicio de Rentas Internas - Boletín de recaudación.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -121,8 +139,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Establecimientos Económicos.</h5>
-            <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 12:</strong><br>Evolución de establecimientos económicos</h5>
+            <h7><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -131,8 +149,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Número de establecimientos Provinciales según actividad económica (participación).</h5>
-            <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 13:</strong><br>Evolución de establecimientos económicos según rama de actividad. (Participación)</h5>
+            <h7><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -141,8 +159,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Establecimientos Mipymes.</h5>
-            <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 14:</strong><br>Evolución de establecimientos económicos de Mipymes.</h5>
+            <h7><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -151,8 +169,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Ventas de Mipymes (millones de USD).</h5>
-            <h6><small><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 15:</strong><br>Evolución de ventas de Mipymes. (Millones de USD)</h5>
+            <h7><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -161,8 +179,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Exportaciones (millones de USD).</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 16:</strong><br>Evolución de exportaciones (Millones de USD)</h5>
+            <h7><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
     <li class="media media-lg">
@@ -171,8 +189,8 @@
         </a>
         
         <div class="media-body">
-            <h5 class="media-heading">Exportaciones de la provincia según la actividad económica (participación).</h5>
-            <h6><small><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</small></h6>
+            <h5 class="media-heading"><strong>Gráfico 17:</strong><br>Evolución de exportaciones según actividad económica. (Participación)</h5>
+            <h7><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</h7>
         </div>
     </li>
 </ul>

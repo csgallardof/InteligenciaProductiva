@@ -30,50 +30,36 @@
                 <div class="panel panel-inverse">
                     <div class="panel-body">            
                         <blockquote class="f-s-14">
-                            <p>File Upload widget with multiple file selection, drag&amp;drop support, progress bars, validation and preview images, audio and video for jQuery.<br>
-                            Supports cross-domain, chunked and resumable file uploads and client-side image resizing.<br>
-                            Works with any server-side platform (PHP, Python, Ruby on Rails, Java, Node.js, Go etc.) that supports standard HTML form file uploads.</p>
+                            <ol>
+                                <li>A&ntilde;ada la matriz.</li>
+                                <li>Haga click en vista previa para ver errores o subir las soluciones.</li>
+                            </ol>
                         </blockquote>
                         <form id="fileupload" action="{{ url('soluciones/vistaPreviaMesas') }}" method="POST" files="true" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row fileupload-buttonbar">
-                                <div class="col-md-7">
+                                <div class="col-md-8 col-md-offset-4">
                                     <span class="btn btn-success fileinput-button">
                                         <i class="fa fa-plus"></i>
                                         <span>Agregar</span>
                                         <input type="file" name="archivo" multiple="">
                                     </span>
-                                    <button type="reset" class="btn btn-warning cancel">
-                                        <i class="fa fa-minus"></i>
-                                        <span>Vaciar</span>
-                                    </button>
+                                
                                     <button type="submit" class="btn btn-primary start">
-                                        <i class="fa fa-upload"></i>
-                                        <span>Subir</span>
+                                        <i class="fa fa-list-alt"></i>
+                                        <span>Vista Previa</span>
                                     </button>
-                                    
-                                    <!-- The global file processing state -->
-                                    <span class="fileupload-process"></span>
                                 </div>
-                                <!-- The global progress state -->
-                                <div class="col-md-5 fileupload-progress fade">
-                                    <!-- The global progress bar -->
-                                    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                                    </div>
-                                    <!-- The extended global progress state -->
-                                    <div class="progress-extended">&nbsp;</div>
-                                </div>
+                                
                             </div>
-                            <!-- The table listing the files available for upload/download -->
-                            <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
+                            
                         </form>
+                  
+
                         <div class="note note-info">
                             <h4>Notas</h4>
                             <ul>
-                                <li>The maximum file size for uploads in this demo is <strong>5 MB</strong> (default file size is unlimited).</li>
-                                <li>Only image files (<strong>JPG, GIF, PNG</strong>) are allowed in this demo (by default there is no file type restriction).</li>
-                                <li>Uploaded files will be deleted automatically after <strong>5 minutes</strong> (demo setting).</li>
+                                <li>Solo se permiten archivos con formato de la matriz en con extensi&oacute;n <strong>.xlsx</strong>.</li>
                             </ul>
                         </div>
                     </div>
@@ -111,6 +97,7 @@
             </tr>
         {% } %}
     </script>
+    -->
     
     <!-- The template to display files available for download -->
     <!--

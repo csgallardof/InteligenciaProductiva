@@ -5,21 +5,23 @@
 			
 <div class="container">
     <div class="row">
-        <div class="col-md-12 col-md-offset-1">
+        <div class="col-md-12 col-md-offset-1" style="margin-left: 0%;">
             <div class="panel panel-default">
 	            <div class="panel-heading">
-	            	Lista de Soluciones
-	            	<div class="panel-body">
+	            	<h3>Lista de Soluciones</h3>
+	       			@include('flash::message')
+                	<div class="panel-body pull-right">
 	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
                         	<div class="form-group">
-								<input type="text" name="solucion" id="solucion" class="form-control" placeholder="Solucion">
+								<input type="text" name="problema_solucion" id="solucion" class="form-control" placeholder="Problema">
 							</div>
 							<button type="submit" class="btn btn-sm btn-default">Buscar</button>
 						</form>
                     </div>
+                    <br><br><br><br>
 
 
-	            	<a href="{{ route('soluciones.create') }}" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
+	            	<a href="{{ route('soluciones.create') }}" class="btn btn-info pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
 				</div>	            
 	            <div class="panel-body">
 				  	<table class="table table-hover">
@@ -36,7 +38,7 @@
 				                <th class="text-center">&Aacute;MBITO</th>
 				                <th class="text-center">RESPONSABLE DE EJECUCI&Oacute;N</th>
 				                <th class="text-center">CO-RESPONSABLES DE EJECUCIÓN</th>
-				                <th>Acci&oacute;n</th>
+				                <!--  <th>Acci&oacute;n</th>  -->
 
 				            </tr>
 				        </thead>
@@ -55,11 +57,13 @@
 								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
 								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
 
+								<!--
 				                <td>
-				                	<a href="{{ '/soluciones/'.$solucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  
-				                	<button type="button" onclick="borrarSolucion( {{ $solucion->id }} , {{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }});" class="btn btn-danger" data-toggle="modal" data-target="#ventanaBorrarSolucion">Borrar</button>
+				                	<a href="   '/soluciones/'.$solucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  
+				                	<button type="button" onclick="borrarSolucion(  $solucion->id }} , $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }});" class="btn btn-danger" data-toggle="modal" data-target="#ventanaBorrarSolucion">Borrar</button>
 				                	
 				                </td>
+				            	-->
 				            </tr>
 				            @endforeach		            
 				        </tbody>
