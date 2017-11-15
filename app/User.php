@@ -41,11 +41,6 @@ class User extends Authenticatable
     }
 
 
-    public function solucions() {
-         return $this->belongsToMany('App\Solucion', 'user_evento_solucion','user_id','solucion_id');
-    }
-
-
       public function sector(){
 
         return $this->belongsTo('App\Sector');
@@ -54,6 +49,12 @@ class User extends Authenticatable
      public function vsector(){
 
         return $this->belongsTo('App\Vsector');
+    }
+
+    public function soluciones(){
+
+        return $this->belongsToMany(solucion::class); 
+    
     }
 
     

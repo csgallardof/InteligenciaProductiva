@@ -11,65 +11,60 @@
 	            
 
 	            <div class="panel-heading">
+	            	<h3>Detalle de n&oacute;mina de participantes.</h3>
 	            	@include('flash::message')
-				</div>
 				
-				@if (count($errores) === 0)
-					
-					<form action="{{ url('soluciones') }}" method="POST" id="formSubida">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="hidden" name="nombreArchivo" value="{{ $nombreArchivo }}">
-					</form>	
-					<button type="submit" form="formSubida" value="Subir" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Cargar datos</button>
-				@else
-					<div class="panel-heading">
+					@if (count($errores) === 0)
+						<form action="{{ url('participantes') }}" method="POST" id="formSubida">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<input type="hidden" name="nombreArchivo" value="{{ $nombreArchivo }}">
+						</form>	
+						<button type="submit" form="formSubida" value="Subir" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Cargar datos</button>
+					@else
+						<b>Hoja:</b> <u>Registro</u> <br>
 						<ul>
 							@foreach($errores as $error)
 								<li>{{ $error  }}</li>
 					        @endforeach
 				        </ul>
-					</div>	
-			        <a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right">Regresar</a>
-		        @endif		
+						<a href="{{ route('participantes.create') }}" class="btn btn-primary pull-right">Regresar</a>
+			        @endif
+
+		        </div>	
 					
 				
 				<div class="panel-heading">
 	            	<h4>{{ $nombreEvento }}</h4>
-	            	<b>Vista Previa </b>
+	            	<b>Vista Previa  </b> (Participantes v&aacute;lidos)
 				</div>
 					            
 	            <div class="panel-body">
 				  	<table class="table table-hover">
 				        <thead>
 				            <tr>
-				                <th># FILA</th>
-				                <th class="text-center">EVENTO</th>
-				                <th class="text-center">PROVINCIA</th>
-				                <th class="text-center">ESLAB&Oacute;N DE LA CADENA PRODUCTIVA</th>
-				                <th class="text-center">PROBLEM&Aacute;TICA</th>
-				                <th class="text-center">SOLUCI&Oacute;N</th>
-				                <th class="text-center">INSTRUMENTOS NECESARIOS</th>
-				                <th class="text-center">CLASIFICACI&Oacute;N EMPRESA RELACIONADA</th>
-				                <th class="text-center">&Aacute;MBITO</th>
-				                <th class="text-center">RESPONSABLE DE EJECUCI&Oacute;N</th>
-				                <th class="text-center">CO-RESPONSABLES DE EJECUCIÓN</th>
+				                <th class="text-center">NOMBRE EVENTO</th>
+				                <th class="text-center">NOMBRES</th>
+				                <th class="text-center">APELLIDOS</th>
+				                <th class="text-center">C&Eacute;DULA</th>
+				                <th class="text-center">MAIL</th>
+				                <th class="text-center">CELULAR</th>
+				                <th class="text-center">TELEFONO Y EXT</th>
+				                <th class="text-center">GRUPO EN EL QUE PARTICIPAR&Aacute;</th>
+				                <th class="text-center">TIPO PARTICIPANTE</th>
 				            </tr>
 				        </thead>
 				        <tbody>
-				        	<?php $c=9 ?>
-				        	@foreach($datos as $solucion)
+				        	@foreach($datos as $user)
 							<tr>
-								<td class="text-center">{{ $c++ }}</td>
-				                <td class="text-center">{{ $nombreEvento}}</td>
-				                <td class="text-center">{{ $solucion->provincia->nombre_provincia}}</td>
-				                <td class="text-center">{{ $solucion->sipoc->nombre_sipoc }}</td>
-				                <td class="text-center">{{ $solucion->problema_solucion }}</td>
-				                <td class="text-center">{{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }}</td>
-				                <td class="text-center">{{ $solucion->instrumento->nombre_instrumento }}</td>
-								<td class="text-center">{{ $solucion->vsector->nombre_vsector }}</td>
-								<td class="text-center">{{ $solucion->ambit->nombre_ambit }}</td>
-								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
-								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
+								<td class="text-center">{{ $nombreEvento}}</td>
+				                <td class="text-center">{{ $user->name}}</td>
+				                <td class="text-center">{{ $user->apellidos }}</td>
+				                <td class="text-center">{{ $user->cedula }}</td>
+				                <td class="text-center">{{ $user->email }}</td>
+				                <td class="text-center">{{ $user->celular }}</td>
+								<td class="text-center">{{ $user->telefono }}</td>
+								<td class="text-center">{{ $user->sector->nombre_sector }}</td>
+								<td class="text-center">{{ $user->vsector->nombre_vsector }}</td>
 
 				            </tr>
 				            @endforeach		            

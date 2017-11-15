@@ -7,6 +7,11 @@ use PHPExcel;
 use PHPExcel_IOFactory; 
 use PHPExcel_Shared_Date;
 use DB;
+use File;
+use App\User;
+use Illuminate\Support\Collection as Collection;
+use Laracasts\Flash\Flash;
+
 
 class ParticipantesController extends Controller
 {
@@ -18,7 +23,15 @@ class ParticipantesController extends Controller
    
     public function index(Request $request)
     {
-		echo "Proximamente index de registro de participantes";   
+   	    $rol = DB::table('roles')->where('nombre_role', "Participante")->first();  //Obtener id rol de participante
+    	
+        $participantes = User::where('tipo_fuente','=','1')                        //filtro para tener a todos los usuarios con tipo fuento = 1 y con rol participante
+                                ->whereHas('roles', function ($q) use ($rol) {
+                                    $q->where('roles.id', $rol-> id);
+                                })
+        ->orderBy('apellidos','ASC')->paginate(20);
+        
+        return view('admin.participantes.home')->with(["participantes"=>$participantes, "parametro"=>$request->parametro]); 
     }
    
     /**
@@ -37,9 +50,109 @@ class ParticipantesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UsuarioRequest $request)
+    public function store(Request $request)
     {
+        /*
+         *
+         * Cargamos el  Archivo Excel para trabajarlo 
+         *
+        */ 
+        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$request-> nombreArchivo ); 
+        
+        
+        /*
+         *
+         * Hoja REGISTRO
+         *
+        */
+        
+        $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
+        $objWorksheet = $objPHPExcel->getActiveSheet();  //
 
+        $provincia= $objWorksheet->getCell("B4")->getValue();   //obtenemos el nombre de la provincia
+        $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
+        
+        $evento= $objWorksheet->getCell("B1")."-".$provincia->nombre_provincia;    //obtenemos el nombre del evento        
+        $evento = DB::table('eventos')->where('nombre_evento',$evento)->first();
+        $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
+        
+        $InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
+        $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
+        $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
+        
+        $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
+        
+        for ($i = 7; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
+            
+            $informacion[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
+                'numFila' => $i,
+                'nombre' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
+                'apellidos' => $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue(),
+                'cedula' => $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue(),
+                'email' => $objPHPExcel->getActiveSheet()->getCell('D'.$i)->getCalculatedValue(),
+                'celular' => $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue(),
+                'telefonoExtension' => $objPHPExcel->getActiveSheet()->getCell('F'.$i)->getCalculatedValue(),
+                'grupo' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
+                'tipo' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
+            );
+        }
+
+        $countError = $countOK = 0;
+            
+        foreach ($informacion as $registro) {   //recorremos todos los registros recogidos
+            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != "" 
+                && $registro["celular"] != "" && $registro["telefonoExtension"] != "" 
+                && $registro["grupo"] != "" && $registro["tipo"] != "")
+            {    //validamos que todos los campos de cada registro no se encuentren vacios
+                $userAux = DB::table('users')->where('cedula', $registro['cedula'])->first();
+                if( is_null($userAux) ) {
+                
+                    $user = new user;
+
+                    $sector = DB::table('sectors')->where('nombre_sector', $registro['grupo'])->first();
+                    if($sector == null ){
+                        $error = "Fila ".$registro['numFila'].": Ingrese un grupo v&aacute;lido";
+                        array_push($errores, $error); 
+                    }
+
+                    $vsector = DB::table('vsectors')->where('nombre_vsector', $registro['tipo'])->first();
+                    if($vsector == null ){
+                        $error = "Fila ".$registro['numFila'].": Ingrese un tipo de participante v&aacute;lido";
+                        array_push($errores, $error); 
+                    }
+                    
+                    $user-> name  = $registro["nombre"];   // Id Eslabón de la cadena Productiva
+                    $user-> apellidos = $registro["apellidos"];
+                    $user-> cedula = $registro["cedula"];
+                    $user-> password = $registro["cedula"];
+                    $user-> email = $registro["email"];
+
+                    $user-> telefono = $registro['telefonoExtension'];
+                    $user-> celular = $registro['celular'];
+                    
+                    $user-> sector_id = $sector-> id;
+                    $user-> vsector_id =  $vsector-> id;
+
+                    $user-> tipo_fuente= 1;     // 1 = despliegue territorial
+
+                    $user-> save(); 
+                    $rol = DB::table('roles')->where('nombre_role', "Participante")->first();
+
+                    $user->roles()-> attach($rol-> id);
+                    $user->evento()-> attach($evento-> id);
+
+                    
+                    $countOK++ ;    
+                    
+                }    
+
+            }else{
+                $countError++;
+            }      
+        }//FIN del foreach
+        
+        Flash::success("Se registraron ".$countOK." participantes nuevos.");
+        return redirect('participantes');
     }	
     
     /**
@@ -134,22 +247,6 @@ class ParticipantesController extends Controller
         
         for ($i = 7; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
             
-            /*
-            $sector = $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
-            $sector = DB::table('sectors')->where('nombre_sector', $sector)->first();
-            if($sector == null ){
-            	$error = "Fila ".$i.": Ingrese un grupo v&aacute;lido";
-            	array_push($errores, $error); 
-            }
-
-            $vsector = $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue()->getValue();
-            $vsector = DB::table('vsectors')->where('nombre_vsector', $vsector)->first();
-            if($vsector == null ){
-            	$error = "Fila ".$i.": Ingrese un tipo de participante v&aacute;lido";
-            	array_push($errores, $error); 
-            }
-            */
-            
             $informacion[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
                 'numFila' => $i,
                 'nombre' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
@@ -162,84 +259,75 @@ class ParticipantesController extends Controller
                 'tipo' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
             );
         }
+
+        $users[] = array(); 
+        $countUserExists = 0; 
+        $arrayValProblemas[] = array(); 
             
         foreach ($informacion as $registro) {   //recorremos todos los registros recogidos
             if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != "" 
                 && $registro["celular"] != "" && $registro["telefonoExtension"] != "" 
                 && $registro["grupo"] != "" && $registro["tipo"] != "")
             {    //validamos que todos los campos de cada registro no se encuentren vacios
+                $userAux = DB::table('users')->where('cedula', $registro['cedula'])->first();
+                if( is_null($userAux) ) {
                 
-                $solucion = new Solucion;
-                $solucion-> problema_solucion= $fila["problematica"];
+                    $user = new user;
 
-                $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
-                $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
-                $variableSectorial = DB::table('vsectors')->where('nombre_vsector', $fila["clasificacionEmpresa"] )->first();
-                $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
-                $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
-                
-                
-                $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva
-                $solucion-> verbo_solucion = $fila["pverbo"];
-                $solucion-> sujeto_solucion = $fila["psujeto"];
-                $solucion-> complemento_solucion = $fila["pcomplemento"];
-                $solucion-> instrumento_id = $instrumento-> id;
-                $solucion-> vsector_id = $variableSectorial-> id ;
-                $solucion-> ambit_id = $ambito-> id;
-                $solucion-> responsable_solucion = $fila["responsable"];
-                $solucion-> corresponsable_solucion = $fila["coresponsables"];
+                    $sector = DB::table('sectors')->where('nombre_sector', $registro['grupo'])->first();
+                    if($sector == null ){
+                        $error = "Fila ".$registro['numFila'].": Ingrese un grupo v&aacute;lido";
+                        array_push($errores, $error); 
+                    }
 
-                $solucion-> evento_id =  0;
-                $solucion-> lider_mesa_solucion = $liderMesa;
-                $solucion-> sistematizador_solucion = $sistematizador;
-                $solucion-> provincia_id= $provincia-> id;
-                //$solucion-> sector_id= $sector-> id;   
-                
-                //Hoja -- registros
-                $solucion-> coordinador_zonal_solucion= $coordinador;
-                
-                //quemados
-                $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
-                $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
-                $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
+                    $vsector = DB::table('vsectors')->where('nombre_vsector', $registro['tipo'])->first();
+                    if($vsector == null ){
+                        $error = "Fila ".$registro['numFila'].": Ingrese un tipo de participante v&aacute;lido";
+                        array_push($errores, $error); 
+                    }
+                    
+                    $user-> name  = $registro["nombre"];   // Id Eslabón de la cadena Productiva
+                    $user-> apellidos = $registro["apellidos"];
+                    $user-> cedula = $registro["cedula"];
+                    $user-> email = $registro["email"];
 
-                $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
-                if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {
-                    $solucion-> problema_solucion= $fila["problematica"];
-                    array_push($arrayProblemas, $fila["problematica"] );
-                    array_push($arrayValProblemas, $fila["problematicaValidacion"] );
-                }
-                else{
-                    $posicion = array_search($fila["problematicaValidacion"], $arrayValProblemas);
-                    $solucion-> problema_solucion= $arrayProblemas[$posicion];
-                }   
-                //$solucion-> save();
-                array_push($soluciones, $solucion); 
-                $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
-                if( $solucionAuxiliar != null){                        
-                    $error = "Fila ". $fila['numFila'].": La problem&aacute;tica: \"".$fila['problematica']."\"  ya se encuentra registrada.";
-                    array_push($errores, $error);   
-                }
+                    $user-> telefono = $registro['telefonoExtension'];
+                    $user-> celular = $registro['celular'];
+                    
+                    $user-> sector_id = $sector-> id;
+                    $user-> vsector_id =  $vsector-> id;
+
+                    $user-> tipo_fuente= 1;     // 1 = despliegue territorial
+                    
+                    array_push($users, $user); 
+                }else{
+                    $countUserExists++;
+                }    
 
             }else{
-                $error = "Fila ". $fila['numFila'].": Se encontraron campos vacios.";
+                $error = "Fila ". $registro['numFila'].": Se encontraron campos vacios.";
                 array_push($errores, $error); 
             }      
         }//FIN del foreach
         
-        unset($soluciones[0]);
+        unset($users[0]);
         unset($errores[0]);
+        
         if(count($errores) > 0){
             File::delete( storage_path('app').'/storage/'.$nombreArchivo);
-            Flash::error("Se han encontrado ". count($errores)." errores detallados a continuaci&oacute;n:");
+            Flash::error("Se encontraron ". count($errores)." error(es) detallados a continuaci&oacute;n:");
         }else{
-            Flash::info("Se han encontrado ". count($informacion2)." soluciones. Haga click en \"Cargar Datos \" para confirmar.");
+            Flash::info("<ul>
+                            <li>Participantes nuevos: ". count($users) ."</li>
+                            <li>Participantes existentes: ".$countUserExists ."</li>
+                        </ul>
+                        <br> Haga click en <b>\"Cargar datos \"</b> para confirmar.");
         }
 
-        $datos = Collection::make($soluciones);
+        $datos = Collection::make($users);
         $errores = Collection::make($errores);
 
-        return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento]); 
+        return view('admin.participantes.vistaPreviaRegistro')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento]); 
         
     } 
 

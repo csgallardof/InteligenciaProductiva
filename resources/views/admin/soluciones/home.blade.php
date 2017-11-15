@@ -38,7 +38,7 @@
 				                <th class="text-center">CLASIFICACI&Oacute;N EMPRESA RELACIONADA</th>
 				                <th class="text-center">&Aacute;MBITO</th>
 				                <th class="text-center">RESPONSABLE DE EJECUCI&Oacute;N</th>
-				                <th class="text-center">CO-RESPONSABLES DE EJECUCIÓN</th>
+				                <th class="text-center">CO-RESPONSABLES DE EJECUCI&Oacute;N</th>
 				                <!--  <th>Acci&oacute;n</th>  -->
 
 				            </tr>
@@ -53,7 +53,7 @@
 				                <td class="text-center">{{ $solucion->problema_solucion }}</td>
 				                <td class="text-center">{{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }}</td>
 				                <td class="text-center">{{ $solucion->instrumento->nombre_instrumento }}</td>
-								<td class="text-center">{{ $solucion->vsector->nombre_vsector }}</td>
+								<td class="text-center">{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}</td>
 								<td class="text-center">{{ $solucion->ambit->nombre_ambit }}</td>
 								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
 								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
@@ -69,11 +69,13 @@
 				            @endforeach		            
 				        </tbody>
 			    	</table>
+			    	
 				    <div class="row">
 				    	<div class="col-md-offset-5">
 				    		{!! $soluciones->render() !!}
 				    	</div>
 				    </div>
+				
 				</div>
 			</div>
 		</div>				    

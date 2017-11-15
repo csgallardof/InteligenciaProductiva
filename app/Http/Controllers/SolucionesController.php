@@ -24,10 +24,9 @@ class SolucionesController extends Controller
      */
     public function index(Request $request)
     {
-        //
-
-        $soluciones = Solucion::search($request->parametro)->where('tipo_fuente','=','1')->orderBy('id','DESC')->paginate(15);
-        return view('admin.soluciones.home')->with(["soluciones"=>$soluciones, "parametro"=>$request->parametro]);    }
+        $soluciones = Solucion::search($request-> parametro)->where('tipo_fuente','=','1')->orderBy('id','DESC')->paginate(15);
+        return view('admin.soluciones.home')->with(["soluciones"=>$soluciones]);    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -70,57 +69,6 @@ class SolucionesController extends Controller
         $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
         
         /*
-        $InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
-        $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
-        $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
-        //echo $fecha_php."<br>";
-        
-        $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
-        $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
-        if(!is_null($provincia)){
-            //echo $provincia-> id."<br>";
-        }else{
-            echo "No se ha ingresado la provincia"; ///PENDIENTE
-        }
-        
-        $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
-        
-        for ($i = 7; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
-            $tipo = $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue();
-            $variableSectorial= null;
-            $grupo = $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue();
-            $sector= null;
-            if($tipo != "" && $grupo != ""){
-                $variableSectorial = DB::table('vsectors')->where('nombre_vsector', $tipo)->first();
-                $sector = DB::table('sectors')->where('nombre_sector', $grupo)->first();
-                //$sector = DB::table('sectors')->where('nombre_sector', $grupo)->first();
-            }
-
-            if( !is_null($variableSectorial) && !is_null($sector)){
-                $informacion[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
-                    'nombre' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
-                    'apellidos' => $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue(),
-                    'cedula' => $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue(),
-                    'email' => $objPHPExcel->getActiveSheet()->getCell('D'.$i)->getCalculatedValue(),
-                    'celular' => $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue(),
-                    'telefonoExtension' => $objPHPExcel->getActiveSheet()->getCell('F'.$i)->getCalculatedValue(),
-                    'grupo' => $sector-> id,
-                    'tipo' => $variableSectorial-> id,
-                );
-            }   
-        }
-            
-        foreach ($informacion as $registro) {   //recorremos todos los registros recogidos
-            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != "" 
-                && $registro["celular"] != "" && $registro["telefonoExtension"] != "" 
-                && $registro["grupo"] != "" && $registro["tipo"] != ""){    //validamos que todos los campos de cada registro no se encuentren vacios
-                
-                echo $registro["nombre"]."--".$registro["apellidos"]."--".$registro["cedula"]."--".$registro["email"]."--".$registro["celular"]."--".$registro["telefonoExtension"]."--".$registro["grupo"]."--".$registro["tipo"]."<br>";
-            }
-        }
-        */
-
-        /*
          *
          * Hoja :: MESAS
          *
@@ -135,6 +83,7 @@ class SolucionesController extends Controller
         $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
         $evento = new Evento;
         $evento-> nombre_evento = $nombreEvento;
+        $evento-> provincia_id = $provincia-> id;
         $evento-> save();
 
         $liderMesa= $objWorksheet->getCell("B2");     //obtenemos al lider de mesa
@@ -178,7 +127,7 @@ class SolucionesController extends Controller
 
                 $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
                 $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
-                $variableSectorial = DB::table('vsectors')->where('nombre_vsector', $fila["clasificacionEmpresa"] )->first();
+                $tipoEmpresa = DB::table('tipo_empresa')->where('nombre_tipo_empresa', $fila["clasificacionEmpresa"] )->first();
                 $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
                 $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
                 
@@ -196,7 +145,6 @@ class SolucionesController extends Controller
                 $solucion-> sujeto_solucion = $fila["psujeto"];
                 $solucion-> complemento_solucion = $fila["pcomplemento"];
                 $solucion-> instrumento_id = $instrumento-> id;
-                $solucion-> vsector_id = $variableSectorial-> id ;
                 $solucion-> ambit_id = $ambito-> id;
                 $solucion-> responsable_solucion = $fila["responsable"];
                 $solucion-> corresponsable_solucion = $fila["coresponsables"];
@@ -205,7 +153,9 @@ class SolucionesController extends Controller
                 $solucion-> lider_mesa_solucion = $liderMesa;
                 $solucion-> sistematizador_solucion = $sistematizador;
                 $solucion-> provincia_id= $provincia-> id;
-                $solucion-> sector_id= $sector-> id;   
+                $solucion-> sector_id= $sector-> id; 
+
+                $solucion-> tipo_empresa_id = $tipoEmpresa-> id;  
                 
                 //Hoja -- registros
                 $solucion-> coordinador_zonal_solucion= $coordinador;
@@ -214,6 +164,8 @@ class SolucionesController extends Controller
                 $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
                 $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
                 $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo    
+
+                $solucion-> vsector_id = 0;     // sin utilizar por el momento
                 
                 $solucion-> save(); 
                 array_push($arrayValProblemas, $fila["problematicaValidacion"]); 
@@ -223,10 +175,8 @@ class SolucionesController extends Controller
                 $countError++;
             }           
         }
-        //flash('Message')->success(): Set the flash theme to "success".
-        Flash::success("Se han registrado ".$countOK." soluciones correctamente.");
+        Flash::success("Se registradon ".$countOK." soluciones.");
         return redirect('soluciones');
-        //return redirect()->route('soluciones',[$countOK]);
     }
 
     /**
@@ -373,7 +323,7 @@ class SolucionesController extends Controller
 
                 $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
                 $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
-                $variableSectorial = DB::table('vsectors')->where('nombre_vsector', $fila["clasificacionEmpresa"] )->first();
+                $tipoEmpresa = DB::table('tipo_empresa')->where('nombre_tipo_empresa', $fila["clasificacionEmpresa"] )->first();
                 $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
                 $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
                 
@@ -383,7 +333,9 @@ class SolucionesController extends Controller
                 $solucion-> sujeto_solucion = $fila["psujeto"];
                 $solucion-> complemento_solucion = $fila["pcomplemento"];
                 $solucion-> instrumento_id = $instrumento-> id;
-                $solucion-> vsector_id = $variableSectorial-> id ;
+                
+                $solucion-> tipo_empresa_id = $tipoEmpresa-> id;
+                
                 $solucion-> ambit_id = $ambito-> id;
                 $solucion-> responsable_solucion = $fila["responsable"];
                 $solucion-> corresponsable_solucion = $fila["coresponsables"];
@@ -401,6 +353,7 @@ class SolucionesController extends Controller
                 $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
                 $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
                 $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
+                $solucion-> vsector_id = 0;     // sin utilizar por el momento
 
                 $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
                 if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {
@@ -432,7 +385,7 @@ class SolucionesController extends Controller
             File::delete( storage_path('app').'/storage/'.$nombreArchivo);
             Flash::error("Se han encontrado ". count($errores)." errores detallados a continuaci&oacute;n:");
         }else{
-            Flash::info("Se han encontrado ". count($informacion2)." soluciones. Haga click en \"Cargar Datos \" para confirmar.");
+            Flash::info("Se encontraron ". count($informacion2)." soluciones. Haga click en <b>\"Cargar Datos \"</b> para confirmar.");
         }
 
         $datos = Collection::make($soluciones);

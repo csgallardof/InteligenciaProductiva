@@ -66,7 +66,7 @@
 				                <td class="text-center">{{ $solucion->problema_solucion }}</td>
 				                <td class="text-center">{{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }}</td>
 				                <td class="text-center">{{ $solucion->instrumento->nombre_instrumento }}</td>
-								<td class="text-center">{{ $solucion->vsector->nombre_vsector }}</td>
+								<td class="text-center">{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}</td>
 								<td class="text-center">{{ $solucion->ambit->nombre_ambit }}</td>
 								<td class="text-center">{{ $solucion->responsable_solucion }}</td>
 								<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>

@@ -53,19 +53,6 @@ class Solucion extends Model
         return $this->belongsTo('App\Sipoc');
     }
 
-<<<<<<< HEAD
-
-    public function eventos() {
-        return $this->belongsToMany('Evento', 'user_evento_solucion','solucion_id','evento_id');
-    }
-
-
-    public function usuarios() {
-        return $this->belongsToMany('User', 'user_evento_solucion','solucion_id','user_id');
-    }
-
-
-=======
     public function scopeSearch($query, $name)
     {
         $query->where('problema_solucion','LIKE',"%$name%")
@@ -108,11 +95,22 @@ class Solucion extends Model
             foreach ($ambitos as $ambito) {
                 $query->orwhere('ambit_id', '=',"$ambito->id" );
             }
-        }           
+        }   
+
+        $tipoEmpresas= TipoEmpresa::where('nombre_tipo_empresa','LIKE',"%$name%")->get();
+        if(count($tipoEmpresas) > 0){
+            foreach ($tipoEmpresas as $tipoEmpresa) {
+                $query->orwhere('tipo_empresa_id', '=',"$tipoEmpresa->id" );
+            }
+        }          
         
         return $query;
         
     }
+
+    public function tipoEmpresa(){
+
+        return $this->belongsTo('App\TipoEmpresa');
+    }
     
->>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 }
