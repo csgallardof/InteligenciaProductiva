@@ -86,3 +86,8 @@ Route::get('/usuarios','PaginasController@usuarios');
 
 Route::get('/EventosParticipantes','PaginasController@participantes');
 
+Route::get('participantes/vistaPrevia/{nombreArchivo}',[
+		'uses'	=>	'ParticipantesController@vistaPreviaRegistro',
+		'as'	=>	'admin.participantes.vistaPrevia'
+	]);
+

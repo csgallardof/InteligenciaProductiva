@@ -22,8 +22,9 @@
 
 		<!-- ================== BEGIN BASE CSS STYLE ================== -->
 		@section('start_css')
-			<link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+			{{-- <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" /> --}}
 			<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
+			<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />

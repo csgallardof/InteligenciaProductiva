@@ -45,7 +45,8 @@ class SolucionesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    // public function store(Request $request)
+    public function store($nombreArchivo, $flash1)
     {        
         /*
          *
@@ -80,11 +81,8 @@ class SolucionesController extends Controller
         $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
         
-        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
-        $evento = new Evento;
-        $evento-> nombre_evento = $nombreEvento;
-        $evento-> provincia_id = $provincia-> id;
-        $evento-> save();
+        $evento= $objWorksheet->getCell("B1")."-".$provincia->nombre_provincia;    //obtenemos el nombre del evento        
+        $evento = DB::table('eventos')->where('nombre_evento',$evento)->first();
 
         $liderMesa= $objWorksheet->getCell("B2");     //obtenemos al lider de mesa
         
@@ -385,7 +383,7 @@ class SolucionesController extends Controller
             File::delete( storage_path('app').'/storage/'.$nombreArchivo);
             Flash::error("Se han encontrado ". count($errores)." errores detallados a continuaci&oacute;n:");
         }else{
-            Flash::info("Se encontraron ". count($informacion2)." soluciones. Haga click en <b>\"Cargar Datos \"</b> para confirmar.");
+            Flash::info("Se encontraron ". count($informacion2)." soluciones. Haga click en <b>\"Siguiente\"</b> para ir a la vista previa de los participantes.");
         }
 
         $datos = Collection::make($soluciones);
