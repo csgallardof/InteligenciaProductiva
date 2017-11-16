@@ -86,3 +86,8 @@ Route::get('/usuarios','PaginasController@usuarios');
 
 Route::get('/EventosParticipantes','PaginasController@participantes');
 
+
+Route::post('/despliegueterritorial',['uses'=>'PaginasController@buscar','as'=>'despliegue.resultado']);
+
+Route::get('/detalle-despliegue/{id}','PaginasController@detalledespliegue');
+

@@ -56,17 +56,18 @@
 									<h3 class="text-white"><strong>Consultar</strong></h3>
 										<br>
 
-									<form class="form-horizontal form-bordered" action = "dashboard.php" method="GET">
+									<form class="form-horizontal form-bordered" action = "{{ url('despliegueterritorial') }}" method="POST">
+
+										 {{ csrf_field() }}
 										<div class="col-md-5">
 											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info">
 											<option value="0">Seleccione el sector</option>
 
-												<option value="1">Agroindustria </option>
-												<option value="2">Acuícola </option>
-												<option value="2">Turismo </option>
-												<option value="2">Transporte </option>
-												<option value="2">Comercio </option>
-												<option value="2">Industria </option>
+												@foreach($sectors as $sector)
+
+													<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+
+												@endforeach
 
 
 											</select>
@@ -75,19 +76,24 @@
 
 										<div class="col-md-2 m-l-10">
 
-											<select class="form-control" name = "rec_id" data-size="15" data-live-search="true" data-style="btn-info">
+											<select class="form-control" name = "provincias" data-size="15" data-live-search="true" data-style="btn-info">
 											<option value="0">Provincia</option>
 
-											<option value="1">Pichincha </option>
-											<option value="2">Guayas</option>
-											<option value="2">Los Ríos</option>
-											<option value="2">Tungurahua</option>
-											<option value="2">Manabí</option>
+											@foreach($provincias as $provincia)
+
+													<option value="{{ $provincia->id }}" > {{ $provincia->nombre_provincia }}</option>
+
+											@endforeach
 
 
 											</select>
 
 										</div>
+
+
+										
+
+
 										<div class="col-md-1 m-l-10">
 											<button type="submit" class="btn btn-success m-r-5 m-b-5">Consultar</button>
 											<input type="hidden" name="accion" value="nuevo">
@@ -112,266 +118,289 @@
 			<!-- begin #about -->
 			<div id="about" class="content row-m-t-2" data-scrollview="true">
 					<!-- begin container -->
-					<div class="container" data-animation="true" data-animation-type="fadeInDown">
+				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
-							<!-- begin row -->
-							<div class="row">
-									<!-- begin col-4 -->
+						<!-- begin row -->
+						<div class="row">
+								<!-- begin col-4 -->
 
-									<!-- end row -->
-									<div class="col-md-12"  style="background: #ffffff;">
+								<!-- end row -->
+								<div class="col-md-12"  style="background: #ffffff;">
 
-										<div class="modal-header text-center">
+								
+										<div class="modal-body">
+										<!--INICIO ROW-->
 
-											<h4 class="modal-title fit-m-t-2">Cadena Productiva</h4>
+										<!-- begin row -->
+											<div class="row">
+													<!-- begin col-3 -->
+												<div class="col-md-2">
 
-											<span class="badge badge-info f-s-14 p-5">Inicio del diálogo en las mesas provinciales: 13 de Noviembre de 2017</span></td>
+													<!-- MODAL PROVEEDORES INICIO -->
 
-                      <br /><br /><br />
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">PROVEEDORES</strong>
 
+															</a>
+														</h3>
+													</div>
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+															<table>
+																<tr>
+																	<td>
+																		<p class="f-s-12 text-justify">
+																		<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		</p>
+											@if(isset($solucion_proveedores))
+												@foreach($solucion_proveedores as $solucion_p)
+													<a href="/detalle-despliegue/{{ $solucion_p->id }}"> 
+													{{ $solucion_p->verbo_solucion." ".$solucion_p->sujeto_solucion." ".$solucion_p->complemento_solucion }}
+													</a>
+
+												@endforeach
+											@endif
+																		<hr class="hr_style3" />
+																	</td>
+
+																</tr>
+															</table>
+
+														</div>
+													</div>
+												</div>
 
 											</div>
-											<div class="modal-body">
-											<!--INICIO ROW-->
+												
+												<!--MODAL PROVEEDORES FIN  -->
 
-											<!-- begin row -->
-												<div class="row">
-														<!-- begin col-3 -->
-														<div class="col-md-2">
 
-															<!-- MODAL PROVEEDORES INICIO -->
-
-															<div class="panel panel-inverse overflow-hidden">
-															<div class="panel-heading bg-yellow">
-																<h3 class="panel-title"  style="padding:5px 10px;">
-																	<a class="">
-																		<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																		<strong class="text-white f-s-14">PROVEEDORES</strong>
+												<!--MODAL INSUMOS INCIO   -->
+													<div class="col-md-2">
+														<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">INSUMOS</strong>
 
 
 
 
-																	</a>
-																</h3>
-															</div>
-															<div id="collapse10" class="panel-collapse">
-																<div class="panel-body custom-m-padding">
+																</a>
+															</h3>
+														</div>
 
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+																<table>
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 
+											@if(isset($solucion_insumo))
+												@foreach($solucion_insumo as $solucion_insu)
 
+													<a href="{{ $solucion_p->id }}"> 
 
-																	<table>
+													{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
 
+													</a>
 
-																		<tr>
-																			<td>
-																				<p class="f-s-12 text-justify">
-																				<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																				</p>
-																				<hr class="hr_style3" />
-																			</td>
+												@endforeach
+											@endif
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
 
-																		</tr>
-																	</table>
+																	</tr>
+																</table>
 
-																</div>
 															</div>
 														</div>
 													</div>
-														<!-- end col-3 -->
-													<!--MODAL PROVEEDORES FIN  -->
+												</div>
 
+												<!-- MODAL FINAL INSUMOS  -->
 
-													<!--MODAL INSUMOS INCIO   -->
-														<div class="col-md-2">
-															<div class="panel panel-inverse overflow-hidden">
-															<div class="panel-heading bg-yellow">
-																<h3 class="panel-title"  style="padding:5px 10px;">
-																	<a class="">
-																		<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																		<strong class="text-white f-s-14">INSUMOS</strong>
-
-
-
-
-																	</a>
-																</h3>
-															</div>
-
-															<div id="collapse10" class="panel-collapse">
-																<div class="panel-body custom-m-padding">
+												<!--MODAL PREOCESOS INCIO   -->
+													<div class="col-md-2">
+														<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">PROCESOS</strong>
 
 
 
 
-																	<table>
-
-																		<tr>
-																			<td>
-																				<p class="f-s-12 text-justify">
-																				<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																				</p>
-																				<hr class="hr_style3" />
-																			</td>
-
-																		</tr>
-																	</table>
-
-																</div>
-															</div>
-														</div>
-													</div>
-
-													<!-- MODAL FINAL INSUMOS  -->
-
-													<!--MODAL PREOCESOS INCIO   -->
-														<div class="col-md-2">
-															<div class="panel panel-inverse overflow-hidden">
-															<div class="panel-heading bg-yellow">
-																<h3 class="panel-title"  style="padding:5px 10px;">
-																	<a class="">
-																		<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																		<strong class="text-white f-s-14">PROCESOS</strong>
-
-
-
-
-																	</a>
-																</h3>
-															</div>
-
-															<div id="collapse10" class="panel-collapse">
-																<div class="panel-body custom-m-padding">
-
-
-
-																	<table>
-																		<tr>
-																			<td>
-																				<p class="f-s-12 text-justify">
-																				<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																				</p>
-																				<hr class="hr_style3" />
-																			</td>
-
-																		</tr>
-																	</table>
-
-																</div>
-															</div>
+																</a>
+															</h3>
 														</div>
 
-													</div>
-
-														<!-- MODAL PROCESOS FINAL   -->
-
-														<!--MODAL PRODUCTO INCIO   -->
-														<div class="col-md-2">
-															<div class="panel panel-inverse overflow-hidden">
-															<div class="panel-heading bg-yellow">
-																<h3 class="panel-title"  style="padding:5px 10px;">
-																	<a class="">
-																		<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																		<strong class="text-white f-s-14">PRODUCTO</strong>
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
 
 
 
-																	</a>
-																</h3>
-															</div>
+																<table>
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+													@if(isset($solucion_proceso))
+														@foreach($solucion_proceso as $solucion_proc)
 
-															<div id="collapse10" class="panel-collapse">
-																<div class="panel-body custom-m-padding">
+															{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
 
+														@endforeach
+													@endif
 
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
 
-																	<table>
+																	</tr>
+																</table>
 
-																		<tr>
-																			<td>
-																				<p class="f-s-12 text-justify">
-																				<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																				</p>
-																				<hr class="hr_style3" />
-																			</td>
-
-																		</tr>
-																	</table>
-
-																</div>
 															</div>
 														</div>
 													</div>
 
-													<!-- MODAL PRODUCTO FINAL  -->
-													<!--MODAL MERCADO INCIO   -->
-														<div class="col-md-2">
-															<div class="panel panel-inverse overflow-hidden">
-															<div class="panel-heading bg-yellow">
-																<h3 class="panel-title"  style="padding:5px 10px;">
-																	<a class="">
-																		<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																		<strong class="text-white f-s-14">MERCADO</strong>
+												</div>
+
+													<!-- MODAL PROCESOS FINAL   -->
+
+													<!--MODAL PRODUCTO INCIO   -->
+													<div class="col-md-2">
+														<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">PRODUCTO</strong>
 
 
 
+																</a>
+															</h3>
+														</div>
 
-																	</a>
-																</h3>
-															</div>
-
-															<div id="collapse10" class="panel-collapse">
-																<div class="panel-body custom-m-padding">
-
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
 
 
 
-																	<table>
+																<table>
 
-																		<tr>
-																			<td>
-																				<p class="f-s-12 text-justify">
-																				<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																				</p>
-																				<hr class="hr_style3" />
-																			</td>
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 
-																		</tr>
-																	</table>
+												@if(isset($solucion_producto))
+													@foreach($solucion_producto as $solucion_prod)
 
-																</div>
+														{{ $solucion_prod->verbo_solucion." ".$solucion_prod->sujeto_solucion." ".$solucion_prod->complemento_solucion }}
+
+													@endforeach
+												@endif
+
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
+
+																	</tr>
+																</table>
+
 															</div>
 														</div>
 													</div>
+												</div>
 
-													<!-- MODAL MERCADO FINAL   -->
+												<!-- MODAL PRODUCTO FINAL  -->
+												<!--MODAL MERCADO INCIO   -->
+													<div class="col-md-2">
+														<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">MERCADO</strong>
 
-										</div>
-										<!-- end row -->
-
-										<!-- FIN ROW-->
-
-										<!-- -->
-
-										<hr />
 
 
-										</div>
 
-								<!-- end #content -->
+																</a>
+															</h3>
+														</div>
 
-								<!-- begin scroll to top btn -->
-								<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
-								<!-- end scroll to top btn -->
-							</div>
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
 
-									<!-- end col-4 -->
 
-							</div>
-							<!-- end row -->
 
-					</div>
-					<!-- end container -->
+
+																<table>
+
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		@if(isset($solucion_mercado))
+																			@foreach($solucion_mercado as $solucion_mer)
+
+																				{{ $solucion_mer->verbo_solucion }}
+
+																			@endforeach
+																		@endif
+
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
+
+																	</tr>
+																</table>
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- MODAL MERCADO FINAL   -->
+
+									</div>
+									<!-- end row -->
+
+									<!-- FIN ROW-->
+
+									<!-- -->
+
+									<hr />
+
+
+									</div>
+
+							<!-- end #content -->
+
+							<!-- begin scroll to top btn -->
+							<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+							<!-- end scroll to top btn -->
+						</div>
+
+								<!-- end col-4 -->
+
+						</div>
+						<!-- end row -->
+
+				</div>
+				<!-- end container -->
 			</div>
 			<!-- end #about -->
 

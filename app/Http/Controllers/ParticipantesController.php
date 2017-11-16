@@ -151,7 +151,7 @@ class ParticipantesController extends Controller
             }      
         }//FIN del foreach
         
-        Flash::success("Se registraron ".$countOK." participantes nuevos.");
+        Flash::success("Se registraron ".$countOK." participantes.");
         return redirect('participantes');
     }	
     
