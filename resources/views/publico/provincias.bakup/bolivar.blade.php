@@ -2,11 +2,16 @@
 <ul class="media-list media-list-with-divider">
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_01.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_01.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
+<<<<<<< HEAD
+			<h5 class="media-heading"><strong>Gráfico 1</strong><br> Evolución Según Área Geográfica (Miles De Personas).</h5>
+			<br>
+=======
 			<h5 class="media-heading"><strong>Gráfico 1:</strong><br> Evolución de población según área geográfica (Miles de Personas)</h5>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 			<h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
 		</div>
 		
@@ -14,36 +19,54 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_02.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_02.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
+<<<<<<< HEAD
+			<h5 class="media-heading"><strong>Gráfico 2:</strong><br>Estructura poblacional según rangos de edad, año 2016. (Miles de Personas)</h5> 
+			<br>
+			<strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.
+		</div>
+=======
             <h5 class="media-heading"><strong>Gráfico 2:</strong><br> Estructura poblacional según rangos de edad, año 2016. (Miles de Personas).</h7>
         </div>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_03.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_03.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
+<<<<<<< HEAD
+			<h5 class="media-heading"><strong>Gráfico 3</strong><br>Evolución Según Sexo (Miles De Personas).</h5>
+			<br>
+			<small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small>
+=======
 			<h5 class="media-heading"><strong>Gráfico 3:</strong><br>Evolución de la población según sexo. (Miles de Personas).</h5>
 			<h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 		</div>
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_04.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_04.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
+<<<<<<< HEAD
+			<h5 class="media-heading"><strong>Gráfico 4</strong>Evolución del empleo. (Tasas).</h5>
+			<h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU</h7>
+=======
 			<h5 class="media-heading"><strong>Gráfico 4:</strong><br>Evolución del empleo. (Tasas)</h5>
 			<h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
 		</div>
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_05.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_05.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -53,7 +76,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_06.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_06.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -63,7 +86,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_07.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_07.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -73,7 +96,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_08.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_08.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -83,7 +106,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_09.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_09.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -93,7 +116,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_10.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_10.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -103,7 +126,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_11.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_11.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -113,7 +136,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_12.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_12.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -123,7 +146,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_13.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_13.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -133,7 +156,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_14.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_14.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -143,7 +166,7 @@
 	</li>
 	<li class="media media-lg">
 		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_15.png') }}" alt="" />
+			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/02.Bolivar/02_15.png') }}" alt="" />
 		</a>
 		
 		<div class="media-body">
@@ -151,25 +174,6 @@
 			<h7><strong>Fuente:</strong>Servicio de Rentas Internas - Formulario 101-102.</h7>
 		</div>
 	</li>
-	<li class="media media-lg">
-		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_16.png') }}" alt="" />
-		</a>
-		
-		<div class="media-body">
-			<h5 class="media-heading"><strong>Gráfico 16:</strong><br>Evolución de exportaciones (Millones de USD)</h5>
-			<h7><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</h7>
-		</div>
-	</li>
-	<li class="media media-lg">
-		<a href="javascript:;" class="pull-left">
-			<img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/09.Guayas/09_17.png') }}" alt="" />
-		</a>
-		
-		<div class="media-body">
-			<h5 class="media-heading"><strong>Gráfico 17:</strong><br>Evolución de exportaciones según actividad económica. (Participación)</h5>
-			<h7><strong>Fuente:</strong> Servicio de Rentas Internas - Formulario 101-102.</h7>
-		</div>
-	</li>
+	
 </ul>
 </div>

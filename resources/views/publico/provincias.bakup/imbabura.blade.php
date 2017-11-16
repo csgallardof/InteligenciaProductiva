@@ -2,11 +2,16 @@
 <ul class="media-list media-list-with-divider">
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_1.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_01.png') }}" alt="" />
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 1</strong><br> Evolución Según Área Geográfica (Miles De Personas).</h5>
+            <br>
+=======
             <h5 class="media-heading"><strong>Gráfico 1:</strong><br> Evolución de población según área geográfica (Miles de Personas)</h5>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
         </div>
         
@@ -14,36 +19,53 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_2.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_02.png') }}" alt="" />
         </a>
         
-       <div class="media-body">
+        <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 2:</strong><br>Estructura poblacional según rangos de edad, año 2016. (Miles de Personas)</h5> 
+            <br>
+            <strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.
+=======
             <h5 class="media-heading"><strong>Gráfico 2:</strong><br> Estructura poblacional según rangos de edad, año 2016. (Miles de Personas).</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_3.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_03.png') }}" alt="" />
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+           <h5 class="media-heading"><strong>Gráfico 3</strong><br>Evolución Según Sexo (Miles De Personas).</h5>
+            <br>
+            <small><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</small>
+=======
             <h5 class="media-heading"><strong>Gráfico 3:</strong><br>Evolución de la población según sexo. (Miles de Personas).</h5>
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - Proyecciones poblacionales.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_4.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_04.png') }}" alt="" />
         </a>
         
         <div class="media-body">
+<<<<<<< HEAD
+            <h5 class="media-heading"><strong>Gráfico 4</strong>Evolución del empleo. (Tasas).</h5>
+            <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU</h7>
+=======
             <h5 class="media-heading"><strong>Gráfico 4:</strong><br>Evolución del empleo. (Tasas)</h5>
             <h7><strong>Fuente:</strong> Instituto Nacional de Estadística y Censos - ENEMDU.</h7>
+>>>>>>> 222e277ce5dc12ec273f8be1f93932f4a86a6b96
         </div>
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_5.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_05.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -53,7 +75,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_6.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_06.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -63,7 +85,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_7.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_07.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -73,7 +95,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_8.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_08.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -83,7 +105,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_9.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_09.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -93,7 +115,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_10.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_10.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -103,7 +125,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_11.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_11.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -113,7 +135,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_12.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_12.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -123,7 +145,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_13.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_13.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -133,7 +155,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_14.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_14.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -143,7 +165,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_15.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_15.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -153,7 +175,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_16.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_16.png') }}" alt="" />
         </a>
         
         <div class="media-body">
@@ -163,7 +185,7 @@
     </li>
     <li class="media media-lg">
         <a href="javascript:;" class="pull-left">
-            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/18.Tungurahua/18_17.png') }}" alt="" />
+            <img class="media-object" src="{{ asset('imagenes/cifras/graficos_provincia/10.Imbabura/10_17.png') }}" alt="" />
         </a>
         
         <div class="media-body">
