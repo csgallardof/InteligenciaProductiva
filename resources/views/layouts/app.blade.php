@@ -55,6 +55,8 @@
                             <li><a href="{{ route('soluciones.index') }}">Soluciones</a></li>
                             <li><a href="{{ route('provincias.index') }}">Provincia</a></li>
                             <li><a href="{{ route('instrumentos.index') }}">Instrumentos</a></li>
+                            <li><a href="{{ route('participantes.index') }}">Participantes</a></li>
+                            
 
                         @else
                             <li class="dropdown">

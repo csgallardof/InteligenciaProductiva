@@ -91,3 +91,5 @@ Route::get('participantes/vistaPrevia/{nombreArchivo}',[
 		'as'	=>	'admin.participantes.vistaPrevia'
 	]);
 
+Route::get('/indice/indicadoresProvincia', 'PaginasController@indicadoresProvincia');
+

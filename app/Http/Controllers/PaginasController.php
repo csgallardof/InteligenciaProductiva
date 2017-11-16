@@ -67,4 +67,8 @@ class PaginasController extends Controller
         //return View::make('welcome')->with('', $events);
     }
 
+    public function indicadoresProvincia(){
+        return view('publico.indicadoresProvincia');
+    }
+
 }

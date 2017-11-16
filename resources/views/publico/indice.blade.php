@@ -4,7 +4,10 @@
 
 @section('start_css')
   @parent
-  <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+    <style type="text/css">
+        h4 {display:inline;}
+    </style>
 @endsection
 
 @section('contenido')
@@ -42,44 +45,51 @@
 					<!-- begin container -->
 				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
-					<div class="modal-header">
-							<h4 class="modal-title">Índice Único de Competitividad Provincial</h4>
+					<div class="modal-header d-inline">
+						<h4 class="modal-title">Índice Único de Competitividad Provincial</h4>
+                        <div class="pull-right">
+                            <a href="{{ asset('imagenes/competitividad/base_de_datos/IUCP_MIPRO_2017.xlsx') }}" class="btn btn-primary btn-sm">Descarga Matriz de Indicadores</a>
+                            <a href="{{ url('indice/indicadoresProvincia')}}" class="btn btn-primary btn-sm">Indicadores por provincia</a>
+                        </div>
 					</div>
 
 					<!-- begin row -->
 					<div class="row">
 							<!-- begin col-4 -->
 						<div class="col-md-7">
-							<div class="panel bg-yellow">
-								<div class="col-md-12">
-									<div class="dropdown">
-										<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilares
-										<span class="caret"></span></button>
-										<ul class="dropdown-menu">
-										    <li><a href="#" data-toggle="modal" data-target="#modal1">Desarrollo Integral de las personas</a></li>
-											<li><a href="#" data-toggle="modal" data-target="#modal2">Desempe&ntilde;o Econ&oacute;mico</a></li>
-										    <li><a href="#" data-toggle="modal" data-target="#modal3">Empleo</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal4">Gesti&oacute;n Empresarial</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal5">Gesti&oacute;n, Gobiernos e Instituciones</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal6">Habitantes de Innovaci&oacute;n, Ciencia y Tecnolog&iacute;a</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal7">Infraestructura y Localizaci&oacute;n</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal8">Internacionalizaci&oacute;n y Apertura</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal9">Mercados Financieros</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal10">Recursos Naturales y Ambientes</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal11">Seguridad Jur&iacute;dica</a></li>
-									    	<li><a href="#" data-toggle="modal" data-target="#modal12">Urbanizaci&oacute;n</a></li>
-										</ul>
-									</div>
+							<div class="col-md-12">
+                    
+                    {{-- PILARES --}}
+                    <div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilares
+						<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+						    <li><a href="#" data-toggle="modal" data-target="#modal1">Desarrollo Integral de las personas</a></li>
+							<li><a href="#" data-toggle="modal" data-target="#modal2">Desempe&ntilde;o Econ&oacute;mico</a></li>
+						    <li><a href="#" data-toggle="modal" data-target="#modal3">Empleo</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal4">Gesti&oacute;n Empresarial</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal5">Gesti&oacute;n, Gobiernos e Instituciones</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal6">Habitantes de Innovaci&oacute;n, Ciencia y Tecnolog&iacute;a</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal7">Infraestructura y Localizaci&oacute;n</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal8">Internacionalizaci&oacute;n y Apertura</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal9">Mercados Financieros</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal10">Recursos Naturales y Ambientes</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal11">Seguridad Jur&iacute;dica</a></li>
+					    	<li><a href="#" data-toggle="modal" data-target="#modal12">Urbanizaci&oacute;n</a></li>
+						</ul>
+					</div>
+                    {{-- FIN DE PILARES --}}
 
-				                </div>
-							</div>
-							<!-- begin page-header -->
+                  <hr />
+                  <br />
+			        </div>
 							<br>
 							<h3 class="m-t-20">Competitividad Global</h3><br><br>
 							<div class="col-md-12">
 					    		<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/global.png') }}" alt="">
 					    	</div>
 						</div>
+
 						<br><br>
 
 						<!-- METODOLOGIA-->
@@ -240,7 +250,7 @@
                                                 <li class="text-justify">Tasa de empleo urbano</li>
                                                 <li class="text-justify">Tasa de subempleo rural</li>
                                                 <li class="text-justify">Tasa de subempleo urbano</li>
-                                                
+
                                             </ul>
 
 
@@ -265,14 +275,14 @@
                                                     <li class="text-justify">Empresas registradas</li>
                                                     <li class="text-justify">Industrias</li>
                                                     <li class="text-justify">PYMES</li>
-                                                    
+
                                                 </ul>
 
 
                                             </div>
                                         </div>
                                 </div>
-                               
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -290,7 +300,7 @@
                                                     <li class="text-justify">Distancia a aeropuertos inter</li>
                                                     <li class="text-justify">Distancia a puertos inter.</li>
                                                     <li class="text-justify">Km vías asfaltadas</li>
-                                                    
+
                                                 </ul>
 
 
@@ -298,7 +308,7 @@
                                         </div>
                                 </div>
 
-                          
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -316,7 +326,7 @@
                                                     <li class="text-justify">Efectividad detenciones</li>
                                                     <li class="text-justify">Personal de justicia</li>
                                                     <li class="text-justify">Unidades judiciales y servicios</li>
-                                                    
+
                                                 </ul>
 
 
@@ -324,7 +334,7 @@
                                         </div>
                                 </div>
 
-                              
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -342,7 +352,7 @@
                                                     <li class="text-justify">Exportación (No petroleros) per cápita</li>
                                                     <li class="text-justify">Exportaciones (No petroleros)</li>
                                                     <li class="text-justify">Inversión Extranjera</li>
-                                                    
+
                                                 </ul>
 
 
@@ -350,7 +360,7 @@
                                         </div>
                                 </div>
 
-                                
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -362,7 +372,7 @@
                                         </div>
                                         <div id="collapseIsiete" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                               (5 Indicadores) A mayor gastos , capacidad de generar ingresos e inversión; y número de gobiernos mayor competitividad 
+                                               (5 Indicadores) A mayor gastos , capacidad de generar ingresos e inversión; y número de gobiernos mayor competitividad
                                                 <ul>
                                                     <li class="text-justify">Endeudamiento</li>
                                                     <li class="text-justify">Gasto social</li>
@@ -370,7 +380,7 @@
                                                     <li class="text-justify">Ingresos propios</li>
                                                     <li class="text-justify">Inversión</li>
 
-                                                    
+
                                                 </ul>
 
 
@@ -378,7 +388,7 @@
                                         </div>
                                 </div>
 
-                                
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -400,9 +410,9 @@
                                                     <li class="text-justify">Microcrédito en provincia</li>
                                                     <li class="text-justify">Microcrédito para población</li>
                                                     <li class="text-justify">Morosidad en provincia</li>
-                                                    <li class="text-justify">No. Sucursales bancarias</li> 
+                                                    <li class="text-justify">No. Sucursales bancarias</li>
 
-                                                    
+
                                                 </ul>
 
 
@@ -410,7 +420,7 @@
                                         </div>
                                 </div>
 
-                                
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -422,12 +432,12 @@
                                         </div>
                                         <div id="collapseInueve" class="panel-collapse collapse">
                                             <div class="panel-body">
-                                               (2 indicadores)A mayor cantidad de recursos naturales mayor competitividad 
+                                               (2 indicadores)A mayor cantidad de recursos naturales mayor competitividad
                                                 <ul>
                                                     <li class="text-justify">Bosques y páramos</li>
                                                     <li class="text-justify">Superficie cultivada</li>
-                                                    
-                                                    
+
+
                                                 </ul>
 
 
@@ -435,7 +445,7 @@
                                         </div>
                                 </div>
 
-                                
+
                                 <div class="panel panel-inverse overflow-hidden">
                                         <div class="panel-heading">
                                             <h3 class="panel-title">
@@ -455,8 +465,8 @@
                                                     <li class="text-justify">Cobertura electricidad</li>
                                                     <li class="text-justify">Costo electricidad</li>
                                                     <li class="text-justify">Densidad poblacional</li>
-                                                                                                        
-                                                    
+
+
                                                 </ul>
 
 
@@ -484,7 +494,7 @@
                                                     <li class="text-justify">Personas con Postgrado</li>
                                                     <li class="text-justify">Universidades e instit. Superiores</li>
                                                     <li class="text-justify">Número de Carreras Universitarias</li>
-                                                                                                                                                            
+
                                                 </ul>
 
 
@@ -492,7 +502,7 @@
                                         </div>
                                 </div>
 
-                                
+
                         </div>
                         <!-- FIN DE INDICES-->
 
