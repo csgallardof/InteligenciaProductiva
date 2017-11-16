@@ -144,4 +144,8 @@ class PaginasController extends Controller
       return view('publico.invertir_en_el_ecuador');
     }
 
+    public function indicadoresProvincia(){
+        return view('publico.indicadoresProvincia');
+    }
+
 }
