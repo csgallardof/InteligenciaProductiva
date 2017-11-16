@@ -71,7 +71,9 @@ Route::post('/soluciones/vistaPreviaMesas',['uses'=>'SolucionesController@vistaP
 // Rutas de contratos de inversion 
 
 
-Route::get('/contratos-de-inversion', 'PaginasController@contratosinversion');
+Route::get('/inversiones', 'PaginasController@contratosinversion');
+
+Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
 
 Route::post('/participantes/vistaPreviaRegistro',['uses'=>'ParticipantesController@vistaPreviaRegistro','as'=>'participantes.vistaPreviaRegistro']);  //J. Arcos -- vista Previa Matriz Registro Participante

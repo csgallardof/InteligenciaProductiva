@@ -37,46 +37,139 @@
 
 			<!-- end page-header -->
 
+
 			<!-- begin #about -->
-			<div id="about" class="content row-m-t-2" data-scrollview="true">
+			<div id="contratos" class="content row-m-t-2" data-scrollview="true">
+
 					<!-- begin container -->
 				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
-					<div class="modal-header">
-							<h2 class="modal-title">Contratos de Inversión</h2>
+					<!-- begin row -->
+					<div class="row m-t-20">
+							<!-- begin col-4 -->
+						<!-- ini kir inversionista  -->
+
+              <a href="/invertir_en_el_ecuador" class="btn btn-info" role="button">¿Por qué invertir en Ecuador?</a>
+              <a href="#contratos" class="btn btn-info" role="button">Contratos de Inversión</a>
+              <a href="#proceso" class="btn btn-info" role="button">Proceso Firma de Contratos</a>
+              <a href="#base" class="btn btn-info" role="button">Base Legal</a>
+              <a href="#incentivos" class="btn btn-info" role="button">Incentivos</a>
+
+              <br /><br />
+
+						<div id="" class="modal-header">
+							<h4 class="modal-title "><strong>Contratos de Inversión con el Estado Ecuatoriano</strong></h4>
+						</div>
+
+            <p>
+              Un contrato de inversión es un acuerdo opcional que el empresario puede solicitar al Estado ecuatoriano para asegurar su inversión. El MCPEC reconoce las inversiones de hasta 15 años plazo con un capital desde un millón de dólares.
+            </p>
+
+            <div class="col-md-6">
+              <img class="text-center" width="80%" src="{{ asset('imagenes/inversiones/contratos_de_inversion_1.jpg') }}" alt="Azuay">
+            </div>
+
+							<!-- end col-4 -->
 					</div>
+
+				</div>
+
+			</div>
+			<!-- end #about -->
+
+      <!-- begin #about -->
+			<div id="proceso" class="content row-m-t-2" data-scrollview="true">
+					<!-- begin container -->
+				<div class="container" data-animation="true" data-animation-type="fadeInDown">
+
+					<!-- begin row -->
+					<div class="row m-t-20">
+							<!-- begin col-4 -->
+						<!-- ini kir inversionista  -->
+
+						<div id="proceso" class="modal-header">
+							<h4 class="modal-title "><strong>Proceso para la Firma de Contratos de Inversión</strong></h4>
+						</div>
+
+            <p>
+              1. Contacto con el inversionista<br />
+              2. Envío del KIT DEL INVERSIONISTA, con los requisitos correspondientes<br />
+              3. Ingreso oficial del proceso de inversión<br />
+              4. Verificación de anexos<br />
+              5. Elaboración de informe<br />
+              6. Decisión del Consejo Sectorial de la Producción<br />
+              7. Firma del contrato
+            </p>
+
+							<!-- end col-4 -->
+					</div>
+
+				</div>
+
+			</div>
+			<!-- end #about -->
+
+      <!-- begin #about -->
+			<div id="base" class="content row-m-t-2" data-scrollview="true">
+					<!-- begin container -->
+				<div class="container" data-animation="true" data-animation-type="fadeInDown">
+
+					<!-- begin row -->
+					<div class="row m-t-20">
+							<!-- begin col-4 -->
+						<!-- ini kir inversionista  -->
+
+						<div id="base" class="modal-header">
+							<h4 class="modal-title "><strong>Base Legal</strong></h4>
+						</div>
+
+            <a href="{{ asset('archivos/base_legal_inversiones/copci.pdf') }}"><span class="fa fa-link"></span>&nbsp;&nbsp;&nbsp;CÓDIGO ORGÁNICO DE LA PRODUCCIÓN, COMERCIO E INVERSIONES</a><br />
+            <a href="{{ asset('archivos/base_legal_inversiones/reglamento_copci.pdf') }}"><span class="fa fa-link"></span>&nbsp;&nbsp;&nbsp;REGLAMENTO A LA ESTRUCTURA DE DESARROLLO PRODUCTIVO DE INVERSION</a><br />
+            <a href="{{ asset('archivos/base_legal_inversiones/comex_82.pdf') }}"><span class="fa fa-link"></span>&nbsp;&nbsp;&nbsp;Resolución Nro. 82 COMEX</a><br />
+
+							<!-- end col-4 -->
+					</div>
+
+				</div>
+
+			</div>
+			<!-- end #about -->
+
+      <div id="incentivos" class="content row-m-t-2" data-scrollview="true">
+					<!-- begin container -->
+				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
 					<!-- begin row -->
 					<div class="row">
 							<!-- begin col-4 -->
 						<!-- ini kir inversionista  -->
-						
-						<div class="modal-header">
-							<h4 class="modal-title"><strong>Contrato de Inversion</strong></h4>
-						</div>
-						<p>
-							<strong>¿Qué es un contrato de inversión?</strong> Es un acuerdo opcional que el empresario puede solicitar al Estado ecuatoriano para asegurar su inversión. El MCPEC reconoce las inversiones de hasta 15 años plazo con un capital desde un millón de dólares.
-						</p>
 
 						<div class="modal-header">
-							<h4 class="modal-title">Kit del Inversionista</h4>
+							<h4 class="modal-title"><strong>Incentivos para el Inversionista</strong></h4>
 						</div>
-						<div class="col-md-10 pull-left">
+
+						<div class="col-md-12">
 					        <div class="panel-group" id="accordion">
 								<div class="panel panel-inverse overflow-hidden">
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Código Orgánico de la Producción, Comercio e Inversiones (COPCI)
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Incentivos Generales
 											</a>
 										</h3>
 									</div>
 									<div id="collapseOne" class="panel-collapse collapse in">
 										<div class="panel-body">
-											<a href="#">
-												Descarga Código Orgánico de la Producción, Comercio e Inversiones (COPCI)
-											</a>
+
+                      <div class="col-md-6">
+                        <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_generales_1.jpg') }}" alt="Azuay">
+                      </div>
+
+                      <div class="col-md-6">
+                        <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_generales_2.jpg') }}" alt="Azuay">
+                      </div>
+
 										</div>
 									</div>
 								</div>
@@ -84,14 +177,22 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #2
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Incentivos Sectoriales: Inversiones en Sectores Prioritarios
 											</a>
 										</h3>
 									</div>
 									<div id="collapseTwo" class="panel-collapse collapse">
 										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                        <div class="col-md-6">
+                          <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_sectoriales_1.jpg') }}" alt="Azuay">
+                        </div>
+
+                        <div class="col-md-6">
+                          <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_sectoriales_2.jpg') }}" alt="Azuay">
+                        </div>
+
 										</div>
 									</div>
 								</div>
@@ -99,14 +200,22 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #3
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Incentivos para Zona Especial de Desarrollo Económico (ZEDE)
 											</a>
 										</h3>
 									</div>
 									<div id="collapseThree" class="panel-collapse collapse">
 										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                      <div class="col-md-6">
+                        <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_zedes_1.jpg') }}" alt="Azuay">
+                      </div>
+
+                      <div class="col-md-6">
+                        <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/incentivos_zedes_2.jpg') }}" alt="Azuay">
+                      </div>
+
 										</div>
 									</div>
 								</div>
@@ -114,66 +223,25 @@
 									<div class="panel-heading">
 										<h3 class="panel-title">
 											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #4
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Incentivo Territorial
 											</a>
 										</h3>
 									</div>
 									<div id="collapseFour" class="panel-collapse collapse">
 										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #5
-											</a>
-										</h3>
-									</div>
-									<div id="collapseFive" class="panel-collapse collapse">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #6
-											</a>
-										</h3>
-									</div>
-									<div id="collapseSix" class="panel-collapse collapse">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-											    <i class="fa fa-plus-circle pull-right"></i> 
-												Collapsible Group Item #7
-											</a>
-										</h3>
-									</div>
-									<div id="collapseSeven" class="panel-collapse collapse">
-										<div class="panel-body">
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+                      <div class="col-md-6">
+                        <img class="img-responsive center-block"  src="{{ asset('imagenes/incentivos/Incentivos Territoriales_1.jpg') }}" alt="Azuay">
+                      </div>
+
 										</div>
 									</div>
 								</div>
 							</div>
 					    </div>
 						<!-- fin kit inversionista -->
-						
+
 							<!-- end col-4 -->
 					</div>
 						<!-- end row -->
@@ -192,23 +260,7 @@
 				</div>
 
 			</div>
-			<!-- end #about -->
 
-			<!-- begin #about -->
-			<div id="about" class="content row-m-t-2" data-scrollview="true">
-					<!-- begin container -->
-					<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-							<!-- begin row -->
-							<div class="row">
-
-							</div>
-							<!-- end row -->
-
-					</div>
-					<!-- end container -->
-			</div>
-			<!-- end #about -->
 
 @endsection
 

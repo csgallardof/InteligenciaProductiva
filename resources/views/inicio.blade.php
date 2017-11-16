@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <h4 style="font-style: italic;" class="text-center">Mesas de Competitividad en el marco del acuerdo por la producción y el empleo</h4>
+                        <h4 style="font-style: italic;" class="text-center">Mesas de competitividad en el marco del acuerdo por la producción y el empleo</h4>
                     </div>
 
                 </div>
@@ -44,6 +44,7 @@
 
                       <a href="/despliegueterritorial" class="btn btn-inverse"><i class="fa fa-comments-o pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
                       <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Biblioteca</a>
+                      <a href="/inversiones" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Inversiones</a>
 
                     </div>
                 </div>

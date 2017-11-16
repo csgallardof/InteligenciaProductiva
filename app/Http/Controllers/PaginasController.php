@@ -140,4 +140,8 @@ class PaginasController extends Controller
 
     }
 
+    public function invertir_en_el_ecuador(){
+      return view('publico.invertir_en_el_ecuador');
+    }
+
 }

@@ -84,7 +84,7 @@
                   <br />
 			        </div>
 							<br>
-							<h3 class="m-t-20">Competitividad Global</h3><br><br>
+							<h4 class="m-t-20">Competitividad Global</h4><br><br>
 							<div class="col-md-12">
 					    		<img class="img-responsive center-block" src="{{ asset('imagenes/competitividad/global.png') }}" alt="">
 					    	</div>

@@ -43,7 +43,8 @@
 				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
 					<div class="modal-header">
-							<h4 class="modal-title">Vocaciones Provinciales</h4>
+							<h4 class="modal-title" style="display: inline;">Vocaciones Provinciales</h4>
+              <a class="p-l-20" target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/vocaciones_productivas_todas.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Descargar Archivo Consolidado</a>
 					</div>
 
 					<!-- begin row -->
@@ -76,48 +77,108 @@
 
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
-													    <h3 class="m-t-10 m-b-20">El Oro</h3>
-													    <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;El Oro</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_eloro.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+													    <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_eloro.jpg') }}" alt="El Oro">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Esmeraldas">
-													    <h3 class="m-t-10 m-b-20">Esmeraldas</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Esmeraldas</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_esmeraldas.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_esmeraldas.jpg') }}" alt="Esmeraldas">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Guayas">
-													    <h3 class="m-t-10 m-b-20">Guayas</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Guayas</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_guayas.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_guayas.jpg') }}" alt="Guayas">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-LosRios">
-													    <h3 class="m-t-10 m-b-20">Los Ríos</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Los Ríos</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_losrios.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_losrios.jpg') }}" alt="Los Rios">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Manabi">
-													    <h3 class="m-t-10 m-b-20">Manabí</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Manabí</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_manabi.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_manabi.jpg') }}" alt="Manabi">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantaElena">
-													    <h3 class="m-t-10 m-b-20">Santa Elena</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Santa Elena</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_santaelena.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santaelena.jpg') }}" alt="Santa Elena">
 													    	</div>
@@ -147,88 +208,198 @@
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Azuay">
-													    <h3 class="m-t-10 m-b-20">Azuay</h3>
-                              <div class="row">
+                              <!-- Inicio Header Provincia -->
+                              <div class="m-t-10 row">
+													    	<div class="m-t-15 col-md-6">
+                                  <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Azuay</strong></i>
+													    	</div>
+                                <div class="col-md-6">
+                                  <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_azuay.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+													    	</div>
+													    </div>
+                              <hr />
+                              <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_azuay.jpg') }}" alt="Azuay">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Bolivar">
-													    <h3 class="m-t-10 m-b-20">Bolivar</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Bolivar</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_bolivar.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_bolivar.jpg') }}" alt="Bolivar">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Canar">
-													    <h3 class="m-t-10 m-b-20">Cañar</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Cañar</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_canar.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_canar.jpg') }}" alt="Canar">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Carchi">
-													    <h3 class="m-t-10 m-b-20">Carchi</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Carchi</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_carchi.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_carchi.jpg') }}" alt="Carchi">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Chimborazo">
-													    <h3 class="m-t-10 m-b-20">Chimborazo</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Chimborazo</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_chimborazo.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_chimborazo.jpg') }}" alt="Chimborazo">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Cotopaxi">
-													    <h3 class="m-t-10 m-b-20">Cotopaxi</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Cotopaxi</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_cotopaxi.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_cotopaxi.jpg') }}" alt="Cotopaxi">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Imbabura">
-													    <h3 class="m-t-10 m-b-20">Imbabura</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Imbabura</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_imbabura.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_imbabura.jpg') }}" alt="Imbabura">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Loja">
-													    <h3 class="m-t-10 m-b-20">Loja</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Loja</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_loja.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_loja.jpg') }}" alt="Loja">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pichincha">
-													    <h3 class="m-t-10 m-b-20">Pichincha</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Pichincha</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_pichincha.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pichincha.jpg') }}" alt="Pichincha">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-SantoDomingo">
-													    <h3 class="m-t-10 m-b-20">Santo Domingo</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Santo Domingo</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_santodomingo.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_santodomingo.jpg') }}" alt="Santo Domingo">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Tungurahua">
-													    <h3 class="m-t-10 m-b-20">Tungurahua</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Tungurahua</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_tungurahua.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_tungurahua.jpg') }}" alt="Tungurahua">
 													    	</div>
@@ -252,48 +423,108 @@
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-MoronaSantiago">
-													    <h3 class="m-t-10 m-b-20">Morona Santiago</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Morona Santiago</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_moronasantiago.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_moronasantiago.jpg') }}" alt="Morona Santiago">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Napo">
-													    <h3 class="m-t-10 m-b-20">Napo</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Napo</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_napo.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_napo.jpg') }}" alt="Napo">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Orellana">
-													    <h3 class="m-t-10 m-b-20">Orelllana</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Orellana</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_orellana.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_orellana.jpg') }}" alt="Orellana">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Pastaza">
-													    <h3 class="m-t-10 m-b-20">Pastaza</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Pastaza</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_pastaza.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_pastaza.jpg') }}" alt="Pastaza">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-Sucumbios">
-													    <h3 class="m-t-10 m-b-20">Sucumbios</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Sucumbios</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_sucumbios.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_sucumbios.jpg') }}" alt="Sucumbios">
 													    	</div>
 													    </div>
 													</div>
 													<div class="tab-pane fade ol-md-10 col-md-offset-1" id="nav-pills-tab-ZamoraChinchipe">
-													    <h3 class="m-t-10 m-b-20">Zamora Chinchipe</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Zamora Chinchipe</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_zamorachinchipe.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_zamorachinchipe.jpg') }}" alt="Zamora Chinchipe">
 													    	</div>
@@ -314,8 +545,18 @@
 												</div>
 												<div class="tab-content">
 													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
-													    <h3 class="m-t-10 m-b-20">Galápagos</h3>
-                              <div class="row">
+                            <!-- Inicio Header Provincia -->
+                            <div class="m-t-10 row">
+                              <div class="m-t-15 col-md-6">
+                                <i class="fa fa-2x fa-map-marker"><strong class="f-s-19">&nbsp;&nbsp;Galápagos</strong></i>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="pull-right"><a target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_galapagos.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                              </div>
+                            </div>
+                            <hr />
+                            <!-- Fin Header Provincia -->
+                              <div class="row fit-m-t-4">
 													    	<div class="col-md-12">
 													    		<img class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_galapagos.jpg') }}" alt="Galapagos">
 													    	</div>

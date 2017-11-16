@@ -44,8 +44,47 @@
 
 				<div class="modal-header">
 					<h4 class="modal-title">
-						<label class='text-success f-s-14'>
-							
+						<label class='text-success f-s-12'>
+							<a href="{{ url('despliegueterritorial') }}" class="btn btn-success m-r-5"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
+							<br>
+							<br>
+							<strong>Evento:</strong>
+							@if(isset($soluciones))
+								@foreach($soluciones as $solucion)
+									 
+									{{ $solucion->evento->nombre_evento }}
+									
+
+								@endforeach
+							@endif
+							<strong> | Provincia:</strong>
+							@if(isset($soluciones))
+								@foreach($soluciones as $solucion)
+									 
+									{{ $solucion->provincia->nombre_provincia }}
+									
+
+								@endforeach
+							@endif
+
+							<strong> | Líder de Mesa:</strong>
+							@if(isset($soluciones))
+								@foreach($soluciones as $solucion)
+									 
+									{{ $solucion->lider_mesa_solucion }}
+									
+
+								@endforeach
+							@endif
+							<strong> | Sistematizador de Mesa:</strong>
+							@if(isset($soluciones))
+								@foreach($soluciones as $solucion)
+									 
+									{{ $solucion->sistematizador_solucion }}
+									
+
+								@endforeach
+							@endif
 						</label>
 					</h4>
 				</div>
@@ -53,7 +92,7 @@
 				<!-- begin row -->
 				<div class="row">
 					<!-- begin col-5 -->
-					<div class="col-md-5">
+					<div class="col-md-7">
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: 1px solid rgba(112, 116, 120, 0.64);">
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
@@ -62,23 +101,74 @@
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 									
 								</div>
-								<h4 class="panel-title">Propuestas /Solucion</h4>
+								<h4 class="panel-title">Propuestas /Solución</h4>
 							</div>
 							<div class="panel-body p-t-0">
 								<div class="media-body">
 
-									
+									<br>
+									<div class="alert alert-info fade in m-b-15">
+										<strong>Eslabon de la cadena productiva:</strong>
+										@if(isset($soluciones))
+											@foreach($soluciones as $solucion)
+												 
+												{{ $solucion->sipoc->nombre_sipoc }}
+												
+
+											@endforeach
+										@endif
+										<br>
+										<strong>Instrumentos Necesario:</strong>
+										@if(isset($soluciones))
+											@foreach($soluciones as $solucion)
+												 
+												{{ $solucion->instrumento->nombre_instrumento }}
+												
+
+											@endforeach
+										@endif
+										<br>
+										<strong>Clasificación Empresa:</strong>
+										@if(isset($soluciones))
+											@foreach($soluciones as $solucion)
+												 
+												{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}
+												
+
+											@endforeach
+										@endif
+										<br>
+										<strong>Ámbito:</strong>
+										@if(isset($soluciones))
+											@foreach($soluciones as $solucion)
+												 
+												{{ $solucion->ambit->nombre_ambit }}
+												
+
+											@endforeach
+										@endif
+										<span data-dismiss="alert"></span>
+									</div>
 									
 								
 									<label class='text-success f-s-11'>
-	                                	<a href="#"><strong>FICHA: </strong></a>
+	                                	
 	                                	<i class="fa fa-clock-o fa-fw"></i>Creado: 
+	                                	@if(isset($soluciones))
+													@foreach($soluciones as $solucion)
+														 
+														{{ substr($solucion->created_at,0,10) }}
+														
+
+													@endforeach
+												@endif
 	                                </label>
 									
 			                        
                                 </div>
+                                	
                                 	<label class='text-success f-s-11'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuesta N°: </strong>
+                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Solución</strong>
                                 	</label>
 									<blockquote>
 										  	<p><h5>
@@ -92,23 +182,24 @@
 												@endif
 										  	</h5>
                                    	</blockquote>
-                                   	<a href= "#"><button type = "button" class = "btn btn-success btn-xs"  title="Ver Propuestas">Regresar</button></a>
-                                   <br>
-                                   <br>
+
                                    	<label class='text-success f-s-11'>
-                                		<strong>Actores:</strong> <a href="#modal-requerimiento-invitados" class="btn btn-xs btn-primary " data-toggle="modal"><i class="fa fa-plus"></i> </a>
+                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Problematica</strong>
                                 	</label>
-                                		<dl class="dl-horizontal">
-                                				
-											<dt>* RESPONSABLE:</dt>
-											
-											<dt>CO-RESPONSABLE</dt>
-											<dd>
-												
-									         
-											</dd>
-												
-										</dl>
+									<blockquote>
+										  	<p><h5>
+										  		@if(isset($soluciones))
+													@foreach($soluciones as $solucion)
+														 
+														{{ $solucion->problema_solucion }}
+														
+
+													@endforeach
+												@endif
+										  	</h5>
+                                   	</blockquote>
+
+                                   
                                 	
 	                        </div>
 	
@@ -116,7 +207,7 @@
 					</div>
 					<!-- end col-5 -->
 					<!-- inicio acciones -->
-					<div class="col-md-7">
+					<div class="col-md-5">
 						<div class="panel panel-inverse" data-sortable-id="index-5" style="border: 1px solid rgba(112, 116, 120, 0.64);" >
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
@@ -130,28 +221,94 @@
 							<div class="panel-body p-t-0">
 								<div class="media-body">
 									<br>
-									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-plus"></i> Agregar</a><p>
-									<ul class="media-list media-list-with-divider">
-										
-										<li class="media media-lg">
-											<a class="pull-left">
-												<label class="text-success f-s-14"><strong>
-
+										<label class='text-success f-s-11'>
+                                		
+                                	</label>
+                            		<dl class="dl-horizontal">
+                            				
+										<dt>* RESPONSABLE: &nbsp;</dt>
+										@if(isset($soluciones))
+												@foreach($soluciones as $solucion)
+													 
+													{{ " ".$solucion->responsable_solucion }}
 													
-														
-													</strong></label>
-											</a>
 
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												
-												<div class="media-body">
+												@endforeach
+											@endif
+										
+										<dt>CO-RESPONSABLE:</dt>
+
+										<dd>
+											@if(isset($soluciones))
+												@foreach($soluciones as $solucion)
+													 
+													{{ $solucion->corresponsable_solucion }}
+													
+
+												@endforeach
+											@endif
+											
+								         
+										</dd>
+											
+									</dl>
+									<div class="media-body">
 													<dl class="dl-horizontal">
-														<dt>Fecha registro:</dt>
-														<dd></dd>
+														<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
+														<span class="label label-warning">Inicializado</span> 
 														
 													</dl>
 												</div>
+									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-1x fa-check"></i> Iniciar compromiso</a><p>
+									@if(isset($soluciones))
+									<ul class="media-list media-list-with-divider">
+										
+										<li class="media media-lg">
+											<div class="media-body">
+												<h5 class="media-heading"></h5>
+												Por parte del SRI, se revisará los casos de cartera vencida con esta Institución y se analizarán los escenarios de reestructuración de deuda, conforme el dialogo productivo realizado.
+												<br>
+												
+												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+												
+											</div>
+
+										</li>
+										<hr>
+
+										<li class="media media-lg">
+											<div class="media-body">
+												<h5 class="media-heading"></h5>
+												Se analizará la situación del sector florícola a fin de contrastar la situación indicada.
+												<br>
+												
+												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+												
+											</div>
+
+										</li>
+
+										<li class="media media-lg">
+											<div class="media-body">
+												<h5 class="media-heading"></h5>
+												Por parte del IESS, se analizará igualmente los casos de cartera vencida con la Institución.
+												<br>
+												
+												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+												
+											</div>
+
+										</li>
+
+										<li class="media media-lg">
+											<div class="media-body">
+												<h5 class="media-heading"></h5>
+												Se reportará los resultados de análisis al Señor Presidente para su aprobación y determinación de la solución más adecuada.
+												<br>
+												
 												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
                                             	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
 												
@@ -161,6 +318,7 @@
 										
 										
 									</ul>
+									@endif
 			                        
 								</div>
 							</div>
