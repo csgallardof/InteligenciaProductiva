@@ -27,7 +27,8 @@
 								<li>{{ $error  }}</li>
 					        @endforeach
 				        </ul>
-						<a href="{{ route('participantes.create') }}" class="btn btn-primary pull-right">Regresar</a>
+						{{-- <a href="{{ route('participantes.create') }}" class="btn btn-primary pull-right">Regresar</a> --}}
+						<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right">Regresar</a>
 			        @endif
 
 		        </div>	

@@ -51,11 +51,6 @@ class User extends Authenticatable
         return $this->belongsTo('App\Vsector');
     }
 
-    public function soluciones(){
-
-        return $this->belongsToMany(solucion::class); 
-    
-    }
 
     
 }

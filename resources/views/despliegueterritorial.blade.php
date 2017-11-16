@@ -409,11 +409,8 @@
 @section('end_js')
   @parent
 
-
-
-
-  <script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
-  <script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+	<script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
 	<script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
 	<script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
