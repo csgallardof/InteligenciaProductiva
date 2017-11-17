@@ -162,7 +162,7 @@
 																		<p class="f-s-12 text-justify">
 																		{{ $solucion_p->verbo_solucion." ".$solucion_p->sujeto_solucion." ".$solucion_p->complemento_solucion }}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		<a href= "{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -208,7 +208,7 @@
 																		<p class="f-s-12 text-justify">
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>
 																		{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
-																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		<a href= "{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -251,7 +251,7 @@
 																		<p class="f-s-12 text-justify">
 																		{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
-																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		<a href= "{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -293,7 +293,7 @@
 																<td>
 																	<p class="f-s-12 text-justify">
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																	<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																	<a href= "{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																	</p>
 																	<hr class="hr_style3" />
 																</td>
@@ -333,7 +333,7 @@
 																	<td>
 																		<p class="f-s-12 text-justify">
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		<a href= "{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
