@@ -1,94 +1,79 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+        <title>Inteligencia Productiva - @yield('title')</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+        <meta content="Sistema de Inteligencia Productiva MIPRO" name="description" />
+        <meta content="Ministerio de Industrias y Productividad" name="author" />
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        @section('head')
+            <!-- ================== BEGIN BASE CSS STYLE ================== -->
+            <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+            <link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
+            <!-- ================== END BASE CSS STYLE ================== -->
+        @show
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- ================== BEGIN BASE CSS STYLE ================== -->
+        @section('start_css')
+            <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+            <link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
+            <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
+        @show
+        <!-- ================== END BASE CSS STYLE ================== -->
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!-- ================== BEGIN BASE JS ================== -->
+        @section('start_js')
+            <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
+        @show
+        <!-- ================== END BASE JS ================== -->
     @yield('start_css')
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Inteligencia Productiva
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Ingresar</a></li>
-                            <li><a href="{{ route('register') }}">Registrarse</a></li>
-                            <li><a href="{{ route('sipocs.index') }}">Sipoc</a></li>
-                            <li><a href="{{ route('thematics.index') }}">Eje temático</a></li>
-                            <li><a href="{{ route('sectors.index') }}">Sectores</a></li>
-                            <li><a href="{{ route('vsectors.index') }}">Variable Sectorial</a></li>
-                            <li><a href="{{ route('ambits.index') }}">Ambito</a></li>
-                            <li><a href="{{ route('pajustadas.index') }}">Palabra Ajustada</a></li>
-                            <li><a href="{{ route('soluciones.index') }}">Soluciones</a></li>
-                            <li><a href="{{ route('provincias.index') }}">Provincia</a></li>
-                            <li><a href="{{ route('instrumentos.index') }}">Instrumentos</a></li>
-                            <li><a href="{{ route('participantes.index') }}">Participantes</a></li>
-                            
-
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
+    <div id="page-container" class="fade">
+            @include ('layouts.menu_admin')
+            <div style="padding-top:100px;"></div>
+            @yield ('content')
+            @include ('layouts.common_modals')
+            @include ('layouts.footer')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('end_js')
+    @section('end_js')
+            <!-- ================== BEGIN BASE JS ================== -->
+            <script src="{{ asset('plugins/jquery/jquery-1.9.1.min.js') }}"></script>
+            <script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
+            <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+            <!--[if lt IE 9]>
+              <script src="{{ asset('crossbrowserjs/html5shiv.js') }}"></script>
+              <script src="{{ asset('crossbrowserjs/respond.min.js') }}"></script>
+              <script src="{{ asset('crossbrowserjs/excanvas.min.js') }}"></script>
+            <![endif]-->
+            <script src="{{ asset('plugins/jquery-cookie/jquery.cookie.js') }}"></script>
+            <script src="{{ asset('plugins/scrollMonitor/scrollMonitor.js') }}"></script>
+            <!-- ================== END BASE JS ================== -->
+            <script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+            <script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
+            <script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
+            <script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
+            <script src="{{ asset('js/custom-mipro.js') }}"></script>
+            <script src="{{ asset('js/apps.js') }}"></script>
+            <script src="{{ asset('js/dashboard.js') }}"></script>
+
+        @show
+
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+
+    @yield('init_scripts')
+
 </body>
 </html>

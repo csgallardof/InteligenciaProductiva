@@ -8,26 +8,24 @@
         <div class="col-md-12 col-md-offset-1" style="margin-left: 0%;">
             <div class="panel panel-default">
 	            <div class="panel-heading">
-	            	<h3>Lista de Soluciones</h3>
+	            	<h4>Soluciones</h4><br>
 	       			@include('flash::message')
-                	<div class="panel-body pull-right">
-	            		<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
+                	<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>	
+                	
+				</div>
+				<div class="panel-body">
+					<div class="pull-right" style="padding-bottom: 20px;"">
+						<form action="{{ url('soluciones') }}" method="GET" class="form-inline" role="search">
                         	<div class="form-group">
 								<input type="text" name="parametro" id="solucion" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){}" 
 								/>
 							</div>
-							<button type="submit" class="btn btn-sm btn-default">Buscar</button>
+							<button type="submit" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i></button>
 						</form>
-                    </div>
-                    <br><br><br><br>
-
-
-	            	<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
-				</div>	            
-	            <div class="panel-body">
+					</div>
 				  	<table class="table table-hover">
 				        <thead>
-				            <tr>
+				            <tr class="active">
 				                <th>#</th>
 				                <th class="text-center">EVENTO</th>
 				                <th class="text-center">PROVINCIA</th>
@@ -78,44 +76,12 @@
 				
 				</div>
 			</div>
+
 		</div>				    
 	
 		
 	</div>
 </div>
 
-	
-<!-- VENTANA MODAL PARA ELIMINAR SOLUCION -->
-
-<div class="modal fade" id="ventanaBorrarSolucion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<p id="nombre_solucion"></p>
-			</div>
-			<div class="modal-body">
-				<div id="nombre_solucion2"></div>
-				
-			</div>
-			<br><br>
-			<div class="modal-footer">
-				
-				<input id="botonBorrarSolucion" type="button" class="btn btn-primary" value="Borrar">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>   					
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- FIN VENTANA MODAL -->
 @endsection
 
-
-
-@section('end_js')
-  
-    <script src="{{ asset('js/miJavascript.js') }}"></script>
-
-@endsection

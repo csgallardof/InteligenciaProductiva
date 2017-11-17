@@ -54,7 +54,8 @@ class PaginasController extends Controller
     }
 
     public function vocaciones(){
-    	return view('publico.vocaciones');
+        $provincias = Provincia::all();
+    	return view('publico.vocaciones')->with(["provincias"=>$provincias]);
     }
 
     public function indices(){

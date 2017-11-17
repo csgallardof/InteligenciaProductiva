@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
 			
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Lista Eventos <a href="{{ route('eventos.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
+            	<div class="panel panel-default">
+            	<div class="panel-heading">Lista Eventos <a href="{{ route('eventos.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
 
 
 					<div class="panel-body">
@@ -41,4 +41,4 @@
 	
 
 @endsection
-    
+

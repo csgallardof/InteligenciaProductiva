@@ -70,6 +70,9 @@ class EventosController extends Controller
     public function edit($id)
     {
         //
+        $item = evento::find($id);
+
+        return view('admin.eventos.edit', compact('item'));
     }
 
     /**
@@ -82,6 +85,13 @@ class EventosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // $evento = Evento::find($id);
+        // $this ->validate($request,[
+        //     'nombre_evento' =>'required|unique:eventos'
+        // ]);
+        // $evento-> nombre_evento = $request-> nombre_evento;
+        // $evento->save();
+        // return redirect('eventos');
     }
 
     /**

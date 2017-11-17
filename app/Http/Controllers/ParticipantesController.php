@@ -28,13 +28,12 @@ class ParticipantesController extends Controller
     {
    	    $rol = DB::table('roles')->where('nombre_role', "Participante")->first();  //Obtener id rol de participante
     	
-        $participantes = User::where('tipo_fuente','=','1')                        //filtro para tener a todos los usuarios con tipo fuento = 1 y con rol participante
-                                ->whereHas('roles', function ($q) use ($rol) {
+        $participantes = User::search($request-> parametro)->where('tipo_fuente','=','1')
+                            ->whereHas('roles', function ($q) use ($rol) {
                                     $q->where('roles.id', $rol-> id);
-                                })
-        ->orderBy('apellidos','ASC')->paginate(20);
-        
-        return view('admin.participantes.home')->with(["participantes"=>$participantes, "parametro"=>$request->parametro]); 
+                            })
+        ->orderBy('apellidos','ASC')->paginate(15);
+        return view('admin.participantes.home')->with(["participantes"=>$participantes]);    
     }
    
     /**
@@ -130,7 +129,7 @@ class ParticipantesController extends Controller
                     $user-> name  = $registro["nombre"];   // Id Eslabón de la cadena Productiva
                     $user-> apellidos = $registro["apellidos"];
                     $user-> cedula = $registro["cedula"];
-                    $user-> password = $registro["cedula"];
+                    $user-> password = bcrypt($registro["cedula"]);
                     $user-> email = $registro["email"];
 
                     $user-> telefono = $registro['telefonoExtension'];

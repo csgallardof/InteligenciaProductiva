@@ -82,8 +82,3 @@
 
 	
 @endsection
-
-
-@section('end_js')
-
-@endsection

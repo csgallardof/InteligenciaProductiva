@@ -1,4 +1,4 @@
-@extends('admin.sectors.create')
+@extends('admin.ambits.create')
 
 @section('edit_titulo') Editar @endsection
 

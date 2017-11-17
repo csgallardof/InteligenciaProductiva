@@ -76,7 +76,7 @@
 												</div>
 
 												<div class="tab-content">
-													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
+													<div class="tab-pane fade active in col-md-10 col-md-offset-1" id="nav-pills-tab-ElOro">
 							                            <!-- Inicio Header Provincia -->
 							                            <div class="m-t-10 row">
 							                            	<div class="m-t-15 col-md-6">
@@ -215,7 +215,7 @@
 													</ul>
 												</div>
 												<div class="tab-content">
-													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Azuay">
+													<div class="tab-pane fade active in col-md-10 col-md-offset-1" id="nav-pills-tab-Azuay">
 							                            <!-- Inicio Header Provincia -->
 							                            <div class="m-t-10 row">
 															<div class="m-t-15 col-md-6">
@@ -459,7 +459,7 @@
 													</ul>
 												</div>
 												<div class="tab-content">
-													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-MoronaSantiago">
+													<div class="tab-pane fade active in col-md-10 col-md-offset-1" id="nav-pills-tab-MoronaSantiago">
 							                            <!-- Inicio Header Provincia -->
 							                            <div class="m-t-10 row">
 							                            	<div class="m-t-15 col-md-6">
@@ -591,7 +591,7 @@
 													</ul>
 												</div>
 												<div class="tab-content">
-													<div class="tab-pane fade active in ol-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
+													<div class="tab-pane fade active in col-md-10 col-md-offset-1" id="nav-pills-tab-Galapagos">
 							                            <!-- Inicio Header Provincia -->
 							                            <div class="m-t-10 row">
 								                            <div class="m-t-15 col-md-6">

@@ -51,6 +51,39 @@ class User extends Authenticatable
         return $this->belongsTo('App\Vsector');
     }
 
+    public function scopeSearch($query, $name)
+    {
+        $query->where('apellidos','LIKE',"%$name%")
+                    ->orwhere('name','LIKE',"%$name%")
+                    ->orwhere('cedula','LIKE',"%$name%")
+                    ->orwhere('celular','LIKE',"%$name%")
+                    ->orwhere('telefono','LIKE',"%$name%")
+                    ->orwhere('email','LIKE',"%$name%");
+        
+        $vsectors = Vsector::where('nombre_vsector','LIKE',"%$name%")->get();
+        if(count($vsectors) > 0){
+            foreach ($vsectors as $vsector) {
+                $query->orwhere('vsector_id', '=',"$vsector->id" );
+            }
+        }
 
+        $sectors= Sector::where('nombre_sector','LIKE',"%$name%")->get();
+        if(count($sectors) > 0){
+            foreach ($sectors as $sector) {
+                $query->orwhere('sector_id', '=',"$sector->id" );
+            }
+        }   
+
+       
+        
+        return $query;
+        
+    }
+
+
+    public function admin()
+    {
+        return $this->tipo === 1;
+    }
     
 }

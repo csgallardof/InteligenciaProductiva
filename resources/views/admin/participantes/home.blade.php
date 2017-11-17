@@ -1,13 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
-@section('title', 'Inicio')
-
-@section('start_css')
-  @parent
-  <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
-@endsection
-
-@section('contenido')
+@section('content')
 
 			
 	<div class="container">
@@ -15,25 +8,23 @@
 	        <div class="col-md-12 col-md-offset-1" style="margin-left: 0%;">
 	            <div class="panel panel-default">
 		            <div class="panel-heading">
-		            	<h3>Lista de Participantes</h3>
+		            	<h4>Participantes</h4><br>
 		       			@include('flash::message')
-	                	<div class="panel-body pull-right">
-		            		<form action="{{ url('participantes') }}" method="GET" class="form-inline" role="search">
+		       			<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
+
+	           		</div>
+
+		            <div class="panel-body">
+					  	<div class="pull-right" style="padding-bottom: 20px;"">
+							<form action="{{ url('participantes') }}" method="GET" class="form-inline" role="search">
 	                        	<div class="form-group">
-									<input type="text" name="parametro" id="participante" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){}" 
+									<input type="text" name="parametro" id="solucion" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){}" 
 									/>
 								</div>
-								<button type="submit" class="btn btn-sm btn-default">Buscar</button>
+								<button type="submit" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i></button>
 							</form>
-	                    </div>
-	                    <br><br><br><br>
-
-
-		            	<a href="{{ route('participantes.create') }}" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
-
-					</div>	            
-		            <div class="panel-body">
-					  	<table class="table table-hover">
+						</div>
+						<table class="table table-hover">
 					        <thead>
 					            <tr>
 					                <th class="text-center">APELLIDOS</th>
@@ -110,35 +101,4 @@
 		</div>
 	</div>
 	<!-- FIN VENTANA MODAL -->
-@endsection
-
-@section('end_js')
-  @parent
-
-
-
-
-  <script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
-  <script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
-	<script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
-	<script src="{{ asset('js/custom-mipro.js') }}"></script>
-	<script src="{{ asset('js/apps.js') }}"></script>
-	<script src="{{ asset('js/dashboard.js') }}"></script>
-
-
-@endsection
-
-@section('init_scripts')
-
-  <script>
-    $(document).ready(function() {
-      Dashboard.init();
-
-
-
-    });
-  </script>
-
 @endsection
