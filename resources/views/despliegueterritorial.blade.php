@@ -90,10 +90,6 @@
 
 										</div>
 
-
-										
-
-
 										<div class="col-md-1 m-l-10">
 											<button type="submit" class="btn btn-success m-r-5 m-b-5">Consultar</button>
 											<input type="hidden" name="accion" value="nuevo">
@@ -115,289 +111,280 @@
 			</div>
 			<!-- end #about -->
 
+			
 			<!-- begin #about -->
 			<div id="about" class="content row-m-t-2" data-scrollview="true">
 					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-					<!-- begin row -->
-					<div class="row">
-							<!-- begin col-4 -->
-
-						<!-- end row -->
-						<div class="col-md-12"  style="background: #ffffff;">
-
-						
-							<div class="modal-body">
-							<!--INICIO ROW-->
+					<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
 							<!-- begin row -->
-								<div class="row">
-								<!-- MODAL PROVEEDORES INICIO -->
-									<div class="col-md-3">
+							<div class="row">
+									<!-- begin col-4 -->
 
-										
+									<!-- end row -->
+								<div class="col-md-12"  style="background: #ffffff;">
 
-										<div class="panel panel-inverse overflow-hidden">
-										<div class="panel-heading bg-yellow">
-											<h3 class="panel-title"  style="padding:5px 10px;">
-												<a class="">
-													<i class="fa fa-2x fa-arrow-right pull-right"></i>
-													<strong class="text-white f-s-14">PROVEEDORES</strong>
+									<div class="modal-header">
 
-												</a>
-											</h3>
+										<h4 class="modal-title fit-m-t-2">Cadena Productiva 
+											
+										</h4>
+
 										</div>
-										<div id="collapse10" class="panel-collapse">
-											<div class="panel-body custom-m-padding">
-												<table>
-													@if(isset($solucion_proveedores))
-														@foreach($solucion_proveedores as $solucion_p)
-														<tr>
-															<td>
-																<p class="f-s-12 text-justify">
-																	
-																	{{ $solucion_p->verbo_solucion." ".$solucion_p->sujeto_solucion." ".$solucion_p->complemento_solucion }}
-																	</a>
+										<div class="modal-body">
+										<!--INICIO ROW-->
+
+										<!-- begin row -->
+											<div class="row">
+													<!-- begin col-3 -->
+												<div class="col-md-2">
+
+													<!-- MODAL PROVEEDORES INICIO -->
+
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">PROVEEDORES</strong>
+															</a>
+														</h3>
+													</div>
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+															<hr class='hr_style2' />
+															<table>
+																@if(isset($solucion_proveedores))
+																@foreach($solucion_proveedores as $solucion_p)
+																<tr>
+																	<td>
+																		<p class="f-s-12 text-justify">
+																		{{ $solucion_p->verbo_solucion." ".$solucion_p->sujeto_solucion." ".$solucion_p->complemento_solucion }}
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
+																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		</p>
+																		<hr class="hr_style3" />
+																	</td>
+
+																</tr>
+																@endforeach
+																@endif
+																
+															</table>
 															
-																<a href= "/detalle-despliegue/{{ $solucion_p->id }}" title="Proveedores" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																</p>
-																<hr class="hr_style3" />
-															</td>
 
-														</tr>
-														@endforeach
-	 												@endif
-												</table>
-
-											</div>
-										</div>
-									</div>
-
-								</div>
-									
-								<!--MODAL PROVEEDORES FIN  -->
-
-
-									<!--MODAL INSUMOS INCIO   -->
-										<div class="col-md-2">
-											<div class="panel panel-inverse overflow-hidden">
-											<div class="panel-heading bg-yellow">
-												<h3 class="panel-title"  style="padding:5px 10px;">
-													<a class="">
-														<i class="fa fa-2x fa-arrow-right pull-right"></i>
-														<strong class="text-white f-s-14">INSUMOS</strong>
-
-
-
-
-													</a>
-												</h3>
-											</div>
-
-											<div id="collapse10" class="panel-collapse">
-												<div class="panel-body custom-m-padding">
-													<table>
-														<tr>
-															<td>
-																<p class="f-s-12 text-justify">
-																<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-
-								@if(isset($solucion_insumo))
-									@foreach($solucion_insumo as $solucion_insu)
-
-										<a href="{{ $solucion_p->id }}"> 
-
-										{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
-
-										</a>
-
-									@endforeach
-								@endif
-																</p>
-																<hr class="hr_style3" />
-															</td>
-
-														</tr>
-													</table>
-
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-
-									<!-- MODAL FINAL INSUMOS  -->
-
-									<!--MODAL PREOCESOS INCIO   -->
-										<div class="col-md-2">
-											<div class="panel panel-inverse overflow-hidden">
-											<div class="panel-heading bg-yellow">
-												<h3 class="panel-title"  style="padding:5px 10px;">
-													<a class="">
-														<i class="fa fa-2x fa-arrow-right pull-right"></i>
-														<strong class="text-white f-s-14">PROCESOS</strong>
+													<!-- end col-3 -->
+												<!--MODAL PROVEEDORES FIN  -->
 
 
+												<!--MODAL INSUMOS INCIO   -->
+												<div class="col-md-2">
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">INSUMOS</strong>
+															</a>
+														</h3>
+													</div>
 
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+														<hr class='hr_style2' />
 
-													</a>
-												</h3>
-											</div>
+															<table>
+																@if(isset($solucion_insumo))
+																@foreach($solucion_insumo as $solucion_insu)
 
-											<div id="collapse10" class="panel-collapse">
-												<div class="panel-body custom-m-padding">
+																<tr>
+																	<td>
+																		<p class="f-s-12 text-justify">
+																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>
+																		{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
+																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		</p>
+																		<hr class="hr_style3" />
+																	</td>
 
+																</tr>
+																@endforeach
+																@endif
+																
+															</table>
+															
 
-
-													<table>
-														<tr>
-															<td>
-																<p class="f-s-12 text-justify">
-																<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-										@if(isset($solucion_proceso))
-											@foreach($solucion_proceso as $solucion_proc)
-
-												{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
-
-											@endforeach
-										@endif
-
-																</p>
-																<hr class="hr_style3" />
-															</td>
-
-														</tr>
-													</table>
-
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
 
-									</div>
+												<!-- MODAL FINAL INSUMOS  -->
 
-										<!-- MODAL PROCESOS FINAL   -->
+												<!--MODAL PREOCESOS INCIO   -->
+												<div class="col-md-2">
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">PROCESOS</strong>
+															</a>
+														</h3>
+													</div>
 
-										<!--MODAL PRODUCTO INCIO   -->
-										<div class="col-md-2">
-											<div class="panel panel-inverse overflow-hidden">
-											<div class="panel-heading bg-yellow">
-												<h3 class="panel-title"  style="padding:5px 10px;">
-													<a class="">
-														<i class="fa fa-2x fa-arrow-right pull-right"></i>
-														<strong class="text-white f-s-14">PRODUCTO</strong>
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+													<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+														<hr class='hr_style2' />
+															<table>
+																@if(isset($solucion_proceso))
+																@foreach($solucion_proceso as $solucion_proc)
+																<tr>
+																	<td>
+																		<p class="f-s-12 text-justify">
+																		{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
+																		<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
+																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		</p>
+																		<hr class="hr_style3" />
+																	</td>
 
+																</tr>
+																@endforeach
+																@endif
+															</table>
+														</div>
+													</div>
+												</div>
 
-
-													</a>
-												</h3>
 											</div>
 
-											<div id="collapse10" class="panel-collapse">
-												<div class="panel-body custom-m-padding">
+													<!-- MODAL PROCESOS FINAL   -->
 
+													<!--MODAL PRODUCTO INCIO   -->
+												<div class="col-md-2">
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">PRODUCTO</strong>
+ 															</a>
+														</h3>
+													</div>
 
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+														<hr class='hr_style2' />
 
-													<table>
+														<table>
 
-														<tr>
-															<td>
-																<p class="f-s-12 text-justify">
-																<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+															@if(isset($solucion_producto))
+															@foreach($solucion_producto as $solucion_prod)
+															<tr>
+																<td>
+																	<p class="f-s-12 text-justify">
+																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
+																	<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																	</p>
+																	<hr class="hr_style3" />
+																</td>
 
-									@if(isset($solucion_producto))
-										@foreach($solucion_producto as $solucion_prod)
-
-											{{ $solucion_prod->verbo_solucion." ".$solucion_prod->sujeto_solucion." ".$solucion_prod->complemento_solucion }}
-
-										@endforeach
-									@endif
-
-																</p>
-																<hr class="hr_style3" />
-															</td>
-
-														</tr>
-													</table>
-
+															</tr>
+															@endforeach
+															@endif
+																
+														</table>
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
 
-									<!-- MODAL PRODUCTO FINAL  -->
-									<!--MODAL MERCADO INCIO   -->
-										<div class="col-md-2">
-											<div class="panel panel-inverse overflow-hidden">
-											<div class="panel-heading bg-yellow">
-												<h3 class="panel-title"  style="padding:5px 10px;">
-													<a class="">
-														<i class="fa fa-2x fa-arrow-right pull-right"></i>
-														<strong class="text-white f-s-14">MERCADO</strong>
+												<!-- MODAL PRODUCTO FINAL  -->
+												<!--MODAL MERCADO INCIO   -->
+												<div class="col-md-2">
+													<div class="panel panel-inverse overflow-hidden">
+													<div class="panel-heading bg-yellow">
+														<h3 class="panel-title"  style="padding:5px 10px;">
+															<a class="">
+																<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																<strong class="text-white f-s-14">MERCADO</strong>
+															</a>
+														</h3>
+													</div>
 
-
-
-
-													</a>
-												</h3>
-											</div>
-
-											<div id="collapse10" class="panel-collapse">
-												<div class="panel-body custom-m-padding">
-
-
-
-
-													<table>
-
-														<tr>
-															<td>
-																<p class="f-s-12 text-justify">
-																<a href= "edit-fichas-ccpt.php?fic_id=" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-															@if(isset($solucion_mercado))
+													<div id="collapse10" class="panel-collapse">
+														<div class="panel-body custom-m-padding">
+														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+															<hr class='hr_style2' />
+															<table>
+																@if(isset($solucion_mercado))
 																@foreach($solucion_mercado as $solucion_mer)
-
-																	{{ $solucion_mer->verbo_solucion }}
+															
+																<tr>
+																	<td>
+																		<p class="f-s-12 text-justify">
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
+																		<a href= "#" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		</p>
+																		<hr class="hr_style3" />
+																	</td>
 
 																@endforeach
-															@endif
+																@endif
 
-																</p>
-																<hr class="hr_style3" />
-															</td>
+																</tr>
+																
+															</table>
+															
 
-														</tr>
-													</table>
-
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
-									</div>
 
-									<!-- MODAL MERCADO FINAL   -->
+												<!-- MODAL MERCADO FINAL   -->
+			
+									</div>
+										<!-- end row -->
+
+										<!-- FIN ROW-->
+
+										<!-- -->
+
+								<hr />
+
+
+								</div>
+
+								<!-- end #content -->
+
+								<!-- begin scroll to top btn -->
+								<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+								<!-- end scroll to top btn -->
+							</div>
+
+									<!-- end col-4 -->
 
 							</div>
-						
-						<hr />
-
-
-						</div>
-
-						<!-- end #content -->
-
-						<!-- begin scroll to top btn -->
-					<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
-						<!-- end scroll to top btn -->
-					</div>
-
-							<!-- end col-4 -->
+							<!-- end row -->
 
 					</div>
-					<!-- end row -->
-
-				</div>
-				<!-- end container -->
+					<!-- end container -->
 			</div>
 			<!-- end #about -->
+
+
+
+
 
 @endsection
 
