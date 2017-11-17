@@ -23,16 +23,8 @@
             <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
-        @show
-        <!-- ================== END BASE CSS STYLE ================== -->
-
-<<<<<<< HEAD
-        <!-- ================== BEGIN BASE JS ================== -->
-        @section('start_js')
-            <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
-        @show
+                @show
         <!-- ================== END BASE JS ================== -->
-=======
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -41,10 +33,26 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-
           gtag('config', 'UA-109787903-1');
         </script>
->>>>>>> 9ab5b4ee2eaa8ba8682cf780ecb2f8ce6f1d7fa2
+    @yield('start_css')
+</head>
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+
+    <div id="page-container" class="fade">
+            @include ('layouts.menu_admin')
+            <div style="padding-top:100px;"></div>
+            @yield ('content')
+            @include ('layouts.common_modals')
+            @include ('layouts.footer')
+    </div>
+        <!-- ================== END BASE CSS STYLE ================== -->
+
+        <!-- ================== BEGIN BASE JS ================== -->
+        @section('start_js')
+            <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
+        @show
+        <!-- ================== END BASE JS ================== -->
     @yield('start_css')
 </head>
 <body data-spy="scroll" data-target="#header-navbar" data-offset="51">

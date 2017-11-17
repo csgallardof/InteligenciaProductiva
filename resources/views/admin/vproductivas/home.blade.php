@@ -9,7 +9,8 @@
     <link href="{{ asset('plugins/jquery-file-upload/css/jquery.fileupload-ui.css') }}" rel="stylesheet" />
     <style type="text/css">
         .thumb {
-            height: 200px;
+            height: 500px;
+            width: 500px;
             border: 5px solid #000;
         }
     </style>
@@ -88,7 +89,7 @@
                                         </button>
                                     </div>
                                     <br>
-                                    <div class="col-md-8 col-md-offset-4">
+                                    <div class="col-md-8 col-md-offset-1">
                                         <output id="vistaPrevia"></output>
                                     </div>
                                 </div>
