@@ -26,11 +26,25 @@
         @show
         <!-- ================== END BASE CSS STYLE ================== -->
 
+<<<<<<< HEAD
         <!-- ================== BEGIN BASE JS ================== -->
         @section('start_js')
             <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
         @show
         <!-- ================== END BASE JS ================== -->
+=======
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109787903-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109787903-1');
+        </script>
+>>>>>>> 9ab5b4ee2eaa8ba8682cf780ecb2f8ce6f1d7fa2
     @yield('start_css')
 </head>
 <body data-spy="scroll" data-target="#header-navbar" data-offset="51">
