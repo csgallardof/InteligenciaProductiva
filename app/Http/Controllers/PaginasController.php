@@ -15,6 +15,8 @@ use App\Provincia;
 use App\Sipoc;
 use App\Sector;
 
+use App\Auth\Login;
+
 class PaginasController extends Controller
 {
      public function despliegueterritorial(){
@@ -70,12 +72,13 @@ class PaginasController extends Controller
     // Modelo Usuarios
     public function usuarios(){
 
-        $role = user::find(1)->roles;
+       
+       // $usuario_actual= Auth::user()->get();
+       $role = user::find(44)->roles;
        // return $role;
-
-        $user = role::find(1)->users;
+       $user = role::find(2)->users;
         
-        dd($user);
+        dd($role);
         return $user;
         //return view('welcome');
     }
@@ -89,6 +92,17 @@ class PaginasController extends Controller
        // $user = Evento::find(1)->users;
 
         dd($evento);
+
+        //return View::make('welcome')->with('', $events);
+    }
+
+    public function UsuariosEvento(){
+
+        $usuario_actual = User::find(1)->evento()->get(); 
+
+       // $user = Evento::find(1)->users;
+
+        dd($usuario_actual);
 
         //return View::make('welcome')->with('', $events);
     }

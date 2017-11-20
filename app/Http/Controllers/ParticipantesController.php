@@ -75,10 +75,14 @@ class ParticipantesController extends Controller
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
 
         $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
-        $evento = new Evento;
-        $evento-> nombre_evento = $nombreEvento;
-        $evento-> provincia_id = $provincia-> id;
-        $evento-> save();
+        $evento= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento],/* ['provincia_id', '=', $provincia->id] */])->first();
+        if( is_null($evento) ){
+            $evento = new Evento;
+            $evento-> nombre_evento = $nombreEvento;
+            $evento-> provincia_id = $provincia-> id;
+            $evento-> save();    
+        }
+
         $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
         
         $InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
@@ -177,8 +181,7 @@ class ParticipantesController extends Controller
         $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
         
-        $evento= $objWorksheet->getCell("B1")."-".$provincia->nombre_provincia;    //obtenemos el nombre del evento        
-        $evento = DB::table('eventos')->where('nombre_evento',$evento)->first();
+        $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
 
         $liderMesa= $objWorksheet->getCell("B2");     //obtenemos al lider de mesa
         
@@ -223,7 +226,7 @@ class ParticipantesController extends Controller
                 $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
                 $tipoEmpresa = DB::table('tipo_empresa')->where('nombre_tipo_empresa', $fila["clasificacionEmpresa"] )->first();
                 $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
-                $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
+                
                 
                 $solucion = new Solucion;
                 $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva

@@ -46,24 +46,6 @@
             @include ('layouts.common_modals')
             @include ('layouts.footer')
     </div>
-        <!-- ================== END BASE CSS STYLE ================== -->
-
-        <!-- ================== BEGIN BASE JS ================== -->
-        @section('start_js')
-            <script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
-        @show
-        <!-- ================== END BASE JS ================== -->
-    @yield('start_css')
-</head>
-<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
-
-    <div id="page-container" class="fade">
-            @include ('layouts.menu_admin')
-            <div style="padding-top:100px;"></div>
-            @yield ('content')
-            @include ('layouts.common_modals')
-            @include ('layouts.footer')
-    </div>
 
     @section('end_js')
             <!-- ================== BEGIN BASE JS ================== -->
@@ -95,7 +77,6 @@
         });
     </script>
 
-    @yield('init_scripts')
 
 </body>
 </html>

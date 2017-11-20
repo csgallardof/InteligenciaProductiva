@@ -48,133 +48,7 @@ class SolucionesController extends Controller
     // public function store(Request $request)
     public function store($nombreArchivo, $flash1)
     {        
-        /*
-         *
-         * Cargamos el  Archivo Excel para trabajarlo 
-         *
-        */ 
-        $objPHPExcel = PHPExcel_IOFactory::load( storage_path('app').'/storage/'.$request-> nombreArchivo ); 
-        
-        
-        /*
-         *
-         * Hoja REGISTRO
-         *
-        */
-        
-        $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
-        $objWorksheet = $objPHPExcel->getActiveSheet();  //
-        
-        //$nombreEvento= $objWorksheet->getCell("B1");    //obtenemos el nombre del evento
-        
-        $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
-        
-        /*
-         *
-         * Hoja :: MESAS
-         *
-        */
-
-        $objPHPExcel->setActiveSheetIndex(1);   //indicamos que vamos a trabajar en la hoja 0 que es la de mesas
-        $objWorksheet = $objPHPExcel->getActiveSheet();  //
-
-        $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
-        $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
-        
-        $evento= $objWorksheet->getCell("B1")."-".$provincia->nombre_provincia;    //obtenemos el nombre del evento        
-        $evento = DB::table('eventos')->where('nombre_evento',$evento)->first();
-
-        $liderMesa= $objWorksheet->getCell("B2");     //obtenemos al lider de mesa
-        
-        $sistematizador= $objWorksheet->getCell("B3");     //obtenemos al lider de mesa
-        
-        $InvDate= $objWorksheet->getCell("B5")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
-        $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
-        $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
-        
-        $sector= $objWorksheet->getCell("B6");   //obtenemos el grupo 
-        $sector = DB::table('sectors')->where('nombre_sector', $sector)->first();
-
-        $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
-        
-        //return "archivo guardado";
-
-        for ($i = 9; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
-            $informacion2[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
-                'eslabonCP' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
-                'problematica' => $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue(),
-                'problematicaValidacion' => str_replace(" ", "", strtoupper( $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue() )),
-                'pverbo' => $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue(),
-                'psujeto' => $objPHPExcel->getActiveSheet()->getCell('D'.$i)->getCalculatedValue(),
-                'pcomplemento' => $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue(),
-                'instrumentos' => $objPHPExcel->getActiveSheet()->getCell('F'.$i)->getCalculatedValue(),
-                'clasificacionEmpresa' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
-                'ambito' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
-                'responsable' => $objPHPExcel->getActiveSheet()->getCell('I'.$i)->getCalculatedValue(),
-                'coresponsables' => $objPHPExcel->getActiveSheet()->getCell('J'.$i)->getCalculatedValue(),
-            );
-        }
-
-        
-        $countError = $countOK = 0;
-        $arrayValProblemas[] = array(); 
-        foreach ($informacion2 as $fila) {   //recorremos todos los registros recogidos
-            if( $fila["eslabonCP"] != "" && $fila["problematica"] != "" && $fila["pverbo"] != "" && $fila["psujeto"] != "" 
-                && $fila["pcomplemento"] != "" && $fila["instrumentos"] != "" && $fila["clasificacionEmpresa"] != "" 
-                && $fila["ambito"] != "" && $fila["responsable"] != "" && $fila["coresponsables"] != ""){    //validamos que todos los campos de cada registro no se encuentren vacios
-
-                $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
-                $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
-                $tipoEmpresa = DB::table('tipo_empresa')->where('nombre_tipo_empresa', $fila["clasificacionEmpresa"] )->first();
-                $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
-                $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
-                
-                $solucion = new Solucion;
-                $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva
-                $solucion-> problema_validar_solucion = $fila["problematicaValidacion"];     
-                if (!in_array($fila["problematicaValidacion"], $arrayValProblemas)) {
-                    $solucion-> problema_solucion= $fila["problematica"];
-                }
-                else{
-                    $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
-                    $solucion-> problema_solucion= $solucionAuxiliar-> problema_solucion;
-                }                                             
-                $solucion-> verbo_solucion = $fila["pverbo"];
-                $solucion-> sujeto_solucion = $fila["psujeto"];
-                $solucion-> complemento_solucion = $fila["pcomplemento"];
-                $solucion-> instrumento_id = $instrumento-> id;
-                $solucion-> ambit_id = $ambito-> id;
-                $solucion-> responsable_solucion = $fila["responsable"];
-                $solucion-> corresponsable_solucion = $fila["coresponsables"];
-
-                $solucion-> evento_id = $evento-> id;
-                $solucion-> lider_mesa_solucion = $liderMesa;
-                $solucion-> sistematizador_solucion = $sistematizador;
-                $solucion-> provincia_id= $provincia-> id;
-                $solucion-> sector_id= $sector-> id; 
-
-                $solucion-> tipo_empresa_id = $tipoEmpresa-> id;  
-                
-                //Hoja -- registros
-                $solucion-> coordinador_zonal_solucion= $coordinador;
-                
-                //quemados
-                $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
-                $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
-                $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo    
-
-                $solucion-> vsector_id = 0;     // sin utilizar por el momento
-                
-                $solucion-> save(); 
-                array_push($arrayValProblemas, $fila["problematicaValidacion"]); 
-                $countOK++ ;  
-                                    
-            }else{
-                $countError++;
-            }           
-        }
-        Flash::success("Se registradon ".$countOK." soluciones.");
-        return redirect('soluciones');
+        //
     }
 
     /**
@@ -267,11 +141,11 @@ class SolucionesController extends Controller
         }
         
         $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
-        $nombreEventoAuxiliar= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento], /*['provincia_id', '=', $provincia->id]*/ ])->first();
-        if( $nombreEventoAuxiliar != null){
-            $error = "El nombre del evento ya se encuentra registrado";
-            array_push($errores, $error); 
-        }
+        // $nombreEventoAuxiliar= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento], ['provincia_id', '=', $provincia->id] ])->first();
+        
+
+
+
         
 
         $liderMesa= $objWorksheet->getCell("B2")->getValue();     //obtenemos al lider de mesa
@@ -287,8 +161,7 @@ class SolucionesController extends Controller
 
         $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
         
-        //return "archivo guardado";
-
+        
         for ($i = 9; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
             $informacion2[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
                 'numFila' => $i,
@@ -389,7 +262,7 @@ class SolucionesController extends Controller
         $datos = Collection::make($soluciones);
         $errores = Collection::make($errores);
 
-        return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento]); 
+        return view('admin.soluciones.vistaPreviaMesas')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo, "nombreEvento"=>$nombreEvento, "sector"=>$sector]); 
         
     } 
 

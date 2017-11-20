@@ -86,7 +86,9 @@ Route::resource('participantes','ParticipantesController');  //J. Arcos -- rutas
 
 Route::get('/usuarios','PaginasController@usuarios');
 
-Route::get('/EventosParticipantes','PaginasController@participantes');
+Route::get('/EventosParticipantes','PaginasController@UsuariosEvento');
+
+//Route::get('/EventosParticipantes','PaginasController@participantes');
 
 
 

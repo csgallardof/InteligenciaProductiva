@@ -45,6 +45,7 @@
 				            <tr>
 				                <th># FILA</th>
 				                <th class="text-center">EVENTO</th>
+				                <th class="text-center">GRUPO</th>
 				                <th class="text-center">PROVINCIA</th>
 				                <th class="text-center">ESLAB&Oacute;N DE LA CADENA PRODUCTIVA</th>
 				                <th class="text-center">PROBLEM&Aacute;TICA</th>
@@ -62,6 +63,7 @@
 							<tr>
 								<td class="text-center">{{ $c++ }}</td>
 				                <td class="text-center">{{ $nombreEvento}}</td>
+				                <td class="text-center">{{ $sector->nombre_sector}}</td>
 				                <td class="text-center">{{ $solucion->provincia->nombre_provincia}}</td>
 				                <td class="text-center">{{ $solucion->sipoc->nombre_sipoc }}</td>
 				                <td class="text-center">{{ $solucion->problema_solucion }}</td>
