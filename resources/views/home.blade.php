@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Te ecnuentras conectado
+                    Te encuentras conectado
                 </div>
             </div>
         </div>

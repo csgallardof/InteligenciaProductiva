@@ -19,14 +19,15 @@
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="nombreArchivo" value="{{ $nombreArchivo }}">
 						</form>	
-						<button type="submit" form="formSubida" value="Subir" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Cargar datos</button>
+						<button type="submit" form="formSubida" value="Subir" class="btn btn-success pull-right"><i class="fa fa-plus"></i> &nbsp;Cargar datos</button>
 					@else
-						<b>Hoja:</b> <u>Registro</u> <br>
+						<h3><b>Hoja:</b> <u>Registro</u></h3> <br><br>
 						<ul>
 							@foreach($errores as $error)
 								<li>{{ $error  }}</li>
 					        @endforeach
 				        </ul>
+						<b><ins>Nota:</ins></b>&nbsp; Los campos de celular y tel&eacute;fono/ext no son obligatorios.
 						{{-- <a href="{{ route('participantes.create') }}" class="btn btn-primary pull-right">Regresar</a> --}}
 						<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right">Regresar</a>
 			        @endif
@@ -36,7 +37,8 @@
 				
 				<div class="panel-heading">
 	            	<h4>{{ $nombreEvento }}</h4>
-	            	<b>Vista Previa  </b> (Participantes v&aacute;lidos)
+	            	<b>Vista Previa</b><br>
+	            	A continuaci&oacute;n se muestra el listado de los nuevos participantes v&aacute;lidos no existentes.
 				</div>
 					            
 	            <div class="panel-body">

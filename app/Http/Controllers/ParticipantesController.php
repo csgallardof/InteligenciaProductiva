@@ -93,13 +93,23 @@ class ParticipantesController extends Controller
         
         for ($i = 7; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
             
+            $cedula = $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
+            if( strlen($cedula) < 10 && $cedula != "" ){
+                $cedula= "0".$cedula;
+            }
+
+            $celular = $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
+            if( strlen($celular) < 10 && $celular != "" && strlen($celular) > 1){
+                $celular= "0".$celular;
+            }
+
             $informacion[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
                 'numFila' => $i,
                 'nombre' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
                 'apellidos' => $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue(),
-                'cedula' => $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue(),
+                'cedula' => $cedula,
                 'email' => $objPHPExcel->getActiveSheet()->getCell('D'.$i)->getCalculatedValue(),
-                'celular' => $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue(),
+                'celular' => $celular,
                 'telefonoExtension' => $objPHPExcel->getActiveSheet()->getCell('F'.$i)->getCalculatedValue(),
                 'grupo' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
                 'tipo' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
@@ -109,9 +119,7 @@ class ParticipantesController extends Controller
         $countError = $countOK = 0;
             
         foreach ($informacion as $registro) {   //recorremos todos los registros recogidos
-            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != "" 
-                && $registro["celular"] != "" && $registro["telefonoExtension"] != "" 
-                && $registro["grupo"] != "" && $registro["tipo"] != "")
+            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != ""  && $registro["grupo"] != "" && $registro["tipo"] != "")
             {    //validamos que todos los campos de cada registro no se encuentren vacios
                 $userAux = DB::table('users')->where('cedula', $registro['cedula'])->first();
                 if( is_null($userAux) ) {
@@ -360,14 +368,24 @@ class ParticipantesController extends Controller
         $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
         
         for ($i = 7; $i <= $highestRow; $i++) {         //recorremos todas los registros, empiezan desde la fila 7 hasta el número total de filas
+
+            $cedula = $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue();
+            if( strlen($cedula) < 10 && $cedula != "" ){
+                $cedula= "0".$cedula;
+            }
+
+            $celular = $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue();
+            if( strlen($celular) < 10 && $celular != "" && strlen($celular) > 1){
+                $celular= "0".$celular;
+            }
             
             $informacion[] = array(                     //en una variable recogemos los registro agrupandolos dentro de un array
                 'numFila' => $i,
                 'nombre' => $objPHPExcel->getActiveSheet()->getCell('A'.$i)->getCalculatedValue(),
                 'apellidos' => $objPHPExcel->getActiveSheet()->getCell('B'.$i)->getCalculatedValue(),
-                'cedula' => $objPHPExcel->getActiveSheet()->getCell('C'.$i)->getCalculatedValue(),
+                'cedula' => $cedula,
                 'email' => $objPHPExcel->getActiveSheet()->getCell('D'.$i)->getCalculatedValue(),
-                'celular' => $objPHPExcel->getActiveSheet()->getCell('E'.$i)->getCalculatedValue(),
+                'celular' => $celular,
                 'telefonoExtension' => $objPHPExcel->getActiveSheet()->getCell('F'.$i)->getCalculatedValue(),
                 'grupo' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
                 'tipo' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
@@ -375,17 +393,14 @@ class ParticipantesController extends Controller
         }
 
         $users[] = array(); 
-        $countUserExists = 0; 
-        $arrayValProblemas[] = array(); 
-            
+        $countUserExists = 0;  
+        
         foreach ($informacion as $registro) {   //recorremos todos los registros recogidos
-            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["email"] != "" 
-                && $registro["celular"] != "" && $registro["telefonoExtension"] != "" 
-                && $registro["grupo"] != "" && $registro["tipo"] != "")
+            if( $registro["nombre"] != "" && $registro["apellidos"] != "" && $registro["cedula"] != "" && $registro["grupo"] != "" && $registro["tipo"] != "")
             {    //validamos que todos los campos de cada registro no se encuentren vacios
+                
                 $userAux = DB::table('users')->where('cedula', $registro['cedula'])->first();
                 if( is_null($userAux) ) {
-                
                     $user = new user;
 
                     $sector = DB::table('sectors')->where('nombre_sector', $registro['grupo'])->first();
@@ -399,27 +414,39 @@ class ParticipantesController extends Controller
                         $error = "Fila ".$registro['numFila'].": Ingrese un tipo de participante v&aacute;lido";
                         array_push($errores, $error); 
                     }
-                    
-                    $user-> name  = $registro["nombre"];   // Id Eslabón de la cadena Productiva
-                    $user-> apellidos = $registro["apellidos"];
-                    $user-> cedula = $registro["cedula"];
-                    $user-> email = $registro["email"];
 
-                    $user-> telefono = $registro['telefonoExtension'];
-                    $user-> celular = $registro['celular'];
                     
-                    $user-> sector_id = $sector-> id;
-                    $user-> vsector_id =  $vsector-> id;
+                    if( strlen($registro['email']) < 7 || strpos( $registro['email'], '@') === false ){
+                       $error = "Fila ".$registro['numFila'].": El correo electr&oacute;nico no es v&aacute;lido. Elimine la fila";
+                        array_push($errores, $error);
+                    }else{
 
-                    $user-> tipo_fuente= 1;     // 1 = despliegue territorial
+                        $user-> name  = $registro["nombre"];   // Id Eslabón de la cadena Productiva
+                        $user-> apellidos = $registro["apellidos"];
+                        $user-> cedula = $registro["cedula"];
+                        $user-> email = $registro["email"];
+
+                        $user-> telefono = $registro['telefonoExtension'];
+                        $user-> celular = $registro['celular'];
+                        
+                        $user-> sector_id = $sector-> id;
+                        $user-> vsector_id =  $vsector-> id;
+
+                        $user-> tipo_fuente= 1;     // 1 = despliegue territorial
+
+                        array_push($users, $user); 
+                    }
                     
-                    array_push($users, $user); 
                 }else{
                     $countUserExists++;
+                    if( strlen($registro['email']) < 7 || strpos( $registro['email'], '@') === false ){
+                    $error = "Fila ".$registro['numFila'].": El correo electr&oacute;nico no es v&aacute;lido. Elimine la fila";
+                    array_push($errores, $error);
+                }
                 }    
 
             }else{
-                $error = "Fila ". $registro['numFila'].": Se encontraron campos vacios.";
+                $error = "Fila ". $registro['numFila'].": Se encontraron campos vacios. Elimine la fila.";
                 array_push($errores, $error); 
             }      
         }//FIN del foreach
@@ -429,7 +456,7 @@ class ParticipantesController extends Controller
         
         if(count($errores) > 0){
             File::delete( storage_path('app').'/storage/'.$nombreArchivo);
-            Flash::error("Se encontraron ". count($errores)." error(es) detallados a continuaci&oacute;n:");
+            Flash::error("Se encontraron ". count($errores)." error(es) detallados a continuaci&oacute;n, por favor siga las instrucciones.");
         }else{
             Flash::info("<ul>
                             <li>Participantes nuevos: ". count($users) ."</li>

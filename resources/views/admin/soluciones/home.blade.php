@@ -51,7 +51,7 @@
 				                <td class="text-center">{{ $solucion->provincia->nombre_provincia}}</td>
 				                <td class="text-center">{{ $solucion->sipoc->nombre_sipoc }}</td>
 				                <td class="text-center">{{ $solucion->problema_solucion }}</td>
-				                <td class="text-center">{{ $solucion->verbo_solucion." a ".$solucion->sujeto_solucion." a ".$solucion->complemento_solucion }}</td>
+				                <td class="text-center">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
 				                <td class="text-center">{{ $solucion->instrumento->nombre_instrumento }}</td>
 								<td class="text-center">{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}</td>
 								<td class="text-center">{{ $solucion->ambit->nombre_ambit }}</td>
