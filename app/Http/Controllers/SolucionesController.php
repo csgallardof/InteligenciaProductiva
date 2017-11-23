@@ -258,6 +258,7 @@ class SolucionesController extends Controller
                     $solucion-> vsector_id = 0;     // sin utilizar por el momento
                     $solucion-> solucion_ccpt = "";
                     $solucion-> mesa_id = 0;
+                    $solucion-> estado_id = 0;
 
                     $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
                     if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {

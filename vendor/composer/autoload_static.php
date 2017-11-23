@@ -312,6 +312,7 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
     );
 
     public static $classMap = array (
+        'Add' => __DIR__ . '/../..' . '/database/migrations/2017_11_23_201708_add.estado_id_solucions_table.php',
         'AddAmbitsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_16_172654_add_ambits_table.php',
         'AddApellidoCedulaTelefonoCelularToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_14_200711_add_apellido_cedula_telefono_celular_to_users_table.php',
         'AddColumnToTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_14_152320_add_column_to_table.php',
@@ -336,6 +337,7 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\ConsejoConsultivoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ConsejoConsultivoController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EventosController' => __DIR__ . '/../..' . '/app/Http/Controllers/EventosController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',

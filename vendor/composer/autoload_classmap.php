@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Add' => $baseDir . '/database/migrations/2017_11_23_201708_add.estado_id_solucions_table.php',
     'AddAmbitsTable' => $baseDir . '/database/migrations/2017_10_16_172654_add_ambits_table.php',
     'AddApellidoCedulaTelefonoCelularToUsersTable' => $baseDir . '/database/migrations/2017_11_14_200711_add_apellido_cedula_telefono_celular_to_users_table.php',
     'AddColumnToTable' => $baseDir . '/database/migrations/2017_11_14_152320_add_column_to_table.php',
@@ -30,6 +31,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+    'App\\Http\\Controllers\\ConsejoConsultivoController' => $baseDir . '/app/Http/Controllers/ConsejoConsultivoController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\EventosController' => $baseDir . '/app/Http/Controllers/EventosController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',

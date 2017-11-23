@@ -51,7 +51,6 @@
 				                <td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
 				                <td class="text-center">{{ $solucion->sipoc->nombre_sipoc }}</td>
 								<td class="text-center">{{ $solucion->pajustada->nombre_pajustada }}</td>
-
 				            </tr>
 				            @endforeach		            
 				        </tbody>
