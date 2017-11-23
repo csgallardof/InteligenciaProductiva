@@ -40,7 +40,7 @@ class Solucion extends Model
 
     public function thematic(){
 
-    	return $this->belongsTo('App\thematic');
+    	return $this->belongsTo('App\Thematic');
     }
 
     public function vsector(){

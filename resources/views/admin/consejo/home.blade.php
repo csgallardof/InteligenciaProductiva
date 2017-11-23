@@ -43,8 +43,8 @@
 				        	@foreach($soluciones as $solucion)
 							<tr>
 								<td class="text-center">{{ $solucion->mesa->nombre_mesa}}</td>
-				                <td class="text-center">{{ $solucion->thematic->nombre_thematic}}</td>
 				                <td class="text-center">{{ $solucion->solucion_ccpt}}</td>
+				                <td class="text-center">{{ $solucion->thematic->nombre_thematic}}</td>
 				                <td class="text-center">{{ $solucion->ambit->nombre_ambit}}</td>
 				                <td class="text-center">{{ $solucion->sector->nombre_sector }}</td>
 				                <td class="text-center">{{ $solucion->responsable_solucion }}</td>

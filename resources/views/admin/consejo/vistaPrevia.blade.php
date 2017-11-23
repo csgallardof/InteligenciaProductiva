@@ -49,7 +49,7 @@
 				                <th># FILA</th>
 				                <th class="text-center">MESA</th>
 				                <th class="text-center">PROPUESTA ORIGINAL</th>
-				                <th class="text-center">FOMENTO DE LA PRODUCCI%Oacute;N NACIONAL</th>
+				                <th class="text-center">FOMENTO DE LA PRODUCCI&Oacute;N NACIONAL</th>
 				                <th class="text-center">&Aacute;MBITO</th>
 				                <th class="text-center">SECTOR</th>
 				                <th class="text-center">RESPONSABLE</th>
@@ -64,8 +64,8 @@
 							<tr>
 								<td class="text-center">{{ $c++ }}</td>
 				                <td class="text-center">{{ $solucion->mesa->nombre_mesa}}</td>
-				                <td class="text-center">{{ $solucion->thematic->nombre_thematic}}</td>
 				                <td class="text-center">{{ $solucion->solucion_ccpt}}</td>
+				                <td class="text-center">{{ $solucion->thematic->nombre_thematic}}</td>
 				                <td class="text-center">{{ $solucion->ambit->nombre_ambito}}</td>
 				                <td class="text-center">{{ $solucion->sector->nombre_sector }}</td>
 				                <td class="text-center">{{ $solucion->responsable_solucion }}</td>
