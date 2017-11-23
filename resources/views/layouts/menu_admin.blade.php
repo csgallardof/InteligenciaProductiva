@@ -41,6 +41,7 @@
 	                            <li><a href="{{ route('provincias.index') }}">Provincia</a></li>
 	                            <li><a href="{{ route('instrumentos.index') }}">Instrumentos</a></li>
 	                            <li><a href="{{ route('participantes.index') }}">Participantes</a></li>
+	                            <li><a href="{{ route('ccpt.index') }}">Consejo</a></li>
 	                            
 
 	                        @else

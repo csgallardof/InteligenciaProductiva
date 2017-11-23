@@ -102,7 +102,23 @@ class Solucion extends Model
             foreach ($tipoEmpresas as $tipoEmpresa) {
                 $query->orwhere('tipo_empresa_id', '=',"$tipoEmpresa->id" );
             }
-        }          
+        } 
+
+        $sectors= Sector::where('nombre_sector','LIKE',"%$name%")->get();
+        if(count($sectors) > 0){
+            foreach ($sectors as $sector) {
+                $query->orwhere('sector_id', '=',"$sector->id" );
+            }
+        }  
+
+        $mesas= Mesa::where('nombre_mesa','LIKE',"%$name%")->get();
+        if(count($mesas) > 0){
+            foreach ($mesas as $mesa) {
+                $query->orwhere('mesa_id', '=',"$mesa->id" );
+            }
+        }   
+
+
         
         return $query;
         
@@ -111,6 +127,11 @@ class Solucion extends Model
     public function tipoEmpresa(){
 
         return $this->belongsTo('App\TipoEmpresa');
+    }
+
+    public function mesa(){
+
+        return $this->belongsTo('App\Mesa');
     }
     
 }

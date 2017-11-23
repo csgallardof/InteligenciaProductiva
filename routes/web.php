@@ -104,3 +104,8 @@ Route::get('participantes/vistaPrevia/{nombreArchivo}',[
 Route::get('/indice/indicadoresProvincia', 'PaginasController@indicadoresProvincia');
 
 Route::resource('vocaciones_productivas','VocacionesProductivasController');  //J. Arcos -- rutas para UsersController
+
+Route::resource('ccpt','ConsejoConsultivoController');  //J. Arcos -- rutas para UsersController
+
+Route::post('/ccpt/vistaPrevia',['uses'=>'ConsejoConsultivoController@vistaPreviaCCPT','as'=>'ccpt.vistaPrevia']);
+

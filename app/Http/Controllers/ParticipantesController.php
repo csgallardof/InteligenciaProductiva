@@ -32,7 +32,7 @@ class ParticipantesController extends Controller
                             ->whereHas('roles', function ($q) use ($rol) {
                                     $q->where('roles.id', $rol-> id);
                             })
-        ->orderBy('apellidos','ASC')->paginate(15);
+        ->orderBy('apellidos','ASC')->paginate(25);
         return view('admin.participantes.home')->with(["participantes"=>$participantes]);    
     }
    
@@ -271,6 +271,8 @@ class ParticipantesController extends Controller
                 $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo    
 
                 $solucion-> vsector_id = 0;     // sin utilizar por el momento
+                $solucion-> solucion_ccpt = "";
+                $solucion-> mesa_id = 0;
                 
                 $solucion-> save(); 
                 array_push($arrayValProblemas, $fila["problematicaValidacion"]); 

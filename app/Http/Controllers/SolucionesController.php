@@ -225,6 +225,8 @@ class SolucionesController extends Controller
                 $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
                 $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
                 $solucion-> vsector_id = 0;     // sin utilizar por el momento
+                $solucion-> solucion_ccpt = "";
+                $solucion-> mesa_id = 0;
 
                 $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
                 if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {

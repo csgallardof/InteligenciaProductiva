@@ -9,7 +9,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laracasts/flash": "^2.0",
-        "phpoffice/phpexcel": "dev-master"
+        "phpoffice/phpexcel": "dev-master",
+        "doctrine/dbal": "v2.4.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
