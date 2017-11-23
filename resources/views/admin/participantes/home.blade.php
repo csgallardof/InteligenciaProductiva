@@ -18,7 +18,7 @@
 					  	<div class="pull-right" style="padding-bottom: 20px;"">
 							<form action="{{ url('participantes') }}" method="GET" class="form-inline" role="search">
 	                        	<div class="form-group">
-									<input type="text" name="parametro" id="solucion" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){}" 
+									<input type="text" name="parametro" id="solucion" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){} " value="{{ Request::get('parametro') }}" 
 									/>
 								</div>
 								<button type="submit" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i></button>
