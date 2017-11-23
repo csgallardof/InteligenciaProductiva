@@ -64,7 +64,7 @@
 				    	</table>
 					    <div class="row">
 					    	<div class="col-md-offset-5">
-					    		{!! $participantes->render() !!}
+					    		{!! $participantes->appends(["parametro" => Request::get("parametro")])->render() !!}
 					    	</div>
 					    </div>
 					</div>

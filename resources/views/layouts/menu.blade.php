@@ -32,6 +32,8 @@
 								<li><a href="/indice" data-toggle="modal">Índice Único de Competitividad</a></li>
 								<li><a href="/vocaciones" data-toggle="modal">Vocaciones Productivas</a></li>
 								<li><a href="/despliegueterritorial" data-toggle="modal">Despliegue Territorial</a></li>
+								<li><a href="/consejoconsultivo" data-toggle="modal">Consejo Consultivo</a></li>
+								</li>
 								<li><a href="http://servicios.industrias.gob.ec/biblioteca/" data-toggle="modal">Biblioteca</a></li>
 								<li><a href="/inversiones" data-toggle="modal">Inversiones</a></li>
 								<!-- <li><a href="#login-mipro-dialog" data-toggle="modal">INGRESAR</a></li> -->

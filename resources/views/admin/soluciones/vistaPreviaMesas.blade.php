@@ -24,6 +24,7 @@
 					<a href="{{ url("participantes/vistaPrevia/".$nombreArchivo ) }}" class="btn btn-primary pull-right">{{-- <i class="glyphicon glyphicon-plus"></i> --}}&nbsp;Siguiente</a>
 				@else
 					<div class="panel-heading">
+						<h3><b>Hoja:</b> <u>Mesas</u></h3> <br><br>
 						<ul>
 							@foreach($errores as $error)
 								<li>{{ $error  }}</li>

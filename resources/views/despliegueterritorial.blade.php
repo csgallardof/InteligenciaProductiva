@@ -292,6 +292,7 @@
 															<tr>
 																<td>
 																	<p class="f-s-12 text-justify">
+																		{{ $solucion_prod->verbo_solucion. " ".$solucion_prod->sujeto_solucion." ".$solucion_prod->complemento_solucion }}
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
 																	<a href= "/detalle-despliegue/{{ $solucion_prod->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																	</p>
@@ -332,6 +333,7 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
+																			{{ $solucion_mer->verbo_solucion. " ".$solucion_mer->sujeto_solucion." ".$solucion_mer->complemento_solucion }}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
 																		<a href= "/detalle-despliegue/{{ $solucion_mer->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>

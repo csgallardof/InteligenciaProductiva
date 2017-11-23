@@ -140,13 +140,7 @@ class SolucionesController extends Controller
             array_push($errores, $error); 
         }
         
-        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;    //obtenemos el nombre del evento
-        // $nombreEventoAuxiliar= DB::table('eventos')->where([  ['nombre_evento', '=', $nombreEvento], ['provincia_id', '=', $provincia->id] ])->first();
-        
-
-
-
-        
+        $nombreEvento= $objWorksheet->getCell("B1")."-".$provincia-> nombre_provincia;   
 
         $liderMesa= $objWorksheet->getCell("B2")->getValue();     //obtenemos al lider de mesa
         
@@ -188,63 +182,101 @@ class SolucionesController extends Controller
         foreach ($informacion2 as $fila) {   //recorremos todos los registros recogidos
             if( $fila["eslabonCP"] != "" && $fila["problematica"] != "" && $fila["pverbo"] != "" && $fila["psujeto"] != "" && $fila["pcomplemento"] != "" && $fila["instrumentos"] != "" && $fila["clasificacionEmpresa"] != "" && $fila["ambito"] != "" && $fila["responsable"] != "" && $fila["coresponsables"] != "") 
             {    //validamos que todos los campos de cada registro no se encuentren vacios
-                
+                $valido = true;
                 $solucion = new Solucion;
                 $solucion-> problema_solucion= $fila["problematica"];
 
+                //Validacion SIPOC
                 $sipoc = DB::table('sipocs')->where('nombre_sipoc', $fila["eslabonCP"] )->first();
+                if( !is_null($sipoc) ){
+                    $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva
+                }else{
+                    $error = "Celda A". $fila['numFila'].": No se encontro el sipoc.";
+                    array_push($errores, $error);
+                    $solucion-> sipoc_id = 0;   // Id Eslabón de la cadena Productiva
+                    $valido = false;
+                }
+                
+                //Validacion INSTRUMENTO
                 $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumentos"] )->first();
+                if( !is_null($instrumento) ){
+                    $solucion-> instrumento_id = $instrumento-> id;
+                }else{
+                    $error = "Celda F". $fila['numFila'].": No se encontro el instrumento.";
+                    array_push($errores, $error);
+                    $solucion-> instrumento_id = 0;
+                    $valido = false;
+                }
+
+                //Validacion TIPO_EMPRESA
                 $tipoEmpresa = DB::table('tipo_empresa')->where('nombre_tipo_empresa', $fila["clasificacionEmpresa"] )->first();
+                if( !is_null($tipoEmpresa) ){
+                    $solucion-> tipo_empresa_id = $tipoEmpresa-> id;
+                }else{
+                    $error = "Celda G". $fila['numFila'].": No se encontro el tipo de empresa.";
+                    array_push($errores, $error);
+                    $solucion-> tipo_empresa_id = 0;
+                    $valido = false;
+                }
+
+                //Validacion AMBITO
                 $ambito = DB::table('ambits')->where('nombre_ambit', $fila["ambito"] )->first();
-                $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
-                
-                
-                $solucion-> sipoc_id = $sipoc-> id;   // Id Eslabón de la cadena Productiva
-                $solucion-> verbo_solucion = $fila["pverbo"];
-                $solucion-> sujeto_solucion = $fila["psujeto"];
-                $solucion-> complemento_solucion = $fila["pcomplemento"];
-                $solucion-> instrumento_id = $instrumento-> id;
-                
-                $solucion-> tipo_empresa_id = $tipoEmpresa-> id;
-                
-                $solucion-> ambit_id = $ambito-> id;
-                $solucion-> responsable_solucion = $fila["responsable"];
-                $solucion-> corresponsable_solucion = $fila["coresponsables"];
-
-                $solucion-> evento_id =  0;
-                $solucion-> lider_mesa_solucion = $liderMesa;
-                $solucion-> sistematizador_solucion = $sistematizador;
-                $solucion-> provincia_id= $provincia-> id;
-                //$solucion-> sector_id= $sector-> id;   
-                
-                //Hoja -- registros
-                $solucion-> coordinador_zonal_solucion= $coordinador;
-                
-                //quemados
-                $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
-                $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
-                $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
-                $solucion-> vsector_id = 0;     // sin utilizar por el momento
-                $solucion-> solucion_ccpt = "";
-                $solucion-> mesa_id = 0;
-
-                $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
-                if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {
-                    $solucion-> problema_solucion= $fila["problematica"];
-                    array_push($arrayProblemas, $fila["problematica"] );
-                    array_push($arrayValProblemas, $fila["problematicaValidacion"] );
+                if( !is_null($ambito) ){
+                    $solucion-> ambit_id = $ambito-> id;
+                }else{
+                    $error = "Celda H". $fila['numFila'].": No se encontro el &aacute;mbito.";
+                    array_push($errores, $error);
+                    $solucion-> ambit_id = 0;
+                    $valido = false;
                 }
-                else{
-                    $posicion = array_search($fila["problematicaValidacion"], $arrayValProblemas);
-                    $solucion-> problema_solucion= $arrayProblemas[$posicion];
-                }   
-                //$solucion-> save();
-                array_push($soluciones, $solucion); 
-                $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
-                if( $solucionAuxiliar != null){                        
-                    $error = "Fila ". $fila['numFila'].": La problem&aacute;tica: \"".$fila['problematica']."\"  ya se encuentra registrada.";
-                    array_push($errores, $error);   
-                }
+
+
+                if($valido === true){
+
+                
+                    $solucion-> verbo_solucion = $fila["pverbo"];
+                    $solucion-> sujeto_solucion = $fila["psujeto"];
+                    $solucion-> complemento_solucion = $fila["pcomplemento"];
+                    
+                    $solucion-> responsable_solucion = $fila["responsable"];
+                    $solucion-> corresponsable_solucion = $fila["coresponsables"];
+
+                    $solucion-> evento_id =  0;
+                    $solucion-> lider_mesa_solucion = $liderMesa;
+                    $solucion-> sistematizador_solucion = $sistematizador;
+                    $solucion-> provincia_id= $provincia-> id;
+                    //$solucion-> sector_id= $sector-> id;   
+                    
+                    //Hoja -- registros
+                    $solucion-> coordinador_zonal_solucion= $coordinador;
+                    
+                    //quemados
+                    $solucion-> tipo_fuente= 1;     // 1 = despliegue territorial
+                    $solucion-> pajustada_id= 0;    // 0 porque esta columna es para consejo consultivo   
+                    $solucion-> thematic_id= 0;     // 0 porque esta columna es para consejo consultivo 
+                    $solucion-> vsector_id = 0;     // sin utilizar por el momento
+                    $solucion-> solucion_ccpt = "";
+                    $solucion-> mesa_id = 0;
+
+                    $solucion-> problema_validar_solucion = $fila["problematicaValidacion"]; 
+                    if (!in_array( $fila["problematicaValidacion"] , $arrayValProblemas)) {
+                        $solucion-> problema_solucion= $fila["problematica"];
+                        array_push($arrayProblemas, $fila["problematica"] );
+                        array_push($arrayValProblemas, $fila["problematicaValidacion"] );
+                    }
+                    else{
+                        $posicion = array_search($fila["problematicaValidacion"], $arrayValProblemas);
+                        $solucion-> problema_solucion= $arrayProblemas[$posicion];
+                    }   
+                    
+                    $solucionAuxiliar = DB::table('solucions')->where('problema_validar_solucion', $fila["problematicaValidacion"] )->first();
+                   if( $solucionAuxiliar != null){                        
+                        $error = "Celda B". $fila['numFila'].": La problem&aacute;tica: \"".$fila['problematica']."\"  ya se encuentra registrada.";
+                        array_push($errores, $error);   
+                    }else{
+                        array_push($soluciones, $solucion); 
+                    }
+                }    
 
             }else{
                 $error = "Fila ". $fila['numFila'].": Se encontraron campos vacios.";

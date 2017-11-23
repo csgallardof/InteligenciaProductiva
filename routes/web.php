@@ -109,3 +109,5 @@ Route::resource('ccpt','ConsejoConsultivoController');  //J. Arcos -- rutas para
 
 Route::post('/ccpt/vistaPrevia',['uses'=>'ConsejoConsultivoController@vistaPreviaCCPT','as'=>'ccpt.vistaPrevia']);
 
+Route::get('/consejoconsultivo', 'ConsejoConsultivoController@consejoconsultivo');
+Route::post('/consejoconsultivo',['uses'=>'ConsejoConsultivoController@buscar','as'=>'consejo.resultado']);

@@ -59,7 +59,7 @@
 			    	
 				    <div class="row">
 				    	<div class="col-md-offset-5">
-				    		{!! $soluciones->render() !!}
+				    		{!! $soluciones->appends(["parametro" => Request::get("parametro")])->render() !!}
 				    	</div>
 				    </div>
 				

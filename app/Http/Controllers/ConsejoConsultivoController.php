@@ -7,7 +7,8 @@ use PHPExcel;
 use PHPExcel_IOFactory; 
 use PHPExcel_Shared_Date;
 use App\Solucion;
-use App\Evento;
+use App\Ambit;
+use App\Sector;
 use File;
 use DB;
 use Illuminate\Support\Collection as Collection;
@@ -342,4 +343,66 @@ class ConsejoConsultivoController extends Controller
         return view('admin.consejo.vistaPrevia')->with(["datos"=>$datos, "errores"=>$errores, "nombreArchivo"=>$nombreArchivo]); 
         
     } 
+
+
+
+    public function consejoconsultivo(){
+
+
+        $ambits = Ambit::all(); 
+
+        $sectors= Sector::all(); 
+
+        return view('consejoconsultivo')->with(["ambits"=>$ambits,"sectors"=>$sectors]);
+        
+    }
+
+    public function buscar(Request $request){
+
+        //dd ($request->provincias);
+
+        $solucion_proveedores = Solucion::where('sector_id','=',$request->sectores)
+                            ->where('ambit_id','=',$request->ambitos)
+                            ->where('sipoc_id','=',1)
+                            ->where('tipo_fuente','=',2)->get();
+
+        $solucion_insumo = Solucion::where('sector_id','=',$request->sectores)
+                            ->where('ambit_id','=',$request->ambitos)
+                            ->where('sipoc_id','=',2)
+                            ->where('tipo_fuente','=',2)->get();
+
+        $solucion_proceso = Solucion::where('sector_id','=',$request->sectores)
+                            ->where('ambit_id','=',$request->ambitos)
+                            ->where('sipoc_id','=',3)
+                            ->where('tipo_fuente','=',2)->get();
+
+        $solucion_producto = Solucion::where('sector_id','=',$request->sectores)
+                            ->where('ambit_id','=',$request->ambitos)
+                            ->where('sipoc_id','=',4)
+                            ->where('tipo_fuente','=',2)->get();
+
+        $solucion_mercado = Solucion::where('sector_id','=',$request->sectores)
+                            ->where('ambit_id','=',$request->ambitos)
+                            ->where('sipoc_id','=',5)
+                            ->where('tipo_fuente','=',2)->get();
+
+
+        $ambits = Ambit::all(); 
+
+         $sectors= Sector::all();
+
+    
+       
+        return view('consejoconsultivo')->with(["solucion_proveedores"=>$solucion_proveedores,
+                                                    "solucion_insumo"=>$solucion_insumo,
+                                                    "solucion_proceso"=>$solucion_proceso,
+                                                    "solucion_producto"=>$solucion_producto,
+                                                    "solucion_mercado"=>$solucion_mercado,
+                                                    "ambits"=>$ambits,
+                                                    "sectors"=>$sectors
+
+                                                ]);
+
+    }
+
 }
