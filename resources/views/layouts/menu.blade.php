@@ -34,6 +34,8 @@
 								<li><a href="/despliegueterritorial" data-toggle="modal">Despliegue Territorial</a></li>
 								<li><a href="/consejoconsultivo" data-toggle="modal">Consejo Consultivo</a></li>
 								</li>
+								<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es" target="_blank" data-toggle="modal">Encuesta</a></li>
+								</li>
 								<li><a href="http://servicios.industrias.gob.ec/biblioteca/" data-toggle="modal">Biblioteca</a></li>
 								<li><a href="/inversiones" data-toggle="modal">Inversiones</a></li>
 								<!-- <li><a href="#login-mipro-dialog" data-toggle="modal">INGRESAR</a></li> -->
