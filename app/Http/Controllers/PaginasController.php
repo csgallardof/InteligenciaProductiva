@@ -114,15 +114,18 @@ class PaginasController extends Controller
 
         $solucion_proveedores = Solucion::where('sector_id','=',$request->sectores)
                             ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',1)->get();
+                            ->where('sipoc_id','=',1)
+                            ->where('tipo_fuente','=',1)->get();
 
         $solucion_insumo = Solucion::where('sector_id','=',$request->sectores)
                             ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',2)->get();
+                            ->where('sipoc_id','=',2)
+                            ->where('tipo_fuente','=',1)->get();
 
         $solucion_proceso = Solucion::where('sector_id','=',$request->sectores)
                             ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',3)->get();
+                            ->where('sipoc_id','=',3)
+                            ->where('tipo_fuente','=',1)->get();
 
         $solucion_producto = Solucion::where('sector_id','=',$request->sectores)
                             ->where('provincia_id','=',$request->provincias)

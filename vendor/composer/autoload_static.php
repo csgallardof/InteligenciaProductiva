@@ -312,12 +312,12 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
     );
 
     public static $classMap = array (
-        'Add' => __DIR__ . '/../..' . '/database/migrations/2017_11_23_201708_add.estado_id_solucions_table.php',
         'AddAmbitsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_16_172654_add_ambits_table.php',
         'AddApellidoCedulaTelefonoCelularToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_14_200711_add_apellido_cedula_telefono_celular_to_users_table.php',
         'AddColumnToTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_14_152320_add_column_to_table.php',
         'AddColumnToTableUsers' => __DIR__ . '/../..' . '/database/migrations/2017_11_14_174018_add_column_to_table_users.php',
         'AddCreateTipoEmpresaTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_15_171909_add_create_tipo_empresa_table.php',
+        'AddEstadoIdSolucionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_23_201708_add_estado_id_solucions_table.php',
         'AddIdMesaToSolucionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_21_162527_add_id_mesa_to_solucions_table.php',
         'AddRegionToProvinciasTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_17_165823_add_region_to_provincias_table.php',
         'AddSectorsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_16_172820_add_sectors_table.php',
@@ -389,9 +389,13 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
         'CreateProvinciasTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_31_155042_create_provincias_table.php',
         'CreateRoleUserTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_13_225423_create_role_user_table.php',
         'CreateRolesTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_13_224514_create_roles_table.php',
+        'CreateSolucionResponsableTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141139_create_solucion-responsable_table.php',
         'CreateSolucionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_07_215259_create_solucions_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateVsectorsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_163720_create_vsectors_table.php',
+        'CreateeateActividadesTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141216_createeate_actividades_table.php',
+        'CreateeateArchivoTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141228_createeate_archivo_table.php',
+        'CreateeateEstadosTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141203_createeate_estados_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
