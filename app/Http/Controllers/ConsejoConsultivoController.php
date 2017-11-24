@@ -99,6 +99,10 @@ class ConsejoConsultivoController extends Controller
                 
                 $pajustada = DB::table('pajustadas')->where('nombre_pajustada', trim($fila["propuesta_unificada"]) )->first();
             	$solucion-> pajustada_id= $pajustada-> id;
+
+                $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumento"] )->first();
+                $solucion-> instrumento_id = $instrumento-> id;   // Id Eslabón de la cadena Productiva
+                
                 
             	$solucion-> solucion_ccpt = $fila["propuesta_original"];
                 $solucion-> responsable_solucion = $fila["responsable"];
@@ -117,7 +121,6 @@ class ConsejoConsultivoController extends Controller
                 $solucion-> evento_id =  0;						// 0 porque esta columna es para despliegue territorial
                 $solucion-> provincia_id= 0;					// 0 porque esta columna es para despliegue territorial
                 $solucion-> tipo_empresa_id = 0;				// 0 porque esta columna es para despliegue territorial
-                $solucion-> instrumento_id = 0;					// 0 porque esta columna es para despliegue territorial
                 
 	            $solucion-> vsector_id = 0;     // sin utilizar por el momento
    
@@ -217,6 +220,7 @@ class ConsejoConsultivoController extends Controller
                 'corresponsables' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
                 'eslabonCP' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
                 'propuesta_unificada' => $objPHPExcel->getActiveSheet()->getCell('I'.$i)->getCalculatedValue(),
+                'instrumento' => $objPHPExcel->getActiveSheet()->getCell('J'.$i)->getCalculatedValue(),
             );
         }
 
@@ -224,7 +228,7 @@ class ConsejoConsultivoController extends Controller
         $soluciones[] = array();
 
         foreach ($informacion3 as $fila) {   //recorremos todos los registros recogidos
-            if( $fila["mesa"] != "" && $fila["propuesta_original"] != "" && $fila["propuesta_original"] != "" && $fila["ambito"] != "" && $fila["sector"] != "" && $fila["responsable"] != "" && $fila["eslabonCP"] != "" && $fila["propuesta_unificada"] != "" ) 
+            if( $fila["mesa"] != "" && $fila["propuesta_original"] != "" && $fila["instrumento"] != "" && $fila["ambito"] != "" && $fila["sector"] != "" && $fila["responsable"] != "" && $fila["eslabonCP"] != "" && $fila["propuesta_unificada"] != "" ) 
             {    //validamos que todos los campos de cada registro no se encuentren vacios
                 $valido = true;
                 $solucion = new Solucion;
@@ -295,6 +299,17 @@ class ConsejoConsultivoController extends Controller
                 	$valido = false;
                 }
 
+                //Validacion INSTRUMENTO
+                $instrumento = DB::table('instrumentos')->where('nombre_instrumento', $fila["instrumento"] )->first();
+                if( !is_null($instrumento) ){
+                    $solucion-> instrumento_id= $instrumento-> id;
+                }else{
+                    $error = "CELDA J". $fila['numFila'].": No se encontro el instrumento.";
+                    array_push($errores, $error);
+                    $solucion-> instrumento_id= 0;
+                    $valido = false;
+                }                
+
                 if($valido === true){
                 	$solucion-> solucion_ccpt = $fila["propuesta_original"];
 	                $solucion-> responsable_solucion = $fila["responsable"];
@@ -313,7 +328,6 @@ class ConsejoConsultivoController extends Controller
 	                $solucion-> evento_id =  0;						// 0 porque esta columna es para despliegue territorial
 	                $solucion-> provincia_id= 0;					// 0 porque esta columna es para despliegue territorial
 	                $solucion-> tipo_empresa_id = 0;				// 0 porque esta columna es para despliegue territorial
-	                $solucion-> instrumento_id = 0;					// 0 porque esta columna es para despliegue territorial
 	                
 		            $solucion-> vsector_id = 0;     // sin utilizar por el momento
 	   
