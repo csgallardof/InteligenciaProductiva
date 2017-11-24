@@ -8,6 +8,7 @@
   <link href="{{ asset('css/style-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/style-responsive-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />
+
 @endsection
 
 @section('contenido')
@@ -53,6 +54,24 @@
 
         </div>
 
+        <!-- begin #about -->
+        {{-- <div id="about" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+
+                <div class="col-md-12">
+                    <div class="panel-body text-center">
+
+                    
+          
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div> --}}
+
         <div class="bg-cover"></div>
 
                 </div>
@@ -76,104 +95,100 @@
         <div id="work" class="content" data-scrollview="true">
             <!-- begin container -->
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                
+                <hr class="hr_style1 row-m-b-1"><!-- End Spacing -->
+                
 
-								<!-- Spacing --><hr class="hr_style1 row-m-b-1"><!-- End Spacing -->
                 <!-- begin row -->
-                <div class="row row-space-10">
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/1.jpg') }}" alt="Work 1" /></a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="twitter-timeline" data-dnt="true" data-chrome="nofooter" href="https://twitter.com/hashtag/MesasDeCompetitividadEc" data-widget-id="909581797175984133">Tweets sobre #MesasDeCompetitividadEc</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                    </div>
+                    <div class="col-md-8">
+                        
+                        <div class="row row-space-12">
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/1.jpg') }}" alt="Work 1" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
+                            </div>
+                            <!-- end col-3 -->
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/2.jpg') }}" alt="Work 3" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
+                            </div>
+                            <!-- end col-3 -->
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/3.jpg') }}" alt="Work 5" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
                             </div>
                         </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/2.jpg') }}" alt="Work 3" /></a>
+
+
+                        <div class="row row-space-12">
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/4.jpg') }}" alt="Work 1" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
+                            </div>
+                            <!-- end col-3 -->
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/5.jpg') }}" alt="Work 3" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
+                            </div>
+                            <!-- end col-3 -->
+                            <!-- begin col-3 -->
+                            <div class="col-md-4">
+                                <!-- begin work -->
+                                <div class="work">
+                                    <div class="image">
+                                        <a href="#"><img src="{{ asset('imagenes/CCT/6.jpg') }}" alt="Work 5" /></a>
+                                    </div>
+                                </div>
+                                <!-- end work -->
                             </div>
                         </div>
-                        <!-- end work -->
+
+
+                        
                     </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/6.jpg') }}" alt="Work 5" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/4.jpg') }}" alt="Work 7" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
                 </div>
-                <!-- end row -->
-                <!-- begin row -->
-                <div class="row row-space-10">
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/5.jpg') }}" alt="Work 2" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/6.jpg') }}" alt="Work 4" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/3.jpg') }}" alt="Work 6" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                    <!-- begin col-3 -->
-                    <div class="col-md-3 col-sm-6">
-                        <!-- begin work -->
-                        <div class="work">
-                            <div class="image">
-                                <a href="#"><img src="{{ asset('imagenes/CCT/5.jpg') }}" alt="Work 8" /></a>
-                            </div>
-                        </div>
-                        <!-- end work -->
-                    </div>
-                    <!-- end col-3 -->
-                </div>
-                <!-- end row -->
+
+
+
+
+
+
             </div>
             <!-- end container -->
         </div>

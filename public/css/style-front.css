@@ -3114,3 +3114,7 @@ a.list-group-item.active:focus {
 .social-list > a > i {
   color: #ffffff;
 }
+
+.timeline-Tweet-text {
+    font-size: 15px ;
+}
