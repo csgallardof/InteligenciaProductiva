@@ -9,6 +9,45 @@
   <link href="{{ asset('css/style-responsive-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />
 
+  <style type="text/css">
+      @media (max-width: 1199px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+  </style>
 @endsection
 
 @section('contenido')
@@ -30,22 +69,35 @@
 
                 </div>
 
-                <div class="col-md-12">
+               {{--  <div class="col-md-12">
+                    <div class="panel-body text-center">
+                        <a href="#" class="btn btn-warning"></button>
+                        <a href="#" class="btn btn-warning"></button>
+                    </div>
+                </div> --}}
+                <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
-                      <a href="/cifras" class="btn btn-inverse"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Cifras</a>
-                      <a href="/indice" class="btn btn-inverse"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Índice Único de Competitividad</a>
-                      <a href="/vocaciones" class="btn btn-inverse"><i class="fa fa-cog pull-left" aria-hidden="true"></i>Vocaciones Productivas</a>
-
+                      <a href="/consejoconsultivo" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Consejo Consultivo</a>
+                      <a href="/despliegueterritorial" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
                     </div>
                 </div>
 
                 <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
-                      <a href="/despliegueterritorial" class="btn btn-inverse"><i class="fa fa-comments-o pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
+                      <a href="/cifras" class="btn btn-inverse"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Cifras</a>
+                      <a href="/indice" class="btn btn-inverse"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Índice Único de Competitividad</a>
+                      <a href="/vocaciones" class="btn btn-inverse"><i class="fa fa-cog pull-left" aria-hidden="true"></i>Vocaciones Productivas</a>
+                    </div>
+                </div>
+
+                <div class="col-md-12 row-m-t-minus-25">
+                    <div class="panel-body text-center">
+
                       <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Biblioteca</a>
                       <a href="/inversiones" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Inversiones</a>
+                      <a class="btn btn-inverse" href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es" target="_blank" data-toggle="modal"><i class="fa fa-book pull-left"></i>Simplificaci&oacute;n de tr&aacute;mites</a>
 
                     </div>
                 </div>

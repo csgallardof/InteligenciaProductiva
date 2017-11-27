@@ -29,12 +29,11 @@
 								</li> -->
 								<li><a href="/" data-toggle="modal">Inicio</a></li>
 								<li><a href="/cifras" data-toggle="modal">Cifras</a></li>
-								<li><a href="/indice" data-toggle="modal">Índice Único de Competitividad</a></li>
+								<li><a href="/indice" data-toggle="modal">&Iacute;ndice Único de Competitividad</a></li>
 								<li><a href="/vocaciones" data-toggle="modal">Vocaciones Productivas</a></li>
 								<li><a href="/despliegueterritorial" data-toggle="modal">Despliegue Territorial</a></li>
 								<li><a href="/consejoconsultivo" data-toggle="modal">Consejo Consultivo</a></li>
 								</li>
-								<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es" target="_blank" data-toggle="modal">Encuesta</a></li>
 								</li>
 								<li><a href="http://servicios.industrias.gob.ec/biblioteca/" data-toggle="modal">Biblioteca</a></li>
 								<li><a href="/inversiones" data-toggle="modal">Inversiones</a></li>
