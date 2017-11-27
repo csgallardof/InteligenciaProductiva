@@ -74,6 +74,7 @@ class ConsejoConsultivoController extends Controller
                 'corresponsables' => $objPHPExcel->getActiveSheet()->getCell('G'.$i)->getCalculatedValue(),
                 'eslabonCP' => $objPHPExcel->getActiveSheet()->getCell('H'.$i)->getCalculatedValue(),
                 'propuesta_unificada' => $objPHPExcel->getActiveSheet()->getCell('I'.$i)->getCalculatedValue(),
+                'instrumento' => $objPHPExcel->getActiveSheet()->getCell('J'.$i)->getCalculatedValue(),
             );
         }
 
