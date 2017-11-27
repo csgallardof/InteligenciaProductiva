@@ -8,6 +8,7 @@
   <link href="{{ asset('css/style-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/style-responsive-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />
+  <link href="{{ asset('css/inteligencia.css') }}" id="theme" rel="stylesheet" />
 
 @endsection
 
