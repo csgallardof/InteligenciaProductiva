@@ -379,27 +379,43 @@ class ConsejoConsultivoController extends Controller
         $solucion_proveedores = Solucion::where('sector_id','=',$request->sectores)
                             ->where('ambit_id','=',$request->ambitos)
                             ->where('sipoc_id','=',1)
-                            ->where('tipo_fuente','=',2)->get();
+                            ->where('tipo_fuente','=',2)
+                            ->groupBy('id')->get();
+
+        // $solucion_proveedores = DB::table('pajustadas')
+        //                             ->select('nombre_pajustada')
+        //                             ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+        //                             ->where('solucions.sector_id','=',$request->sectores)
+        //                             ->where('solucions.ambit_id','=',$request->ambitos)
+        //                             ->where('solucions.sipoc_id','=',1)
+        //                             ->where('solucions.tipo_fuente','=',2)->get();
+
+        // dd($solucion_proveedores);
 
         $solucion_insumo = Solucion::where('sector_id','=',$request->sectores)
                             ->where('ambit_id','=',$request->ambitos)
                             ->where('sipoc_id','=',2)
-                            ->where('tipo_fuente','=',2)->get();
+                            ->where('tipo_fuente','=',2)
+                            ->groupBy('id');
 
         $solucion_proceso = Solucion::where('sector_id','=',$request->sectores)
                             ->where('ambit_id','=',$request->ambitos)
                             ->where('sipoc_id','=',3)
-                            ->where('tipo_fuente','=',2)->get();
+                            ->where('tipo_fuente','=',2)
+                            ->groupBy('id');
+
 
         $solucion_producto = Solucion::where('sector_id','=',$request->sectores)
                             ->where('ambit_id','=',$request->ambitos)
                             ->where('sipoc_id','=',4)
-                            ->where('tipo_fuente','=',2)->get();
+                            ->where('tipo_fuente','=',2)
+                            ->groupBy('id');
 
         $solucion_mercado = Solucion::where('sector_id','=',$request->sectores)
                             ->where('ambit_id','=',$request->ambitos)
                             ->where('sipoc_id','=',5)
-                            ->where('tipo_fuente','=',2)->get();
+                            ->where('tipo_fuente','=',2)
+                            ->groupBy('id');
 
 
         $ambits = Ambit::all(); 
@@ -418,6 +434,13 @@ class ConsejoConsultivoController extends Controller
 
                                                 ]);
 
+    }
+
+     public function detalleccpt(Request $request, $solucion_id){
+
+        $soluciones = Solucion::where('id','=',$solucion_id)->get();
+
+        return view('detalle-ccpt')->with(["soluciones"=>$soluciones]);
     }
 
 }

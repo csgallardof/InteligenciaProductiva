@@ -62,7 +62,7 @@
 						</div>
 
             <p>
-              Un contrato de inversión es un acuerdo opcional que el empresario puede solicitar al Estado ecuatoriano para asegurar su inversión. El MCPEC reconoce las inversiones de hasta 15 años plazo con un capital desde un millón de dólares.
+              Un contrato de inversión es un acuerdo opcional que el empresario puede solicitar al Estado ecuatoriano para asegurar su inversión. El MIPRO reconoce las inversiones de hasta 15 años plazo con un capital desde un millón de dólares.
             </p>
 
             <div class="col-md-6">

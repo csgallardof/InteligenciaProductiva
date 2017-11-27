@@ -83,7 +83,7 @@
         							<h4 class="modal-title"><strong>¿Qué instrumentos ofrece el Ecuador para beneficio del inversionista?</strong></h4>
         					</div>
 
-                  Conforme lo indica el Código Orgánico de la Producción, Comercio e Inversiones, el Consejo Sectorial de la Producción es el máximo órgano de rectoría gubernamental en materia de inversiones. Por medio del Decreto 170,  el Presidente de la República encarga a la Ministra de Industrias y Productividad, Mgs. Eva García, la articulación del mismo.
+                  Conforme lo indica el Código Orgánico de la Producción, Comercio e Inversiones, el Consejo Sectorial de la Producción es el máximo órgano de rectoría gubernamental en materia de inversiones. 
                   <br /><br />
 
                   Enmarcado en los principios de la Constitución y el Buen Vivir, se establece la construcción de un sistema económico justo, democrático, productivo, solidario y sostenible, basado en la distribución equitativa de los beneficios del desarrollo. Ecuador dispone del El Código Orgánico de la Producción, Comercio e Inversiones (COPCI) que regula las reglas del proceso productivo en su conjunto, ofrece mayores seguridades e incentivos para el inversionista nacional y extranjero; y fomenta la transformación de la matriz productiva.

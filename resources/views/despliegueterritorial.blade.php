@@ -46,6 +46,9 @@
 					<div class="modal-header">
 							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del despliegue territorial</h4>
 					</div>
+					<label class='text-success f-s-12'>
+						<strong>Provincias Sistematizadas:</strong> Esmeraldas, Imbabura, Tungurahua y Loja 
+					</label>
 
 					<!-- begin row -->
 					<div class="row">
@@ -65,8 +68,15 @@
 
 												@foreach($sectors as $sector)
 
-													<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
-
+													@if(isset($paramSector))
+														@if($sector->id == $paramSector->id)
+															<option value="{{ $sector->id }}" selected > {{ $sector->nombre_sector }} </option>
+														@else
+															<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+														@endif	
+													@else
+														<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+													@endif	
 												@endforeach
 
 
@@ -74,14 +84,21 @@
 
 										</div>
 
-										<div class="col-md-2 m-l-10">
+										<div class="col-md-2">
 
 											<select class="form-control" name = "provincias" data-size="15" data-live-search="true" data-style="btn-info">
 											<option value="0">Provincia</option>
 
 											@foreach($provincias as $provincia)
-
+												@if(isset($paramProvincia))
+													@if($provincia->id == $paramProvincia->id)
+														<option value="{{ $provincia->id }}" selected="" > {{ $provincia->nombre_provincia }}</option>
+													@else
+														<option value="{{ $provincia->id }}" > {{ $provincia->nombre_provincia }}</option>
+													@endif
+												@else
 													<option value="{{ $provincia->id }}" > {{ $provincia->nombre_provincia }}</option>
+												@endif
 
 											@endforeach
 
@@ -90,7 +107,7 @@
 
 										</div>
 
-										<div class="col-md-1 m-l-10">
+										<div class="col-md-1">
 											<button type="submit" class="btn btn-success m-r-5 m-b-5">Consultar</button>
 											<input type="hidden" name="accion" value="nuevo">
 										</div>
@@ -111,7 +128,6 @@
 			</div>
 			<!-- end #about -->
 
-			
 			<!-- begin #about -->
 			<div id="about" class="content row-m-t-2" data-scrollview="true">
 					<!-- begin container -->
@@ -125,6 +141,11 @@
 								<div class="col-md-12"  style="background: #ffffff;">
 
 									<div class="modal-header">
+										@if(isset($paramSector) && isset($paramProvincia) )
+											<label class='text-success f-s-12'>
+												<strong>Sector: </strong> {{ $paramSector->nombre_sector}} | <strong>Provincia: </strong> {{ $paramProvincia->nombre_provincia  }}
+											</label><hr>
+										@endif
 
 										<h4 class="modal-title fit-m-t-2">Cadena Productiva 
 											
@@ -137,7 +158,7 @@
 										<!-- begin row -->
 											<div class="row">
 													<!-- begin col-3 -->
-												<div class="col-md-2">
+												<div class="col-md-2 col-md-offset-1">
 
 													<!-- MODAL PROVEEDORES INICIO -->
 
@@ -146,7 +167,7 @@
 														<h3 class="panel-title"  style="padding:5px 10px;">
 															<a class="">
 																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">PROVEEDORES</strong>
+																<strong class="text-white f-s-13">PROVEEDORES</strong>
 															</a>
 														</h3>
 													</div>

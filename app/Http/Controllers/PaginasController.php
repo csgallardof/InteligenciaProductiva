@@ -22,10 +22,9 @@ class PaginasController extends Controller
      public function despliegueterritorial(){
 
 
+        $provincias = Provincia::all(); 
 
-         $provincias = Provincia::all(); 
-
-         $sectors= Sector::all(); 
+        $sectors= Sector::all(); 
 
         //dd($provincias);
 
@@ -142,7 +141,11 @@ class PaginasController extends Controller
 
          $sectors= Sector::all();
 
-    
+        $paramSector = Sector::find($request-> sectores);
+
+        $paramProvincia = Provincia::find($request-> provincias);
+
+
        
         return view('despliegueterritorial')->with(["solucion_proveedores"=>$solucion_proveedores,
                                                     "solucion_insumo"=>$solucion_insumo,
@@ -150,7 +153,9 @@ class PaginasController extends Controller
                                                     "solucion_producto"=>$solucion_producto,
                                                     "solucion_mercado"=>$solucion_mercado,
                                                     "provincias"=>$provincias,
-                                                    "sectors"=>$sectors
+                                                    "sectors"=>$sectors,
+                                                    "paramSector"=>$paramSector,
+                                                    "paramProvincia"=>$paramProvincia
 
                                                 ]);
 

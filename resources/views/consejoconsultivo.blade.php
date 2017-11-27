@@ -46,7 +46,7 @@
 					<div class="modal-header">
 							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del Consejo Consultivo Productivo Tributario</h4>
 					</div>
-
+					
 					<!-- begin row -->
 					<div class="row">
 							<!-- begin col-4 -->
@@ -74,7 +74,7 @@
 
 										</div>
 
-										<div class="col-md-2 m-l-10">
+										<div class="col-md-2">
 
 											<select class="form-control" name = "ambitos" data-size="15" data-live-search="true" data-style="btn-info">
 											<option value="0">&Aacute;mbito</option>
@@ -90,7 +90,7 @@
 
 										</div>
 
-										<div class="col-md-1 m-l-10">
+										<div class="col-md-1 ">
 											<button type="submit" class="btn btn-success m-r-5 m-b-5">Consultar</button>
 											<input type="hidden" name="accion" value="nuevo">
 										</div>
@@ -137,7 +137,7 @@
 										<!-- begin row -->
 											<div class="row">
 													<!-- begin col-3 -->
-												<div class="col-md-2">
+												<div class="col-md-2 col-md-offset-1">
 
 													<!-- MODAL PROVEEDORES INICIO -->
 
@@ -146,7 +146,9 @@
 														<h3 class="panel-title"  style="padding:5px 10px;">
 															<a class="">
 																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">PROVEEDORES</strong>
+																<strong class="text-white f-s-13">
+																PROVEEDORES
+																</strong>
 															</a>
 														</h3>
 													</div>
@@ -160,9 +162,9 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
-																		{{ $solucion_p->solucion_ccpt }}
+																		{{ $solucion_p->pajustada->nombre_pajustada }}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		<a href= "/detalle-despliegue/{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																		<a href= "/detalle-ccpt/{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -183,7 +185,8 @@
 
 
 												<!--MODAL INSUMOS INCIO   -->
-												<div class="col-md-2">
+												
+												<div class="col-md-2 ">
 													<div class="panel panel-inverse overflow-hidden">
 													<div class="panel-heading bg-yellow">
 														<h3 class="panel-title"  style="padding:5px 10px;">
@@ -207,7 +210,7 @@
 																	<td>
 																		<p class="f-s-12 text-justify">
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		{{ $solucion_insu->solucion_ccpt  }}
+																		{{ $solucion_insu->pajustada->nombre_pajustada }}
 																		<a href= "/detalle-despliegue/{{ $solucion_insu->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
 																		<hr class="hr_style3" />
@@ -249,7 +252,7 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
-																		{{ $solucion_proc->solucion_ccpt }}
+																		{{ $solucion_proc->pajustada->nombre_pajustada}}
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
 																		<a href= "/detalle-despliegue/{{ $solucion_proc->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
@@ -292,7 +295,7 @@
 															<tr>
 																<td>
 																	<p class="f-s-12 text-justify">
-																		{{ $solucion_prod->solucion_ccpt }}
+																		{{ $solucion_prod->pajustada->nombre_pajustada }}
 																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
 																	<a href= "/detalle-despliegue/{{ $solucion_prod->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																	</p>
@@ -333,7 +336,7 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
-																			{{ $solucion_mer->solucion_ccpt }}
+																			{{ $solucion_mer->pajustada->nombre_pajustada }}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
 																		<a href= "/detalle-despliegue/{{ $solucion_mer->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
 																		</p>
