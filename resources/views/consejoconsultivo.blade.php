@@ -60,12 +60,20 @@
 
 										 {{ csrf_field() }}
 										<div class="col-md-5">
-											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info">
+											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info" required>
 											<option value="0">Seleccione el sector</option>
 
 												@foreach($sectors as $sector)
 
-													<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+													@if(isset($paramSector))
+														@if($sector->id == $paramSector->id)
+															<option value="{{ $sector->id }}" selected > {{ $sector->nombre_sector }} </option>
+														@else
+															<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+														@endif	
+													@else
+														<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+													@endif	
 
 												@endforeach
 
@@ -74,14 +82,22 @@
 
 										</div>
 
-										<div class="col-md-2">
+										<div class="col-md-4">
 
-											<select class="form-control" name = "ambitos" data-size="15" data-live-search="true" data-style="btn-info">
-											<option value="0">&Aacute;mbito</option>
+											<select class="form-control" name = "ambitos" data-size="15" data-live-search="true" data-style="btn-info" required>
+											<option value="0">Seleccione un &Aacute;mbito</option>
 
 											@foreach($ambits as $ambito)
 
+													@if(isset($paramAmbit))
+													@if($ambito->id == $paramAmbit->id)
+														<option value="{{ $ambito->id }}" selected="" > {{ $ambito->nombre_ambit }}</option>
+													@else
+														<option value="{{ $ambito->id }}" > {{ $ambito->nombre_ambit }}</option>
+													@endif
+												@else
 													<option value="{{ $ambito->id }}" > {{ $ambito->nombre_ambit }}</option>
+												@endif
 
 											@endforeach
 
@@ -124,11 +140,14 @@
 									<!-- end row -->
 								<div class="col-md-12"  style="background: #ffffff;">
 
-									<div class="modal-header">
+										<div class="modal-header">
+											@if(isset($paramSector) && isset($paramAmbit) )
+												<label class='text-success f-s-12'>
+													<strong>Sector: </strong> {{ $paramSector->nombre_sector}} | <strong>&Aacute;mbito: </strong> {{ $paramAmbit->nombre_ambit  }}
+												</label><hr>
+											@endif
 
-										<h4 class="modal-title fit-m-t-2">Cadena Productiva 
-											
-										</h4>
+											<h4 class="modal-title fit-m-t-2">Cadena Productiva </h4>
 
 										</div>
 										<div class="modal-body">
@@ -136,246 +155,226 @@
 
 										<!-- begin row -->
 											<div class="row">
-													<!-- begin col-3 -->
-												<div class="col-md-2 col-md-offset-1">
 
-													<!-- MODAL PROVEEDORES INICIO -->
-
+												<!-- PROVEEDORES INICIO -->
+												<div class="col-md-3  pull-left">
 													<div class="panel panel-inverse overflow-hidden">
-													<div class="panel-heading bg-yellow">
-														<h3 class="panel-title"  style="padding:5px 10px;">
-															<a class="">
-																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-13">
-																PROVEEDORES
-																</strong>
-															</a>
-														</h3>
-													</div>
-													<div id="collapse10" class="panel-collapse">
-														<div class="panel-body custom-m-padding">
-														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
-															<hr class='hr_style2' />
-															<table>
-																@if(isset($solucion_proveedores))
-																@foreach($solucion_proveedores as $solucion_p)
-																<tr>
-																	<td>
-																		<p class="f-s-12 text-justify">
-																		{{ $solucion_p->pajustada->nombre_pajustada }}
-																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		<a href= "/detalle-ccpt/{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																		</p>
-																		<hr class="hr_style3" />
-																	</td>
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-13">
+																	PROVEEDORES
+																	</strong>
+																</a>
+															</h3>
+														</div>
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+																<hr class='hr_style2' />
+																<table>
+																	@if(isset($pajustada_sol_proveedores))
+																	@foreach($pajustada_sol_proveedores as $pajustada_sol_p)
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			{{ $pajustada_sol_p->nombre_pajustada }}
+																				<label class='text-success f-s-12 m-t-2 f-w-500'></label>
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_p->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/1" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
 
-																</tr>
-																@endforeach
-																@endif
-																
-															</table>
-															
-
+																	</tr>
+																	@endforeach
+																	@endif
+																	
+																</table>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-													<!-- end col-3 -->
-												<!--MODAL PROVEEDORES FIN  -->
+											<!--PROVEEDORES FIN  -->
 
 
-												<!--MODAL INSUMOS INCIO   -->
+											<!--INSUMOS INCIO   -->
 												
 												<div class="col-md-2 ">
 													<div class="panel panel-inverse overflow-hidden">
-													<div class="panel-heading bg-yellow">
-														<h3 class="panel-title"  style="padding:5px 10px;">
-															<a class="">
-																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">INSUMOS</strong>
-															</a>
-														</h3>
-													</div>
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">INSUMOS</strong>
+																</a>
+															</h3>
+														</div>
 
-													<div id="collapse10" class="panel-collapse">
-														<div class="panel-body custom-m-padding">
-														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
-														<hr class='hr_style2' />
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+																<hr class='hr_style2' />
 
-															<table>
-																@if(isset($solucion_insumo))
-																@foreach($solucion_insumo as $solucion_insu)
+																<table>
+																	@if(isset($pajustada_sol_insumo))
+																	@foreach($pajustada_sol_insumo as $pajustada_sol_insu)
 
-																<tr>
-																	<td>
-																		<p class="f-s-12 text-justify">
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		{{ $solucion_insu->pajustada->nombre_pajustada }}
-																		<a href= "/detalle-despliegue/{{ $solucion_insu->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																		</p>
-																		<hr class="hr_style3" />
-																	</td>
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
+																			{{ $pajustada_sol_insu->nombre_pajustada }}
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_insu->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/2" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
 
-																</tr>
-																@endforeach
-																@endif
-																
-															</table>
-															
-
+																	</tr>
+																	@endforeach
+																	@endif
+																</table>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
 
 												<!-- MODAL FINAL INSUMOS  -->
 
 												<!--MODAL PREOCESOS INCIO   -->
 												<div class="col-md-2">
 													<div class="panel panel-inverse overflow-hidden">
-													<div class="panel-heading bg-yellow">
-														<h3 class="panel-title"  style="padding:5px 10px;">
-															<a class="">
-																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">PROCESOS</strong>
-															</a>
-														</h3>
-													</div>
-
-													<div id="collapse10" class="panel-collapse">
-														<div class="panel-body custom-m-padding">
-													<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
-														<hr class='hr_style2' />
-															<table>
-																@if(isset($solucion_proceso))
-																@foreach($solucion_proceso as $solucion_proc)
-																<tr>
-																	<td>
-																		<p class="f-s-12 text-justify">
-																		{{ $solucion_proc->pajustada->nombre_pajustada}}
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
-																		<a href= "/detalle-despliegue/{{ $solucion_proc->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																		</p>
-																		<hr class="hr_style3" />
-																	</td>
-
-																</tr>
-																@endforeach
-																@endif
-															</table>
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">PROCESOS</strong>
+																</a>
+															</h3>
 														</div>
-													</div>
-												</div>
 
-											</div>
-
-													<!-- MODAL PROCESOS FINAL   -->
-
-													<!--MODAL PRODUCTO INCIO   -->
-												<div class="col-md-2">
-													<div class="panel panel-inverse overflow-hidden">
-													<div class="panel-heading bg-yellow">
-														<h3 class="panel-title"  style="padding:5px 10px;">
-															<a class="">
-																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">PRODUCTO</strong>
- 															</a>
-														</h3>
-													</div>
-
-													<div id="collapse10" class="panel-collapse">
-														<div class="panel-body custom-m-padding">
-														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
-														<hr class='hr_style2' />
-
-														<table>
-
-															@if(isset($solucion_producto))
-															@foreach($solucion_producto as $solucion_prod)
-															<tr>
-																<td>
-																	<p class="f-s-12 text-justify">
-																		{{ $solucion_prod->pajustada->nombre_pajustada }}
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																	<a href= "/detalle-despliegue/{{ $solucion_prod->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																	</p>
-																	<hr class="hr_style3" />
-																</td>
-
-															</tr>
-															@endforeach
-															@endif
-																
-														</table>
-														</div>
-													</div>
-												</div>
-											</div>
-
-												<!-- MODAL PRODUCTO FINAL  -->
-												<!--MODAL MERCADO INCIO   -->
-												<div class="col-md-2">
-													<div class="panel panel-inverse overflow-hidden">
-													<div class="panel-heading bg-yellow">
-														<h3 class="panel-title"  style="padding:5px 10px;">
-															<a class="">
-																<i class="fa fa-2x fa-arrow-right pull-right"></i>
-																<strong class="text-white f-s-14">MERCADO</strong>
-															</a>
-														</h3>
-													</div>
-
-													<div id="collapse10" class="panel-collapse">
-														<div class="panel-body custom-m-padding">
-														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+															<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 															<hr class='hr_style2' />
-															<table>
-																@if(isset($solucion_mercado))
-																@foreach($solucion_mercado as $solucion_mer)
-															
-																<tr>
-																	<td>
-																		<p class="f-s-12 text-justify">
-																			{{ $solucion_mer->pajustada->nombre_pajustada }}
-																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																		<a href= "/detalle-despliegue/{{ $solucion_mer->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																		</p>
-																		<hr class="hr_style3" />
-																	</td>
+																<table>
+																	@if(isset($pajustada_sol_proceso))
+																	@foreach($pajustada_sol_proceso as $pajustada_sol_proc)
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																			{{ $pajustada_sol_proc->nombre_pajustada}}
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_proc->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/3" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
 
-																@endforeach
-																@endif
-
-																</tr>
-																
-															</table>
-															
-
+																	</tr>
+																	@endforeach
+																	@endif
+																</table>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
+												<!--PROCESOS FINAL   -->
+
+												<!--PRODUCTO INCIO   -->
+												<div class="col-md-2">
+													<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">PRODUCTO</strong>
+	 															</a>
+															</h3>
+														</div>
+
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+																<hr class='hr_style2' />
+
+																<table>
+
+																	@if(isset($pajustada_sol_producto))
+																	@foreach($pajustada_sol_producto as $pajustada_sol_prod)
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																				{{ $pajustada_sol_prod->nombre_pajustada }}
+																				<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_prod->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/4" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
+
+																	</tr>
+																	@endforeach
+																	@endif
+																		
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!--PRODUCTO FINAL  -->
+												
+												<!--MERCADO INCIO   -->
+												<div class="col-md-3 pull-right">
+													<div class="panel panel-inverse overflow-hidden">
+														<div class="panel-heading bg-yellow">
+															<h3 class="panel-title"  style="padding:5px 10px;">
+																<a class="">
+																	<i class="fa fa-2x fa-arrow-right pull-right"></i>
+																	<strong class="text-white f-s-14">MERCADO</strong>
+																</a>
+															</h3>
+														</div>
+
+														<div id="collapse10" class="panel-collapse">
+															<div class="panel-body custom-m-padding">
+																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+																<hr class='hr_style2' />
+																<table>
+																	@if(isset($pajustada_sol_mercado))
+																	@foreach($pajustada_sol_mercado as $pajustada_sol_mer)
+																
+																	<tr>
+																		<td>
+																			<p class="f-s-12 text-justify">
+																				{{ $pajustada_sol_mer->nombre_pajustada }}
+																				<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_mer->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/5" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			</p>
+																			<hr class="hr_style3" />
+																		</td>
+																	@endforeach
+																	@endif
+																	</tr>
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
 
 												<!-- MODAL MERCADO FINAL   -->
 			
-									</div>
-										<!-- end row -->
+											</div>
+											<!-- end row -->
 
-										<!-- FIN ROW-->
+											<hr />
 
-										<!-- -->
+										</div>
 
-								<hr />
+								
 
-
+										<!-- begin scroll to top btn -->
+										<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+										<!-- end scroll to top btn -->
 								</div>
-
-								<!-- end #content -->
-
-								<!-- begin scroll to top btn -->
-								<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
-								<!-- end scroll to top btn -->
-							</div>
 
 									<!-- end col-4 -->
 

@@ -253,14 +253,14 @@
 											
 									</dl>
 									<div class="media-body">
-													<dl class="dl-horizontal">
-														<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
-														<span class="label label-warning">Inicializado</span> 
-														
-													</dl>
-												</div>
+										<dl class="dl-horizontal">
+											<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
+											<span class="label label-warning">Inicializado</span> 
+										</dl>
+										No se encontraron actividades registradas.<br><br>
+									</div>
 									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-1x fa-check"></i> Iniciar compromiso</a><p>
-									@if(isset($soluciones))
+									{{-- @if(isset($soluciones))
 									<ul class="media-list media-list-with-divider">
 										
 										<li class="media media-lg">
@@ -318,7 +318,7 @@
 										
 										
 									</ul>
-									@endif
+									@endif --}}
 			                        
 								</div>
 							</div>

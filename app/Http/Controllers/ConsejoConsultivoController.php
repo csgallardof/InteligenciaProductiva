@@ -9,6 +9,8 @@ use PHPExcel_Shared_Date;
 use App\Solucion;
 use App\Ambit;
 use App\Sector;
+use App\Pajustada;
+use App\Sipoc;
 use File;
 use DB;
 use Illuminate\Support\Collection as Collection;
@@ -25,7 +27,7 @@ class ConsejoConsultivoController extends Controller
      */
     public function index(Request $request)
     {
-        $soluciones = Solucion::search($request-> parametro)->where('tipo_fuente','=','2')->orderBy('id','DESC')->paginate(15);
+        $soluciones = Solucion::search($request-> parametro)->where('tipo_fuente','=','2')->orderBy('pajustadas.id','DESC')->paginate(15);
         return view('admin.consejo.home')->with(["soluciones"=>$soluciones]);    
     }
 
@@ -374,73 +376,104 @@ class ConsejoConsultivoController extends Controller
 
     public function buscar(Request $request){
 
-        //dd ($request->provincias);
 
-        $solucion_proveedores = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('ambit_id','=',$request->ambitos)
-                            ->where('sipoc_id','=',1)
-                            ->where('tipo_fuente','=',2)
-                            ->groupBy('id')->get();
+        $pajustada_sol_proveedores = DB::table('pajustadas')
+                                    ->distinct()
+                                    ->select('pajustadas.id','nombre_pajustada')
+                                    ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                    ->where('solucions.sector_id','=',$request->sectores)
+                                    ->where('solucions.ambit_id','=',$request->ambitos)
+                                    ->where('solucions.sipoc_id','=',1)
+                                    ->where('solucions.tipo_fuente','=',2)
+                                    ->orderBy('nombre_pajustada')->get();
 
-        // $solucion_proveedores = DB::table('pajustadas')
-        //                             ->select('nombre_pajustada')
-        //                             ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
-        //                             ->where('solucions.sector_id','=',$request->sectores)
-        //                             ->where('solucions.ambit_id','=',$request->ambitos)
-        //                             ->where('solucions.sipoc_id','=',1)
-        //                             ->where('solucions.tipo_fuente','=',2)->get();
-
-        // dd($solucion_proveedores);
-
-        $solucion_insumo = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('ambit_id','=',$request->ambitos)
-                            ->where('sipoc_id','=',2)
-                            ->where('tipo_fuente','=',2)
-                            ->groupBy('id');
-
-        $solucion_proceso = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('ambit_id','=',$request->ambitos)
-                            ->where('sipoc_id','=',3)
-                            ->where('tipo_fuente','=',2)
-                            ->groupBy('id');
+        $pajustada_sol_insumo = DB::table('pajustadas')
+                                    ->distinct()
+                                    ->select('pajustadas.id','nombre_pajustada')
+                                    ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                    ->where('solucions.sector_id','=',$request->sectores)
+                                    ->where('solucions.ambit_id','=',$request->ambitos)
+                                    ->where('solucions.sipoc_id','=',2)
+                                    ->where('solucions.tipo_fuente','=',2)
+                                    ->orderBy('nombre_pajustada')->get();
 
 
-        $solucion_producto = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('ambit_id','=',$request->ambitos)
-                            ->where('sipoc_id','=',4)
-                            ->where('tipo_fuente','=',2)
-                            ->groupBy('id');
+        $pajustada_sol_proceso = DB::table('pajustadas')
+                                    ->distinct()
+                                    ->select('pajustadas.id','nombre_pajustada')
+                                    ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                    ->where('solucions.sector_id','=',$request->sectores)
+                                    ->where('solucions.ambit_id','=',$request->ambitos)
+                                    ->where('solucions.sipoc_id','=',3)
+                                    ->where('solucions.tipo_fuente','=',2)
+                                    ->orderBy('nombre_pajustada')->get();
 
-        $solucion_mercado = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('ambit_id','=',$request->ambitos)
-                            ->where('sipoc_id','=',5)
-                            ->where('tipo_fuente','=',2)
-                            ->groupBy('id');
+
+        $pajustada_sol_producto = DB::table('pajustadas')
+                                    ->distinct()
+                                    ->select('pajustadas.id','nombre_pajustada')
+                                    ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                    ->where('solucions.sector_id','=',$request->sectores)
+                                    ->where('solucions.ambit_id','=',$request->ambitos)
+                                    ->where('solucions.sipoc_id','=',4)
+                                    ->where('solucions.tipo_fuente','=',2)
+                                    ->orderBy('nombre_pajustada')->get();
+
+
+        $pajustada_sol_mercado = DB::table('pajustadas')
+                                    ->distinct()
+                                    ->select('pajustadas.id','nombre_pajustada')
+                                    ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                    ->where('solucions.sector_id','=',$request->sectores)
+                                    ->where('solucions.ambit_id','=',$request->ambitos)
+                                    ->where('solucions.sipoc_id','=',5)
+                                    ->where('solucions.tipo_fuente','=',2)
+                                    ->orderBy('nombre_pajustada')->get();
+
 
 
         $ambits = Ambit::all(); 
 
-         $sectors= Sector::all();
+        $sectors= Sector::all();
+
+        $paramSector = Sector::find($request-> sectores);
+
+        $paramAmbit = Ambit::find($request-> ambitos);
 
     
        
-        return view('consejoconsultivo')->with(["solucion_proveedores"=>$solucion_proveedores,
-                                                    "solucion_insumo"=>$solucion_insumo,
-                                                    "solucion_proceso"=>$solucion_proceso,
-                                                    "solucion_producto"=>$solucion_producto,
-                                                    "solucion_mercado"=>$solucion_mercado,
+        return view('consejoconsultivo')->with(["pajustada_sol_proveedores"=>$pajustada_sol_proveedores,
+                                                    "pajustada_sol_insumo"=>$pajustada_sol_insumo,
+                                                    "pajustada_sol_proceso"=>$pajustada_sol_proceso,
+                                                    "pajustada_sol_producto"=>$pajustada_sol_producto,
+                                                    "pajustada_sol_mercado"=>$pajustada_sol_mercado,
                                                     "ambits"=>$ambits,
-                                                    "sectors"=>$sectors
+                                                    "sectors"=>$sectors,
+                                                    "paramSector"=>$paramSector,
+                                                    "paramAmbit"=>$paramAmbit
 
                                                 ]);
 
     }
 
-     public function detalleccpt(Request $request, $solucion_id){
+     public function detalleccpt(Request $request, $pajustada_sol_id, $sector, $ambito, $sipoc){
 
-        $soluciones = Solucion::where('id','=',$solucion_id)->get();
+        $pajustada = Pajustada::find($pajustada_sol_id);
 
-        return view('detalle-ccpt')->with(["soluciones"=>$soluciones]);
+        $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
+                                ->where('sector_id','=',$sector)
+                                ->where('ambit_id','=',$ambito)
+                                ->where('sipoc_id','=',$sipoc)->get();
+
+        $sector = Sector::find($sector);
+        $ambito = Ambit::find($ambito);
+        $sipoc = Sipoc::find($sipoc);
+
+        return view('detalle-ccpt')->with(["soluciones"=>$soluciones,
+                                            "pajustada"=>$pajustada,
+                                            "sector"=>$sector,
+                                            "ambito"=>$ambito,
+                                            "sipoc"=>$sipoc]);
     }
 
 }

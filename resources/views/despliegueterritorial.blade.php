@@ -84,10 +84,10 @@
 
 										</div>
 
-										<div class="col-md-2">
+										<div class="col-md-5">
 
 											<select class="form-control" name = "provincias" data-size="15" data-live-search="true" data-style="btn-info">
-											<option value="0">Provincia</option>
+											<option value="0">Seleccione una provincia</option>
 
 											@foreach($provincias as $provincia)
 												@if(isset($paramProvincia))
@@ -158,7 +158,7 @@
 										<!-- begin row -->
 											<div class="row">
 													<!-- begin col-3 -->
-												<div class="col-md-2 col-md-offset-1">
+												<div class="col-md-3 pull-left">
 
 													<!-- MODAL PROVEEDORES INICIO -->
 
@@ -332,7 +332,7 @@
 
 												<!-- MODAL PRODUCTO FINAL  -->
 												<!--MODAL MERCADO INCIO   -->
-												<div class="col-md-2">
+												<div class="col-md-3 pull-right">
 													<div class="panel panel-inverse overflow-hidden">
 													<div class="panel-heading bg-yellow">
 														<h3 class="panel-title"  style="padding:5px 10px;">

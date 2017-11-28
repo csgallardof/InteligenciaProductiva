@@ -44,39 +44,24 @@
 
 				<div class="modal-header">
 					<h4 class="modal-title">
+						<br>
 						<label class='text-success f-s-12'>
 							<a href="{{ url('consejoconsultivo') }}" class="btn btn-success m-r-5"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
 							<br>
 							<br>
-							<strong>Sector:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->sector->nombre_sector }}
-									
-
-								@endforeach
+							@if(isset($sector))
+								<strong>Sector:</strong>
+								{{ $sector->nombre_sector }}
 							@endif
-							<strong> | Mesa:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->mesa->nombre_mesa }}
-									
-
-								@endforeach
+							@if(isset($ambito))
+								<strong> | &Aacute;mbito:</strong>
+								{{ $ambito->nombre_ambit }}
+							@endif
+							@if(isset($sipoc))
+								<strong> | Cadena Productiva:</strong>
+								{{ $sipoc->nombre_sipoc }}
 							@endif
 
-							<strong> | Fomento de la Producci&oacute;n Nacional:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->thematic->nombre_thematic }}
-									
-
-								@endforeach
-							@endif
-							
 						</label>
 					</h4>
 				</div>
@@ -96,92 +81,52 @@
 								<h4 class="panel-title">Propuestas /Solución</h4>
 							</div>
 							<div class="panel-body p-t-0">
-								<div class="media-body">
-
 									<br>
-									<div class="alert alert-info fade in m-b-15">
-										<strong>Eslabon de la cadena productiva:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->sipoc->nombre_sipoc }}
-												
-
-											@endforeach
-										@endif
-										<br>
-										<strong>Instrumentos Necesario:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->instrumento->nombre_instrumento }}
-												
-
-											@endforeach
-										@endif
-										<br>
-										<strong>&Aacute;mbito:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->ambit->nombre_ambit }}
-												
-
-											@endforeach
-										@endif
-										<span data-dismiss="alert"></span>
-									</div>
-									
-								
-									<label class='text-success f-s-11'>
-	                                	
-	                                	<i class="fa fa-clock-o fa-fw"></i>Creado: 
-	                                	@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														 
-														{{ substr($solucion->created_at,0,10) }}
-														
-
-													@endforeach
-												@endif
-	                                </label>
-									
-			                        
-                                </div>
-                                	
                                 	<label class='text-success f-s-11'>
                                 		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuesta Unificada</strong>
                                 	</label>
 									<blockquote>
 										  	<p><h5>
-										  		@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														 
-														{{ $solucion->pajustada->nombre_pajustada }}
-														
-
-													@endforeach
+										  		@if(isset($pajustada))
+													{{ $pajustada->nombre_pajustada }}
 												@endif
-										  	</h5>
+										  	</h5></p>
                                    	</blockquote>
 
                                    	<label class='text-success f-s-11'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Problematica</strong>
+                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuestas Originales</strong>
                                 	</label>
-									<blockquote>
-										  	<p><h5>
+                                	{{-- <div class="panel panel-default">
+  										<div class="panel-heading">Panel Heading</div>
+  										<div class="panel-body">Panel Content</div>
+									</div> --}}
+									
+
 										  		@if(isset($soluciones))
 													@foreach($soluciones as $solucion)
-														 
-														{{ $solucion->solucion_ccpt }}
+														<div class="panel panel-info">
+  															<div class="panel-heading f-s-13">
+  																{{ $solucion->solucion_ccpt }}
+  															</div>
+  															<div class="panel-body fade in f-s-11" style="background-color: #d9eaf2;"}}>
+
+  																	<label class='text-success f-s-11'>
+	                                									<i class="fa fa-clock-o fa-fw"></i>Creado: 
+	                                									{{ substr($solucion->created_at,0,10) }}
+									                                </label><br>
+  																	<strong>Eslabon de la cadena productiva: </strong> {{ $solucion->sipoc->nombre_sipoc }} <br>
+  																	<strong>Instrumentos Necesario: </strong> {{ $solucion->instrumento->nombre_instrumento }} <br>
+  																	<strong>Mesa: </strong>{{ $solucion->mesa->nombre_mesa }} <br>
+  																	<strong>Fomento de la Producci&oacute;n Nacional: </strong>{{ $solucion->thematic->nombre_thematic }}<br>
+  															</div>
+
+														</div>		 
+
+														
 														
 
 													@endforeach
 												@endif
-										  	</h5>
-                                   	</blockquote>
-
-                                   
                                 	
 	                        </div>
 	
@@ -210,39 +155,29 @@
                             				
 										<dt>* RESPONSABLE: &nbsp;</dt>
 										@if(isset($soluciones))
-												@foreach($soluciones as $solucion)
-													 
-													{{ " ".$solucion->responsable_solucion }}
-													
-
-												@endforeach
-											@endif
+											{{ " ".$soluciones[0]->responsable_solucion }}
+										@endif
 										
 										<dt>CO-RESPONSABLE:</dt>
 
 										<dd>
-											@if(isset($soluciones))
-												@foreach($soluciones as $solucion)
-													 
-													{{ $solucion->corresponsable_solucion }}
-													
-
-												@endforeach
-											@endif
+										@if(isset($soluciones))
+											{{ $soluciones[0]->corresponsable_solucion }}
+										@endif
 											
 								         
 										</dd>
 											
 									</dl>
 									<div class="media-body">
-													<dl class="dl-horizontal">
-														<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
-														<span class="label label-warning">Inicializado</span> 
-														
-													</dl>
-												</div>
+										<dl class="dl-horizontal">
+											<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
+											<span class="label label-warning">Inicializado</span> 
+										</dl>
+										No se encontraron actividades registradas.<br><br>
+									</div>
 									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-1x fa-check"></i> Iniciar compromiso</a><p>
-									@if(isset($soluciones))
+									{{-- @if(isset($soluciones))
 									<ul class="media-list media-list-with-divider">
 										
 										<li class="media media-lg">
@@ -300,7 +235,7 @@
 										
 										
 									</ul>
-									@endif
+									@endif --}}
 			                        
 								</div>
 							</div>

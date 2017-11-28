@@ -112,5 +112,5 @@ Route::post('/ccpt/vistaPrevia',['uses'=>'ConsejoConsultivoController@vistaPrevi
 Route::get('/consejoconsultivo', 'ConsejoConsultivoController@consejoconsultivo');
 Route::post('/consejoconsultivo',['uses'=>'ConsejoConsultivoController@buscar','as'=>'consejo.resultado']);
 
-Route::get('/detalle-ccpt/{id}','ConsejoConsultivoController@detalleccpt');
+Route::get('/detalle-ccpt/{pajustada_id}/{sector_id}/{ambit_id}/{sipoc_id}','ConsejoConsultivoController@detalleccpt');
 
