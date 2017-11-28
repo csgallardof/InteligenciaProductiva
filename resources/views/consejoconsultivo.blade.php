@@ -172,6 +172,9 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+																	@if(isset($pajustada_sol_proveedores))
+																		{{ count($pajustada_sol_proveedores) }}
+																	@endif
 																<hr class='hr_style2' />
 																<table>
 																	@if(isset($pajustada_sol_proveedores))
@@ -214,6 +217,9 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+																	@if(isset($pajustada_sol_insumo))
+																		{{ count($pajustada_sol_insumo) }}
+																	@endif
 																<hr class='hr_style2' />
 
 																<table>
@@ -256,6 +262,9 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 															<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+															@if(isset($pajustada_sol_proceso))
+																{{ count($pajustada_sol_proceso) }}
+															@endif
 															<hr class='hr_style2' />
 																<table>
 																	@if(isset($pajustada_sol_proceso))
@@ -295,6 +304,9 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+																@if(isset($pajustada_sol_producto))
+																		{{ count($pajustada_sol_producto) }}
+																	@endif
 																<hr class='hr_style2' />
 
 																<table>
@@ -337,6 +349,9 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+																@if(isset($pajustada_sol_mercado))
+																		{{ count($pajustada_sol_mercado) }}
+																	@endif
 																<hr class='hr_style2' />
 																<table>
 																	@if(isset($pajustada_sol_mercado))

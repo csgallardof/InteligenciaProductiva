@@ -174,6 +174,9 @@
 													<div id="collapse10" class="panel-collapse">
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+														@if(isset($solucion_proveedores))
+															{{ count($solucion_proveedores) }}
+														@endif
 															<hr class='hr_style2' />
 															<table>
 																@if(isset($solucion_proveedores))
@@ -218,6 +221,9 @@
 													<div id="collapse10" class="panel-collapse">
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+														@if(isset($solucion_insumo))
+															{{ count($solucion_insumo) }}
+														@endif
 														<hr class='hr_style2' />
 
 															<table>
@@ -263,6 +269,9 @@
 													<div id="collapse10" class="panel-collapse">
 														<div class="panel-body custom-m-padding">
 													<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+													@if(isset($solucion_proceso))
+														{{ count($solucion_proceso) }}
+													@endif
 														<hr class='hr_style2' />
 															<table>
 																@if(isset($solucion_proceso))
@@ -304,6 +313,9 @@
 													<div id="collapse10" class="panel-collapse">
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+														@if(isset($solucion_producto))
+															{{ count($solucion_producto) }}
+														@endif
 														<hr class='hr_style2' />
 
 														<table>
@@ -346,6 +358,9 @@
 													<div id="collapse10" class="panel-collapse">
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
+														@if(isset($solucion_mercado))
+															{{ count($solucion_mercado) }}
+														@endif
 															<hr class='hr_style2' />
 															<table>
 																@if(isset($solucion_mercado))
