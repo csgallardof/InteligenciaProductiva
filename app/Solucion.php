@@ -133,5 +133,10 @@ class Solucion extends Model
 
         return $this->belongsTo('App\Mesa');
     }
+
+    public function actor_solucion(){
+
+        return $this->belongsTo('App\ActorSolucion');
+    }
     
 }

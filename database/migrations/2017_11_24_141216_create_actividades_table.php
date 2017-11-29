@@ -17,7 +17,7 @@ class CreateActividadesTable extends Migration
             $table->increments('id');
             $table->timestamp('fecha_inicio')->useCurrent();
             $table->timestamp('fecha_registro')->useCurrent();
-            $table->string('comentario',1000);
+            $table->text('comentario');
             $table->integer('archivo_id');
             $table->integer('solucion_id');
             $table->timestamps();

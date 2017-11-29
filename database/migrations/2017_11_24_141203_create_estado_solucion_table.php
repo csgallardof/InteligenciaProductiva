@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolucionResponsableTable extends Migration
+class CreateEstadoSolucionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSolucionResponsableTable extends Migration
      */
     public function up()
     {
-        Schema::create('solucion_responsable', function (Blueprint $table) {
+        Schema::create('estado_solucion', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('solucion_id');
-            $table->integer('tipo_responsable');
+            $table->string('nombre_estado');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateSolucionResponsableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solucion_responsable');
+        Schema::dropIfExists('estado_solucion');
     }
 }

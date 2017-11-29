@@ -46,9 +46,9 @@
 					<div class="modal-header">
 							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del despliegue territorial</h4>
 					</div>
-					<label class='text-success f-s-12'>
+					{{-- <label class='text-success f-s-12'>
 						<strong>Provincias Sistematizadas:</strong> Esmeraldas, Imbabura, Tungurahua y Loja 
-					</label>
+					</label> --}}
 
 					<!-- begin row -->
 					<div class="row">
@@ -185,8 +185,10 @@
 																	<td>
 																		<p class="f-s-12 text-justify">
 																		{{ $solucion_p->verbo_solucion." ".$solucion_p->sujeto_solucion." ".$solucion_p->complemento_solucion }}
-																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		<a href= "/detalle-despliegue/{{ $solucion_p->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
+																			<a href= "/detalle-despliegue/{{ $solucion_p->id }}" title="Requerimiento" class="label label-primary" >
+																						Ver m&aacute;s..
+																			</a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -233,9 +235,11 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>
-																		{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
-																		<a href= "/detalle-despliegue/{{ $solucion_insu->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			{{ $solucion_insu->verbo_solucion." ".$solucion_insu->sujeto_solucion." ".$solucion_insu->complemento_solucion  }}
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
+																			<a href= "/detalle-despliegue/{{ $solucion_insu->id }}" title="Requerimiento" class="label label-primary" >
+																						Ver m&aacute;s..
+																			</a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -279,9 +283,11 @@
 																<tr>
 																	<td>
 																		<p class="f-s-12 text-justify">
-																		{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label> 
-																		<a href= "/detalle-despliegue/{{ $solucion_proc->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
+																			{{ $solucion_proc->verbo_solucion. " ".$solucion_proc->sujeto_solucion." ".$solucion_proc->complemento_solucion }}
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
+																			<a href= "/detalle-despliegue/{{ $solucion_proc->id }}" title="Requerimiento" class="label label-primary" >
+																						Ver m&aacute;s..
+																			</a>
 																		</p>
 																		<hr class="hr_style3" />
 																	</td>
@@ -326,9 +332,11 @@
 																<td>
 																	<p class="f-s-12 text-justify">
 																		{{ $solucion_prod->verbo_solucion. " ".$solucion_prod->sujeto_solucion." ".$solucion_prod->complemento_solucion }}
-																		<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																	<a href= "/detalle-despliegue/{{ $solucion_prod->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																	</p>
+																		<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
+																			<a href= "/detalle-despliegue/{{ $solucion_prod->id }}" title="Requerimiento" class="label label-primary" >
+																						Ver m&aacute;s..
+																			</a>
+																		</p>
 																	<hr class="hr_style3" />
 																</td>
 
@@ -370,9 +378,10 @@
 																	<td>
 																		<p class="f-s-12 text-justify">
 																			{{ $solucion_mer->verbo_solucion. " ".$solucion_mer->sujeto_solucion." ".$solucion_mer->complemento_solucion }}
-																			<label class='text-success f-s-12 m-t-2 f-w-500'></label>: 
-																		<a href= "/detalle-despliegue/{{ $solucion_mer->id }}" title="Requerimiento" class="btn btn-primary btn-xs"><i class="fa fa-mail-forward (alias)"></i></a>
-																		</p>
+																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
+																			<a href= "/detalle-despliegue/{{ $solucion_mer->id }}" title="Requerimiento" class="label label-primary" >
+																						Ver m&aacute;s..
+																			</a></p>
 																		<hr class="hr_style3" />
 																	</td>
 

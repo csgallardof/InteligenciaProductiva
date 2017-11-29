@@ -85,5 +85,10 @@ class User extends Authenticatable
     {
         return $this->tipo === 1;
     }
+
+    public function actor_solucion(){
+
+        return $this->belongsTo('App\ActorSolucion');
+    }
     
 }
