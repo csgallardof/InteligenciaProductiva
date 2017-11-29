@@ -158,7 +158,7 @@
 										<!-- begin row -->
 											<div class="row">
 													<!-- begin col-3 -->
-												<div class="col-md-3 pull-left">
+												<div class="col-md-3">
 
 													<!-- MODAL PROVEEDORES INICIO -->
 
@@ -344,7 +344,7 @@
 
 												<!-- MODAL PRODUCTO FINAL  -->
 												<!--MODAL MERCADO INCIO   -->
-												<div class="col-md-3 pull-right">
+												<div class="col-md-3">
 													<div class="panel panel-inverse overflow-hidden">
 													<div class="panel-heading bg-yellow">
 														<h3 class="panel-title"  style="padding:5px 10px;">
