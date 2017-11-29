@@ -234,7 +234,7 @@
 																			<p class="f-s-12 text-justify">
 																			{{ $pajustada_sol_insu->nombre_pajustada }}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
-																			<a href= "/detalle-ccpt/{{ $pajustada_sol_insu->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/1" title="Requerimiento" class="label label-primary" >
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_insu->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/2" title="Requerimiento" class="label label-primary" >
 																						Ver m&aacute;s..
 																					</a>
 																			</p>
@@ -279,7 +279,7 @@
 																			<p class="f-s-12 text-justify">
 																			{{ $pajustada_sol_proc->nombre_pajustada}}
 																			<label class='text-success f-s-12 m-t-2 f-w-500'></label><br>
-																			<a href= "/detalle-ccpt/{{ $pajustada_sol_proc->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/1" title="Requerimiento" class="label label-primary" >
+																			<a href= "/detalle-ccpt/{{ $pajustada_sol_proc->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/3" title="Requerimiento" class="label label-primary" >
 																						Ver m&aacute;s..
 																					</a>
 																			</p>
@@ -325,7 +325,7 @@
 																			<p class="f-s-12 text-justify">
 																				{{ $pajustada_sol_prod->nombre_pajustada }}
 																				<label class='text-success f-s-12 m-t-2 f-w-500'></label> <br> 
-																				<a href= "/detalle-ccpt/{{ $pajustada_sol_prod->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/1" title="Requerimiento" class="label label-primary" >
+																				<a href= "/detalle-ccpt/{{ $pajustada_sol_prod->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/4" title="Requerimiento" class="label label-primary" >
 																						Ver m&aacute;s..
 																					</a>
 																			</p>
@@ -371,7 +371,7 @@
 																			<p class="f-s-12 text-justify">
 																				{{ $pajustada_sol_mer->nombre_pajustada }}
 																				<label class='text-success f-s-12 m-t-2 f-w-500'></label> <br>
-																				<a href= "/detalle-ccpt/{{ $pajustada_sol_mer->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/1" title="Requerimiento" class="label label-primary" >
+																				<a href= "/detalle-ccpt/{{ $pajustada_sol_mer->id }}/{{ $paramSector->id }}/{{ $paramAmbit->id }}/5" title="Requerimiento" class="label label-primary" >
 																						Ver m&aacute;s..
 																					</a>
 																			</p>
