@@ -157,7 +157,7 @@
 											<div class="row">
 
 												<!-- PROVEEDORES INICIO -->
-												<div class="col-md-3  pull-left">
+												<div class="col-md-3">
 													<div class="panel panel-inverse overflow-hidden">
 														<div class="panel-heading bg-yellow">
 															<h3 class="panel-title"  style="padding:5px 10px;">
@@ -344,7 +344,7 @@
 												<!--PRODUCTO FINAL  -->
 												
 												<!--MERCADO INCIO   -->
-												<div class="col-md-3 pull-right">
+												<div class="col-md-3">
 													<div class="panel panel-inverse overflow-hidden">
 														<div class="panel-heading bg-yellow">
 															<h3 class="panel-title"  style="padding:5px 10px;">
