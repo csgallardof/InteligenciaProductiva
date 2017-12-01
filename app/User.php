@@ -88,7 +88,9 @@ class User extends Authenticatable
 
     public function actor_solucion(){
 
-        return $this->belongsTo('App\ActorSolucion');
+        return $this->belongsToMany(Solucion::class); 
+    
     }
+
     
 }

@@ -11,7 +11,7 @@ class ActorSolucion extends Model
 
     public function usuario(){
 
-    	return $this->hasMany('App\Usuario');
+    	return $this->hasMany('App\User');
     }
 
     public function solucion(){

@@ -67,6 +67,16 @@
 								@endforeach
 							@endif
 
+							<strong> | Sector:</strong>
+							@if(isset($soluciones))
+								@foreach($soluciones as $solucion)
+									 
+									{{ $solucion->sector->nombre_sector }}
+									
+
+								@endforeach
+							@endif
+
 							<strong> | Líder de Mesa:</strong>
 							@if(isset($soluciones))
 								@foreach($soluciones as $solucion)

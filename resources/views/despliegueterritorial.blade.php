@@ -62,28 +62,7 @@
 									<form class="form-horizontal form-bordered" action = "{{ url('despliegueterritorial') }}" method="POST">
 
 										 {{ csrf_field() }}
-										<div class="col-md-5">
-											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info">
-											<option value="0">Seleccione el sector</option>
-
-												@foreach($sectors as $sector)
-
-													@if(isset($paramSector))
-														@if($sector->id == $paramSector->id)
-															<option value="{{ $sector->id }}" selected > {{ $sector->nombre_sector }} </option>
-														@else
-															<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
-														@endif	
-													@else
-														<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
-													@endif	
-												@endforeach
-
-
-											</select>
-
-										</div>
-
+										
 										<div class="col-md-5">
 
 											<select class="form-control" name = "provincias" data-size="15" data-live-search="true" data-style="btn-info">
@@ -107,6 +86,29 @@
 
 										</div>
 
+										<div class="col-md-5">
+											<select class="form-control" name = "sectores" data-size="15" data-live-search="true" data-style="btn-info">
+											<option value="0">Seleccione el sector</option>
+
+												@foreach($sectors as $sector)
+
+													@if(isset($paramSector))
+														@if($sector->id == $paramSector->id)
+															<option value="{{ $sector->id }}" selected > {{ $sector->nombre_sector }} </option>
+														@else
+															<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+														@endif	
+													@else
+														<option value="{{ $sector->id }}" > {{ $sector->nombre_sector }}</option>
+													@endif	
+												@endforeach
+
+
+											</select>
+
+										</div>
+
+										
 										<div class="col-md-1">
 											<button type="submit" class="btn btn-success m-r-5 m-b-5">Consultar</button>
 											<input type="hidden" name="accion" value="nuevo">
@@ -141,9 +143,28 @@
 								<div class="col-md-12"  style="background: #ffffff;">
 
 									<div class="modal-header">
-										@if(isset($paramSector) && isset($paramProvincia) )
+									
+										@if( isset($paramSector) && isset($paramProvincia) )
 											<label class='text-success f-s-12'>
-												<strong>Sector: </strong> {{ $paramSector->nombre_sector}} | <strong>Provincia: </strong> {{ $paramProvincia->nombre_provincia  }}
+												@if( $paramSector-> id > 0  && $paramProvincia->id > 0)
+													<strong>Sector: </strong> {{ $paramSector->nombre_sector}} | <strong>Provincia: </strong> {{ $paramProvincia->nombre_provincia  }}
+												@endif
+											</label><hr>
+										@endif
+
+										@if( isset($paramSector) && !isset($paramProvincia)  )
+											<label class='text-success f-s-12'>
+												@if( $paramSector-> id > 0 )
+													<strong>Sector: </strong> {{ $paramSector->nombre_sector}} 
+												@endif
+											</label><hr>
+										@endif
+
+										@if( isset($paramProvincia) && !isset($paramSector) )
+											<label class='text-success f-s-12'>
+												@if( $paramProvincia-> id > 0)
+													<strong>Provincia: </strong> {{ $paramProvincia->nombre_provincia  }}
+												@endif
 											</label><hr>
 										@endif
 

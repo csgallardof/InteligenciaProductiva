@@ -109,45 +109,89 @@ class PaginasController extends Controller
 
     public function buscar(Request $request){
 
-        //dd ($request->provincias);
-
-        $solucion_proveedores = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',1)
-                            ->where('tipo_fuente','=',1)->get();
-
-        $solucion_insumo = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',2)
-                            ->where('tipo_fuente','=',1)->get();
-
-        $solucion_proceso = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',3)
-                            ->where('tipo_fuente','=',1)->get();
-
-        $solucion_producto = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',4)
-                            ->where('tipo_fuente','=',1)->get();
-
-        $solucion_mercado = Solucion::where('sector_id','=',$request->sectores)
-                            ->where('provincia_id','=',$request->provincias)
-                            ->where('sipoc_id','=',5)
-                            ->where('tipo_fuente','=',1)->get();
-
-
         $provincias = Provincia::all(); 
 
-         $sectors= Sector::all();
+        $sectors= Sector::all();
 
         $paramSector = Sector::find($request-> sectores);
 
         $paramProvincia = Provincia::find($request-> provincias);
 
+        if($request->sectores > 0 || $request->provincias > 0){
 
-       
-        return view('despliegueterritorial')->with(["solucion_proveedores"=>$solucion_proveedores,
+            if($request->sectores > 0 && $request->provincias > 0){
+                $solucion_proveedores = Solucion::where('sipoc_id','=',1)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+
+                $solucion_insumo = Solucion::where('sipoc_id','=',2)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+
+                $solucion_proceso = Solucion::where('sipoc_id','=',3)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+
+                $solucion_producto = Solucion::where('sipoc_id','=',4)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+
+                $solucion_mercado = Solucion::where('sipoc_id','=',5)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+            }else{
+                if($request->sectores > 0){
+                    $solucion_proveedores = Solucion::where('sipoc_id','=',1)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('sector_id','=',$request->sectores)->get();
+
+                    $solucion_insumo = Solucion::where('sipoc_id','=',2)
+                                        ->where('tipo_fuente','=',1)
+                                        ->where('sector_id','=',$request->sectores)->get();
+
+                    $solucion_proceso = Solucion::where('sipoc_id','=',3)
+                                        ->where('tipo_fuente','=',1)
+                                        ->where('sector_id','=',$request->sectores)->get();
+
+                    $solucion_producto = Solucion::where('sipoc_id','=',4)
+                                        ->where('tipo_fuente','=',1)
+                                        ->where('sector_id','=',$request->sectores)->get();
+
+                    $solucion_mercado = Solucion::where('sipoc_id','=',5)
+                                        ->where('tipo_fuente','=',1)
+                                        ->where('sector_id','=',$request->sectores)->get();
+                }else{
+
+                    if ($request->provincias > 0){
+                        $solucion_proveedores = Solucion::where('sipoc_id','=',1)
+                                    ->where('tipo_fuente','=',1)
+                                    ->where('provincia_id','=',$request->provincias)->get();
+
+                        $solucion_insumo = Solucion::where('sipoc_id','=',2)
+                                            ->where('tipo_fuente','=',1)
+                                            ->where('provincia_id','=',$request->provincias)->get();
+
+                        $solucion_proceso = Solucion::where('sipoc_id','=',3)
+                                            ->where('tipo_fuente','=',1)
+                                            ->where('provincia_id','=',$request->provincias)->get();
+
+                        $solucion_producto = Solucion::where('sipoc_id','=',4)
+                                            ->where('tipo_fuente','=',1)
+                                            ->where('provincia_id','=',$request->provincias)->get();
+
+                        $solucion_mercado = Solucion::where('sipoc_id','=',5)
+                                            ->where('tipo_fuente','=',1)
+                                            ->where('provincia_id','=',$request->provincias)->get();
+                    }
+                } 
+            }
+
+            return view('despliegueterritorial')->with(["solucion_proveedores"=>$solucion_proveedores,
                                                     "solucion_insumo"=>$solucion_insumo,
                                                     "solucion_proceso"=>$solucion_proceso,
                                                     "solucion_producto"=>$solucion_producto,
@@ -158,8 +202,15 @@ class PaginasController extends Controller
                                                     "paramProvincia"=>$paramProvincia
 
                                                 ]);
-
-
+        }else{
+            return view('despliegueterritorial')->with([
+                                                    "provincias"=>$provincias,
+                                                    "sectors"=>$sectors,
+                                                    "paramSector"=>$paramSector,
+                                                    "paramProvincia"=>$paramProvincia
+                                                ]);
+        }
+               
 
     }
 

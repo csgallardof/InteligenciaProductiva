@@ -1,0 +1,59 @@
+@extends('layouts.app')
+@section('edit_titulo')Crear Instituci&oacute;n @endsection
+
+@section('content')
+<br>
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">@yield('edit_titulo') <a href="{{ route('instituciones.index') }}" class="btn btn-primary pull-right">Regresar</a>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" method="POST" action="{{ route('instituciones.store') }}/@yield('edit_id')">
+                        {{ csrf_field() }}
+                        @section('edit_Method')
+                        @show
+                        
+                        <div class="form-group">
+                            <label for="nombre_user" class="col-md-4 control-label">Nombre</label>
+
+                            <div class="col-md-6">
+                                <input id="nombre_user" type="text" class="form-control" name="nombre_user" placeholder="Nombre de Instituci&oacute;n" required value="@yield('edit_nombre')"  autofocus>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Correo electr&oacute;nico" required value="@yield('edit_email')"  autofocus>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                     Registrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    @if(count($errors)>0)
+                        <div class="alert alert-warning">
+                            @foreach($errors->all() as $error)
+                                {{ $error }}
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+

@@ -114,5 +114,5 @@ Route::post('/consejoconsultivo',['uses'=>'ConsejoConsultivoController@buscar','
 
 Route::get('/detalle-ccpt/{pajustada_id}/{sector_id}/{ambit_id}/{sipoc_id}','ConsejoConsultivoController@detalleccpt');
 
-Route::resource('actores','ActorSolucionController');
+Route::resource('instituciones','InstitucionController');
 
