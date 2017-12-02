@@ -196,7 +196,13 @@
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 														@if(isset($solucion_proveedores))
-															{{ count($solucion_proveedores) }}
+															@if( count($solucion_proveedores) > 0)
+																{{	count($solucion_proveedores) }}
+															@else
+																{{ "0"}}
+															@endif
+														@else
+															{{ "0"}}
 														@endif
 															<hr class='hr_style2' />
 															<table>
@@ -245,7 +251,13 @@
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
 														@if(isset($solucion_insumo))
-															{{ count($solucion_insumo) }}
+															@if( count($solucion_insumo) > 0)
+																{{	count($solucion_insumo) }}
+															@else
+																{{ "0"}}
+															@endif
+														@else
+															{{ "0"}}
 														@endif
 														<hr class='hr_style2' />
 
@@ -295,8 +307,14 @@
 														<div class="panel-body custom-m-padding">
 													<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 													@if(isset($solucion_proceso))
-														{{ count($solucion_proceso) }}
-													@endif
+															@if( count($solucion_proceso) > 0)
+																{{	count($solucion_proceso) }}
+															@else
+																{{ "0"}}
+															@endif
+														@else
+															{{ "0"}}
+														@endif
 														<hr class='hr_style2' />
 															<table>
 																@if(isset($solucion_proceso))
@@ -341,7 +359,13 @@
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 														@if(isset($solucion_producto))
-															{{ count($solucion_producto) }}
+															@if( count($solucion_producto) > 0)
+																{{	count($solucion_producto) }}
+															@else
+																{{ "0"}}
+															@endif
+														@else
+															{{ "0"}}
 														@endif
 														<hr class='hr_style2' />
 
@@ -388,7 +412,13 @@
 														<div class="panel-body custom-m-padding">
 														<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados:</label>
 														@if(isset($solucion_mercado))
-															{{ count($solucion_mercado) }}
+															@if( count($solucion_mercado) > 0)
+																{{	count($solucion_mercado) }}
+															@else
+																{{ "0"}}
+															@endif
+														@else
+															{{ "0"}}
 														@endif
 															<hr class='hr_style2' />
 															<table>

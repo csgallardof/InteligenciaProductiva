@@ -195,8 +195,15 @@
 														<div id="collapse10" class="panel-collapse">
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
+
 																	@if(isset($pajustada_sol_proveedores))
-																		{{ count($pajustada_sol_proveedores) }}
+																		@if( count($pajustada_sol_proveedores) > 0)
+																			{{	count($pajustada_sol_proveedores) }}
+																		@else
+																			{{ "0"}}
+																		@endif
+																	@else
+																		{{ "0"}}
 																	@endif
 																<hr class='hr_style2' />
 																<table>
@@ -254,7 +261,13 @@
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 																	@if(isset($pajustada_sol_insumo))
-																		{{ count($pajustada_sol_insumo) }}
+																		@if( count($pajustada_sol_insumo) > 0)
+																			{{	count($pajustada_sol_insumo) }}
+																		@else
+																			{{ "0"}}
+																		@endif
+																	@else
+																		{{ "0"}}
 																	@endif
 																<hr class='hr_style2' />
 																<table>
@@ -312,7 +325,13 @@
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 																	@if(isset($pajustada_sol_proceso))
-																		{{ count($pajustada_sol_proceso) }}
+																		@if( count($pajustada_sol_proceso) > 0)
+																			{{	count($pajustada_sol_proceso) }}
+																		@else
+																			{{ "0"}}
+																		@endif
+																	@else
+																		{{ "0"}}
 																	@endif
 																<hr class='hr_style2' />
 																<table>
@@ -370,7 +389,13 @@
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 																	@if(isset($pajustada_sol_producto))
-																		{{ count($pajustada_sol_producto) }}
+																		@if( count($pajustada_sol_producto) > 0)
+																			{{	count($pajustada_sol_producto) }}
+																		@else
+																			{{ "0"}}
+																		@endif
+																	@else
+																		{{ "0"}}
 																	@endif
 																<hr class='hr_style2' />
 																<table>
@@ -428,7 +453,13 @@
 															<div class="panel-body custom-m-padding">
 																<label class='text-success f-s-12 m-t-2 f-w-500'>Resultados: </label>
 																	@if(isset($pajustada_sol_mercado))
-																		{{ count($pajustada_sol_mercado) }}
+																		@if( count($pajustada_sol_mercado) > 0)
+																			{{	count($pajustada_sol_mercado) }}
+																		@else
+																			{{ "0"}}
+																		@endif
+																	@else
+																		{{ "0"}}
 																	@endif
 																<hr class='hr_style2' />
 																<table>
