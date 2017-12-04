@@ -7,23 +7,31 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Lista de Instituciones <a href="{{ route('instituciones.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
+                <div class="panel-heading">Actores - Soluci&oacute;n <a href="{{ route('instituciones.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
 
 					<div class="panel-body">
 						<table class="table table-hover">
 					        <thead>
 					            <tr>
-					                <th>#</th>
-					                <th>Nombre</th>
-					                <th>Acción</th>
+					                <th>Soluci&oacute;n</th>
+					                <th>Actor</th>
+					                <th>Responsabilidad</th>
+					                <th>Acci&oacute;n</th>
 					            </tr>
 					        </thead>
 					        <tbody>
-					        	@foreach($instituciones as $institucion)
+					        	@foreach($actoresSoluciones as $actorSolucion)
 								<tr>
-					                <td>{{ $institucion->id }}</td>
-					                <td>{{ $institucion->name }}</td>
-					                <td><a href="{{ '/instituciones/'.$institucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  <a href="" class="btn btn-danger">Eliminar</a></td>
+					                <td>{{ $actorSolucion->solucion_id }}</td>
+					                <td>{{ $actorSolucion->user_id }}</td>
+					                <td>@if($actorSolucion->tipo_actor == 1)
+					                		{{ "Responsable" }}
+					                	@endif
+					                	@if($actorSolucion->tipo_actor == 2)
+					                		{{ "Corresponsable" }}
+					                	@endif
+					                </td>
+					                <td></td>
 					            </tr>
 					            @endforeach		            
 					        </tbody>
