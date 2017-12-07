@@ -15,4 +15,11 @@ class Pajustada extends Model
 
     	return $this->hasMany('App\Solucion');
     }
+
+    
+    public function actor_solucion()
+    {
+        return $this->hasMany('App\ActorSolucion','solucion_id','id');
+    }
+
 }

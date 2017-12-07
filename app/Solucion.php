@@ -10,42 +10,42 @@ class Solucion extends Model
 
     public function provincia(){
 
-    	return $this->belongsTo('App\Provincia');
+        return $this->belongsTo('App\Provincia');
     }
 
     public function ambit(){
 
-    	return $this->belongsTo('App\Ambit');
+        return $this->belongsTo('App\Ambit');
     }
 
     public function evento(){
 
-    	return $this->belongsTo('App\Evento');
+        return $this->belongsTo('App\Evento');
     }
 
     public function instrumento(){
 
-    	return $this->belongsTo('App\Instrumento');
+        return $this->belongsTo('App\Instrumento');
     }
 
     public function pajustada(){
 
-    	return $this->belongsTo('App\Pajustada');
+        return $this->belongsTo('App\Pajustada');
     }
 
     public function sector(){
 
-    	return $this->belongsTo('App\Sector');
+        return $this->belongsTo('App\Sector');
     }
 
     public function thematic(){
 
-    	return $this->belongsTo('App\Thematic');
+        return $this->belongsTo('App\Thematic');
     }
 
     public function vsector(){
 
-    	return $this->belongsTo('App\Vsector');
+        return $this->belongsTo('App\Vsector');
     }
 
     public function sipoc(){
@@ -134,11 +134,19 @@ class Solucion extends Model
         return $this->belongsTo('App\Mesa');
     }
 
+    public static function solucionesPorTipo($tipo_fuente){
 
-    public function actor(){
+        return Solucion::where('tipo_fuente','=',$tipo_fuente)->get();
+    }
+    
+    public function actorSolucion(){
 
-        return $this->belongsToMany(user::class);
+        return $this->hasMany('App\ActorSolucion');
     }
 
-    
+    public function actor_solucion()
+    {
+        return $this->hasMany('App\ActorSolucion','solucion_id','id');
+    }
+
 }

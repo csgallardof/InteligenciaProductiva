@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function roles(){
 
-        return $this->belongsToMany(role::class); 
+        return $this->belongsToMany( 'App\Role' ); 
     
     }
 
@@ -74,22 +74,18 @@ class User extends Authenticatable
             }
         }   
 
-       
-        
         return $query;
         
     }
 
-
-    public function admin()
+    public function actor_solucion()
     {
-        return $this->tipo === 1;
+        return $this->hasMany('App\ActorSolucion','user_id','id');
     }
 
-    public function actor_solucion(){
-
-        return $this->belongsToMany(Solucion::class); 
-    
+    public function actividad()
+    {
+        return $this->hasMany('App\Actividad','ejecutor_id','id');
     }
 
     

@@ -24,6 +24,7 @@
             <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
             <link href="{{ asset('css/inteligencia.css') }}" rel="stylesheet" />
+            
                 @show
         <!-- ================== END BASE JS ================== -->
     <!-- Styles -->
@@ -36,7 +37,7 @@
           gtag('js', new Date());
           gtag('config', 'UA-109787903-1');
         </script>
-    @yield('start_css')
+    @yield('start_css2')
 </head>
 <body data-spy="scroll" data-target="#header-navbar" data-offset="51">
 
@@ -69,6 +70,7 @@
             <script src="{{ asset('js/custom-mipro.js') }}"></script>
             <script src="{{ asset('js/apps.js') }}"></script>
             <script src="{{ asset('js/dashboard.js') }}"></script>
+            <script src="{{ asset('js/dropdown.js') }}"></script>
 
         @show
 

@@ -30,4 +30,5 @@ class CreateArchivosTable extends Migration
     {
         Schema::dropIfExists('archivos');
     }
+    
 }

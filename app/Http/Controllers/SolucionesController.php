@@ -8,6 +8,8 @@ use PHPExcel_IOFactory;
 use PHPExcel_Shared_Date;
 use App\Solucion;
 use App\Evento;
+use App\ActorSolucion;
+use App\Actividad;
 use File;
 use DB;
 use Illuminate\Support\Collection as Collection;
@@ -302,5 +304,50 @@ class SolucionesController extends Controller
         
     } 
 
+    public function getSolucionesByTipoFuente(Request $request, $tipo_fuente){
+        if($request->ajax() ){
+            if($tipo_fuente == 1){
+                $soluciones = DB::table('solucions')
+                            ->select('id','verbo_solucion','sujeto_solucion','complemento_solucion')
+                            ->where('tipo_fuente','=',1)
+                            ->orderBy('verbo_solucion')->get();
+            }
+            if($tipo_fuente == 2){
+                $soluciones = DB::table('pajustadas') //SOLUCIONES AJUSTADAS
+                                ->distinct()
+                                ->select('pajustadas.id','nombre_pajustada')
+                                ->join('solucions','solucions.pajustada_id','=','pajustadas.id')
+                                ->where('solucions.tipo_fuente','=',2)
+                                ->orderBy('nombre_pajustada')->get();
+            }
+            
+            return response()->json($soluciones);
+        }
+    }
+
+    public function verActividadesDespliegue($idSolucion){
+                
+        $solucion = Solucion::find($idSolucion);
+
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','ASC')->get();
+
+        
+        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion,"actividades"=>$actividades]);
+    }
+
+    public function verActividadesConsejo($idSolucion){
+
+        $solucion = Solucion::find($idSolucion);
+
+        $actoresSoluciones = ActorSolucion::all();
+
+        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion]);
+    }
 
 }

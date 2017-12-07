@@ -43,6 +43,7 @@
 	                            <li><a href="{{ route('participantes.index') }}">Participantes</a></li>
 	                            <li><a href="{{ route('ccpt.index') }}">Consejo</a></li>
 	                            <li><a href="{{ route('instituciones.index') }}">Instituciones</a></li>
+	                            <li><a href="{{ url('actores') }}">Responsables</a></li>
 	                            
 
 	                        @else

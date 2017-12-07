@@ -18,6 +18,7 @@ class CreateActorSolucionTable extends Migration
             $table->integer('user_id');
             $table->integer('solucion_id');
             $table->integer('tipo_actor');
+            $table->integer('tipo_fuente');
             $table->timestamps();
         });
     }

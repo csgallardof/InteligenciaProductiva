@@ -15,11 +15,11 @@ class CreateActividadesTable extends Migration
     {
         Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('fecha_inicio')->useCurrent();
-            $table->timestamp('fecha_registro')->useCurrent();
+            $table->timestamp('fecha_inicio');
             $table->text('comentario');
-            $table->integer('archivo_id');
             $table->integer('solucion_id');
+            $table->integer('tipo_fuente');
+            $table->integer('ejecutor_id');
             $table->timestamps();
         });
     }

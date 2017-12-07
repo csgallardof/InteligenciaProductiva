@@ -116,10 +116,19 @@ Route::get('/detalle-ccpt/{pajustada_id}/{sector_id}/{ambit_id}/{sipoc_id}','Con
 
 Route::resource('instituciones','InstitucionController');  //admin cruds
 Route::get('actores','InstitucionController@indexActorSolucion');  //admin cruds
-Route::get('actor_solucion','InstitucionController@createForm2');  //admin cruds
+Route::get('actor_solucion','InstitucionController@indexActorSolucion');  //admin cruds
+Route::get('actor_solucion/create','InstitucionController@createForm2');  //admin cruds
 Route::post('actor_solucion','InstitucionController@asignarActorSolucion');  //admin cruds
 Route::get('soluciones_por_tipo/{tipo_fuente}','SolucionesController@getSolucionesByTipoFuente');
 
 Route::get('institucion/home','InstitucionController@home');  //página dashboard para las instituciones
 
+Route::get('institucion/verSolucion/despliegue/{idSolucion}',['uses'=>'SolucionesController@verActividadesDespliegue','as'=>'verSolucion.despliegue']);
 
+Route::get('institucion/verSolucion/consejo/{idSolucion}',['uses'=>'SolucionesController@verActividadesConsejo','as'=>'verSolucion.consejo']);
+
+Route::get('institucion/despliegue/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createDespliegue','as'=>'actividades.createDespliegue']);
+
+Route::get('institucion/consejo/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createConsejo','as'=>'actividades.createConsejo']);
+
+Route::post('institucion/despliegue/actividad/save/{idSolucion}',['uses'=>'ActividadesController@saveActividadDespliegue','as'=>'actividades.saveActividadDespliegue']);

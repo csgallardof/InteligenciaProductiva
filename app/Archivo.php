@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ActorSolucion extends Model
+class Archivo extends Model
 {
-    //
-    protected $table = 'actor_solucion';
+     
+    protected $table = 'archivos';
 
+    /*
     public function usuario()
     {
         return $this->belongsTo('App\User','user_id');
@@ -23,5 +24,6 @@ class ActorSolucion extends Model
     {
         return $this->belongsTo('App\Pajustada','solucion_id');
     }
+    */
 
 }
