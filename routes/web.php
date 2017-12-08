@@ -114,7 +114,11 @@ Route::post('/consejoconsultivo',['uses'=>'ConsejoConsultivoController@buscar','
 
 Route::get('/detalle-ccpt/{pajustada_id}/{sector_id}/{ambit_id}/{sipoc_id}','ConsejoConsultivoController@detalleccpt');
 
-Route::resource('instituciones','InstitucionController');  //admin cruds
+//Route::resource('instituciones','InstitucionController');  //admin cruds
+Route::get('instituciones','InstitucionController@index')->name('instituciones.index');  //admin cruds
+Route::get('instituciones/create','InstitucionController@create')->name('instituciones.create');  //admin cruds
+Route::post('instituciones','InstitucionController@store')->name('instituciones.store');  //admin cruds
+
 Route::get('actores','InstitucionController@indexActorSolucion');  //admin cruds
 Route::get('actor_solucion','InstitucionController@indexActorSolucion');  //admin cruds
 Route::get('actor_solucion/create','InstitucionController@createForm2');  //admin cruds
