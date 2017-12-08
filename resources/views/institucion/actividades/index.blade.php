@@ -53,6 +53,8 @@
 						</div>
 						<div class="panel-body">
 							<div class="height-lg" data-scrollbar="true">
+
+								@include('flash::message')
 								
 								<div class="media-body">
 
@@ -62,25 +64,47 @@
 									@endif
 
 									@if( isset( $actividades ) && count($actividades) > 0)
-										<?php $count=1; ?>
+										<?php $count=count($actividades) ; ?>
 										@foreach( $actividades as $actividad)
 											<h4>
 												<label class="label label-danger label-lg">Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
 												{{ $actividad-> comentario }}
-												<br><br>
+											</p>
+												<br>
 
-												<b> Fecha de Registro: </b> {{ substr($actividad->created_at,0,10) }}<br>
 												<b> Fecha de Inicio: </b> {{ substr($actividad->fecha_inicio,0,10) }}<br>
 												@if( $actividad-> ejecutor_id > 0 )
-													<b> Ejecutor: </b> {{ $actividad-> usuario-> name }}<br>
+													<b> Ejecutor: </b> {{ $actividad-> usuario-> name }}<br><br>
 												@endif
 												
-												<h1>FALTA PRESENTAR LOS ARCHIVOS</h1>
-											</p>
+													<!--ARCHIVOS-->
+														@if( count( $actividad-> archivo) > 0)
+														<b> Archivos: </b> <br>
+															<ul>
+																@foreach($actividad-> archivo as $file)
+																<li>
+																	<!-- <a target="_blank" href="'../../../../../../storage/{{ $file-> nombre_archivo }} "> -->
+																	<a target="_blank" href="{{ route('descargarArchivo',$file-> nombre_archivo) }} ">
+																		<?php
+																			$pos = strpos($file-> nombre_archivo, "_**");
+																			$nombre_archivo = substr($file-> nombre_archivo, $pos+3, strlen($file-> nombre_archivo)); // devuelve "d"
+																		?>
+
+																		{{$nombre_archivo}}
+																	</a>
+																</li>
+																@endforeach
+															</ul>
+														@endif
+
+													<!--FIN ARCHIVOS-->
+
+												
+											
 											<hr>
-											<?php $count++; ?>
+											<?php $count--; ?>
 										@endforeach
 									@else
 										@if( count($actividades) == 0)

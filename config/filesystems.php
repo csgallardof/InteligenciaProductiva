@@ -53,6 +53,11 @@ return [
             'root' => public_path('').'/imagenes/vocaciones_productivas_ecuador/',
         ],
 
+        'local3' => [
+            'driver' => 'local',
+            'root' => storage_path('app').'/storage/archivos_actividades/',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

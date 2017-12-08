@@ -9,6 +9,7 @@ use App\ActorSolucion;
 use App\Archivo;
 
 use File;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -23,6 +24,33 @@ class ActividadesController extends Controller
     {
         //
         
+    }
+
+    public function verActividadesDespliegue($idSolucion){
+                
+        $solucion = Solucion::find($idSolucion);
+
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','DESC')->get();
+                                
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+
+        
+        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion,"actividades"=>$actividades]);
+    }
+
+    public function verActividadesConsejo($idSolucion){
+
+        $solucion = Solucion::find($idSolucion);
+
+        $actoresSoluciones = ActorSolucion::all();
+
+        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion]);
     }
 
     /**
@@ -52,8 +80,7 @@ class ActividadesController extends Controller
      */
     public function createConsejo($idSolucion)
     {
-        //
-        return view('admin.provincias.create');
+        
     }
     
     /**
@@ -66,7 +93,6 @@ class ActividadesController extends Controller
     {       
 
         $actividad = new Actividad;
-        $actividad-> fecha_inicio  = $request->fecha_inicio. " 00:00:00";
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
@@ -78,18 +104,21 @@ class ActividadesController extends Controller
         if($request->hasFile('files'))
         {
             foreach ($files as $file) {
-                
+
                 $nombreArchivo = $file->getClientOriginalName();
-                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_".$nombreArchivo;     // agregamos la fecha 
+                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_**".$nombreArchivo;     // agregamos la fecha 
 
                 $archivo = new Archivo;
                 $archivo-> nombre_archivo= $nombreArchivo;
                 $archivo-> actividad_id= $actividad->id;
                 $archivo->save();
+
+                /*$file = $request->file('imagen');*/
+                \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) ); 
             }
         }
-
-        
+        Flash::success("Se ha creado la actividad exitosamente");
+        return redirect()->route('verSolucion.despliegue',$idSolucion);
         
     }
 

@@ -325,29 +325,5 @@ class SolucionesController extends Controller
         }
     }
 
-    public function verActividadesDespliegue($idSolucion){
-                
-        $solucion = Solucion::find($idSolucion);
-
-        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
-                                            ->orderBy('tipo_actor','ASC')->get();
-
-        $actividades = Actividad::where('solucion_id','=',$idSolucion)
-                                ->where('tipo_fuente','=', 1)
-                                ->orderBy('created_at','ASC')->get();
-
-        
-        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion,"actividades"=>$actividades]);
-    }
-
-    public function verActividadesConsejo($idSolucion){
-
-        $solucion = Solucion::find($idSolucion);
-
-        $actoresSoluciones = ActorSolucion::all();
-
-        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion]);
-    }
 
 }

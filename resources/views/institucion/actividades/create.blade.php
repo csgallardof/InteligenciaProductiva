@@ -61,11 +61,7 @@
 									    	<label for="exampleTextarea">Comentario</label>
 									    	<textarea class="form-control" id="exampleTextarea" name="comentario" rows="3"></textarea>
 									  	</div>
-									  	<div class="form-group">
-                                    		<label for="datepicker-default">Fecha de Inicio</label>
-                                    		<input type="text" class="form-control" id="datepicker-default" name="fecha_inicio" placeholder="Select Date" value="07/12/2017" />
-                                    		
-                                		</div>
+									  	
 									  	<div class="form-group">
 									    	<label for="exampleSelect1">Instituci&oacute;n ejecutora</label>
 									    	<select class="form-control" name="institucion_id" id="exampleSelect1">

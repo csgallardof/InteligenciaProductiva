@@ -114,25 +114,52 @@ Route::post('/consejoconsultivo',['uses'=>'ConsejoConsultivoController@buscar','
 
 Route::get('/detalle-ccpt/{pajustada_id}/{sector_id}/{ambit_id}/{sipoc_id}','ConsejoConsultivoController@detalleccpt');
 
-//Route::resource('instituciones','InstitucionController');  //admin cruds
-Route::get('instituciones','InstitucionController@index')->name('instituciones.index');  //admin cruds
-Route::get('instituciones/create','InstitucionController@create')->name('instituciones.create');  //admin cruds
-Route::post('instituciones','InstitucionController@store')->name('instituciones.store');  //admin cruds
+Route::resource('instituciones','InstitucionController');  //admin cruds
+// Route::get('instituciones','InstitucionController@index')->name('instituciones.index');  //admin cruds
+// Route::get('instituciones/create','InstitucionController@create')->name('instituciones.create');  //admin cruds
+// Route::post('instituciones','InstitucionController@store')->name('instituciones.store');  //admin cruds
 
 Route::get('actores','InstitucionController@indexActorSolucion');  //admin cruds
 Route::get('actor_solucion','InstitucionController@indexActorSolucion');  //admin cruds
 Route::get('actor_solucion/create','InstitucionController@createForm2');  //admin cruds
+
 Route::post('actor_solucion','InstitucionController@asignarActorSolucion');  //admin cruds
 Route::get('soluciones_por_tipo/{tipo_fuente}','SolucionesController@getSolucionesByTipoFuente');
 
 Route::get('institucion/home','InstitucionController@home');  //página dashboard para las instituciones
 
-Route::get('institucion/verSolucion/despliegue/{idSolucion}',['uses'=>'SolucionesController@verActividadesDespliegue','as'=>'verSolucion.despliegue']);
+Route::get('institucion/verSolucion/despliegue/{idSolucion}',['uses'=>'ActividadesController@verActividadesDespliegue','as'=>'verSolucion.despliegue']);
 
-Route::get('institucion/verSolucion/consejo/{idSolucion}',['uses'=>'SolucionesController@verActividadesConsejo','as'=>'verSolucion.consejo']);
+Route::get('institucion/verSolucion/consejo/{idSolucion}',['uses'=>'ActividadesController@verActividadesConsejo','as'=>'verSolucion.consejo']);
 
 Route::get('institucion/despliegue/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createDespliegue','as'=>'actividades.createDespliegue']);
 
 Route::get('institucion/consejo/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createConsejo','as'=>'actividades.createConsejo']);
 
 Route::post('institucion/despliegue/actividad/save/{idSolucion}',['uses'=>'ActividadesController@saveActividadDespliegue','as'=>'actividades.saveActividadDespliegue']);
+
+Route::get('storage2/{archivo}', function ($archivo) {
+     $public_path = public_path();
+     $url = $public_path.'/storage/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+ 
+});
+
+Route::get('storage/{archivo}', function ($archivo) {
+     $storage_path = storage_path('app').'/storage/archivos_actividades';
+     $url = $storage_path.'/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::disk('local3')->exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+ 
+})->name('descargarArchivo');
