@@ -3,14 +3,14 @@
 @section('content')
 
 
-<div class="container" style="padding-top:10%;">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
                 	<h4>Actores - Soluci&oacute;n </h4>
                 	@include('flash::message')
-                	<a href="{{ url('actor_solucion/create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
+                	<a href="{{ route('actorSolucion.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
 
 					<div class="panel-body">
 						<table class="table table-hover">

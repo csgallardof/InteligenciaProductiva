@@ -45,7 +45,7 @@ class VsectorsController extends Controller
         ]);
         $vsector->nombre_vsector = $request->nombre_vsector;
         $vsector->save();
-        return redirect('vsectors');
+        return redirect('admin/vsectors');
 
     }
 

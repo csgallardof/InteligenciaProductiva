@@ -26,7 +26,8 @@ class SolucionesController extends Controller
      */
     public function index(Request $request)
     {
-        $soluciones = Solucion::search($request-> parametro)->where('tipo_fuente','=','1')->orderBy('id','DESC')->paginate(15);
+        $soluciones = Solucion::search($request-> parametro)->where('tipo_fuente','=','1')
+        ->orderBy('id','DESC')->paginate(15);
 
         return view('admin.soluciones.home')->with(["soluciones"=>$soluciones]);    
     }

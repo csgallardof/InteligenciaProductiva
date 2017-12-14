@@ -17,8 +17,8 @@ class AddApellidoCedulaTelefonoCelularToUsersTable extends Migration
             
             $table->string('apellidos');
             $table->string('cedula');
-            $table->string('telefono');
-            $table->string('celular');
+            $table->string('telefono')->nullable();
+            $table->string('celular')->nullable();;
         
             $table->integer('tipo_fuente');
 

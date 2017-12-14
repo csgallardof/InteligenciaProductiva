@@ -10,6 +10,8 @@ class Provincia extends Model
 
     protected $table = 'provincias';
 
+    protected $primaryKey = 'id';
+
     public function solucion(){
 
     	return $this->hasMany('App\Solucion');

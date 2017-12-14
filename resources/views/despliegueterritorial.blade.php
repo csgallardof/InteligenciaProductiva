@@ -9,22 +9,22 @@
 
 @section('contenido')
 
-		<!-- begin #about -->
-		<div id="about" class="content row-m-t-2" data-scrollview="true">
-				<!-- begin container -->
+	
+		<!-- <div id="about" class="content row-m-t-2" data-scrollview="true">
+
 			<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
-					<!-- begin row -->
+
 				<div class="row">
 
 					<div class="col-md-12">
 
-						<!-- begin breadcrumb -->
+						
 						<ol class="breadcrumb pull-right">
 							<li><a href="dashboard.php">Home</a></li>
 							<li class="active">Fichas</li>
 						</ol>
-						<!-- end breadcrumb -->
+
 
 					</div>
 
@@ -32,8 +32,8 @@
 
 			</div>
 
-		</div>
-		<!-- end container -->
+		</div> -->
+
 
 			<!-- end page-header -->
 
@@ -44,7 +44,7 @@
 
           <br /><br />
 					<div class="modal-header">
-							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del despliegue territorial</h4>
+							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del <b>Despliegue territorial</b></h4>
 					</div>
 					{{-- <label class='text-success f-s-12'>
 						<strong>Provincias Sistematizadas:</strong> Esmeraldas, Imbabura, Tungurahua y Loja 

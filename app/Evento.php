@@ -9,6 +9,7 @@ class Evento extends Model
     //
 	protected $table = 'eventos';
 
+    protected $primaryKey = 'id';
 
     public function solucion(){
 

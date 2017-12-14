@@ -35,7 +35,7 @@
                                 <li>Haga click en vista previa para visualizar errores o subir los participantes.</li>
                             </ol>
                         </blockquote>
-                        <form id="fileupload" action="{{ url('participantes/vistaPreviaRegistro') }}" method="POST" files="true" enctype="multipart/form-data">
+                        <form id="fileupload" action="{{ url('/admin/participantes/vistaPreviaRegistro') }}" method="POST" files="true" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="row fileupload-buttonbar">
                                 <div class="col-md-8 col-md-offset-4">

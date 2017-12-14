@@ -18,7 +18,7 @@
 				<!-- end navbar-header -->
 				<!-- begin navbar-collapse -->
 				<div class="collapse navbar-collapse" id="header-navbar">
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-right" style="vertical-align: middle;">
 								<!-- <li><a href="#about" data-click="scroll-to-target">AGENDA DE DESARROLLO PRODUCTIVO</a></li>
 								<li class="active dropdown">
 										<a href="#home" data-click="scroll-to-target" data-target="#" data-toggle="dropdown">REPORTE<b class="caret"></b></a>
@@ -27,17 +27,24 @@
 
 										</ul>
 								</li> -->
-								<li><a href="/" data-toggle="modal">Inicio</a></li>
+								<!--<li><a href="/" data-toggle="modal">Inicio</a></li>-->
+								<li><a href="{{ url('/') }}" data-toggle="modal">Inicio</a></li>
 								<li><a href="/cifras" data-toggle="modal">Cifras</a></li>
 								<li><a href="/indice" data-toggle="modal">&Iacute;ndice Único de Competitividad</a></li>
 								<li><a href="/vocaciones" data-toggle="modal">Vocaciones Productivas</a></li>
-								<li><a href="/despliegueterritorial" data-toggle="modal">Despliegue Territorial</a></li>
-								<li><a href="/consejoconsultivo" data-toggle="modal">Consejo Consultivo</a></li>
-								</li>
-								</li>
+
+								<li class="down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+									Propuestas <span class="caret"></span></a>
+			                        <ul class="dropdown-menu">
+			                        	<li><a href="/consejoconsultivo">Consejo Consultivo</a></li>
+			                            <li>
+			                        		<a class="dropdown-item" href="/despliegueterritorial">Despliegue Territorial</a>
+		                       	 		</li>
+		                        	</ul>
+		                        </li>
 								<li><a href="http://servicios.industrias.gob.ec/biblioteca/" data-toggle="modal">Biblioteca</a></li>
 								<li><a href="/inversiones" data-toggle="modal">Inversiones</a></li>
-								<!-- <li><a href="#login-mipro-dialog" data-toggle="modal">INGRESAR</a></li> -->
+								<li><a href="{{ route('login') }}" data-toggle="modal" style="color: #f26f22"><b>Ingresar</b></a></li>
 						</ul>
 				</div>
 				<!-- end navbar-collapse -->

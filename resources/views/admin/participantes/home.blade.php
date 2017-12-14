@@ -5,25 +5,27 @@
 			
 	<div class="container">
 	    <div class="row">
-	        <div class="col-md-12 col-md-offset-1" style="margin-left: 0%;">
+	        <div class="col-md-10 col-md-offset-1">
 	            <div class="panel panel-default">
 		            <div class="panel-heading">
 		            	<h4>Participantes</h4><br>
 		       			@include('flash::message')
 		       			<a href="{{ route('soluciones.create') }}" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp;Nuevo</a>
-
-	           		</div>
-
-		            <div class="panel-body">
-					  	<div class="pull-right" style="padding-bottom: 20px;"">
-							<form action="{{ url('participantes') }}" method="GET" class="form-inline" role="search">
+		       			<div class="pull-left" style="padding-bottom: 20px;"">
+							<form action="{{ url('/admin/participantes') }}" method="GET" class="form-inline" role="search">
 	                        	<div class="form-group">
-									<input type="text" name="parametro" id="solucion" class="form-control" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){} " value="{{ Request::get('parametro') }}" 
+									<input type="text" name="parametro" id="solucion" class="" placeholder="Par&aacute;metro" pattern=".{3,}" oninvalid="setCustomValidity('Ingrese al menos 3 caracteres')" onchange="try{setCustomValidity('')}catch(e){} " value="{{ Request::get('parametro') }}" 
 									/>
 								</div>
 								<button type="submit" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-search"></i></button>
 							</form>
 						</div>
+						<br><br>
+
+	           		</div>
+
+		            <div class="panel-body" style="overflow:scroll;">
+					  	
 						<table class="table table-hover">
 					        <thead>
 					            <tr>

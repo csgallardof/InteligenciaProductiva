@@ -85,7 +85,7 @@ class VocacionesProductivasController extends Controller
         $provincia = Provincia::find($idProvincia);
 
         Flash::success("Se edit&oacute; la vocaci&oacute;n productiva de ".$provincia-> nombre_provincia." correctamente.");
-        return redirect('vocaciones_productivas');
+        return redirect('admin/vocaciones_productivas');
    }
 
     /**

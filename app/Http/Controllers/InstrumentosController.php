@@ -46,7 +46,7 @@ class InstrumentosController extends Controller
         ]);
         $instrumento->nombre_instrumento = $request->nombre_instrumento;
         $instrumento->save();
-        return redirect('instrumentos');
+        return redirect('admin/instrumentos');
     }
 
     /**

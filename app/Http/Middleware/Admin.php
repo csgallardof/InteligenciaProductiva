@@ -30,7 +30,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if($this->auth->user()->admin() )
+        if( $this->auth->user()->admin() == true )
         {
             return $next($request);
         }

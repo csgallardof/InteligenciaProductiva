@@ -275,7 +275,7 @@ class ParticipantesController extends Controller
                 $solucion-> vsector_id = 0;     // sin utilizar por el momento
                 $solucion-> solucion_ccpt = "";
                 $solucion-> mesa_id = 0;
-                $solucion-> estado_id = 0;
+                $solucion-> estado_id = 1;    //  1 = Sin asignar responsables
                 
                 $solucion-> save(); 
                 array_push($arrayValProblemas, $fila["problematicaValidacion"]); 
@@ -289,7 +289,8 @@ class ParticipantesController extends Controller
                             <li>Se registradon ".$countOK." soluciones.</li>
                             <li>".$flash1."</li>
                         </ul>");
-        return redirect('soluciones');
+        
+        return redirect('admin/soluciones');
 
     }	
     
@@ -368,9 +369,7 @@ class ParticipantesController extends Controller
         
         $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
         
-        $InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
-        $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
-        $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
+        //formateamos el timestamp a solo Y-d-m  
         
         $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
         

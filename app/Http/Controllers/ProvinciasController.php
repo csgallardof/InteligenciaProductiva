@@ -45,8 +45,9 @@ class ProvinciasController extends Controller
             'nombre_provincia' =>'required|unique:provincias'
         ]);
         $provincia->nombre_provincia = $request->nombre_provincia;
+        $provincia->region = $request->regiones;
         $provincia->save();
-        return redirect('ProvinciasController');
+        return redirect('admin/provincias');
     }
 
     /**

@@ -49,7 +49,7 @@ class ThematicsController extends Controller
         $thematic->nombre_thematic = $request->nombre_thematic;
         $thematic->save();
         //dd($thematic);
-        return redirect('thematics');
+        return redirect('admin.thematics');
     }
 
     /**

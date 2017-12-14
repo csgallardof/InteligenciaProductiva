@@ -47,7 +47,7 @@ class SipocsController extends Controller
         ]);
         $sipoc->nombre_sipoc = $request->nombre_sipoc;
         $sipoc->save();
-        return redirect('sipocs');
+        return redirect('admin/sipocs');
 
     }
 

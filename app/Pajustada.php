@@ -10,6 +10,7 @@ class Pajustada extends Model
 
 	protected $table = 'pajustadas';
 
+	protected $primaryKey = 'id';
 
     public function solucion(){
 

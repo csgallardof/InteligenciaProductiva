@@ -9,6 +9,8 @@ class Actividad extends Model
     //
     protected $table = 'actividades';
 
+    protected $primaryKey = 'id';
+
     public function usuario()
     {
         return $this->belongsTo('App\User','ejecutor_id');

@@ -8,10 +8,12 @@ use App\Actividad;
 use App\ActorSolucion;
 use App\Archivo;
 
+use DB;
 use File;
 use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ActividadesController extends Controller
 {
@@ -26,10 +28,18 @@ class ActividadesController extends Controller
         
     }
 
-    public function verActividadesDespliegue($idSolucion){
+    public function verActividadesDespliegue($tipo_actor, $idSolucion){
                 
-        $solucion = Solucion::find($idSolucion);
+        if( $tipo_actor != 1 && $tipo_actor != 2 ){
+            return abort(404);
+        }
 
+        $solucion = DB::select("SELECT solucions.* FROM solucions
+                                INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
+                                WHERE actor_solucion.user_id = ". Auth::user()->id." AND actor_solucion.solucion_id = ".$idSolucion." AND actor_solucion.tipo_actor = ". $tipo_actor."
+                                ;");
+
+        $this->notFound($solucion);  //REDIRECCIONA AL ERROR 404  SI EL OBJETO NO EXISTE
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                 ->where('tipo_fuente','=', 1)
@@ -41,17 +51,43 @@ class ActividadesController extends Controller
 
 
         
-        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion,"actividades"=>$actividades]);
+        return view('institucion.actividades.solucionDesp')->with(["actoresSoluciones"=>$actoresSoluciones,
+                                                            "solucion"=>$solucion[0],
+                                                            "actividades"=>$actividades,
+                                                            "tipo_actor"=>$tipo_actor
+                                                        ]);
     }
 
-    public function verActividadesConsejo($idSolucion){
+    public function verActividadesConsejo($tipo_actor, $idSolucion){
+                
+        if( $tipo_actor != 1 && $tipo_actor != 2 ){
+            return abort(404);
+        }
 
-        $solucion = Solucion::find($idSolucion);
+        $solucion = DB::select("SELECT pajustadas.* FROM pajustadas
+                                INNER JOIN solucions ON pajustadas.id = solucions.pajustada_id
+                                INNER JOIN actor_solucion ON actor_solucion.solucion_id = pajustadas.id 
+                                WHERE actor_solucion.user_id = ".Auth::user()->id." AND actor_solucion.solucion_id = ".$idSolucion."
+                                AND actor_solucion.tipo_actor = ".$tipo_actor." 
+                                ;");
 
-        $actoresSoluciones = ActorSolucion::all();
+        $this->notFound($solucion);  //REDIRECCIONA AL ERROR 404  SI EL OBJETO NO EXISTE
 
-        return view('institucion.actividades.index')->with(["actoresSoluciones"=>$actoresSoluciones,"solucion"=>$solucion]);
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 2)
+                                ->orderBy('created_at','DESC')->get();
+                                
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',2)
+                                            ->orderBy('tipo_actor','ASC')->get();
+        
+        return view('institucion.actividades.solucionCCPT')->with(["actoresSoluciones"=>$actoresSoluciones,
+                                                            "solucion"=>$solucion[0],
+                                                            "actividades"=>$actividades,
+                                                            "tipo_actor"=>$tipo_actor
+                                                        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -70,7 +106,7 @@ class ActividadesController extends Controller
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
-        return view('institucion.actividades.create')->with(["solucion"=>$solucion,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones]);
+        return view('institucion.actividades.createDesp')->with(["solucion"=>$solucion,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones]);
     }
 
     /**
@@ -80,7 +116,17 @@ class ActividadesController extends Controller
      */
     public function createConsejo($idSolucion)
     {
-        
+        $pajustada = Pajustada::find($idSolucion);
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 2)
+                                ->orderBy('created_at','ASC')->get();
+
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',2)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        return view('institucion.actividades.createCCPT')->with(["pajustada"=>$pajustada,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones]);
     }
     
     /**
@@ -89,14 +135,14 @@ class ActividadesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function saveActividadDespliegue(Request $request, $idSolucion)
+    public function saveActividad(Request $request, $tipo_fuente, $idSolucion)
     {       
 
         $actividad = new Actividad;
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
-        $actividad-> tipo_fuente = 1;
+        $actividad-> tipo_fuente = $tipo_fuente;
         $actividad-> save();  
 
         $files = $request->file('files');
@@ -106,7 +152,7 @@ class ActividadesController extends Controller
             foreach ($files as $file) {
 
                 $nombreArchivo = $file->getClientOriginalName();
-                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_**".$nombreArchivo;     // agregamos la fecha 
+                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_-_".$nombreArchivo;     // agregamos la fecha 
 
                 $archivo = new Archivo;
                 $archivo-> nombre_archivo= $nombreArchivo;
@@ -118,7 +164,11 @@ class ActividadesController extends Controller
             }
         }
         Flash::success("Se ha creado la actividad exitosamente");
-        return redirect()->route('verSolucion.despliegue',$idSolucion);
+        if($tipo_fuente == 1){
+            return redirect()->route('verSolucion.despliegue',[1,$idSolucion]);
+        }else{
+            return redirect()->route('verSolucion.consejo',[1, $idSolucion]);
+        }
         
     }
 

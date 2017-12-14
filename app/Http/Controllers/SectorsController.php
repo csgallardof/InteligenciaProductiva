@@ -45,7 +45,7 @@ class SectorsController extends Controller
         ]);
         $sector->nombre_sector = $request->nombre_sector;
         $sector->save();
-        return redirect('sectors');
+        return redirect('admin/sectors');
 
     }
 

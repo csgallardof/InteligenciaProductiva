@@ -81,52 +81,43 @@
 								<h4 class="panel-title">Propuestas /Solución</h4>
 							</div>
 							<div class="panel-body p-t-0">
-									<br>
-                                	<label class='text-success f-s-11'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuesta Unificada</strong>
-                                	</label>
-									<blockquote>
-										  	<p><h5>
-										  		@if(isset($pajustada))
-													{{ $pajustada->nombre_pajustada }}
-												@endif
-										  	</h5></p>
-                                   	</blockquote>
+								<br>
+                            	<label class='text-success f-s-11'>
+                            		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuesta Unificada</strong>
+                            	</label>
+								<blockquote>
+									  	<p><h5>
+									  		@if(isset($pajustada))
+												{{ $pajustada->nombre_pajustada }}
+											@endif
+									  	</h5></p>
+                               	</blockquote>
 
-                                   	<label class='text-success f-s-11'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuestas Originales</strong>
-                                	</label>
-                                	{{-- <div class="panel panel-default">
-  										<div class="panel-heading">Panel Heading</div>
-  										<div class="panel-body">Panel Content</div>
-									</div> --}}
-									
+                               	<label class='text-success f-s-11'>
+                            		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuestas Originales</strong>
+                            	</label>
 
-										  		@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														<div class="panel panel-info">
-  															<div class="panel-heading f-s-13">
-  																{{ $solucion->solucion_ccpt }}
-  															</div>
-  															<div class="panel-body fade in f-s-11" style="background-color: #d9eaf2;"}}>
+						  		@if(isset($soluciones))
+									@foreach($soluciones as $solucion)
+										<div class="panel panel-info">
+												<div class="panel-heading f-s-13">
+													{{ $solucion->solucion_ccpt }}
+												</div>
+												<div class="panel-body fade in f-s-11" style="background-color: #d9eaf2;"}}>
 
-  																	<label class='text-success f-s-11'>
-	                                									<i class="fa fa-clock-o fa-fw"></i>Creado: 
-	                                									{{ substr($solucion->created_at,0,10) }}
-									                                </label><br>
-  																	<strong>Eslabon de la cadena productiva: </strong> {{ $solucion->sipoc->nombre_sipoc }} <br>
-  																	<strong>Instrumentos Necesario: </strong> {{ $solucion->instrumento->nombre_instrumento }} <br>
-  																	<strong>Mesa: </strong>{{ $solucion->mesa->nombre_mesa }} <br>
-  																	<strong>Fomento de la Producci&oacute;n Nacional: </strong>{{ $solucion->thematic->nombre_thematic }}<br>
-  															</div>
+														<label class='text-success f-s-11'>
+                    									<i class="fa fa-clock-o fa-fw"></i>Creado: 
+                    									{{ substr($solucion->created_at,0,10) }}
+					                                </label><br>
+														<strong>Eslabon de la cadena productiva: </strong> {{ $solucion->sipoc->nombre_sipoc }} <br>
+														<strong>Instrumentos Necesario: </strong> {{ $solucion->instrumento->nombre_instrumento }} <br>
+														<strong>Mesa: </strong>{{ $solucion->mesa->nombre_mesa }} <br>
+														<strong>Fomento de la Producci&oacute;n Nacional: </strong>{{ $solucion->thematic->nombre_thematic }}<br>
+												</div>
+										</div>	
 
-														</div>		 
-
-														
-														
-
-													@endforeach
-												@endif
+									@endforeach
+								@endif
                                 	
 	                        </div>
 	
@@ -153,89 +144,69 @@
                                 	</label>
                             		<dl class="dl-horizontal">
                             				
-										<dt>* RESPONSABLE: &nbsp;</dt>
-										@if(isset($soluciones))
-											{{ " ".$soluciones[0]->responsable_solucion }}
+										<dt>RESPONSABLE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+										@if(isset($actoresSoluciones))
+											@foreach($actoresSoluciones as $actorSolucion)
+												@if($actorSolucion->tipo_actor == 1) 
+													{{ $actorSolucion->usuario-> name }}
+												@endif
+											@endforeach
 										@endif
 										
 										<dt>CO-RESPONSABLE:</dt>
 
 										<dd>
-										@if(isset($soluciones))
-											{{ $soluciones[0]->corresponsable_solucion }}
+										@if(isset($actoresSoluciones))
+											<ul>
+												@foreach($actoresSoluciones as $actorSolucion)
+													@if($actorSolucion->tipo_actor == 2) 
+														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
+													@endif
+												@endforeach
+											</ul>
 										@endif
-											
-								         
 										</dd>
 											
 									</dl>
 									<div class="media-body">
 										<dl class="dl-horizontal">
-											<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
-											<span class="label label-warning">Inicializado</span> 
+											Estado de Compromiso: &nbsp;&nbsp;&nbsp;
+											<span class="label label-warning">
+												@if(isset($soluciones))
+													@foreach($soluciones as $solucion)
+														{{ $solucion->estado->nombre_estado }}
+													@endforeach
+												@endif
+											</span> 
 										</dl>
-										No se encontraron actividades registradas.<br><br>
 									</div>
-									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-1x fa-check"></i> Iniciar compromiso</a><p>
-									{{-- @if(isset($soluciones))
+
+									@if(isset($actividades) &&  count($actividades) > 0)
+									<b>Actividades: </b>{{ count($actividades) }}
+									<span class="pull-right" style="font-size: 12px">Ordenado desde la m&aacute;s reciente</span>
+									<hr>
 									<ul class="media-list media-list-with-divider">
-										
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Por parte del SRI, se revisará los casos de cartera vencida con esta Institución y se analizarán los escenarios de reestructuración de deuda, conforme el dialogo productivo realizado.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
+										@foreach($actividades as $actividad)							
 
-										</li>
-										<hr>
+											<li class="media media-lg">
+												<div class="media-body">
+													<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
+													<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
+													<h5 class="media-heading"></h5>
+													{{ $actividad -> comentario}}
+													<br>
+													
+													<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+													
+												</div>
 
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Se analizará la situación del sector florícola a fin de contrastar la situación indicada.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Por parte del IESS, se analizará igualmente los casos de cartera vencida con la Institución.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Se reportará los resultados de análisis al Señor Presidente para su aprobación y determinación de la solución más adecuada.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-										
-										
+											</li>
+										@endforeach										
 									</ul>
-									@endif --}}
+									@else
+										No se encontraron actividades registradas.
+									@endif
 			                        
 								</div>
 							</div>

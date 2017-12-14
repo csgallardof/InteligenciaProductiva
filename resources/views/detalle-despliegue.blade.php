@@ -10,34 +10,6 @@
 @section('contenido')
 
 		<!-- begin #about -->
-		<div id="about" class="content row-m-t-2" data-scrollview="true">
-				<!-- begin container -->
-			<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-					<!-- begin row -->
-				<div class="row">
-
-					<div class="col-md-12">
-
-						<!-- begin breadcrumb -->
-						<ol class="breadcrumb pull-right">
-							<li><a href="dashboard.php">Home</a></li>
-							<li class="active">Fichas</li>
-						</ol>
-						<!-- end breadcrumb -->
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-		<!-- end container -->
-
-			<!-- end page-header -->
-
-		<!-- begin #about -->
 		<div class="content row-m-t-2" data-scrollview="true">
 				<!-- begin container -->
 			<div class="container" data-animation="true" data-animation-type="fadeInDown">
@@ -209,8 +181,6 @@
 												@endif
 										  	</h5>
                                    	</blockquote>
-
-                                   
                                 	
 	                        </div>
 	
@@ -237,99 +207,67 @@
                                 	</label>
                             		<dl class="dl-horizontal">
                             				
-										<dt>* RESPONSABLE: &nbsp;</dt>
-										@if(isset($soluciones))
-												@foreach($soluciones as $solucion)
-													 
-													{{ " ".$solucion->responsable_solucion }}
-													
-
-												@endforeach
-											@endif
+										<dt>RESPONSABLE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+										@if(isset($actoresSoluciones))
+											@foreach($actoresSoluciones as $actorSolucion)
+												@if($actorSolucion->tipo_actor == 1) 
+													{{ $actorSolucion->usuario-> name }}
+												@endif
+											@endforeach
+										@endif
 										
 										<dt>CO-RESPONSABLE:</dt>
 
 										<dd>
-											@if(isset($soluciones))
-												@foreach($soluciones as $solucion)
-													 
-													{{ $solucion->corresponsable_solucion }}
-													
-
+										@if(isset($actoresSoluciones))
+											<ul>
+												@foreach($actoresSoluciones as $actorSolucion)
+													@if($actorSolucion->tipo_actor == 2) 
+														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
+													@endif
 												@endforeach
-											@endif
-											
-								         
+											</ul>
+										@endif
 										</dd>
 											
 									</dl>
 									<div class="media-body">
 										<dl class="dl-horizontal">
-											<dt>Estado de Compromiso:&nbsp;&nbsp;&nbsp;</dt>
-											<span class="label label-warning">Inicializado</span> 
+											Estado de Compromiso: &nbsp;&nbsp;&nbsp;
+											<span class="label label-warning">
+												@if(isset($soluciones))
+													{{ $solucion[0]->estado->nombre_estado }}
+												@endif
+											</span> 
 										</dl>
-										No se encontraron actividades registradas.<br><br>
 									</div>
-									<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-1x fa-check"></i> Iniciar compromiso</a><p>
-									{{-- @if(isset($soluciones))
+
+									@if(isset($actividades) &&  count($actividades) > 0)
+									<b>Actividades: </b>{{ count($actividades) }}
+									<span class="pull-right" style="font-size: 12px">Ordenado desde la m&aacute;s reciente</span>
+									<hr>
 									<ul class="media-list media-list-with-divider">
-										
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Por parte del SRI, se revisará los casos de cartera vencida con esta Institución y se analizarán los escenarios de reestructuración de deuda, conforme el dialogo productivo realizado.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
+										@foreach($actividades as $actividad)							
 
-										</li>
-										<hr>
+											<li class="media media-lg">
+												<div class="media-body">
+													<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
+													<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
+													<h5 class="media-heading"></h5>
+													{{ $actividad -> comentario}}}
+													<br>
+													
+													<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+													
+												</div>
 
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Se analizará la situación del sector florícola a fin de contrastar la situación indicada.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Por parte del IESS, se analizará igualmente los casos de cartera vencida con la Institución.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-
-										<li class="media media-lg">
-											<div class="media-body">
-												<h5 class="media-heading"></h5>
-												Se reportará los resultados de análisis al Señor Presidente para su aprobación y determinación de la solución más adecuada.
-												<br>
-												
-												<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
-												
-											</div>
-
-										</li>
-										
-										
+											</li>
+										@endforeach										
 									</ul>
-									@endif --}}
+									@else
+										No se encontraron actividades registradas.
+									@endif
 			                        
 								</div>
 							</div>

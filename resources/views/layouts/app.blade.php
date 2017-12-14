@@ -43,11 +43,13 @@
 
     <div id="page-container" class="fade">
             @include ('layouts.menu_admin')
-            <div style="padding-top:100px;"></div>
+            <br><br><br><br><br><br>
             @yield ('content')
             @include ('layouts.common_modals')
             @include ('layouts.footer')
     </div>
+
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 
     @section('end_js')
             <!-- ================== BEGIN BASE JS ================== -->

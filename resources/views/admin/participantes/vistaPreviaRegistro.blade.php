@@ -15,7 +15,7 @@
 	            	@include('flash::message')
 				
 					@if (count($errores) === 0)
-						<form action="{{ url('participantes') }}" method="POST" id="formSubida">
+						<form action="{{ url('/admin/participantes') }}" method="POST" id="formSubida">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="nombreArchivo" value="{{ $nombreArchivo }}">
 						</form>	

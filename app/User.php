@@ -15,6 +15,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $primaryKey = 'id';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -86,6 +89,32 @@ class User extends Authenticatable
     public function actividad()
     {
         return $this->hasMany('App\Actividad','ejecutor_id','id');
+    }
+
+    public function admin()
+    {
+        $roles = $this->roles();
+        
+
+        /*
+        dd($roles);
+        $is_admin = 0;
+        foreach ($roles as $rol) {
+            if($rol->id === 1){
+                $is_admin++;
+            }
+        }
+        if($is_admin > 0){
+            return true;    
+        }else{
+            return false;
+            // return false;
+        }
+        */
+
+        var_dump($roles);
+        
+
     }
 
     

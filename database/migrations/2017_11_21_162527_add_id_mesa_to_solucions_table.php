@@ -17,7 +17,7 @@ class AddIdMesaToSolucionsTable extends Migration
             
             // inicio de relaciones 
             $table->string('corresponsable_solucion')->nullable()->change();
-            $table->string('solucion_ccpt');
+            $table->text('solucion_ccpt');
             $table->integer('mesa_id');
         });
     }

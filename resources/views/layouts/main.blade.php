@@ -38,6 +38,9 @@
 		@show
 		<!-- ================== END BASE JS ================== -->
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 	</head>
 
 	<body data-spy="scroll" data-target="#header-navbar" data-offset="51">

@@ -10,6 +10,8 @@ class Ambit extends Model
 
 	protected $table = 'ambits';
 
+	protected $primaryKey = 'id';
+
     public function solucion(){
 
     	return $this->hasMany('App\Solucion');

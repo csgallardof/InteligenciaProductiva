@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Solucion extends Model
 {
     //
+    protected $table = 'solucions';
+
+    protected $primaryKey = 'id';
 
     public function provincia(){
 
@@ -60,7 +63,8 @@ class Solucion extends Model
                     ->orwhere('sujeto_solucion','LIKE',"%$name%")
                     ->orwhere('complemento_solucion','LIKE',"%$name%")
                     ->orwhere('responsable_solucion','LIKE',"%$name%")
-                    ->orwhere('corresponsable_solucion','LIKE',"%$name%");
+                    ->orwhere('corresponsable_solucion','LIKE',"%$name%")
+                    ->orwhere('solucion_ccpt','LIKE',"%$name%");
         
         $provincias = Provincia::where('nombre_provincia','LIKE',"%$name%")->get();
         if(count($provincias) > 0){
@@ -116,9 +120,14 @@ class Solucion extends Model
             foreach ($mesas as $mesa) {
                 $query->orwhere('mesa_id', '=',"$mesa->id" );
             }
+        }  
+
+        $pajustadas= Pajustada::where('nombre_pajustada','LIKE',"%$name%")->get();
+        if(count($pajustadas) > 0){
+            foreach ($pajustadas as $pajustada) {
+                $query->orwhere('pajustada_id', '=',"$pajustada->id" );
+            }
         }   
-
-
         
         return $query;
         
@@ -147,6 +156,11 @@ class Solucion extends Model
     public function actor_solucion()
     {
         return $this->hasMany('App\ActorSolucion','solucion_id','id');
+    }
+
+    public function estado(){
+
+        return $this->belongsTo('App\EstadoSolucion');
     }
 
 }

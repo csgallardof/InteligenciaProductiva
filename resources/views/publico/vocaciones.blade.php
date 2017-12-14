@@ -51,8 +51,7 @@
 					<div class="row">
 							<!-- begin col-4 -->
 						<div class="col-md-12">
-							<div class="panel bg-yellow">
-
+							
 								<div class="col-md-12">
 				                	<ul class="nav nav-tabs">
 										<li class="active"><a href="#default-tab-1" data-toggle="tab">Costa</a></li>
@@ -176,7 +175,7 @@
 
 
 				                </div>
-							</div>
+							
 							<!-- begin page-header -->
 						</div>
 							<!-- end col-4 -->

@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('actor_solucion') }}/@yield('edit_id')">
+                    <form class="form-horizontal" method="POST" action="{{ route('actorSolucion.asignar') }}/@yield('edit_id')">
                         {{ csrf_field() }}
                         @section('edit_Method')
                         @show

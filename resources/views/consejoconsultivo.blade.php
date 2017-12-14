@@ -44,7 +44,7 @@
 
           <br /><br />
 					<div class="modal-header">
-							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del Consejo Consultivo Productivo Tributario</h4>
+							<h4 class="modal-title">Buscar propuestas, compromisos y acciones del <b>Consejo Consultivo Productivo Tributario</b></h4>
 					</div>
 					
 					<!-- begin row -->

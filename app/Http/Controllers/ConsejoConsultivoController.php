@@ -126,6 +126,8 @@ class ConsejoConsultivoController extends Controller
                 $solucion-> tipo_empresa_id = 0;				// 0 porque esta columna es para despliegue territorial
                 
 	            $solucion-> vsector_id = 0;     // sin utilizar por el momento
+
+                $solucion-> estado_id = 1;     // 1 = sin asignar responsables
    
                 $solucion->save();
                 
@@ -568,47 +570,5 @@ class ConsejoConsultivoController extends Controller
 
     }
 
-     public function detalleccpt(Request $request, $pajustada_sol_id, $sector, $ambito, $sipoc){
-
-        $pajustada = Pajustada::find($pajustada_sol_id);
-        
-       
-
-        if($sector > 0 && $ambito > 0){
-             $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
-                        ->where('tipo_fuente','=',2)
-                        ->where('sipoc_id','=',$sipoc)
-                        ->where('sector_id','=',$sector)
-                        ->where('ambit_id','=',$ambito)
-                        ->orderBy('solucion_ccpt','ASC')->get();
-        }
-        if($sector > 0 && $ambito == 0){
-            $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
-                        ->where('tipo_fuente','=',2)
-                        ->where('sipoc_id','=',$sipoc)
-                        ->where('sector_id','=',$sector)
-                        ->orderBy('solucion_ccpt','ASC')->get();
-        }
-      
-
-        if($sector == 0 && $ambito > 0){
-            $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
-                        ->where('tipo_fuente','=',2)
-                        ->where('sipoc_id','=',$sipoc)
-                        ->where('ambit_id','=',$ambito)
-                        ->orderBy('solucion_ccpt','ASC')->get();
-        }
-
-
-        $sector = Sector::find($sector);
-        $ambito = Ambit::find($ambito);
-        $sipoc = Sipoc::find($sipoc);
-
-        return view('detalle-ccpt')->with(["soluciones"=>$soluciones,
-                                            "pajustada"=>$pajustada,
-                                            "sector"=>$sector,
-                                            "ambito"=>$ambito,
-                                            "sipoc"=>$sipoc]);
-    }
 
 }

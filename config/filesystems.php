@@ -55,7 +55,7 @@ return [
 
         'local3' => [
             'driver' => 'local',
-            'root' => storage_path('app').'/storage/archivos_actividades/',
+            'root' => storage_path('app').'/storage/archivos_actividades',
         ],
 
         'public' => [

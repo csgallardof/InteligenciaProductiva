@@ -9,6 +9,8 @@ class Sector extends Model
     //
 
 	protected $table = 'sectors';
+
+    protected $primaryKey = 'id';
    
    public function solucion(){
 

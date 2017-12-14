@@ -11,6 +11,8 @@ class Sipoc extends Model
 
 	protected $table = 'sipocs';
 
+	protected $primaryKey = 'id';
+
 	public function solucion(){
 
     	return $this->hasMany('App\Solucion');

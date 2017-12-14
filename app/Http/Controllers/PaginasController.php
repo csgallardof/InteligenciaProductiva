@@ -9,6 +9,10 @@ use App\Role;
 
 use App\Evento;
 use App\Solucion;
+use App\Pajustada;
+use App\ActorSolucion;
+use App\Actividad;
+use App\Ambit;
 
 
 use App\Provincia;
@@ -34,11 +38,79 @@ class PaginasController extends Controller
     }
 
 
-    public function detalledespliegue(Request $request, $solucion_id){
+    public function detalledespliegue(Request $request, $idSolucion){
 
-        $soluciones = Solucion::where('id','=',$solucion_id)->get();
+        $soluciones = Solucion::where('id','=',$idSolucion)->get();
 
-        return view('detalle-despliegue')->with(["soluciones"=>$soluciones]);
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('created_at','DESC')->get();
+
+        return view('detalle-despliegue')->with([
+                                            "soluciones"=>$soluciones,
+                                            "actoresSoluciones"=>$actoresSoluciones,
+                                            "actividades"=>$actividades
+                                        ]);
+    }
+
+    public function detalleccpt(Request $request, $pajustada_sol_id, $sector, $ambito, $sipoc){
+
+        $pajustada = Pajustada::find($pajustada_sol_id);
+        
+       
+
+        if($sector > 0 && $ambito > 0){
+             $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
+                        ->where('tipo_fuente','=',2)
+                        ->where('sipoc_id','=',$sipoc)
+                        ->where('sector_id','=',$sector)
+                        ->where('ambit_id','=',$ambito)
+                        ->orderBy('solucion_ccpt','ASC')->get();
+        }
+        if($sector > 0 && $ambito == 0){
+            $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
+                        ->where('tipo_fuente','=',2)
+                        ->where('sipoc_id','=',$sipoc)
+                        ->where('sector_id','=',$sector)
+                        ->orderBy('solucion_ccpt','ASC')->get();
+        }
+      
+
+        if($sector == 0 && $ambito > 0){
+            $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
+                        ->where('tipo_fuente','=',2)
+                        ->where('sipoc_id','=',$sipoc)
+                        ->where('ambit_id','=',$ambito)
+                        ->orderBy('solucion_ccpt','ASC')->get();
+        }
+
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$pajustada_sol_id)
+                                            ->where('tipo_fuente','=',2)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        $actividades = Actividad::where('solucion_id','=',$pajustada_sol_id)
+                                            ->where('tipo_fuente','=',2)
+                                            ->orderBy('created_at','DESC')->get();
+
+
+
+
+        $sector = Sector::find($sector);
+        $ambito = Ambit::find($ambito);
+        $sipoc = Sipoc::find($sipoc);
+
+        return view('detalle-ccpt')->with(["soluciones"=>$soluciones,
+                                            "pajustada"=>$pajustada,
+                                            "sector"=>$sector,
+                                            "ambito"=>$ambito,
+                                            "sipoc"=>$sipoc,
+                                            "actoresSoluciones"=>$actoresSoluciones,
+                                            "actividades"=>$actividades
+                                        ]);
     }
 
 

@@ -45,7 +45,7 @@ class PajustadasController extends Controller
         ]);
         $pajustada->nombre_pajustada = $request->nombre_pajustada;
         $pajustada->save();
-        return redirect('pajustadas');
+        return redirect('admin/pajustadas');
     }
 
     /**

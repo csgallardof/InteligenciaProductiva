@@ -41,13 +41,13 @@ class AmbitsController extends Controller
     {
         //
         //
-        $ambits = new ambit;
+        $ambit = new ambit;
         $this ->validate($request,[
             'nombre_ambit' =>'required|unique:ambits'
         ]);
         $ambit->nombre_ambit = $request->nombre_ambit;
         $ambit->save();
-        return redirect('ambits');
+        return redirect('admin/ambits');
     }
 
     /**

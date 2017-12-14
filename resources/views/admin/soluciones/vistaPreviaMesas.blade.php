@@ -16,12 +16,7 @@
 				
 				@if (count($errores) === 0)
 					
-					{{-- <form action="{{ url('soluciones') }}" method="POST" id="formSubida">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-						<input type="hidden" name="nombreArchivo" value="{{ $nombreArchivo }}">
-					</form>	
-					<button type="submit" form="formSubida" value="Subir" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Cargar datos</button> --}}
-					<a href="{{ url("participantes/vistaPrevia/".$nombreArchivo ) }}" class="btn btn-primary pull-right">{{-- <i class="glyphicon glyphicon-plus"></i> --}}&nbsp;Siguiente</a>
+					<a href="{{ url('/admin/participantes/vistaPrevia/'.$nombreArchivo ) }}" class="btn btn-primary pull-right">{{-- <i class="glyphicon glyphicon-plus"></i> --}}&nbsp;Siguiente</a>
 				@else
 					<div class="panel-heading">
 						<h3><b>Hoja:</b> <u>Mesas</u></h3> <br><br>

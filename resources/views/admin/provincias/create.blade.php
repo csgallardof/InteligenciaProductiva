@@ -25,6 +25,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="regiones" class="col-md-4 control-label">Regi&oacute;n</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="regiones" id="regiones">
+                                    <option value="1">Costa</option>
+                                    <option value="2">Sierra</option>
+                                    <option value="3">Oriente</option>
+                                    <option value="4">Insular</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
                                      Registrar
