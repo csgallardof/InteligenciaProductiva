@@ -136,7 +136,7 @@ class ConsejoConsultivoController extends Controller
         
         Flash::success("Se registradon ".count($informacion3)." soluciones.");
         
-        return redirect('ccpt');
+        return redirect()->route('ccpt.index');
 
     }
 

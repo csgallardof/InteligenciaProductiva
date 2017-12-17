@@ -18,6 +18,13 @@ Route::get('/', function () {
      return view('inicio');
 });
 
+Route::get('/reporte','SolucionesController@reporte1');
+
+Route::post('/reporte',[
+     'uses'=>'SolucionesController@buscar',
+     'as'=>'reporte1.resultado'
+]);
+
 Route::get('/visorgeneral', 'PaginasController@visorgeneral');
 
 Route::get('/despliegueterritorial', 'PaginasController@despliegueterritorial');
@@ -56,6 +63,8 @@ Route::post('/consejoconsultivo',[
      'uses'=>'ConsejoConsultivoController@buscar',
      'as'=>'consejo.resultado'
 ]);
+
+
 
 
 

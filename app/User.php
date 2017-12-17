@@ -95,9 +95,6 @@ class User extends Authenticatable
     {
         $roles = $this->roles();
         
-
-        /*
-        dd($roles);
         $is_admin = 0;
         foreach ($roles as $rol) {
             if($rol->id === 1){
@@ -107,12 +104,12 @@ class User extends Authenticatable
         if($is_admin > 0){
             return true;    
         }else{
-            return false;
+            return true;
             // return false;
         }
-        */
+        
 
-        var_dump($roles);
+        //var_dump($roles);
         
 
     }

@@ -44,6 +44,12 @@
                       <a href="/despliegueterritorial" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
                     </div>
                 </div>
+                <div class="col-md-12 row-m-t-minus-25">
+                    <div class="panel-body text-center">
+                        <a href="/reporte" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Reporte</a>
+                    </div>
+                    
+                </div>
 
                 <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">

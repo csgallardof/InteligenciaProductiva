@@ -68,9 +68,11 @@ class ParticipantesController extends Controller
          * Hoja REGISTRO
          *
         */
-        
-        $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
-        $objWorksheet = $objPHPExcel->getActiveSheet();  //
+
+        //PRINCIPALES
+
+        $objPHPExcel->setActiveSheetIndex(1);    //HOJA Mesas
+        $objWorksheet = $objPHPExcel->getActiveSheet();
 
         $provincia= $objWorksheet->getCell("B4")->getValue();   //obtenemos el nombre de la provincia
         $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
@@ -84,11 +86,19 @@ class ParticipantesController extends Controller
             $evento-> save();    
         }
 
+       
+
+        //FIN DE PRINCIPALES
+        
+        $objPHPExcel->setActiveSheetIndex(0);   //indicamos que vamos a trabajar en la hoja 0 que es la de registro
+        $objWorksheet = $objPHPExcel->getActiveSheet();  //
+
         $coordinador= $objWorksheet->getCell("B2");     //obtenemos el coordinador
         
-        $InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
+        /*$InvDate= $objWorksheet->getCell("B3")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
         $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
         $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
+        */
         
         $highestRow = $objWorksheet->getHighestRow();   //obtenemos el número total de filas
         
@@ -188,19 +198,16 @@ class ParticipantesController extends Controller
         $objPHPExcel->setActiveSheetIndex(1);   //indicamos que vamos a trabajar en la hoja 0 que es la de mesas
         $objWorksheet = $objPHPExcel->getActiveSheet();  //
 
-        $provincia= $objWorksheet->getCell("B4");   //obtenemos el nombre de la provincia
-        $provincia = DB::table('provincias')->where('nombre_provincia', $provincia)->first();
-        
         $evento = DB::table('eventos')->where('nombre_evento', $nombreEvento )->first();
 
         $liderMesa= $objWorksheet->getCell("B2");     //obtenemos al lider de mesa
         
         $sistematizador= $objWorksheet->getCell("B3");     //obtenemos al lider de mesa
         
-        $InvDate= $objWorksheet->getCell("B5")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
+        /*$InvDate= $objWorksheet->getCell("B5")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
         $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
         $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
-        
+        */
         $sector= $objWorksheet->getCell("B6");   //obtenemos el grupo 
         $sector = DB::table('sectors')->where('nombre_sector', $sector)->first();
 

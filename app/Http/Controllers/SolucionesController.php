@@ -10,6 +10,8 @@ use App\Solucion;
 use App\Evento;
 use App\ActorSolucion;
 use App\Actividad;
+use App\Ambit;
+use App\Sipoc;
 use File;
 use DB;
 use Illuminate\Support\Collection as Collection;
@@ -150,10 +152,10 @@ class SolucionesController extends Controller
         
         $sistematizador= $objWorksheet->getCell("B3")->getValue();     //obtenemos al lider de mesa
         
-        $InvDate= $objWorksheet->getCell("B5")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
+        /*$InvDate= $objWorksheet->getCell("B5")->getValue();   //obtenemos el valor de la fecha, pero esta en entero, que es el resultado de restar la fecha actual menos la fecha 01/01/1990
         $timestamp = PHPExcel_Shared_Date::ExcelToPHP($InvDate);  //transformamos el valor obtenido a timestamp
         $fecha_php = date("Y-d-m",$timestamp);                    //formateamos el timestamp a solo Y-d-m  
-        
+        */
         $sector= $objWorksheet->getCell("B6");   //obtenemos el grupo 
         $sector = DB::table('sectors')->where('nombre_sector', $sector)->first();
 
@@ -325,6 +327,59 @@ class SolucionesController extends Controller
             return response()->json($soluciones);
         }
     }
+
+    public function reporte1(){
+    
+        
+        $soluciones = Solucion::where('tipo_fuente','=',1)->get();
+
+        $ambits = Ambit::all();
+        $sipocs = Sipoc::all();
+
+        return view('publico.reportes.reporte1')->with(["soluciones"=>$soluciones,"ambits"=>$ambits,"sipocs"=>$sipocs]);
+
+    }
+
+    public function buscar(Request $request){
+
+        
+        dd($request);
+
+        $ambits = Ambit::all(); 
+
+        $sipocs= Sipoc::all();
+
+        $paramAmbit = Ambit::find($request-> ambito);
+
+        $paramSipoc = Sipoc::find($request-> sipoc);
+
+        $paramFuente = $request-> tipo_fuente;
+
+        if($request->ambito > 0 && $request->sipoc > 0 && $request-> tipo_fuente > 0){
+
+            if($request-> tipo_fuente == 1){ 
+                
+                $soluciones = Solucion::where('ambit_id','=',$request->ambito)
+                                        ->where('sipoc_id','=',$request->sipoc)
+                                        ->where('tipo_fuente','=',$request->tipo_fuente)->get();
+            
+                return view('publico.reportes.reporte1')->with([
+                                                    "ambits"=>$ambits,
+                                                    "sipocs"=>$sipocs,
+                                                    "paramSipoc"=>$paramSipoc,
+                                                    "paramAmbit"=>$paramAmbit,
+                                                    "paramFuente"=>$paramFuente,
+                                                    "soluciones"=>$soluciones
+                                                ]);
+            }else{
+                echo "acdc";
+            }
+
+        }
+
+
+    }
+
 
 
 }
