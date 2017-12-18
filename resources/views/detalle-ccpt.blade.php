@@ -5,6 +5,7 @@
 @section('start_css')
   @parent
   <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 @endsection
 
 @section('contenido')
@@ -85,12 +86,33 @@
                             	<label class='text-success f-s-11'>
                             		<i class="fa fa-cheked-o fa-fw"></i><strong>Propuesta Unificada</strong>
                             	</label>
-								<blockquote>
+                            	<blockquote>
 									  	<p><h5>
 									  		@if(isset($pajustada))
 												{{ $pajustada->nombre_pajustada }}
 											@endif
 									  	</h5></p>
+									  	<!--VALORACIONES-->
+									  	<div class="row">
+									  		<div class="col-md-2"></div>
+									  		<div class="col-md-2">
+									  			<a href="#"> <i class="material-icons">sentiment_very_satisfied</i></a>
+									  		</div>
+									  		<div class="col-md-2">
+									  			<a href="#"> <i class="material-icons">sentiment_satisfied</i></a>
+									  		</div>
+									  		<div class="col-md-2">
+									  			<a href="#"> <i class="material-icons">sentiment_neutral</i></a>
+									  		</div>
+									  		<div class="col-md-2">
+									  			<a href="#"> <i class="material-icons">sentiment_dissatisfied</i></a>
+									  			
+									  		</div>
+									  		<div class="col-md-2">
+									  			<a href="#"> <i class="material-icons">sentiment_very_dissatisfied</i></a>
+									  		</div>
+									  	</div>
+									  	<!--FIN VALORACIONES-->
                                	</blockquote>
 
                                	<label class='text-success f-s-11'>

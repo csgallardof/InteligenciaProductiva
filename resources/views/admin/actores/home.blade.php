@@ -16,6 +16,7 @@
 						<table class="table table-hover">
 					        <thead>
 					            <tr>
+					                <th>Fuente</th>
 					                <th>Soluci&oacute;n</th>
 					                <th>Actor</th>
 					                <th>Responsabilidad</th>
@@ -25,6 +26,13 @@
 					        <tbody>
 					        	@foreach($actoresSoluciones as $actorSolucion)
 								<tr>
+					                <td>
+					                	@if($actorSolucion-> tipo_fuente == 1)
+					                		{{ "Mesas Competitivas" }}
+					                	@else
+											{{ "Consejo Consultivo" }}
+					                	@endif
+					                </td>
 					                <td>
 					                	@if( $actorSolucion-> tipo_fuente == 1)
 					                		{{ $actorSolucion->solucion-> verbo_solucion." ".$actorSolucion->solucion->sujeto_solucion ." ".$actorSolucion->solucion->complemento_solucion }}

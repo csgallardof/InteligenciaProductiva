@@ -9,6 +9,7 @@
   <link href="{{ asset('css/style-responsive-front.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />
   <link href="{{ asset('css/inteligencia.css') }}" id="theme" rel="stylesheet" />
+ 
 
 @endsection
 
@@ -69,47 +70,20 @@
 
                     </div>
                 </div>
-
-            </div>
-
-        </div>
-
-        <!-- begin #about -->
-        {{-- <div id="about" class="content" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-                <div class="col-md-12">
+                <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
-                    
-          
+                      <a href="#" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Instituciones</a>
+                      <a href="#" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Propuestas de Soluci&oacute;n</a>
 
                     </div>
                 </div>
 
             </div>
 
-        </div> --}}
-
-        <div class="bg-cover"></div>
-
-                </div>
-                   <!-- begin col-3 -->
-        <!-- end #about -->
-
-
-{{--
-        <!-- begin #team -->
-        <div id="team" class="content" data-scrollview="true">
-            <!-- begin container -->
-            <div class="container row-m-t-4">
-
-
-            </div>
-            <!-- end container -->
         </div>
-        <!-- end #team --> --}}
+
+
 
         <!-- begin #work -->
         <div id="work" class="content" data-scrollview="true">
@@ -203,10 +177,6 @@
                         
                     </div>
                 </div>
-
-
-
-
 
 
             </div>

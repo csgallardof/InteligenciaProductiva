@@ -61,8 +61,16 @@
 									<form  method="POST" action="{{ route('actividades.saveActividad',[ 1,$solucion->id]) }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 									 	<div class="form-group">
-									    	<label for="exampleTextarea">Comentario</label>
-									    	<textarea class="form-control" id="exampleTextarea" name="comentario" rows="3"></textarea>
+									 		<div class="row">
+									 			<div class="col-md-7">
+									 				<label for="exampleTextarea">Comentario</label>		
+									 			</div>
+									 			<div class="col-md-3">
+									 				<div id="nunCaracteres" class="pull-right"></div>
+									 			</div>
+									 		</div>
+									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
+									    	
 									  	</div>
 									  	
 									  	<div class="form-group">
