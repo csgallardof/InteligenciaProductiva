@@ -13,7 +13,7 @@ var handleDataTableResponsive = function() {
             responsive: true,
 						dom: 'lBfrtip',
 						buttons: [
-				        'copy', 'csv', 'excel', 'print'
+				        'copy', 'csv', 'excel', 'print','pdf'
 				    ],
 						select: true,
 						"language": {
@@ -45,6 +45,7 @@ var handleDataTableResponsive = function() {
 								csv: 'Exportar a CSV',
 								print: 'Imprimir',
 								copyTitle: 'Se copiaron',
+								pdf: 'Exportar a PDF',
                 copySuccess: {
                     _: '%d Registros',
                     1: '1 Registro'

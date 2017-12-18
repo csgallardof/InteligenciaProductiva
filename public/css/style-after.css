@@ -10,3 +10,10 @@ table.dataTable.nowrap th, table.dataTable.nowrap td {
       background: #00acac !important;
       border-color: #ffffff !important;
 }
+
+.buttons-pdf {
+      color: #fff !important;
+      font-weight: 400;
+      background: #DD1919 !important;
+      border-color: #ffffff !important;
+}

@@ -342,9 +342,6 @@ class SolucionesController extends Controller
 
     public function buscar(Request $request){
 
-        
-        dd($request);
-
         $ambits = Ambit::all(); 
 
         $sipocs= Sipoc::all();
@@ -355,15 +352,47 @@ class SolucionesController extends Controller
 
         $paramFuente = $request-> tipo_fuente;
 
-        if($request->ambito > 0 && $request->sipoc > 0 && $request-> tipo_fuente > 0){
-
-            if($request-> tipo_fuente == 1){ 
-                
-                $soluciones = Solucion::where('ambit_id','=',$request->ambito)
-                                        ->where('sipoc_id','=',$request->sipoc)
-                                        ->where('tipo_fuente','=',$request->tipo_fuente)->get();
+        
+        if($request-> tipo_fuente == 1){ 
             
-                return view('publico.reportes.reporte1')->with([
+            if( $request->ambito > 0 && $request->sipoc > 0){
+                $soluciones = Solucion::where('ambit_id','=',$request->ambito)
+                                    ->where('sipoc_id','=',$request->sipoc)
+                                    ->where('tipo_fuente','=',$request->tipo_fuente)->get();
+            }else{
+                if($request->ambito > 0 ){
+                    $soluciones = Solucion::where('ambit_id','=',$request->ambito)
+                                    ->where('tipo_fuente','=',$request->tipo_fuente)->get();
+                }else{
+                    if($request->sipoc > 0 ){
+                        $soluciones = Solucion::where('sipoc_id','=',$request->sipoc)
+                                    ->where('tipo_fuente','=',$request->tipo_fuente)->get();
+                    }
+                }
+            }
+        }
+
+        if($request-> tipo_fuente == 2){ 
+            
+            if( $request->ambito > 0 && $request->sipoc > 0){
+                $soluciones = Solucion::where('tipo_fuente','=',$request->tipo_fuente)
+                        ->where('sipoc_id','=',$request->sipoc)
+                        ->where('ambit_id','=',$request->ambito)->get();
+            }else{
+                if($request->ambito > 0 ){
+                    $soluciones = Solucion::where('tipo_fuente','=',$request->tipo_fuente)
+                       ->where('ambit_id','=',$request->ambito)->get();
+                }else{
+                    if($request->sipoc > 0 ){
+                    $soluciones = Solucion::where('tipo_fuente','=',$request->tipo_fuente)
+                        ->where('sipoc_id','=',$request->sipoc)->get(); 
+                    }
+                }
+            }
+        }
+    
+            
+        return view('publico.reportes.reporte1')->with([
                                                     "ambits"=>$ambits,
                                                     "sipocs"=>$sipocs,
                                                     "paramSipoc"=>$paramSipoc,
@@ -371,11 +400,7 @@ class SolucionesController extends Controller
                                                     "paramFuente"=>$paramFuente,
                                                     "soluciones"=>$soluciones
                                                 ]);
-            }else{
-                echo "acdc";
-            }
 
-        }
 
 
     }
