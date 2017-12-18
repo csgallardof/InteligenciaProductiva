@@ -29,7 +29,7 @@
 					                	
 					                </td>
 					                
-					                <td></td>
+					                 <td><a href="{{ '/admin/instituciones/'.$institucion->id.'/edit' }}" class="btn btn-primary">Editar</a>  <a href="" class="btn btn-danger">Eliminar</a></td>
 					            </tr>
 					            @endforeach		            
 					        </tbody>

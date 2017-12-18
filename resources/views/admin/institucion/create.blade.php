@@ -12,7 +12,8 @@
                 </div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('instituciones.store') }}/@yield('edit_id')">
+                    <form class="form-horizontal" method="POST" action="{{ route('instituciones.store') }}@if(isset($item))/@yield('edit_id')@endif"
+                    >
                         {{ csrf_field() }}
                         @section('edit_Method')
                         @show
@@ -21,7 +22,7 @@
                             <label for="nombre_user" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="nombre_user" type="text" class="form-control" name="nombre_user" placeholder="Nombre de Instituci&oacute;n" required value="@yield('edit_nombre')"  autofocus>
+                                <input id="nombre_user" type="text" class="form-control" name="nombre_user" placeholder="Nombre de Instituci&oacute;n" required required value="@if(isset($item))@yield('edit_nombre_user')@endif"   autofocus>
 
                             </div>
                         </div>
@@ -29,7 +30,7 @@
                             <label for="email" class="col-md-4 control-label">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="email" placeholder="Correo electr&oacute;nico" required value="@yield('edit_email')"  autofocus>
+                                <input id="email" type="text" class="form-control" name="email" placeholder="Correo electr&oacute;nico" required value="@if(isset($item))@yield('edit_email')@endif""  autofocus>
 
                             </div>
                         </div>

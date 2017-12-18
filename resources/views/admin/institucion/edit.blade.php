@@ -7,7 +7,8 @@
     {{ method_field('PUT') }}
 @endsection
 
-@section('edit_nombre',$item->name) 
+@section('edit_id',$item->id) 
+@section('edit_nombre_user',$item->name) 
 @section('edit_email',$item->email) 
 
 @section('edit_link') Actualizar @endsection

@@ -120,7 +120,7 @@ class InstitucionController extends Controller
         $institucion->vsector_id = 0;
         $institucion-> save(); 
        
-        return redirect('instituciones');
+        return redirect()->route('instituciones.index');
     }
 
     /**
