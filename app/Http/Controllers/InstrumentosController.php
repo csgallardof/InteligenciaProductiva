@@ -40,7 +40,7 @@ class InstrumentosController extends Controller
     public function store(Request $request)
     {
         //
-        $instrumento = new instrumento;
+        $instrumento = new Instrumento;
         $this ->validate($request,[
             'nombre_instrumento' =>'required|unique:instrumentos'
         ]);

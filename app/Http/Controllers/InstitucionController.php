@@ -51,7 +51,7 @@ class InstitucionController extends Controller
      */
     public function store(Request $request)
     {
-        $institucion = new user;
+        $institucion = new User;
         $this ->validate($request,[
             'nombre_user' =>'required',
             'email' =>'min:15|max:250|required|unique:users',

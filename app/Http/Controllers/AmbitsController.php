@@ -41,7 +41,7 @@ class AmbitsController extends Controller
     {
         //
         //
-        $ambit = new ambit;
+        $ambit = new Ambit;
         $this ->validate($request,[
             'nombre_ambit' =>'required|unique:ambits'
         ]);

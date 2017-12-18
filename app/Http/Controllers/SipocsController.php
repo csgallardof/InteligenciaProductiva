@@ -41,7 +41,7 @@ class SipocsController extends Controller
         //
         //return $request->all();
 
-        $sipoc = new sipoc;
+        $sipoc = new Sipoc;
         $this ->validate($request,[
             'nombre_sipoc' =>'required|unique:sipocs'
         ]);

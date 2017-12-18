@@ -15,7 +15,7 @@ class EventosController extends Controller
     public function index()
     {
         //
-        $eventos = evento::all();
+        $eventos = Evento::all();
         return view('admin.eventos.home', compact('eventos'));
 
     }
@@ -40,7 +40,7 @@ class EventosController extends Controller
     public function store(Request $request)
     {
         //
-        $eventos = new evento;
+        $eventos = new Evento;
         $this ->validate($request,[
             'nombre_evento' =>'required|unique:eventos'
         ]);

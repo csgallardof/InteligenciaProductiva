@@ -15,7 +15,7 @@ class ProvinciasController extends Controller
     public function index()
     {
         //
-        $provincias = provincia::all();
+        $provincias = Provincia::all();
         return view('admin.provincias.home', compact('provincias'));
     }
 

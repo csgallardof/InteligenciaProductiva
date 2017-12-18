@@ -15,7 +15,7 @@ class VsectorsController extends Controller
     public function index()
     {
         //
-        $vsectors = vsector::all();
+        $vsectors = Vsector::all();
         return view('admin.vsectors.home', compact('vsectors'));
     }
 
@@ -39,7 +39,7 @@ class VsectorsController extends Controller
     public function store(Request $request)
     {
         //
-        $vsector = new vsector;
+        $vsector = new Vsector;
         $this ->validate($request,[
             'nombre_vsector' =>'required|unique:vsectors'
         ]);

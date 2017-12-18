@@ -16,7 +16,7 @@ class ThematicsController extends Controller
     public function index()
     {
         //
-        $thematics = thematic::all();
+        $thematics = Thematic::all();
         return view('admin.thematics.home', compact('thematics'));
         
     }
@@ -42,7 +42,7 @@ class ThematicsController extends Controller
     public function store(Request $request)
     {
         //
-        $thematic = new thematic;
+        $thematic = new Thematic;
         $this ->validate($request,[
             'nombre_thematic' =>'required|unique:thematics'
         ]);

@@ -39,7 +39,7 @@ class SectorsController extends Controller
     public function store(Request $request)
     {
         //
-        $sector = new sector;
+        $sector = new Sector;
         $this ->validate($request,[
             'nombre_sector' =>'required|unique:sectors'
         ]);

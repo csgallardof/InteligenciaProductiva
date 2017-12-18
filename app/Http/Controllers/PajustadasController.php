@@ -39,7 +39,7 @@ class PajustadasController extends Controller
     public function store(Request $request)
     {
         //
-        $pajustada = new pajustada;
+        $pajustada = new Pajustada;
         $this ->validate($request,[
             'nombre_pajustada' =>'required|unique:pajustadas'
         ]);
