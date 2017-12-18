@@ -5,7 +5,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>Color Admin | Dashboard</title>
+	<title>Inteligencia Productiva| inicio</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -107,7 +107,7 @@
 				</ul>
 				<!-- end sidebar user -->
 				<!-- begin sidebar nav -->
-				<ul class="nav">
+				<!-- <ul class="nav">
 					<li class="nav-header">Navegaci&oacute;n</li>
 					<li class="has-sub active">
 						<a href="javascript:;">
@@ -121,10 +121,8 @@
 						</ul>
 					</li>
 					
-			        <!-- begin sidebar minify button -->
 					<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
-			        <!-- end sidebar minify button -->
-				</ul>
+				</ul> -->
 				<!-- end sidebar nav -->
 			</div>
 			<!-- end sidebar scrollbar -->
