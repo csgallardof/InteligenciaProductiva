@@ -2,7 +2,7 @@
 
 @section('edit_titulo') Editar @endsection
 
-@section('edit_nombre',$item->nombre_sector) 
+@section('edit_nombre',$item->nombre_ambit) 
 @section('edit_id',$item->id) 
 
 @section('edit_link') Actualizar @endsection

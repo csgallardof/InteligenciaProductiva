@@ -10,7 +10,8 @@
                 </div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('ambits.store') }}/@yield('edit_id')">
+                    <form class="form-horizontal" method="POST" action="{{ route('ambits.store')}}@if(isset($item))/@yield('edit_id')@endif"
+                    >
                         {{ csrf_field() }}
                         @section('edit_Method')
                         @show
@@ -19,7 +20,7 @@
                             <label for="nombre_thematic" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
-                                <input id="nombre_ambits" type="text" class="form-control" name="nombre_ambit" placeholder="ambito" required value="@yield('edit_nombre')"  autofocus>
+                                <input id="nombre_ambits" type="text" class="form-control" name="nombre_ambit" placeholder="ambito" required value="@if(isset($item))@yield('edit_nombre')@endif"  autofocus>
 
                             </div>
                         </div>

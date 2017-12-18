@@ -84,7 +84,11 @@ class AmbitsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $item = ambit::find($id);
+        $item->nombre_ambit= $request->nombre_ambit;
+        $item->save();
+
+        return redirect()->route('ambits.index');
     }
 
     /**
