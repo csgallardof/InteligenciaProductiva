@@ -40,8 +40,8 @@ class PaginasController extends Controller
 
     public function detalledespliegue(Request $request, $idSolucion){
 
-        $soluciones = Solucion::where('id','=',$idSolucion)->get();
-
+        $solucion = Solucion::where('id','=',$idSolucion)->first();
+        
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
@@ -49,9 +49,9 @@ class PaginasController extends Controller
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')->get();
-
+        
         return view('detalle-despliegue')->with([
-                                            "soluciones"=>$soluciones,
+                                            "solucion"=>$solucion,
                                             "actoresSoluciones"=>$actoresSoluciones,
                                             "actividades"=>$actividades
                                         ]);

@@ -93,7 +93,8 @@
 											@endif
 									  	</h5></p>
 									  	<!--VALORACIONES-->
-									  	<div class="row">
+									  	
+									  	<!-- <div class="row">
 									  		<div class="col-md-2"></div>
 									  		<div class="col-md-2">
 									  			<a href="#"> <i class="material-icons">sentiment_very_satisfied</i></a>
@@ -111,7 +112,7 @@
 									  		<div class="col-md-2">
 									  			<a href="#"> <i class="material-icons">sentiment_very_dissatisfied</i></a>
 									  		</div>
-									  	</div>
+									  	</div> -->
 									  	<!--FIN VALORACIONES-->
                                	</blockquote>
 

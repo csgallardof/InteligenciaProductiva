@@ -21,51 +21,26 @@
 							<br>
 							<br>
 							<strong>Evento:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->evento->nombre_evento }}
-									
-
-								@endforeach
+							@if(isset($solucion))
+								{{ $solucion->evento->nombre_evento }}
 							@endif
 							<strong> | Provincia:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->provincia->nombre_provincia }}
-									
-
-								@endforeach
+							@if(isset($solucion))							
+								{{ $solucion->provincia->nombre_provincia }}
 							@endif
 
 							<strong> | Sector:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->sector->nombre_sector }}
-									
-
-								@endforeach
+							@if(isset($solucion))
+								{{ $solucion->sector->nombre_sector }}
 							@endif
 
 							<strong> | Líder de Mesa:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->lider_mesa_solucion }}
-									
-
-								@endforeach
+							@if(isset($solucion))
+								{{ $solucion->lider_mesa_solucion }}
 							@endif
 							<strong> | Sistematizador de Mesa:</strong>
-							@if(isset($soluciones))
-								@foreach($soluciones as $solucion)
-									 
-									{{ $solucion->sistematizador_solucion }}
-									
-
-								@endforeach
+							@if(isset($solucion))
+								{{ $solucion->sistematizador_solucion }}
 							@endif
 						</label>
 					</h4>
@@ -92,43 +67,24 @@
 									<br>
 									<div class="alert alert-info fade in m-b-15">
 										<strong>Eslabon de la cadena productiva:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->sipoc->nombre_sipoc }}
-												
-
-											@endforeach
+										@if(isset($solucion))
+											{{ $solucion->sipoc->nombre_sipoc }}
 										@endif
 										<br>
 										<strong>Instrumentos Necesario:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->instrumento->nombre_instrumento }}
-												
-
-											@endforeach
+ 										@if(isset($solucion))
+											{{ $solucion->instrumento->nombre_instrumento }}
 										@endif
 										<br>
 										<strong>Clasificación Empresa:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}
-												
-
-											@endforeach
+										@if(isset($solucion))
+											{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}
 										@endif
 										<br>
 										<strong>Ámbito:</strong>
-										@if(isset($soluciones))
-											@foreach($soluciones as $solucion)
-												 
-												{{ $solucion->ambit->nombre_ambit }}
-												
-
-											@endforeach
+										@if(isset($solucion))
+											{{ $solucion->ambit->nombre_ambit }}
+										
 										@endif
 										<span data-dismiss="alert"></span>
 									</div>
@@ -137,14 +93,9 @@
 									<label class='text-success f-s-11'>
 	                                	
 	                                	<i class="fa fa-clock-o fa-fw"></i>Creado: 
-	                                	@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														 
-														{{ substr($solucion->created_at,0,10) }}
-														
-
-													@endforeach
-												@endif
+	                                	@if(isset($solucion))
+											{{ substr($solucion->created_at,0,10) }}
+										@endif
 	                                </label>
 									
 			                        
@@ -155,13 +106,8 @@
                                 	</label>
 									<blockquote>
 										  	<p><h5>
-										  		@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														 
-														{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
-														
-
-													@endforeach
+										  		@if(isset($solucion))
+													{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
 												@endif
 										  	</h5>
                                    	</blockquote>
@@ -171,13 +117,8 @@
                                 	</label>
 									<blockquote>
 										  	<p><h5>
-										  		@if(isset($soluciones))
-													@foreach($soluciones as $solucion)
-														 
-														{{ $solucion->problema_solucion }}
-														
-
-													@endforeach
+										  		@if(isset($solucion))
+													{{ $solucion->problema_solucion }}
 												@endif
 										  	</h5>
                                    	</blockquote>
@@ -235,12 +176,13 @@
 										<dl class="dl-horizontal">
 											Estado de Compromiso: &nbsp;&nbsp;&nbsp;
 											<span class="label label-warning">
-												@if(isset($soluciones))
-													{{ $solucion[0]->estado->nombre_estado }}
+												@if(isset($solucion))
+													{{ $solucion->estado->nombre_estado }}
 												@endif
 											</span> 
 										</dl>
-									</div>
+									</div> 
+
 
 									@if(isset($actividades) &&  count($actividades) > 0)
 									<b>Actividades: </b>{{ count($actividades) }}
@@ -267,7 +209,7 @@
 									</ul>
 									@else
 										No se encontraron actividades registradas.
-									@endif
+									@endif 
 			                        
 								</div>
 							</div>
@@ -315,3 +257,4 @@
   </script>
 
 @endsection
+ 
