@@ -82,6 +82,24 @@
 	    });
 	</script>
 
+	<script type="text/javascript">
+		
+		function botonesRequeridos(){
+			var sipoc =  document.getElementById('selectSipoc').value;
+			var ambit = document.getElementById('selectAmbit').value;
+
+			if( sipoc == 0 && ambit == 0){
+				alert('Por favor, seleccione un Ámbito ó un Eslabón');
+				return false;
+			}
+			if( sipoc > 0 || ambit > 0){
+				return true;
+			}
+			
+		}
+
+	</script>
+
 	@yield('init_scripts')
 
 	</body>

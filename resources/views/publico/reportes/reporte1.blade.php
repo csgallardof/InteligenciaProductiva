@@ -25,7 +25,7 @@
 							<hr class="m-t-5"/>
 
 							<div class="row">
-								<form class="form-inline" action = "{{ url('reporte') }}" method="POST">
+								<form class="form-inline" action = "{{ url('reporte') }}" method="POST" onsubmit="return botonesRequeridos()">
 									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="col-md-2">
 									    <label class="mr-sm-2" for="tipoFuente">Fuente</label><br>
@@ -52,7 +52,7 @@
 								  	<div class="col-md-3" >
 									    <label class="mr-sm-2" for="selectSipoc">Eslab&oacute;n de la cadena Productiva</label>
 										<select name="sipoc" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="selectSipoc">
-											<option selected>Seleccione un eslab&oacute;n...</option>
+											<option value="0" selected>Seleccione un eslab&oacute;n...</option>
 									     	@foreach($sipocs as $sipoc)
 
 													@if(isset($paramSipoc))
@@ -72,7 +72,7 @@
 									<div class="col-md-4">
 										<label class="mr-sm-2" for="selectAmbit">&Aacute;mbito</label><br>
 										<select name="ambito" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="selectAmbit">
-									    	<option selected>Seleccione un &aacute;mbito...</option>
+									    	<option value="0" selected>Seleccione un &aacute;mbito...</option>
 									    	@foreach($ambits as $ambito)
 
 													@if(isset($paramAmbit))

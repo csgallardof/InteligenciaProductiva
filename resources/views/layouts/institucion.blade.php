@@ -178,6 +178,7 @@
 	function cuenta(){
     	document.getElementById('nunCaracteres').innerHTML= document.getElementById('exampleTextarea').value.length + '/280 caracteres';
 	}
+	
 </script> 
 </body>
 </html>
