@@ -63,11 +63,11 @@
 							<span class="hidden-xs">@auth {{ Auth::user()->name }} @endauth</span> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu animated fadeInLeft">
-							<li class="arrow"></li>
+							<!-- <li class="arrow"></li>
 							<li><a href="javascript:;">Editar Perfil</a></li>
 							<li><a href="javascript:;"><span class="badge badge-danger pull-right">2</span>Mensajes</a></li>
 							<li><a href="javascript:;">Ajustes</a></li>
-							<li class="divider"></li>
+							<li class="divider"></li> -->
 							<li>
 								<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         	                		Salir

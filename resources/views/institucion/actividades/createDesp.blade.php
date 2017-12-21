@@ -50,14 +50,17 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+								
 							</div>
-							<h4 class="panel-title">Nueva Actividad</h4>
+							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva Actividad</h4>
 						</div>
 						<div class="panel-body">
 							<div class="height-lg" data-scrollbar="true">
 								<div class="media-body">
-								
+									<a href="javascript:window.history.back();" class="btn btn-default pull-right">&laquo; Regresar</a>
+									<hr>
+									<br>
+
 									<form  method="POST" action="{{ route('actividades.saveActividad',[ 1,$solucion->id]) }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 									 	<div class="form-group">
@@ -115,9 +118,9 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+								
 							</div>
-							<h4 class="panel-title">Actividades</h4>
+							<h4 class="panel-title"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Actividades</h4>
 						</div>
 						<div class="panel-body">
 							<div class="height-lg" data-scrollbar="true">
@@ -128,7 +131,7 @@
 										<?php $count=1; ?>
 										@foreach( $actividades as $actividad)
 											<h4>
-												<label class="label label-danger label-lg">Actividad {{ $count }}</label><br><br>
+												<label class="label label-danger label-lg"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
 												{{ $actividad-> comentario }}

@@ -117,21 +117,36 @@
 					
 					<ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
 						
-						<li class="active"><a href="#purchase" data-toggle="tab"><i class="fa fa-sticky-note-o m-r-5"></i> <span class="hidden-xs">Responsable</span></a></li>
-						<li class=""><a href="#email" data-toggle="tab"><i class="fa fa-sticky-note m-r-5"></i> <span class="hidden-xs">Corresponsable</span></a></li>
-						<li class=""><a href="#latest-post" data-toggle="tab"><i class="fa fa-newspaper-o m-r-5"></i> <span class="hidden-xs">Soluciones General</span></a></li>
+						<li class="active">
+							<a href="#responsable" data-toggle="tab">
+								<i class="fa fa-sticky-note-o m-r-5"></i>
+								<span class="hidden-xs">Responsable</span>
+								@if( isset($totalResponsable) )
+									({{ $totalResponsable }})
+								@endif
+							</a>
+						</li>
+						<li class="">
+							<a href="#corresponsable" data-toggle="tab">
+								<i class="fa fa-sticky-note m-r-5"></i>
+								<span class="hidden-xs">Corresponsable</span>
+								@if( isset($totalCorresponsable) )
+									({{ $totalCorresponsable }})
+								@endif
+							</a>
+						</li>
+						<li class=""><a href="#general" data-toggle="tab"><i class="fa fa-newspaper-o m-r-5"></i> <span class="hidden-xs">Todas mis Propuestas</span></a></li>
 					</ul>
 					<div class="tab-content" data-sortable-id="index-3">
 						
 						<!--SOLUCIONES RESPONSABLE-->
-						<div class="tab-pane fade active in" id="purchase">
+						<div class="tab-pane fade active in" id="responsable">
 							<div class="height-lg" data-scrollbar="true">
 								<table class="table">
 									<thead>
 										<tr>
 											<th>Propuesta</th>
 											<th>Fuente</th>
-											<th>Responsabilidad</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
@@ -149,9 +164,7 @@
 																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														<td>
-															<label class="label label-success">{{ "Responsable" }}</label>
-														</td>
+														
 														<td>
 															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
 														</td>
@@ -174,9 +187,7 @@
 																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														<td>
-															<label class="label label-success">{{ "Responsable" }}</label>
-														</td>
+														
 														<td>
 															<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
 														</td>
@@ -193,14 +204,13 @@
 						<!--FIN SOLUCIONES RESPONSABLE-->
 
 						<!--SOLUCIONES CORRESPONSABLE-->
-						<div class="tab-pane fade" id="email">
+						<div class="tab-pane fade" id="corresponsable">
 							<div class="height-lg" data-scrollbar="true">
 								<table class="table">
 									<thead>
 										<tr>
 											<th>Propuesta</th>
 											<th>Fuente</th>
-											<th>Responsabilidad</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
@@ -217,9 +227,6 @@
 															@else
 																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
 															@endif
-														</td>
-														<td>
-															<label class="label label-primary">{{ "Corresponsable" }}</label>
 														</td>
 														<td>
 															<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
@@ -243,9 +250,7 @@
 																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														<td>
-															<label class="label label-primary">{{ "Corresponsable" }}</label>
-														</td>
+														
 														<td>
 															<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
 														</td>
@@ -263,7 +268,7 @@
 						<!--FIN SOLUCIONES CORRESPONSABLE-->
 
 						<!--SOLUCIONES EN GENERAL-->
-						<div class="tab-pane fade" id="latest-post">
+						<div class="tab-pane fade" id="general">
 							<div class="height-lg" data-scrollbar="true">
 								<table class="table">
 									<thead>
@@ -293,7 +298,6 @@
 														<label class="label label-primary">{{ "Corresponsable" }}</label>
 													@endif
 												</td>
-												<td></td>
 											</tr>	
 											@endforeach
 
@@ -344,13 +348,31 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 							</div>
-							<h4 class="panel-title">Notificaciones - Corresponsable</h4>
+							<h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
 						</div>
 						<div class="panel-body">
-							
+							@if( isset($notificaciones) && count($notificaciones) > 0 )
+								<ul>
+									@foreach($notificaciones as $notificacion)
+										<li>
+											{{ substr($notificacion-> comentario,0,65).'..' }} <br>
+											{{ substr($notificacion-> fecha_inicio,0,10) }}
+											@if($notificacion->tipo_fuente == 1)
+												<a href="{{ route('verSolucion.despliegue',[2,$notificacion-> solucion_id]) }}" class="pull-right">Ver m&aacute;s</a><br><br>
+											@endif	
+											@if($notificacion->tipo_fuente == 2)
+												<a href="{{ route('verSolucion.consejo',[2,$notificacion-> solucion_id]) }}" class="pull-right">Ver m&aacute;s</a><br><br>
+											@endif	
+
+										</li>
+									@endforeach
+								</ul>
+							@else
+								No existen notificaciones recientes.
+							@endif
 						</div>
 					</div>
-					<div class="panel panel-inverse" data-sortable-id="index-7">
+					<!-- <div class="panel panel-inverse" data-sortable-id="index-7">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
@@ -363,7 +385,7 @@
 						<div class="panel-body">
 							
 						</div>
-					</div>
+					</div> -->
 					
 				</div>
 				<!-- end col-4 -->

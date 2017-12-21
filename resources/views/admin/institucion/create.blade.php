@@ -34,6 +34,14 @@
 
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="cedula" class="col-md-4 control-label">C&eacute;dula</label>
+
+                            <div class="col-md-6">
+                                <input id="cedula" type="text" class="form-control" name="cedula" placeholder="Número de cédula" required value="@if(isset($item))@yield('edit_cédula')@endif""  autofocus>
+
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

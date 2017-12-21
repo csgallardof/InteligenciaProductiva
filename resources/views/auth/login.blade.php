@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title','Inicio de Sesión') 
+
 @section('contenido')
 <br><br><br><br><br><br><br>
 <div class="container">
@@ -40,7 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
@@ -48,7 +50,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
@@ -56,9 +58,9 @@
                                     Ingresar
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                               <!--  <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Olvido su password
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </form>

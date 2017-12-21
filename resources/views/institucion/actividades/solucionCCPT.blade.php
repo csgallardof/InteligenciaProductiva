@@ -49,9 +49,9 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+								
 							</div>
-							<h4 class="panel-title">Actividades</h4>
+							<h4 class="panel-title"><i class="fa fa-list-ol" aria-hidden="true"></i> Actividades</h4>
 						</div>
 						<div class="panel-body">
 							<div class="height-lg" data-scrollbar="true">
@@ -62,12 +62,15 @@
 
 									@if (isset($solucion) && isset($tipo_actor) )
 										@if($tipo_actor == 1)
-											<a href="#" class="btn btn-warning pull-right">Finalizar</a>
-											<a href="{{ route('actividades.createConsejo',$solucion->id) }}" class="btn btn-primary pull-right">Nueva</a>
+											<!-- <a href="#" class="btn	btn-warning pull-right">Finalizar</a> -->
+											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>
+											<a href="{{ route('actividades.createConsejo',$solucion->id) }}" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Nueva</a>
 											<hr>
+											<br>
 										@endif
 									@endif
 
+									<h3>LISTA DE ACTIVIDADES</h3><hr>
 									@if( isset( $actividades ) && count($actividades) > 0)
 										<?php $count=count($actividades) ; ?>
 										@foreach( $actividades as $actividad)
@@ -134,9 +137,9 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+								
 							</div>
-							<h4 class="panel-title">Actores</h4>
+							<h4 class="panel-title"><i class="fa fa-users" aria-hidden="true"></i> Actores</h4>
 						</div>
 						<div class="panel-body p-t-0">
 							<table class="table table-valign-middle m-b-0">

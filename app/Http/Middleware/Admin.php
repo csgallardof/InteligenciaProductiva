@@ -16,6 +16,7 @@ class Admin
      * @param  \Illuminate\Contracts\Auth\Factory  $auth
      * @return void
      */
+
     public function __construct(Guard $auth)
     {
         $this->auth = $auth;

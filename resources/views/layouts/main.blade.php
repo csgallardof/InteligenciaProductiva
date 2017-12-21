@@ -43,7 +43,7 @@
 
 	</head>
 
-	<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+	<body data-spy="scroll" data-target="#header-navbar" data-offset="51" >
 
     <div id="page-container" class="fade">
 			@include ('layouts.menu')

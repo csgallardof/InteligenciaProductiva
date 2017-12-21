@@ -55,18 +55,26 @@ class InstitucionController extends Controller
         $this ->validate($request,[
             'nombre_user' =>'required',
             'email' =>'min:15|max:250|required|unique:users',
+            'cedula' =>'min:8|max:30|required|unique:users',
         ]);
         $institucion->name = $request->nombre_user;
         $institucion->apellidos = "";
-        $institucion->cedula = "";
+        $institucion->cedula = $request->cedula;
         $institucion->email = $request->email;
-        $institucion->password = bcrypt("acdc");
+        $password = str_split($request->nombre_user,3)[0].
+                    str_split($request->email,3)[0].
+                    substr($request->cedula, -4);  
+        $institucion->password = bcrypt($password);
         $institucion->tipo_fuente = 3;
         $institucion->sector_id = 0;
         $institucion->vsector_id = 0;
+        
         $institucion-> save(); 
         $rol = DB::table('roles')->where('nombre_role', "Institución")->first();
         $institucion->roles()-> attach($rol-> id);
+
+        $this->enviarCorreoRegistro($institucion , $password);
+
         return redirect('/admin/instituciones');
         
     }
@@ -109,10 +117,11 @@ class InstitucionController extends Controller
         $this ->validate($request,[
             'nombre_user' =>'required',
             'email' =>'min:15|max:250|required|unique:users',
+            'cedula' =>'min:8|max:30|required|unique:users',
         ]);
         $institucion->name = $request->nombre_user;
         $institucion->apellidos = "";
-        $institucion->cedula = "";
+        $institucion->cedula = $request->cedula;
         $institucion->email = $request->email;
         $institucion->password = bcrypt("acdc");
         $institucion->tipo_fuente = 3;
@@ -143,8 +152,13 @@ class InstitucionController extends Controller
     {
         $usuario_id = Auth::user()->id;
 
-        $totalDespliegue = Solucion::where('tipo_fuente','=',1)->get();
-        $totalConsejo = Solucion::where('tipo_fuente','=',2)->get();
+        $totalDespliegue = Solucion::where('tipo_fuente','=',1)->count();
+        $totalConsejo = Solucion::where('tipo_fuente','=',2)->count();
+
+        $totalResponsable = ActorSolucion::where('user_id','=',$usuario_id)
+                                         ->where('tipo_actor','=','1')->count();
+        $totalCorresponsable = ActorSolucion::where('user_id','=',$usuario_id)
+                                         ->where('tipo_actor','=','2')->count();
 
         $solucionesDespliegue= DB::select("SELECT solucions.*, actor_solucion.tipo_actor FROM solucions 
                                         INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
@@ -162,10 +176,21 @@ class InstitucionController extends Controller
                                     ( actor_solucion.tipo_fuente = 2 AND actor_solucion.user_id = ".$usuario_id." AND tipo_actor = 2 ); 
                                     ");
 
+        $notificaciones = DB::select("SELECT actividades.* FROM actividades
+                                                    INNER JOIN solucions ON solucions.id = actividades.solucion_id
+                                                    INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
+                                                    WHERE actor_solucion.user_id = ".$usuario_id." 
+                                                    AND actividades.ejecutor_id = ".$usuario_id."
+                                                    AND actividades.fecha_inicio >= DATE_SUB(CURDATE(), INTERVAL 1 WEEK)
+                                                    ORDER BY actividades.fecha_inicio DESC; ");
+
         return view('institucion.home')->with([ "solucionesDespliegue"=>$solucionesDespliegue,
                                                 "solucionesCCPT"=>$solucionesCCPT,
-                                                "totalDespliegue"=>count($totalDespliegue),
-                                                "totalConsejo"=>count($totalConsejo)        
+                                                "totalDespliegue"=>$totalDespliegue,
+                                                "totalConsejo"=>$totalConsejo,
+                                                "totalResponsable"=>$totalResponsable,
+                                                "totalCorresponsable"=>$totalCorresponsable,
+                                                "notificaciones"=>$notificaciones     
                                                  ]);   
         
     }
@@ -230,11 +255,11 @@ class InstitucionController extends Controller
                     $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
                     $solucion->save();
 
-                    //$this->enviarCorreoAsignacion($user, 'Responsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
+                    $this->enviarCorreoAsignacion($user, 'Responsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
                 }
                 if($request->tipo_fuente_id ==2){
                     $pajustada = Pajustada::find($request-> solucion_id);
-                    //$this->enviarCorreoAsignacion($user, 'Responsable', $pajustada->nombre_pajustada );
+                    $this->enviarCorreoAsignacion($user, 'Responsable', $pajustada->nombre_pajustada );
 
                     $solucionesOriginales = Solucion::where('pajustada_id','=',$request->solucion_id)->get();
                     foreach ($solucionesOriginales as $solucion) {
@@ -276,11 +301,11 @@ class InstitucionController extends Controller
 
                 if($request-> tipo_fuente ==1){
                     $solucion = Solucion::find($request-> solucion_id);
-                    //$this->enviarCorreoAsignacion($user, 'Corresponsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
+                    $this->enviarCorreoAsignacion($user, 'Corresponsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
                 }
                 if($request-> tipo_fuente ==2){
                     $pajustada = Pajustada::find($request-> solucion_id);
-                    //$this->enviarCorreoAsignacion($user,'Corresponsable',$pajustada->nombre_pajustada );
+                    $this->enviarCorreoAsignacion($user,'Corresponsable',$pajustada->nombre_pajustada );
                 }
             }else{
                 Flash::error("La institucion ya es actor de la solucion seleccionada");
@@ -299,15 +324,19 @@ class InstitucionController extends Controller
 
 
 
-    public function enviarCorreoRegistro(Request $request){
-
+    public function enviarCorreoRegistro($institucion, $password){
+        $correo= $institucion-> email;
+        Mail::send('emails.correoRegistro',["institucion"=>$institucion, "password"=>$password], function($msj) use ($correo) {
+            $msj->subject('Inteligencia Productiva - Notificación de registro en Inteligencia Productiva');
+            $msj->to( $correo);
+        });
     }
     
     public function enviarCorreoAsignacion($institucion, $responsabilidad, $txt_solucion){
-        Mail::send('emails.correos',["institucion"=>$institucion, "responsabilidad"=>$responsabilidad, "txt_solucion"=>$txt_solucion], function($msj){
-            $msj->subject('MIPRO - Notificación de asignacion de responsabilidad');
-            //$msj->to( $institucion-> email);
-            $msj->to( 'js-arcos@hotmail.com');
+        $correo= $institucion-> email;
+        Mail::send('emails.correoAsignacion',["institucion"=>$institucion, "responsabilidad"=>$responsabilidad, "txt_solucion"=>$txt_solucion], function($msj) use ($correo){
+            $msj->subject('Inteligencia Productiva - Notificación de asignacion de Responsabilidad');
+            $msj->to( $correo);
         });
     }
 

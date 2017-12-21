@@ -10,6 +10,7 @@
 @section('edit_id',$item->id) 
 @section('edit_nombre_user',$item->name) 
 @section('edit_email',$item->email) 
+@section('edit_email',$item->cedula) 
 
 @section('edit_link') Actualizar @endsection
 

@@ -70,7 +70,8 @@
 
                     </div>
                 </div>
-                <div class="col-md-12 row-m-t-minus-25">
+                
+                <!-- <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
                       <a href="#" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Instituciones</a>
@@ -78,7 +79,7 @@
 
                     </div>
                 </div>
-
+ -->
             </div>
 
         </div>
