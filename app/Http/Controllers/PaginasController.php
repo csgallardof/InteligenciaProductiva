@@ -318,50 +318,19 @@ class PaginasController extends Controller
 
         }else{
 
-/*            $resultados = DB::table('solucions')
-                            ->select('solucions.*', 'sectors.nombre_sector','users.name')
-                            ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
-                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
-                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
 
-            $resultados = DB::table('solucions')
-                            ->select('solucions.*', 'sectors.nombre_sector','users.name')
+            $resultados1 = Solucion::select('solucions.*')
+                            ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
+                            ;
+            
+            $resultados2 = Solucion::select('solucions.*')
                             ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
                             ->join('users','actor_solucion.user_id','=','users.id')
-                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
                             ->where('users.name','LIKE','%' . $buscar . '%')
-                            ->where('actor_solucion.tipo_actor','=',1)
                             ;//SOLO QUERY
             
-
-            $resultados = DB::table('solucions')
-                            ->select('solucions.*', 'sectors.nombre_sector')
-                            ->join('pajustadas', 'solucions.pajustada_id', '=', 'pajustadas.id')
-                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
-                            ->orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
-                            ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
-                            ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
-                            ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
-                            ->where('solucions.ambit_id','<>',0)
-                            ->union($resultados) // UNION CON  EL QUERY ANTERIOR
-                            ->get();*/
-
-            $resultados1 = Solucion::join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
-                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%');
             
-
-            $resultados2 = Solucion::join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
-                            ->join('users','actor_solucion.user_id','=','users.id')
-                            ->where('users.name','LIKE','%' . $buscar . '%')
-                            ->where('actor_solucion.tipo_actor','=',1)
-                            ;//SOLO QUERY
-                            
-            
-
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                             ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                             ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
@@ -370,10 +339,13 @@ class PaginasController extends Controller
                             ->union($resultados2) // UNION CON  EL QUERY ANTERIOR
                             ->get();
 
-            dd($resultados);
-          
             
         }
+
+        
+/*        $actoresSoluciones = $resultados[5]->actor_solucion;
+        dd($actoresSoluciones[0]->usuario->name);
+*/        
         
         return view('publico.reportes.reporte1')->with([
                                                     "parametro"=>$buscar,

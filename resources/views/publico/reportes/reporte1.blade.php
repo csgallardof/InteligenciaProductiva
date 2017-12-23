@@ -20,8 +20,8 @@
 						<div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
 		                    <div class="panel-body text-center">
 		                        
-		                        <form class="form-horizontal" role="form" method="POST" action="{{ route('busquedaGeneral') }}">
-		                            {{ csrf_field() }}
+		                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
+		                            
 		                            <div class="form-group">
 		                                <div class="input-group custom-search-form">
 		                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector Productivo" name="parametro" required style="font-size: 22px" >
@@ -54,7 +54,7 @@
 						                <th class="text-center">PROPUESTA</th>
 						                <th class="text-center">SECTOR</th>
 						                <th class="text-center">RESPONSABLE</th>
-						                <th class="text-center">CORRESPONSABLES</th>
+						                <th class="text-center">CORRESPONSABLE</th>
 						                <th></th>
 									</thead>
 									<tbody>				        	
@@ -68,9 +68,29 @@
 								                		<td class="text-center">{{ $solucion->solucion_ccpt }}</td>
 								                	@endif
 								                @endif
-								                <td class="text-center">{{ $solucion->nombre_sector}}</td>
-								                <td class="text-center">{{ $solucion->responsable_solucion }}</td>
-												<td class="text-center">{{ $solucion->corresponsable_solucion }}</td>
+								                <td class="text-center">{{ $solucion->sector->nombre_sector}}</td>
+								                <td class="text-center">
+								                	@if( count($solucion->actor_solucion) > 0 )
+								                		@foreach( $solucion->actor_solucion as $actorSolucion)
+								                			@if( $actorSolucion->tipo_actor == 1 )
+								                				{{ $actorSolucion-> usuario-> name}}
+								                			@endif
+								                		@endforeach
+								                	@endif
+								                	
+								                </td>
+								                <td class="text-center">
+								                	@if( count($solucion->actor_solucion) > 0 )
+								                		<ul>
+									                		@foreach( $solucion->actor_solucion as $actorSolucion)
+									                			@if( $actorSolucion->tipo_actor == 2 )
+									                				<li style="list-style:none;">{{ $actorSolucion-> usuario-> name}}</li>
+									                			@endif
+									                		@endforeach
+								                		</ul>
+								                	@endif
+								                	
+								                </td>
 												<td class="text-center">
 													@if( $solucion -> tipo_fuente == 1)
 														<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="label label-primary" >
