@@ -13,6 +13,7 @@ use App\Pajustada;
 use App\ActorSolucion;
 use App\Actividad;
 use App\Ambit;
+use DB;
 
 
 use App\Provincia;
@@ -292,6 +293,93 @@ class PaginasController extends Controller
 
     public function indicadoresProvincia(){
         return view('publico.indicadoresProvincia');
+    }
+
+    public function busquedaGeneral(Request $request){
+        
+        $buscar = $request-> parametro;
+
+        if($buscar =='Mesas Competitivas' || $buscar =='Consejo Consultivo' ){
+            if($buscar =='Mesas Competitivas'){
+                $resultados = DB::table('solucions')
+                                ->select('solucions.*', 'sectors.nombre_sector')
+                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                                /*->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')*/
+                                ->where('solucions.tipo_fuente','=',1)->get();
+                                ;
+            }
+            if($buscar =='Consejo Consultivo'){
+                $resultados = DB::table('solucions')
+                                ->select('solucions.*', 'sectors.nombre_sector')
+                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                                /*->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')*/
+                                ->where('solucions.tipo_fuente','=',2)->get();
+            }
+
+        }else{
+
+/*            $resultados = DB::table('solucions')
+                            ->select('solucions.*', 'sectors.nombre_sector','users.name')
+                            ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
+                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
+
+            $resultados = DB::table('solucions')
+                            ->select('solucions.*', 'sectors.nombre_sector','users.name')
+                            ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
+                            ->join('users','actor_solucion.user_id','=','users.id')
+                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
+                            ->where('users.name','LIKE','%' . $buscar . '%')
+                            ->where('actor_solucion.tipo_actor','=',1)
+                            ;//SOLO QUERY
+            
+
+            $resultados = DB::table('solucions')
+                            ->select('solucions.*', 'sectors.nombre_sector')
+                            ->join('pajustadas', 'solucions.pajustada_id', '=', 'pajustadas.id')
+                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                            //->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')
+                            ->orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
+                            ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
+                            ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
+                            ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
+                            ->where('solucions.ambit_id','<>',0)
+                            ->union($resultados) // UNION CON  EL QUERY ANTERIOR
+                            ->get();*/
+
+            $resultados1 = Solucion::join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%');
+            
+
+            $resultados2 = Solucion::join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
+                            ->join('users','actor_solucion.user_id','=','users.id')
+                            ->where('users.name','LIKE','%' . $buscar . '%')
+                            ->where('actor_solucion.tipo_actor','=',1)
+                            ;//SOLO QUERY
+                            
+            
+
+            $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
+                            ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
+                            ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
+                            ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
+                            ->union($resultados1) // UNION CON  EL QUERY ANTERIOR
+                            ->union($resultados2) // UNION CON  EL QUERY ANTERIOR
+                            ->get();
+
+            dd($resultados);
+          
+            
+        }
+        
+        return view('publico.reportes.reporte1')->with([
+                                                    "parametro"=>$buscar,
+                                                    "resultados"=>$resultados
+                                                ]);
+
     }
 
 }

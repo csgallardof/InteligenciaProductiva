@@ -27,30 +27,34 @@
                     </div>
 
                     <div class="panel-body">
-                        <h4 style="font-style: italic;" class="text-center">Mesas de competitividad en el marco del acuerdo por la producción y el empleo</h4>
+                        <h4 style="font-style: italic;" class="text-center">Marco del acuerdo por la producción y el empleo</h4>
                     </div>
 
                 </div>
 
-               {{--  <div class="col-md-12">
+                <!-- <div class="col-lg-offset-3 col-lg-8 row-m-t-minus-25"> -->
+                <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
                     <div class="panel-body text-center">
-                        <a href="#" class="btn btn-warning"></button>
-                        <a href="#" class="btn btn-warning"></button>
-                    </div>
-                </div> --}}
-                <div class="col-md-12 row-m-t-minus-25">
-                    <div class="panel-body text-center">
+                        
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('busquedaGeneral') }}">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector Productivo" name="parametro" required style="font-size: 16px" >
+                                    <span class="input-group-btn">
+                                    <button class="btn btn-primary btn-lg" type="submit" height="50px">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </form>
 
-                      <a href="/consejoconsultivo" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Consejo Consultivo</a>
-                      <a href="/despliegueterritorial" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-list-ol pull-left" aria-hidden="true"></i>Despliegue Territorial</a>
+ 
                     </div>
                 </div>
-                <div class="col-md-12 row-m-t-minus-25">
-                    <div class="panel-body text-center">
-                        <a href="/reporte" class="btn" style="background-color: #f26f22; color: #FFFFFF"><i class="fa fa-bar-chart pull-left" aria-hidden="true"></i>Reporte</a>
-                    </div>
-                    
-                </div>
+
+
 
                 <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">

@@ -1,5 +1,7 @@
 @extends('layouts.institucion')
 
+@section('title','Inicio')
+
 @section('content')
 		
 

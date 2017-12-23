@@ -64,6 +64,10 @@ Route::post('/consejoconsultivo',[
      'as'=>'consejo.resultado'
 ]);
 
+Route::post('/busqueda',[
+     'uses'=>'PaginasController@busquedaGeneral',
+     'as'=>'busquedaGeneral'
+]);
 
 
 
