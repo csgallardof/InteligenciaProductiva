@@ -301,19 +301,11 @@ class PaginasController extends Controller
 
         if($buscar =='Mesas Competitivas' || $buscar =='Consejo Consultivo' ){
             if($buscar =='Mesas Competitivas'){
-                $resultados = DB::table('solucions')
-                                ->select('solucions.*', 'sectors.nombre_sector')
-                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                                /*->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')*/
-                                ->where('solucions.tipo_fuente','=',1)->get();
+                $resultados = Solucion::where('solucions.tipo_fuente','=',1)->get();
                                 ;
             }
             if($buscar =='Consejo Consultivo'){
-                $resultados = DB::table('solucions')
-                                ->select('solucions.*', 'sectors.nombre_sector')
-                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                                /*->join('actor_solucion', 'actor_solucion.solucion_id', '=', 'solucions.id')*/
-                                ->where('solucions.tipo_fuente','=',2)->get();
+                $resultados = Solucion::where('solucions.tipo_fuente','=',2)->get();
             }
 
         }else{
@@ -335,17 +327,14 @@ class PaginasController extends Controller
                             ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                             ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
                             ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
-                            ->union($resultados1) // UNION CON  EL QUERY ANTERIOR
+                            //->orwhere( DB::raw('solucions.verbo_solucion || ", " || solucions.sujeto_solucion || ", " || solucions.complemento_solucion','acdc') ,'LIKE','%' . $buscar . '%')
+                            ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
+                            ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
                             ->union($resultados2) // UNION CON  EL QUERY ANTERIOR
                             ->get();
-
+                                 
             
         }
-
-        
-/*        $actoresSoluciones = $resultados[5]->actor_solucion;
-        dd($actoresSoluciones[0]->usuario->name);
-*/        
         
         return view('publico.reportes.reporte1')->with([
                                                     "parametro"=>$buscar,

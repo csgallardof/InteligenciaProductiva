@@ -196,7 +196,7 @@
 													<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
 													<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
 													<h5 class="media-heading"></h5>
-													{{ $actividad -> comentario}}}
+													{{ $actividad -> comentario}}
 													<br>
 													
 													<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>

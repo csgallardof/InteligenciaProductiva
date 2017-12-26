@@ -63,6 +63,7 @@
 
 									<form  method="POST" action="{{ route('actividades.saveActividad',[ 1,$solucion->id]) }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
+										<input type="hidden" name="tipo_fuente_id" value="1">
 									 	<div class="form-group">
 									 		<div class="row">
 									 			<div class="col-md-7">
@@ -75,6 +76,16 @@
 									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
 									    	
 									  	</div>
+									  	@if( isset( $actividades ) && count($actividades) == 0)
+									  		<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-7">
+									 					<label for="calendar">Fecha de Inicio</label>		
+									 				</div>
+									 			</div>
+									 			<input id="calendar" type="date" name="fecha" value="{{ date('Y-m-d') }}">
+									  	</div>
+									  	@endif
 									  	
 									  	<div class="form-group">
 									    	<label for="exampleSelect1">Instituci&oacute;n ejecutora</label>
@@ -91,10 +102,7 @@
 									  
 									  	<div class="form-group">
 									    	<label for="exampleInputFile">Agregar archivos. (Opcional)</label>
-									    	<!--
-									    	<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-									    	-->
-
+									    	
 									    	<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="files[]" multiple>
 
 

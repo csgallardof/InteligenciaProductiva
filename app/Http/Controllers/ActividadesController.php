@@ -137,12 +137,30 @@ class ActividadesController extends Controller
      */
     public function saveActividad(Request $request, $tipo_fuente, $idSolucion)
     {       
-
         $actividad = new Actividad;
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
         $actividad-> tipo_fuente = $tipo_fuente;
+        if( isset($request-> fecha) ){
+            $actividad-> fecha_inicio = $request-> fecha. " 00:00:00";
+            if($request->tipo_fuente_id ==1){
+                    $solucion = Solucion::find($idSolucion);
+                    $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
+                    $solucion->save();
+                }
+                if($request->tipo_fuente_id ==2){
+                    $pajustada = Pajustada::find($idSolucion);
+                    
+                    $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
+                    foreach ($solucionesOriginales as $solucion) {
+                        $solucionCCPT= Solucion::find($solucion-> id);
+                        $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
+                        $solucionCCPT->save();
+                    }
+                }          
+        }
+
         $actividad-> save();  
 
         $files = $request->file('files');

@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="panel-body">
-                        <h4 style="font-style: italic;" class="text-center">Marco del acuerdo por la producción y el empleo</h4>
+                        <h4 style="font-style: italic;" class="text-center">Acuerdo por la producción y el empleo</h4>
                     </div>
 
                 </div>
@@ -39,19 +39,23 @@
                         <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
                             <div class="form-group">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector Productivo" name="parametro" required style="font-size: 16px" >
+                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
                                     <span class="input-group-btn">
-                                    <button class="btn btn-primary btn-lg" type="submit" height="50px">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
+                                        <button class="btn btn-primary btn-lg" type="submit" height="50px">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+
                                 </div>
-                                
+                                <p style="margin-bottom: -10px">Ej: Mesas Competitivas, Consejo Consultivo, Analizar, impuestos, Ministerio de Industrias y Productitivad, etc.</p>
                             </div>
                         </form>
+
 
  
                     </div>
                 </div>
+
 
 
 

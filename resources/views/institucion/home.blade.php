@@ -278,6 +278,7 @@
 											<th>Propuesta</th>
 											<th>Fuente</th>
 											<th>Responsabilidad</th>
+											<th>Acción</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -298,6 +299,13 @@
 														<label class="label label-success">{{ "Responsable" }}</label>
 													@else
 														<label class="label label-primary">{{ "Corresponsable" }}</label>
+													@endif
+												</td>
+												<td>
+													@if($solucionD->tipo_actor == 1)
+														<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+													@else
+														<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
 													@endif
 												</td>
 											</tr>	
@@ -322,6 +330,13 @@
 														<label class="label label-success">{{ "Responsable" }}</label>
 													@else
 														<label class="label label-primary">{{ "Corresponsable" }}</label>
+													@endif
+												</td>
+												<td>
+													@if($solucionCC->tipo_actor == 1)
+														<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+													@else
+														<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
 													@endif
 												</td>
 											</tr>	
