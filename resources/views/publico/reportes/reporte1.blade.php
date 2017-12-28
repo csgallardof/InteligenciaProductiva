@@ -24,7 +24,7 @@
 	                            
 	                            <div class="form-group">
 	                                <div class="input-group custom-search-form">
-	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el Sector Productivo" name="parametro" required style="font-size: 22px" >
+	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 22px" >
 	                                    <span class="input-group-btn">
 		                                    <button class="btn btn-primary btn-lg" type="submit" height="50px">
 		                                        <span class="glyphicon glyphicon-search"></span>
