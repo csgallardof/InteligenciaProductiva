@@ -71,8 +71,6 @@ Route::get('/busqueda',[
 ]);
 
 
-
-
 Route::get('storage/{archivo}', function ($archivo) {
      $storage_path = storage_path('app').'/storage/archivos_actividades';
      $url = $storage_path.'/'.$archivo;

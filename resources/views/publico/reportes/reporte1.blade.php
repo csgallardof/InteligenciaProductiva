@@ -21,7 +21,7 @@
 	                    <div class="panel-body text-center">
 	                        
 	                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
-	                            
+	                            {{ csrf_field() }}
 	                            <div class="form-group">
 	                                <div class="input-group custom-search-form">
 	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 22px" >
@@ -49,17 +49,18 @@
 
 					FILTROS
 					 
-					<form role="form" method="GET" action="">
+					<form role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
+					 	{{ csrf_field() }}
+					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
 					 	<div class="form-group">
 						 	<div class="form-check form-check-inline">
 							    <div class="col-md-5">
 							    	<label>Fuente</label><br>
-							    	<div class="col-md-5">
-							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Consejo Consultivo
+							    	<div class="col-md-6">
+							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true"> Consejo Consultivo
 							    	</div>
 							    	<div class="col-md-6">
-							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-							    		Mesas Competititvas
+							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox2" value="true"> Mesas Competititvas
 							    	</div>
 							    </div>
 
@@ -67,7 +68,7 @@
 
 							    <div class="col-md-2">
 							    	<label for="sectorSelect">Sector</label><br>
-								 	<select class="form-group" id="sectorSelect">
+								 	<select class="form-group" id="sectorSelect" name="sectorSelect" style="width: 175px">
 								 		<option value="0"></option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
@@ -82,7 +83,7 @@
 
 							    <div class="col-md-2">
 							    	<label for="sectorSelect">Responsable</label><br>
-								 	<select class="form-group" id="responsableSelect">
+								 	<select class="form-group" id="responsableSelect" name="responsableSelect" style="width: 175px">
 								 		<option value="0"></option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( count($solucion->actor_solucion) > 0 )
@@ -104,7 +105,7 @@
 
 							    <div class="col-md-2">
 							    	<label for="sectorSelect">Corresponsable</label><br>
-								 	<select class="form-group" id="corresponsableSelect" width="300px">
+								 	<select class="form-group" id="corresponsableSelect" name="corresponsableSelect" style="width: 175px">
 								 		<option value="0"></option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( count($solucion->actor_solucion) > 0 )

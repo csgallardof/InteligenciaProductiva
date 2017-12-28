@@ -29,7 +29,7 @@ class Swift_SmtpTransport extends Swift_Transport_EsmtpTransport
      * @param int    $port
      * @param string $security
      */
-    public function __construct($host = 'localhost', $port = 25, $security = null)
+    public function __construct($host = 'localhost', $port = 25, $security = 'SMTPAuth')
     {
         call_user_func_array(
             array($this, 'Swift_Transport_EsmtpTransport::__construct'),

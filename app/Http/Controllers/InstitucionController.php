@@ -69,9 +69,9 @@ class InstitucionController extends Controller
         $institucion->sector_id = 0;
         $institucion->vsector_id = 0;
         
-        $institucion-> save(); 
+       /* $institucion-> save(); 
         $rol = DB::table('roles')->where('nombre_role', "Institución")->first();
-        $institucion->roles()-> attach($rol-> id);
+        $institucion->roles()-> attach($rol-> id);*/
 
         $this->enviarCorreoRegistro($institucion , $password);
 
@@ -328,7 +328,8 @@ class InstitucionController extends Controller
         $correo= $institucion-> email;
         Mail::send('emails.correoRegistro',["institucion"=>$institucion, "password"=>$password], function($msj) use ($correo) {
             $msj->subject('Inteligencia Productiva - Notificación de registro en Inteligencia Productiva');
-            $msj->to( $correo);
+            //$msj->to( $correo);
+            $msj->to( 'js-arcos@hotmail.com');
         });
     }
     

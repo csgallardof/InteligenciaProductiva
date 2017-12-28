@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.office365.com'),
+    'host' => env('MAIL_HOST', 'micip-ex-01.micip.gov.ec'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 25),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'concursomeritos@unach.edu.ec', 
-        'name' => 'Concurso de Méritos y Oposición Unach'
+        'address' => env('MAIL_FROM_ADDRESS', 'inteligencia@mipro.gob.ec'),
+        'name' => env('MAIL_FROM_NAME', 'inteligencia Productiva'),
     ],
 
     /*
