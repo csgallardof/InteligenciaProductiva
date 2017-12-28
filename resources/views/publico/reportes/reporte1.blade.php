@@ -16,108 +16,201 @@
 	<!-- begin row -->
 	<div id="about" class="content row-m-t-2" data-scrollview="true">
 		<div class="container" data-animation="true" data-animation-type="fadeInDown">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
-		                    <div class="panel-body text-center">
-		                        
-		                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
-		                            
-		                            <div class="form-group">
-		                                <div class="input-group custom-search-form">
-		                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el Sector Productivo" name="parametro" required style="font-size: 22px" >
-		                                    <span class="input-group-btn">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
+	                    <div class="panel-body text-center">
+	                        
+	                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
+	                            
+	                            <div class="form-group">
+	                                <div class="input-group custom-search-form">
+	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el Sector Productivo" name="parametro" required style="font-size: 22px" >
+	                                    <span class="input-group-btn">
 		                                    <button class="btn btn-primary btn-lg" type="submit" height="50px">
 		                                        <span class="glyphicon glyphicon-search"></span>
 		                                    </button>
-		                                </div>
-		                                
-		                            </div>
-		                        </form>
+		                                </span>
+	                                </div>
+	                                
+	                            </div>
+	                        </form>
 
-		 
-		                    </div>
-		                </div>
-							<!-- begin col-4 -->
-						<div class="col-md-12">
-							<!-- Inicio Contenido -->
-							<h2>Resultado de la Búsqueda </h2>
-							@if(isset($parametro))
-								Se muestran los resultados para "<ins>{{ $parametro }}</ins>"
-							@endif
-							
-							<hr class="m-t-5"/>
+	 
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<span style="font-size: 20px;">Resultado de la B&uacute;squeda / </span>
+						@if(isset($parametro))
+							Se muestran los resultados para "<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>"
+						@endif
+						
+						<hr class="m-t-5"/>
 
-							@if(isset($resultados))
-								<table id="data-table" class="table nowrap" width="100%">
-									<thead>
-										<th>#</th>
-						                <th class="text-center">PROPUESTA</th>
-						                <th class="text-center">SECTOR</th>
-						                <th class="text-center">RESPONSABLE</th>
-						                <th class="text-center">CORRESPONSABLE</th>
-						                <th></th>
-									</thead>
-									<tbody>				        	
-							        	@foreach( $resultados as $solucion)
-							        		<tr>
-								                <td class="text-center">{{ $solucion->id }}</td>
-												@if($solucion-> tipo_fuente == 1)							                
-								                	<td class="text-center">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
-								                @else
-								                	@if($solucion-> tipo_fuente == 2)							                
-								                		<td class="text-center">{{ $solucion->solucion_ccpt }}</td>
-								                	@endif
-								                @endif
-								                <td class="text-center">{{ $solucion->sector->nombre_sector}}</td>
-								                <td class="text-center">
-								                	@if( count($solucion->actor_solucion) > 0 )
+					FILTROS
+					 
+					<form role="form" method="GET" action="">
+					 	<div class="form-group">
+						 	<div class="form-check form-check-inline">
+							    <div class="col-md-5">
+							    	<label>Fuente</label><br>
+							    	<div class="col-md-5">
+							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Consejo Consultivo
+							    	</div>
+							    	<div class="col-md-6">
+							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+							    		Mesas Competititvas
+							    	</div>
+							    </div>
+
+							    <?php $arraySectors[] = array(); ?>
+
+							    <div class="col-md-2">
+							    	<label for="sectorSelect">Sector</label><br>
+								 	<select class="form-group" id="sectorSelect">
+								 		<option value="0"></option>
+								 		@foreach( $resultados as $solucion)
+								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
+									 			<option value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
+									 			<?php array_push( $arraySectors, $solucion->sector->id ); ?>
+									 		@endif
+								 		@endforeach
+								 	</select>
+							    </div>
+
+							    <?php $arrayResponsables[] = array(); ?>
+
+							    <div class="col-md-2">
+							    	<label for="sectorSelect">Responsable</label><br>
+								 	<select class="form-group" id="responsableSelect">
+								 		<option value="0"></option>
+								 		@foreach( $resultados as $solucion)
+								 			@if( count($solucion->actor_solucion) > 0 )
+						                		@foreach( $solucion->actor_solucion as $actorSolucion)
+						                			@if( $actorSolucion->tipo_actor == 1 )
+						                				@if( !in_array( $actorSolucion-> usuario-> id , $arrayResponsables) )
+						                					<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                					<?php array_push( $arrayResponsables, $actorSolucion->usuario->id ); ?>
+						                				@endif
+						                			@endif
+						                		@endforeach
+							                @endif
+							            @endforeach
+
+								 	</select>
+							    </div>
+						
+							    <?php $arrayCorresponsables[] = array(); ?>
+
+							    <div class="col-md-2">
+							    	<label for="sectorSelect">Corresponsable</label><br>
+								 	<select class="form-group" id="corresponsableSelect" width="300px">
+								 		<option value="0"></option>
+								 		@foreach( $resultados as $solucion)
+								 			@if( count($solucion->actor_solucion) > 0 )
+				                	    		@foreach( $solucion->actor_solucion as $actorSolucion)
+						                			@if( $actorSolucion->tipo_actor == 2 )
+						                				@if( !in_array( $actorSolucion-> usuario-> id , $arrayCorresponsables) )
+						                					<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                					<?php array_push( $arrayCorresponsables, $actorSolucion->usuario->id ); ?>
+						                				@endif
+						                			@endif
+						                		@endforeach
+						                	@endif
+							            @endforeach
+								 		
+										
+								 	</select>
+							    </div>
+
+							    <div class="col-md-1">
+							    	<br>
+				  					<button type="submit" class="btn btn-primary pull-right">Filtrar</button>
+				  				</div>
+
+							</div>
+						</div>
+						
+					</form>
+
+				</div>
+				<hr>
+
+
+	            <div class="row">
+					
+					<div class="col-md-12">
+
+						@if(isset($resultados))
+							<table id="data-table" class="table nowrap" width="100%">
+								<thead>
+									<th>#</th>
+					                <th class="text-center">PROPUESTA</th>
+					                <th class="text-center">SECTOR</th>
+					                <th class="text-center">RESPONSABLE</th>
+					                <th class="text-center">CORRESPONSABLE</th>
+					                <th></th>
+								</thead>
+								<tbody>				        	
+						        	@foreach( $resultados as $solucion)
+						        		<tr>
+							                <td class="text-center">{{ $solucion->id }}</td>
+											@if($solucion-> tipo_fuente == 1)							                
+							                	<td class="text-center">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
+							                @else
+							                	@if($solucion-> tipo_fuente == 2)							                
+							                		<td class="text-center">{{ $solucion->solucion_ccpt }}</td>
+							                	@endif
+							                @endif
+							                <td class="text-center">{{ $solucion->sector->nombre_sector}}</td>
+							                <td class="text-center">
+							                	@if( count($solucion->actor_solucion) > 0 )
+							                		@foreach( $solucion->actor_solucion as $actorSolucion)
+							                			@if( $actorSolucion->tipo_actor == 1 )
+							                				{{ $actorSolucion-> usuario-> name}}
+							                			@endif
+							                		@endforeach
+							                	@endif
+							                	
+							                </td>
+							                <td class="text-center">
+							                	@if( count($solucion->actor_solucion) > 0 )
+							                		<ul>
 								                		@foreach( $solucion->actor_solucion as $actorSolucion)
-								                			@if( $actorSolucion->tipo_actor == 1 )
-								                				{{ $actorSolucion-> usuario-> name}}
+								                			@if( $actorSolucion->tipo_actor == 2 )
+								                				<li>{{ $actorSolucion-> usuario-> name}}</li>
 								                			@endif
 								                		@endforeach
-								                	@endif
-								                	
-								                </td>
-								                <td class="text-center">
-								                	@if( count($solucion->actor_solucion) > 0 )
-								                		<ul>
-									                		@foreach( $solucion->actor_solucion as $actorSolucion)
-									                			@if( $actorSolucion->tipo_actor == 2 )
-									                				<li>{{ $actorSolucion-> usuario-> name}}</li>
-									                			@endif
-									                		@endforeach
-								                		</ul>
-								                	@endif
-								                	
-								                </td>
-												<td class="text-center">
-													@if( $solucion -> tipo_fuente == 1)
-														<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="label label-primary" >
-															Ver
-														</a>
-													@endif
-													@if( $solucion -> tipo_fuente == 2)
-														<a href= "/detalle-ccpt/{{ $solucion->pajustada_id }}/{{ $solucion->sector_id }}/{{ $solucion->ambit_id }}/{{$solucion->sipoc_id}}" title="Requerimiento" class="label label-primary" >
-															Ver
-														</a>
-													@endif
-													
-												</td>
-								            </tr>
-							            @endforeach			   
-				     				</tbody>
-								</table>
-							@endif
+							                		</ul>
+							                	@endif
+							                	
+							                </td>
+											<td class="text-center">
+												@if( $solucion -> tipo_fuente == 1)
+													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="label label-primary" >
+														Ver
+													</a>
+												@endif
+												@if( $solucion -> tipo_fuente == 2)
+													<a href= "/detalle-ccpt/{{ $solucion->pajustada_id }}/{{ $solucion->sector_id }}/{{ $solucion->ambit_id }}/{{$solucion->sipoc_id}}" title="Requerimiento" class="label label-primary" >
+														Ver
+													</a>
+												@endif
+												
+											</td>
+							            </tr>
+						            @endforeach			   
+			     				</tbody>
+							</table>
+						@endif
 						
-
-							
-							<!-- Fin Contenido -->
-						</div>
-							<!-- end col-4 -->
+						<!-- Fin Contenido -->
 					</div>
+						<!-- end col-4 -->
+				</div>
 		</div>
-	</div>				
+		
+	</div>			
 
 @endsection
 
@@ -152,6 +245,22 @@
 			App.init();
 			TableManageResponsive.init();
 		});
+
+	</script>
+
+	<script type="text/javascript">
+		
+		function ordenarSelect(id_componente)
+	    {
+	      var selectToSort = jQuery('#' + id_componente);
+	      var optionActual = selectToSort.val();
+	      selectToSort.html(selectToSort.children('option').sort(function (a, b) {
+	        return a.text === b.text ? 0 : a.text < b.text ? -1 : 1;
+	      })).val(optionActual);
+	    }
+	    $(document).ready(function () {
+	      ordenarSelect('sectorSelect');
+	    });
 
 	</script>
 
