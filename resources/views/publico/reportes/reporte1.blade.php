@@ -38,19 +38,11 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <div class="row">
-	            	<span style="font-size: 20px;">Resultado de la B&uacute;squeda / </span>
-						@if(isset($parametro))
-							Se muestran los resultados para "
-							<a href="/busqueda?parametro={{ Request::get('parametro') }}">	
-								<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>
-							</a>
-							"
-						@endif
-						
-						<hr class="m-t-5"/>
 
-					FILTROS
+
+	            <div class="row" style="border: solid 4px #CFCFCB;">
+	            	
+	            	<b style="font-size: 20px; padding-left: 15px">FILTROS</b>
 					 
 					<form role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
 					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
@@ -144,8 +136,19 @@
 						</div>
 						
 					</form>
-
 				</div>
+
+				<br> 
+					<span style="font-size: 22px;">Resultado de la B&uacute;squeda / </span>
+						@if(isset($parametro))
+							Se muestran los resultados para "
+							<a href="/busqueda?parametro={{ Request::get('parametro') }}">	
+								<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>
+							</a>
+							"
+						@endif
+						
+						
 				<hr>
 
 
