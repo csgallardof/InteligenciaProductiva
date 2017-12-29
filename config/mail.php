@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'inteligencia@mipro.gob.ec'),
+        'address' => env('MAIL_FROM_ADDRESS', 'inteligencia@mipro.gov.ec'),
         'name' => 'Inteligencia Productiva',
     ],
 
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,6 +111,13 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
+    'stream' => [
+        'ssl' => [
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true,
+        ],
+    ],
 
     'markdown' => [
         'theme' => 'default',

@@ -54,9 +54,13 @@
 							    		@if( isset($filtros["mesas"]) && $filtros["mesas"] == true )
 							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true" checked="true"> Mesas Competititvas
 							    		@else
-							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true"> Mesas Competititvas
+							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true"> Mesas de Competitividad
 							    		@endif
-							    		
+							    		<br>
+							    		<a href="/descargar/Mesas">
+							    			<i class="fa fa-download"></i>
+							    			<span>Descargar</span>
+							    		</a>
 							    	</div>
 							    	<div class="col-md-6">
 							    		@if( isset($filtros["consejo"]) && $filtros["consejo"] == true )
@@ -64,6 +68,11 @@
 							    		@else
 							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox2" value="true"> Consejo Consultivo
 							    		@endif
+							    		<br>
+							    		<a href="/descargar/Consejo">
+							    			<i class="fa fa-download"></i>
+							    			<span>Descargar</span>
+							    		</a>
 							    	</div>
 							    </div>
 

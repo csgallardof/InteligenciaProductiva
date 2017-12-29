@@ -47,7 +47,7 @@
                                     </span>
 
                                 </div>
-                                <p style="margin-bottom: -10px">Ej: Mesas Competitivas, Consejo Consultivo, Analizar, impuestos, Ministerio de Industrias y Productitivad, etc.</p>
+                                <p style="margin-bottom: -10px">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
                             </div>
                         </form>
 

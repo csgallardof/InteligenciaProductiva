@@ -6,11 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "doctrine/dbal": "v2.4.2",
+        "laracasts/flash": "^2.0",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "laracasts/flash": "^2.0",
-        "phpoffice/phpexcel": "dev-master",
-        "doctrine/dbal": "v2.4.2"
+        "maatwebsite/excel": "~2.1.0",
+        "phpoffice/phpexcel": "^1.8"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

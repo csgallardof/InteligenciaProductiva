@@ -299,31 +299,48 @@ class PaginasController extends Controller
         
         $buscar = $request-> parametro;
 
-        $resultados1 = Solucion::select('solucions.*')
-                            ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
-                            ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
-                            ;
-            
-        $resultados2 = Solucion::select('solucions.*')
-                            ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
-                            ->join('users','actor_solucion.user_id','=','users.id')
-                            ->where('users.name','LIKE','%' . $buscar . '%')
-                            ;//SOLO QUERY
+        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo Consultivo'){
 
-        $resultados3 = Solucion::select('solucions.*')
-                            ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                            ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
-                            ;//SOLO QUERY
-
-        $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
-                            ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
-                            ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
-                            ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
-                            ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
-                            ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
-                            ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
-                            ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
+            if($buscar == 'Mesas de Competitividad' ){
+                $resultados = Solucion::where('tipo_fuente','=',1)
+                            ->orderBy('verbo_solucion','ASC')
                             ->get();
+            }
+            if($buscar == 'Consejo Consultivo' ){
+                $resultados = Solucion::where('tipo_fuente','=',2)
+                            ->orderBy('solucion_ccpt','ASC')
+                            ->get();
+            }
+
+        }else{
+
+
+            $resultados1 = Solucion::select('solucions.*')
+                                ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                                ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
+                                ;
+                
+            $resultados2 = Solucion::select('solucions.*')
+                                ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
+                                ->join('users','actor_solucion.user_id','=','users.id')
+                                ->where('users.name','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados3 = Solucion::select('solucions.*')
+                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                                ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
+                                ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
+                                ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
+                                ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
+                                ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
+                                ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
+                                ->get();
+        }
 
 
         $resultadoAuxiliar[] = array(); 

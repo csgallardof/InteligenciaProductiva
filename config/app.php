@@ -181,6 +181,7 @@ return [
         * Providers Personales
         */
         Laracasts\Flash\FlashServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -235,6 +236,8 @@ return [
         *   Aliases Personales
         */
         'Flash' => Laracasts\Flash\Flash::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
 
     ],
 

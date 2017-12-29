@@ -84,6 +84,10 @@ Route::get('storage/{archivo}', function ($archivo) {
       
 })->name('descargarArchivo');
 
+Route::get('/descargar/Mesas', 'ExcelController@exportMesas');
+
+Route::get('/descargar/Consejo', 'ExcelController@exportConsejo');
+
 /*
 *
 * ADMINISTRACION
