@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'inteligencia@mipro.gob.ec'),
-        'name' => env('MAIL_FROM_NAME', 'inteligencia Productiva'),
+        'name' => 'Inteligencia Productiva',
     ],
 
     /*

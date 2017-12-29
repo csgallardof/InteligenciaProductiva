@@ -21,7 +21,6 @@
 	                    <div class="panel-body text-center">
 	                        
 	                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
-	                            {{ csrf_field() }}
 	                            <div class="form-group">
 	                                <div class="input-group custom-search-form">
 	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 22px" >
@@ -42,7 +41,11 @@
 	            <div class="row">
 	            	<span style="font-size: 20px;">Resultado de la B&uacute;squeda / </span>
 						@if(isset($parametro))
-							Se muestran los resultados para "<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>"
+							Se muestran los resultados para "
+							<a href="/busqueda?parametro={{ Request::get('parametro') }}">	
+								<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>
+							</a>
+							"
 						@endif
 						
 						<hr class="m-t-5"/>
@@ -50,17 +53,25 @@
 					FILTROS
 					 
 					<form role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
-					 	{{ csrf_field() }}
 					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
 					 	<div class="form-group">
 						 	<div class="form-check form-check-inline">
 							    <div class="col-md-5">
 							    	<label>Fuente</label><br>
 							    	<div class="col-md-6">
-							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true"> Consejo Consultivo
+							    		@if( isset($filtros["mesas"]) && $filtros["mesas"] == true )
+							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true" checked="true"> Mesas Competititvas
+							    		@else
+							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="checkbox1" value="true"> Mesas Competititvas
+							    		@endif
+							    		
 							    	</div>
 							    	<div class="col-md-6">
-							    		<input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox2" value="true"> Mesas Competititvas
+							    		@if( isset($filtros["consejo"]) && $filtros["consejo"] == true )
+							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox2" value="true" checked="true"> Consejo Consultivo
+							    		@else
+							    			<input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="checkbox2" value="true"> Consejo Consultivo
+							    		@endif
 							    	</div>
 							    </div>
 
