@@ -87,7 +87,7 @@
 					<div class="widget widget-stats bg-red">
 						<div class="stats-icon"><i class="fa fa-user"></i></div>
 						<div class="stats-info">
-							<h4>@auth {{ Auth::user()->name }}@endauth</h4>
+							<h4>MIS PROPUESTAS | @auth {{ Auth::user()->name }}@endauth</h4>
 							@if (isset($solucionesDespliegue) )
 								@if(isset($solucionesCCPT) )
 									<p>{{ count($solucionesDespliegue) + count($solucionesCCPT) }} Propuestas</p>
@@ -137,7 +137,23 @@
 								@endif
 							</a>
 						</li>
-						<li class=""><a href="#general" data-toggle="tab"><i class="fa fa-newspaper-o m-r-5"></i> <span class="hidden-xs">Todas mis Propuestas</span></a></li>
+						<li class=""><a href="#general" data-toggle="tab"><i class="fa fa-newspaper-o m-r-5"></i> <span class="hidden-xs">
+						Todas (
+						@if (isset($solucionesDespliegue) )
+								@if(isset($solucionesCCPT) )
+									{{count($solucionesDespliegue) + count($solucionesCCPT)}}
+								@else
+									{{count($solucionesDespliegue)}}
+								@endif
+							@else
+								@if(isset($solucionesCCPT) )
+									{{count($solucionesCCPT)}}
+								@else
+									0
+								@endif
+							@endif
+							)
+						</span></a></li>
 					</ul>
 					<div class="tab-content" data-sortable-id="index-3">
 						
@@ -161,9 +177,9 @@
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
-																<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 														
@@ -184,9 +200,9 @@
 														<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
 														<td>
 															@if($solucionCC->tipo_fuente == 1)
-																<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 														
@@ -225,9 +241,9 @@
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
-																<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 														<td>
@@ -247,9 +263,9 @@
 														<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
 														<td>
 															@if($solucionCC->tipo_fuente == 1)
-																<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 														
@@ -276,8 +292,8 @@
 									<thead>
 										<tr>
 											<th>Propuesta</th>
-											<th>Fuente</th>
 											<th>Responsabilidad</th>
+											<th>Fuente</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
@@ -287,18 +303,19 @@
 											@foreach($solucionesDespliegue as $solucionD)
 											<tr>
 												<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
+												
 												<td>
-													@if($solucionD->tipo_fuente == 1)
-														<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+													@if($solucionD->tipo_actor == 1)
+														<em>{{ "Responsable" }}</em>
 													@else
-														<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+														<em>{{ "Corresponsable" }}</em>
 													@endif
 												</td>
 												<td>
-													@if($solucionD->tipo_actor == 1)
-														<label class="label label-success">{{ "Responsable" }}</label>
+													@if($solucionD->tipo_fuente == 1)
+														<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 													@else
-														<label class="label label-primary">{{ "Corresponsable" }}</label>
+														<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 													@endif
 												</td>
 												<td>
@@ -318,18 +335,19 @@
 											@foreach($solucionesCCPT as $solucionCC)
 											<tr>
 												<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
+												
 												<td>
-													@if($solucionCC->tipo_fuente == 1)
-														<label class="label label-warning">{{ "Mesas Competitivas" }}</label>
+													@if($solucionCC->tipo_actor == 1)
+														<em>{{ "Responsable" }}</em>
 													@else
-														<label class="label label-danger">{{ "Consejo Consultivo" }}</label>
+														<em>{{ "Corresponsable" }}</em>
 													@endif
 												</td>
 												<td>
-													@if($solucionCC->tipo_actor == 1)
-														<label class="label label-success">{{ "Responsable" }}</label>
+													@if($solucionCC->tipo_fuente == 1)
+														<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 													@else
-														<label class="label label-primary">{{ "Corresponsable" }}</label>
+														<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 													@endif
 												</td>
 												<td>

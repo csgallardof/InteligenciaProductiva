@@ -156,9 +156,9 @@
 												<td>{{ $actorSolucion->usuario->name}}</td>
 												<td>
 													@if($actorSolucion->tipo_actor == 1)
-														<label class="label label-success">{{ "Responsable" }}</label>
+														<em>{{ "Responsable" }}</em>
 													@else
-														<label class="label label-primary">{{ "Corresponsable" }}</label>
+														<em>{{ "Corresponsable" }}</em>
 													@endif
 												</td>
 											</tr>
