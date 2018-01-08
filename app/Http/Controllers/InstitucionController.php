@@ -73,7 +73,7 @@ class InstitucionController extends Controller
         $rol = DB::table('roles')->where('nombre_role', "Institución")->first();
         $institucion->roles()-> attach($rol-> id);*/
 
-        $this->enviarCorreoRegistro($institucion , $password);
+        /*$this->enviarCorreoRegistro($institucion , $password);*/
 
         return redirect('/admin/instituciones');
         
@@ -255,11 +255,11 @@ class InstitucionController extends Controller
                     $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
                     $solucion->save();
 
-                    $this->enviarCorreoAsignacion($user, 'Responsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
+                    /*$this->enviarCorreoAsignacion($user, 'Responsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );*/
                 }
                 if($request->tipo_fuente_id ==2){
                     $pajustada = Pajustada::find($request-> solucion_id);
-                    $this->enviarCorreoAsignacion($user, 'Responsable', $pajustada->nombre_pajustada );
+                    /*$this->enviarCorreoAsignacion($user, 'Responsable', $pajustada->nombre_pajustada );*/
 
                     $solucionesOriginales = Solucion::where('pajustada_id','=',$request->solucion_id)->get();
                     foreach ($solucionesOriginales as $solucion) {
@@ -301,11 +301,11 @@ class InstitucionController extends Controller
 
                 if($request-> tipo_fuente ==1){
                     $solucion = Solucion::find($request-> solucion_id);
-                    $this->enviarCorreoAsignacion($user, 'Corresponsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );
+                    /*$this->enviarCorreoAsignacion($user, 'Corresponsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );*/
                 }
                 if($request-> tipo_fuente ==2){
                     $pajustada = Pajustada::find($request-> solucion_id);
-                    $this->enviarCorreoAsignacion($user,'Corresponsable',$pajustada->nombre_pajustada );
+                    /*$this->enviarCorreoAsignacion($user,'Corresponsable',$pajustada->nombre_pajustada );*/
                 }
             }else{
                 Flash::error("La institucion ya es actor de la solucion seleccionada");
