@@ -69,9 +69,9 @@ class InstitucionController extends Controller
         $institucion->sector_id = 0;
         $institucion->vsector_id = 0;
         
-       /* $institucion-> save(); 
+        $institucion-> save(); 
         $rol = DB::table('roles')->where('nombre_role', "Institución")->first();
-        $institucion->roles()-> attach($rol-> id);*/
+        $institucion->roles()-> attach($rol-> id);
 
         /*$this->enviarCorreoRegistro($institucion , $password);*/
 
