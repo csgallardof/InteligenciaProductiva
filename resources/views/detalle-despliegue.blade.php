@@ -199,12 +199,36 @@
 													{{ $actividad -> comentario}}
 													<br>
 													
-													<a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a>
+													<!-- <a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
+	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a> -->
 													
 												</div>
 
 											</li>
+
+											<!--ARCHIVOS-->
+											@if( count( $actividad-> archivo) > 0)
+											<hr>
+											<em> Archivos: </em> <br>
+												<ul>
+													@foreach($actividad-> archivo as $file)
+													<li>
+														<!-- <a target="_blank" href="'../../../../../../storage/{{ $file-> nombre_archivo }} "> -->
+														<a target="_blank" href="{{ route('descargarArchivo',$file-> nombre_archivo) }} ">
+															<?php
+																$pos = strpos($file-> nombre_archivo, "_-_");
+																$nombre_archivo = substr($file-> nombre_archivo, $pos+3, strlen($file-> nombre_archivo)); // devuelve "d"
+															?>
+
+															{{$nombre_archivo}}
+														</a>
+													</li>
+													@endforeach
+												</ul>
+											@endif
+
+											<!--FIN ARCHIVOS-->
+
 										@endforeach										
 									</ul>
 									@else

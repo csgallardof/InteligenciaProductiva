@@ -331,6 +331,11 @@ class PaginasController extends Controller
                                 ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
                                 ;//SOLO QUERY
 
+            $resultados4 = Solucion::select('solucions.*')
+                                ->join('pajustadas', 'solucions.pajustada_id', '=', 'pajustadas.id')
+                                ->where('pajustadas.nombre_pajustada','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
@@ -339,6 +344,7 @@ class PaginasController extends Controller
                                 ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
                                 ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
                                 ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
+                                ->union($resultados4) // UNION CON  EL QUERY3 ANTERIOR
                                 ->get();
         }
 
