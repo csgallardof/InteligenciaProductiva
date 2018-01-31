@@ -115,13 +115,32 @@ Website: http://www.seantheme.com/color-admin-v1.7/frontend/
 ------------------------------- */
 
 /* 1.1 Reset and Overrides */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400|Oswald:500|Open+Sans|Lato:500|Roboto+Condensed');
+
+/* 1.1 Reset and overrides */
 
 body {
-    background: #fff;
+    background: #f3f3f3;
+    font-size: 12px;
+
+    /*font-family: 'Roboto', sans-serif;*/
+
+    /*font-family: 'Lato', sans-serif;*/
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Open Sans', sans-serif;*/
+
+    color: #707478;
+}
+
+/*body {
+    
     font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #707478;
     font-size: 12px;
-}
+}*/
 .ie8 body {
     font-family: Arial,sans-serif;
 }
@@ -193,7 +212,7 @@ body.page-navbar-fixed-top-sm {
 .header.navbar .navbar-nav > li > a {
     font-size: 12px;
     line-height: 20px;
-    color: #2d353c;
+    color: #fff;
     font-weight: 600;
     padding: 25px 15px;
 }
@@ -241,7 +260,7 @@ body.page-navbar-fixed-top-sm {
 /* 2.4 Navbar Default Setting  */
 
 .header.navbar.navbar-default {
-    background: #fff;
+    background: #0c3c55;
 }
 
 
@@ -304,7 +323,7 @@ body.page-navbar-fixed-top-sm {
     display: block;
 }
 .navbar-nav .dropdown-menu {
-    background: #333;
+    background: #F3F3F3;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -320,11 +339,11 @@ body.page-navbar-fixed-top-sm {
 .navbar-nav .dropdown-menu > li.active > a,
 .navbar-nav .dropdown-menu > li > a:hover,
 .navbar-nav .dropdown-menu > li > a:focus {
-    background: #222;
+    /*background: #222;*/
     color: #00acac;
 }
 .navbar-nav .dropdown-menu > li + li {
-    border-top: 1px solid #444;
+    border-top: 1px solid #F3F3F3;
 }
 
 /* 2.7 CUSTOM CSS */
@@ -632,7 +651,9 @@ body.page-navbar-fixed-top-sm {
 
 .team {
     text-align: center;
-    padding: 0 30px;
+    padding: 80px 30px;
+    background: #f3f3f3;
+
 }
 .team .image {
     display: inline-block;
@@ -668,6 +689,64 @@ body.page-navbar-fixed-top-sm {
     color: #ccc;
 }
 .team .social a + a {
+    margin-left: 5px;
+}
+
+
+
+/* -------------------------------
+   6.0 Team Setting
+------------------------------- */
+
+/* 6.1 Team Element Setting */
+
+.manual {
+    text-align: center;
+    padding: 0 30px;
+    background: #f3f3f3;
+    background: linear-gradient(to top, #f3f3f3 , #fff);
+}
+.manual-work{
+    text-align: center;
+    padding: 50px 200px;
+    background: #f3f3f3;
+    background: linear-gradient(to top, #f3f3f3 , #fff);
+
+}
+.manual .image {
+    display: inline-block;
+    border-radius: 300px;
+    overflow: hidden;
+}
+.manual .info {
+    margin-top: 15px;
+}
+.manual .image img {
+    border-radius: 300px;
+}
+.manual .name {
+    margin-bottom: 5px;
+}
+.manual .title {
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.manual p {
+    margin-bottom: 15px;
+}
+.manual .social a {
+    border-radius: 300px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    line-height: 28px;
+    text-align: center;
+    display: inline-block;
+    color: #ccc;
+}
+.manual .social a + a {
     margin-left: 5px;
 }
 
@@ -753,6 +832,8 @@ body.page-navbar-fixed-top-sm {
     position: relative;
     overflow: hidden;
     margin-bottom: 10px;
+    background: #ffffff;
+
 }
 .work .image img {
     max-width: 100%;
@@ -3098,7 +3179,11 @@ a.list-group-item.active:focus {
 }
 
 .row-m-t-3 {
-    margin-top: 140px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: url(../imagenes/background_home_inteligencia_productiva-2.jpg);
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .row-m-t-4 {
@@ -3117,4 +3202,91 @@ a.list-group-item.active:focus {
 
 .timeline-Tweet-text {
     font-size: 15px ;
+}
+
+    
+.btn.btn-buscar {
+    color: #fff;
+    background: #F26F21;
+    border-color: #F26F21;
+}
+.btn-buscar:hover,
+.btn-buscar:focus,
+.btn-buscar:active,
+.btn-buscar.active,
+.open .dropdown-toggle.btn-buscar {
+    background: #EF5D06 ;
+    border-color: #F26F21;
+    color: #fff !important;
+}
+.btn-group .btn.btn-buscar:not(.active) + .btn.btn-buscar,
+.input-group-btn .btn.btn-buscar:not(.active) + .btn.btn-buscar {
+    border-left-color: #F26F21;
+
+}
+
+
+/* effect for home */
+
+.container2 {
+    position: relative;
+    
+}
+
+.container-work {
+    position: relative;
+    margin: 15px
+    
+}
+
+.text-block2 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+
+.img-over {
+    text-align: center;
+    padding: 0 40px;
+    background: #f3f3f3;
+    background: linear-gradient( rgba(255,0,0,0),  #636B81 );
+
+}
+
+
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 6px;
+  right: -20px;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+
+/*espacio*/
+.box{
+  box-model: border-box;
+  border: 3px solid transparent;
+  background-clip:padding-box;
+}
+
+.box-4{
+  box-model: border-box;
+  padding: 100px 100px;
+  border: 1px solid transparent;
+  background-clip:padding-box;
+}
+
+.box-tw{
+    height: 200px;
 }

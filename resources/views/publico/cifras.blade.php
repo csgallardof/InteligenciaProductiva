@@ -4,6 +4,7 @@
 
 @section('start_css')
   @parent
+  
   <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
 
   <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->

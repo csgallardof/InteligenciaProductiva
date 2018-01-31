@@ -58,17 +58,17 @@
         <!-- end #about -->
 
 
-{{--
+
         <!-- begin #team -->
         <div id="team" class="content" data-scrollview="true">
             <!-- begin container -->
             <div class="container row-m-t-4">
-
+                hola
 
             </div>
             <!-- end container -->
         </div>
-        <!-- end #team --> --}}
+        <!-- end #team --> 
 
         <!-- begin #work -->
         <div id="work" class="content" data-scrollview="true">

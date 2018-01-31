@@ -45,9 +45,11 @@ Website: http://www.seantheme.com/color-admin-v1.7/frontend/
     }
 }
 @media (max-width: 767px) {
+
     .header.navbar .navbar-nav > li > a {
         padding: 10px 15px;
     }
+    .container>.navbar-header{margin-right:-15px;margin-left:-15px ; height: 90px;}
     .navbar-transparent .navbar-collapse {
         background: #000;
         background: rgba(0,0,0,0.9);
@@ -113,4 +115,6 @@ Website: http://www.seantheme.com/color-admin-v1.7/frontend/
         margin-top: 0 !important;
         padding: 10px !important;
     }
+
+    
 }

@@ -333,7 +333,7 @@ label {
 .header.navbar .navbar-nav > li > a {
     font-size: 12px;
     line-height: 20px;
-    color: #2d353c;
+    color: #ffffff;
     font-weight: 600;
     padding: 25px 15px;
 }
@@ -381,7 +381,7 @@ label {
 /* 2.4 Navbar Default Setting  */
 
 .header.navbar.navbar-default {
-    background: #fff;
+    background: #0c3c55;
 }
 
 

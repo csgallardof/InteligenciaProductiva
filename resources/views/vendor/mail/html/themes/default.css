@@ -1,12 +1,32 @@
 /* Base */
 
-body, body *:not(html):not(style):not(br):not(tr):not(code) {
+/*body, body *:not(html):not(style):not(br):not(tr):not(code) {
     font-family: Avenir, Helvetica, sans-serif;
     box-sizing: border-box;
+}*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400|Oswald:500|Open+Sans|Lato:500|Roboto+Condensed');
+
+/* 1.1 Reset and overrides */
+
+body {
+    background: #f3f3f3;
+    font-size: 12px;
+
+    font-family: 'Roboto', sans-serif;
+
+    /*font-family: 'Lato', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Open Sans', sans-serif;*/
+
+    color: #707478;
 }
 
 body {
-    background-color: #f5f8fa;
+    background-color: #fff;
     color: #74787E;
     height: 100%;
     hyphens: auto;
