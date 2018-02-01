@@ -21,7 +21,7 @@
                     <ul class="nav navbar-nav  navbar-right">
                         
                         <li>
-                            <a href="{{ url('/') }}">
+                            <a href="{{ route('login') }}">
                                 <i></i> Inicio
                             </a>
                         </li>
