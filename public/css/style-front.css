@@ -694,6 +694,55 @@ body.page-navbar-fixed-top-sm {
 
 
 
+
+/* 6.1 Team Element Setting */
+
+.team-foro {
+    text-align: center;
+    padding: 80px 30px;
+    background: linear-gradient(to right, rgba(255,0,0,0),  #f3f3f3 );
+    height: 600px;
+
+}
+.team-foro .image {
+    display: inline-block;
+    border-radius: 300px;
+    overflow: hidden;
+}
+.team-foro .info {
+    margin-top: 15px;
+}
+.team-foro .image img {
+    border-radius: 300px;
+}
+.team-foro .name {
+    margin-bottom: 5px;
+}
+.team-foro .title {
+    font-size: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.team-foro p {
+    margin-bottom: 15px;
+}
+.team-foro .social a {
+    border-radius: 300px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    line-height: 28px;
+    text-align: center;
+    display: inline-block;
+    color: #ccc;
+}
+.team-foro .social a + a {
+    margin-left: 5px;
+}
+
+
+
 /* -------------------------------
    6.0 Team Setting
 ------------------------------- */
@@ -2624,7 +2673,7 @@ legend {
     color: #fff;
 }
 .panel-inverse { border-color: #242a30; }
-.panel-inverse > .panel-heading { background: #242a30; }
+.panel-inverse > .panel-heading { background: #0C3C55; }
 .panel-success { border-color: #008a8a; }
 .panel-success > .panel-heading { background: #008a8a; }
 .panel-warning { border-color: #c47d15; }
@@ -3290,3 +3339,9 @@ a.list-group-item.active:focus {
 .box-tw{
     height: 200px;
 }
+
+
+.box-foro{
+    text-align: left !important;
+}
+

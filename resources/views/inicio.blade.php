@@ -120,7 +120,7 @@ $(document).ready(function(){
                 <!-- <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
-                      <a href="#" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Instituciones</a>
+                      <a href="{{ asset('imagenes/foro-documentos/Digital_Economy_Industrias_BID.pdf') }}" target="_blank" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Instituciones</a>
                       <a href="#" target="_blank" class="btn btn-inverse"><i class="fa fa-book pull-left" aria-hidden="true"></i>Top 10 Propuestas de Soluci&oacute;n</a>
 
                     </div>
@@ -173,7 +173,7 @@ $(document).ready(function(){
                     </div>
                     <div class="col-md-2 box">
                         <div class="container2">
-                          <a href="/http://servicios.industrias.gob.ec/biblioteca/" target="_blank"><img src="{{ asset('imagenes/biblioteca-front-2.png') }}" style="width:100%;"></a>
+                          <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank"><img src="{{ asset('imagenes/biblioteca-front-2.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21;"><strong>Biblioteca</strong></h4>
                             <p>estudios</p>
@@ -208,57 +208,104 @@ $(document).ready(function(){
 
         </div>
         <!-- end #team -->
-        <!-- <div id="funcionamiento" class="content manual-work" data-scrollview="true">
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <div class="row">
-                    <div class="col-12" style="padding-right: 200px"><h2><span style="color: #F26F21"><strong>¿Cómo funciona?</span></strong></h2></div>
-                    <br>
-                    
-                </div>
-
-                <div class="row">
-                    <div class="col-9">
-
-                        <div class="col-md-3">
-                            <div class="container-work">
-                              <img src="{{ asset('imagenes/bars-chart.png') }}" style="width:100%;">
-                              <div class="text-block2 img-over">
-                                <h4>Recopilación</h4>
-                                <p>problemas y propuestas</p>
-                              </div>
+        <div id="funcionamiento" class="content team-foro" data-scrollview="true">
+            <div class="row">
+                <div class="col-12" style="padding-bottom: 20px"><h2><strong>1° Foro de la Producción e  <span style="color: #F26F21">Impulso a la Innovación y Competitividad</span></strong></h2></div>
+                <br>
+                
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('imagenes/foro-documentos/foro-innovacion-2.png') }}" alt="First Slide">
+            </div>
+            <div class="col-md-6">
+                    <div class="modal-header">
+                        <h3 class="modal-title pull-left" style="color: #F26F21; text-align: left;"><strong>Presentaciones</strong></h3>
+                    </div>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-inverse overflow-hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title ">
+                                    <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <i class="fa fa-plus-circle pull-right"></i> 
+                                        <span class="box-foro">Asociaciones Público-Privadas APP</span>  
+                                    </a>
+                                </h3>
                             </div>
-
+                            <div id="collapseOne" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Asociaciones Público-Privadas APP  | <strong>MIPRO</strong> <a href="{{ asset('imagenes/foro-documentos/Asociaciones_Publico_Privadas_MIPRO.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="container-work">
-                              <img src="{{ asset('imagenes/bars-chart.png') }}" style="width:100%;">
-                              <div class="text-block2 img-over">
-                                <h4>Sistematización y </h4>
-                                <p>procesamiento</p>
-                              </div>
+                        <div class="panel panel-inverse overflow-hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <i class="fa fa-plus-circle pull-right"></i> 
+                                        Bioeconomia
+                                    </a>
+                                </h3>
                             </div>
-                            
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                   Bioeconomia  | <strong>MAE</strong> <a href="{{ asset('imagenes/foro-documentos/Bioeconomia_MAE.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="container-work">
-                              <img src="{{ asset('imagenes/bars-chart.png') }}" style="width:100%;">
-                              <div class="text-block2 img-over">
-                                <h4>Seguimiento y Ejecución</h4>
-                                <p>de las propuetas</p>
-                              </div>
+                        <div class="panel panel-inverse overflow-hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <i class="fa fa-plus-circle pull-right"></i> 
+                                        Colaboración Público Privada | Compras Públicas de Innovación
+                                    </a>
+                                </h3>
                             </div>
-
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Colaboración Público Privada  | <strong>BID</strong> <a href="{{ asset('imagenes/foro-documentos/Colaboracion_Publico_Privada_BID.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a><br>
+                                    Compras PÚblicas de Innovación  | <strong>BID</strong> <a href="{{ asset('imagenes/foro-documentos/Compras_Publicas_de_Innovacion_BID.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-inverse overflow-hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                        <i class="fa fa-plus-circle pull-right"></i> 
+                                        Economía Digital Industrial
+                                    </a>
+                                </h3>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Economía Digital Industrial  | <strong>BID</strong> <a href="{{ asset('imagenes/foro-documentos/Digital_Economy_Industrias_BID.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-inverse overflow-hidden">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                        <i class="fa fa-plus-circle pull-right"></i> 
+                                        Zonas Economicas Especiales ZEDES
+                                    </a>
+                                </h3>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    Zonas Economicas Especiales BID  | <strong>BID</strong> <a href="{{ asset('imagenes/foro-documentos/Zonas_Economicas_Especiales_BID.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a><br>
+                                    Zonas Especiales de Desarrollo Economico| <strong>MIPRO</strong> <a href="{{ asset('imagenes/foro-documentos/Zonas_Especiales_de_Desarrollo_Economico_MIPRO.pdf') }}" target="_blank" class="pull-right"> <i class="fa fa-sx fa-cloud-download"></i> </a>
+                                </div>
+                            </div>
                         </div>
                         
                     </div>
-      
-                    
                 </div>
-
-            </div>
+            
 
         </div>
- -->
+ 
 
 
         <!-- begin #work -->
@@ -351,7 +398,8 @@ $(document).ready(function(){
 
 @section('end_js')
   @parent
-  <script src="{{ asset('js/apps-front.js') }}"></script>
+  s
+  <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
 @endsection
 

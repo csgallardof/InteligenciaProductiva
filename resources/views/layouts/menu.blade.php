@@ -21,7 +21,7 @@
                     <ul class="nav navbar-nav  navbar-right">
                         
                         <li>
-                            <a href="{{ route('login') }}">
+                            <a href="{{ url('/') }}">
                                 <i></i> Inicio
                             </a>
                         </li>
@@ -48,7 +48,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/login">
                                 <i class="fa fa-user fa-fw"></i> Ingresar
                             </a>
                         </li>
