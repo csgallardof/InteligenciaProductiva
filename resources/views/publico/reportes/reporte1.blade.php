@@ -40,7 +40,7 @@
 	            </div>
 
 
-	            <div class="row" style="border: solid 4px #CFCFCB;">
+	            <div class="row">
 	            	
 	            	<b style="font-size: 20px; padding-left: 15px">FILTROS</b>
 					 
@@ -146,6 +146,7 @@
 						
 					</form>
 				</div>
+				<hr>
 
 				<br> 
 					<span style="font-size: 22px;">Resultado de la B&uacute;squeda / </span>
