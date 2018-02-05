@@ -25,10 +25,26 @@
                                 <i></i> Inicio
                             </a>
                         </li>
-                        <li>
-                            <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank">
-                                <i></i> Biblioteca
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i></i>Herramientas<b class="caret"></b>
                             </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/cifras">Cifras</a></li>
+                                <li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
+                                <li><a href="/vocaciones">Vocaciones Productivas</a></li>
+                                
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i></i> Biblioteca <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                            	<li><a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank">Consultorias & Estudios</a></li>
+                            	<li><a href="/foro-de-la-produccion-impulso-innovacion">1° Foro de la Producción e Impulso a la Innovación</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="/inversiones">

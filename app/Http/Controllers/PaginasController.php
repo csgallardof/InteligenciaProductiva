@@ -140,6 +140,10 @@ class PaginasController extends Controller
         return view('publico.contratos-de-inversion');
     }
 
+    public function foroproduccion(){
+        return view('publico.foro-de-la-produccion');
+    }
+
     
     // Modelo Usuarios
     public function usuarios(){
