@@ -25,18 +25,7 @@
                                 <i></i> Inicio
                             </a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i></i>Herramientas<b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/cifras">Cifras</a></li>
-                                <li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
-                                <li><a href="/vocaciones">Vocaciones Productivas</a></li>
-                                
-                                
-                            </ul>
-                        </li>
+                        
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i></i> Biblioteca <b class="caret"></b>
