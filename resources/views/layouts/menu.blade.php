@@ -35,10 +35,16 @@
                             	<li><a href="/foro-de-la-produccion-impulso-innovacion">1° Foro de la Producción e Impulso a la Innovación</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="/inversiones">
-                                <i></i> Inversiones
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i></i> Inversiones<b class="caret"></b>
                             </a>
+                            <ul class="dropdown-menu" role="menu">
+                            	<li><a href="/por-que-invertir-en-ecuador">¿Por qué invertir en Ecuador?</a></li>
+                            	<li><a href="#">Incentivos</a></li>
+                            	<li><a href="#">ZEDES</a></li>
+                            	<li><a href="#">Alianzas Público Privadas</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

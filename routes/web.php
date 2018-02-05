@@ -39,7 +39,7 @@ Route::get('/vocaciones', 'PaginasController@vocaciones');
 
 Route::get('/indice', 'PaginasController@indices');
 
-Route::get('/inversiones', 'PaginasController@contratosinversion');
+Route::get('/por-que-invertir-en-ecuador', 'PaginasController@contratosinversion');
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
