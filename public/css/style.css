@@ -444,7 +444,7 @@ label {
     display: block;
 }
 .navbar-nav .dropdown-menu {
-    background: #333;
+    background: #F3F3F3;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
@@ -460,11 +460,11 @@ label {
 .navbar-nav .dropdown-menu > li.active > a,
 .navbar-nav .dropdown-menu > li > a:hover,
 .navbar-nav .dropdown-menu > li > a:focus {
-    background: #222;
+    /*background: #222;*/
     color: #00acac;
 }
 .navbar-nav .dropdown-menu > li + li {
-    border-top: 1px solid #444;
+    border-top: 1px solid #F3F3F3;
 }
 
 /* 2.7 CUSTOM CSS */
