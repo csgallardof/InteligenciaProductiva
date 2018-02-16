@@ -14,7 +14,7 @@
 <br>
 <br><br><br>
 	<!-- begin row -->
-	<div id="about" class="content row-m-t-2" data-scrollview="true">
+	<div id="about" class="content work row-m-t-3" data-scrollview="true">
 		<div class="container" data-animation="true" data-animation-type="fadeInDown">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
@@ -22,13 +22,15 @@
 	                        
 	                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
 	                            <div class="form-group">
+	                                
 	                                <div class="input-group custom-search-form">
-	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 22px" >
+	                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
 	                                    <span class="input-group-btn">
-		                                    <button class="btn btn-primary btn-lg" type="submit" height="50px">
-		                                        <span class="glyphicon glyphicon-search"></span>
-		                                    </button>
-		                                </span>
+	                                        <button class="btn btn-buscar btn-lg" type="submit" height="50px">
+	                                            <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
+	                                        </button>
+	                                    </span>
+
 	                                </div>
 	                                
 	                            </div>
@@ -115,7 +117,7 @@
 						
 							    <?php $arrayCorresponsables[] = array(); ?>
 
-							    <div class="col-md-2">
+							    <!-- <div class="col-md-2">
 							    	<label for="sectorSelect">Corresponsable</label><br>
 								 	<select class="form-group" id="corresponsableSelect" name="corresponsableSelect" style="width: 175px">
 								 		<option value="0"></option>
@@ -135,7 +137,7 @@
 										
 								 	</select>
 							    </div>
-
+ -->
 							    <div class="col-md-1">
 							    	<br>
 				  					<button type="submit" class="btn btn-primary pull-right">Filtrar</button>

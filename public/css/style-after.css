@@ -4,6 +4,7 @@ table.dataTable.nowrap th, table.dataTable.nowrap td {
     white-space: normal;
 }
 
+
 .buttons-copy, .buttons-csv, .buttons-excel, .buttons-print {
       color: #fff !important;
       font-weight: 400;
@@ -16,4 +17,12 @@ table.dataTable.nowrap th, table.dataTable.nowrap td {
       font-weight: 400;
       background: #DD1919 !important;
       border-color: #ffffff !important;
+}
+
+.row-m-t-3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: url(../imagenes/background_home_inteligencia_productiva-2.jpg);
+    padding-top: 0px;
+    padding-bottom: 0px;
 }

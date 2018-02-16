@@ -193,7 +193,7 @@ $(document).ready(function(){
                     </div>
                     <div class="col-md-2 box">
                         <div class="container2">
-                          <a href="/http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#" target="_blank"><img src="{{ asset('imagenes/simplificacion-tramites-front-2.png') }}" style="width:100%;"></a>
+                          <a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#" target="_blank"><img src="{{ asset('imagenes/simplificacion-tramites-front-2.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21;"><strong>Trámites</strong></h4>
                             <p>simplificación</p>
