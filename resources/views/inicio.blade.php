@@ -146,7 +146,7 @@ $(document).ready(function(){
                           <a href="/cifras"><img src="{{ asset('imagenes/cifras-home-inteligencia.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21; "><strong>Cifras</strong></h4>
-                            <p>competitivas</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">competitivas</p>
                           </div>
                         </div>
 
@@ -156,7 +156,7 @@ $(document).ready(function(){
                           <a href="/indice"><img src="{{ asset('imagenes/cifras-home-inteligencia-2-front.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21; "><strong>Indice de </strong></h4>
-                            <p>competitividad</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">competitividad</p>
                           </div>
                         </div>
                         
@@ -166,7 +166,7 @@ $(document).ready(function(){
                           <a href="/vocaciones"><img src="{{ asset('imagenes/vocaciones-productivas-front.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21; "><strong>Vocaciones</strong></h4>
-                            <p>productivas</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">productivas</p>
                           </div>
                         </div>
 
@@ -176,7 +176,7 @@ $(document).ready(function(){
                           <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank"><img src="{{ asset('imagenes/biblioteca-front-2.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21;"><strong>Biblioteca</strong></h4>
-                            <p>estudios</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">estudios</p>
                           </div>
                         </div>
                         
@@ -186,7 +186,7 @@ $(document).ready(function(){
                           <a href="/inversiones"><img src="{{ asset('imagenes/inversiones-front-2.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21;"><strong>Inversiones</strong></h4>
-                            <p>de productividad</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">de productividad</p>
                           </div>
                         </div>
                         
@@ -196,7 +196,7 @@ $(document).ready(function(){
                           <a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#" target="_blank"><img src="{{ asset('imagenes/simplificacion-tramites-front-2.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
                             <h4 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21;"><strong>Trámites</strong></h4>
-                            <p>simplificación</p>
+                            <p style="margin-bottom: 0px;color:#F26F21;">simplificación</p>
                           </div>
                         </div>
                         
