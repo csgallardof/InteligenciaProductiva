@@ -155,8 +155,8 @@ $(document).ready(function(){
                         <div class="container2">
                           <a href="/indice"><img src="{{ asset('imagenes/cifras-home-inteligencia-2-front.png') }}" style="width:100%;"></a>
                           <div class="text-block2 img-over">
-                            <h3 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21; "><strong>Indice de </strong></h3>
-                            <p style="margin-bottom: 0px;color:#F26F21;">competitividad</p>
+                            <h3 style="margin-top: 20px; margin-bottom: 0px;color:#F26F21; "><strong>Índice</strong></h3>
+                            <p style="margin-bottom: 0px;color:#F26F21;">de competitividad</p>
                           </div>
                         </div>
                         
