@@ -25,6 +25,11 @@
                                 <i></i> Inicio
                             </a>
                         </li>
+                        <li>
+                            <a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#" target="_blank">
+                                <i></i> Simplificación de trámites
+                            </a>
+                        </li>
                         
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
