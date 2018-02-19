@@ -41,6 +41,10 @@ Route::get('/indice', 'PaginasController@indices');
 
 Route::get('/por-que-invertir-en-ecuador', 'PaginasController@contratosinversion');
 
+Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
+
+
+
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
 // rutas pruebas usuarios

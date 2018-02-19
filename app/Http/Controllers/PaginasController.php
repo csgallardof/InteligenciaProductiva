@@ -140,6 +140,10 @@ class PaginasController extends Controller
         return view('publico.contratos-de-inversion');
     }
 
+    public function zedes(){
+        return view('publico.zedes');
+    }
+
     public function foroproduccion(){
         return view('publico.foro-de-la-produccion');
     }
