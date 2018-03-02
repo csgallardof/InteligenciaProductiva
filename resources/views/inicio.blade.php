@@ -271,7 +271,7 @@ $(document).ready(function(){
                                
                                 <tr>
                                     
-                                    <td style="text-align: left;"><small> Av. Amazonas entre Unión Nacional de Periodistas y Alfonso Pereira 
+                                    <td style="text-align: left;"><small>  
                                         <br> Plataforma Gubernamental de Gestión Financiera. Pisos 8 y 9 <br> <strong>Código Postal:</strong> 170506 <br> Quito-Ecuador </small></td>
                                 </tr>
                                

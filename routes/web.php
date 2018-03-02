@@ -197,3 +197,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::post('actividad/save/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@saveActividad','as'=>'actividades.saveActividad']);
      
 });
+
+
+
+
