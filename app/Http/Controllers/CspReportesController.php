@@ -184,5 +184,11 @@ class CspReportesController extends Controller
         return view('csp.visualizarReporteHechoCsp',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
     }
 
+    public function visualizarReporteAlerta($id){
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+        //dd($ReporteHechoVisualizar);
+        return view('csp.visualizarReporteAlertaCsp',compact('cspReportesAlerta'));    
+    }
+
 
 }

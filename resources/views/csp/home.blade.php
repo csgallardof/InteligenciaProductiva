@@ -151,6 +151,7 @@
 											<th>Institucion</th>
 											<th>Anexo</th>
 											<th>Acciones</th>
+											<th>Reporte Alerta</th>
 											
 										</tr>
 									</thead>
@@ -175,21 +176,28 @@
 															<i class="fa fa-2x fa-download"></i>
 														</a>
 
-
-
-
-
 						                            </td>
 						                            <td>
 
 													<a href= "/institucion/acciones-alertas/{{$reportesAlerta->id}}"  >
 														<i class="fa fa-2x fa-plus-circle"></i>
 													</a>
-													&nbsp; &nbsp; 
+													 &nbsp; &nbsp; 
+													
+													
 													<a href= "/institucion/visualizar-acciones-alertas/{{$reportesAlerta->id}}"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
 													
+						                            </td>
+
+						                            <td>
+						                       
+						                      			<a href= "/institucion/visualizar-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
+														<i class="fa fa-2x fa-eye"></i>
+													</a>
+						                      		
+
 						                            </td>
 						                            				                            
 						                        </tr>

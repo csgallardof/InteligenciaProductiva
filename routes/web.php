@@ -226,6 +226,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
 
      Route::get('/visualizar-reporte-hechos/{id}','CspReportesController@visualizarReporteHecho');
+     Route::get('/visualizar-reporte-Alertas/{id}','CspReportesController@visualizarReporteAlerta');
 
      //DESCARGAR ARCHIVO HECHO CSP
      Route::get('storageHechoCsp/{archivo}', function ($archivo) {
