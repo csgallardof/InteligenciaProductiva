@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Route::get('/reporte','SolucionesController@reporte1');
 
+
+
+
+
+
 Route::post('/reporte',[
      'uses'=>'SolucionesController@buscar',
      'as'=>'reporte1.resultado'
@@ -195,7 +200,77 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::get('consejo/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createConsejo','as'=>'actividades.createConsejo']);
 
      Route::post('actividad/save/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@saveActividad','as'=>'actividades.saveActividad']);
-     
+
+
+//VISTA DE LOS REPORTES DEL CSP
+     Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes');
+
+     //CREAR REPORTE HECHOS CSP
+     Route::get('/consejo-sectorial-produccion-createReportesHecho','CspReportesController@vistaCrearReporteHecho');
+
+     //CREAR REPORTE HECHOS
+     Route::get('/consejo-sectorial-produccion-createReportesAlerta','CspReportesController@vistaCrearReporteAlerta');
+
+     //guardar reporte hechos
+     Route::post('/guardarReporteHechoCsp',['uses'=>'CspReportesController@guardarReporteHecho','as'=>'guardarReporteHechoCsp']);
+
+     //guardar reportes alertas
+     Route::post('/guardarReporteAlertaCsp',['uses'=>'CspReportesController@guardarReporteAlerta','as'=>'guardarReporteAlertaCsp']);
+
+     // ACCIONES REPORTES ALERTAS
+     Route::get('/acciones-alertas/{id}','CspReportesController@AccionesAlertas');
+     Route::post('/crear-acciones-alertas',['uses'=>'CspReportesController@crearAccionesAlerta','as'=>'guardarAccionesAlertaCsp']);
+
+     //Visualizar acciones de reportes alertas
+     Route::get('/visualizar-acciones-alertas/{id}','CspReportesController@visualizarAccionesAlertas');
+
+
+     Route::get('/visualizar-reporte-hechos/{id}','CspReportesController@visualizarReporteHecho');
+
+     //DESCARGAR ARCHIVO HECHO CSP
+     Route::get('storageHechoCsp/{archivo}', function ($archivo) {
+     $storage_path = storage_path('app').'/storage/CspReportesHechos';
+     $url = $storage_path.'/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::disk('CspReportesHechos')->exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+      
+     })->name('descargarArchivoHechosCsp');
+
+
+     //DESCARGAR ARCHIVO ACCION ALERTA CSP
+     Route::get('storageAccioAlertaCsp/{archivo}', function ($archivo) {
+     $storage_path = storage_path('app').'/storage/CspReportesAlerta';
+     $url = $storage_path.'/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::disk('CspReportesAlerta')->exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+      
+     })->name('descargarAccionAlertaCsp');
+
+     //DESCARGAR ARCHIVO ALERTA CSP
+     Route::get('storageAlertaCsp/{archivo}', function ($archivo) {
+     $storage_path = storage_path('app').'/storage/CspReportesAlerta';
+     $url = $storage_path.'/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::disk('CspReportesAlerta')->exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+      
+     })->name('descargarArchivoAlertaCsp');
+
+          
 });
 
 

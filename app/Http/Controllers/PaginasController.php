@@ -433,4 +433,9 @@ class PaginasController extends Controller
         
     }
 
+    public function consejosectorial(){
+        return view('csp.home');
+    } 
+    
+
 }

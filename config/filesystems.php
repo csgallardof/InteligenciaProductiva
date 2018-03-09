@@ -43,6 +43,18 @@ return [
 
     'disks' => [
 
+        'CspAccioneReportesAlerta' => [
+            'driver' => 'local',
+            'root' => storage_path('app').'/storage/CspAccionesReportesAlerta',
+        ],
+        'CspReportesAlerta' => [
+            'driver' => 'local',
+            'root' => storage_path('app').'/storage/CspReportesAlerta',
+        ],
+        'CspReportesHechos' => [
+            'driver' => 'local',
+            'root' => storage_path('app').'/storage/CspReportesHechos',
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app').'/storage',
