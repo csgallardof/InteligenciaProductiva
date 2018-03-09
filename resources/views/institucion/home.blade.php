@@ -9,7 +9,8 @@
 		<div id="content" class="content" width="10%">
 			<!-- begin breadcrumb -->
 			<ol class="breadcrumb pull-right">
-				<li class="active">Inicio</li>
+				
+				<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary">Consejo Sectorial</a>
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
