@@ -8,10 +8,14 @@
 		<!-- begin #content -->
 		<div id="content" class="content" width="10%">
 			<!-- begin breadcrumb -->
+			
+
+			@if($tipo_fuente==3 or $tipo_fuente==4) 
 			<ol class="breadcrumb pull-right">
-				
 				<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary">Consejo Sectorial</a>
+				
 			</ol>
+			@endif
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
 			<div class="brand">

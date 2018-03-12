@@ -151,6 +151,8 @@ class InstitucionController extends Controller
     public function home(Request $request)
     {
         $usuario_id = Auth::user()->id;
+        $tipo_fuente = Auth::user()->tipo_fuente;
+       
 
         $totalDespliegue = Solucion::where('tipo_fuente','=',1)->count();
         $totalConsejo = Solucion::where('tipo_fuente','=',2)->count();
@@ -184,13 +186,15 @@ class InstitucionController extends Controller
                                                     AND actividades.fecha_inicio >= DATE_SUB(CURDATE(), INTERVAL 1 WEEK)
                                                     ORDER BY actividades.fecha_inicio DESC; ");
 
+
         return view('institucion.home')->with([ "solucionesDespliegue"=>$solucionesDespliegue,
                                                 "solucionesCCPT"=>$solucionesCCPT,
                                                 "totalDespliegue"=>$totalDespliegue,
                                                 "totalConsejo"=>$totalConsejo,
                                                 "totalResponsable"=>$totalResponsable,
                                                 "totalCorresponsable"=>$totalCorresponsable,
-                                                "notificaciones"=>$notificaciones     
+                                                "notificaciones"=>$notificaciones,
+                                                "tipo_fuente"=>$tipo_fuente     
                                                  ]);   
         
     }

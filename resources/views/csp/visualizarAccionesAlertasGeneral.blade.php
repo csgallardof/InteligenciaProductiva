@@ -83,9 +83,11 @@
 									<div class="col-md-2"></div>
 									<div class="col-md-12">
 											
-										{{$accionesReporteAlerta->render()}}
 										
+
+                                        {{$accionesReporteAlerta->render()}}
 										
+								
 								<table class="table">
 										
 									<thead>
@@ -102,8 +104,8 @@
 									
 									
 									<tbody>
-										
-											
+										  
+										      	
 											@foreach($accionesReporteAlerta as $accionesReporteAlerta)
 						                        <tr>
 						                         
@@ -134,6 +136,7 @@
 
 								</table>
 								
+                                
 								</div>
 								</div>
 								

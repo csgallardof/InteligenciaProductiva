@@ -1,18 +1,13 @@
 @extends('layouts.cspReportes')
 
-@section('content')
+@section('title','Inicio')
 
-<!-- begin #content -->
+@section('content')
+		
+
+		<!-- begin #content -->
 		<div id="content" class="content" width="10%">
-			<!-- begin breadcrumb -->
-			
-			<!-- end breadcrumb -->
-			<!-- begin page-header -->
-			
-			<!-- end page-header -->
-			
-			<!-- begin row -->
-			<div class="row">
+            <div class="row">
 				<!-- begin col-12 -->
 				<div class="col-md-12 col-sm-12">
 					<div class="widget widget-stats bg-green-darker">
@@ -30,13 +25,18 @@
 				</div>
 				<!-- end col-12 -->
 			</div>
+			<!-- end page-header -->
+			
+			<!-- begin row -->
+			
 			<!-- end row -->
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
 				<div class="col-md-12">
 					
-					<div class="panel panel-inverse" data-sortable-id="index-5">
+					
+					<div class="panel panel-inverse" data-sortable-id="index-1">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
@@ -44,12 +44,12 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 								
 							</div>
-							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Alerta CSP</h4>
+							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Hechos CSP</h4>
 						</div>
 						<div class="panel-body">
 							<div class="height-lg" data-scrollbar="true">
 								<div class="media-body">
-									<div class="col-md-10">
+									<div class="col-md-8">
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									</div>
@@ -197,14 +197,16 @@
 								</div>
 							</div>
 						</div>
-					</div>
+						</div>
+					</div>					
 					
 				</div>
-				<!-- end col-8 -->
 				
 			</div>
 			<!-- end row -->
 		</div>
 		<!-- end #content -->
-
+		
 		@stop
+		
+        
