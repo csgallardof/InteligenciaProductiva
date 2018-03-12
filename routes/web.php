@@ -224,9 +224,25 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      //Visualizar acciones de reportes alertas
      Route::get('/visualizar-acciones-alertas/{id}','CspReportesController@visualizarAccionesAlertas');
 
+     //Visualizar acciones de reportes alertas general
+     Route::get('/visualizar-acciones-alertas-general/{id}','CspReportesController@visualizarAccionesAlertasGeneral');
 
+     // VISUALIZAR REPORTES CSP
      Route::get('/visualizar-reporte-hechos/{id}','CspReportesController@visualizarReporteHecho');
      Route::get('/visualizar-reporte-Alertas/{id}','CspReportesController@visualizarReporteAlerta');
+
+     //EDITAR REPORTES HECHO CSP
+     Route::get('/editar-reporte-hechos/{id}','CspReportesController@vistaEditarReporteHecho');
+     Route::post('/modificar-reporte-hechos/{id}',['uses'=>'CspReportesController@editarReporteHechoCsp','as'=>'modificarReporteHecho']);
+
+     //EDITAR REPORTES ALERTAS CSP
+     Route::get('/editar-reporte-alerta/{id}','CspReportesController@vistaEditarReporteAlerta');
+     Route::post('/modificar-reporte-alerta/{id}',['uses'=>'CspReportesController@editarReporteAlertaCsp','as'=>'modificarReporteAlerta']); 
+     
+     //EDITAR REPORTES ACCIONES ALERTAS CSP
+     Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');
+     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'modificarAccionesAlerta']);      
+
 
      //DESCARGAR ARCHIVO HECHO CSP
      Route::get('storageHechoCsp/{archivo}', function ($archivo) {

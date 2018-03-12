@@ -1,6 +1,9 @@
 @extends('layouts.cspReportes')
 
+@section('title','Inicio')
+
 @section('content')
+		
 
 <div id="content" class="content" width="10%">
             <div class="row">
@@ -42,8 +45,9 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">Reporte Alerta<br> </h4>
+                            <h4 class="panel-title">Acciones Alerta del Reporte {{$cspReportesAlerta->tema}}<br> </h4>
                         </div>
+                        
                         <div class="panel-body">  
                         <div id="content" class="content">
             <!-- begin breadcrumb -->
@@ -55,81 +59,96 @@
             <!-- end page-header -->
             
             <!-- begin invoice -->
-            <div class="invoice">
-                <div class="row">
-                    <div class="col-md-1"> </div>
-                    <div class="col-md-10">
-                <a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
-                <div class="invoice-company"><strong>Tema: </strong>
-                    {{$cspReportesAlerta->tema}}
-                   
-                </div>
-                <div class="invoice-header">
-                    <div class="invoice-from">
-                        
-                        <address class="m-t-5 m-b-5">
-                            <strong>Fecha Reporte</strong><br />
-                            {{$cspReportesAlerta->fecha_atencion}}<br />
-                             <strong>Fuente</strong><br />
-                            {{$cspReportesAlerta->fuente}}<br />
-                        </address>
-                    </div>
-                    
-                    
-                </div>
-                <div class="invoice-content">
-                   
-                    <div class="media-body">
 
-                        <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {{$cspReportesAlerta->descripcion}}</p>
-                        
-                    </div>
-                    <hr></hr>
-                    <div class="media-body">
-                        <h6 class="media-heading"><strong>Riesgo Principal</strong></h6>
-                        <p align="justify">{{$cspReportesAlerta->riesgo_principal}}</p>
-                        
-                       
-                    </div>
-                     <hr></hr>
-                    <div class="media-body">
-                        <h6 class="media-heading"><strong>Anexo</strong></h6>
-                        @if(($cspReportesAlerta->anexo)!="000Ninguno")
-                        <a target="_blank" href="{{ route('descargarArchivoAlertaCsp',$cspReportesAlerta-> anexo) }} ">
-                                                            <?php
-                                                                $pos = strpos($cspReportesAlerta-> anexo, "_-_");
-                                                                $anexo = substr($cspReportesAlerta-> anexo, $pos+3, strlen($cspReportesAlerta-> anexo)); // devuelve "d"
-                                                            ?>
-                                                            
-                                                            <i class="fa fa-2x fa-download"></i>
-                                                        </a>
-                        @endif
-                        
-                       
-                    </div>
+            <div class="row">
+				<!-- begin col-8 -->
+				<div class="col-md-12">
+					<div class="tab-content" data-sortable-id="index-3">
+						
 
-                    
-                </div>
-                <div class="invoice-note">
-                    * Notas
-                </div>
-                <div class="invoice-footer text-muted">
-                    <p class="text-center m-b-5">
-                       
-                    </p>
-                    <p class="text-center">
-                        <span class="m-r-10"><i class="fa fa-globe"></i> </span>
-                        <span class="m-r-10"><i class="fa fa-phone"></i></span>
-                        <span class="m-r-10"><i class="fa fa-envelope"></i></span>
-                    </p>
-                </div>
-                
-                </div>
+							
+						
+						
+						
+						<!--REPORTES DE ALERTAS-->
+						<div class="tab-pane fade active in" id="hechos">
+							<div class="height-lg" data-scrollbar="true">
+								<div class="col-md-12">
+								<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
+								</div>
 
-                </div>
+						<hr>
+															
+								<div class="row">
+									<div class="col-md-2"></div>
+									<div class="col-md-12">
+											
+										{{$accionesReporteAlerta->render()}}
+										
+										
+								<table class="table">
+										
+									<thead>
+										<tr>
+											
+											<th>Fecha Accion</th>
+											<th>Fecha Registro</th>
+											<th>Acciones</th>
+											<th>Anexo</th>
+                                            
+											
+										</tr>
+									</thead>
+									
+									
+									<tbody>
+										
+											
+											@foreach($accionesReporteAlerta as $accionesReporteAlerta)
+						                        <tr>
+						                         
+						                            <td class="text-justify">{{ $accionesReporteAlerta->fecha }}</td>
+						                            <td class="text-justify">{{ $accionesReporteAlerta->created_at }}</td>
+						                            <td class="text-justify">{{ $accionesReporteAlerta->acciones }}</td>
+													<td class="text-justify">
+                                                    @if(($accionesReporteAlerta->anexo)!="000Ninguno")
+														<a target="_blank" href="{{ route('descargarAccionAlertaCsp',$accionesReporteAlerta-> anexo) }} ">
+															<?php
+																$pos = strpos($accionesReporteAlerta-> anexo, "_-_");
+																$anexo = substr($accionesReporteAlerta-> anexo, $pos+3, strlen($accionesReporteAlerta-> anexo)); // devuelve "d"
+															?>
 
-            </div>
+															<i class="fa fa-2x fa-download"></i>
+
+														</a>
+                                                        @endif
+
+						                            </td>
+                                                    
+						                            				                            
+						                        </tr>
+
+						                    		@endforeach		
+											
+									</tbody>
+
+								</table>
+								
+								</div>
+								</div>
+								
+							</div>
+						</div>
+					
+
+						
+					</div>					
+					
+				</div>
+				
+					
+				</div>
+				
             <!-- end invoice -->
         </div> 
                         </div>

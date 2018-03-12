@@ -81,7 +81,7 @@
 											
 											<th>Institucion</th>
 											<th>Anexo</th>
-											<th></th>
+											<th>Reporte Hecho</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -97,8 +97,8 @@
 						                          
 						                          <td class="text-justify">{{ $reportesHechos->Institucion}}</td>
 						                          <td class="text-justify">
-						                     		 
-						                          <a target="_blank" href="{{ route('descargarArchivoHechosCsp',$reportesHechos-> anexo) }} ">
+						                     		 @if(($reportesHechos->anexo)!="000Ninguno")
+														<a target="_blank" href="{{ route('descargarArchivoHechosCsp',$reportesHechos-> anexo) }} ">
 															<?php
 																$pos = strpos($reportesHechos-> anexo, "_-_");
 																$anexo = substr($reportesHechos-> anexo, $pos+3, strlen($reportesHechos-> anexo)); // devuelve "d"
@@ -106,11 +106,16 @@
 
 															<i class="fa fa-2x fa-download"></i>
 														</a>
+						                     		 @endif
+						                          
 
 						                      		</td>
 						                      		<td>
 						                      			<a href= "/institucion/visualizar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
+													</a>
+													<a href= "/institucion/editar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
+														<i class="fa fa-2x fa-edit"></i>
 													</a>
 						                      		</td>
 						                            				                            
@@ -167,6 +172,7 @@
 						                             <td class="text-justify">{{ $reportesAlerta->EstadoReporte }}</td>
 						                             <td class="text-justify">{{ $reportesAlerta->Institucion }}</td>
 						                            <td class="text-justify">
+						                            	@if(($reportesAlerta->anexo)!="000Ninguno")
 														<a target="_blank" href="{{ route('descargarArchivoAlertaCsp',$reportesAlerta-> anexo) }} ">
 															<?php
 																$pos = strpos($reportesAlerta-> anexo, "_-_");
@@ -175,6 +181,7 @@
 
 															<i class="fa fa-2x fa-download"></i>
 														</a>
+														@endif
 
 						                            </td>
 						                            <td>
@@ -197,7 +204,9 @@
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
 						                      		
-
+														<a href= "/institucion/editar-reporte-alerta/{{$reportesAlerta->id}}"  title="Ver más"  >
+														<i class="fa fa-2x fa-edit"></i>
+													</a>
 						                            </td>
 						                            				                            
 						                        </tr>

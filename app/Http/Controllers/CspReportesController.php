@@ -178,6 +178,17 @@ class CspReportesController extends Controller
         //dd($accionesReporteAlerta);
         return view('csp.visualizarAccionesAlertas',compact('cspReportesAlerta'),compact('accionesReporteAlerta'));    
     }
+
+    public function visualizarAccionesAlertasGeneral($id){
+        $cspReportesAlerta = CspReportesAlerta::find($id);
+        $accionesReporteAlerta =DB::table('csp_acciones_alertas')
+        ->join('csp_reportes_alertas','csp_reportes_alertas.id','=','csp_acciones_alertas.reporte_alerta_id')
+        ->where('csp_acciones_alertas.reporte_alerta_id', '=',$id)
+        ->select('csp_acciones_alertas.anexo','csp_acciones_alertas.fecha','csp_acciones_alertas.acciones','csp_acciones_alertas.id','csp_acciones_alertas.created_at')
+        ->paginate(10);
+        //dd($accionesReporteAlerta);
+        return view('csp.visualizarAccionesAlertasGeneral',compact('cspReportesAlerta'),compact('accionesReporteAlerta'));    
+    }
     public function visualizarReporteHecho($id){
         $cspReportesHecho = CspReportesHecho::find($id);
         //dd($ReporteHechoVisualizar);
@@ -189,6 +200,112 @@ class CspReportesController extends Controller
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteAlertaCsp',compact('cspReportesAlerta'));    
     }
+
+    //EDITAR REPORTES HECHO CSP
+    public function vistaEditarReporteHecho($id){
+         $cspReportesHecho = CspReportesHecho::find($id);
+          $usuario_institucion_id = Auth::user()->institucion_id;
+        return view('csp.editarReportesCsp.editarReporteHechoCsp',compact('cspReportesHecho'),['usuario_institucion_id'=>$usuario_institucion_id]);
+    }
+    public function editarReporteHechoCsp(Request $request, $id){
+
+        $fecha_reporte = $request->input('fecha_reporte');
+        $institucion_id = $request->input('institucion_id');
+        $tema = $request->input('tema');
+        $descripcion = $request->input('descripcion');
+        $fuente = $request->input('fuente');
+        $porcentaje_avance = $request->input('porcentaje_avance');
+        $lineas_discursivas = $request->input('lineas_discursivas');
+        if($request->hasFile('anexo')){
+        $anexo = $request->file('anexo');   
+        $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
+        Storage::disk('CspReportesHechos')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
+        }else
+        $nombreArchivo="000Ninguno";
+        $cspReportesHecho = CspReportesHecho::find($id);
+
+        $cspReportesHecho-> fecha_reporte = $fecha_reporte;
+        $cspReportesHecho-> institucion_id = $institucion_id;
+        $cspReportesHecho-> tema = $tema;
+        $cspReportesHecho-> descripcion = $descripcion;
+        $cspReportesHecho-> fuente = $fuente;
+        $cspReportesHecho-> porcentaje_avance = $porcentaje_avance;
+        $cspReportesHecho-> lineas_discursivas = $lineas_discursivas;
+        $cspReportesHecho-> anexo = $nombreArchivo;
+        $cspReportesHecho-> save();
+        return redirect('/institucion/consejo-sectorial-produccion');
+
+    }
+
+    //EDITAR REPORTES ALERTA CSP
+    public function vistaEditarReporteAlerta($id){
+        $usuario_institucion_id = Auth::user()->institucion_id;
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+         $estadoReporte = CspReporteEstado::all();
+         
+        return view('csp.editarReportesCsp.editarReporteAlertaCsp',['usuario_institucion_id'=>$usuario_institucion_id],['estadoReporte'=>$estadoReporte])->with(["cspReportesAlerta"=>$cspReportesAlerta]); 
+    }
+
+    public function editarReporteAlertaCsp(Request $request, $id){
+
+        $estado_reporte_id = $request->input('estado_reporte_id');
+        $institucion_id = $request->input('institucion_id');
+        $fecha_atencion = $request->input('fecha_atencion');
+        $tema = $request->input('tema');
+        $descripcion = $request->input('descripcion');
+        $riesgo_principal = $request->input('riesgo_principal');
+        $fuente = $request->input('fuente');
+        if($request->hasFile('anexo')){
+        $anexo = $request->file('anexo');   
+        $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
+        Storage::disk('CspReportesAlerta')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
+        }else
+        $nombreArchivo="000Ninguno";
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+
+        $cspReportesAlerta-> estado_reporte_id = $estado_reporte_id;
+        $cspReportesAlerta-> institucion_id = $institucion_id;
+        $cspReportesAlerta-> fecha_atencion = $fecha_atencion;
+        $cspReportesAlerta-> tema = $tema;
+        $cspReportesAlerta-> descripcion = $descripcion;
+        $cspReportesAlerta-> riesgo_principal = $riesgo_principal;
+        $cspReportesAlerta-> fuente = $fuente;
+        $cspReportesAlerta-> anexo = $nombreArchivo;
+        $cspReportesAlerta-> save();
+        return redirect('/institucion/consejo-sectorial-produccion');
+
+    }
+
+     //EDITAR ACCIONES ALERTAS CSP
+    public function vistaEditaraccionesAlerta($id){
+         $CspAccionesAlerta = CspAccionesAlerta::find($id);
+         
+        return view('csp.editarReportesCsp.editarAccionesAlertasCsp',compact('CspAccionesAlerta')); 
+    }
+
+    public function editarAccionesAlertaCsp(Request $request, $id){
+
+        $reporte_alerta_id = $request->input('reporte_alerta_id');
+        $acciones = $request->input('acciones');
+        $fecha = $request->input('fecha');
+
+        if($request->hasFile('anexo')){
+        $anexo = $request->file('anexo');   
+        $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
+        Storage::disk('CspReportesAlerta')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
+        }else
+        $nombreArchivo="000Ninguno";
+        $CspAccionesAlerta = CspAccionesAlerta::find($id);
+
+        $CspAccionesAlerta-> reporte_alerta_id = $reporte_alerta_id;
+        $CspAccionesAlerta-> acciones = $acciones;
+        $CspAccionesAlerta-> fecha = $fecha;
+        $CspAccionesAlerta-> anexo = $nombreArchivo;
+        $CspAccionesAlerta-> save();
+        return redirect('/institucion/consejo-sectorial-produccion');
+
+    }
+
 
 
 }

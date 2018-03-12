@@ -100,6 +100,7 @@
                      <hr></hr>
                     <div class="media-body">
                         <h6 class="media-heading"><strong>Anexo</strong></h6>
+                        @if(($cspReportesHecho->anexo)!="000Ninguno")
                         <a  href="{{ route('descargarArchivoHechosCsp',$cspReportesHecho-> anexo) }} ">
                                                             <?php
                                                                 $pos = strpos($cspReportesHecho-> anexo, "_-_");
@@ -108,6 +109,7 @@
 
                                                             <i class="fa fa-2x fa-download"></i>
                                                         </a>
+                        @endif
                         
                        
                     </div>

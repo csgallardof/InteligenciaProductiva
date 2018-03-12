@@ -95,6 +95,7 @@
 											<th>Fecha Registro</th>
 											<th>Acciones</th>
 											<th>Anexo</th>
+                                            <th></th>
 											
 										</tr>
 									</thead>
@@ -110,6 +111,7 @@
 						                            <td class="text-justify">{{ $accionesReporteAlerta->created_at }}</td>
 						                            <td class="text-justify">{{ $accionesReporteAlerta->acciones }}</td>
 													<td class="text-justify">
+                                                    @if(($accionesReporteAlerta->anexo)!="000Ninguno")
 														<a target="_blank" href="{{ route('descargarAccionAlertaCsp',$accionesReporteAlerta-> anexo) }} ">
 															<?php
 																$pos = strpos($accionesReporteAlerta-> anexo, "_-_");
@@ -119,12 +121,15 @@
 															<i class="fa fa-2x fa-download"></i>
 
 														</a>
-
-
-
-
+                                                        @endif
 
 						                            </td>
+                                                    <td>
+                                                        
+                                                        <a href= "/institucion/editar-acciones-alerta/{{$accionesReporteAlerta->id}}"  title="Ver más"  >
+                                                        <i class="fa fa-2x fa-edit"></i>
+                                                    </a>
+                                                    </td>
 						                            				                            
 						                        </tr>
 
