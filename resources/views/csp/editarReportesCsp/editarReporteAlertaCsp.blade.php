@@ -73,7 +73,7 @@
 									 				<div class="col-md-3"></div>
 									  	<div class="col-md-3">
 									 					<label for="fecha_atencion">Fecha de Atencion de Reporte</label>	
-									 					<input id="fecha_atencion" disabled required type="text" name="fecha_atencion" value="{{$cspReportesAlerta->fecha_atencion}}">
+									 					<input id="fecha_atencion" readonly="readonly" required type="text" name="fecha_atencion" value="{{$cspReportesAlerta->fecha_atencion}}">
 									 				
 									 				</div>
 									 	<div class="col-md-3">

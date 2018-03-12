@@ -62,7 +62,7 @@
 									 				<div class="col-md-3"></div>
 									 				<div class="col-md-3">
 									 					<label for="fecha">Fecha de Reporte</label>	
-									 					<input id="fecha" type="text" style="width:115px;height:25px" name="fecha" value="{{$CspAccionesAlerta->fecha}}">
+									 					<input id="fecha" readonly="readonly" type="text" style="width:115px;height:25px" name="fecha" value="{{$CspAccionesAlerta->fecha}}">
 									 				</div>
 									 				
 									 			</div>

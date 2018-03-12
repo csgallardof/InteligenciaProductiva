@@ -65,7 +65,7 @@
                                                     <div class="col-md-3"></div>
                                                     <div class="col-md-3">
                                                         <label for="fecha_reporte">Fecha de Reporte</label> 
-                                                        <input id="fecha_reporte" disabled type="text" name="fecha_reporte" value="{{$cspReportesHecho->fecha_reporte}}">
+                                                        <input id="fecha_reporte" readonly="readonly" type="text" name="fecha_reporte" value="{{$cspReportesHecho->fecha_reporte}}">
                                                     </div>
                                                     <div class="col-md-3">
                                                          <label for="institucion_id"></label>   
