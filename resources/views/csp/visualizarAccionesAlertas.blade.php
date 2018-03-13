@@ -76,8 +76,8 @@
 								<div class="col-md-12">
 								<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 								</div>
-
-						<hr>
+                                <br>
+					           	<hr>
 															
 								<div class="row">
 									<div class="col-md-2"></div>

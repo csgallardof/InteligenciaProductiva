@@ -53,8 +53,9 @@
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									</div>
-									<hr>
+									
 									<br>
+									<hr>
 
 									<form  method="POST" action="{{ route('guardarReporteHechoCsp') }}" enctype="multipart/form-data">
 										{{ csrf_field() }}

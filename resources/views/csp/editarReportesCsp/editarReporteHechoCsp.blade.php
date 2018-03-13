@@ -34,7 +34,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-12">
+                <div class="col-md-8">
                     
                     <div class="panel panel-inverse" data-sortable-id="index-5">
                         <div class="panel-heading">
@@ -44,7 +44,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 
                             </div>
-                            <h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Hechos CSP</h4>
+                            <h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Editar Reporte Hechos CSP</h4>
                         </div>
                         <div class="panel-body">
                             <div class="height-lg" data-scrollbar="true">
@@ -53,8 +53,9 @@
                                         
                                     <a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
                                     </div>
-                                    <hr>
+                                    
                                     <br>
+                                    <hr>
 
                                     <form  method="POST" action="/institucion/modificar-reporte-hechos/{{$cspReportesHecho->id}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
@@ -183,6 +184,38 @@
                 <!-- end col-8 -->
                 
             </div>
+            <div class="col-md-4" >
+                    <div class="panel panel-inverse" data-sortable-id="index-6">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
+                        </div>
+                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <div class="panel-body">
+                            
+                        </div>
+                    </div>
+                    <!-- <div class="panel panel-inverse" data-sortable-id="index-7">
+                        <div class="panel-heading">
+                            <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div>
+                            <h4 class="panel-title">&Uacute;ltimas actividades</h4>
+                        </div>
+                        <div class="panel-body">
+                            
+                        </div>
+                    </div> -->
+                    
+                </div>
             <!-- end row -->
         </div>
         <!-- end #content -->
