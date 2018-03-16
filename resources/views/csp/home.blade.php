@@ -119,9 +119,11 @@
 						                      			<a href= "/institucion/visualizar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
+													@if($reportesHechos->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
 													<a href= "/institucion/editar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-edit"></i>
 													</a>
+													@endif
 						                      		</td>
 						                            				                            
 						                        </tr>
@@ -192,11 +194,13 @@
 
 						                            </td>
 						                            <td>
-
+													@if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
 													<a href= "/institucion/acciones-alertas/{{$reportesAlerta->id}}"  >
 														<i class="fa fa-2x fa-plus-circle"></i>
 													</a>
-													 &nbsp; &nbsp; 
+													&nbsp; &nbsp;
+													@endif
+													  
 													
 													
 													<a href= "/institucion/visualizar-acciones-alertas/{{$reportesAlerta->id}}"  >
@@ -210,10 +214,11 @@
 						                      			<a href= "/institucion/visualizar-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
-						                      		
+						                      			@if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
 														<a href= "/institucion/editar-reporte-alerta/{{$reportesAlerta->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-edit"></i>
 													</a>
+													@endif
 						                            </td>
 						                            				                            
 						                        </tr>

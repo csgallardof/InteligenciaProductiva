@@ -12,7 +12,7 @@
                     <div class="widget widget-stats bg-green-darker">
                         <div class="stats-icon"><i class="fa fa-desktop"></i></div>
                         <div class="stats-info">
-                            <h4 class="modal-title">Reportes Consejo Sectorial de la Producción</h4>
+                            <h4 class="modal-title">Reportes Consejo Sectorial de la Producción </h4>
                             <p>
                                 
                             </p>    
@@ -127,10 +127,11 @@
 
 						                            </td>
                                                     <td>
-                                                        
+                                                        @if($accionesReporteAlerta->created_at>=$PeriodoSemanaCspReporte->fecha_inicio)
                                                         <a href= "/institucion/editar-acciones-alerta/{{$accionesReporteAlerta->id}}"  title="Ver más"  >
                                                         <i class="fa fa-2x fa-edit"></i>
                                                     </a>
+                                                    @endif
                                                     </td>
 						                            				                            
 						                        </tr>

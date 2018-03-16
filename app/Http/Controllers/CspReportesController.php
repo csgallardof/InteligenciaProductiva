@@ -273,6 +273,33 @@ class CspReportesController extends Controller
     }
     public function visualizarAccionesAlertas($id){
         $cspReportesAlerta = CspReportesAlerta::find($id);
+        $hora = date("h:i");
+        $semana_reporte=date("Y/m/d");
+        $fecha_creacion_Reporte=$semana_reporte." ".$hora;
+        function check_in_range($start_date, $end_date, $evaluame) {
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($evaluame);
+        return (($user_ts >= $start_ts) && ($user_ts <= $end_ts));
+        }
+        $periodoCorrecto=False;
+        $i=1;
+        
+        while ($periodoCorrecto==False) {
+        $PeriodoCspReporte = CspPeriodoReporte::find($i);
+        $date_start = $PeriodoCspReporte->fecha_inicio;
+        $date_end = $PeriodoCspReporte->fecha_final;
+        $today = $fecha_creacion_Reporte;
+        if( check_in_range($date_start, $date_end, $today) ){
+            $periodo_id=$PeriodoCspReporte->id;
+            $periodoCorrecto=True;
+            } else {
+            $periodoCorrecto==False;
+            }
+            $i++;  
+        
+        }
+        $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
         $accionesReporteAlerta =DB::table('csp_acciones_alertas')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_acciones_alertas.periodo_id')
         ->join('csp_reportes_alertas','csp_reportes_alertas.id','=','csp_acciones_alertas.reporte_alerta_id')
@@ -280,7 +307,7 @@ class CspReportesController extends Controller
         ->select('csp_acciones_alertas.anexo','csp_acciones_alertas.fecha','csp_acciones_alertas.acciones','csp_acciones_alertas.id','csp_acciones_alertas.created_at','csp_periodo_reportes.nombre as Periodo')
         ->paginate(10);
         //dd($accionesReporteAlerta);
-        return view('csp.visualizarAccionesAlertas',compact('cspReportesAlerta'),compact('accionesReporteAlerta'));    
+        return view('csp.visualizarAccionesAlertas',compact('cspReportesAlerta'),compact('accionesReporteAlerta'))->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);    
     }
     public function visualizarAccionesAlertasGeneral($id){
         $cspReportesAlerta = CspReportesAlerta::find($id);
@@ -294,6 +321,7 @@ class CspReportesController extends Controller
         return view('csp.visualizarAccionesAlertasGeneral',compact('cspReportesAlerta'),compact('accionesReporteAlerta'));    
     }
     public function visualizarReporteHecho($id){
+
         $cspReportesHecho = CspReportesHecho::find($id);
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteHechoCsp',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
