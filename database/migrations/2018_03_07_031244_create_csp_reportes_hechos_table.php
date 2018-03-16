@@ -17,13 +17,14 @@ class CreateCspReportesHechosTable extends Migration
             $table->increments('id');
             //Relacion con la tabla institucion
             $table->integer('institucion_id')->index();
+            $table->integer('periodo_id')->index();
             $table->string('tema');
             $table->text('descripcion');
             $table->string('fuente');
             $table->datetime('fecha_reporte');
             $table->string('lugar');
             $table->integer('porcentaje_avance');
-            $table->text('lineas_discursivas');
+            $table->text('lineas_discursivas')->nullable();
             $table->string('anexo');
             $table->timestamps();
         });

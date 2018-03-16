@@ -93,6 +93,7 @@
 											
 											<th>Fecha Accion</th>
 											<th>Fecha Registro</th>
+                                            <th>Periodo</th>
 											<th>Acciones</th>
 											<th>Anexo</th>
                                             <th></th>
@@ -109,6 +110,7 @@
 						                         
 						                            <td class="text-justify">{{ $accionesReporteAlerta->fecha }}</td>
 						                            <td class="text-justify">{{ $accionesReporteAlerta->created_at }}</td>
+                                                    <td class="text-justify">{{ $accionesReporteAlerta->Periodo }}</td>
 						                            <td class="text-justify">{{ $accionesReporteAlerta->acciones }}</td>
 													<td class="text-justify">
                                                     @if(($accionesReporteAlerta->anexo)!="000Ninguno")

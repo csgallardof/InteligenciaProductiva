@@ -87,6 +87,13 @@
                     </div>
                     <hr></hr>
                     <div class="media-body">
+
+                        <h6 class="media-heading"><strong>Solucion Propuesta</strong></h6>
+                       <p> {{$cspReportesAlerta->solucion_propuesta}}</p>
+                        
+                    </div>
+                    <hr></hr>
+                    <div class="media-body">
                         <h6 class="media-heading"><strong>Riesgo Principal</strong></h6>
                         <p align="justify">{{$cspReportesAlerta->riesgo_principal}}</p>
                         

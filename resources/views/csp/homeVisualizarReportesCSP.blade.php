@@ -12,11 +12,11 @@
 				<div class="col-md-12 col-sm-12">
 					<div class="widget widget-stats bg-green-darker">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
-						<div class="stats-info">
-							<h4 class="modal-title">Reportes Consejo Sectorial de la Producción</h4>
-							<p>
+						<div class="stats-info"> 
+							<h4 class="modal-title"> <strong> Reportes Consejo Sectorial de la Producción </strong> </h4>
+							<h4 class="modal-title" >{{$PeriodoSemanaCspReporte->nombre}}</h4>
+							<h4 class="modal-title">({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</h4>
 								
-							</p>	
 						</div>
 						<div class="stats-link">
 							<a href="javascript:;">&nbsp;</a>
@@ -73,7 +73,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha  Registro</th>
 											<th>Tema</th>
-											
+											<th>Periodo</th>
 											<th>Fuente</th>
 											
 											<th>Institucion</th>
@@ -89,6 +89,7 @@
 						                          <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
 
 						                          <td class="text-justify">{{$reportesHechos->tema}}</td>
+						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
 						                    
 						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
 						                          
@@ -142,6 +143,7 @@
 										<tr>
 											<th>Fecha de Atencion</th>
 											<th>Fecha Registro</th>
+											<th>Periodo</th>
 											<th>Tema</th>
 											
 											<th>Fuente</th>
@@ -159,6 +161,7 @@
 						                        <tr>
 						                            <td class="text-justify">{{ $reportesAlerta->fecha_atencion }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->FechaRegistro }}</td>
+						                            <td class="text-justify">{{ $reportesAlerta->Periodo }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->tema }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
 						                            
@@ -221,7 +224,7 @@
 							</div>
 							<h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
 						</div>
-						<h6 align="center" style="color:green"> No existe notificaciones</h6>
+						<h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
 						<div class="panel-body">
 							
 						</div>

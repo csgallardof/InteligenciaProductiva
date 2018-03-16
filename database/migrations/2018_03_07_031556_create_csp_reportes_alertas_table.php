@@ -17,11 +17,13 @@ class CreateCspReportesAlertasTable extends Migration
             $table->increments('id');
             //Definicion de relacion con la tabla tipo_reporte
             $table->integer('estado_reporte_id')->index();
+            $table->integer('periodo_id')->index();
             //Definicion de relacion con la tabla institucion
             $table->integer('institucion_id')->index();
             $table->datetime('fecha_atencion');
             $table->string('tema');
             $table->text('descripcion');
+            $table->text('solucion_propuesta');
             $table->text('riesgo_principal');
             $table->string('fuente');
             $table->string('anexo');

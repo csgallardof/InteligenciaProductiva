@@ -15,4 +15,7 @@ class CspReportesAlerta extends Model
     public function cspAccionesAlerta(){
     	return $this->hasMany('App\CspAccionesAlerta');
     }
+    public function cspReportePeriodoAlerta(){
+    return $this->belongsTo('App\CspPeriodoReporte');
+    }
 }

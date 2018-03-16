@@ -9,5 +9,11 @@ class CspReportesHecho extends Model
     public function cspReporteInstitucion(){
     return $this->belongsTo('App\Institucion');
     }
+    public function cspReportePeriodoHecho(){
+    return $this->belongsTo('App\CspPeriodoReporte');
+    }
+
+    
+
 
 }

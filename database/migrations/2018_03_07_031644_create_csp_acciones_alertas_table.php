@@ -17,6 +17,7 @@ class CreateCspAccionesAlertasTable extends Migration
             $table->increments('id');
             //Definicion de relacion con la tabla tipo_reporte
             $table->integer('reporte_alerta_id')->index();
+            $table->integer('periodo_id')->index();
             $table->text('acciones');
             $table->datetime('fecha');
             $table->string('anexo');

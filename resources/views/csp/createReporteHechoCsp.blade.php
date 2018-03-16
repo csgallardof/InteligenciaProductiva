@@ -66,11 +66,14 @@
 									 				<div class="col-md-3"></div>
 									 				<div class="col-md-3">
 									 					<label for="fecha_reporte">Fecha de Reporte</label>	
-									 					<input id="fecha_reporte"  type="date" name="fecha_reporte" value="{{ date('Y-m-d') }}">
+									 					<input id="fecha_reporte"  type="date" name="fecha_reporte" value="{{ date('Y-m-d') }}" >
+
+
 									 				</div>
 									 				<div class="col-md-3">
 									 					 <label for="institucion_id"></label>	
-					                                	<input id="institucion_id"  type="hidden" name="institucion_id" value="{{$usuario_institucion_id}}">	
+					                                	<input id="institucion_id"  type="hidden" name="institucion_id" value="{{$usuario_institucion_id}}">
+					                                		
 									 				</div>
 									 				
 									 			</div>

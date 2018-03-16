@@ -13,7 +13,10 @@
 					<div class="widget widget-stats bg-green-darker">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
-							<h4 class="modal-title">Reportes Consejo Sectorial de la Producción</h4>
+							<h4 class="modal-title"> <strong>Reportes Consejo Sectorial de la Producción</strong> </h4>
+							<h4 class="modal-title">{{$PeriodoSemanaCspReporte->nombre}}</h4>
+							<h4 class="modal-title">({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</h4>
+
 							<p>
 								
 							</p>	
@@ -33,19 +36,19 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-9">
 					
 					
 					<ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
-						
-						<li class="active">
+							
+						<li class="nav-link active">
 							<a href="#hechos" data-toggle="tab">
 								<i class="fa fa-sticky-note-o m-r-5"></i>
 								<span class="hidden-xs">Hechos</span>
 								
 							</a>
 						</li>
-						<li class="">
+						<li class="nav-link ">
 							<a href="#alerta" data-toggle="tab">
 								<i class="fa fa-sticky-note m-r-5"></i>
 								<span class="hidden-xs">Alertas</span>
@@ -76,7 +79,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha Registro</th>
 											<th>Tema</th>
-											
+											<th>Periodo</th>
 											<th>Fuente</th>
 											
 											<th>Institucion</th>
@@ -92,6 +95,8 @@
 						                          <td class="text-justify">{{$reportesHechos->fecha_reporte}}</td>
 						                          <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
 						                          <td class="text-justify">{{$reportesHechos->tema}}</td>
+						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
+						                          
 						                          
 						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
 						                          
@@ -150,6 +155,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha Registro</th>
 											<th>Tema</th>
+											<th>Periodo</th>
 											<th>Fuente</th>
 											
 											<th>Estado</th>
@@ -167,6 +173,7 @@
 						                            <td class="text-justify">{{ $reportesAlerta->fecha_atencion }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->FechaRegistro }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->tema }}</td>
+						                            <td class="text-justify">{{ $reportesAlerta->Periodo }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
 						                            
 						                             <td class="text-justify">{{ $reportesAlerta->EstadoReporte }}</td>
@@ -227,7 +234,7 @@
 				</div>
 				<!-- end col-8 -->
 				<!-- begin col-4 -->
-				<div class="col-md-4" >
+				<div class="col-md-3" >
 					<div class="panel panel-inverse" data-sortable-id="index-6">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
@@ -238,7 +245,8 @@
 							</div>
 							<h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
 						</div>
-						<h6 align="center" style="color:green"> No existe notificaciones</h6>
+
+						<h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
 						<div class="panel-body">
 							
 						</div>

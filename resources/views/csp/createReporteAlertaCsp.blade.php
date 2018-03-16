@@ -127,7 +127,29 @@
 									 			</div>
 									    	
 									  	</div>
-										
+										<div class="from-group">
+											<div class="row"></div>
+											
+										</div>
+
+									  	<div class="form-group ">
+									 		
+									 		<div class="row">
+													
+													<div class="col-md-3"></div>
+									 				<div class="col-md-4"> 
+									 					
+									 				<label for="solucion_propuesta" class=>Solucion Propuesta</label>
+									 				
+									 				</div>
+									 			
+									 		</div>
+									 			<div class="col-md-3"></div>
+									 			<div class="col-md-6">
+									 			<textarea required class="form-control" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			</div>
+									    	
+									  	</div>
 												<div class="from-group">
 											<div class="row"></div>
 											
