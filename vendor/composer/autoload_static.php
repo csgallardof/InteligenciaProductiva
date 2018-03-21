@@ -92,7 +92,6 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
             'Dotenv\\' => 7,
             'Dompdf\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
-            'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
@@ -256,10 +255,6 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'Doctrine\\Common\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
-        ),
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
@@ -360,6 +355,10 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
+            'Doctrine\\Common\\Inflector\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
@@ -450,6 +449,7 @@ class ComposerStaticInit52d8e3ef1ac43b4999b23ad33ea12686
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'CreateActividadesTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141216_create_actividades_table.php',
         'CreateActorSolucionTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_24_141139_create_actor__solucion_table.php',
