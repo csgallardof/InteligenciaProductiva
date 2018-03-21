@@ -63,8 +63,22 @@
 
 								<div class="row">
 									<div class="col-md-12">
+									<!-- <form class="navbar-form navbar-left pull-right"> 
+											
+									-->
 									
-									
+							<form class="navbar-form navbar-left pull-right">
+								
+					        <div class="form-group">
+					        <input type="text" class="form-control" placeholder="Search">
+					        </div>
+					        <button type="submit" class="btn btn-default">Submit</button>
+					        	</form>
+					        	<!-- </form> 
+										
+					        	-->
+					        	
+					      		
 								<table class="table" class="table nowrap" width="100%">
 
 									<thead>

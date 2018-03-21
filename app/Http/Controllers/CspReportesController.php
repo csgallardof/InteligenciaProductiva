@@ -365,11 +365,39 @@ class CspReportesController extends Controller
     }
     //EDITAR REPORTES ALERTA CSP
     public function vistaEditarReporteAlerta($id){
+        $hora = date("h:i");
+        $semana_reporte=date("Y/m/d");
+        $fecha_creacion_Reporte=$semana_reporte." ".$hora;
+        function check_in_range($start_date, $end_date, $evaluame) {
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($evaluame);
+        return (($user_ts >= $start_ts) && ($user_ts <= $end_ts));
+        }
+        $periodoCorrecto=False;
+        $i=1;
+        
+        while ($periodoCorrecto==False) {
+        $PeriodoCspReporte = CspPeriodoReporte::find($i);
+        $date_start = $PeriodoCspReporte->fecha_inicio;
+        $date_end = $PeriodoCspReporte->fecha_final;
+        $today = $fecha_creacion_Reporte;
+        if( check_in_range($date_start, $date_end, $today) ){
+            $periodo_id=$PeriodoCspReporte->id;
+            $periodoCorrecto=True;
+            } else {
+            $periodoCorrecto==False;
+            }
+            $i++;  
+        
+        }
+        $CspPeriodoReporte = CspPeriodoReporte::find($periodo_id);
         $usuario_institucion_id = Auth::user()->institucion_id;
         $cspReportesAlerta = cspReportesAlerta::find($id);
          $estadoReporte = CspReporteEstado::all();
          
-        return view('csp.editarReportesCsp.editarReporteAlertaCsp',['usuario_institucion_id'=>$usuario_institucion_id],['estadoReporte'=>$estadoReporte])->with(["cspReportesAlerta"=>$cspReportesAlerta]); 
+        return view('csp.editarReportesCsp.editarReporteAlertaCsp',['usuario_institucion_id'=>$usuario_institucion_id],['estadoReporte'=>$estadoReporte],['CspPeriodoReporte'=>$CspPeriodoReporte])->with(["cspReportesAlerta"=>$cspReportesAlerta,
+                                       "CspPeriodoReporte"=>$CspPeriodoReporte]); 
     }
     public function editarReporteAlertaCsp(Request $request, $id){
         $estado_reporte_id = $request->input('estado_reporte_id');
@@ -396,6 +424,29 @@ class CspReportesController extends Controller
         $cspReportesAlerta-> riesgo_principal = $riesgo_principal;
         $cspReportesAlerta-> fuente = $fuente;
         $cspReportesAlerta-> anexo = $nombreArchivo;
+        $cspReportesAlerta-> save();
+        return redirect('/institucion/consejo-sectorial-produccion');
+    }
+    public function editarReporteAlertaEstadoCsp(Request $request, $id){
+        $estado_reporte_id = $request->input('estado_reporte_id');
+        $institucion_id = $request->input('institucion_id');
+        $fecha_atencion = $request->input('fecha_atencion');
+        $tema = $request->input('tema');
+        $descripcion = $request->input('descripcion');
+        $solucion_propuesta = $request->input('solucion_propuesta');
+        $riesgo_principal = $request->input('riesgo_principal');
+        $fuente = $request->input('fuente');
+        $anexo = $request->input('anexo');
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+        $cspReportesAlerta-> estado_reporte_id = $estado_reporte_id;
+        $cspReportesAlerta-> institucion_id = $institucion_id;
+        $cspReportesAlerta-> fecha_atencion = $fecha_atencion;
+        $cspReportesAlerta-> tema = $tema;
+        $cspReportesAlerta-> descripcion = $descripcion;
+        $cspReportesAlerta-> solucion_propuesta = $solucion_propuesta;
+        $cspReportesAlerta-> riesgo_principal = $riesgo_principal;
+        $cspReportesAlerta-> fuente = $fuente;
+        $cspReportesAlerta-> anexo = $anexo;
         $cspReportesAlerta-> save();
         return redirect('/institucion/consejo-sectorial-produccion');
     }

@@ -64,6 +64,7 @@
 						<div class="tab-pane fade active in" id="hechos">
 							<div class="height-lg" data-scrollbar="true">
 								<a href="/institucion/consejo-sectorial-produccion-createReportesHecho" class="btn btn-primary pull-right">Nuevo Reporte Hechos</a>
+								
 						<hr>
 						
 
@@ -194,10 +195,11 @@
 
 						                            </td>
 						                            <td>
-													@if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
+						                            @if(($reportesAlerta->EstadoReporte)!="Resuelto")	
 													<a href= "/institucion/acciones-alertas/{{$reportesAlerta->id}}"  >
 														<i class="fa fa-2x fa-plus-circle"></i>
 													</a>
+
 													&nbsp; &nbsp;
 													@endif
 													  
@@ -214,11 +216,13 @@
 						                      			<a href= "/institucion/visualizar-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
-						                      			@if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
+						        						
+						                      			@if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio or $reportesAlerta->EstadoReporte!="Resuelto")
 														<a href= "/institucion/editar-reporte-alerta/{{$reportesAlerta->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-edit"></i>
 													</a>
 													@endif
+
 						                            </td>
 						                            				                            
 						                        </tr>
