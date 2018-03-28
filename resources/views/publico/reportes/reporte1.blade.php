@@ -214,12 +214,12 @@
 							                </td>
 											<td class="text-center">
 												@if( $solucion -> tipo_fuente == 1)
-													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="label label-primary" >
+													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
 														Ver
 													</a>
 												@endif
 												@if( $solucion -> tipo_fuente == 2)
-													<a href= "/detalle-ccpt/{{ $solucion->pajustada_id }}/{{ $solucion->sector_id }}/{{ $solucion->ambit_id }}/{{$solucion->sipoc_id}}" title="Requerimiento" class="label label-primary" >
+													<a href= "/detalle-ccpt/{{ $solucion->pajustada_id }}/{{ $solucion->sector_id }}/{{ $solucion->ambit_id }}/{{$solucion->sipoc_id}}" title="Requerimiento" class="btn btn-primary" >
 														Ver
 													</a>
 												@endif
