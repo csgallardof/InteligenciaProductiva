@@ -62,9 +62,9 @@
 
                             </div>
                             <label for="solucion" class="col-md-4 control-label">Soluci&oacute;n:</label>
-                            <div class="col-md-12">
+                            <div class="col-md-15">
                                 
-                                <select class="form-control" name="solucion_id" id="soluciones" data-size="100" data-live-search="true" data-style="btn-info" required>
+                                <select class="form-control" name="solucion_id" id="soluciones" data-size="200" data-live-search="true" data-style="btn-info" required>
                                     
                                 </select>
 
