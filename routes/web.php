@@ -48,6 +48,7 @@ Route::get('/por-que-invertir-en-ecuador', 'PaginasController@contratosinversion
 
 Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
 
+Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
 
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');

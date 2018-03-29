@@ -46,9 +46,9 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                             	<li><a href="/por-que-invertir-en-ecuador">¿Por qué invertir en Ecuador?</a></li>
-                            	<li><a href="#">Incentivos</a></li>
+                            	<li hidden><a href="#">Incentivos</a></li>
                             	<li><a href="/zonas-especiales-de-desarrollo-economico">ZEDES</a></li>
-                            	<li><a href="#">Alianzas Público Privadas</a></li>
+                            	<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
