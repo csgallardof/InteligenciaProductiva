@@ -117,7 +117,7 @@
 									 		<div class="row">
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-7">
-									 				<label for="descripcion">Descripcion</label>		
+									 				<label for="descripcion">Descripción</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion" class="pull-right"></div>

@@ -45,7 +45,7 @@
                         </div>
                         <div class="height-lg" data-scrollbar="true"> 
                         <div class="panel-body">
-                                    <form method="GET" action="/institucion/busquedaReporteHechos"  enctype="multipart/form-data">
+                            <form method="GET" action="/institucion/busquedaReporteHechosLineasDiscursivas"  enctype="multipart/form-data">
                                           <div class="col-lg-4 pull-right">
                                             <div class="input-group">
                                               <select name="parametro" class="form-control" >
@@ -59,31 +59,27 @@
                                                         </select>
 
                                               <span class="input-group-btn">
-                                                <button class="btn btn-buscar " type="submit" height="50px">
-                                                    <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
-                                                </button>
-                                            </span>
+                                                <button class="btn btn-default"  type="submit">Buscar</button>
+                                              </span>
                                             </div><!-- /input-group -->
                                           </div><!-- /.col-lg-6 -->
                                         </form>
-                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
+                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoLineasDiscursivasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<hr>
 									  	<div class="row">
 									  	<div class="col-md-12">
 									  	<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									  	
+
 									  	<div class="col-md-10">  
-									  	<button type="submit"  class="btn btn-primary pull-right">Reporte De Hechos</button> 
+									  	<button type="submit"  class="btn btn-primary pull-right">Reporte Lineas Discursivas</button> 
 									  	<div class="col-md-8">
-									  	
 									  	</div>
 									  	</div>
 									  	</div>
 										</div>
-                                    	<br>
-                                          
-                                        
+									  	
 									  <table class="table" class="table nowrap" width="100%">
 
 									<thead>
@@ -94,8 +90,7 @@
 											<th>Fecha  Registro</th>
 											<th>Tema</th>
 											<th>Periodo</th>
-											<th>Fuente</th>
-											
+											<th>Fuente</th>		
 											<th>Institucion</th>
 											
 										</tr>

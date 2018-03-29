@@ -45,7 +45,7 @@
                         </div>
                         <div class="height-lg" data-scrollbar="true"> 
                         <div class="panel-body">
-                                    <form method="GET" action="/institucion/busquedaReporteHechos"  enctype="multipart/form-data">
+                            <form method="GET" action="/institucion/busquedaReporteAlertas"  enctype="multipart/form-data">
                                           <div class="col-lg-4 pull-right">
                                             <div class="input-group">
                                               <select name="parametro" class="form-control" >
@@ -59,35 +59,32 @@
                                                         </select>
 
                                               <span class="input-group-btn">
-                                                <button class="btn btn-buscar " type="submit" height="50px">
-                                                    <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
-                                                </button>
-                                            </span>
+                                                <button class="btn btn-default"  type="submit">Buscar</button>
+                                              </span>
                                             </div><!-- /input-group -->
                                           </div><!-- /.col-lg-6 -->
                                         </form>
-                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
+                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteAlertasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<hr>
 									  	<div class="row">
 									  	<div class="col-md-12">
 									  	<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									  	
+
 									  	<div class="col-md-10">  
-									  	<button type="submit"  class="btn btn-primary pull-right">Reporte De Hechos</button> 
+									  	<button type="submit"  class="btn btn-primary pull-right">Reporte De Alertas</button> 
 									  	<div class="col-md-8">
 									  	
 									  	</div>
 									  	</div>
 									  	</div>
 										</div>
-                                    	<br>
-                                          
-                                        
+									  	
 									  <table class="table" class="table nowrap" width="100%">
 
 									<thead>
-										{{$reportesHechos->render()}}
+										{{$reportesAlerta->render()}}
 										<tr>
 											<th>Seleccionar</th>
 											<th>Fecha de Atencion</th>
@@ -96,24 +93,24 @@
 											<th>Periodo</th>
 											<th>Fuente</th>
 											
-											<th>Institucion</th>
+											<th>Institución</th>
 											
 										</tr>
 									</thead>
 									<tbody>
 										
-													@foreach($reportesHechos as $reportesHechos)
+													@foreach($reportesAlerta as $reportesAlerta)
 						                        <tr>
-													<td><input type="checkbox" name="check[]" id="chk{{$reportesHechos->id}}" value='{{$reportesHechos->id}}'> </td>
-						                          <td class="text-justify">{{$reportesHechos->fecha_reporte}}</td>
-						                          <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
+													<td><input type="checkbox" name="check[]" id="chk{{$reportesAlerta->id}}" value='{{$reportesAlerta->id}}'> </td>
+						                          <td class="text-justify">{{$reportesAlerta->fecha_atencion}}</td>
+						                          <td class="text-justify">{{$reportesAlerta->FechaRegistro}}</td>
 
-						                          <td class="text-justify">{{$reportesHechos->tema}}</td>
-						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
+						                          <td class="text-justify">{{$reportesAlerta->tema}}</td>
+						                          <td class="text-justify">{{$reportesAlerta->Periodo}}</td>
 						                    
-						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
+						                          <td class="text-justify">{{$reportesAlerta->fuente}}</td>
 						                          
-						                          <td class="text-justify">{{ $reportesHechos->Institucion}}</td>
+						                          <td class="text-justify">{{ $reportesAlerta->Institucion}}</td>
 						                      		
 						                            				                            
 						                        </tr>

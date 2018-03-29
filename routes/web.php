@@ -247,12 +247,21 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      //Reportes csp
      Route::get('/lista-reportes-csp','PdfCspReportesController@listaReportesCsp');
      //Generar Reporte
-     Route::get('/crear_reporte_porpais/{tipo}','PdfCspReportesController@crear_reporte_porpais');
+    // Route::get('/crear_reporte_porpais/{tipo}','PdfCspReportesController@crear_reporte_porpais');
      //Route::post('/guardarIdReporteHechoCsp','PdfCspReportesController@obtenerReportesHechos');
-     Route::post('/guardarIdReporteHechoCsp/{tipo}',['uses'=>'PdfCspReportesController@crear_reporte_porpais','as'=>'guardarIdReporteHechoCsp']);
+     Route::post('/guardarIdReporteHechoCsp/{tipo}',['uses'=>'PdfCspReportesController@crearReporteHechosRelevantes','as'=>'guardarIdReporteHechoCsp']);
+     
+     Route::get('/reportes-lineas-discursivas-csp','PdfCspReportesController@listaLineasDiscursivasCsp');
+     Route::post('/guardarIdReporteHechoLineasDiscursivasCsp/{tipo}',['uses'=>'PdfCspReportesController@crearReporteHechosLineasDiscursivas','as'=>'guardarIdReporteHechoLineasDiscurisvasCsp']);
 
-
+     Route::get('/reportes-alertas-csp','PdfCspReportesController@listaReportesAlertasCsp');
+     Route::post('/guardarIdReporteAlertasCsp/{tipo}',['uses'=>'PdfCspReportesController@crearReporteAlerta','as'=>'guardarIdReporteAlertasCsp']);
+     //Router::get('//lista-reportes-csp/buscarReportesHechos',;
+     //BUSQUEDAS DE HECHOS RELEVANTES
+     Route::get('/busquedaReporteHechos',['uses'=>'PdfCspReportesController@buscarReportesHechos','as'=>'nuevaBusquedaReportesHechos']);
+     Route::get('/busquedaReporteHechosLineasDiscursivas',['uses'=>'PdfCspReportesController@buscarReportesHechosLineasDiscursivas','as'=>'nuevaBusquedaReportesHechosLineasDiscursivas']);
      //DESCARGAR ARCHIVO HECHO CSP
+     Route::get('/busquedaReporteAlertas',['uses'=>'PdfCspReportesController@buscarReportesAlertas','as'=>'nuevaBusquedaReportesAlertas']);
      Route::get('storageHechoCsp/{archivo}', function ($archivo) {
      $storage_path = storage_path('app').'/storage/CspReportesHechos';
      $url = $storage_path.'/'.$archivo;

@@ -13,7 +13,12 @@ class CspReportesHecho extends Model
     return $this->belongsTo('App\CspPeriodoReporte');
     }
 
-    
+    public function scopePeriodo($query,$parametro){
+    	//dd($parametro);
+    	
+    	$query->where('periodo_id',$parametro);
+    	//dd($query);
+    }
 
 
 }

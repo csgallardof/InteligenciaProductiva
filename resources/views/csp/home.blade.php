@@ -16,11 +16,29 @@
 							<h4 class="modal-title"> <strong>Reportes Consejo Sectorial de la Producción</strong> </h4>
 							<h4 class="modal-title">{{$PeriodoSemanaCspReporte->nombre}}</h4>
 							<h4 class="modal-title">({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</h4>
-
-							<p>
-								
-							</p>	
+						<div class="col-md-0 pull-right">
+							            <a href="#modal-without-animation"  data-toggle="modal"><i class="fa fa-2x fa-info-circle " style="color :#F7F9F9"></i></a>
+							            
+							
+							<div class="modal " id="modal-without-animation">
+								<div class="modal-dialog ">
+									<div class="modal-content ">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" style="color:red">Modal Without Animation</h4>
+										</div>
+										<div class="modal-body">
+											<p style="color:red">Modal <br> body <br> content <br> here <br>... </p>
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>
+										</div>
+									</div>
+								</div>
+							</div>          
+			    </div>
 						</div>
+
 						<div class="stats-link">
 							<a href="javascript:;">&nbsp;</a>
 						</div>
@@ -64,7 +82,7 @@
 						<div class="tab-pane fade active in" id="hechos">
 							<div class="height-lg" data-scrollbar="true">
 								<a href="/institucion/consejo-sectorial-produccion-createReportesHecho" class="btn btn-primary pull-right">Nuevo Reporte Hechos</a>
-								
+						<br>		
 						<hr>
 						
 
@@ -83,7 +101,7 @@
 											<th>Periodo</th>
 											<th>Fuente</th>
 											
-											<th>Institucion</th>
+											<th>Institución</th>
 											<th>Anexo</th>
 											<th>Reporte Hecho</th>
 										</tr>
@@ -117,6 +135,7 @@
 
 						                      		</td>
 						                      		<td>
+						           
 						                      			<a href= "/institucion/visualizar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
@@ -162,7 +181,7 @@
 											<th>Fuente</th>
 											
 											<th>Estado</th>
-											<th>Institucion</th>
+											<th>Institución</th>
 											<th>Anexo</th>
 											<th>Acciones</th>
 											<th>Reporte Alerta</th>
