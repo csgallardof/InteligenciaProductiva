@@ -30,6 +30,8 @@ Route::post('/reporte',[
      'as'=>'reporte1.resultado'
 ]);
 
+
+
 Route::get('/foro-de-la-produccion-impulso-innovacion', 'PaginasController@foroproduccion');
 
 Route::get('/visorgeneral', 'PaginasController@visorgeneral');
@@ -304,6 +306,10 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      abort(404);
       
      })->name('descargarArchivoAlertaCsp');
+
+     Route::get('/crear-agenda-territorial', 'CspAgendaTerritorialController@vistaCrearAgenda');
+     Route::post('/guardar-agenda-territorial',['uses'=>'CspAgendaTerritorialController@crearAgenda','as'=>'guardarAgendaTerritorialCsp']);
+
 
           
 });

@@ -12,4 +12,7 @@ class Institucion extends Model
     public function cspReportesAlertaInstitucion(){
     	return $this->hasMany('App\CspReportesAlerta');
     }
+    public function cspAgendaTerritorial(){
+    	return $this->hasMany('App\CspAgendaTerritorial');
+    }
 }
