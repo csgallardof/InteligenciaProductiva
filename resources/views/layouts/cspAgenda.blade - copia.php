@@ -26,21 +26,7 @@
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/gritter/css/jquery.gritter.css') }}" rel="stylesheet" />
-
-    <link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/password-indicator/css/password-indicator.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-combobox/css/bootstrap-combobox.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/jquery-tag-it/css/jquery.tagit.css') }}" rel="stylesheet" />
-    <link href="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" />
-    <link href="{{ asset('plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
-
-
 	
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
@@ -119,8 +105,6 @@
 	<script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
 	<script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-
-
 	<!--[if lt IE 9]>
 		<script src="assets/crossbrowserjs/html5shiv.js"></script>
 		<script src="assets/crossbrowserjs/respond.min.js"></script>
@@ -128,31 +112,21 @@
 	<![endif]-->
 	<script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery-cookie/jquery.cookie.js') }}"></script>
-
-
 	<!-- ================== END BASE JS ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-		<script src="{{ asset('plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js') }}"></script>
+	<script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
+	<script src="{{ asset('plugins/flot/jquery.flot.min.js') }}"></script>
+	<script src="{{ asset('plugins/flot/jquery.flot.time.min.js') }}"></script>
+	<script src="{{ asset('plugins/flot/jquery.flot.resize.min.js') }}"></script>
+	<script src="{{ asset('plugins/flot/jquery.flot.pie.min.js') }}"></script>
+	<script src="{{ asset('plugins/sparkline/jquery.sparkline.js') }}"></script>
+	<script src="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+	<script src="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 	<script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
-	<script src="{{ asset('plugins/masked-input/masked-input.min.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
-	<script src="{{ asset('plugins/password-indicator/js/password-indicator.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-combobox/js/bootstrap-combobox.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-select/bootstrap-select.min.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
-	<script src="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js') }}"></script>
-	<script src="{{ asset('plugins/jquery-tag-it/js/tag-it.min.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap-daterangepicker/moment.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
-	<script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
+	<script src="{{ asset('js/dashboard.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
-
-
-
 	
 	<script>
 		$(document).ready(function() {
@@ -164,12 +138,6 @@
 	function cuenta(){
     	document.getElementById('nunCaracteres').innerHTML= document.getElementById('exampleTextarea').value.length + '/280 caracteres';
 	}
-	<script>
-		$(document).ready(function() {
-			App.init();
-			FormPlugins.init();
-		});
-	</script>
 	
 </script> 
 </body>

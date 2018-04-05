@@ -36,9 +36,9 @@
 											<strong>Agenda Territorial</strong><br>Eventos de carácter comunicacional que se tiene planificado que sucedan durante el mes requerido. Aconsejamos se realice un importante hincapié en cuanto a la identificación de las Obras del Gobierno y de los eventos de carácter comunicacional, ya que los mismos serán utilizados para las grabaciones de "El Gobierno Informa". Adicionalmente,  solicitamos considerar los eventos en los que se desea se incluya una participación/saludo del Presidente de la República. No es un reporte de gestión, sino aquellos eventos relevantes.<br>
 											<strong>Líneas Discursivas de la Agenda Territorial</strong><br>Las líneas discursivas de la Agenda Territorial deberán estar escritas en futuro. Por ejemplo, “El próximo 15 de marzo de 2018, se inaugurará la planta de aluminio de Posorja¼”.
 
-											<br><br>NOTA1: La información debe estar validada por su máxima autoridad. 
-											<br><br>NOTA2: La información es de carácter sensible, y no puede contener errores de ningún tipo. 
-											<br><br>NOTA3: Tomar en cuenta la forma de redacción, las faltas ortográficas y el detalle de la misma. 
+											<br><br><i>NOTA1: La información debe estar validada por su máxima autoridad.</i> 
+											<br><br><i>NOTA2: La información es de carácter sensible, y no puede contener errores de ningún tipo.</i> 
+											<br><br><i>NOTA3: Tomar en cuenta la forma de redacción, las faltas ortográficas y el detalle de la misma.</i> 
 
 
 										</p>
