@@ -26,7 +26,7 @@ class PdfCspReportesController extends Controller
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
         ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_hechos.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
         return view("csp.reportesPdfCsp.listaReportesCsp")->with(["reportesHechos"=>$reportesHechos,"CspPeriodoReporte"=>$CspPeriodoReporte]);
     }
     public function buscarReportesHechos(Request $request){
@@ -40,7 +40,7 @@ class PdfCspReportesController extends Controller
         ->where('csp_reportes_hechos.periodo_id', '=',$buscar)
         ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_hechos.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
          return view("csp.reportesPdfCsp.listaReportesCsp")->with(["reportesHechos"=>$reportesHechos,"CspPeriodoReporte"=>$CspPeriodoReporte]);
          } else
          return redirect('/institucion/lista-reportes-csp'); 
@@ -142,7 +142,7 @@ class PdfCspReportesController extends Controller
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
         ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','csp_reportes_hechos.lineas_discursivas','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_hechos.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
         return view("csp.reportesPdfCsp.listaReportesLineasDiscursivasCsp")->with(["reportesHechos"=>$reportesHechos,"CspPeriodoReporte"=>$CspPeriodoReporte]);
     }
     public function buscarReportesHechosLineasDiscursivas(Request $request){
@@ -156,7 +156,7 @@ class PdfCspReportesController extends Controller
         ->where('csp_reportes_hechos.periodo_id', '=',$buscar)
         ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_hechos.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
          return view("csp.reportesPdfCsp.listaReportesLineasDiscursivasCsp")->with(["reportesHechos"=>$reportesHechos,"CspPeriodoReporte"=>$CspPeriodoReporte]);
          } else
          return redirect('/institucion/reportes-lineas-discursivas-csp');  
@@ -262,7 +262,7 @@ class PdfCspReportesController extends Controller
         ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
         ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_alertas.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
         return view("csp.reportesPdfCsp.listaReportesAlertasCsp")->with(["reportesAlerta"=>$reportesAlerta,"CspPeriodoReporte"=>$CspPeriodoReporte]);
     }
 
@@ -277,7 +277,7 @@ class PdfCspReportesController extends Controller
         ->where('csp_reportes_alertas.periodo_id', '=',$buscar)
         ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_alertas.id','DESC')
-        ->paginate(20);
+        ->paginate(40);
         return view("csp.reportesPdfCsp.listaReportesAlertasCsp")->with(["reportesAlerta"=>$reportesAlerta,"CspPeriodoReporte"=>$CspPeriodoReporte]);
 
     }else 
