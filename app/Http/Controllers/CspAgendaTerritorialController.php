@@ -24,7 +24,6 @@ class CspAgendaTerritorialController extends Controller
     		"cspTipoAgenda"=>$cspTipoAgenda]);
     }
     public function obtenerCantones(Request $request, $id){
-    	
         return Canton::cantones($id);
     }
 
@@ -35,12 +34,13 @@ class CspAgendaTerritorialController extends Controller
     	$hora_agenda=date("H:i", strtotime($hora));
         $fecha_hora_agenda=$fecha." ".$hora_agenda;
         $institucion_id = $request['institucion_id'];
+        $canton_id = $request['select_canton'];
         $tipo_agenda_id = $request['tipo_agenda_id'];
         $descripcion_tipo_agenda = $request['descripcion_tipo_agenda'];
         $tipo_impacto_id = $request['tipo_impacto_id'];
         $descripcion_tipo_impacto = $request['descripcion_tipo_impacto'];
         
-        dd($responsable,$fecha_hora_agenda,$institucion_id,$tipo_agenda_id,$descripcion_tipo_agenda,$tipo_impacto_id,$descripcion_tipo_impacto);
+        dd($responsable,$fecha_hora_agenda,$institucion_id,$canton_id,$tipo_agenda_id,$descripcion_tipo_agenda,$tipo_impacto_id,$descripcion_tipo_impacto);
 
 
     }

@@ -115,30 +115,19 @@
 
 									</div>
 								</div>
-								<div class="form-group">
+								
+
+								<div class="form-group ">
 									<div class="row">
 									<div class="col-md-3"></div>
-									<div class="col-md-6">
-									<label for="select-canton">Canton</label>
-									
-									    <select id="select-canton" name="select-canton" class="form-control selectpicker" data-size="10" data-live-search="true" data-style="btn-primary">
-                                            <option value="" >Seleccione Canton</option>
-                                            
-                                        </select>
-									</div>
-									
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
+									<div class="col-md-6 ">
 									<label for="select-canto">Cantones</label>
-									
-									    <select id="select-canto" name="select-canto" >
+										 
+									    <select  id="select-canto" class="form-control" name="select_canton"  data-size="10" data-live-search="true" data-style="btn-inverse">
                                             <option value="" >Seleccione Canton</option>
                                             
                                         </select>
+                                        
 									</div>
 									
 									</div>
