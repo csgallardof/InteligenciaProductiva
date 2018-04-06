@@ -112,7 +112,6 @@
 											<th>Tema</th>
 											<th>Periodo</th>
 											<th>Fuente</th>
-											
 											<th>Institución</th>
 											<th>Anexo</th>
 											<th>Reporte Hecho</th>

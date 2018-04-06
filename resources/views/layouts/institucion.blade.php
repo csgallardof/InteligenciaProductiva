@@ -58,9 +58,33 @@
 				
 				<!-- begin header navigation right -->
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
+					
+					@auth {{ $tipo_fuente=Auth::user()->tipo_fuente }} @endauth
+					@if($tipo_fuente==5 or $tipo_fuente==4)
+					<li class="dropdown "><a href="javascript:;" class="dropdown-toggle" style="color: #FFF" data-toggle="dropdown">
+
+							<span class="hidden-xs">Consejo Sectorial</span> <b class="caret"></b>
+						</a>
+
+						<ul class="dropdown-menu animated fadeInLeft">
+							<li>
+								<a href="/institucion/consejo-sectorial-produccion">
+        	                		Reportes CSP
+                        		</a>
+                                
+                            </li>
+                            <li hidden>
+								<a  href="/institucion/ver-agenda-territorial">
+        	                		Agenda Territorial
+                        		</a>
+                                
+                            </li>
+						</ul>
+					</li>
+					@endif
 					<li class="dropdown navbar-user">
 						<a href="javascript:;" class="dropdown-toggle" style="color: #FFF" data-toggle="dropdown">
-							<span class="hidden-xs">@auth {{ Auth::user()->name }} @endauth</span> <b class="caret"></b>
+							<span class="hidden-xs">@auth {{ Auth::user()->name }} @endauth </span> <b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu animated fadeInLeft">
 							<!-- <li class="arrow"></li>

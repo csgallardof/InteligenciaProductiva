@@ -37,7 +37,9 @@
 	<link href="{{ asset('plugins/jquery-tag-it/css/jquery.tagit.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL STYLE ================== -->	
+	
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
@@ -132,6 +134,7 @@
 	<script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery-cookie/jquery.cookie.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
+
 	
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
@@ -151,15 +154,22 @@
 	<script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
 	<script src="{{ asset('js/Canton/comboCanton.js') }}"></script>
-	
+	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
+	<script src="{{ asset('plugins/DataTables/js/dataTables.colReorder.js') }}"></script>
+	<script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
+	<script src="{{ asset('js/table-manage-colreorder.demo.min.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
+	
 	
 	
 <script>
 		$(document).ready(function() {
 			App.init();
 			FormPlugins.init();
+			TableManageColReorder.init();
 		});
 	</script>
+	
+
 </body>
 </html>

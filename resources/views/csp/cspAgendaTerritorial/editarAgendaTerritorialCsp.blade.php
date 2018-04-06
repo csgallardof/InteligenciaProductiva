@@ -55,14 +55,14 @@
 									<br>
 									<hr>
 
-									<form  method="POST" action="{{ route('guardarAgendaTerritorialCsp') }}" enctype="multipart/form-data">
+									<form  method="POST" action="" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<div class="form-group">
 									 			<div class="row">
 									 				<div class="col-md-3"></div>
 									 				<div class="col-md-3">
 									 					<label for="responsable">Responsable</label>
-									 					 <input type="text" required name="responsable" class="form-control" >			
+									 					 <input type="text" required name="responsable" class="form-control" value="{{$CspAgendaTerritorial->responsable}}" >			
 									 				</div>
 									 				<div class="col-md-3"></div>
 									 			</div>
@@ -166,7 +166,7 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea class="form-control" id="lineas_discursivas" name="descripcion_tipo_agenda" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea class="form-control" id="lineas_discursivas" name="descripcion_tipo_agenda" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$CspAgendaTerritorial->descripcion_tipo_agenda}}</textarea>
 									 			</div>
 									    	
 									  	</div>	
@@ -206,7 +206,7 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea required class="form-control" id="descripcion_tipo_impacto" name="descripcion_tipo_impacto" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
+									 			<textarea required class="form-control" id="descripcion_tipo_impacto" name="descripcion_tipo_impacto" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$CspAgendaTerritorial->descripcion_tipo_impacto}}</textarea>	
 									 			</div>
 									    	
 								</div>
@@ -230,7 +230,9 @@
 	
 									  	<hr>
 									  	<div class="col-md-10">
-									  	<button type="submit" class="btn btn-primary pull-right">Registrar</button>
+									  		<!--<button type="submit" class="btn btn-primary pull-right">Registrar</button> -->
+									  		
+									  	
 									  	</div>
 									</form>		
 

@@ -35,6 +35,7 @@ class CspReportesController extends Controller
         
         $creacion_reporte=date("Y/m/d");
         $fecha_creacion_Reporte=$creacion_reporte." ".$hora;
+        
         function check_in_range($start_date, $end_date, $evaluame) {
         $start_ts = strtotime($start_date);
         $end_ts = strtotime($end_date);
