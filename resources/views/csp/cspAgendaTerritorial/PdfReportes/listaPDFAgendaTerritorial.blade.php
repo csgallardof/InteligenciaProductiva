@@ -2,6 +2,7 @@
 
 @section('title','Inicio')
 
+
 @section('content')
         
 
@@ -31,7 +32,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
@@ -43,22 +44,29 @@
                             </div>
                             <h4 class="panel-title">Agenda Territorial</h4>
                         </div>
-                        
+                         
                         <div class="panel-body">
-                            
+                             <form target="_blank" method="POST" action="/institucion/guardarIdAgendaTerritorial/1" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
                             <div class="row">
-                                    <div class="col-md-12">
-                                        @if($tipo_fuente==4)
-                                        <a href="/institucion/crear-agenda-territorial" class="btn btn-primary pull-right">Nueva Agenda</a>
-                                        @endif
-                                   
-                                    </div>
-                            </div>        
+                                        <div class="col-md-12">
+                                        <a href="/institucion/home" class="btn btn-primary pull-right">Regresar</a>
+                                        
+
+                                        <div class="col-md-10">  
+                                        <button type="submit"  class="btn btn-primary pull-right">Reporte Agenda Territorial</button> 
+                                        <div class="col-md-8">
+                                        
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>       
                         <hr>
                             <div class="table-responsive">
-                                <table id="data-table" class="table table-striped table-bordered">
+                                <table id="data-table" class="table  table-striped table-bordered">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>Institucion</th>
                                             <th>fecha Registro</th>
                                             <th>fecha Agenda</th>
@@ -73,7 +81,7 @@
                                     <tbody>
                                         @foreach($agendaTerritorial as $agendaTerritorial)
                                                 <tr>
-
+                                                  <td><input type="checkbox" name="check[]" id="chk{{$agendaTerritorial->id}}" value='{{$agendaTerritorial->id}}'> </td>
                                                   <td class="text-justify">{{$agendaTerritorial->Institucion}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->FechaRegistro}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->fecha_agenda}}</td>
@@ -83,13 +91,8 @@
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_agenda}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_impacto}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->responsable}}</td>
-                                                  <td>
-                                                    @if($tipo_fuente==4)
-                                                    <a href= "/institucion/editar-agenda-territorial/{{$agendaTerritorial->id}}"  title="Ver más"  >
-                                                        <i class="fa fa-2x fa-edit"></i>
-                                                    </a>
-                                                    @endif
-                                            <div class="col-md-0 pull-right">
+                                                  <td >
+                                        <div class="col-md-0 center">
                                         <a href="#modal-without-animation{{$agendaTerritorial->id}}"  data-toggle="modal"><i class="fa fa-2x fa-eye"></i></a>
                                         
                             
@@ -130,14 +133,16 @@
                                     </tbody>
                                 </table>
                             </div>
+                        </form>
                         </div>
+                     
                     </div>
                     <!-- end panel -->
                 </div>
                 <!-- end col-10 -->
                 
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-3" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

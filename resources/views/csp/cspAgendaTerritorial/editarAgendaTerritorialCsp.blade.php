@@ -55,7 +55,7 @@
 									<br>
 									<hr>
 
-									<form  method="POST" action="" enctype="multipart/form-data">
+									<form  method="POST" action="/institucion/modificar-agenda-territorial/{{$CspAgendaTerritorial->id}}" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<div class="form-group">
 									 			<div class="row">
@@ -73,9 +73,17 @@
 									  			<div class="col-md-3"> </div>
 									  			<div class="col-md-3">
                                    		 <label for="agenda_fecha">Fecha de Agenda</label>
-		                                    
+		                                    <?php 
+												 
+		                                    $fecha=substr($CspAgendaTerritorial->fecha_agenda, 0,10);
+		                                    $hora=substr($CspAgendaTerritorial->fecha_agenda, 11,8);
+		                                    //$hora_agenda=date("H:G", strtotime($hora));
+		                                    $hora_agenda=strftime("%I:%M:%S %p",strtotime($hora));
+		                                    //dd($hora,$hora_agenda);
+
+											?> 
 		                                        <div class="input-group date" id="datepicker-disabled-past" required data-date-format="yyyy-mm-dd" data-date-start-date="Date.default">
-		                                            <input type="text" readonly name="agenda_fecha" class="form-control" value="{{ date('Y-m-d') }}" placeholder="Seleccione Fecha" />
+		                                            <input type="text" readonly name="agenda_fecha" class="form-control" value="{{$fecha}}" placeholder="Seleccione Fecha" />
 		                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 		                                        </div>
 		                                   				
@@ -86,7 +94,7 @@
 														<label for="hora_agenda">Hora de Agenda</label>
 														<div class="col-md-8">
 															<div class="input-group bootstrap-timepicker">
-																<input id="timepicker" type="text" name="hora_agenda" required class="form-control" />
+																<input id="timepicker" type="text" name="hora_agenda" required class="form-control" value="{{$hora_agenda}}" />
 																<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
 															</div>
 														</div>
@@ -230,7 +238,7 @@
 	
 									  	<hr>
 									  	<div class="col-md-10">
-									  		<!--<button type="submit" class="btn btn-primary pull-right">Registrar</button> -->
+									  		<button type="submit" class="btn btn-primary pull-right">Registrar</button>
 									  		
 									  	
 									  	</div>

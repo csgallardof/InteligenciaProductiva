@@ -95,7 +95,10 @@ class CspAgendaTerritorialController extends Controller
 
     public function mostrarAgendaTerritorial(){
         $usuario_institucion_id = Auth::user()->institucion_id;
-
+        $tipo_fuente=Auth::user()->tipo_fuente;
+        if ($tipo_fuente==5) {
+          return redirect('/institucion/lista-agenda-territorial-csp');
+        } else
         $agendaTerritorial = DB::table('csp_agenda_territorials')
         ->join('csp_periodo_agendas','csp_periodo_agendas.id', '=','csp_agenda_territorials.periodo_agenda_id')
         ->join('cantons','cantons.id', '=','csp_agenda_territorials.canton_id')
@@ -106,8 +109,10 @@ class CspAgendaTerritorialController extends Controller
         ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
         ->orderBy('csp_agenda_territorials.id','DESC')
         ->get();
+        
         //dd($agendaTerritorial);
-        return view('csp.cspAgendaTerritorial.mostrarAgendaTerritorial')->with(["agendaTerritorial"=>$agendaTerritorial]);
+        return view('csp.cspAgendaTerritorial.mostrarAgendaTerritorial')->with(["agendaTerritorial"=>$agendaTerritorial,
+            "tipo_fuente"=>$tipo_fuente]);
     }
 
     public function vistaEditarAgendaTerritorial($id){
@@ -123,30 +128,33 @@ class CspAgendaTerritorialController extends Controller
             "CspAgendaTerritorial"=>$CspAgendaTerritorial]);
 
     }
-    public function editarReporteHechoCsp(Request $request, $id){
-        $fecha_reporte = $request->input('fecha_reporte');
-        $institucion_id = $request->input('institucion_id');
-        $tema = $request->input('tema');
-        $descripcion = $request->input('descripcion');
-        $fuente = $request->input('fuente');
-        $porcentaje_avance = $request->input('porcentaje_avance');
-        $lineas_discursivas = $request->input('lineas_discursivas');
-        if($request->hasFile('anexo')){
-        $anexo = $request->file('anexo');   
-        $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
-        Storage::disk('CspReportesHechos')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
-        }else
-        $nombreArchivo="000Ninguno";
-        $cspReportesHecho = CspReportesHecho::find($id);
-        $cspReportesHecho-> fecha_reporte = $fecha_reporte;
-        $cspReportesHecho-> institucion_id = $institucion_id;
-        $cspReportesHecho-> tema = $tema;
-        $cspReportesHecho-> descripcion = $descripcion;
-        $cspReportesHecho-> fuente = $fuente;
-        $cspReportesHecho-> porcentaje_avance = $porcentaje_avance;
-        $cspReportesHecho-> lineas_discursivas = $lineas_discursivas;
-        $cspReportesHecho-> anexo = $nombreArchivo;
-        $cspReportesHecho-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+    public function editarReporteAlertaCsp(Request $request, $id){
+
+        $responsable = $request['responsable'];
+        $fecha_agenda = $request['agenda_fecha'];
+        $hora = $request['hora_agenda'];
+        $hora_agenda=date("H:i", strtotime($hora));
+        $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
+        $institucion_id = $request['institucion_id'];
+        $canton_id = $request['select_canton'];
+        $tipo_agenda_id = $request['tipo_agenda_id'];
+        $descripcion_tipo_agenda = $request['descripcion_tipo_agenda'];
+        $tipo_impacto_id = $request['tipo_impacto_id'];
+        $descripcion_tipo_impacto = $request['descripcion_tipo_impacto'];
+        
+        $CspAgendaTerritorial = CspAgendaTerritorial::find($id);
+        $CspAgendaTerritorial-> institucion_id = $institucion_id;
+        $CspAgendaTerritorial-> canton_id = $canton_id;
+        $CspAgendaTerritorial-> tipo_agenda_id = $tipo_agenda_id;
+        $CspAgendaTerritorial-> tipo_impacto_id = $tipo_impacto_id;
+        //$CspAgendaTerritorial-> periodo_agenda_id = $periodo_id;
+        $CspAgendaTerritorial-> descripcion_tipo_agenda = $descripcion_tipo_agenda;
+        $CspAgendaTerritorial-> descripcion_tipo_impacto = $descripcion_tipo_impacto;
+        $CspAgendaTerritorial-> responsable = $responsable;
+        $CspAgendaTerritorial-> fecha_agenda = $fecha_hora_agenda;
+        $CspAgendaTerritorial-> save();
+        
+        return redirect('/institucion/ver-agenda-territorial');
     }
+    
 }

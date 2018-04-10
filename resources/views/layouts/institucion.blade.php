@@ -73,7 +73,7 @@
                         		</a>
                                 
                             </li>
-                            <li hidden>
+                            <li >
 								<a  href="/institucion/ver-agenda-territorial">
         	                		Agenda Territorial
                         		</a>
