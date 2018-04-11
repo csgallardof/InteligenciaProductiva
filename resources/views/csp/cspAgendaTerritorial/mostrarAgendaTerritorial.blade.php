@@ -2,6 +2,13 @@
 
 @section('title','Inicio')
 
+@section('start_css')
+  @parent
+    <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
+    
+@endsection
+
 @section('content')
         
 
@@ -31,7 +38,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
@@ -137,7 +144,7 @@
                 <!-- end col-10 -->
                 
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-3" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

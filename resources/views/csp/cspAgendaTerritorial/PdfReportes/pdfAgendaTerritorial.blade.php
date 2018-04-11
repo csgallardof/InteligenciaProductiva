@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reporte de Agenda Territorial</title>
+    <title>Reporte de Agenda Territorial {{$date}}</title>
     
 </head>
 <body>
@@ -15,8 +15,9 @@
                             <br><br><img  src="img/logo_presidencia_2.png" width="150" height="60" alt="">
                             <br><br>
                             
-                          <p style="margin:0; font-family: calibri;color:#2874A6"><strong>Agenda Territorial</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN</strong></p><br>
+                          <p style="margin:0; font-family: calibri;color:#2874A6"><strong>AGENDA TERRITORIAL</strong></p>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN</strong><br><b>Fecha:</b> {{$date}}</p><br>
+                          
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             
@@ -25,9 +26,9 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#229954"> 
-                                            <td >
+                                            <td colspan="6" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
-                                                        Semana 1
+                                                       <strong>Semana 1</strong>
                                                 </font>    
                                             </td>
                                         </tr>
@@ -64,15 +65,15 @@
                                                     <b>Responsable</b>
                                                 </font>
                                             </th>
-                                            
+                                             
                                         </tr>
 
                                     </thead>
                                     <tbody>
                                         @if(sizeof($data1)==0)
-                                            <tr> 
-
-                                                 <strong>No existen Registros</strong>
+                                            <tr > 
+                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                 
                                             </tr>
                                         @endif
                                         
@@ -134,9 +135,9 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#F1C40F"> 
-                                            <td >
+                                            <td colspan="6" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
-                                                        Semana 2
+                                                       <strong>Semana 2</strong> 
                                                 </font>    
                                             </td>
                                         </tr>
@@ -179,9 +180,9 @@
                                     </thead>
                                     <tbody>
                                         @if(sizeof($data2)==0)
-                                            <tr> 
-
-                                                 <strong>No existen Registros</strong>
+                                            <tr > 
+                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                 
                                             </tr>
                                         @endif
                                        <?php foreach($data2 as $agendaTerritorialSem2){ ?>
@@ -241,9 +242,9 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#E67E22"> 
-                                            <td >
+                                            <td colspan="6" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
-                                                        Semana 3
+                                                        <strong>Semana 3</strong>
                                                 </font>    
                                             </td>
                                         </tr>
@@ -286,9 +287,9 @@
                                     </thead>
                                     <tbody>
                                         @if(sizeof($data3)==0)
-                                            <tr> 
-
-                                                 <strong>No existen Registros</strong>
+                                            <tr > 
+                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                 
                                             </tr>
                                         @endif
                                        <?php foreach($data3 as $agendaTerritorialSem3){ ?>
@@ -348,9 +349,9 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#8E44AD"> 
-                                            <td >
+                                            <td colspan="6" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
-                                                        Semana 4
+                                                        <strong>Semana 4</strong>
                                                 </font>    
                                             </td>
                                         </tr>
@@ -393,9 +394,9 @@
                                     </thead>
                                     <tbody>
                                         @if(sizeof($data4)==0)
-                                            <tr> 
-
-                                                 <strong>No existen Registros</strong>
+                                            <tr > 
+                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                 
                                             </tr>
                                         @endif
                                        <?php foreach($data4 as $agendaTerritorialSem4){ ?>
@@ -455,11 +456,11 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#B03A2E"> 
-                                            <td >
+                                            <th colspan="6" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
-                                                        Semana 5
+                                                        <strong>Semana 5</strong>
                                                 </font>    
-                                            </td>
+                                            </th>
                                         </tr>
                                         <tr bgcolor="#2874A6">
                                             
@@ -500,9 +501,9 @@
                                     </thead>
                                     <tbody>
                                         @if(sizeof($data5)==0)
-                                            <tr> 
-
-                                                 <strong>No existen Registros</strong>
+                                            <tr > 
+                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                 
                                             </tr>
                                         @endif
                                        <?php foreach($data5 as $agendaTerritorialSem5){ ?>
@@ -569,8 +570,8 @@
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Dr. Claudio Arcos</strong> <br>
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
-                <br><br><span><u>Esta información ha sido obtenida del módulo de Agenda Territorial de la plataforma de Inteligencia Productiva</u></span>
-                <span><br><br>Ministerio de Industrias y Productividad</span>
+                <br><br><span><u>Esta información ha sido obtenida del módulo de Agenda Territorial de la plataforma de Inteligencia Productiva.</u></span>
+                <span><br><br> <b>Ministerio de Industrias y Productividad</b></span>
             </p>
             </div>
     

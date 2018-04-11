@@ -111,7 +111,11 @@ class CspPdfReportesAgendaController extends Controller
 		//$pdf->loadHTML($view)->setPaper('a4', 'portrait');
 		//$m->addRaw($pdf->output());
 
-        if($tipo==1){return $pdf->stream('reporteAgendaterritorial.pdf');}
+        if($tipo==1){return $pdf->stream($date.'_reporteAgendaterritorial.pdf');}
         if($tipo==2){return $pdf->download('reporte.pdf'); }
+    }
+
+    public function mostrarTabla(){
+        return view('csp.cspAgendaTerritorial.reporte1');
     }
 }

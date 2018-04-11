@@ -35,7 +35,7 @@
 			<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 		@show
 		<!-- ================== END BASE JS ================== -->
-
+ 
 	</head>
 
 	<body data-spy="scroll" data-target="#header-navbar" data-offset="51">

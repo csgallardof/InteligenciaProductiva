@@ -16,9 +16,16 @@
 	<link href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/style.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/style-responsive.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
+	<link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
+	<!-- 
+		<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
+		<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+	 -->
+	
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -26,18 +33,32 @@
     <link href="{{ asset('plugins/gritter/css/jquery.gritter.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css') }}" rel="stylesheet" />
+	
 	<link href="{{ asset('plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/password-indicator/css/password-indicator.css') }}" rel="stylesheet" />
+	
 	<link href="{{ asset('plugins/bootstrap-combobox/css/bootstrap-combobox.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-	<link href="{{ asset('plugins/jquery-tag-it/css/jquery.tagit.css') }}" rel="stylesheet" />
-    <link href="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" />
+	
+	
     <link href="{{ asset('plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+    
+	<!-- ================== BEGIN BASE CSS STYLE ================== -->
+		@section('start_css')
+			
+			
+			<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+			
+			
+			
+            
+		@show
+		<!-- ================== END BASE CSS STYLE ================== -->
+	<!-- 
+	<link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.css') }}" rel="stylesheet" />
+	<link href="{{ asset('plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css') }}" rel="stylesheet" />	
+	 -->
+	
 	<!-- ================== END PAGE LEVEL STYLE ================== -->	
 	
 	<!-- ================== BEGIN BASE JS ================== -->
@@ -157,16 +178,18 @@
 	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
 	<script src="{{ asset('plugins/DataTables/js/dataTables.colReorder.js') }}"></script>
 	<script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
-	<script src="{{ asset('js/table-manage-colreorder.demo.min.js') }}"></script>
+	
+	<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
+	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 	
 	
 	
-<script>
+<script> 
 		$(document).ready(function() {
 			App.init();
 			FormPlugins.init();
-			TableManageColReorder.init();
+			TableManageResponsive.init();
 		});
 	</script>
 	

@@ -62,8 +62,9 @@
                                         </div>
                                         </div>       
                         <hr>
+                            <div class="col-md-12"> 
                             <div class="table-responsive">
-                                <table id="data-table" class="table  table-striped table-bordered">
+                                <table id="data-table" class="table  table-bordered">
                                     <thead>
                                         <tr>
                                             <th></th>
@@ -132,6 +133,7 @@
                                                     @endforeach
                                     </tbody>
                                 </table>
+                            </div>
                             </div>
                         </form>
                         </div>

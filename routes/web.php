@@ -314,7 +314,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::post('/modificar-agenda-territorial/{id}',['uses'=>'CspAgendaTerritorialController@editarReporteAlertaCsp','as'=>'modificarAgendaTerritorial']);
      Route::get('/lista-agenda-territorial-csp','CspPdfReportesAgendaController@listaAgendaTerritorialCsp');
      Route::post('/guardarIdAgendaTerritorial/{tipo}',['uses'=>'CspPdfReportesAgendaController@crearReporteAgendaTerritorial','as'=>'guardarIdReporteHechoCsp']);
-
+     Route::get('/tabla-excel','CspPdfReportesAgendaController@mostrarTabla');
 
           
 });
