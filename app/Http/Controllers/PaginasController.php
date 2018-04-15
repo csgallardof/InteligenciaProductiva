@@ -151,6 +151,13 @@ class PaginasController extends Controller
         return view('publico.foro-de-la-produccion');
     }
 
+
+    public function estructuraCostosGastos(){
+        return view('publico.estructura-promedio-costos-gastos-empresas');
+    }
+
+
+
     
     // Modelo Usuarios
     public function usuarios(){

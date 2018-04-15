@@ -55,6 +55,9 @@ Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPubli
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
+Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
+
+
 // rutas pruebas usuarios
 
 Route::get('/usuarios','PaginasController@usuarios');

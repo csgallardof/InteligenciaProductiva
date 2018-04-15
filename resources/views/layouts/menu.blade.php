@@ -20,9 +20,14 @@
 				<div class="collapse navbar-collapse navbar-right" id="header-navbar">
                     <ul class="nav navbar-nav  navbar-right">
                         
-                        <li>
+                        {{-- <li>
                             <a href="{{ url('/') }}">
                                 <i></i> Inicio
+                            </a>
+                        </li> --}}
+                        <li>
+                            <a href="/estructura-promedio-costos-gastos-empresas">
+                                <i></i>Costos y Gastos Industriales
                             </a>
                         </li>
                         <li>
