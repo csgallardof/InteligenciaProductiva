@@ -3345,3 +3345,10 @@ a.list-group-item.active:focus {
 .box-foro{
     text-align: left !important;
 }
+
+.btn-home-ip-custom {
+  color: #fff;
+  background: #F26F21;
+  border-color: #F26F21;
+  font-weight: bold;
+}
