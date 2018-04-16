@@ -99,7 +99,7 @@ $(document).ready(function(){
                                     <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
-                                            <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
+                                            <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
                                         </button>
                                     </span>
 

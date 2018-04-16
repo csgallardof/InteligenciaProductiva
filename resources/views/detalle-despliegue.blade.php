@@ -18,9 +18,9 @@
 
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
           <ol class="breadcrumb">
-            <li class="home"><a href="/en/"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="/en/dataset">Resultados de la B&uacute;squeda</a></li>
-            <li class="active"><a href="/en/dataset">Detalle de la propuesta</a></li>
+            <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="#">Detalle de la propuesta</a></li>
             <label class='text-success pull-right'>
 							<a href="{{ url('/') }}" class="btn btn-link fit-m-t-1"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
 						</label>
@@ -35,9 +35,9 @@
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
 
-									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand" data-original-title="" title=""><i class="fa fa-expand"></i></a>
+									<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand" data-original-title="" title=""><i class="fa fa-expand"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a> -->
 
 								</div>
 								<h4 class="panel-title">Propuestas /Solución</h4>
@@ -149,8 +149,8 @@
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
 
-									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+									<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a> -->
 
 								</div>
 								<h4 class="panel-title">Acciones de cumplimiento</h4>

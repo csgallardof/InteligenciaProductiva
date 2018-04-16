@@ -19,8 +19,8 @@
 
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
           <ol class="breadcrumb">
-            <li class="home"><a href="/en/"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="/en/dataset">Resultados de la B&uacute;squeda</a></li>
+            <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda</a></li>
           </ol>
         </div>
 
@@ -64,18 +64,22 @@
 							            @endforeach
 
 								 	</select>
+                  </div>
 
-								 	<button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+                  <div class="col-md-2 m-t-25">
+                    <button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+                  </div>
+
 					</form>
 
-							    </div>
 
-							    <div class="col-md-7 pull-right">
+
+							    <div class="col-md-6 pull-right">
 
 					                    <div class="panel-body text-center">
 
 					                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
-	                            				
+
 					                            <div class="form-group">
 
 					                                <div class="input-group custom-search-form">
@@ -89,7 +93,7 @@
 					                                </div>
 
 					                            </div>
-					                            
+
 					                        </form>
 					                    </div>
 							    </div>
@@ -97,7 +101,7 @@
 							</div>
 						</div>
 
-					
+
 				</div>
 
 				<hr>
@@ -113,7 +117,7 @@
 							</a>
 							"
 						@endif --}}
-            
+
           </div>
 
           <div class="col-md-4">
