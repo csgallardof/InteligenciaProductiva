@@ -65,6 +65,9 @@
 
 								 	</select>
 
+								 	<button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+					</form>
+
 							    </div>
 
 							    <div class="col-md-7 pull-right">
@@ -72,6 +75,7 @@
 					                    <div class="panel-body text-center">
 
 					                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
+	                            				
 					                            <div class="form-group">
 
 					                                <div class="input-group custom-search-form">
@@ -85,6 +89,7 @@
 					                                </div>
 
 					                            </div>
+					                            
 					                        </form>
 					                    </div>
 							    </div>
@@ -92,13 +97,13 @@
 							</div>
 						</div>
 
-					</form>
+					
 				</div>
 
 				<hr>
 
           <div class="col-md-8">
-					<span class="title_ip_h1">{{ $solucion->count() }} Resultados de la B&uacute;squeda</span>
+					<span class="title_ip_h1">{{$solucion->count() }} Resultados de la B&uacute;squeda</span>
 						{{-- @foreach()
 						@endforeach --}}
 						{{-- @if(isset($parametro))
@@ -108,7 +113,7 @@
 							</a>
 							"
 						@endif --}}
-            <button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+            
           </div>
 
           <div class="col-md-4">

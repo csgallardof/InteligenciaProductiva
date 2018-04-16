@@ -448,6 +448,9 @@ class PaginasController extends Controller
                                             "filtros"=>$filtros
                                         ]);
 
+
+        
+
     }
 
     public function consejosectorial(){
