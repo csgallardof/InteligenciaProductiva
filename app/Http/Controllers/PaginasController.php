@@ -435,7 +435,7 @@ class PaginasController extends Controller
 
         unset($filtros[0]); 
         
-        return view('publico.reportes.reporte1')->with([
+        return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
                                             "filtros"=>$filtros
