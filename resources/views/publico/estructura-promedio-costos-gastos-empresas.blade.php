@@ -4,7 +4,8 @@
 
 @section('start_css')
   @parent
-  <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+  	<link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
+    	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 @endsection
 
 @section('contenido')
@@ -45,17 +46,10 @@
 				<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
 					<!-- begin row -->
-					<div class="row m-t-20">
+					<div class="row">
 							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
 
-              <!-- <a href="/invertir_en_el_ecuador" class="btn btn-info" role="button">¿Por qué invertir en Ecuador?</a>
-              <a href="#contratos" class="btn btn-info" role="button">Contratos de Inversión</a>
-              <a href="#proceso" class="btn btn-info" role="button">Proceso Firma de Contratos</a>
-              <a href="#base" class="btn btn-info" role="button">Base Legal</a>
-              <a href="#incentivos" class="btn btn-info" role="button">Incentivos</a> -->
 
-              
 
 						<div id="" class="modal-header">
 							<h2 class="modal-title "><strong>Estructura promedio de Costos y Gastos de las empresas registradas como manufactureras</strong></h2>
@@ -63,19 +57,19 @@
 						{{-- tabla de costos --}}
 
 						<div class="row">
-					
-					<div class="col-md-6">
 
-						
-							<table id="data-table" class="table nowrap" width="100%">
+					<div class="col-md-12">
+
+
+							<table id="data-table" class="table nowrap table-striped table-bordered" width="60%">
 								<thead>
-									
-					                <th class="text-center">Rubro</th>
+
+					          <th class="text-center">Rubro</th>
 								    <th class="text-center">2014</th>
 								    <th class="text-center">2015</th>
 								    <th class="text-center">2016</th>
 								</thead>
-								<tbody>				        	
+								<tbody>
 					        	    <tr>
 									    <td class="text-left">Sueldos, salarios, honorarios y beneficios sociales</td>
 									    <td class="text-center">26,30%</td>
@@ -142,31 +136,31 @@
 									    <td class="text-center">25,90%</td>
 									    <td class="text-center">27,50%</td>
 									  </tr>
-									  <tr>
+									  <!-- <tr>
 									    <td class="text-left"><strong>Total costos y gastos</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
-									  </tr>
-						            	   
+									  </tr> -->
+
 			     				</tbody>
 							</table>
-					
-						
+
+
 						<!-- Fin Contenido -->
 					</div>
 						<!-- end col-4 -->
 				</div>
 
-						
+
 
 						{{-- fin tabla cotos --}}
 
 
-				            
 
 
-						<div class="h5 small" style="text-align: justify;">
+
+						<div class="h5" style="text-align: justify;">
 						<div>&nbsp;</div>
 							<div><span style="text-decoration: underline;"><strong>Fuente:</strong></span> SRI, declaraciones en formulario 101</div>
 							<div><em>Se consideran empresas que registran costos superiores a cero y se excluyen empresas que declaran costos y gastos en los rubros analizados superiores al total de costos y gastos reportado en cada ejercicio fiscal.</em></div>
@@ -174,12 +168,12 @@
 							<div>2014: <em>4662 empresas</em></div>
 							<div>2015: <em>4918 empresas</em></div>
 							<div>2016: <em>5106 empresas&nbsp;</em></div>
- 	
-						</div>		
-								
+
+						</div>
 
 
-            
+
+
 							<!-- end col-4 -->
 					</div>
 
@@ -187,74 +181,6 @@
 
 			</div>
 			<!-- end #about -->
-
-
-		<!-- begin #team -->
-<!--         <div id="team" class="content team" data-scrollview="true">
-
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                <div class="row">
-                    <div class="col-12"><h4><strong>ZEDES<span style="color: #F26F21"> en Ecuador</span></strong></h4></div>
-                    <br>
-                    
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3 box">
-                        <div class="container2">
-                          <a href="/cifras"><img src="{{ asset('imagenes/cifras-home-inteligencia.png') }}" style="width:100%;"></a>
-                          <div class="text-block2 img-over">
-                            
-                            <p style="margin-bottom: 0px;color:#F26F21;">ZEDE YACHAY en Urcuquí</p>
-                          </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-3 box">
-                        <div class="container2">
-                          <a href="/indice"><img src="{{ asset('imagenes/cifras-home-inteligencia-2-front.png') }}" style="width:100%;"></a>
-                          <div class="text-block2 img-over">
-                            
-                            <p style="margin-bottom: 0px;color:#F26F21;">ZEDE Eloy Alfaro en Manta</p>
-                          </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-md-3 box">
-                        <div class="container2">
-                          <a href="/vocaciones"><img src="{{ asset('imagenes/vocaciones-productivas-front.png') }}" style="width:100%;"></a>
-                          <div class="text-block2 img-over">
-                            
-                            <p style="margin-bottom: 0px;color:#F26F21;">ZEDE Posorja (Puerto de aguas profundas) en Guayaquil</p>
-                          </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-3 box">
-                        <div class="container2">
-                          <a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank"><img src="{{ asset('imagenes/biblioteca-front-2.png') }}" style="width:100%;"></a>
-                          <div class="text-block2 img-over">
-                            
-                            <p style="margin-bottom: 0px;color:#F26F21;">ZEDE del Litoral (ESPOL) en Guayaquil</p>
-                          </div>
-                        </div>
-                        
-                    </div>
-                    
-                    
-                </div>
-
-            </div>
-
-        </div> -->
-        <!-- end #team -->
-
-
-      
-
-      
-
-     
 
 @endsection
 
@@ -264,14 +190,14 @@
 
 
 
-  <script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
-  <script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
-	<script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
-	<script src="{{ asset('js/custom-mipro.js') }}"></script>
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+	<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
+	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
+	<script src="{{ asset('plugins/scrollMonitor/scrollMonitor.js') }}"></script>
+	<script src="{{ asset('js/custom-mipro.js" type="text/javascript') }}"></script>
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
+	<!-- ================== END PAGE LEVEL JS ================== -->
 
 
 @endsection
@@ -279,5 +205,19 @@
 @section('init_scripts')
 
 
+
+@endsection
+
+@section('end_js')
+  @parent
+
+  <script>
+
+		$(document).ready(function() {
+			App.init();
+			TablaBasica.init();
+		});
+
+	</script>
 
 @endsection

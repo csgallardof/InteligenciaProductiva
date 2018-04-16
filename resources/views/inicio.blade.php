@@ -32,7 +32,7 @@ $(document).ready(function(){
     $(".next-slide").click(function(){
         $("#myCarousel").carousel('next');
     });
-    // Cycles the carousel to a particular frame 
+    // Cycles the carousel to a particular frame
     $(".slide-one").click(function(){
         $("#myCarousel").carousel(0);
     });
@@ -64,7 +64,7 @@ $(document).ready(function(){
 }
 </style>
   <!-- fin script carrusel -->
- 
+
 
 @endsection
 
@@ -92,14 +92,14 @@ $(document).ready(function(){
                 <!-- <div class="col-lg-offset-3 col-lg-8 row-m-t-minus-25"> -->
                 <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
                     <div class="panel-body text-center">
-                        
+
                         <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
                             <div class="form-group">
                                 <div class="input-group custom-search-form">
                                     <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
-                                            <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
+                                            <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
                                         </button>
                                     </span>
 
@@ -108,15 +108,15 @@ $(document).ready(function(){
                             </div>
                         </form>
 
+                        <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
 
- 
                     </div>
                 </div>
 
 
 
 
-                
+
                 <!-- <div class="col-md-12 row-m-t-minus-25">
                     <div class="panel-body text-center">
 
@@ -137,7 +137,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-12" style="padding-bottom: 20px"><h2><strong>Herramientas <span style="color: #F26F21">productivas</span></strong></h2></div>
                     <br>
-                    
+
                 </div>
 
                 <div class="row">
@@ -159,7 +159,7 @@ $(document).ready(function(){
                             <p style="margin-bottom: 0px;color:#F26F21;">de competitividad</p>
                           </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-2 box">
                         <div class="container2">
@@ -179,7 +179,7 @@ $(document).ready(function(){
                             <p style="margin-bottom: 0px;color:#F26F21;">estudios</p>
                           </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-2 box">
                         <div class="container2">
@@ -189,7 +189,7 @@ $(document).ready(function(){
                             <p style="margin-bottom: 0px;color:#F26F21;">de productividad</p>
                           </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-2 box">
                         <div class="container2">
@@ -199,25 +199,25 @@ $(document).ready(function(){
                             <p style="margin-bottom: 0px;color:#F26F21;">simplificación</p>
                           </div>
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
 
             </div>
 
         </div>
         <!-- end #team -->
-        
+
 
 
         <!-- begin #work -->
         <div id="work" class="content" data-scrollview="true">
             <!-- begin container -->
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
-                
+
                 <hr class="hr_style1 row-m-b-1"><!-- End Spacing -->
-                
+
 
                 <!-- begin row -->
                 <div class="row">
@@ -227,8 +227,8 @@ $(document).ready(function(){
 
                     </div>
                     <div class="col-md-4 manual-work">
-                        
-                        
+
+
 
 
                         <div class="row row-space-12">
@@ -264,30 +264,30 @@ $(document).ready(function(){
                     <div class="col-md-4 manual-work">
 
                         <div class="col-12"><h3><span style="color: #F26F21; text-align: left;"><strong>Contáctanos</span></strong></h2></div>
-                        
+
                         <table class="table table-profile">
-                           
+
                             <tbody>
-                               
+
                                 <tr>
-                                    
-                                    <td style="text-align: left;"><small>  
+
+                                    <td style="text-align: left;"><small>
                                         <br> Plataforma Gubernamental de Gestión Financiera. Pisos 8 y 9 <br> <strong>Código Postal:</strong> 170506 <br> Quito-Ecuador </small></td>
                                 </tr>
-                               
+
                                 <tr>
-                                    
+
                                     <td style="text-align: left;"><small><strong>Teléfono:</strong> 593-2 394 8760</small></td>
                                 </tr>
                                 <tr>
-                                    
+
                                     <td style="text-align: left;"><small><strong>mail:</strong> inteligencia@mipro.gob.ec</small></td>
                                 </tr>
-                                
-                                
+
+
                             </tbody>
                         </table>
-                                                
+
                     </div>
                 </div>
 

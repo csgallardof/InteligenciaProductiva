@@ -74,10 +74,10 @@
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: 1px solid rgba(112, 116, 120, 0.64);">
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
-									
+
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-									
+
 								</div>
 								<h4 class="panel-title">Propuestas /Solución</h4>
 							</div>
@@ -93,7 +93,7 @@
 											@endif
 									  	</h5></p>
 									  	<!--VALORACIONES-->
-									  	
+
 									  	<!-- <div class="row">
 									  		<div class="col-md-2"></div>
 									  		<div class="col-md-2">
@@ -107,7 +107,7 @@
 									  		</div>
 									  		<div class="col-md-2">
 									  			<a href="#"> <i class="material-icons">sentiment_dissatisfied</i></a>
-									  			
+
 									  		</div>
 									  		<div class="col-md-2">
 									  			<a href="#"> <i class="material-icons">sentiment_very_dissatisfied</i></a>
@@ -129,7 +129,7 @@
 												<div class="panel-body fade in f-s-11" style="background-color: #d9eaf2;"}}>
 
 														<label class='text-success f-s-11'>
-                    									<i class="fa fa-clock-o fa-fw"></i>Creado: 
+                    									<i class="fa fa-clock-o fa-fw"></i>Creado:
                     									{{ substr($solucion->created_at,0,10) }}
 					                                </label><br>
 														<strong>Eslabon de la cadena productiva: </strong> {{ $solucion->sipoc->nombre_sipoc }} <br>
@@ -137,13 +137,13 @@
 														<strong>Mesa: </strong>{{ $solucion->mesa->nombre_mesa }} <br>
 														<strong>Fomento de la Producci&oacute;n Nacional: </strong>{{ $solucion->thematic->nombre_thematic }}<br>
 												</div>
-										</div>	
+										</div>
 
 									@endforeach
 								@endif
-                                	
+
 	                        </div>
-	
+
 						</div>
 					</div>
 					<!-- end col-5 -->
@@ -152,10 +152,10 @@
 						<div class="panel panel-inverse" data-sortable-id="index-5" style="border: 1px solid rgba(112, 116, 120, 0.64);" >
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
-									
+
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-									
+
 								</div>
 								<h4 class="panel-title">Acciones de cumplimiento</h4>
 							</div>
@@ -163,33 +163,33 @@
 								<div class="media-body">
 									<br>
 										<label class='text-success f-s-11'>
-                                		
+
                                 	</label>
                             		<dl class="dl-horizontal">
-                            				
+
 										<dt>RESPONSABLE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</dt>
 										@if(isset($actoresSoluciones))
 											@foreach($actoresSoluciones as $actorSolucion)
-												@if($actorSolucion->tipo_actor == 1) 
+												@if($actorSolucion->tipo_actor == 1)
 													{{ $actorSolucion->usuario-> name }}
 												@endif
 											@endforeach
 										@endif
-										
+
 										<dt>CO-RESPONSABLE:</dt>
 
 										<dd>
 										@if(isset($actoresSoluciones))
 											<ul>
 												@foreach($actoresSoluciones as $actorSolucion)
-													@if($actorSolucion->tipo_actor == 2) 
+													@if($actorSolucion->tipo_actor == 2)
 														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
 													@endif
 												@endforeach
 											</ul>
 										@endif
 										</dd>
-											
+
 									</dl>
 									<div class="media-body">
 										<dl class="dl-horizontal">
@@ -200,7 +200,7 @@
 														{{ $solucion->estado->nombre_estado }}
 													@endforeach
 												@endif
-											</span> 
+											</span>
 										</dl>
 									</div>
 
@@ -209,7 +209,7 @@
 									<span class="pull-right" style="font-size: 12px">Ordenado desde la m&aacute;s reciente</span>
 									<hr>
 									<ul class="media-list media-list-with-divider">
-										@foreach($actividades as $actividad)							
+										@foreach($actividades as $actividad)
 
 											<li class="media media-lg">
 												<div class="media-body">
@@ -218,10 +218,10 @@
 													<h5 class="media-heading"></h5>
 													{{ $actividad -> comentario}}
 													<br>
-													
+
 													<!-- <a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
 	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a> -->
-													
+
 												</div>
 
 											</li>
@@ -247,17 +247,17 @@
 												</ul>
 											@endif
 											<!--FIN ARCHIVOS-->
-											
-										@endforeach										
+
+										@endforeach
 									</ul>
 									@else
 										No se encontraron actividades registradas.
 									@endif
-			                        
+
 								</div>
 							</div>
-							
-							
+
+
 						</div>
 					</div>
 					<!-- fin acciones  -->

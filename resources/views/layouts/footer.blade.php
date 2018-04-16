@@ -14,6 +14,9 @@
             <a href="https://twitter.com/industriasec"><i class="fa fa-twitter fa-fw"></i></a>
             <a href="https://www.youtube.com/user/IndustriasEcuador"><i class="fa fa-youtube fa-fw"></i></a>
             <a href="https://www.flickr.com/photos/IndustriasEcuador"><i class="fa fa-flickr fa-fw"></i></a>
+        </p><br /><br />
+        <p class="text-white">
+            Versión Beta 1.0 <br />
         </p>
     </div>
 </div>
