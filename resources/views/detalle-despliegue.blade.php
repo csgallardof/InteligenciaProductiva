@@ -9,21 +9,23 @@
 
 @section('contenido')
 
+<br><br><br><br>
+
 		<!-- begin #about -->
 		<div class="content row-m-t-2" data-scrollview="true">
 				<!-- begin container -->
 			<div class="container" data-animation="true" data-animation-type="fadeInDown">
 
-				<div class="modal-header">
-					<h4 class="modal-title">
-						<label class='text-success f-s-12'>
-							<a href="{{ url('despliegueterritorial') }}" class="btn btn-success m-r-5"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
-							<br>
-							<br>
-
+        <div class="toolbar title_ip_breadcrumb fit-m-b-10">
+          <ol class="breadcrumb">
+            <li class="home"><a href="/en/"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="active"><a href="/en/dataset">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="/en/dataset">Detalle de la propuesta</a></li>
+            <label class='text-success pull-right'>
+							<a href="{{ url('/') }}" class="btn btn-link fit-m-t-1"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
 						</label>
-					</h4>
-				</div>
+          </ol>
+        </div>
 
 				<!-- begin row -->
 				<div class="row">
