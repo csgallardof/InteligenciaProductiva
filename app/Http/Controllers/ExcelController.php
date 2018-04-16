@@ -14,7 +14,9 @@ class ExcelController extends Controller
 
 		\Excel::create('Mesas de Competitividad', function($excel) {
 		 
-		    $mesas = Solucion::where('tipo_fuente','=',1)->orderBy('verbo_solucion','ASC')->get();
+		    $mesas = Solucion::where('tipo_fuente','=',1)
+                                ->where('sector_id','=',7)
+                                ->orderBy('verbo_solucion','ASC')->get();
 		 
 		    $excel->sheet('Mesas', function($sheet) use($mesas) {
 		 
