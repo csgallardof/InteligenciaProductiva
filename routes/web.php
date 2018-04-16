@@ -103,7 +103,7 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 Route::get('/descargar/Mesas', 'ExcelController@exportMesas');
 
-Route::get('/descargar/Consejo', 'ExcelController@exportConsejo');
+Route::get('/descargar/CCPT', 'ExcelController@exportConsejo');
 
 /*
 *
