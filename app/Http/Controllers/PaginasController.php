@@ -13,6 +13,7 @@ use App\Pajustada;
 use App\ActorSolucion;
 use App\Actividad;
 use App\Ambit;
+use App\EstadoSolicion;
 use DB;
 use Illuminate\Support\Collection as Collection;
 
