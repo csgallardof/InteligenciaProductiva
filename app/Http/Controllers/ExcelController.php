@@ -12,7 +12,7 @@ class ExcelController extends Controller
 
     public function exportMesas(){
 
-		\Excel::create('Mesas de Competitividad', function($excel) {
+		\Excel::create('Consejo Consultivo', function($excel) {
 		 
 		    $mesas = Solucion::where('tipo_fuente','=',1)
                                 ->where('sector_id','=',7)
@@ -22,7 +22,8 @@ class ExcelController extends Controller
 		 
 			$sheet->row(1, [
     			
-    			'PROPUESTA SOLUCIÓN',
+    			'PROPUESTA VERBO',
+                'PROPUESTA SOLUCIÓN',
     			'PROBLEMÁTICA',
     			'PROVINCIA',
     			'ESLABON DE LA CADENA PRODUCTIVA',
@@ -48,7 +49,8 @@ class ExcelController extends Controller
     			}
 
     			$sheet->row($index+2, [
-        			strtoupper($solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion),
+        			strtoupper($solucion->verbo_solucion),
+                    strtoupper($solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion),
         			strtoupper($solucion->problema_solucion),
         			strtoupper($solucion->provincia->nombre_provincia),
         			strtoupper($solucion->sipoc->nombre_sipoc),

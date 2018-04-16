@@ -326,8 +326,8 @@ class PaginasController extends Controller
                             ->get();
             }
             if($buscar == 'Consejo Consultivo' ){
-                $resultados = Solucion::where('tipo_fuente','=',2)
-                            ->orderBy('solucion_ccpt','ASC')
+                $resultados = Solucion::where('sector_id','=',7)
+                            ->orderBy('verbo_solucion','ASC')
                             ->get();
             }
 
