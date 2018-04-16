@@ -20,28 +20,7 @@
 							<a href="{{ url('despliegueterritorial') }}" class="btn btn-success m-r-5"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
 							<br>
 							<br>
-							<strong>Evento:</strong>
-							@if(isset($solucion))
-								{{ $solucion->evento->nombre_evento }}
-							@endif
-							<strong> | Provincia:</strong>
-							@if(isset($solucion))							
-								{{ $solucion->provincia->nombre_provincia }}
-							@endif
 
-							<strong> | Sector:</strong>
-							@if(isset($solucion))
-								{{ $solucion->sector->nombre_sector }}
-							@endif
-
-							<strong> | Líder de Mesa:</strong>
-							@if(isset($solucion))
-								{{ $solucion->lider_mesa_solucion }}
-							@endif
-							<strong> | Sistematizador de Mesa:</strong>
-							@if(isset($solucion))
-								{{ $solucion->sistematizador_solucion }}
-							@endif
 						</label>
 					</h4>
 				</div>
@@ -53,11 +32,11 @@
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: 1px solid rgba(112, 116, 120, 0.64);">
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
-									
+
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand" data-original-title="" title=""><i class="fa fa-expand"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-									
+
 								</div>
 								<h4 class="panel-title">Propuestas /Solución</h4>
 							</div>
@@ -65,7 +44,7 @@
 								<div class="media-body">
 
 									<br>
-									<div class="alert alert-info fade in m-b-15">
+									<div class="alert detalle_evento_info_adicional fade in m-b-15">
 										<strong>Eslabon de la cadena productiva:</strong>
 										@if(isset($solucion))
 											{{ $solucion->sipoc->nombre_sipoc }}
@@ -84,24 +63,25 @@
 										<strong>Ámbito:</strong>
 										@if(isset($solucion))
 											{{ $solucion->ambit->nombre_ambit }}
-										
+
 										@endif
 										<span data-dismiss="alert"></span>
 									</div>
-									
-								
-									<label class='text-success f-s-11'>
-	                                	
-	                                	<i class="fa fa-clock-o fa-fw"></i>Creado: 
+
+
+									<label class='text-success'>
+
+	                                	<i class="fa fa-clock-o fa-fw"></i>Creado:
 	                                	@if(isset($solucion))
 											{{ substr($solucion->created_at,0,10) }}
 										@endif
 	                                </label>
-									
-			                        
+
+                                  <br /><br />
+
                                 </div>
-                                	
-                                	<label class='text-success f-s-11'>
+
+                                	<label class='text-success'>
                                 		<i class="fa fa-cheked-o fa-fw"></i><strong>Solución</strong>
                                 	</label>
 									<blockquote>
@@ -112,7 +92,7 @@
 										  	</h5>
                                    	</blockquote>
 
-                                   	<label class='text-success f-s-11'>
+                                   	<label class='text-success'>
                                 		<i class="fa fa-cheked-o fa-fw"></i><strong>Problematica</strong>
                                 	</label>
 									<blockquote>
@@ -122,9 +102,42 @@
 												@endif
 										  	</h5>
                                    	</blockquote>
-                                	
+
+
+                                    <label class='text-success'>
+                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Fuente</strong>
+                                	</label>
+									<blockquote>
+										  	<p><h5>
+                          <strong>Evento:</strong>
+            							@if(isset($solucion))
+            								{{ $solucion->evento->nombre_evento }}
+            							@endif
+            							<br /><strong>Provincia:</strong>
+            							@if(isset($solucion))
+            								{{ $solucion->provincia->nombre_provincia }}
+            							@endif
+
+            							<br /><strong>Sector:</strong>
+            							@if(isset($solucion))
+            								{{ $solucion->sector->nombre_sector }}
+            							@endif
+
+            							<br /><strong>Líder de Mesa:</strong>
+            							@if(isset($solucion))
+            								{{ $solucion->lider_mesa_solucion }}
+            							@endif
+            							<br /><strong>Sistematizador de Mesa:</strong>
+            							@if(isset($solucion))
+            								{{ $solucion->sistematizador_solucion }}
+            							@endif
+										  	</h5>
+                                   	</blockquote>
+
+
+
 	                        </div>
-	
+
 						</div>
 					</div>
 					<!-- end col-5 -->
@@ -133,10 +146,10 @@
 						<div class="panel panel-inverse" data-sortable-id="index-5" style="border: 1px solid rgba(112, 116, 120, 0.64);" >
 							<div class="panel-heading" style="padding:5px 5px;">
 								<div class="panel-heading-btn">
-									
+
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 									<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-									
+
 								</div>
 								<h4 class="panel-title">Acciones de cumplimiento</h4>
 							</div>
@@ -144,44 +157,46 @@
 								<div class="media-body">
 									<br>
 										<label class='text-success f-s-11'>
-                                		
+
                                 	</label>
                             		<dl class="dl-horizontal">
-                            				
-										<dt>RESPONSABLE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</dt>
+
+										<span class="f-w-700">RESPONSABLE: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 										@if(isset($actoresSoluciones))
 											@foreach($actoresSoluciones as $actorSolucion)
-												@if($actorSolucion->tipo_actor == 1) 
+												@if($actorSolucion->tipo_actor == 1)
 													{{ $actorSolucion->usuario-> name }}
 												@endif
 											@endforeach
 										@endif
-										
-										<dt>CO-RESPONSABLE:</dt>
+
+                    <br />
+
+										<span class="f-w-700">CO-RESPONSABLE:</span>
 
 										<dd>
 										@if(isset($actoresSoluciones))
 											<ul>
 												@foreach($actoresSoluciones as $actorSolucion)
-													@if($actorSolucion->tipo_actor == 2) 
+													@if($actorSolucion->tipo_actor == 2)
 														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
 													@endif
 												@endforeach
 											</ul>
 										@endif
 										</dd>
-											
+
 									</dl>
 									<div class="media-body">
 										<dl class="dl-horizontal">
 											Estado de Compromiso: &nbsp;&nbsp;&nbsp;
-											<span class="label label-warning">
+											<span class="label label-warning f-s-13">
 												@if(isset($solucion))
 													{{ $solucion->estado->nombre_estado }}
 												@endif
-											</span> 
+											</span>
 										</dl>
-									</div> 
+									</div>
 
 
 									@if(isset($actividades) &&  count($actividades) > 0)
@@ -189,7 +204,7 @@
 									<span class="pull-right" style="font-size: 12px">Ordenado desde la m&aacute;s reciente</span>
 									<hr>
 									<ul class="media-list media-list-with-divider">
-										@foreach($actividades as $actividad)							
+										@foreach($actividades as $actividad)
 
 											<li class="media media-lg">
 												<div class="media-body">
@@ -198,10 +213,10 @@
 													<h5 class="media-heading"></h5>
 													{{ $actividad -> comentario}}
 													<br>
-													
+
 													<!-- <a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
 	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a> -->
-													
+
 												</div>
 
 											</li>
@@ -229,16 +244,16 @@
 
 											<!--FIN ARCHIVOS-->
 
-										@endforeach										
+										@endforeach
 									</ul>
 									@else
 										No se encontraron actividades registradas.
-									@endif 
-			                        
+									@endif
+
 								</div>
 							</div>
-							
-							
+
+
 						</div>
 					</div>
 					<!-- fin acciones  -->
@@ -281,4 +296,3 @@
   </script>
 
 @endsection
- 
