@@ -318,7 +318,7 @@ class PaginasController extends Controller
 
         $buscar = $request-> parametro;
 
-        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo Consultivo'){
+        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo_Consultivo'){
 
             if($buscar == 'Mesas de Competitividad' ){
                 $resultados = Solucion::where('tipo_fuente','=',1)
