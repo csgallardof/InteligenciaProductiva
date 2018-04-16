@@ -103,9 +103,17 @@
 				<hr>
 
           <div class="col-md-8">
-					<span class="title_ip_h1">{{ dd($solucion->count()) }} Resultados de la B&uacute;squeda</span>
-						{{-- @foreach()
-						@endforeach --}}
+					<span class="title_ip_h1"> 
+
+						<?php $total = 0; ?>
+						@foreach ($resultados as $solucion=>$athlete)
+						 	
+						 <?php   $total = ++$solucion; ?>	
+						@endforeach	
+						{{ $total }}
+					Resultados de la B&uacute;squeda</span>
+						
+						
 						{{-- @if(isset($parametro))
 							Se muestran los resultados para "
 							<a href="/busqueda?parametro={{ Request::get('parametro') }}">
