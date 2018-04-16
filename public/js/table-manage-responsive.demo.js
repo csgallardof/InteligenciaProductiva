@@ -114,7 +114,7 @@ var handleDataTableResponsiveBasica = function() {
             responsive: true,
 						dom: 'lBfrtip',
 						"searching": false,
-						buttons: [],
+						buttons: ['excel','print'],
 						"paging": false,
 						"language": {
 							"sProcessing":     "Procesando...",

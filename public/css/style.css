@@ -173,9 +173,10 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 
 body {
     background: #fff;
-    font-size: 12px;
-    font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #707478;
+    font-size: 14px;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: #444444;
+    line-height: 20px;
 }
 .ie8 body {
     font-family: Arial,sans-serif;

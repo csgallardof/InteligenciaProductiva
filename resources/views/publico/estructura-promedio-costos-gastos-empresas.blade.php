@@ -64,7 +64,7 @@
 							<table id="data-table" class="table nowrap table-striped table-bordered" width="60%">
 								<thead>
 
-					                <th class="text-center">Rubro</th>
+					          <th class="text-center">Rubro</th>
 								    <th class="text-center">2014</th>
 								    <th class="text-center">2015</th>
 								    <th class="text-center">2016</th>
@@ -136,12 +136,12 @@
 									    <td class="text-center">25,90%</td>
 									    <td class="text-center">27,50%</td>
 									  </tr>
-									  <tr>
+									  <!-- <tr>
 									    <td class="text-left"><strong>Total costos y gastos</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
 									    <td class="text-center"><strong>100,00%</strong></td>
-									  </tr>
+									  </tr> -->
 
 			     				</tbody>
 							</table>
