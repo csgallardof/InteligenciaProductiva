@@ -86,7 +86,7 @@
 					                        <br>
 					                        <br>
 					                        <div class="pull-right" style="padding-top: 5px;">
-					                        	<a href="/descargar/Consejo" class="btn btn-success m-r-5"><i class="fa fa-download"></i>Descargar</a>	
+					                        	<a href="/descargar/Mesas" class="btn btn-success m-r-5"><i class="fa fa-download"></i>Descargar</a>	
 					                        </div>
 
 								    		
