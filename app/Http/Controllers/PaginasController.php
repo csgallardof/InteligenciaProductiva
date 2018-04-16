@@ -13,7 +13,7 @@ use App\Pajustada;
 use App\ActorSolucion;
 use App\Actividad;
 use App\Ambit;
-use App\EstadoSolicion;
+use App\EstadoSolucion;
 use DB;
 use Illuminate\Support\Collection as Collection;
 
@@ -28,9 +28,9 @@ class PaginasController extends Controller
      public function despliegueterritorial(){
 
 
-        $provincias = Provincia::all(); 
+        $provincias = Provincia::all();
 
-        $sectors= Sector::all(); 
+        $sectors= Sector::all();
 
         //dd($provincias);
 
@@ -43,7 +43,7 @@ class PaginasController extends Controller
     public function detalledespliegue(Request $request, $idSolucion){
 
         $solucion = Solucion::where('id','=',$idSolucion)->first();
-        
+
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
@@ -51,7 +51,7 @@ class PaginasController extends Controller
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')->get();
-        
+
         return view('detalle-despliegue')->with([
                                             "solucion"=>$solucion,
                                             "actoresSoluciones"=>$actoresSoluciones,
@@ -62,8 +62,8 @@ class PaginasController extends Controller
     public function detalleccpt(Request $request, $pajustada_sol_id, $sector, $ambito, $sipoc){
 
         $pajustada = Pajustada::find($pajustada_sol_id);
-        
-       
+
+
 
         if($sector > 0 && $ambito > 0){
              $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
@@ -80,7 +80,7 @@ class PaginasController extends Controller
                         ->where('sector_id','=',$sector)
                         ->orderBy('solucion_ccpt','ASC')->get();
         }
-      
+
 
         if($sector == 0 && $ambito > 0){
             $soluciones = Solucion::where('pajustada_id','=',$pajustada_sol_id)
@@ -159,16 +159,16 @@ class PaginasController extends Controller
 
 
 
-    
+
     // Modelo Usuarios
     public function usuarios(){
 
-       
+
        // $usuario_actual= Auth::user()->get();
        $role = user::find(44)->roles;
        // return $role;
        $user = role::find(2)->users;
-        
+
         dd($role);
         return $user;
         //return view('welcome');
@@ -178,7 +178,7 @@ class PaginasController extends Controller
 
     public function participantes(){
 
-        $evento = User::find(1)->evento()->get(); 
+        $evento = User::find(1)->evento()->get();
 
        // $user = Evento::find(1)->users;
 
@@ -189,7 +189,7 @@ class PaginasController extends Controller
 
     public function UsuariosEvento(){
 
-        $usuario_actual = User::find(1)->evento()->get(); 
+        $usuario_actual = User::find(1)->evento()->get();
 
        // $user = Evento::find(1)->users;
 
@@ -201,7 +201,7 @@ class PaginasController extends Controller
 
     public function buscar(Request $request){
 
-        $provincias = Provincia::all(); 
+        $provincias = Provincia::all();
 
         $sectors= Sector::all();
 
@@ -280,7 +280,7 @@ class PaginasController extends Controller
                                             ->where('tipo_fuente','=',1)
                                             ->where('provincia_id','=',$request->provincias)->get();
                     }
-                } 
+                }
             }
 
             return view('despliegueterritorial')->with(["solucion_proveedores"=>$solucion_proveedores,
@@ -302,7 +302,7 @@ class PaginasController extends Controller
                                                     "paramProvincia"=>$paramProvincia
                                                 ]);
         }
-               
+
 
     }
 
@@ -315,7 +315,7 @@ class PaginasController extends Controller
     }
 
     public function busquedaGeneral(Request $request){
-        
+
         $buscar = $request-> parametro;
 
         if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo Consultivo'){
@@ -338,7 +338,7 @@ class PaginasController extends Controller
                                 ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
                                 ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
                                 ;
-                
+
             $resultados2 = Solucion::select('solucions.*')
                                 ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
                                 ->join('users','actor_solucion.user_id','=','users.id')
@@ -355,6 +355,11 @@ class PaginasController extends Controller
                                 ->where('pajustadas.nombre_pajustada','LIKE','%' . $buscar . '%')
                                 ;//SOLO QUERY
 
+            $resultados5 = Solucion::select('solucions.*')
+                                ->join('estado_solucion', 'solucions.estado_id', '=', 'estado_solucion.id')
+                                ->where('estado_solucion.nombre_estado','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
@@ -363,20 +368,21 @@ class PaginasController extends Controller
                                 ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
                                 ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
                                 ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
-                                ->union($resultados4) // UNION CON  EL QUERY3 ANTERIOR
+                                ->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
+                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR
                                 ->get();
         }
 
 
-        $resultadoAuxiliar[] = array(); 
-        $filtros[] = array(); 
+        $resultadoAuxiliar[] = array();
+        $filtros[] = array();
         $hayFiltros= false;
 
         if( isset($request->checkbox1)){
             $filtros["mesas"]= true;
             foreach ($resultados as $solucion) {
                 if($solucion-> tipo_fuente == 1){
-                    array_push($resultadoAuxiliar, $solucion); 
+                    array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
                 }
             }
@@ -386,17 +392,17 @@ class PaginasController extends Controller
             $filtros["consejo"]= true;
             foreach ($resultados as $solucion) {
                 if($solucion-> tipo_fuente == 2){
-                    array_push($resultadoAuxiliar, $solucion); 
+                    array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
                 }
             }
         }
-        
+
         if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
             $filtros["sector"]= $request->sectorSelect;
             foreach ($resultados as $solucion) {
                 if($solucion->sector_id == $request->sectorSelect){
-                    array_push($resultadoAuxiliar, $solucion); 
+                    array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
                 }
             }
@@ -407,7 +413,7 @@ class PaginasController extends Controller
             foreach ($resultados as $solucion) {
                 foreach ($solucion->actor_solucion as $actor_solucion) {
                     if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
-                        array_push($resultadoAuxiliar, $solucion); 
+                        array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
                     }
                 }
@@ -419,7 +425,7 @@ class PaginasController extends Controller
             foreach ($resultados as $solucion) {
                 foreach ($solucion->actor_solucion as $actor_solucion) {
                     if($actor_solucion-> user_id == $request->corresponsableSelect && $actor_solucion->tipo_actor == 2){
-                        array_push($resultadoAuxiliar, $solucion); 
+                        array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
                     }
                 }
@@ -427,26 +433,26 @@ class PaginasController extends Controller
         }
 
         if( $hayFiltros == true){
-            unset($resultadoAuxiliar[0]);   
+            unset($resultadoAuxiliar[0]);
             $resultadoAuxiliar = array_unique($resultadoAuxiliar);
             $resultadoAuxiliar = Collection::make($resultadoAuxiliar);
-        
-            $resultados = $resultadoAuxiliar;    
+
+            $resultados = $resultadoAuxiliar;
         }
 
-        unset($filtros[0]); 
-        
+        unset($filtros[0]);
+
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
                                             "filtros"=>$filtros
-                                        ]); 
-        
+                                        ]);
+
     }
 
     public function consejosectorial(){
         return view('csp.home');
-    } 
-    
+    }
+
 
 }

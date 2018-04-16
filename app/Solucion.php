@@ -65,7 +65,7 @@ class Solucion extends Model
                     ->orwhere('responsable_solucion','LIKE',"%$name%")
                     ->orwhere('corresponsable_solucion','LIKE',"%$name%")
                     ->orwhere('solucion_ccpt','LIKE',"%$name%");
-        
+
         $provincias = Provincia::where('nombre_provincia','LIKE',"%$name%")->get();
         if(count($provincias) > 0){
             foreach ($provincias as $provincia) {
@@ -78,59 +78,59 @@ class Solucion extends Model
             foreach ($instrumentos as $instrumento) {
                 $query->orwhere('instrumento_id', '=',"$instrumento->id" );
             }
-        }   
+        }
 
         $sipocs= Sipoc::where('nombre_sipoc','LIKE',"%$name%")->get();
         if(count($sipocs) > 0){
             foreach ($sipocs as $sipoc) {
                 $query->orwhere('sipoc_id', '=',"$sipoc->id" );
             }
-        } 
+        }
 
         $eventos= Evento::where('nombre_evento','LIKE',"%$name%")->get();
         if(count($eventos) > 0){
             foreach ($eventos as $evento) {
                 $query->orwhere('evento_id', '=',"$evento->id" );
             }
-        } 
+        }
 
         $ambitos= Ambit::where('nombre_ambit','LIKE',"%$name%")->get();
         if(count($ambitos) > 0){
             foreach ($ambitos as $ambito) {
                 $query->orwhere('ambit_id', '=',"$ambito->id" );
             }
-        }   
+        }
 
         $tipoEmpresas= TipoEmpresa::where('nombre_tipo_empresa','LIKE',"%$name%")->get();
         if(count($tipoEmpresas) > 0){
             foreach ($tipoEmpresas as $tipoEmpresa) {
                 $query->orwhere('tipo_empresa_id', '=',"$tipoEmpresa->id" );
             }
-        } 
+        }
 
         $sectors= Sector::where('nombre_sector','LIKE',"%$name%")->get();
         if(count($sectors) > 0){
             foreach ($sectors as $sector) {
                 $query->orwhere('sector_id', '=',"$sector->id" );
             }
-        }  
+        }
 
         $mesas= Mesa::where('nombre_mesa','LIKE',"%$name%")->get();
         if(count($mesas) > 0){
             foreach ($mesas as $mesa) {
                 $query->orwhere('mesa_id', '=',"$mesa->id" );
             }
-        }  
+        }
 
         $pajustadas= Pajustada::where('nombre_pajustada','LIKE',"%$name%")->get();
         if(count($pajustadas) > 0){
             foreach ($pajustadas as $pajustada) {
                 $query->orwhere('pajustada_id', '=',"$pajustada->id" );
             }
-        }   
-        
+        }
+
         return $query;
-        
+
     }
 
     public function tipoEmpresa(){
@@ -147,7 +147,7 @@ class Solucion extends Model
 
         return Solucion::where('tipo_fuente','=',$tipo_fuente)->get();
     }
-    
+
     public function actorSolucion(){
 
         return $this->hasMany('App\ActorSolucion');

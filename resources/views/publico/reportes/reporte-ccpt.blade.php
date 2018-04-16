@@ -6,31 +6,37 @@
   @parent
   	<link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
-	
+
 @endsection
 
 @section('contenido')
 
-<br>
-<br><br><br>
+<br><br><br><br>
 	<!-- begin row -->
-	<div id="about" class="content work row-m-t-3" data-scrollview="true">
+	<div id="about" class="content work" data-scrollview="true">
 		<div class="container" data-animation="true" data-animation-type="fadeInDown">
-				
-	            
-	            <div class="row">
-	            	
-	            	<b style="font-size: 15px; padding-left: 15px; padding-top: 300px;">FILTROS</b>
-					 
+
+
+        <div class="toolbar title_ip_breadcrumb fit-m-b-10">
+          <ol class="breadcrumb">
+            <li class="home"><a href="/en/"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="active"><a href="/en/dataset">Resultados de la B&uacute;squeda</a></li>
+          </ol>
+        </div>
+
+          <div class="row fit-m-b-20">
+
 					<form role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
 					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
 					 	<div class="form-group">
 						 	<div class="form-check form-check-inline">
 						 		<?php $arraySectors[] = array(); ?>
+
 						 		<div class="col-md-2">
-							    	<label for="sectorSelect">Sector</label><br>
-								 	<select class="form-group" id="sectorSelect" name="sectorSelect" style="width: 175px">
-								 		<option value="0"></option>
+
+							    <label for="sectorSelect">Sector</label><br>
+								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" style="width: 175px">
+								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
 									 			<option value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
@@ -38,12 +44,12 @@
 									 		@endif
 								 		@endforeach
 								 	</select>
-								 	<br>
-
+                </div>
+                <div class="col-md-2">
 								 	<?php $arrayResponsables[] = array(); ?>
 								 	<label for="sectorSelect">Responsable</label><br>
-								 	<select class="form-group" id="responsableSelect" name="responsableSelect" style="width: 175px">
-								 		<option value="0"></option>
+								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" style="width: 175px">
+								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( count($solucion->actor_solucion) > 0 )
 						                		@foreach( $solucion->actor_solucion as $actorSolucion)
@@ -58,95 +64,85 @@
 							            @endforeach
 
 								 	</select>
-								 	<br>
-				  					<button type="submit" class="btn btn-primary pull-right">Filtrar</button>
-
 
 							    </div>
-							    <div class="col-md-10">
-							    	
+
+							    <div class="col-md-7 pull-right">
+
 					                    <div class="panel-body text-center">
-					                        
+
 					                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
 					                            <div class="form-group">
-					                                
+
 					                                <div class="input-group custom-search-form">
 					                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
 					                                    <span class="input-group-btn">
 					                                        <button class="btn btn-buscar btn-lg" style="background: #EF5D06; color: #fff; " type="submit" height="50px">
-					                                            <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
+					                                            <span class="glyphicon glyphicon-search"></span>
 					                                        </button>
 					                                    </span>
 
 					                                </div>
-					                                
+
 					                            </div>
 					                        </form>
-
-					                        <br>
-					                        <br>
-					                        <div class="pull-right" style="padding-top: 5px;">
-					                        	<a href="/descargar/Mesas" class="btn btn-success m-r-5"><i class="fa fa-download"></i>Descargar</a>	
-					                        </div>
-
-								    		
-
 					                    </div>
-					                
-							    	
 							    </div>
 
 							</div>
 						</div>
-						
+
 					</form>
 				</div>
+
 				<hr>
 
-				<br> 
-					<span style="font-size: 22px;">Resultado de la B&uacute;squeda / </span>
+          <div class="col-md-8">
+					<span class="title_ip_h1">{{ $solucion->count() }} Resultados de la B&uacute;squeda</span>
 						{{-- @foreach()
 						@endforeach --}}
 						{{-- @if(isset($parametro))
 							Se muestran los resultados para "
-							<a href="/busqueda?parametro={{ Request::get('parametro') }}">	
+							<a href="/busqueda?parametro={{ Request::get('parametro') }}">
 								<b style="color: #00acac; font-size: 16px">{{ $parametro }}</b>
 							</a>
 							"
 						@endif --}}
+            <button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+          </div>
 
+          <div class="col-md-4">
+            <a href="/descargar/Mesas" class="btn pull-right btn-success"><i class="fa fa-download"></i>&nbsp;Descargar</a>
+          </div>
 
-						
-						
-				<hr>
-
+				<br /><br /><hr>
 
 	            <div class="row">
-					
+
 					<div class="col-md-12">
 
 						@if(isset($resultados))
 							<table id="data-table" class="table nowrap" width="100%">
 								<thead>
 									<th class="text-center">PROPUESTA</th>
-					                <th class="text-center">SECTOR</th>
+					                <th class="text-center">FUENTE</th>
 					                <th class="text-center">RESPONSABLE</th>
 					                <th class="text-center">ESTADO</th>
-					                
+
 					                <th></th>
 								</thead>
-								<tbody>				        	
+								<tbody>
 						        	@foreach( $resultados as $solucion)
 						        		<tr>
-							                
-											@if($solucion-> tipo_fuente == 1)							                
+
+											@if($solucion-> tipo_fuente == 1)
 							                	<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
 							                @else
-							                	@if($solucion-> tipo_fuente == 2)							                
-							                		<td class="text-center">{{ $solucion->solucion_ccpt }}</td>
+							                	@if($solucion-> tipo_fuente == 2)
+							                		<td class="text-left">{{ $solucion->solucion_ccpt }}</td>
 							                	@endif
 							                @endif
-							                <td class="text-center">{{ $solucion->sector->nombre_sector}}</td>
+							                <td class="text-left">{{ $solucion->sector->nombre_sector}}</td>
 							                <td class="text-center">
 							                	@if( count($solucion->actor_solucion) > 0 )
 							                		@foreach( $solucion->actor_solucion as $actorSolucion)
@@ -155,13 +151,12 @@
 							                			@endif
 							                		@endforeach
 							                	@endif
-							                	
+
 							                </td>
-							                
-											<td class="text-center">
-												{{ $solucion->nombre_estado }}
-												
-												
+
+											<td class="text-left">
+												{{ $solucion->estado->nombre_estado }}
+
 											</td>
 											<td class="text-center">
 												@if( $solucion -> tipo_fuente == 1)
@@ -169,22 +164,22 @@
 														Ver
 													</a>
 												@endif
-												
-												
+
+
 											</td>
 							            </tr>
-						            @endforeach			   
+						            @endforeach
 			     				</tbody>
 							</table>
 						@endif
-						
+
 						<!-- Fin Contenido -->
 					</div>
 						<!-- end col-4 -->
 				</div>
 		</div>
-		
-	</div>			
+
+	</div>
 
 @endsection
 
@@ -223,7 +218,7 @@
 	</script>
 
 	<script type="text/javascript">
-		
+
 		function ordenarSelect(id_componente)
 	    {
 	      var selectToSort = jQuery('#' + id_componente);

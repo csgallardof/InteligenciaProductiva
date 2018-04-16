@@ -136,7 +136,7 @@ body {
 }
 
 /*body {
-    
+
     font-family: 'Open Sans', "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #707478;
     font-size: 12px;
@@ -333,7 +333,8 @@ body.page-navbar-fixed-top-sm {
     border: none;
 }
 .navbar-nav .dropdown-menu > li > a {
-    color: #999;
+    color: #000000;
+    font-size: 13px;
     padding: 10px 15px;
 }
 .navbar-nav .dropdown-menu > li.active > a,
@@ -3253,7 +3254,7 @@ a.list-group-item.active:focus {
     font-size: 15px ;
 }
 
-    
+
 .btn.btn-buscar {
     color: #fff;
     background: #F26F21;
@@ -3279,13 +3280,13 @@ a.list-group-item.active:focus {
 
 .container2 {
     position: relative;
-    
+
 }
 
 .container-work {
     position: relative;
     margin: 15px
-    
+
 }
 
 .text-block2 {
@@ -3303,7 +3304,7 @@ a.list-group-item.active:focus {
     text-align: center;
     padding: 0 40px;
     background: #f3f3f3;
-    
+
 
 }
 
@@ -3344,4 +3345,3 @@ a.list-group-item.active:focus {
 .box-foro{
     text-align: left !important;
 }
-
