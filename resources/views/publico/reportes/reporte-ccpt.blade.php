@@ -19,8 +19,8 @@
 
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
           <ol class="breadcrumb">
-            <li class="home"><a href="/en/"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="/en/dataset">Resultados de la B&uacute;squeda</a></li>
+            <li class="home"><a href="#"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="active"><a href="#">Resultados de la B&uacute;squeda</a></li>
           </ol>
         </div>
 
@@ -103,7 +103,7 @@
 				<hr>
 
           <div class="col-md-8">
-					<span class="title_ip_h1">{{$solucion->count() }} Resultados de la B&uacute;squeda</span>
+					<span class="title_ip_h1">{{ dd($solucion->count()) }} Resultados de la B&uacute;squeda</span>
 						{{-- @foreach()
 						@endforeach --}}
 						{{-- @if(isset($parametro))
