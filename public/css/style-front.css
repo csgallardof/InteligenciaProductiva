@@ -3352,3 +3352,8 @@ a.list-group-item.active:focus {
   border-color: #F26F21;
   font-weight: bold;
 }
+
+.btn-home-ip-custom:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
