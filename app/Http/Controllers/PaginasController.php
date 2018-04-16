@@ -322,12 +322,12 @@ class PaginasController extends Controller
 
             if($buscar == 'Mesas de Competitividad' ){
                 $resultados = Solucion::where('tipo_fuente','=',1)
-                            ->orderBy('verbo_solucion','ASC')
+                            ->orderBy('estado_id','ASC')
                             ->get();
             }
-            if($buscar == 'Consejo Consultivo' ){
+            if($buscar == 'Consejo_Consultivo' ){
                 $resultados = Solucion::where('sector_id','=',7)
-                            ->orderBy('verbo_solucion','ASC')
+                            ->orderBy('estado_id','DESC')
                             ->get();
             }
 
@@ -358,6 +358,7 @@ class PaginasController extends Controller
             $resultados5 = Solucion::select('solucions.*')
                                 ->join('estado_solucion', 'solucions.estado_id', '=', 'estado_solucion.id')
                                 ->where('estado_solucion.nombre_estado','LIKE','%' . $buscar . '%')
+                                ->orderBy('estado_id','DESC')
                                 ;//SOLO QUERY
 
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
