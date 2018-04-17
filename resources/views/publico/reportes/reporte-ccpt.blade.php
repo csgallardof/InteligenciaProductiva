@@ -32,7 +32,7 @@
 					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
 					 	<div class="form-group">
 						 	<div class="form-check form-check-inline">
-						 		<?php $arraySectors[] = array(); ?>
+						 		<!-- <?php $arraySectors[] = array(); ?>
 
 						 		<div class="col-md-2">
 
@@ -43,6 +43,21 @@
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
 									 			<option value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
 									 			<?php array_push( $arraySectors, $solucion->sector->id ); ?>
+									 		@endif
+								 		@endforeach
+								 	</select> -->
+
+								 	<?php $arrayAmbits[] = array(); ?>
+
+						 		<div class="col-md-2">
+
+							    <label for="sectorSelect">Ámbito</label><br>
+								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" style="width: 175px">
+								 		<option value="0">Seleccionar</option>
+								 		@foreach( $resultados as $solucion)
+								 			@if( !in_array( $solucion->ambit->id , $arrayAmbits) )
+									 			<option value="{{ $solucion->ambit->id}}">{{ $solucion->ambit->nombre_ambit }}</option>
+									 			<?php array_push( $arrayAmbits, $solucion->ambit->id ); ?>
 									 		@endif
 								 		@endforeach
 								 	</select>
@@ -144,7 +159,7 @@
 							<table id="data-table" class="table nowrap" width="100%">
 								<thead>
 									<th class="text-center">PROPUESTA</th>
-					                <th class="text-center">FUENTE</th>
+					                <th class="text-center">AMBITO</th>
 					                <th class="text-center">RESPONSABLE</th>
 					                <th class="text-center">ESTADO</th>
 
@@ -158,10 +173,10 @@
 							                	<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
 							                @else
 							                	@if($solucion-> tipo_fuente == 2)
-							                		<td class="text-left">{{ $solucion->solucion_ccpt }}</td>
+							                		<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
 							                	@endif
 							                @endif
-							                <td class="text-left">{{ $solucion->sector->nombre_sector}}</td>
+							                <td class="text-left">{{ $solucion->ambit->nombre_ambit}}</td>
 							                <td class="text-center">
 							                	@if( count($solucion->actor_solucion) > 0 )
 							                		@foreach( $solucion->actor_solucion as $actorSolucion)
@@ -174,11 +189,19 @@
 							                </td>
 
 											<td class="text-left">
-												{{ $solucion->estado->nombre_estado }}
+												<span class="label label-warning f-s-13">
+													{{ $solucion->estado->nombre_estado }}
+												</span>
+												
 
 											</td>
 											<td class="text-center">
 												@if( $solucion -> tipo_fuente == 1)
+													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
+														Ver
+													</a>
+												@endif
+												@if( $solucion -> tipo_fuente == 2)
 													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
 														Ver
 													</a>

@@ -479,17 +479,18 @@ class PaginasController extends Controller
 
         $buscar = $request-> parametro;
 
-        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo_Consultivo'){
+        if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
 
-            if($buscar == 'Mesas de Competitividad' ){
+            if($buscar == 'Mesas_Competitividad' ){
                 $resultados = Solucion::where('tipo_fuente','=',1)
                             ->orderBy('estado_id','ASC')
                             ->get();
             }
-            if($buscar == 'Consejo_Consultivo' ){
-                $resultados = Solucion::where('sector_id','=',7)
-                            ->orderBy('estado_id','DESC')
-                            ->get();
+            if($buscar == 'Consejo_consultivo' ){
+                //dd($buscar);
+                 $resultados = Solucion::where('tipo_fuente','=',2)
+                             ->orderBy('id','ASC')
+                             ->get();
             }
 
         }else{
@@ -509,6 +510,7 @@ class PaginasController extends Controller
             $resultados3 = Solucion::select('solucions.*')
                                 ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
                                 ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
+                                ->orderBy('estado_id','ASC');
                                 ;//SOLO QUERY
 
             $resultados4 = Solucion::select('solucions.*')
@@ -522,6 +524,12 @@ class PaginasController extends Controller
                                 ->orderBy('estado_id','DESC')
                                 ;//SOLO QUERY
 
+            $resultados6 = Solucion::select('solucions.*')
+                                ->join('ambits', 'solucions.ambit_id', '=', 'ambits.id')
+                                ->where('ambits.nombre_ambit','LIKE','%' . $buscar . '%')
+                                ->orderBy('ambit_id','DESC')
+                                ;//SOLO QUERY
+
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
@@ -532,6 +540,7 @@ class PaginasController extends Controller
                                 ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
                                 ->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
                                 ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR
+                                ->union($resultados5) // UNION CON  EL QUERY6 ANTERIOR
                                 ->get();
         }
 
@@ -562,6 +571,16 @@ class PaginasController extends Controller
 
         if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
             $filtros["sector"]= $request->sectorSelect;
+            foreach ($resultados as $solucion) {
+                if($solucion->sector_id == $request->sectorSelect){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+
+        if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
+            $filtros["ambit"]= $request->sectorSelect;
             foreach ($resultados as $solucion) {
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
