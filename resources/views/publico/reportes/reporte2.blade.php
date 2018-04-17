@@ -21,23 +21,32 @@
           <ol class="breadcrumb">
 
             <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="{{ url('/busquedaAvanzada') }}">Resultados de la B&uacute;squeda</a></li>
 
           </ol>
         </div>
+        <br><hr>
+		<div class="row">
+			<div class="col-md-3" style="border: #D7DBDD 1px solid; padding: 1%">
+				
+				<form role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
+				<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
+				<div class="toolbar title_ip_breadcrumb fit-m-b-10">
 
-          <div class="row fit-m-b-20">
+		          <ol class="breadcrumb">
 
-					<form role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-					 	<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
-					 	<div class="form-group">
-						 	<div class="form-check form-check-inline">
-						 		<?php $arraySectors[] = array(); ?>
+		            <li class="home">Filtros</li>
+		            <li class="active"><button type="submit" class="btn btn-primary m-l-20 pull-rigth">Filtrar</button></li>
 
-						 		<div class="col-md-2">
+		          </ol>
+		        </div>	
+					<div class="form-group">
+						<?php $arraySectors[] = array(); ?>
+
+						 		<div >
 
 							    <label for="sectorSelect">Sector</label><br>
-								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" style="width: 175px">
+								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" >
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
@@ -46,14 +55,13 @@
 									 		@endif
 								 		@endforeach
 								 	</select>
-                </div>
+                				</div>
+                				<?php $arrayEstados[] = array(); ?>
 
-					<?php $arrayEstados[] = array(); ?>
-
-						 		<div class="col-md-2">
+						 		<div >
 
 							    <label for="estadoSelect">Estados</label><br>
-								 	<select class="form-group form-control" id="estadoSelect" name="estadoSelect" style="width: 175px">
+								 	<select class="form-group form-control" id="estadoSelect" name="estadoSelect">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->estado->id , $arrayEstados) )
@@ -62,14 +70,13 @@
 									 		@endif
 								 		@endforeach
 								 	</select>
-                </div>
+                				</div>
+                				<?php $arrayAmbits[] = array(); ?>
 
-				<?php $arrayAmbits[] = array(); ?>
+						 		<div >
 
-						 		<div class="col-md-2">
-
-							    <label for="ambitoSelect">Ambiente</label><br>
-								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect" style="width: 175px">
+							    <label for="ambitoSelect">Ambito</label><br>
+								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->ambit->id , $arrayAmbits) )
@@ -78,14 +85,11 @@
 									 		@endif
 								 		@endforeach
 								 	</select>
-                </div>                
-
-				
-
-                <div class="col-md-2">
+                				</div>
+                				<div >
 								 	<?php $arrayResponsables[] = array(); ?>
 								 	<label for="sectorSelect">Responsable</label><br>
-								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" style="width: 175px">
+								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" >
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( count($solucion->actor_solucion) > 0 )
@@ -101,17 +105,12 @@
 							            @endforeach
 
 								 	</select>
-                  </div>
-
-                  <div class="col-md-2 m-t-25">
-                    <button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
-                  </div>
-
-					</form>
-
-
-
-							    <div class="col-md-6 pull-right">
+                  			</div>            
+					</div>
+				</form>
+			</div>
+			<div class="col-md-9">
+				<div class="col-md-12 pull-left">
 
 					                    <div class="panel-body text-center">
 
@@ -126,24 +125,19 @@
 					                                            <span class="glyphicon glyphicon-search"></span>
 					                                        </button>
 					                                    </span>
-
+														<a href="/descargar/Mesas" class="btn  btn-success btn-lg "><i class="fa fa-download"></i>&nbsp;Descargar</a>
 					                                </div>
 
 					                            </div>
-
+												
 					                        </form>
+
 					                    </div>
+					                   
+							            
+							          
 							    </div>
-
-							</div>
-						</div>
-
-
-				</div>
-
-				<hr>
-
-          <div class="col-md-8">
+					<div class="col-md-12">
 					<span class="title_ip_h1"> 
 
 						<?php $total = 0; ?>
@@ -163,18 +157,14 @@
 							"
 						@endif --}}
 
-          </div>
+          			</div>
 
-          <div class="col-md-4">
-            <a href="/descargar/Mesas" class="btn pull-right btn-success"><i class="fa fa-download"></i>&nbsp;Descargar</a>
-          </div>
-
-				<br /><br /><hr>
-<div class="row">
-
-	<div class="col-md-4"></div>
-	<div class="col-md-8">
-					<!-- begin col-3 -->
+					<!-- inicio cuadrados -->
+					<br><br> <br>
+          								
+					<div class="col-md-12">
+						<br><br> 
+						<!-- begin col-3 -->
 				<div class="col-md-4 col-sm-6">
 					<div class="widget widget-stats bg-blue">
 						<div class="stats-icon"><i class="fa fa-chain-broken"></i></div>
@@ -222,7 +212,7 @@
 						<div class="stats-icon"><i class="fa fa-users"></i></div>
 						<div class="stats-info">
 							
-							<h>Total de Propuestas <strong>Asignadas</strong></h4>
+							<h4>Total de Propuestas <strong>Asignadas</strong></h4><br>
 							<p>{{$totalEstadoAsignado}}</p>	
 						</div>
 						
@@ -234,21 +224,19 @@
 					<div class="widget widget-stats bg-red">
 						<div class="stats-icon"><i class="fa fa-clock-o"></i></div>
 						<div class="stats-info">
-							<h>Total de Propuestas <strong>En Desarrollo</strong></h4>
+							<h4>Total de Propuestas <strong>En Desarrollo</strong></h4><br>
 							<p>{{$totalEstadoDesarrollo}}</p>	
 						</div>
 						
 					</div>
 				</div> 
 				<!-- end col-3 -->
-			
-	</div>
-	
-</div>
-	            <div class="row">
- 					<div class="col-md-4"></div>
-					<div class="col-md-8">
-				
+					</div>
+					<!-- Final cuadrados -->
+
+				<!-- Inicio col-8 tabla -->
+					<div class="col-md-12">
+						<br><br>
 						@if(isset($resultados))
 							<table id="data-table" class="table nowrap" width="100%">
 								<thead>
@@ -263,8 +251,8 @@
 											@if($resultados->tipo_fuente==1)
 							                	<td class="text-left">
 							               <br>
-							<div class="text-justify">
-							<p>
+									<div class="text-justify">
+									<p>
 								
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
@@ -274,35 +262,23 @@
 								
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
 
-								<font ><strong>Estado: </strong>{{$resultados->estado_id}}</font><br>
-
-								<font >Nuemero de Acciones:</font><span class="badge badge-primary">5</span><br>
-								@if($resultados->estado_id==2)
+								
+								@if($resultados->estado_id>=1)
 								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%"></div>
+                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
+                                        @if($resultados->estado_id>=3)
+                                        <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
+                                        @if($resultados->estado_id==4)
+                                        <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
+                                        @endif
+                                        @endif
                                         
                                   </div>
                                 @endif
-                                @if($resultados->estado_id==3)
-								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%">Asignado</div>
-                                        <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
-                                  </div>
-                                @endif
-                                @if($resultados->estado_id==4)
-								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%"></div>
-                                        <div class="progress-bar progress-bar-info" style="width: 33%"></div>
-                                        <div class="progress-bar progress-bar-success" style="width: 34%"></div>
-                                  </div>
-                                @endif
-                                @if($resultados->estado_id==1)
-                                <div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-warning" style="width: 10%"></div>    
-                                  </div>
-                                @endif	
+                                
+                               	
 							</p>
-							<a   class="btn btn-primary pull-right" href="#">ver</a>
+							<a   class="btn btn-primary pull-right" href="/detalle-despliegue2/{{ $resultados->id}}">ver</a>
 							<br><br>
 							</div>
 							<br>
@@ -321,36 +297,23 @@
 								<font >Consejo Consultivo</font><br>
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
 								
-								<font ><strong>Estado: </strong>{{$resultados->estado_id}}</font><br>
-
-								<font >Numero de Acciones:</font><span class="badge badge-primary">5</span><br>
-								@if($resultados->estado_id==2)
+								
+                                @if($resultados->estado_id>=1)
 								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%"></div>
+                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
+                                        @if($resultados->estado_id>=3)
+                                        <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
+                                        @if($resultados->estado_id==4)
+                                        <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
+                                        @endif
+                                        @endif
                                         
                                   </div>
                                 @endif
-                                @if($resultados->estado_id==3)
-								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%"></div>
-                                        <div class="progress-bar progress-bar-info" style="width: 33%"></div>
-                                  </div>
-                                @endif
-                                @if($resultados->estado_id==4)
-								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%"></div>
-                                        <div class="progress-bar progress-bar-info" style="width: 33%"></div>
-                                        <div class="progress-bar progress-bar-success" style="width: 34%"></div>
-                                  </div>
-                                @endif
-                                @if($resultados->estado_id==1)
-                                <div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-warning" style="width: 10%"></div>     
-                                  </div>
-                                @endif
+                                
 
 							</p>
-							<a   class="btn btn-primary pull-right" href="#">ver</a>
+							<a   class="btn btn-primary pull-right" href="/detalle-despliegue2/{{$resultados->id}}">ver</a>
 							<br><br>
 							</div>
 							<br>
@@ -367,8 +330,12 @@
 
 						<!-- Fin Contenido -->
 					</div>
-						<!-- end col-4 -->
-				</div>
+					<!-- end col-8 tabla -->
+
+			</div>
+          
+        </div>
+               
 		</div>
 
 	</div>
