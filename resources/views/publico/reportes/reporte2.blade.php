@@ -278,7 +278,7 @@
                                 
                                	
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue2/{{ $resultados->id}}">ver</a>
+							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 							<br><br>
 							</div>
 							<br>
@@ -313,7 +313,7 @@
                                 
 
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue2/{{$resultados->id}}">ver</a>
+							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a>
 							<br><br>
 							</div>
 							<br>
