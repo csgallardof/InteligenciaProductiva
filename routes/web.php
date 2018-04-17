@@ -20,7 +20,14 @@ Route::get('/', function () {
 
 Route::get('/reporte','SolucionesController@reporte1');
 
+Route::get('/inicio2', function () {
+     return view('inicio2');
+});
 
+Route::get('/busquedaAvanzada',[
+     'uses'=>'PaginasController@busquedaAvanzada',
+     'as'=>'nuevaBusqueda2'
+]);
 
 
 
@@ -30,6 +37,7 @@ Route::post('/reporte',[
      'as'=>'reporte1.resultado'
 ]);
 
+Route::get('/detalle-despliegue-dialogo/{id}','PaginasController@detalledespliegue2');
 
 
 Route::get('/foro-de-la-produccion-impulso-innovacion', 'PaginasController@foroproduccion');
