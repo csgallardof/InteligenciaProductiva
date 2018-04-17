@@ -190,19 +190,19 @@
 
 											<td class="text-left">
 												<span class="label label-warning f-s-13">
-													{{ $solucion->estado->nombre_estado }}
+													{{ $solucion->estado->nombre_estado }}	
 												</span>
 												
 
 											</td>
 											<td class="text-center">
 												@if( $solucion -> tipo_fuente == 1)
-													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
+													<a href= "/detalle-despliegue-dialogo/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
 														Ver
 													</a>
 												@endif
 												@if( $solucion -> tipo_fuente == 2)
-													<a href= "/detalle-despliegue/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
+													<a href= "/detalle-despliegue-dialogo/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
 														Ver
 													</a>
 												@endif
