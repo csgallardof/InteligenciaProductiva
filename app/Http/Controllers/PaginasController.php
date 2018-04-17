@@ -25,6 +25,167 @@ use App\Auth\Login;
 
 class PaginasController extends Controller
 {
+     public function busquedaAvanzada(Request $request){
+
+        $buscar = $request-> parametro;
+
+        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo_Consultivo'){
+
+            if($buscar == 'Mesas de Competitividad' ){
+                $resultados = Solucion::where('tipo_fuente','=',1)
+                            ->orderBy('estado_id','ASC')
+                            ->get();
+            }
+            if($buscar == 'Consejo Consultivo' ){
+                $resultados = Solucion::where('sector_id','=',2)
+                            ->orderBy('estado_id','DESC')
+                            ->get();
+            }
+
+        }else{
+
+
+            $resultados1 = Solucion::select('solucions.*')
+                                ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                                ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
+                                ;
+
+            $resultados2 = Solucion::select('solucions.*')
+                                ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
+                                ->join('users','actor_solucion.user_id','=','users.id')
+                                ->where('users.name','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados3 = Solucion::select('solucions.*')
+                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                                ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados5 = Solucion::select('solucions.*')
+                                ->join('estado_solucion', 'solucions.estado_id', '=', 'estado_solucion.id')
+                                ->where('estado_solucion.nombre_estado','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+            $resultados6 = Solucion::select('solucions.*')
+                                ->join('ambits', 'solucions.ambit_id', '=', 'ambits.id')
+                                ->where('ambits.nombre_ambit','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
+                                ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.responsable_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
+                                ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
+                                ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
+                                ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
+                                //->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
+                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR 
+                                ->union($resultados6) // UNION CON  EL QUERY5
+                               ->get();
+            
+                    //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
+
+            
+        }
+
+
+        $resultadoAuxiliar[] = array();
+        $filtros[] = array();
+        $hayFiltros= false;
+
+        if( isset($request->checkbox1)){
+            $filtros["mesas"]= true;
+            foreach ($resultados as $solucion) {
+                if($solucion-> tipo_fuente == 1){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+
+        if( isset($request->checkbox2)){
+            $filtros["consejo"]= true;
+            foreach ($resultados as $solucion) {
+                if($solucion-> tipo_fuente == 2){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+
+        if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
+            $filtros["sector"]= $request->sectorSelect;
+            foreach ($resultados as $solucion) {
+                if($solucion->sector_id == $request->sectorSelect){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+        if( isset($request->estadoSelect) && $request->estadoSelect > 0 ){
+            $filtros["sector"]= $request->estadoSelect;
+            foreach ($resultados as $solucion) {
+                if($solucion->estado_id == $request->estadoSelect){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+
+        if( isset($request->ambitoSelect) && $request->ambitoSelect > 0 ){
+            $filtros["ambito"]= $request->ambitoSelect;
+            foreach ($resultados as $solucion) {
+                if($solucion->ambit_id == $request->ambitoSelect){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                }
+            }
+        }
+        if( isset($request->responsableSelect) && $request->responsableSelect > 0 ){
+            $filtros["responsable"]= $request->responsableSelect;
+            foreach ($resultados as $solucion) {
+                foreach ($solucion->actor_solucion as $actor_solucion) {
+                    if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
+                        array_push($resultadoAuxiliar, $solucion);
+                        $hayFiltros = true;
+                    }
+                }
+            }
+        }
+
+        if( isset($request->corresponsableSelect) && $request->corresponsableSelect > 0 ){
+            $filtros["corresponsable"]= $request->corresponsableSelect;
+            foreach ($resultados as $solucion) {
+                foreach ($solucion->actor_solucion as $actor_solucion) {
+                    if($actor_solucion-> user_id == $request->corresponsableSelect && $actor_solucion->tipo_actor == 2){
+                        array_push($resultadoAuxiliar, $solucion);
+                        $hayFiltros = true;
+                    }
+                }
+            }
+        }
+
+        if( $hayFiltros == true){
+            unset($resultadoAuxiliar[0]);
+            $resultadoAuxiliar = array_unique($resultadoAuxiliar);
+            $resultadoAuxiliar = Collection::make($resultadoAuxiliar);
+
+            $resultados = $resultadoAuxiliar;
+        }
+
+        unset($filtros[0]);
+            
+        return view('publico.reportes.reporte2')->with([
+                                            "parametro"=>$buscar,
+                                            "resultados"=>$resultados,
+                                            "filtros"=>$filtros
+                                        ]);
+
+
+        
+
+    }
      public function despliegueterritorial(){
 
 

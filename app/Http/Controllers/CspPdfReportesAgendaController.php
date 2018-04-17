@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Collection as Collection;
 use DB;
-
+ 
 class CspPdfReportesAgendaController extends Controller
 {
     public function listaAgendaTerritorialCsp(){

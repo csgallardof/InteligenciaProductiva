@@ -23,7 +23,7 @@
             </div>
 			<!-- end page-header -->
 			
-			<!-- begin row -->
+			<!-- begin row --> 
 			<div class="row">
 				<!-- begin col-3 -->
 				<div class="col-md-3 col-sm-6">
