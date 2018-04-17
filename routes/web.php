@@ -37,6 +37,7 @@ Route::post('/reporte',[
      'as'=>'reporte1.resultado'
 ]);
 
+Route::get('/detalle-despliegue2/{id}','PaginasController@detalledespliegue2');
 
 
 Route::get('/foro-de-la-produccion-impulso-innovacion', 'PaginasController@foroproduccion');

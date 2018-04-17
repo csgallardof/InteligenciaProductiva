@@ -85,7 +85,7 @@ class PaginasController extends Controller
                                ->get();
             
                     //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
-
+            
             
         }
 
@@ -175,16 +175,47 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-            
+            $id_propuestas="";
+            foreach($resultados as $solucion){
+                //var_dump($solucion->id);
+                $id_propuestas.=$solucion->id.",";
+            }
+            $id_propuestas=substr($id_propuestas,0,-1);
+            $actividades=DB::select("SELECT actividades.solucion_id , COUNT(solucion_id) AS actividadesRegistradas FROM actividades
+            JOIN solucions ON solucions.id=actividades.solucion_id
+            WHERE actividades.solucion_id in ($id_propuestas)
+            GROUP BY actividades.solucion_id");
+            $actividades=Collection::make($actividades); 
+            //dd($actividades);
+            //dd($id_propuestas);
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
+                                            "actividades"=>$actividades,
                                             "filtros"=>$filtros
                                         ]);
 
 
         
 
+    }
+    public function detalledespliegue2(Request $request, $idSolucion){
+
+        $solucion = Solucion::where('id','=',$idSolucion)->first();
+
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('created_at','DESC')->get();
+
+        return view('detalle-despliegue2')->with([
+                                            "solucion"=>$solucion,
+                                            "actoresSoluciones"=>$actoresSoluciones,
+                                            "actividades"=>$actividades
+                                        ]);
     }
      public function despliegueterritorial(){
 
@@ -479,6 +510,7 @@ class PaginasController extends Controller
 
         $buscar = $request-> parametro;
 
+
         if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
 
             if($buscar == 'Mesas_Competitividad' ){
@@ -486,11 +518,13 @@ class PaginasController extends Controller
                             ->orderBy('estado_id','ASC')
                             ->get();
             }
+
             if($buscar == 'Consejo_consultivo' ){
                 //dd($buscar);
                  $resultados = Solucion::where('tipo_fuente','=',2)
                              ->orderBy('id','ASC')
                              ->get();
+
             }
 
         }else{

@@ -93,7 +93,7 @@ $(document).ready(function(){
                 <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
                     <div class="panel-body text-center">
 
-                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda') }}">
+                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
                             <div class="form-group">
                                 <div class="input-group custom-search-form">
                                     <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
@@ -108,7 +108,7 @@ $(document).ready(function(){
                             </div>
                         </form>
 
-                        <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
+                        <a href="{{ url('/busqueda?parametro=Consejo+Consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
 
                     </div>
                 </div>
