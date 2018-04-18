@@ -1,9 +1,6 @@
-/*   
-Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
-Version: 1.7.0
-Author: Sean Ngu
-Website: http://www.seantheme.com/color-admin-v1.7/admin/
-*/
+//*************
+// INFO GENERAL
+//*************
 
 // white
 var white = 'rgba(255,255,255,1.0)';
@@ -41,182 +38,318 @@ var strokePurple = 'rgba(114, 124, 182, 0.8)';
 var highlightFillPurple = 'rgba(114, 124, 182, 0.8)';
 var highlightStrokePurple = 'rgba(114, 124, 182, 1)';
 
+// ****************
+//vars graficas
+// ****************
 
-var randomScalingFactor = function() { 
+var doughnutData;
+var barChartData;
+var pieData;
+
+//*******************
+//GLOBAL FUNCTIONS
+//*****************
+
+var randomScalingFactor = function() {
     return Math.round(Math.random()*100)
 };
 
-var barChartData = {
-    labels : ['Jan','February','March','April','May','June','J'],
-    datasets : [
-        {
-            fillColor : fillBlackLight,
-            strokeColor : strokeBlack,
-            highlightFill: highlightFillBlack,
-            highlightStroke: highlightStrokeBlack,
-            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-        },
-        {
-            fillColor : fillBlueLight,
-            strokeColor : strokeBlue,
-            highlightFill: highlightFillBlue,
-            highlightStroke: highlightStrokeBlue,
-            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-        }
-    ]
-};
+//*******************
+///INICIO
+//*******************
 
-var doughnutData = [
-    {
-        value: 300,
-        color: fillGrey,
-        highlight: highlightFillGrey,
-        label: 'Grey'
-    },
-    {
-        value: 50,
-        color: fillGreen,
-        highlight: highlightFillGreen,
-        label: 'Green'
-    },
-    {
-        value: 100,
-        color: fillBlue,
-        highlight: highlightFillBlue,
-        label: 'Blue'
-    },
-    {
-        value: 40,
-        color: fillPurple,
-        highlight: highlightFillPurple,
-        label: 'Purple'
-    },
-    {
-        value: 120,
-        color: fillBlack,
-        highlight: highlightFillBlack,
-        label: 'Black'
-    }
-];
+$(document).ready(function() {
 
-var lineChartData = {
-    labels : ['January','February','March','April','May','June','July'],
-    datasets : [
-        {
-            label: 'My First dataset',
-            fillColor : fillBlackLight,
-            strokeColor : strokeBlack,
-            pointColor : strokeBlack,
-            pointStrokeColor : white,
-            pointHighlightFill : white,
-            pointHighlightStroke : strokeBlack,
-            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-        },
-        {
-            label: 'My Second dataset',
-            fillColor : 'rgba(52,143,226,0.2)',
-            strokeColor : 'rgba(52,143,226,1)',
-            pointColor : 'rgba(52,143,226,1)',
-            pointStrokeColor : '#fff',
-            pointHighlightFill : '#fff',
-            pointHighlightStroke : 'rgba(52,143,226,1)',
-            data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-        }
-    ]
-};
+  //************
+  //SIPOC CCPT
+  //************
+	$.ajax({
+		url : "/js/data-ccpt-sipoc.php",
+		type : "GET",
+		success : function(data){
 
-var pieData = [
-    {
-        value: 600,
-        color: strokePurple,
-        highlight: highlightStrokePurple,
-        label: 'Purple'
-    },
-    {
-        value: 50,
-        color: strokeBlue,
-        highlight: highlightStrokeBlue,
-        label: 'Blue'
-    },
-    {
-        value: 50,
-        color: strokeGreen,
-        highlight: highlightStrokeGreen,
-        label: 'Green'
-    },
-    {
-        value: 40,
-        color: strokeGrey,
-        highlight: highlightStrokeGrey,
-        label: 'Grey'
-    },
-    {
-        value: 120,
-        color: strokeBlack,
-        highlight: highlightStrokeBlack,
-        label: 'Black'
-    }
-];
+			//console.log(data);
 
-var polarData = [
-    {
-        value: 300,
-        color: strokePurple,
-        highlight: highlightStrokePurple,
-        label: 'Purple'
-    },
-    {
-        value: 50,
-        color: strokeBlue,
-        highlight: highlightStrokeBlue,
-        label: 'Blue'
-    },
-    {
-        value: 100,
-        color: strokeGreen,
-        highlight: highlightStrokeGreen,
-        label: 'Green'
-    },
-    {
-        value: 40,
-        color: strokeGrey,
-        highlight: highlightStrokeGrey,
-        label: 'Grey'
-    },
-    {
-        value: 120,
-        color: strokeBlack,
-        highlight: highlightStrokeBlack,
-        label: 'Black'
-    }
-];
+			var datainfo = {
+				ccpt : [],
+				mesasdedialogo : []
+			};
 
-var radarChartData = {
-    labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
-    datasets: [
-        {
-            label: 'My First dataset',
-            fillColor: 'rgba(45,53,60,0.2)',
-            strokeColor: 'rgba(45,53,60,1)',
-            pointColor: 'rgba(45,53,60,1)',
-            pointStrokeColor: '#fff',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(45,53,60,1)',
-            data: [65,59,90,81,56,55,40]
-        },
-        {
-            label: 'My Second dataset',
-            fillColor: 'rgba(52,143,226,0.2)',
-            strokeColor: 'rgba(52,143,226,1)',
-            pointColor: 'rgba(52,143,226,1)',
-            pointStrokeColor: '#fff',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(52,143,226,1)',
-            data: [28,48,40,19,96,27,100]
-        }
-    ]
-};
+			var len = data.length;
 
+			for (var i = 0; i < len; i++) {
+          var pushdata = { };
+          pushdata.total = Number(data[i].total);
+          pushdata.nombre_sipoc = data[i].nombre_sipoc;
+					datainfo.ccpt.push(pushdata);
+			}
+
+      //console.log(datainfo);
+
+      doughnutData = [
+          {
+              value: datainfo.ccpt[0].total,
+              color: fillGrey,
+              highlight: highlightFillGrey,
+              label: datainfo.ccpt[0].nombre_sipoc
+          },
+          {
+              value: datainfo.ccpt[1].total,
+              color: fillGreen,
+              highlight: highlightFillGreen,
+              label: datainfo.ccpt[1].nombre_sipoc
+          },
+          {
+              value: datainfo.ccpt[2].total,
+              color: fillBlue,
+              highlight: highlightFillBlue,
+              label: datainfo.ccpt[2].nombre_sipoc
+          },
+          {
+              value: datainfo.ccpt[3].total,
+              color: fillPurple,
+              highlight: highlightFillPurple,
+              label: datainfo.ccpt[3].nombre_sipoc
+          },
+          {
+              value: datainfo.ccpt[4].total,
+              color: fillBlack,
+              highlight: highlightFillBlack,
+              label: datainfo.ccpt[4].nombre_sipoc
+          }
+      ];
+
+		},
+		error : function(data) {
+			console.log(data);
+		}
+	});
+  //************
+  //FIN SIPOC CCPT
+  //************
+
+  //************
+  //barchart
+  //************
+	$.ajax({
+		url : "/js/data-ccpt-institucionesrank.php",
+		type : "GET",
+		success : function(data){
+
+			var len = data.length;
+
+      var labels_ccpt = data.map(function(e) {
+         return e.responsable_solucion;
+      });
+      var data_ccpt = data.map(function(e) {
+         return e.total;
+      });
+
+      barChartData = {
+          labels : labels_ccpt,
+          datasets : [
+              {
+                  fillColor : fillBlackLight,
+                  strokeColor : strokeBlack,
+                  highlightFill: highlightFillBlack,
+                  highlightStroke: highlightStrokeBlack,
+                  data : data_ccpt
+              }//,
+              // {
+              //     fillColor : fillBlueLight,
+              //     strokeColor : strokeBlue,
+              //     highlightFill: highlightFillBlue,
+              //     highlightStroke: highlightStrokeBlue,
+              //     data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+              // }
+          ]
+      };
+
+      //console.log(barChartData);
+
+		},
+		error : function(data) {
+			console.log(data);
+		}
+	});
+  //************
+  //FIN barchart
+  //************
+
+  //************
+  //radar2
+  //************
+	// $.ajax({
+	// 	url : "/js/data-ccpt-sipoc.php",
+	// 	type : "GET",
+	// 	success : function(data){
+
+	// 		//console.log(data);
+
+	// 		var datainfo = {
+	// 			ccpt : [],
+	// 			mesasdedialogo : []
+	// 		};
+
+	// 		var len = data.length;
+
+
+	// 		for (var i = 0; i < len; i++) {
+ //          var pushdata = { };
+ //          pushdata.total = Number(data[i].total);
+ //          pushdata.nombre_sipoc = data[i].nombre_sipoc;
+	// 				datainfo.ccpt.push(pushdata);
+	// 		}
+
+ //      //console.log(datainfo);
+
+ //      var radarChartData2 = {
+ //          labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+ //          datasets: [
+ //              {
+ //                  label: 'My First dataset',
+ //                  fillColor: 'rgba(45,53,60,0.2)',
+ //                  strokeColor: 'rgba(45,53,60,1)',
+ //                  pointColor: 'rgba(45,53,60,1)',
+ //                  pointStrokeColor: '#fff',
+ //                  pointHighlightFill: '#fff',
+ //                  pointHighlightStroke: 'rgba(45,53,60,1)',
+ //                  data: [65,59,90,81,56,55,40]
+ //              },
+ //              {
+ //                  label: 'My Second dataset',
+ //                  fillColor: 'rgba(52,143,226,0.2)',
+ //                  strokeColor: 'rgba(52,143,226,1)',
+ //                  pointColor: 'rgba(52,143,226,1)',
+ //                  pointStrokeColor: '#fff',
+ //                  pointHighlightFill: '#fff',
+ //                  pointHighlightStroke: 'rgba(52,143,226,1)',
+ //                  data: [28,48,40,19,96,27,100]
+ //              }
+ //          ]
+ //      };
+
+	// 	},
+	// 	error : function(data) {
+	// 		console.log(data);
+	// 	}
+	// });
+  //************
+  //FIN radar2
+  //************
+
+  //************
+  //radar
+  //************
+	// $.ajax({
+	// 	url : "/js/data-ccpt-porambito.php",
+	// 	type : "GET",
+	// 	success : function(data){
+
+	// 		//console.log(data);
+
+	// 		var datainfo = {
+	// 			ccpt : [],
+	// 			mesasdedialogo : []
+	// 		};
+
+ //      var labels_ccpt = data.map(function(e) {
+ //         return e.nombre_ambit;
+ //      });
+
+ //      var data_ccpt = data.map(function(e) {
+ //         return e.total;
+ //      });
+
+ //      //console.log(datainfo);
+
+ //      var radarChartData = {
+ //          labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+ //          datasets: [
+ //              {
+ //                  label: 'My First dataset',
+ //                  fillColor: 'rgba(45,53,60,0.2)',
+ //                  strokeColor: 'rgba(45,53,60,1)',
+ //                  pointColor: 'rgba(45,53,60,1)',
+ //                  pointStrokeColor: '#fff',
+ //                  pointHighlightFill: '#fff',
+ //                  pointHighlightStroke: 'rgba(45,53,60,1)',
+ //                  data: [65,59,90,81,56,55,40]
+ //              }
+ //          ]
+ //      };
+
+	// 	},
+	// 	error : function(data) {
+	// 		console.log(data);
+	// 	}
+	// });
+  //************
+  //FIN radar
+  //************
+
+  //************
+  //pieChart
+  //************
+	$.ajax({
+		url : "/js/data-ccpt-estado.php",
+		type : "GET",
+		success : function(data){
+
+			var datainfo = {
+				ccpt : [],
+				mesasdedialogo : []
+			};
+
+      console.log(data);
+
+			var len = data.length;
+
+
+			for (var i = 0; i < len; i++) {
+          var pushdata = { };
+          pushdata.total = Number(data[i].total);
+          pushdata.nombre_estado = data[i].nombre_estado;
+					datainfo.ccpt.push(pushdata);
+			}
+
+      //console.log(datainfo);
+
+      pieData = [
+          {
+              value: datainfo.ccpt[0].total,
+              color: strokePurple,
+              highlight: highlightStrokePurple,
+              label: datainfo.ccpt[0].nombre_estado
+          },
+          {
+              value: datainfo.ccpt[1].total,
+              color: strokeBlue,
+              highlight: highlightStrokeBlue,
+              label: datainfo.ccpt[1].nombre_estado
+          }
+      ];
+
+        //console.log(pieData);
+
+		},
+		error : function(data) {
+
+			console.log(data);
+		}
+	});
+  //************
+  //FIN pieChart
+  //************
+
+});
+//*******************
+///FIN
+//*******************
+
+//*******************
+//Global Defaults
+//*******************
 
 Chart.defaults.global = {
     animation: true,
@@ -264,44 +397,39 @@ Chart.defaults.global = {
 
 var handleGenerateGraph = function(animationOption) {
     var animationOption = (animationOption) ? animationOption : false;
-    
-    var ctx = document.getElementById('line-chart').getContext('2d');
-    var lineChart = new Chart(ctx).Line(lineChartData, {
-        animation: animationOption
-    });
-    
+
     var ctx2 = document.getElementById('bar-chart').getContext('2d');
     var barChart = new Chart(ctx2).Bar(barChartData, {
         animation: animationOption
     });
-    
-    var ctx3 = document.getElementById('radar-chart').getContext('2d');
-    var radarChart = new Chart(ctx3).Radar(radarChartData, {
-        animation: animationOption
-    });
-    
-    var ctx4 = document.getElementById('polar-area-chart').getContext('2d');
-    var polarAreaChart = new Chart(ctx4).PolarArea(polarData, {
-        animation: animationOption
-    });
-    
+
+    // var ctx3 = document.getElementById('radar-chart').getContext('2d');
+    // var radarChart = new Chart(ctx3).Radar(radarChartData, {
+    //     animation: animationOption
+    // });
+
     var ctx5 = document.getElementById('pie-chart').getContext('2d');
     window.myPie = new Chart(ctx5).Pie(pieData, {
         animation: animationOption
     });
-    
+
     var ctx6 = document.getElementById('doughnut-chart').getContext('2d');
     window.myDoughnut = new Chart(ctx6).Doughnut(doughnutData, {
         animation: animationOption
     });
-};
 
+    // var ctx7 = document.getElementById('radar-chart2').getContext('2d');
+    // var radarChart2 = new Chart(ctx7).Radar(radarChartData2, {
+    //     animation: animationOption
+    // });
+
+};
 
 var handleChartJs = function() {
     $(window).load(function() {
         handleGenerateGraph(true);
     });
-    
+
     $(window).resize( function() {
         handleGenerateGraph();
     });

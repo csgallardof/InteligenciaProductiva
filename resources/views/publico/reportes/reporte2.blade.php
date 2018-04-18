@@ -143,7 +143,12 @@
 						<?php $total = 0; ?>
 						@foreach ($resultados as $solucion=>$athlete)
 						 	
+<<<<<<< HEAD
 						 <?php   $total = ++$solucion;  ?>	
+=======
+						 <?php   $total = ++$solucion; ?>
+						 
+>>>>>>> 6ef06bc0beebbc278c3f7bdd14232539567fc72e
 						@endforeach	
 						{{ $total }}
 					Resultados de la B&uacute;squeda</span>
