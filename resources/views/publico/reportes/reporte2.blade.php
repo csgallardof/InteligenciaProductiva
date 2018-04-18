@@ -254,7 +254,7 @@
 									<div class="text-justify">
 									<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 									<p>
-								<br>
+								<br> <br>
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
 								<font>{{$resultados->verbo_solucion." ".$resultados->sujeto_solucion." ".$resultados->complemento_solucion}}</font><br>
@@ -290,7 +290,7 @@
 							<div class="text-justify">
 							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a> 
 							<p>
-								<br> 
+								<br> <br>
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
 								<font >Consejo Consultivo</font><br>
