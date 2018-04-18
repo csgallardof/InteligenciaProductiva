@@ -7,6 +7,7 @@
   	<link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 
+
 @endsection
 
 @section('contenido')
@@ -50,7 +51,7 @@
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
-									 			<option value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
+									 			<option  value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
 									 			<?php array_push( $arraySectors, $solucion->sector->id ); ?>
 									 		@endif
 								 		@endforeach
@@ -140,17 +141,12 @@
 					<div class="col-md-12">
 					<span class="title_ip_h1"> 
 							
-						<?php $total = 0; ?>
-						@foreach ($resultados as $solucion=>$athlete)
-						 	
-<<<<<<< HEAD
-						 <?php   $total = ++$solucion;  ?>	
-=======
-						 <?php   $total = ++$solucion; ?>
-						 
->>>>>>> 6ef06bc0beebbc278c3f7bdd14232539567fc72e
-						@endforeach	
-						{{ $total }}
+						<?php $total = 0; 
+							foreach ($resultados as $solucion){
+								$total=$total+1;
+							}
+						?>
+						{{$total}}
 					Resultados de la B&uacute;squeda</span>
 						
 						
@@ -354,6 +350,7 @@
 	<script src="{{ asset('js/custom-mipro.js" type="text/javascript') }}"></script>
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
+	
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script language="javascript">

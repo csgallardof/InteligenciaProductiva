@@ -70,6 +70,7 @@
 		    <script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
 		    <script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
 		    <script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
+		    <script src="{{ asset('js/SelectBusqueda/selectsBusquedaAvanzada.js') }}"></script>
 		    <script src="{{ asset('js/custom-mipro.js') }}"></script>
 		    <script src="{{ asset('js/apps.js') }}"></script>
 		    <script src="{{ asset('js/dashboard.js') }}"></script>
