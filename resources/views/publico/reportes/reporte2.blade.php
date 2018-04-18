@@ -264,7 +264,7 @@
 
 								
 								@if($resultados->estado_id>=1)
-								<div class="progress progress-striped active" style="width:50%">
+								<div class="progress progress-striped active col-md-12" style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
@@ -275,10 +275,10 @@
                                         
                                   </div>
                                 @endif
-                                
-                               	
+
+								<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
+							
 							<br><br>
 							</div>
 							<br>
@@ -299,7 +299,7 @@
 								
 								
                                 @if($resultados->estado_id>=1)
-								<div class="progress progress-striped active" style="width:50%">
+								<div class="progress progress-striped active col-md-12" style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
@@ -307,13 +307,12 @@
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
                                         @endif
                                         @endif
-                                        
+                                      
                                   </div>
                                 @endif
-                                
-
+                                <a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a>
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a>
+							
 							<br><br>
 							</div>
 							<br>

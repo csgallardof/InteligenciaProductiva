@@ -47,7 +47,6 @@
 
 		          </ol>
 		        </div>
-							<br>
 							
 								
 								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Eslabon de la cadena productiva</strong></h5>
@@ -99,12 +98,12 @@
 					
 
 			        <div class="panel-group" id="accordion">
-						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									 
+						<div class="panel panel-inverse overflow-hidden" >
+							<div class="panel-heading" style="background-color:#cfdbe2 ">
+								<h3 class="panel-title" style="color:#17202A">
+									 <strong>
 										Informacion General
-									
+									</strong>	
 								</h3>
 							</div>
 							<div >
@@ -180,11 +179,11 @@
 							</div>
 						</div>
 						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading">
-								<h3 class="panel-title">
+							<div class="panel-heading" style="background-color:#cfdbe2">
+								<h3 class="panel-title" style="color:#17202A">
 									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
 									    <i class="fa fa-plus-circle pull-right"></i> 
-										Datos de la Mesa de Dialogo
+										<strong>Datos de la Mesa de Dialogo</strong>
 									</a>
 								</h3>
 							</div>
@@ -216,15 +215,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="panel panel-inverse ">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									
-										Solución Propuesta
-									
+						<div class="panel panel-inverse overflow-hidden">
+							<div class="panel-heading" style="background-color:#cfdbe2" >
+								<h3 class="panel-title" style="color:#17202A">
+									<h3 class="panel-title" style="color:#17202A">
+									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+									    <i class="fa fa-plus-circle pull-right"></i>
+										<strong>Solución Propuesta</strong>
+									</a>
 								</h3>
 							</div>
-							<div >
+							<div id="collapse3" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<label class='text-success'>
                                 		<i class="fa fa-cheked-o fa-fw"></i><strong>Solución</strong>
@@ -240,15 +241,15 @@
 							</div>
 						</div>
 						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading">
-								<h3 class="panel-title">
+							<div class="panel-heading" style="background-color:#cfdbe2" > 
+								<h3 class="panel-title" style="color:#17202A">
 									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
 									    <i class="fa fa-plus-circle pull-right"></i> 
-										Problematica
+										<strong>Problematica</strong>
 									</a>
 								</h3>
 							</div>
-							<div id="collapseFour" class="panel-collapse collapse">
+							<div id="collapseFour" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<label class='text-success'>
                                 		<i class="fa fa-cheked-o fa-fw"></i><strong>Problematica</strong>
@@ -263,17 +264,20 @@
 								</div>
 							</div>
 						</div>
-						<div class="panel panel-inverse ">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									
-									 
-										Actividades Registradas 
 
+
+						<div class="panel panel-inverse  overflow-hidden">
+							<div class="panel-heading" style="background-color:#cfdbe2" >
+								<h3 class="panel-title" style="color:#17202A">
+									
+									 <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+									    <i class="fa fa-plus-circle pull-right"></i>
+										<strong>Actividades Registradas</strong> 
+										</a>
 									
 								</h3>
 							</div>
-							<div >
+							<div id="collapseFive" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<div class="media-body">
 									<br>
@@ -333,14 +337,14 @@
 								</div>
 								</div>
 							</div>
+
 						</div>
 						
-						
+				
 					</div>
 			    
-						
-
-						
+					
+					
 					</div>
 					<!-- fin acciones  -->
 					</div>
