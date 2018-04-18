@@ -142,10 +142,13 @@
 							</a>
 							"
 						@endif --}}
-
+				
           </div>
 
           <div class="col-md-4">
+          	<a href="/dialogo-nacional-estadisticas" class="btn pull-right btn-success m-l-30"><i class="fa fa-line-chart	
+"></i>&nbsp;Estadísticas</a>
+           
             <a href="/descargar/Mesas" class="btn pull-right btn-success"><i class="fa fa-download"></i>&nbsp;Descargar</a>
           </div>
 

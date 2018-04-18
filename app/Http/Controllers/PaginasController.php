@@ -29,17 +29,20 @@ class PaginasController extends Controller
 
         $buscar = $request-> parametro;
 
-        if($buscar == 'Mesas de Competitividad' || $buscar == 'Consejo_Consultivo'){
+        if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
 
-            if($buscar == 'Mesas de Competitividad' ){
+            if($buscar == 'Mesas_Competitividad' ){
                 $resultados = Solucion::where('tipo_fuente','=',1)
-                            ->orderBy('estado_id','ASC')
+                            ->orderBy('id','DESC')
                             ->get();
             }
-            if($buscar == 'Consejo Consultivo' ){
-                $resultados = Solucion::where('sector_id','=',2)
-                            ->orderBy('estado_id','DESC')
-                            ->get();
+
+            if($buscar == 'Consejo_consultivo' ){
+                //dd($buscar);
+                 $resultados = Solucion::where('tipo_fuente','=',2)
+                             ->orderBy('responsable_solucion','DESC')
+                             ->get();
+
             }
 
         }else{
@@ -58,8 +61,9 @@ class PaginasController extends Controller
 
             $resultados3 = Solucion::select('solucions.*')
                                 ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
-                                ->where('sectors.nombre_sector','LIKE','%' . $buscar . '%')
+                                ->where('sectors.nombre_sector','=','%' . $buscar . '%')
                                 ;//SOLO QUERY
+                                //dd($resultados3);
 
             $resultados5 = Solucion::select('solucions.*')
                                 ->join('estado_solucion', 'solucions.estado_id', '=', 'estado_solucion.id')
@@ -73,7 +77,6 @@ class PaginasController extends Controller
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
-                                ->orwhere('solucions.solucion_ccpt','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.responsable_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
                                 ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
@@ -83,6 +86,8 @@ class PaginasController extends Controller
                                 ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR 
                                 ->union($resultados6) // UNION CON  EL QUERY5
                                ->get();
+
+                              // dd($resultados);
             
                     //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
             
