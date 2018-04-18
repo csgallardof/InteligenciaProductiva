@@ -515,14 +515,14 @@ class PaginasController extends Controller
 
             if($buscar == 'Mesas_Competitividad' ){
                 $resultados = Solucion::where('tipo_fuente','=',1)
-                            ->orderBy('estado_id','ASC')
+                            ->orderBy('id','DESC')
                             ->get();
             }
 
             if($buscar == 'Consejo_consultivo' ){
                 //dd($buscar);
                  $resultados = Solucion::where('tipo_fuente','=',2)
-                             ->orderBy('id','ASC')
+                             ->orderBy('responsable_solucion','DESC')
                              ->get();
 
             }
