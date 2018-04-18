@@ -108,7 +108,9 @@ $(document).ready(function(){
                             </div>
                         </form>
 
-                        <a href="{{ url('/busqueda?parametro=Consejo+Consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
+                        <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
+
+                        <a href="{{ url('/busqueda?parametro=Mesas_Competitividad') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Mesas de Competitividad</a>
 
                     </div>
                 </div>

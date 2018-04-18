@@ -276,7 +276,7 @@ var handleTrackingChart = function () {
 var handleBarChart = function () {
 	"use strict";
 	if ($('#bar-chart').length !== 0) {
-        var data = [ ["January", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
+        var data = [ ["Jan", 10], ["February", 8], ["March", 4], ["April", 13], ["May", 17], ["June", 9] ];
         $.plot("#bar-chart", [ {data: data, color: purple} ], {
             series: {
                 bars: {

@@ -160,10 +160,10 @@
           			</div>
 
 					<!-- inicio cuadrados -->
-					<br><br> <br>
+					<br>
           								
 					<div class="col-md-12">
-						<br><br> 
+						<br> 
 						<!-- begin col-3 -->
 				<div class="col-md-4 col-sm-6">
 					<div class="widget widget-stats bg-blue">
@@ -236,7 +236,7 @@
 
 				<!-- Inicio col-8 tabla -->
 					<div class="col-md-12">
-						<br><br>
+						
 						@if(isset($resultados))
 							<table id="data-table" class="table nowrap" width="100%">
 								<thead>
@@ -252,8 +252,9 @@
 							                	<td class="text-left">
 							               <br>
 									<div class="text-justify">
+									<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 									<p>
-								
+								<br>
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
 								<font>{{$resultados->verbo_solucion." ".$resultados->sujeto_solucion." ".$resultados->complemento_solucion}}</font><br>
@@ -264,7 +265,7 @@
 
 								
 								@if($resultados->estado_id>=1)
-								<div class="progress progress-striped active" style="width:50%">
+								<div class="progress progress-striped active " style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
@@ -275,13 +276,11 @@
                                         
                                   </div>
                                 @endif
-                                
-                               	
+	
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
-							<br><br>
+							
 							</div>
-							<br>
+							
 							                	</td>
 							                @endif
 							                @if($resultados->tipo_fuente==2)
@@ -289,9 +288,9 @@
 							               
 							                		<br>
 							<div class="text-justify">
+							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a> 
 							<p>
-
-								
+								<br> 
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
 								<font >Consejo Consultivo</font><br>
@@ -299,7 +298,7 @@
 								
 								
                                 @if($resultados->estado_id>=1)
-								<div class="progress progress-striped active" style="width:50%">
+								<div class="progress progress-striped active col-md-12" style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
@@ -307,16 +306,14 @@
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
                                         @endif
                                         @endif
-                                        
+                                      
                                   </div>
                                 @endif
-                                
-
+                               
 							</p>
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a>
-							<br><br>
+							
 							</div>
-							<br>
+							
 							                	</td>
 							                @endif
 							                
