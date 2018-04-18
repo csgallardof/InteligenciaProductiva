@@ -143,7 +143,8 @@
 						<?php $total = 0; ?>
 						@foreach ($resultados as $solucion=>$athlete)
 						 	
-						 <?php   $total = ++$solucion; ?>	
+						 <?php   $total = ++$solucion; ?>
+						 
 						@endforeach	
 						{{ $total }}
 					Resultados de la B&uacute;squeda</span>
