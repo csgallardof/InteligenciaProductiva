@@ -19,7 +19,7 @@
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
           <ol class="breadcrumb">
             <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="/busquedaAvanzada">Resultados de la B&uacute;squeda</a></li>
             <li class="active"><a href="#">Detalle de la propuesta</a></li>
             <label class='text-success pull-right'>
 							<a href="{{ url('/') }}" class="btn btn-link fit-m-t-1"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
