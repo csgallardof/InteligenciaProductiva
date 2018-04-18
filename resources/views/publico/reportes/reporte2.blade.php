@@ -280,7 +280,7 @@
 							</p>
 							
 							</div>
-							<br>
+							
 							                	</td>
 							                @endif
 							                @if($resultados->tipo_fuente==2)
@@ -290,7 +290,7 @@
 							<div class="text-justify">
 							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a> 
 							<p>
-								<br> <br> 
+								<br> 
 								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
 								
 								<font >Consejo Consultivo</font><br>
@@ -313,7 +313,7 @@
 							</p>
 							
 							</div>
-							<br>
+							
 							                	</td>
 							                @endif
 							                
