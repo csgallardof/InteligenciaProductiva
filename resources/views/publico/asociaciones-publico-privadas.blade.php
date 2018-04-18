@@ -34,15 +34,20 @@
 
 		</div>
 		<!-- end container -->
-			<div align="center">
-				<h1>Proyectos de Alianzas Público Privadas</h1>
-				<br><br>
-			</div>
+		<br>
+			<div class="toolbar title_ip_breadcrumb fit-m-b-10" style="padding-left:7%;padding-right:7%" >
+          <ol class="breadcrumb">
+            <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
+            <li class="home"><a href="/asociaciones-publico-privadas"> <strong><span>Proyectos de Alianzas Público Privadas</span></strong></a></li>
+          </ol>
+        </div>
+        <br>
 			<!-- end page-header -->
 			 <!-- begin panel -->
-					<div class="row">
-						<div class="col-md-2"> </div>
-						<div class="col-md-8">
+					<div class="row" style="padding-left:7%">
+						
+						<div class="col-md-7" >
+							
                     <div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
                         <div class="panel-heading p-0">
                             <div class="panel-heading-btn m-r-0 m-t-0">
@@ -67,14 +72,14 @@
                         
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="nav-tab2-1">
-                                <h3 class="m-t-10"><strong>¿Qué son Asociaciones Público Privadas?</strong></h3>
+                                <h4 class="m-t-10"><strong>¿Qué son Asociaciones Público Privadas?</strong></h4>
                                 <p align="justify">
 					              Las APP comprenden un esquema jurídico-financiero, acordado entre una institución pública y una entidad privada para la provisión de bienes, obras o servicios propios del Gobierno Central y los Gobiernos Autónomos Descentralizados. <br> <br>
 					              Los proyectos públicos aprobados se beneficiarán de los incentivos propuestos en la Ley Orgánica de Incentivos para las Alianzas Público Privadas, de conformidad con los acuerdos establecidos por las partes.
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-2">
-                                <h3 class="m-t-10"><strong>Normativa Vigente</strong></h3>
+                                <h4 class="m-t-10"><strong>Normativa Vigente</strong></h4>
                                <p align="justify">
 					              <strong>El régimen de Asociaciones Público Privadas del Ecuador está establecido por los siguientes cuerpos normativos:</strong><br>
 					              <ul>
@@ -94,7 +99,7 @@
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-3">
-                                <h3 class="m-t-10"><strong>Beneficios para el Inversionista</strong></h3>
+                                <h4 class="m-t-10"><strong>Beneficios para el Inversionista</strong></h4>
                                 <p align="justify">
 					              <div class="panel-body">
 					                            <div class="table-responsive">
@@ -139,7 +144,7 @@
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-4">
-                                <h3 class="m-t-10"><strong>Los incentivos de una Asociaciones Público Privadas son: </strong></h3>
+                                <h4 class="m-t-10"><strong>Los incentivos de una Asociaciones Público Privadas son: </strong></h4>
                                 <p align="justify">
 					              <i>Tributarios:</i>
 					              <ul>
@@ -160,7 +165,7 @@
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-5">
-                                <h3 class="m-t-10"><strong>Tipos de Proyectos en Asociaciones Público Privadas</strong></h3>
+                                <h4 class="m-t-10"><strong>Tipos de Proyectos en Asociaciones Público Privadas</strong></h4>
                                 <p >
 					              <strong>Los tipos de proyectos son:</strong>
 					              <ul>
@@ -176,7 +181,7 @@
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-6">
-                                <h3 class="m-t-10">Comité Constitucional de Asociaciones Público Privadas</h3>
+                                <h4 class="m-t-10">Comité Constitucional de Asociaciones Público Privadas</h4>
                                 <p>
                                 	De acuerdo a la normativa vigente, incluyendo el Decreto Ejecutivo 187, la estructura del Comité Interinstitucional de APP está establecida de la siguiente manera: <br>	
                                 	
@@ -188,205 +193,59 @@
             
                             
                         </div>
+			
                     </div>
-			        <!-- end panel -->
-			        </div>
-			        </div>
 
-			<!-- begin #about -->
-			<div id="principios" class="content row-m-t-2" data-scrollview="true">
+                    	<div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
+                        <div class="panel-heading p-0">
+                            <div class="panel-heading-btn m-r-0 m-t-0">
+                                
+                            </div>
+                            <!-- begin nav-tabs -->
+                            <div class="tab-overflow">
+                                <ul class="nav nav-tabs col-md-12">
+                                    <li class="prev-button"><a href="javascript:;" data-click="prev-tab" class="text-inverse"><i class="fa fa-arrow-left"></i></a></li>
+                                    <li class=""><a href="#nav-tab2-11" data-toggle="tab">Principios y Alineamientos</a></li>
+                                    <li class=""><a href="#nav-tab2-12" data-toggle="tab">Elementos Esenciales</a></li>
+                                    <li class=""><a href="#nav-tab2-13" data-toggle="tab">Proyectos Aprobados</a></li>
+                                    <li class="next-button"><a href="javascript:;" data-click="next-tab" class="text-inverse"><i class="fa fa-arrow-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
 
-					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="nav-tab2-11">
+                                <h4 class="m-t-10"><strong>Principios y Alineamientos</strong></h4>
+                                <p align="justify">
 
-					<!-- begin row -->
-					<div class="row m-t-20">
-							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
-
-              <div align="center">
-              <a href="#principios" class="btn btn-info" role="button">Principios y Alineamientos</a>
-              <a href="#elementos" class="btn btn-info" role="button">Elementos Esenciales</a>
-        
-              <a href="#aprobacion" class="btn btn-info" role="button">Procedimiento de Aprobación</a>
-              <a href="#proyectos" class="btn btn-info" role="button">Proyectos Aprobados</a>
-              <a href="#acciones" class="btn btn-info" role="button">Acciones MIPRO</a>
-			</div>
-              <br /><br />
-
-						<div id="" class="modal-header">
-							<h4 class="modal-title "><strong>Principios y Alineamientos</strong></h4>
-						</div>
-
-            <p align="justify">
-
-				<strong>El desarrollo de proyectos bajo la modalidad de asociación público-privada se ajustará a:</strong>
-				<ul>
-					<li>Distribución Adecuada de Riesgos. (Repartición de riesgos entre la entidad pública delegante y el gestor privado).</li>
-					<li>Valor por Dinero. (Mejor resultado de la relación precio-calidad).</li>
-					<li>Sostenibilidad Fiscal. (Capacidad de pago del Estado para adquirir compromisos financieros a futuro)</li>
-					<li>Respeto a los Intereses y Derechos de los Usuarios. (Obligación de proteger a los usuarios finales y resolver sus reclamos de manera oportuna).</li>
-					<li>Cobertura e Inclusión Social (No se podrán excluir áreas geográficas, grupos sociales y pueblos).</li>
-					<li>Derechos de Propiedad.</li>
-				</ul>
-              
-            </p>
-
-            
-
-							<!-- end col-4 -->
-					</div>
-
-				</div>
-
-			</div>
-			<!-- end #about -->
-
-      <!-- begin #about -->
-			<div id="elementos" class="content row-m-t-2" data-scrollview="true">
-					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-					<!-- begin row -->
-					<div class="row m-t-20">
-							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
-
-						<div id="proceso" class="modal-header">
-							<h4 class="modal-title "><strong>Elementos Esenciales a Considerar</strong></h4>
-						</div>
-
-            <p>
+								<strong>El desarrollo de proyectos bajo la modalidad de asociación público-privada se ajustará a:</strong>
 								<ul>
-									<li>Distribución de riesgos.</li>
-									<li>Obligaciones bilaterales de largo plazo.</li>
-									<li>Indicadores de desempeño, niveles de servicio.</li>
-									<li>Contraprestación: pagos usuarios.</li>
-									<li>Combinación total de planificación, diseño, construcción, financiamiento, comercialización, operación y mantenimiento.</li>
+									<li>Distribución Adecuada de Riesgos. (Repartición de riesgos entre la entidad pública delegante y el gestor privado).</li>
+									<li>Valor por Dinero. (Mejor resultado de la relación precio-calidad).</li>
+									<li>Sostenibilidad Fiscal. (Capacidad de pago del Estado para adquirir compromisos financieros a futuro)</li>
+									<li>Respeto a los Intereses y Derechos de los Usuarios. (Obligación de proteger a los usuarios finales y resolver sus reclamos de manera oportuna).</li>
+									<li>Cobertura e Inclusión Social (No se podrán excluir áreas geográficas, grupos sociales y pueblos).</li>
+									<li>Derechos de Propiedad.</li>
 								</ul>
+				              
+				            </p>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tab2-12">
+                                <h4 class="m-t-10"><strong>Elementos Esenciales a Considerar</strong></h4>
+                               <p>
+									<ul>
+										<li>Distribución de riesgos.</li>
+										<li>Obligaciones bilaterales de largo plazo.</li>
+										<li>Indicadores de desempeño, niveles de servicio.</li>
+										<li>Contraprestación: pagos usuarios.</li>
+										<li>Combinación total de planificación, diseño, construcción, financiamiento, comercialización, operación y mantenimiento.</li>
+									</ul>
                                 </p>
-
-							<!-- end col-4 -->
-					</div>
-
-				</div>
-
-			</div>
-			<!-- end #about -->
-
-      
-
-      <div id="aprobacion" class="content row-m-t-2" data-scrollview="true">
-					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-					<!-- begin row -->
-					<div class="row">
-							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
-
-						<div class="modal-header">
-							<h4 class="modal-title"><strong>Procedimiento de Aprobación</strong></h4>
-						</div>
-
-						<div class="col-md-12">
-					        <div class="panel-group" id="accordion">
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-											    <i class="fa fa-plus-circle pull-right"></i>
-                          Resumen
-											</a>
-										</h3>
-									</div>
-									<div id="collapseOne" class="panel-collapse collapse in">
-										<div class="panel-body">
-						<p>El procedimiento de aprobación de una APP se describe en el siguiente esquema:</p>
-                      <div class="col-md-12">
-                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/fase_precontraactual.PNG') }}" alt="Azuay">
-                      </div>
-
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-											    <i class="fa fa-plus-circle pull-right"></i>
-                          Proceso detallado de una APP de INICIATIVA PRIVADA
-											</a>
-										</h3>
-									</div>
-									<div id="collapseTwo" class="panel-collapse collapse">
-										<div class="panel-body">
-
-                        <div class="col-md-12">
-                          <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/proceso-mapa.PNG') }}" alt="Azuay">
-										</div>
-
-										</div>
-									</div>
-								</div>
-								<div class="panel panel-inverse overflow-hidden">
-									<div class="panel-heading">
-										<h3 class="panel-title">
-											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-											    <i class="fa fa-plus-circle pull-right"></i>
-                          Proceso detallado de una APP de INICIATIVA PÚBLICA
-											</a>
-										</h3>
-									</div>
-									<div id="collapseThree" class="panel-collapse collapse">
-										<div class="panel-body">
-
-                      <div class="col-md-12">
-                          <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/app-iniciativa-publica.PNG') }}" alt="Azuay">
-										</div>
-
-										</div>
-									</div>
-								</div>
-								
-							</div>
-					    </div>
-						<!-- fin kit inversionista -->
-
-							<!-- end col-4 -->
-					</div>
-						<!-- end row -->
-					<div class="row">
-							<!-- begin col-4 -->
-						<div class="col-md-12">
-							<div class="panel bg-yellow">
-
-							</div>
-							<!-- begin page-header -->
-						</div>
-							<!-- end col-4 -->
-					</div>
-						<!-- end row -->
-
-				</div>
-
-			</div>
-
-<!-- begin #about -->
-			<div id="proyectos" class="content row-m-t-2" data-scrollview="true">
-					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-					<!-- begin row -->
-					<div class="row m-t-20">
-							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
-
-						<div id="base" class="modal-header">
-							<h4 class="modal-title "><strong>Proyectos Aprobados hasta la fecha</strong></h4>
-						</div>
-
-            <p align="justify">
+                            </div>
+                            <div class="tab-pane fade" id="nav-tab2-13">
+                                <h4 class="m-t-10"><strong>Proyectos Aprobados hasta la fecha</strong></h4>
+                                <p align="justify">
 					              <div class="panel-body">
 					                            <div class="table-responsive">
 					                                <table id="data-table" class="table table-striped table-bordered">
@@ -424,43 +283,177 @@
 					                            </div>
 					                        </div>
 					            </p>
-					</div>
 
-				</div>
+                            </div>
 
-			</div>
-			<!-- end #about -->
+                            
+                        </div>
+                    </div>
+                    <div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
+                        <div class="panel-heading p-0">
+                           
+                            
+                        </div>
 
-			 <!-- begin #about -->
-			<div id="acciones" class="content row-m-t-2" data-scrollview="true">
-					<!-- begin container -->
-				<div class="container" data-animation="true" data-animation-type="fadeInDown">
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="nav-tab2-21">
+                                <h4 align="justify"><strong>Acciones MIPRO en la promoción de la ley de incentivos para Asociaciones Público Privadas y construcción de portafolio de proyectos</strong></h4>
+							
 
-					<!-- begin row -->
-					<div class="row m-t-20">
-							<!-- begin col-4 -->
-						<!-- ini kir inversionista  -->
-
-						<div id="proceso" class="modal-header">
-							<h4 class="modal-title "><strong>Acciones MIPRO en la promoción de la ley de incentivos para Asociaciones Público Privadas y construcción de portafolio de proyectos</strong></h4>
-						</div>
-
-            <p align="justify">
+            			<p align="justify">
                                 A partir de la reciente expedición del <strong><u> Decreto Ejecutivo 187</u></strong> de 13 oct de 2017, en el cual se delega a la máxima autoridad del MIPRO presidir el Comité APP en desarrollo de MIPYMES en artesanías, industrias básicas, intermedias y finales, agroindustria, procesamiento acuícola, desarrollo territorial industrial, sistema de calidad y competencias propias. A continuación se detallan la gestión del MIPRO en el desarrollo de las APP: <br>
                                 <br><strong>Actividades Principales:<br></strong> 
                                 <br>El Ministerio de Industrias y Productividad (MIPRO) con apoyo del Banco Interamericano de Desarrollo (BID) y la Alianza para el Emprendimiento e Innovación (AEI), realizaron el <strong><i>1er Foro de la Producción e Impulso a la Innovación y Competitividad</i></strong>, para promover, estimular y fortalecer el diálogo Estado-Sector Productivo. Este Foro permitió articular acciones conjuntas para que el sector empresarial exponga, a través de un conversatorio, su visión acerca del desarrollo productivo en el Ecuador y el sector público, para fortalecer la construcción de políticas públicas de fomento productivo. En este contexto, el 29 de enero se reunieron expertos del BID, representantes de Embajadas y Empresas, y Autoridades de las distintas Carteras de Estado del país, para trabajar en diferentes estrategias para impulsar la innovación, las cuales permitan promover la competitividad de los sectores productivos, tales como: viajes de captura tecnológicas, desafíos de innovación a partir de necesidades empresariales públicas y/o privadas, financiamiento de emprendimientos, entre otros. <br>
                                 <br>Adicionalmente, el 19 y 20 de febrero de 2018, el Ministerio de Comercio Exterior, la Embajada de Canadá y el Banco de Desarrollo de América Latina CAF, realizaron el taller “Desafíos y factores de éxito en la formulación y análisis de Alianzas Público Privadas”, el cual contó con la participación de Instituciones del Estado como: Ministerio de Industrias y Productividad, Ministerio de Transportes y Obras Públicas, Finanzas, SENPLADES, SENESCYT, Secretaría General de la Administración, Municipios de Quito y Guayaquil, así como representantes de Infrastructure Ontario (IO), quienes presentaron el entorno normativo, legislativo y de gobernanza que han hecho de IO, un ejemplo exitoso en planeación, adquisición, y entrega de proyectos APP. <br>
                                 <br>Finalmente, el Ministerio de Industrias y Productividad cuenta con el apoyo de la cooperación técnica de organismos multilaterales, que tienen interés en impulsar proyectos bajo el esquema de APP, que permitan modernizar y ampliar la infraestructura y productividad del país en sus diferentes sectores contribuyendo a mejorar su competitividad, entregando a los usuarios un servicio adecuado a sus necesidades. Así, actualmente el MIPRO analiza varias propuestas de iniciativas tanto públicas como privadas, de nuevos proyectos de interés general bajo el esquema  APP.
                                 </p>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
 
-							<!-- end col-4 -->
-					</div>
+			        </div>
 
-				</div>
+			        <div class="col-md-4" style="border: #D7DBDD 1px solid;">
+			        	<div class="modal-header " >
+							<h5 class=" alert detalle_evento_info_adicional fade in m-b-15"  style="background-color:#154360  ;color:#FDFEFE" ><strong>Procedimiento de Aprobación</strong></h5>
+						</div>
 
-			</div>
-			<!-- end #about -->
-			
+						<div class="col-md-12">
+					        <div class="panel-group" id="accordion">
+								<div class="panel panel-inverse overflow-hidden">
+									<div class="panel-heading" style="background-color:#cfdbe2">
+										<h4 class="panel-title" style="color:#17202A">
+											<a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Resumen
+											</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in">
+										<div class="panel-body">
+						
+						<a href="#modal-message"class="btn btn-sm" data-toggle="modal" style='width:75%; height:25%'><img class="img-responsive center-block"  src="{{ asset('imagenes/APP/fase_precontraactual.PNG') }}" alt="Azuay"></a>
+						<div class="modal modal-message fade" id="modal-message">
+								<div class="modal-dialog"> 
+									<div class="modal-content">
+										<div class="modal-header" >
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" >Resumen</h4>
+										</div>
+										<div class="modal-body">
+											<p>El procedimiento de aprobación de una APP se describe en el siguiente esquema:</p>
+											<div class="col-md-12">
+					                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/fase_precontraactual.PNG') }}" alt="Azuay">
+					                      </div>
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+                      
+
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-inverse overflow-hidden">
+									<div class="panel-heading"style="background-color:#cfdbe2" >
+										<h4 class="panel-title" style="color:#17202A">
+											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Proceso detallado de una APP de INICIATIVA PRIVADA
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse">
+										<div class="panel-body">
+							<a href="#modal-message2"class="btn btn-sm" data-toggle="modal" style='width:75%; height:25%'><img class="img-responsive center-block"  src="{{ asset('imagenes/APP/proceso-mapa.PNG') }}" alt="Azuay"></a>
+						<div class="modal modal-message fade" id="modal-message2">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title"> Proceso detallado de una APP de INICIATIVA PRIVADA</h4>
+										</div>
+										<div class="modal-body">
+											
+											<div class="col-md-12">
+					                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/proceso-mapa.PNG') }}" alt="Azuay">
+					                      </div>
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+                        
+
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-inverse overflow-hidden">
+									<div class="panel-heading" style="background-color:#cfdbe2" >
+										<h4 class="panel-title" style="color:#17202A">
+											<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+											    <i class="fa fa-plus-circle pull-right"></i>
+                          Proceso detallado de una APP de INICIATIVA PÚBLICA
+											</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse">
+										<div class="panel-body">
+							<a href="#modal-message3"class="btn btn-sm" data-toggle="modal" style='width:75%; height:25%'><img class="img-responsive center-block"  src="{{ asset('imagenes/APP/app-iniciativa-publica.PNG') }}" alt="Azuay"></a>
+						<div class="modal modal-message fade" id="modal-message3">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title">  Proceso detallado de una APP de INICIATIVA PÚBLICA</h4>
+										</div>
+										<div class="modal-body">
+											
+											<div class="col-md-12">
+					                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/app-iniciativa-publica.PNG') }}" alt="Azuay">
+					                      </div>
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+                      
+
+										</div>
+									</div>
+								</div>
+								
+							</div>
+					    </div>
+					  <div>
+					  	<div class="modal-header">
+							<h5 class="modal-title"><strong></strong></h5>
+						</div>
+						<div class="modal-header">
+							<h5 class="modal-title alert detalle_evento_info_adicional fade in m-b-15"  style="background-color:#154360  ;color:#FDFEFE" ><strong>Documentos Alianzas Publico Privadas</strong></h5>
+						</div>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/1040 APP_2017_MTOP_ESP_DECRETO-1040-REGLAMENTO-DE-APP.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Réglamento de Alianzas Público y Privadas</a><br><br>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/Decreto_No._187_MIPRO.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Decreto Nº 187 MIPRO</a><br><br>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/DECRETO-EJECUTIVO-582-REGLAMENTO-DEL-REGIMEN-DE-COLABORACION-PUBLICO-PRIVADA.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Reglamento del Regimen de Colaboración Público Privada</a><br><br>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/LEY-ORGANICA-DE-INCENTIVOS-PARA-ASOCIACIONES-PUBLICAS-Y-PRIVADAS.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Ley Orgánica de Incentivos para Alianzas Público Privadas</a>
+					  </div>
+					  <br><br>
+			        </div>
+
+			        </div>
 
 @endsection
 
