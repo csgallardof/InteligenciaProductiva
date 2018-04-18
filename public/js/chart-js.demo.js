@@ -47,7 +47,7 @@ var randomScalingFactor = function() {
 };
 
 var barChartData = {
-    labels : ['January','February','March','April','May','June','July'],
+    labels : ['Jan','February','March','April','May','June','J'],
     datasets : [
         {
             fillColor : fillBlackLight,
@@ -127,7 +127,7 @@ var lineChartData = {
 
 var pieData = [
     {
-        value: 300,
+        value: 600,
         color: strokePurple,
         highlight: highlightStrokePurple,
         label: 'Purple'
@@ -139,7 +139,7 @@ var pieData = [
         label: 'Blue'
     },
     {
-        value: 100,
+        value: 50,
         color: strokeGreen,
         highlight: highlightStrokeGreen,
         label: 'Green'
