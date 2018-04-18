@@ -22,7 +22,7 @@
             <li class="active"><a href="/busquedaAvanzada">Resultados de la B&uacute;squeda</a></li>
             <li class="active"><a href="#">Detalle de la propuesta</a></li>
             <label class='text-success pull-right'>
-							<a href="{{ url('/') }}" class="btn btn-link fit-m-t-1"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
+							<a href="/busquedaAvanzada" class="btn btn-link fit-m-t-1"><i class="fa fa-1x fa-search"></i> Nueva Consulta</a>
 						</label>
           </ol>
         </div>
@@ -32,21 +32,7 @@
 					<!-- begin col-5 -->
 					<div class="col-md-3">
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: #D7DBDD 1px solid; padding: 1%">
-							<div class="toolbar title_ip_breadcrumb fit-m-b-10">
-
-		          <ol class="breadcrumb">
-
-		            <li class="home">Filtros</li>
-		            
-		             
-		            <li class="active">
-						
-							<button onclick="goBack()" class="btn btn-primary">Filtrar</button>
-						
-		            	</li>
-
-		          </ol>
-		        </div>
+							
 							
 								
 								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Eslabon de la cadena productiva</strong></h5>
