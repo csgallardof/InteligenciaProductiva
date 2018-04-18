@@ -26,8 +26,8 @@ use App\Auth\Login;
 class PaginasController extends Controller
 {
      public function busquedaAvanzada(Request $request){
-
-        $buscar = $request-> parametro;
+        
+       $buscar = $request-> parametro;
 
         if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
 
@@ -190,9 +190,8 @@ class PaginasController extends Controller
             JOIN solucions ON solucions.id=actividades.solucion_id
             WHERE actividades.solucion_id in ($id_propuestas)
             GROUP BY actividades.solucion_id");
-            $actividades=Collection::make($actividades); 
-            //dd($actividades);
-            //dd($id_propuestas);
+            $actividades=Collection::make($actividades);
+            
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
