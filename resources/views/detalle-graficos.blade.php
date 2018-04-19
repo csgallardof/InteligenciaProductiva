@@ -4,7 +4,11 @@
 
 @section('start_css')
   @parent
-  <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+  
+  <script src="{{asset('plugins/pace/pace.min.js')}}"></script>
+
+
+   
 @endsection
 
 @section('contenido')
@@ -121,7 +125,8 @@
     <script src="{{ asset('js/apps.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
 
-    <script src="{{ asset('plugins/chart-js/chart.js') }}"></script>
+    <script src="{{ asset('/plugins/chart-jsv2.7.2/Chart.min.js') }}"></script>
+    <script src="{{ asset('plugins/chart-jsv2.7.2/chartjs-plugin-datalabels/chartjs-plugin-datalabels.min.js') }}"></script>
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
     <script src="{{ asset('js/apps.min.js') }}"></script>
@@ -137,9 +142,8 @@
   <script>
         $(document).ready(function() {
             App.init();
-            ChartJs.init();
-            // var ctx = document.getElementById("bar-chart");
-            // ctx.height = 75;
+            var ctxBAR = document.getElementById("bar-chart");
+            ctxBAR.height = 100;
         });
     </script>
   <script>

@@ -108,7 +108,7 @@ $(document).ready(function() {
   //SIPOC CCPT
   //************
 	$.ajax({
-		url : "assets/js/data-ccpt-sipoc.php",
+		url : "js/data-ccpt-sipoc.php",
 		type : "GET",
 		success : function(data){
 
@@ -171,7 +171,7 @@ $(document).ready(function() {
   //barchart
   //************
 	$.ajax({
-		url : "assets/js/data-ccpt-institucionesrank.php",
+		url : "js/data-ccpt-institucionesrank.php",
 		type : "GET",
 		success : function(data){
 
@@ -211,7 +211,7 @@ $(document).ready(function() {
   //radar2
   //************
 	$.ajax({
-		url : "assets/js/data-ccpt-porejetematico.php",
+		url : "js/data-ccpt-porejetematico.php",
 		type : "GET",
 		success : function(data){
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
   //radar
   //************
 	$.ajax({
-		url : "assets/js/data-ccpt-porambito.php",
+		url : "js/data-ccpt-porambito.php",
 		type : "GET",
 		success : function(data){
 
@@ -309,7 +309,7 @@ $(document).ready(function() {
   //pieChart
   //************
 	$.ajax({
-		url : "assets/js/data-ccpt-estado.php",
+		url : "js/data-ccpt-estado.php",
 		type : "GET",
 		success : function(data){
 
@@ -327,7 +327,7 @@ $(document).ready(function() {
          return e.total;
       });
 
-      //console.log(datainfo);
+      console.log(datainfo);
 
       pieData = {
   			type: 'pie',
