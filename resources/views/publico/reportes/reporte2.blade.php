@@ -25,11 +25,10 @@
             <li class="active"><a href="{{ url('/busquedaAvanzada') }}">Resultados de la B&uacute;squeda</a></li>
 
           </ol>
-        </div>
-        <br><hr>
+        </div><hr style="margin-top:-10px;">
 		<div class="row">
 			<div class="col-md-3" style="border: #D7DBDD 1px solid; padding: 1%">
-				
+
 				<form role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
 				<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
 				<div class="toolbar title_ip_breadcrumb fit-m-b-10">
@@ -40,7 +39,7 @@
 		            <li class="active"><button type="submit" class="btn btn-primary m-l-20 pull-rigth">Filtrar</button></li>
 
 		          </ol>
-		        </div>	
+		        </div>
 					<div class="form-group">
 						<?php $arraySectors[] = array(); ?>
 
@@ -106,50 +105,57 @@
 							            @endforeach
 
 								 	</select>
-                  			</div>            
+                  			</div>
 					</div>
 				</form>
 			</div>
 			<div class="col-md-9">
-				<div class="col-md-12 pull-left">
 
-					                    <div class="panel-body text-center">
+				<div class="col-md-10 pull-left">
 
-					                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
+                    <div class="panel-body text-center p-r-25">
 
-					                            <div class="form-group">
+                            <div class="form-group">
 
-					                                <div class="input-group custom-search-form">
-					                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
-					                                    <span class="input-group-btn">
-					                                        <button class="btn btn-buscar btn-lg" style="background: #EF5D06; color: #fff; " type="submit" height="50px">
-					                                            <span class="glyphicon glyphicon-search"></span>
-					                                        </button>
-					                                    </span>
-														<a href="/descargar/Mesas" class="btn  btn-success btn-lg "><i class="fa fa-download"></i>&nbsp;Descargar</a>
-					                                </div>
+                                <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
 
-					                            </div>
-												
-					                        </form>
+                                    <div class="input-group custom-search-form">
 
-					                    </div>
-					                   
-							            
-							          
-							    </div>
+                                        <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-buscar btn-lg" style="background: #EF5D06; color: #fff; " type="submit" height="50px">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                            </button>
+                                        </span>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                    </div>
+
+			    </div>
+
+          <div class="col-md-2">
+            <div class="panel-body text-center">
+              <a href="/descargar/Mesas" class="btn  btn-success btn-lg pull-right"><i class="fa fa-download"></i>&nbsp;Descargar</a>
+            </div>
+          </div>
+
 					<div class="col-md-12">
-					<span class="title_ip_h1"> 
-							
-						<?php $total = 0; 
+					<span class="title_ip_h1">
+
+						<?php $total = 0;
 							foreach ($resultados as $solucion){
 								$total=$total+1;
 							}
 						?>
 						{{$total}}
 					Resultados de la B&uacute;squeda</span>
-						
-						
+
+
 						{{-- @if(isset($parametro))
 							Se muestran los resultados para "
 							<a href="/busqueda?parametro={{ Request::get('parametro') }}">
@@ -162,13 +168,12 @@
 
 					<!-- inicio cuadrados -->
 					<br>
-          								
+
 					<div class="col-md-12">
-						<br> 
+						<br>
 						<!-- begin col-3 -->
 				<div class="col-md-4 col-sm-6">
-					<div class="widget widget-stats bg-blue">
-						<div class="stats-icon"><i class="fa fa-chain-broken"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 						<?php
 	    					$totalMesasCom=0;
@@ -178,7 +183,7 @@
 				            $estadoAsignado2=0;
 				            $estadoDesarrollo2=0;
 	                     foreach($resultados as $solucion ) {
-	                        
+
 	                        if($solucion->tipo_fuente==1){
 	                        $totalMesasCom=$totalMesasCom+1;
 	                        if($solucion->estado_id==2){
@@ -194,77 +199,70 @@
 	                    	}elseif($solucion->estado_id==3){
 	                    	$estadoDesarrollo2=$estadoDesarrollo2+1;
 	                    	}
-	                        }	      
+	                        }
 	                    }
 	                    $totalPropuesta=$totalMesasCom+$totalCCTP;
 	                    $totalEstadoAsignado=$estadoAsignado1+$estadoAsignado2;
 	                    $totalEstadoDesarrollo=$estadoDesarrollo1+$estadoDesarrollo2;
 	    				?>
-							<h4>Propuestas</h4><br>
-							<p>{{$totalPropuesta}}</p>	
+              <b class="f-s-19">{{$totalPropuesta}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas Registradas</b>
 						</div>
-						
+
 					</div>
 				</div>
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
 				<div class="col-md-4 col-sm-6">
-					<div class="widget widget-stats bg-purple">
-						<div class="stats-icon"><i class="fa fa-users"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
-							
-							<h4>Total de Propuestas <strong>Asignadas</strong></h4><br>
-							<p>{{$totalEstadoAsignado}}</p>	
+              <b class="f-s-19">{{$totalEstadoAsignado}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas Asignadas</b>
 						</div>
-						
+
 					</div>
 				</div>
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
 				<div class="col-md-4 col-sm-6">
-					<div class="widget widget-stats bg-red">
-						<div class="stats-icon"><i class="fa fa-clock-o"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
-							<h4>Total de Propuestas <strong>En Desarrollo</strong></h4><br>
-							<p>{{$totalEstadoDesarrollo}}</p>	
+							<b class="f-s-19">{{$totalEstadoDesarrollo}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas en Desarrollo</b>
 						</div>
-						
+
 					</div>
-				</div> 
+				</div>
 				<!-- end col-3 -->
 					</div>
 					<!-- Final cuadrados -->
 
 				<!-- Inicio col-8 tabla -->
 					<div class="col-md-12">
-						
+
 						@if(isset($resultados))
 							<table id="data-table" class="table nowrap" width="100%">
 								<thead>
-									<th class="text-center">PROPUESTA</th>
-					                
+									<th class="text-left f-s-18">Propuestas Encontradas</th>
 
-					                
+                  <!-- revisar funcion laravel str_limit -->
+
 								</thead>
 								<tbody>
 						        	@foreach( $resultados as $resultados)
 						        		<tr>
 											@if($resultados->tipo_fuente==1)
-							                	<td class="text-left">
-							               <br>
+							                	<td class="text-left p-t-15">
 									<div class="text-justify">
-									<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
-									<p>
-								<br> <br>
-								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
-								
-								<font>{{$resultados->verbo_solucion." ".$resultados->sujeto_solucion." ".$resultados->complemento_solucion}}</font><br>
+									<a   class="btn btn-primary pull-right m-b-30 m-l-30" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 
-								<font >Mesas de Competitividad</font><br>
-								
-								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
+									<p class="total_propuestas_estilo_1">
+  								<span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($resultados->problema_solucion)); ?></span><br>
 
-								
+  								<font><?php echo ucfirst(mb_strtolower($resultados->verbo_solucion." ".$resultados->sujeto_solucion." ".$resultados->complemento_solucion)) ?></font><br>
+
+  								<b><font >Fuente: </font></b>Mesas de Competitividad<br>
+
+  								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
+
+
 								@if($resultados->estado_id>=1)
 								<div class="progress progress-striped active " style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
@@ -274,32 +272,37 @@
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
                                         @endif
                                         @endif
-                                        
+
                                   </div>
                                 @endif
-	
+
 							</p>
-							
+
 							</div>
-							
+
 							                	</td>
 							                @endif
 							                @if($resultados->tipo_fuente==2)
-							                	<td class="text-left">
-							               
-							                		<br>
+							                	<td class="text-left p-t-15">
+
+
 							<div class="text-justify">
-							<a   class="btn btn-primary pull-right" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a> 
+							<a   class="btn btn-primary pull-right m-b-30 m-l-30" href="/detalle-despliegue-dialogo/{{$resultados->id}}">ver</a>
 							<p>
-								<br> <br>
-								<strong><font >{{$resultados->problema_solucion}}</font></strong><br>	
-								
-								<font >Consejo Consultivo</font><br>
+
+                <!-- {{$resultados->problema_solucion}}<br /> -->
+                <!-- {{$solucion->ambit->nombre_ambit}}<br /> -->
+
+                <span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($solucion->verbo_solucion)); ?></span><br>
+
+                <font><?php echo ucfirst(mb_strtolower($solucion->sujeto_solucion)) ?></font><br>
+                <font><?php echo ucfirst(mb_strtolower($solucion->complemento_solucion)) ?></font><br>
+
+                <b><font >Fuente: </font></b>Consejo Consultivo Productivo y Tributario<br>
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
-								
-								
+
                                 @if($resultados->estado_id>=1)
-								<div class="progress progress-striped active col-md-12" style="width:50%">
+								<div class="progress progress-striped active" style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
@@ -307,19 +310,19 @@
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
                                         @endif
                                         @endif
-                                      
+
                                   </div>
                                 @endif
-                               
+
 							</p>
-							
+
 							</div>
-							
+
 							                	</td>
 							                @endif
-							                
 
-							             
+
+
 							            </tr>
 						            @endforeach
 			     				</tbody>
@@ -331,9 +334,9 @@
 					<!-- end col-8 tabla -->
 
 			</div>
-          
+
         </div>
-               
+
 		</div>
 
 	</div>
@@ -350,7 +353,7 @@
 	<script src="{{ asset('js/custom-mipro.js" type="text/javascript') }}"></script>
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
-	
+
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script language="javascript">

@@ -26,3 +26,9 @@ table.dataTable.nowrap th, table.dataTable.nowrap td {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.slick-slide:focus { outline: none; }
+
+table.dataTable thead th {
+    outline: none;
+}
