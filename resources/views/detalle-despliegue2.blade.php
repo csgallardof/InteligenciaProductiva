@@ -32,71 +32,70 @@
 					<!-- begin col-5 -->
 					<div class="col-md-3">
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: #D7DBDD 1px solid; padding: 1%">
-							
-							
-								
-								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Eslabon de la cadena productiva</strong></h5>
-							
-							
+
+
+
+								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Eslabon de la cadena productiva</strong></h5>
+
+
 									<p style="padding-left:15%">
 										@if(isset($solucion))
 											{{ $solucion->sipoc->nombre_sipoc }}
 										@endif
 									</p>
-									
+
 							<br>
 
-								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Instrumentos Necesario</strong></h4>
+								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Instrumentos Necesario</strong></h4>
 
-							
+
 								<p style="padding-left:15%">
 										@if(isset($solucion))
 											{{ $solucion->instrumento->nombre_instrumento }}
 										@endif
 								</p>
-								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Clasificación Empresa</strong></h4>
+								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Clasificación Empresa</strong></h4>
 								<p style="padding-left:15%">
 									@if(isset($solucion))
 											{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}
 										@endif
 								</p>
-								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Ámbito</strong></h4>
+								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Ámbito</strong></h4>
 								<p style="padding-left:15%">
 									@if(isset($solucion))
 											{{ $solucion->ambit->nombre_ambit }}
 
 										@endif
 								</p >
-								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15"><strong>Sector</strong></h4>	
+								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Sector</strong></h4>
 								<p style="padding-left:15%">
 									@if(isset($solucion))
             								{{ $solucion->sector->nombre_sector }}
             							@endif
 								</p >
-							
+
 
 						</div>
 					</div>
 					<!-- end col-5 -->
 					<!-- inicio acciones -->
 					<div class="col-md-9">
-						
-					
+
+
 
 			        <div class="panel-group" id="accordion">
 						<div class="panel panel-inverse overflow-hidden" >
-							<div class="panel-heading" style="background-color:#cfdbe2 ">
-								<h3 class="panel-title" style="color:#17202A">
+							<div class="panel-heading" style="background-color:#214974">
+								<h3 class="panel-title" style="color:white">
 									 <strong>
 										Informacion General
-									</strong>	
+									</strong>
 								</h3>
 							</div>
 							<div >
 								<div class="panel-body">
 
-									<div class="media-body">
-										<br><br>
+									<div class="media-body"><br />
 									<dl class="dl-horizontal">
 											<label class='text-success'>Estado de Compromiso:</label> &nbsp;&nbsp;&nbsp;
 											<span class="label label-warning f-s-13">
@@ -118,7 +117,7 @@
 					                                        <tr>
 					                                            <th>Responsable</th>
 					                                            <th>Corresponsable</th>
-					                                            
+
 					                                        </tr>
 					                                    </thead>
 					                                    <tbody>
@@ -145,30 +144,30 @@
 										@endif
 										</dd>
 					                                            </td>
-					                                           
+
 					                                        </tr>
-					                                        
-					                                        
-					                                        
-					                                          
+
+
+
+
 					                                    </tbody>
 					                                </table>
                                    	</div>
 
-										
+
 									</div>
-									
-                                   	
-									
+
+
+
 
 								</div>
 							</div>
 						</div>
 						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading" style="background-color:#cfdbe2">
-								<h3 class="panel-title" style="color:#17202A">
+							<div class="panel-heading" style="background-color:#214974">
+								<h3 class="panel-title" style="color:#ffffff">
 									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-									    <i class="fa fa-plus-circle pull-right"></i> 
+									    <i class="fa fa-plus-circle pull-right"></i>
 										<strong>Datos de la Mesa de Dialogo</strong>
 									</a>
 								</h3>
@@ -178,7 +177,7 @@
 									<label class='text-success'>
                                 		<strong>Fuente</strong>
                                 	</label>
-									
+
 									<p>
                           				<strong>Evento:</strong>
             							@if(isset($solucion))
@@ -196,15 +195,15 @@
             							@if(isset($solucion))
             								{{ $solucion->sistematizador_solucion }}
             							@endif
-										  	
+
                                    	</p>
 								</div>
 							</div>
 						</div>
 						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading" style="background-color:#cfdbe2" >
+							<div class="panel-heading" style="background-color:#214974" >
 								<h3 class="panel-title" style="color:#17202A">
-									<h3 class="panel-title" style="color:#17202A">
+									<h3 class="panel-title" style="color:#ffffff">
 									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
 									    <i class="fa fa-plus-circle pull-right"></i>
 										<strong>Solución Propuesta</strong>
@@ -227,10 +226,10 @@
 							</div>
 						</div>
 						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading" style="background-color:#cfdbe2" > 
-								<h3 class="panel-title" style="color:#17202A">
+							<div class="panel-heading" style="background-color:#214974" >
+								<h3 class="panel-title" style="color:#ffffff">
 									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-									    <i class="fa fa-plus-circle pull-right"></i> 
+									    <i class="fa fa-plus-circle pull-right"></i>
 										<strong>Problematica</strong>
 									</a>
 								</h3>
@@ -253,21 +252,21 @@
 
 
 						<div class="panel panel-inverse  overflow-hidden">
-							<div class="panel-heading" style="background-color:#cfdbe2" >
-								<h3 class="panel-title" style="color:#17202A">
-									
+							<div class="panel-heading" style="background-color:#214974" >
+								<h3 class="panel-title" style="color:#ffffff">
+
 									 <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
 									    <i class="fa fa-plus-circle pull-right"></i>
-										<strong>Actividades Registradas</strong> 
+										<strong>Actividades Registradas</strong>
 										</a>
-									
+
 								</h3>
 							</div>
 							<div id="collapseFive" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<div class="media-body">
 									<br>
-										
+
 
 									@if(isset($actividades) &&  count($actividades) > 0)
 									<label class='text-success'><b>Actividades Resgistradas: </b></label>{{ count($actividades) }}
@@ -325,12 +324,12 @@
 							</div>
 
 						</div>
-						
-				
+
+
 					</div>
-			    
-					
-					
+
+
+
 					</div>
 					<!-- fin acciones  -->
 					</div>
