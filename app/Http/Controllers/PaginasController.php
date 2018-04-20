@@ -526,7 +526,8 @@ class PaginasController extends Controller
     }
 
     public function busquedaGeneral(Request $request){
-
+        $datosFiltroAmbito="";
+        $datosFiltroResponsable="";
         $buscar = $request-> parametro;
 
 
@@ -543,6 +544,7 @@ class PaginasController extends Controller
                  $resultados = Solucion::where('tipo_fuente','=',2)
                              ->orderBy('responsable_solucion','DESC')
                              ->get();
+
 
             }
 
@@ -628,16 +630,20 @@ class PaginasController extends Controller
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    
+                    
                 }
             }
         }
 
-        if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
-            $filtros["ambit"]= $request->sectorSelect;
+        if( isset($request->ambitoSelect) && $request->ambitoSelect > 0 ){
+            $filtros["ambito"]= $request->ambitoSelect;
             foreach ($resultados as $solucion) {
-                if($solucion->sector_id == $request->sectorSelect){
+                if($solucion->ambit_id == $request->ambitoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroAmbito=($request->ambitoSelect);
+                    
                 }
             }
         }
@@ -649,6 +655,7 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        $datosFiltroResponsable=($request->responsableSelect);
                     }
                 }
             }
@@ -675,10 +682,12 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-
+        //dd($datosFiltroResponsable);
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
                                             "filtros"=>$filtros
                                         ]);
 

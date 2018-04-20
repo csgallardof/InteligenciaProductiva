@@ -51,20 +51,32 @@
 
 						 		<div class="col-md-2">
 
-							    <label for="sectorSelect">Ámbito</label><br>
-								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" style="width: 175px">
+							    <label for="ambitoSelect">Ámbito</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br>
+								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect" style="width: 175px">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->ambit->id , $arrayAmbits) )
+								 				@if($datosFiltroAmbito!="")
+								 				@if($solucion->ambit->id==$datosFiltroAmbito)
+									 			<option value="{{ $solucion->ambit->id}}" selected>{{ $solucion->ambit->nombre_ambit }}</option>
+									 			@endif
+									 			@else
 									 			<option value="{{ $solucion->ambit->id}}">{{ $solucion->ambit->nombre_ambit }}</option>
-									 			<?php array_push( $arrayAmbits, $solucion->ambit->id ); ?>
+									 			@endif
+									 			<?php array_push( $arrayAmbits, $solucion->ambit->id );
+									 			;
+									 			 ?>
 									 		@endif
 								 		@endforeach
 								 	</select>
                 </div>
                 <div class="col-md-2">
 								 	<?php $arrayResponsables[] = array(); ?>
-								 	<label for="sectorSelect">Responsable</label><br>
+								 	<label for="sectorSelect">Responsable</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br>
 								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" style="width: 175px">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
@@ -72,7 +84,13 @@
 						                		@foreach( $solucion->actor_solucion as $actorSolucion)
 						                			@if( $actorSolucion->tipo_actor == 1 )
 						                				@if( !in_array( $actorSolucion-> usuario-> id , $arrayResponsables) )
-						                					<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@if($datosFiltroResponsable!="")
+						                				@if($actorSolucion-> usuario-> id==$datosFiltroResponsable)
+						                					<option value="{{ $actorSolucion-> usuario-> id}}" selected>{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
+						                				@else
+						                				<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
 						                					<?php array_push( $arrayResponsables, $actorSolucion->usuario->id ); ?>
 						                				@endif
 						                			@endif

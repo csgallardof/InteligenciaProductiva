@@ -45,7 +45,9 @@
 
 						 		<div >
 
-							    <label for="sectorSelect">Sector</label><br>
+							    <label for="sectorSelect">Sector</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br> 
 								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" >
 								 		<option value="0">Seleccionar </option>
 								 		@foreach( $resultados as $solucion)
@@ -68,7 +70,9 @@
 
 						 		<div >
 
-							    <label for="estadoSelect">Estados</label><br>
+							    <label for="estadoSelect">Estados</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br>
 								 	<select class="form-group form-control" id="estadoSelect" name="estadoSelect">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
@@ -89,7 +93,9 @@
 
 						 		<div >
 
-							    <label for="ambitoSelect">Ambito</label><br>
+							    <label for="ambitoSelect">Ambito</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br>
 								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
@@ -108,7 +114,9 @@
                 				</div>
                 				<div >
 								 	<?php $arrayResponsables[] = array(); ?>
-								 	<label for="sectorSelect">Responsable</label><br>
+								 	<label for="sectorSelect">Responsable</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
+														<i class="fa fa-2x fa-angle-left"></i>
+													</a><br>
 								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" >
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
@@ -394,6 +402,7 @@
 	});
 
 	</script>
+	
 
 	<script>
 
