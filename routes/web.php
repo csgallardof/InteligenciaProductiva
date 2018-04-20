@@ -66,7 +66,7 @@ Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador'
 Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
 
 Route::get('/dialogo-nacional-estadisticas', function(){
-     return view('detalle-graficos');
+     return view('publico.reportes.reporte-graficos');
 });
 
 
