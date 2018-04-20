@@ -47,11 +47,19 @@
 
 							    <label for="sectorSelect">Sector</label><br>
 								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" >
-								 		<option value="0">Seleccionar</option>
+								 		<option value="0">Seleccionar </option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->sector->id , $arraySectors) )
+								 				@if($datosFiltroSector!="")
+									 			@if($solucion->sector->id=$datosFiltroSector)
+									 			<option  value="{{ $solucion->sector->id}}" selected>{{ $solucion->sector->nombre_sector }}</option>
+									 			@endif
+									 			@else
 									 			<option  value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
-									 			<?php array_push( $arraySectors, $solucion->sector->id ); ?>
+									 			@endif
+									 			
+									 			
+									 			<?php array_push( $arraySectors, $solucion->sector->id ); $datosFiltroSector="";?>
 									 		@endif
 								 		@endforeach
 								 	</select>
@@ -65,8 +73,14 @@
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->estado->id , $arrayEstados) )
+								 				@if($datosFiltroEstado!="")
+								 				@if($solucion->estado->id==$datosFiltroEstado)
+									 			<option value="{{ $solucion->estado->id}}" selected>{{ $solucion->estado->nombre_estado }}</option>
+									 			@endif
+									 			@else
 									 			<option value="{{ $solucion->estado->id}}">{{ $solucion->estado->nombre_estado }}</option>
-									 			<?php array_push( $arrayEstados, $solucion->estado->id ); ?>
+									 			@endif
+									 			<?php array_push( $arrayEstados, $solucion->estado->id );?>
 									 		@endif
 								 		@endforeach
 								 	</select>
@@ -80,8 +94,14 @@
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->ambit->id , $arrayAmbits) )
+								 				@if($datosFiltroAmbito!="")
+								 				@if($solucion->ambit->id==$datosFiltroAmbito)
+									 			<option value="{{ $solucion->ambit->id}}" selected>{{ $solucion->ambit->nombre_ambit }}</option>
+									 			@endif
+									 			@else
 									 			<option value="{{ $solucion->ambit->id}}">{{ $solucion->ambit->nombre_ambit }}</option>
-									 			<?php array_push( $arrayAmbits, $solucion->ambit->id ); ?>
+									 			@endif
+									 			<?php array_push( $arrayAmbits, $solucion->ambit->id);  ?>
 									 		@endif
 								 		@endforeach
 								 	</select>
@@ -96,7 +116,13 @@
 						                		@foreach( $solucion->actor_solucion as $actorSolucion)
 						                			@if( $actorSolucion->tipo_actor == 1 )
 						                				@if( !in_array( $actorSolucion-> usuario-> id , $arrayResponsables) )
-						                					<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@if($datosFiltroResponsable!="")
+						                				@if($actorSolucion-> usuario-> id==$datosFiltroResponsable)
+						                					<option value="{{ $actorSolucion-> usuario-> id}}" selected>{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
+						                				@else
+						                				<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
 						                					<?php array_push( $arrayResponsables, $actorSolucion->usuario->id ); ?>
 						                				@endif
 						                			@endif

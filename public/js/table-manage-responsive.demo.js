@@ -104,7 +104,7 @@ var handleDataTableResponsiveCCPT = function() {
 						}
         });
     }
-};
+}; 
 
 var handleDataTableResponsiveBasica = function() {
 	"use strict";

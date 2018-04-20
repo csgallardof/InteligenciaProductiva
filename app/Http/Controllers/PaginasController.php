@@ -26,7 +26,10 @@ use App\Auth\Login;
 class PaginasController extends Controller
 {
      public function busquedaAvanzada(Request $request){
-        
+        $datosFiltroSector="";
+        $datosFiltroEstado="";
+        $datosFiltroAmbito="";
+        $datosFiltroResponsable="";
        $buscar = $request-> parametro;
 
         if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
@@ -125,6 +128,8 @@ class PaginasController extends Controller
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroSector=($request->sectorSelect);
+                    //dd($datosFiltroSector);
                 }
             }
         }
@@ -134,6 +139,7 @@ class PaginasController extends Controller
                 if($solucion->estado_id == $request->estadoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroEstado=($request->estadoSelect);
                 }
             }
         }
@@ -144,6 +150,8 @@ class PaginasController extends Controller
                 if($solucion->ambit_id == $request->ambitoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroAmbito=($request->ambitoSelect);
+                    
                 }
             }
         }
@@ -154,6 +162,8 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        $datosFiltroResponsable=($request->responsableSelect);
+                        
                     }
                 }
             }
@@ -166,6 +176,7 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->corresponsableSelect && $actor_solucion->tipo_actor == 2){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        
                     }
                 }
             }
@@ -195,6 +206,10 @@ class PaginasController extends Controller
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
+                                            "datosFiltroSector"=>$datosFiltroSector,
+                                            "datosFiltroEstado"=>$datosFiltroEstado,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
                                             "actividades"=>$actividades,
                                             "filtros"=>$filtros
                                         ]);
