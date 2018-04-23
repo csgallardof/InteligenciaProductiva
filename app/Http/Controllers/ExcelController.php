@@ -14,7 +14,7 @@ class ExcelController extends Controller
 
 		\Excel::create('Consejo Consultivo', function($excel) {
 		 
-		    $mesas = Solucion::where('tipo_fuente','=',1)
+		    $mesas = Solucion::where('tipo_fuente','=',2)
                                 ->where('sector_id','=',7)
                                 ->orderBy('verbo_solucion','ASC')->get();
 		 

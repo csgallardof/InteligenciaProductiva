@@ -16,6 +16,7 @@ use App\Ambit;
 use App\EstadoSolucion;
 use DB;
 use Illuminate\Support\Collection as Collection;
+    
 
 use App\Provincia;
 use App\Sipoc;
@@ -26,7 +27,10 @@ use App\Auth\Login;
 class PaginasController extends Controller
 {
      public function busquedaAvanzada(Request $request){
-        
+        $datosFiltroSector="";
+        $datosFiltroEstado="";
+        $datosFiltroAmbito="";
+        $datosFiltroResponsable="";
        $buscar = $request-> parametro;
 
         if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
@@ -125,6 +129,8 @@ class PaginasController extends Controller
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroSector=($request->sectorSelect);
+                    //dd($datosFiltroSector);
                 }
             }
         }
@@ -134,6 +140,7 @@ class PaginasController extends Controller
                 if($solucion->estado_id == $request->estadoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroEstado=($request->estadoSelect);
                 }
             }
         }
@@ -144,6 +151,8 @@ class PaginasController extends Controller
                 if($solucion->ambit_id == $request->ambitoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroAmbito=($request->ambitoSelect);
+                    
                 }
             }
         }
@@ -154,6 +163,8 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        $datosFiltroResponsable=($request->responsableSelect);
+                        
                     }
                 }
             }
@@ -166,6 +177,7 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->corresponsableSelect && $actor_solucion->tipo_actor == 2){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        
                     }
                 }
             }
@@ -195,6 +207,10 @@ class PaginasController extends Controller
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
+                                            "datosFiltroSector"=>$datosFiltroSector,
+                                            "datosFiltroEstado"=>$datosFiltroEstado,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
                                             "actividades"=>$actividades,
                                             "filtros"=>$filtros
                                         ]);
@@ -511,7 +527,8 @@ class PaginasController extends Controller
     }
 
     public function busquedaGeneral(Request $request){
-
+        $datosFiltroAmbito="";
+        $datosFiltroResponsable="";
         $buscar = $request-> parametro;
 
 
@@ -528,6 +545,7 @@ class PaginasController extends Controller
                  $resultados = Solucion::where('tipo_fuente','=',2)
                              ->orderBy('responsable_solucion','DESC')
                              ->get();
+
 
             }
 
@@ -613,16 +631,20 @@ class PaginasController extends Controller
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    
+                    
                 }
             }
         }
 
-        if( isset($request->sectorSelect) && $request->sectorSelect > 0 ){
-            $filtros["ambit"]= $request->sectorSelect;
+        if( isset($request->ambitoSelect) && $request->ambitoSelect > 0 ){
+            $filtros["ambito"]= $request->ambitoSelect;
             foreach ($resultados as $solucion) {
-                if($solucion->sector_id == $request->sectorSelect){
+                if($solucion->ambit_id == $request->ambitoSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
+                    $datosFiltroAmbito=($request->ambitoSelect);
+                    
                 }
             }
         }
@@ -634,6 +656,7 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->responsableSelect && $actor_solucion->tipo_actor == 1){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
+                        $datosFiltroResponsable=($request->responsableSelect);
                     }
                 }
             }
@@ -660,21 +683,126 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-
+        
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
                                             "filtros"=>$filtros
                                         ]);
 
 
+
+    }
+    
+ 
+    public function crearReportePropuestas(Request $request,$tipo){
+
+      $vistaurl="publico.reportes.pdfReportes.pdfPropuestas";
+     $cheches = $request['check'];
+     $check="";
+     for ($i=0; $i <count($cheches) ; $i++) { 
+            $check .= $cheches[$i].",";
+        }
+        $consulta=substr($check,0,-1);
+        $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(1,2)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasAnalisis=Collection::make($consutaPropuestas);
+
+        $consutaPropuestasDesarrollo=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(3)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasDesarrollo=Collection::make($consutaPropuestasDesarrollo);
+
+        $consutaPropuestasCierre=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(4)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasCierre=Collection::make($consutaPropuestasCierre);
+       
+        return $this->crearPropuestasPDF($consutaPropuestasAnalisis,$consutaPropuestasDesarrollo,$consutaPropuestasCierre,$vistaurl,$tipo);
         
+        
+
+    }
+
+    public function crearPropuestasPDF($datos1,$datos2,$datos3,$vistaurl,$tipo){
+        $data1 = $datos1;
+        $data2 = $datos2;
+        $data3 = $datos3;
+        //dd($data1);
+        $date = date('Y-m-d');
+        $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
+                                                              "data3"=>$data3,
+                                                              "data2"=>$data2]);
+        $pdf1 = \App::make('dompdf.wrapper');
+        $pdf1->loadHTML($view);
+        if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
+        if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
     }
 
     public function consejosectorial(){
         return view('csp.home');
     }
+
+    public function ReporteDialogoGrafico(){
+
+        $sipoc = DB::select("SELECT sipocs.nombre_sipoc, count(sipocs.nombre_sipoc) AS total FROM solucions
+                            INNER JOIN sipocs ON solucions.sipoc_id = sipocs.id
+                            WHERE solucions.sector_id = 7
+                            GROUP BY sipocs.nombre_sipoc
+                            ORDER BY total DESC");
+                            $sipoc=Collection::make($sipoc);
+
+        $verbo_solucion = DB::select("SELECT solucions.verbo_solucion, count(solucions.id) AS total
+                            FROM solucions
+                            WHERE solucions.sector_id = 7
+                            GROUP BY solucions.verbo_solucion ORDER BY total DESC");
+                            $verbo_solucion=Collection::make($verbo_solucion);
+
+
+        $propuestas_estado = DB::select("SELECT estado_solucion.nombre_estado, count(solucions.id) AS total
+                            FROM solucions
+                            INNER JOIN estado_solucion ON solucions.estado_id = estado_solucion.id
+                            WHERE  solucions.sector_id = 7
+                            GROUP BY estado_solucion.nombre_estado");
+                            $propuestas_estado=Collection::make($propuestas_estado);
+
+        $propuestas_ambito = DB::select("SELECT ambits.nombre_ambit, count(solucions.id) AS total
+FROM solucions
+INNER JOIN ambits ON solucions.ambit_id = ambits.id
+WHERE  solucions.sector_id = 7
+GROUP BY ambits.nombre_ambit ORDER BY total DESC");
+                            $propuestas_ambito=Collection::make($propuestas_ambito);
+
+
+                            
+        return view('publico.reportes.reporte-graficos')->with([
+                                                "sipoc"=>$sipoc,
+                                                "verbo_solucion" =>$verbo_solucion,
+                                                "propuestas_estado" =>$propuestas_estado,
+                                                "propuestas_ambito" =>$propuestas_ambito,
+                                                
+                                                ]);
+        
+        
+    }
+
+
 
 
 }

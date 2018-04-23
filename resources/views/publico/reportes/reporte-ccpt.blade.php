@@ -21,7 +21,7 @@
           <ol class="breadcrumb">
 
             <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}">Resultados de la B&uacute;squeda </a></li>
 
           </ol>
         </div>
@@ -51,20 +51,28 @@
 
 						 		<div class="col-md-2">
 
-							    <label for="sectorSelect">Ámbito</label><br>
-								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" style="width: 175px">
+							    <label for="ambitoSelect">Ámbito</label><a style="font-size: 12px;text-decoration:none" href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">Quitar Filtro</a><br>
+								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect" style="width: 175px">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
 								 			@if( !in_array( $solucion->ambit->id , $arrayAmbits) )
+								 				@if($datosFiltroAmbito!="")
+								 				@if($solucion->ambit->id==$datosFiltroAmbito)
+									 			<option value="{{ $solucion->ambit->id}}" selected>{{ $solucion->ambit->nombre_ambit }}</option>
+									 			@endif
+									 			@else
 									 			<option value="{{ $solucion->ambit->id}}">{{ $solucion->ambit->nombre_ambit }}</option>
-									 			<?php array_push( $arrayAmbits, $solucion->ambit->id ); ?>
+									 			@endif
+									 			<?php array_push( $arrayAmbits, $solucion->ambit->id );
+									 			;
+									 			 ?>
 									 		@endif
 								 		@endforeach
 								 	</select>
                 </div>
                 <div class="col-md-2">
 								 	<?php $arrayResponsables[] = array(); ?>
-								 	<label for="sectorSelect">Responsable</label><br>
+								 	<label for="sectorSelect">Responsable</label><a style="font-size: 12px;text-decoration:none" href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">Quitar Filtro</a><br>
 								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" style="width: 175px">
 								 		<option value="0">Seleccionar</option>
 								 		@foreach( $resultados as $solucion)
@@ -72,7 +80,13 @@
 						                		@foreach( $solucion->actor_solucion as $actorSolucion)
 						                			@if( $actorSolucion->tipo_actor == 1 )
 						                				@if( !in_array( $actorSolucion-> usuario-> id , $arrayResponsables) )
-						                					<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@if($datosFiltroResponsable!="")
+						                				@if($actorSolucion-> usuario-> id==$datosFiltroResponsable)
+						                					<option value="{{ $actorSolucion-> usuario-> id}}" selected>{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
+						                				@else
+						                				<option value="{{ $actorSolucion-> usuario-> id}}">{{ $actorSolucion-> usuario-> name}}</option>
+						                				@endif
 						                					<?php array_push( $arrayResponsables, $actorSolucion->usuario->id ); ?>
 						                				@endif
 						                			@endif
@@ -84,7 +98,7 @@
                   </div>
 
                   <div class="col-md-2 m-t-25">
-                    <button type="submit" class="btn btn-primary m-l-20">Filtrar</button>
+                    <button type="submit" class="btn btn-primary m-l-20">Filtrar </button>
                   </div>
 
 					</form>
@@ -146,21 +160,17 @@
           </div>
 
           <div class="col-md-4">
-          	<a href="/dialogo-nacional-estadisticas" class="btn pull-right btn-success m-l-30"><i class="fa fa-line-chart	
-"></i>&nbsp;Estadísticas</a>
+          	<a href="/dialogo-nacional-estadisticas" class="btn pull-right btn-success m-l-30"><i class="fa fa-line-chart"></i>&nbsp;Estadísticas</a>
            
             <a href="/descargar/Mesas" class="btn pull-right btn-success"><i class="fa fa-download"></i>&nbsp;Descargar</a>
-          </div>
-
-				<br /><br /><hr>
-
-	            <div class="row">
- 
-					<div class="col-md-12">
-
+            <div class="col-md-2">
+            <form target="_blank" method="POST" action="/lista-propuesta/1" enctype="multipart/form-data">
+					{{ csrf_field() }}			
+									<button type="submit"  class="btn btn-primary pull-right">Reporte Propuesta</button>
 						@if(isset($resultados))
-							<table id="data-table" class="table nowrap" width="100%">
+							<table id="data" class="table nowrap" width="100%" hidden="">
 								<thead>
+									<th class="text-center" hidden="">id</th>
 									<th class="text-center">PROPUESTA</th>
 					                <th class="text-center">AMBITO</th>
 					                <th class="text-center">RESPONSABLE</th>
@@ -168,12 +178,17 @@
 
 					                <th></th>
 								</thead>
-								<tbody>
+								<tbody> 
 						        	@foreach( $resultados as $solucion)
 						        		<tr>
-
+						        			
+											<td hidden="">
+						        				<input  type="checkbox" name="check[]" id="chk{{$solucion->id}}" checked value='{{$solucion->id}}'>
+						        			</td>
 											@if($solucion-> tipo_fuente == 1)
-							                	<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
+							                	<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}
+																								
+							                	</td>
 							                @else
 							                	@if($solucion-> tipo_fuente == 2)
 							                		<td class="text-left">{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion."  ".$solucion->complemento_solucion }}</td>
@@ -217,11 +232,99 @@
 			     				</tbody>
 							</table>
 						@endif
+						<!-- Fin Contenido -->
+			</form>
+            </div>
+          </div>
+				
+				<br /><br /><hr>
+				
+				
+	            <div class="row">
+ 					 
+					<div class="col-md-12">
+									
+						@if(isset($resultados))
+							<table id="data-table" class="table nowrap" width="100%">
+								<thead>
+									<th class="text-center" hidden="">id</th>
+									<th class="text-center">PROPUESTA</th>
+					                <th class="text-center">AMBITO</th>
+					                <th class="text-center">RESPONSABLE</th>
+					                <th class="text-center">ESTADO</th>
 
+					                <th></th>
+								</thead>
+								<tbody>
+						        	@foreach( $resultados as $solucion)
+						        		<tr>
+						        			
+											<td hidden="">
+						        				<input  type="checkbox" name="check[]" id="chk{{$solucion->id}}" checked value='{{$solucion->id}}'>
+						        			</td>
+											@if($solucion-> tipo_fuente == 1)
+							                	<td class="text-left">
+												<span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($solucion->verbo_solucion)); ?></span><br>
+
+									                <font><?php echo ucfirst(mb_strtolower($solucion->sujeto_solucion)) ?></font><br>
+									                <font><?php echo ucfirst(mb_strtolower($solucion->complemento_solucion)) ?></font><br>
+							                	</td>
+							                @else
+							                	@if($solucion-> tipo_fuente == 2)
+							                		<td class="text-left"> 
+													<span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($solucion->verbo_solucion)); ?></span><br>
+
+									                <font><?php echo ucfirst(mb_strtolower($solucion->sujeto_solucion)) ?></font><br>
+									                <font><?php echo ucfirst(mb_strtolower($solucion->complemento_solucion)) ?></font><br>
+							                		</td>
+							                	@endif
+							                @endif
+							                <td class="text-left">{{ $solucion->ambit->nombre_ambit}}</td>
+							                <td class="text-center">
+							                	@if( count($solucion->actor_solucion) > 0 )
+							                		@foreach( $solucion->actor_solucion as $actorSolucion)
+							                			@if( $actorSolucion->tipo_actor == 1 )
+							                				{{ $actorSolucion-> usuario-> name}}
+							                			@endif
+							                		@endforeach
+							                	@endif
+
+							                </td>
+
+											<td class="text-left">
+												<span class="label label-warning f-s-13">
+													{{ $solucion->estado->nombre_estado }}	
+												</span>
+												
+
+											</td>
+											<td class="text-center">
+												@if( $solucion -> tipo_fuente == 1)
+													<a href= "/detalle-despliegue-dialogo/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
+														Ver
+													</a>
+												@endif
+												@if( $solucion -> tipo_fuente == 2)
+													<a href= "/detalle-despliegue-dialogo/{{ $solucion->id}}" title="Ver más" class="btn btn-primary" >
+														Ver
+													</a>
+												@endif
+
+
+											</td>
+							            </tr>
+						            @endforeach
+			     				</tbody>
+							</table>
+						@endif
+
+						
 						<!-- Fin Contenido -->
 					</div>
 						<!-- end col-4 -->
 				</div>
+			
+			
 		</div>
 
 	</div>

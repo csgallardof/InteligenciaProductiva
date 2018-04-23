@@ -3,7 +3,7 @@
 @section('title','Inicio')
 
 
-@section('content')
+@section('content') 
         
 
         <!-- begin #content -->
