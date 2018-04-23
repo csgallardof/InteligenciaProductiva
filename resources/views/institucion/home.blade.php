@@ -10,7 +10,7 @@
 			<!-- begin breadcrumb -->
 			
 
-			@if($tipo_fuente==5 or $tipo_fuente==4) 
+			@if($tipo_fuente==5 or $tipo_fuente==4)
 			<ol class="breadcrumb pull-right">
 				<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary">Consejo Sectorial</a>
 				

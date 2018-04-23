@@ -29,7 +29,7 @@ Route::get('/busquedaAvanzada',[
      'as'=>'nuevaBusqueda2'
 ]);
 
-
+Route::post('/lista-propuesta/{tipo}',['uses'=>'PaginasController@crearReportePropuestas','as'=>'reportePropuestas']);
 
 
 Route::post('/reporte',[
