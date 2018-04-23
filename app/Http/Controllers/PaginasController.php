@@ -783,11 +783,21 @@ class PaginasController extends Controller
                             $propuestas_estado=Collection::make($propuestas_estado);
 
         $propuestas_ambito = DB::select("SELECT ambits.nombre_ambit, count(solucions.id) AS total
-FROM solucions
-INNER JOIN ambits ON solucions.ambit_id = ambits.id
-WHERE  solucions.sector_id = 7
-GROUP BY ambits.nombre_ambit ORDER BY total DESC");
+                            FROM solucions
+                            INNER JOIN ambits ON solucions.ambit_id = ambits.id
+                            WHERE  solucions.sector_id = 7
+                            GROUP BY ambits.nombre_ambit ORDER BY total DESC");
                             $propuestas_ambito=Collection::make($propuestas_ambito);
+
+        $propuestas_institucion = DB::select("SELECT solucions.responsable_solucion, count(actividades.id) AS total
+                            FROM solucions
+                            INNER JOIN actor_solucion ON solucions.id = actor_solucion.solucion_id
+                            INNER JOIN actividades ON solucions.id = actividades.solucion_id
+                            INNER JOIN users ON actor_solucion.user_id = users.id
+                            WHERE  solucions.sector_id = 7
+                            GROUP BY  solucions.responsable_solucion ORDER BY total DESC");
+                            $propuestas_institucion=Collection::make($propuestas_institucion);
+
 
 
                             
@@ -796,6 +806,7 @@ GROUP BY ambits.nombre_ambit ORDER BY total DESC");
                                                 "verbo_solucion" =>$verbo_solucion,
                                                 "propuestas_estado" =>$propuestas_estado,
                                                 "propuestas_ambito" =>$propuestas_ambito,
+                                                "propuestas_institucion" => $propuestas_institucion
                                                 
                                                 ]);
         
