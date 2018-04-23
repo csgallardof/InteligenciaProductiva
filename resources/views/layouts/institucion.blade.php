@@ -52,14 +52,14 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</button>
+					</button> 
 				</div>
 				<!-- end mobile sidebar expand / collapse button -->
 				
 				<!-- begin header navigation right -->
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
 					
-					@auth {{ $tipo_fuente=Auth::user()->tipo_fuente }} @endauth
+					
 					@if($tipo_fuente==5 or $tipo_fuente==4)
 					<li class="dropdown "><a href="javascript:;" class="dropdown-toggle" style="color: #FFF" data-toggle="dropdown">
 

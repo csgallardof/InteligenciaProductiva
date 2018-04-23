@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Collection as Collection;
-use DB;
- 
+use DB; 
 class CspPdfReportesAgendaController extends Controller
 {
     public function listaAgendaTerritorialCsp(){
@@ -107,10 +106,6 @@ class CspPdfReportesAgendaController extends Controller
                                                                 "data5"=>$data5]);
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        //$pdf = \App::make('dompdf.wrapper');
-		//$pdf->loadHTML($view)->setPaper('a4', 'portrait');
-		//$m->addRaw($pdf->output());
-
         if($tipo==1){return $pdf->stream($date.'_reporteAgendaterritorial.pdf');}
         if($tipo==2){return $pdf->download('reporte.pdf'); }
     }
@@ -118,4 +113,6 @@ class CspPdfReportesAgendaController extends Controller
     public function mostrarTabla(){
         return view('csp.cspAgendaTerritorial.reporte1');
     }
+
+    
 }

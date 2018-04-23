@@ -16,6 +16,7 @@ use App\Ambit;
 use App\EstadoSolucion;
 use DB;
 use Illuminate\Support\Collection as Collection;
+    
 
 use App\Provincia;
 use App\Sipoc;
@@ -682,7 +683,7 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-        //dd($datosFiltroResponsable);
+        
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
@@ -692,7 +693,65 @@ class PaginasController extends Controller
                                         ]);
 
 
+
+    }
+    
+ 
+    public function crearReportePropuestas(Request $request,$tipo){
+
+      $vistaurl="publico.reportes.pdfReportes.pdfPropuestas";
+     $cheches = $request['check'];
+     $check="";
+     for ($i=0; $i <count($cheches) ; $i++) { 
+            $check .= $cheches[$i].",";
+        }
+        $consulta=substr($check,0,-1);
+        $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(1,2)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasAnalisis=Collection::make($consutaPropuestas);
+
+        $consutaPropuestasDesarrollo=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(3)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasDesarrollo=Collection::make($consutaPropuestasDesarrollo);
+
+        $consutaPropuestasCierre=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(4)
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasCierre=Collection::make($consutaPropuestasCierre);
+       
+        return $this->crearPropuestasPDF($consutaPropuestasAnalisis,$consutaPropuestasDesarrollo,$consutaPropuestasCierre,$vistaurl,$tipo);
         
+        
+
+    }
+
+    public function crearPropuestasPDF($datos1,$datos2,$datos3,$vistaurl,$tipo){
+        $data1 = $datos1;
+        $data2 = $datos2;
+        $data3 = $datos3;
+        //dd($data1);
+        $date = date('Y-m-d');
+        $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
+                                                              "data3"=>$data3,
+                                                              "data2"=>$data2]);
+        $pdf1 = \App::make('dompdf.wrapper');
+        $pdf1->loadHTML($view);
+        if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
+        if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
     }
 
@@ -742,6 +801,8 @@ GROUP BY ambits.nombre_ambit ORDER BY total DESC");
         
         
     }
+
+
 
 
 }
