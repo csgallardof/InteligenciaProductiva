@@ -700,5 +700,48 @@ class PaginasController extends Controller
         return view('csp.home');
     }
 
+    public function ReporteDialogoGrafico(){
+
+        $sipoc = DB::select("SELECT sipocs.nombre_sipoc, count(sipocs.nombre_sipoc) AS total FROM solucions
+                            INNER JOIN sipocs ON solucions.sipoc_id = sipocs.id
+                            WHERE solucions.sector_id = 7
+                            GROUP BY sipocs.nombre_sipoc
+                            ORDER BY total DESC");
+                            $sipoc=Collection::make($sipoc);
+
+        $verbo_solucion = DB::select("SELECT solucions.verbo_solucion, count(solucions.id) AS total
+                            FROM solucions
+                            WHERE solucions.sector_id = 7
+                            GROUP BY solucions.verbo_solucion ORDER BY total DESC");
+                            $verbo_solucion=Collection::make($verbo_solucion);
+
+
+        $propuestas_estado = DB::select("SELECT estado_solucion.nombre_estado, count(solucions.id) AS total
+                            FROM solucions
+                            INNER JOIN estado_solucion ON solucions.estado_id = estado_solucion.id
+                            WHERE  solucions.sector_id = 7
+                            GROUP BY estado_solucion.nombre_estado");
+                            $propuestas_estado=Collection::make($propuestas_estado);
+
+        $propuestas_ambito = DB::select("SELECT ambits.nombre_ambit, count(solucions.id) AS total
+FROM solucions
+INNER JOIN ambits ON solucions.ambit_id = ambits.id
+WHERE  solucions.sector_id = 7
+GROUP BY ambits.nombre_ambit ORDER BY total DESC");
+                            $propuestas_ambito=Collection::make($propuestas_ambito);
+
+
+                            
+        return view('publico.reportes.reporte-graficos')->with([
+                                                "sipoc"=>$sipoc,
+                                                "verbo_solucion" =>$verbo_solucion,
+                                                "propuestas_estado" =>$propuestas_estado,
+                                                "propuestas_ambito" =>$propuestas_ambito,
+                                                
+                                                ]);
+        
+        
+    }
+
 
 }

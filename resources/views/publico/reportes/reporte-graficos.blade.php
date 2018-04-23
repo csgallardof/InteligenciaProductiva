@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Reporte')
+@section('title', 'Reportes del Consejo Consultivo Productivo Tributario')
 
 @section('start_css')
   @parent
@@ -9,24 +9,60 @@
 
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
+    	  google.charts.load('current', {packages:['corechart']});
+	      google.charts.setOnLoadCallback(drawStuff);
+
+	        function drawStuff() {
+	          var data = new google.visualization.DataTable();
+	          data.addColumn('string', 'Cadena SIPOC');
+	          data.addColumn('number', 'Propuestas');
+	          data.addRows([
+
+	          	@foreach($sipoc as $sipocs)
+              	  ['{{ $sipocs ->nombre_sipoc }}',{{ $sipocs ->total}}],  
+              	@endforeach
+	          ]);
+
+	         var options = {
+	           title: 'Número de Propuestas por Cadena Productiva',
+	           width: 900,
+	           height: 300,
+	           legend: 'none',
+	           bar: {groupWidth: '95%'},
+	           vAxis: { gridlines: { count: 4 } }
+	         };
+
+	         var chart = new google.visualization.ColumnChart(document.getElementById('number_format_chart'));
+	         chart.draw(data, options);
+
+	         document.getElementById('format-select').onchange = function() {
+	           options['vAxis']['format'] = this.value;
+	           chart.draw(data, options);
+	         };
+	      };  
+      
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
+
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          @foreach($verbo_solucion as $verbo_solucions)
+      	    ['{{ $verbo_solucions ->verbo_solucion }}',{{ $verbo_solucions ->total}}],  
+      	  @endforeach
+          
         ]);
 
         var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
+          title: 'PROPUESTA POR TEMÁTICA'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_verbo'));
+
         chart.draw(data, options);
       }
     </script>
@@ -39,19 +75,42 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          @foreach($propuestas_estado as $propuestas_estados)
+      	    ['{{ $propuestas_estados ->nombre_estado }}',{{ $propuestas_estados ->total}}],  
+      	  @endforeach
+          
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'PROPUESTAS POR ESTADO'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_estado'));
 
+        chart.draw(data, options);
+      }
+    </script>
+
+  
+
+
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          @foreach($propuestas_ambito as $propuestas_ambitos)
+      	    ['{{ $propuestas_ambitos ->nombre_ambit }}',{{ $propuestas_ambitos ->total}}],  
+      	  @endforeach
+        ]);
+
+        var options = {
+          title: 'NÚMERO DE PROPUESTAS POR AMBITO',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart_ambito'));
         chart.draw(data, options);
       }
     </script>
@@ -71,76 +130,13 @@
           <ol class="breadcrumb">
 
             <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="active"><a href="{{ url('/busquedaAvanzada') }}">Resultados de la B&uacute;squeda</a></li>
+            <li class="active"><a href="{{ url('/busquedaAvanzada') }}">Resultados de la B&uacute;squeda</a> CONSEJO CONSULTIVO PRODUCTIVO TRIBUTARIO</li>
 
           </ol>
         </div><hr style="margin-top:-10px;">
 		<div class="row">
-			<div class="col-md-3" style="border: #D7DBDD 1px solid; padding: 1%">
-
-				<form role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-				<input type="hidden" name="parametro" value="{{ Request::get('parametro')}}">
-				<div class="toolbar title_ip_breadcrumb fit-m-b-10">
-
-		          <ol class="breadcrumb">
-
-		            <li class="home">Filtros</li>
-		            <li class="active"><button type="submit" class="btn btn-primary m-l-20 pull-rigth">Filtrar</button></li>
-
-		          </ol>
-		        </div>
-					<div class="form-group">
-						<?php $arraySectors[] = array(); ?>
-
-						 		<div >
-
-							    <label for="sectorSelect">Sector</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
-														<i class="fa fa-2x fa-angle-left"></i>
-													</a><br> 
-								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" >
-								 		<option value="0">Seleccionar </option>
-								 		
-								 	</select>
-                				</div>
-                				
-
-						 		<div >
-
-							    <label for="estadoSelect">Estados</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
-														<i class="fa fa-2x fa-angle-left"></i>
-													</a><br>
-								 	<select class="form-group form-control" id="estadoSelect" name="estadoSelect">
-								 		<option value="0">Seleccionar</option>
-								 		
-								 	</select>
-                				</div>
-                				
-
-						 		<div >
-
-							    <label for="ambitoSelect">Ambito</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
-														<i class="fa fa-2x fa-angle-left"></i>
-													</a><br>
-								 	<select class="form-group form-control" id="ambitoSelect" name="ambitoSelect">
-								 		<option value="0">Seleccionar</option>
-								 		
-								 	</select>
-                				</div>
-                				<div >
-								 	
-								 	<label for="sectorSelect">Responsable</label><a href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">
-														<i class="fa fa-2x fa-angle-left"></i>
-													</a><br>
-								 	<select class="form-group form-control" id="responsableSelect" name="responsableSelect" >
-								 		<option value="0">Seleccionar</option>
-								 		
-
-								 	</select>
-                  			</div>
-					</div>
-				</form>
-			</div>
-			<div class="col-md-9">
+			
+			<div class="col-md-12">
 
 			<!-- inicio cuadrados -->
 		
@@ -150,11 +146,13 @@
 		                <div class="col-md-12">
 		                    <div class="panel panel-inverse" data-sortable-id="chart-js-2">
 		                                            <div class="panel-heading">
-		                                                    <h4 class="panel-title">Radar Chart</h4>
+		                                                    <h4 class="panel-title">PROPUESTAS POR CADENA PRODUCTIVA</h4>
 		                                            </div>
 		                        <div class="panel-body">
 		                            <div>
-		                                <canvas id="bar-chart"></canvas>
+		                              	<div id="number_format_chart"></div>
+
+		                              	
 		                            </div>
 		                        </div>
 		                    </div>
@@ -168,11 +166,12 @@
                 <div class="col-md-6">
                     <div class="panel panel-inverse" data-sortable-id="flot-chart-3">
                         <div class="panel-heading">
-                            <h4 class="panel-title">Radar Chart</h4>
+                            <h4 class="panel-title">NÚMERO DE LAS PROPUESTAS POR ESTADO</h4>
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="radar-chart"></canvas>
+                            	<div id="piechart_estado" style="width: 600px; height: 400px;"></div>
+                                
                             </div>
                         </div>
                     </div>
@@ -182,11 +181,12 @@
                 <div class="col-md-6">
                     <div class="panel panel-inverse" data-sortable-id="flot-chart-3">
                         <div class="panel-heading">
-                            <h4 class="panel-title">Radar Chart</h4>
+                            <h4 class="panel-title">NÚMERO DE PROPUESTAS POR AMBITO</h4>
                         </div>
                         <div class="panel-body">
                             <div>
-                                <canvas id="radar-chartnew"></canvas>
+                                
+                                <div id="donutchart_ambito"  style="width: 600px; height: 400px;"></div>
                             </div>
                         </div>
                     </div>
@@ -201,11 +201,11 @@
                 <div class="col-md-6">
                     <div class="panel panel-inverse" data-sortable-id="flot-chart-5">
                         <div class="panel-heading">
-						  PIE
+						  PROPUESTAS POR TEMÁTICA
                         </div>
                         <div class="panel-body">
                             <div>
-                            	<div id="piechart"></div>
+                            	<div id="piechart_verbo"  style="width: 600px; height: 400px;"></div>
                                 
                             </div>
                         </div>
