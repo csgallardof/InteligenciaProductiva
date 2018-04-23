@@ -25,7 +25,7 @@
 
 	         var options = {
 	           title: 'Número de Propuestas por Cadena Productiva',
-	           width: 900,
+	           width: 600,
 	           height: 300,
 	           legend: 'none',
 	           bar: {groupWidth: '95%'},
@@ -33,6 +33,41 @@
 	         };
 
 	         var chart = new google.visualization.ColumnChart(document.getElementById('number_format_chart'));
+	         chart.draw(data, options);
+
+	         document.getElementById('format-select').onchange = function() {
+	           options['vAxis']['format'] = this.value;
+	           chart.draw(data, options);
+	         };
+	      };  
+      
+    </script>
+
+    <script type="text/javascript">
+    	  google.charts.load('current', {packages:['corechart']});
+	      google.charts.setOnLoadCallback(drawStuff);
+
+	        function drawStuff() {
+	          var data = new google.visualization.DataTable();
+	          data.addColumn('string', 'Cadena SIPOC');
+	          data.addColumn('number', 'Propuestas');
+	          data.addRows([
+
+	          	@foreach($propuestas_institucion as $propuestas_institucions)
+              	  ['{{ $propuestas_institucions ->responsable_solucion }}',{{ $propuestas_institucions ->total}}],  
+              	@endforeach
+	          ]);
+
+	         var options = {
+	           title: 'Propuestas por Institución',
+	           width: 900,
+	           height: 300,
+	           legend: 'none',
+	           bar: {groupWidth: '95%'},
+	           vAxis: { gridlines: { count: 4 } }
+	         };
+
+	         var chart = new google.visualization.ColumnChart(document.getElementById('number_format_chart_institucion'));
 	         chart.draw(data, options);
 
 	         document.getElementById('format-select').onchange = function() {
@@ -146,13 +181,12 @@
 		                <div class="col-md-12">
 		                    <div class="panel panel-inverse" data-sortable-id="chart-js-2">
 		                                            <div class="panel-heading">
-		                                                    <h4 class="panel-title">PROPUESTAS POR CADENA PRODUCTIVA</h4>
+		                                                    <h4 class="panel-title">PROPUESTAS POR INSTITUCIÓN</h4>
 		                                            </div>
 		                        <div class="panel-body">
 		                            <div>
-		                              	<div id="number_format_chart"></div>
+		                              	<div id="number_format_chart_institucion"></div>
 
-		                              	
 		                            </div>
 		                        </div>
 		                    </div>
@@ -217,11 +251,11 @@
                 <div class="col-md-6">
                     <div class="panel panel-inverse" data-sortable-id="chart-js-6">
                         <div class="panel-heading">
-                            <h4 class="panel-title">Doughnut Chart</h4>
+                            <h4 class="panel-title">NÚMERO DE PROPUESTAS POR CADENA PRODUCTIVA</h4>
                         </div>
                         <div class="panel-body">
                             <div>
-                                <div id="donutchart" ></div>
+                                <div id="number_format_chart"></div>
                             </div>
                         </div>
                     </div>
