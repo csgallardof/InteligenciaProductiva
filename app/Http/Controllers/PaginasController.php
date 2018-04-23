@@ -229,7 +229,8 @@ class PaginasController extends Controller
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
-                                            ->orderBy('created_at','DESC')->get();
+                                            ->orderBy('created_at','DESC')
+                                            ->get();
 
         return view('detalle-despliegue2')->with([
                                             "solucion"=>$solucion,

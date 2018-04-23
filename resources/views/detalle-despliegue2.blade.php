@@ -1,10 +1,11 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Reporte')
 
 @section('start_css')
   @parent
-  <link href="{{ asset('plugins/DataTables/css/data-table.css') }}" rel="stylesheet" />
+  <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 @endsection
 
 @section('contenido')
@@ -112,7 +113,7 @@
 										@endif
 	                                </label>
                                    	<div>
-                                   		<table id="data-table" class="table table-striped table-bordered">
+                                   		<table id="data-table1" class="table table-striped table-bordered">
 					                                    <thead>
 					                                        <tr>
 					                                            <th>Responsable</th>
@@ -265,38 +266,33 @@
 							<div id="collapseFive" class="panel-collapse collapse in">
 								<div class="panel-body">
 									<div class="media-body">
-									<br>
-
-
-									@if(isset($actividades) &&  count($actividades) > 0)
+										<br>
+										@if(isset($actividades) &&  count($actividades) > 0)
 									<label class='text-success'><b>Actividades Resgistradas: </b></label>{{ count($actividades) }}
 									<span class="pull-right" style="font-size: 12px">Ordenado desde la m&aacute;s reciente</span>
 									<hr>
-									<ul class="media-list media-list-with-divider">
-										@foreach($actividades as $actividad)
+									<table id="data-table" class="table table-striped table-bordered" width="100%">
+								<thead>
+									
+									<th class="text-center">Actividades</th>
+					                
 
-											<li class="media media-lg">
-												<div class="media-body">
-													<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
-													<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
-													<h5 class="media-heading"></h5>
-													{{ $actividad -> comentario}}
-													<br>
-
-													<!-- <a class="btn btn-primary btn-xs" ><i class="fa fa-download"></i></a>
-	                                            	<a href="#modal-add-acc" class="btn btn-primary btn-xs" data-toggle="modal"><i class="fa fa-edit"></i></a> -->
-
-												</div>
-
-											</li>
-
-											<!--ARCHIVOS-->
+								</thead>
+								<tbody>
+									@foreach($actividades as $actividad)
+						        	<tr>
+						        		
+						        		<td>
+						        		<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
+						        		<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
+										{{ $actividad -> comentario}}<br>
+										<!--ARCHIVOS-->
 											@if( count( $actividad-> archivo) > 0)
 											<hr>
 											<em> Archivos: </em> <br>
-												<ul>
+												
 													@foreach($actividad-> archivo as $file)
-													<li>
+													
 														<!-- <a target="_blank" href="'../../../../../../storage/{{ $file-> nombre_archivo }} "> -->
 														<a target="_blank" href="{{ route('descargarArchivo',$file-> nombre_archivo) }} ">
 															<?php
@@ -306,18 +302,23 @@
 
 															{{$nombre_archivo}}
 														</a>
-													</li>
+													
 													@endforeach
-												</ul>
+												
 											@endif
 
-											<!--FIN ARCHIVOS-->
-
-										@endforeach
-									</ul>
-									@else
+											<!--FIN ARCHIVOS-->	
+						        		</td>
+						        		
+						        	</tr>
+						       	 	@endforeach
+			     				</tbody>
+			     					
+							</table>
+							@else
 										No se encontraron actividades registradas.
-									@endif
+							@endif
+							
 
 								</div>
 								</div>
@@ -347,12 +348,10 @@
 
 
 
-  <script src="{{ asset('plugins/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
-  <script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
-	<script src="{{ asset('plugins/DataTables/js/dataTables.responsive.js') }}"></script>
-	<script src="{{ asset('js/table-manage-responsive.demo.min.js') }}"></script>
-	<script src="{{ asset('js/custom-mipro.js') }}"></script>
+  <<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
+	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
+	<script src="{{ asset('plugins/scrollMonitor/scrollMonitor.js') }}"></script>
+	<script src="{{ asset('js/custom-mipro.js" type="text/javascript') }}"></script>
 	<script src="{{ asset('js/apps.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
 
@@ -362,13 +361,14 @@
 @section('init_scripts')
 
   <script>
-    $(document).ready(function() {
-      Dashboard.init();
 
+		$(document).ready(function() {
+			App.init();
+			TablaCCPTHome.init();
+		});
 
-
-    });
-  </script>
+	</script>
+ 
   <script>
 function goBack() {
     window.history.back();
