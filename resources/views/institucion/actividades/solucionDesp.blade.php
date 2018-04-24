@@ -11,11 +11,11 @@
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
-			<div class="brand">
-                <img src="{{ asset('imagenes/inteligencia_productiva_home.png') }}" class="left-block img-responsive" alt="Cinque Terre" width="337px" height="55px"><br>
-            </div>
+
+<br />
+
 			<!-- end page-header -->
-			
+
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-12 -->
@@ -24,11 +24,11 @@
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
 							<h4>Soluci&oacute;n</h4>
-							<p>
+							<p class="f-s-20">
 								@if (isset($solucion) )
 									{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
 								@endif
-							</p>	
+							</p>
 						</div>
 						<div class="stats-link">
 							<a href="javascript:;">&nbsp;</a>
@@ -42,14 +42,14 @@
 			<div class="row">
 				<!-- begin col-8 -->
 				<div class="col-md-8">
-					
+
 					<div class="panel panel-inverse" data-sortable-id="index-5">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a> -->
+
 							</div>
 							<h4 class="panel-title"><i class="fa fa-list-ol" aria-hidden="true"></i> Actividades</h4>
 						</div>
@@ -57,7 +57,7 @@
 							<div class="height-lg" data-scrollbar="true">
 
 								@include('flash::message')
-								
+
 								<div class="media-body">
 
 									@if (isset($solucion) && isset($tipo_actor) )
@@ -87,7 +87,7 @@
 												@if( $actividad-> ejecutor_id > 0 )
 													<b> Ejecutor: </b> {{ $actividad-> usuario-> name }}<br><br>
 												@endif
-												
+
 													<!--ARCHIVOS-->
 														@if( count( $actividad-> archivo) > 0)
 														<b> Archivos: </b> <br>
@@ -110,8 +110,8 @@
 
 													<!--FIN ARCHIVOS-->
 
-												
-											
+
+
 											<hr>
 											<?php $count--; ?>
 										@endforeach
@@ -122,12 +122,12 @@
 									@endif
 
 								</div>
-								
+
 
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 				<!-- end col-8 -->
 				<!-- begin col-4 -->
@@ -135,17 +135,17 @@
 					<div class="panel panel-inverse" data-sortable-id="index-6">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a> -->
+
 							</div>
 							<h4 class="panel-title"><i class="fa fa-list-ol" aria-hidden="true"></i> Actores</h4>
 						</div>
 						<div class="panel-body p-t-0">
 							<table class="table table-valign-middle m-b-0">
 								<thead>
-									<tr>	
+									<tr>
 										<th>Institución</th>
 										<th>Responsabilidad</th>
 									</tr>
@@ -163,13 +163,13 @@
 													@endif
 												</td>
 											</tr>
-										@endforeach	
+										@endforeach
 									@endif
 								</tbody>
 							</table>
 						</div>
 					</div>
-					
+
 				</div>
 				<!-- end col-4 -->
 			</div>
@@ -178,5 +178,3 @@
 		<!-- end #content -->
 
 		@stop
-		
-        
