@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="en"> 
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
@@ -62,12 +62,12 @@
 
 
 					@if($tipo_fuente==5 or $tipo_fuente==4)
-					<li class="dropdown "><a href="javascript:;" class="dropdown-toggle" style="color: #FFF" data-toggle="dropdown">
+					<li class="dropdown" ><a href="javascript:;" class="dropdown-toggle btn-primary btn-xs" style="color: #FFF;" data-toggle="dropdown">
 
-							<span class="hidden-xs">Consejo Sectorial</span> <b class="caret"></b>
+							<span class="hidden-xs ">Consejo Sectorial</span> <b class="caret"></b>
 						</a>
 
-						<ul class="dropdown-menu animated fadeInLeft">
+						<ul class="dropdown-menu animated fadeInLeft" >
 							<li>
 								<a href="/institucion/consejo-sectorial-produccion">
         	                		Reportes CSP
