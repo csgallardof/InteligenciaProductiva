@@ -25,11 +25,11 @@ class ActividadesController extends Controller
     public function index()
     {
         //
-        
+
     }
 
     public function verActividadesDespliegue($tipo_actor, $idSolucion){
-                
+
         if( $tipo_actor != 1 && $tipo_actor != 2 ){
             return abort(404);
         }
@@ -44,31 +44,32 @@ class ActividadesController extends Controller
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                 ->where('tipo_fuente','=', 1)
                                 ->orderBy('created_at','DESC')->get();
-                                
+
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
+        $tipo_fuente = Auth::user()->tipo_fuente;
 
-        
         return view('institucion.actividades.solucionDesp')->with(["actoresSoluciones"=>$actoresSoluciones,
                                                             "solucion"=>$solucion[0],
                                                             "actividades"=>$actividades,
-                                                            "tipo_actor"=>$tipo_actor
+                                                            "tipo_actor"=>$tipo_actor,
+                                                            "tipo_fuente"=>$tipo_fuente
                                                         ]);
     }
 
     public function verActividadesConsejo($tipo_actor, $idSolucion){
-                
+
         if( $tipo_actor != 1 && $tipo_actor != 2 ){
             return abort(404);
         }
 
         $solucion = DB::select("SELECT pajustadas.* FROM pajustadas
                                 INNER JOIN solucions ON pajustadas.id = solucions.pajustada_id
-                                INNER JOIN actor_solucion ON actor_solucion.solucion_id = pajustadas.id 
+                                INNER JOIN actor_solucion ON actor_solucion.solucion_id = pajustadas.id
                                 WHERE actor_solucion.user_id = ".Auth::user()->id." AND actor_solucion.solucion_id = ".$idSolucion."
-                                AND actor_solucion.tipo_actor = ".$tipo_actor." 
+                                AND actor_solucion.tipo_actor = ".$tipo_actor."
                                 ;");
 
         $this->notFound($solucion);  //REDIRECCIONA AL ERROR 404  SI EL OBJETO NO EXISTE
@@ -76,11 +77,11 @@ class ActividadesController extends Controller
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                 ->where('tipo_fuente','=', 2)
                                 ->orderBy('created_at','DESC')->get();
-                                
+
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',2)
                                             ->orderBy('tipo_actor','ASC')->get();
-        
+
         return view('institucion.actividades.solucionCCPT')->with(["actoresSoluciones"=>$actoresSoluciones,
                                                             "solucion"=>$solucion[0],
                                                             "actividades"=>$actividades,
@@ -98,6 +99,8 @@ class ActividadesController extends Controller
     {
         $solucion = Solucion::find($idSolucion);
 
+        $tipo_fuente = Auth::user()->tipo_fuente;
+
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                 ->where('tipo_fuente','=', 1)
                                 ->orderBy('created_at','ASC')->get();
@@ -106,7 +109,7 @@ class ActividadesController extends Controller
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
-        return view('institucion.actividades.createDesp')->with(["solucion"=>$solucion,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones]);
+        return view('institucion.actividades.createDesp')->with(["solucion"=>$solucion,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones,"tipo_fuente"=>$tipo_fuente]);
     }
 
     /**
@@ -128,7 +131,7 @@ class ActividadesController extends Controller
 
         return view('institucion.actividades.createCCPT')->with(["pajustada"=>$pajustada,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones]);
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -136,7 +139,7 @@ class ActividadesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function saveActividad(Request $request, $tipo_fuente, $idSolucion)
-    {       
+    {
         $actividad = new Actividad;
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
@@ -151,17 +154,17 @@ class ActividadesController extends Controller
                 }
                 if($request->tipo_fuente_id ==2){
                     $pajustada = Pajustada::find($idSolucion);
-                    
+
                     $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
                     foreach ($solucionesOriginales as $solucion) {
                         $solucionCCPT= Solucion::find($solucion-> id);
                         $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
                         $solucionCCPT->save();
                     }
-                }          
+                }
         }
 
-        $actividad-> save();  
+        $actividad-> save();
 
         $files = $request->file('files');
 
@@ -170,7 +173,7 @@ class ActividadesController extends Controller
             foreach ($files as $file) {
 
                 $nombreArchivo = $file->getClientOriginalName();
-                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_-_".$nombreArchivo;     // agregamos la fecha 
+                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_-_".$nombreArchivo;     // agregamos la fecha
 
                 $archivo = new Archivo;
                 $archivo-> nombre_archivo= $nombreArchivo;
@@ -178,7 +181,7 @@ class ActividadesController extends Controller
                 $archivo->save();
 
                 /*$file = $request->file('imagen');*/
-                \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) ); 
+                \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) );
             }
         }
         Flash::success("Se ha creado la actividad exitosamente");
@@ -187,7 +190,7 @@ class ActividadesController extends Controller
         }else{
             return redirect()->route('verSolucion.consejo',[1, $idSolucion]);
         }
-        
+
     }
 
     /**

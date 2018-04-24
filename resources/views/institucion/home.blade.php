@@ -3,32 +3,32 @@
 @section('title','Inicio')
 
 @section('content')
-		
+
 
 		<!-- begin #content -->
-		<div id="content" class="content" width="10%">
+		<div id="content" class="content" width="10%" style="background-color: #f3f3f3;">
 			<!-- begin breadcrumb -->
-			
+
+			<br />
 
 			@if($tipo_fuente==5 or $tipo_fuente==4)
 			<ol class="breadcrumb pull-right">
 				<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary">Consejo Sectorial</a>
-				
+
 			</ol>
 			@endif
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
-			<div class="brand">
+			<!-- <div class="brand">
                 <img src="{{ asset('imagenes/inteligencia_productiva_home.png') }}" class="left-block img-responsive" alt="Cinque Terre" width="337px" height="55px"><br>
-            </div>
+            </div> -->
 			<!-- end page-header -->
-			
-			<!-- begin row --> 
+
+			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-3 -->
 				<div class="col-md-3 col-sm-6">
-					<div class="widget widget-stats bg-green-darker">
-						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 							<h4>TOTAL DE PROPUESTAS</h4>
 							@if (isset($totalDespliegue) )
@@ -43,18 +43,14 @@
 								@else
 									<p>0</p>
 								@endif
-							@endif	
-						</div>
-						<div class="stats-link">
-							<a href="javascript:;">&nbsp;</a>
+							@endif
 						</div>
 					</div>
 				</div>
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
 				<div class="col-md-3 col-sm-6">
-					<div class="widget widget-stats bg-blue">
-						<div class="stats-icon"><i class="fa fa-users"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 							<h4>MESAS COMPETITIVAS</h4>
 							@if (isset($totalDespliegue) )
@@ -63,34 +59,26 @@
 								<p>0 Propuestas</p>
 							@endif
 						</div>
-						<div class="stats-link">
-							<a href="javascript:;">&nbsp;</a>
-						</div>
 					</div>
 				</div>
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
 				<div class="col-md-3 col-sm-6">
-					<div class="widget widget-stats bg-purple">
-						<div class="stats-icon"><i class="fa fa-users"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 							<h4>CONSEJO CONSULTIVO</h4>
 							@if (isset($totalConsejo) )
 								<p>{{ $totalConsejo }} Propuestas</p>
 							@else
 								<p>0 Propuestas</p>
-							@endif	
-						</div>
-						<div class="stats-link">
-							<a href="javascript:;">&nbsp;</a>
+							@endif
 						</div>
 					</div>
 				</div>
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
 				<div class="col-md-3 col-sm-6">
-					<div class="widget widget-stats bg-red">
-						<div class="stats-icon"><i class="fa fa-user"></i></div>
+					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 							<h4>MIS PROPUESTAS | @auth {{ Auth::user()->name }}@endauth</h4>
 							@if (isset($solucionesDespliegue) )
@@ -106,10 +94,6 @@
 									<p>0 Soluciones</p>
 								@endif
 							@endif
-
-						</div>
-						<div class="stats-link">
-							<a href="javascript:;">&nbsp;</a>
 						</div>
 					</div>
 				</div>
@@ -119,11 +103,11 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
-					
-					
+				<div class="col-md-12">
+
+
 					<ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
-						
+
 						<li class="active">
 							<a href="#responsable" data-toggle="tab">
 								<i class="fa fa-sticky-note-o m-r-5"></i>
@@ -161,11 +145,11 @@
 						</span></a></li>
 					</ul>
 					<div class="tab-content" data-sortable-id="index-3">
-						
+
 						<!--SOLUCIONES RESPONSABLE-->
 						<div class="tab-pane fade active in" id="responsable">
-							<div class="height-lg" data-scrollbar="true">
-								<table class="table">
+							<div class="" data-scrollbar="false">
+								<table class="table table-bordered table-striped">
 									<thead>
 										<tr>
 											<th>Propuesta</th>
@@ -182,17 +166,17 @@
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
-																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														
+
 														<td>
-															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle</a>
 														</td>
 													</tr>
-												@endif	
+												@endif
 											@endforeach
 
 										@endif
@@ -205,21 +189,21 @@
 														<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
 														<td>
 															@if($solucionCC->tipo_fuente == 1)
-																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														
+
 														<td>
-															<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+															<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 														</td>
-													</tr>	
+													</tr>
 												@endif
 											@endforeach
 
 										@endif
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -246,16 +230,16 @@
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
-																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 														<td>
-															<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+															<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 														</td>
 													</tr>
-												@endif	
+												@endif
 											@endforeach
 
 										@endif
@@ -268,22 +252,22 @@
 														<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
 														<td>
 															@if($solucionCC->tipo_fuente == 1)
-																<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
-														
+
 														<td>
-															<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+															<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 														</td>
-													</tr>	
+													</tr>
 												@endif
 											@endforeach
 
 										@endif
-									
-									
+
+
 									</tbody>
 								</table>
 							</div>
@@ -308,7 +292,7 @@
 											@foreach($solucionesDespliegue as $solucionD)
 											<tr>
 												<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
-												
+
 												<td>
 													@if($solucionD->tipo_actor == 1)
 														<em>{{ "Responsable" }}</em>
@@ -318,19 +302,19 @@
 												</td>
 												<td>
 													@if($solucionD->tipo_fuente == 1)
-														<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+														<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 													@else
-														<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+														<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 													@endif
 												</td>
 												<td>
 													@if($solucionD->tipo_actor == 1)
-														<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+														<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 													@else
-														<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+														<a href="{{ route('verSolucion.despliegue',[2,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 													@endif
 												</td>
-											</tr>	
+											</tr>
 											@endforeach
 
 										@endif
@@ -340,7 +324,7 @@
 											@foreach($solucionesCCPT as $solucionCC)
 											<tr>
 												<td class="text-justify">{{$solucionCC->nombre_pajustada}}</td>
-												
+
 												<td>
 													@if($solucionCC->tipo_actor == 1)
 														<em>{{ "Responsable" }}</em>
@@ -350,23 +334,23 @@
 												</td>
 												<td>
 													@if($solucionCC->tipo_fuente == 1)
-														<label class="label label-warning" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
+														<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 													@else
-														<label class="label label-warning" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+														<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 													@endif
 												</td>
 												<td>
 													@if($solucionCC->tipo_actor == 1)
-														<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+														<a href="{{ route('verSolucion.consejo',[1,$solucionCC->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 													@else
-														<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link btn-sm">Ver detalle..</a>
+														<a href="{{ route('verSolucion.consejo',[2,$solucionCC->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle..</a>
 													@endif
 												</td>
-											</tr>	
+											</tr>
 											@endforeach
 
 										@endif
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -374,19 +358,19 @@
 						<!--FIN SOLUCIONES EN GENERAL-->
 
 
-					</div>					
-					
+					</div>
+
 				</div>
 				<!-- end col-8 -->
 				<!-- begin col-4 -->
-				<div class="col-md-4" >
+				<div class="col-md-12" >
 					<div class="panel panel-inverse" data-sortable-id="index-6">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+								<!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a> -->
 							</div>
 							<h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
 						</div>
@@ -398,11 +382,11 @@
 											{{ substr($notificacion-> comentario,0,65).'..' }} <br>
 											{{ substr($notificacion-> fecha_inicio,0,10) }}
 											@if($notificacion->tipo_fuente == 1)
-												<a href="{{ route('verSolucion.despliegue',[2,$notificacion-> solucion_id]) }}" class="pull-right">Ver m&aacute;s</a><br><br>
-											@endif	
+												<a href="{{ route('verSolucion.despliegue',[2,$notificacion-> solucion_id]) }}" class="pull-right f-s-13 f-w-500">Ver m&aacute;s</a><br><br>
+											@endif
 											@if($notificacion->tipo_fuente == 2)
-												<a href="{{ route('verSolucion.consejo',[2,$notificacion-> solucion_id]) }}" class="pull-right">Ver m&aacute;s</a><br><br>
-											@endif	
+												<a href="{{ route('verSolucion.consejo',[2,$notificacion-> solucion_id]) }}" class="pull-right f-s-13 f-w-500">Ver m&aacute;s</a><br><br>
+											@endif
 
 										</li>
 									@endforeach
@@ -423,10 +407,10 @@
 							<h4 class="panel-title">&Uacute;ltimas actividades</h4>
 						</div>
 						<div class="panel-body">
-							
+
 						</div>
 					</div> -->
-					
+
 				</div>
 				<!-- end col-4 -->
 			</div>
@@ -435,5 +419,3 @@
 		<!-- end #content -->
 
 		@stop
-		
-        

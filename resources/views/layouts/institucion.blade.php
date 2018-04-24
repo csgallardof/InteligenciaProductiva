@@ -9,25 +9,25 @@
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
-	<link href="{{ asset('css/style.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/style-responsive.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-	
+
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
 	<link href="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" />
     <link href="{{ asset('plugins/gritter/css/jquery.gritter.css') }}" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
@@ -36,7 +36,7 @@
 	<!-- begin #page-loader -->
 	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
 	<!-- end #page-loader -->
-	
+
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 		<!-- begin #header -->
@@ -48,18 +48,19 @@
 					<a href="{{ url('institucion/home') }}" class="navbar-brand">
 								<img src="{{ asset('imagenes/logo_mipro_white.png') }}" class="center-block img-responsive" alt="Cinque Terre" width="130px" height="46px">
 					</a>
+					<img src="{{ asset('imagenes/inteligencia_productiva_home_white.png') }}" class="center-block img-responsive m-t-20" alt="Cinque Terre" width="250px" height="65px">
 					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</button> 
+					</button>
 				</div>
 				<!-- end mobile sidebar expand / collapse button -->
-				
+
 				<!-- begin header navigation right -->
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
-					
-					
+
+
 					@if($tipo_fuente==5 or $tipo_fuente==4)
 					<li class="dropdown "><a href="javascript:;" class="dropdown-toggle" style="color: #FFF" data-toggle="dropdown">
 
@@ -71,13 +72,13 @@
 								<a href="/institucion/consejo-sectorial-produccion">
         	                		Reportes CSP
                         		</a>
-                                
+
                             </li>
                             <li >
 								<a  href="/institucion/ver-agenda-territorial">
         	                		Agenda Territorial
                         		</a>
-                                
+
                             </li>
 						</ul>
 					</li>
@@ -108,29 +109,29 @@
 			<!-- end container-fluid -->
 		</div>
 		<!-- end #header -->
-		
+
 		<!-- begin #sidebar -->
 
 
 
 		<!-- html comment -->
-		
 
 
-		
-		
+
+
+
 		<!-- end #sidebar -->
 
 
-		
+
 		@yield('content')
-		
+
 		<!-- begin scroll to top btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 		<!-- end scroll to top btn -->
 	</div>
 	<!-- end page container -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/jquery/jquery-1.9.1.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
@@ -144,7 +145,7 @@
 	<script src="{{ asset('plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery-cookie/jquery.cookie.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
-	
+
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 	<script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
 	<script src="{{ asset('plugins/flot/jquery.flot.min.js') }}"></script>
@@ -158,7 +159,7 @@
 	<script src="{{ asset('js/dashboard.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
-	
+
 	<script>
 		$(document).ready(function() {
 			App.init();
@@ -169,7 +170,7 @@
 	function cuenta(){
     	document.getElementById('nunCaracteres').innerHTML= document.getElementById('exampleTextarea').value.length + '/280 caracteres';
 	}
-	
-</script> 
+
+</script>
 </body>
 </html>
