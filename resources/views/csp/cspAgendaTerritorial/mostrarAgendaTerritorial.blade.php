@@ -6,61 +6,59 @@
   @parent
     <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
-    
+
 @endsection
 
 @section('content')
-        
+
 
         <!-- begin #content -->
         <div id="content" class="content" width="10%">
             <div class="row">
                 <!-- begin col-12 -->
+<br />
+
                 <div class="col-md-12 col-sm-12">
                     <div class="widget widget-stats bg-green-darker">
-                        <div class="stats-icon"><i class="fa fa-desktop"></i></div>
-                        <div class="stats-info"> 
+                        <div class="stats-info">
                             <h4 class="modal-title"> <strong> AGENDA TERRITORIAL </strong> </h4>
-               
-                        </div>
-                        <div class="stats-link">
-                            <a href="javascript:;">&nbsp;</a>
+
                         </div>
                     </div>
                 </div>
                 <!-- end col-12 -->
             </div>
             <!-- end page-header -->
-            
+
             <!-- begin row -->
-            
+
             <!-- end row -->
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
-                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a> -->
                             </div>
                             <h4 class="panel-title">Agenda Territorial</h4>
                         </div>
-                        
+
                         <div class="panel-body">
-                            
+
                             <div class="row">
                                     <div class="col-md-12">
                                         @if($tipo_fuente==4)
                                         <a href="/institucion/crear-agenda-territorial" class="btn btn-primary pull-right">Nueva Agenda</a>
                                         @endif
-                                   
+
                                     </div>
-                            </div>        
+                            </div>
                         <hr>
                             <div class="table-responsive">
                                 <table id="data-table" class="table table-striped table-bordered">
@@ -85,7 +83,7 @@
                                                   <td class="text-justify">{{$agendaTerritorial->FechaRegistro}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->fecha_agenda}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->semana}}</td>
-                                                  
+
                                                    <td class="text-justify">{{$agendaTerritorial->nombre_canton}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_agenda}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_impacto}}</td>
@@ -98,8 +96,8 @@
                                                     @endif
                                             <div class="col-md-0 pull-right">
                                         <a href="#modal-without-animation{{$agendaTerritorial->id}}"  data-toggle="modal"><i class="fa fa-2x fa-eye"></i></a>
-                                        
-                            
+
+
                             <div class="modal " id="modal-without-animation{{$agendaTerritorial->id}}">
                                 <div class="modal-dialog ">
                                     <div class="modal-content ">
@@ -117,20 +115,20 @@
                                                 <strong>Impacto Tecnico/Político: </strong> {{$agendaTerritorial->ImpactoAgenda}} <br> <br>
                                                 <strong>Descripcion Tipo Impacto: </strong> {{$agendaTerritorial->descripcion_tipo_impacto}} <br>
                                         </p>
-                                            
+
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>        
+                            </div>
                 </div>
                                                   </td>
-                                                  
-    
-                                                    
-                                                                                                
+
+
+
+
                                                 </tr>
 
                                                     @endforeach
@@ -142,22 +140,24 @@
                     <!-- end panel -->
                 </div>
                 <!-- end col-10 -->
-                
+
                 <!-- begin col-4 -->
-                <div class="col-md-3" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
-                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <!-- <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a> -->
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de una Agenda Territorial. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
-                        <div class="panel-body">
-                            
+
+                        <div class="panel-body p-10">
+
+                          <h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de una Agenda Territorial. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
+
                         </div>
                     </div>
                     <!-- <div class="panel panel-inverse" data-sortable-id="index-7">
@@ -171,17 +171,15 @@
                             <h4 class="panel-title">&Uacute;ltimas actividades</h4>
                         </div>
                         <div class="panel-body">
-                            
+
                         </div>
                     </div> -->
-                    
+
                 </div>
                 <!-- end col-4 -->
             </div>
             <!-- end row -->
         </div>
         <!-- end #content -->
-        
+
         @stop
-        
-        
