@@ -40,6 +40,15 @@ class CreateSolucionsTable extends Migration
             $table->integer('sipoc_id');
             $table->integer('thematic_id');
             $table->integer('vsector_id');
+            
+            //Nuevos Campos para definir los parametros de cumplimiento de la propuesta
+            $table->date('fecha_cumplimimento');
+            $table->string('plazo_cumplimiento');
+            $table->text('riesgos_cumplimiento');
+            $table->string('supuestos_cumplimientos');
+            
+
+
 
 
             $table->timestamps();
