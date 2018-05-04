@@ -30,7 +30,7 @@ class ActividadesController extends Controller
 
     public function verActividadesDespliegue($tipo_actor, $idSolucion){
 
-        if( $tipo_actor != 1 && $tipo_actor != 2 ){
+        if( $tipo_actor != 1 && $tipo_actor != 2 ){ 
             return abort(404);
         }
 
@@ -57,6 +57,116 @@ class ActividadesController extends Controller
                                                             "tipo_actor"=>$tipo_actor,
                                                             "tipo_fuente"=>$tipo_fuente
                                                         ]);
+    }
+
+    public function vistaParametrosCumplimiento($idSolucion){
+        $tipo_fuente = Auth::user()->tipo_fuente;
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','DESC')->get();
+        $solucion = DB::table('solucions')->where('id', $idSolucion )->first();
+        //dd($solucion);
+        return view('institucion.actividades.createParametrosCumplimiento')->with(["idSolucion"=>$idSolucion,"tipo_fuente"=>$tipo_fuente,"actividades"=>$actividades,"solucion"=>$solucion]);
+
+    }
+
+    public function crearParametrosCumplimiento(Request $request, $id){
+
+
+
+
+
+        $fecha_cumplimiento = $request['fecha_cumplimimento'];
+        $plazo_cumplimiento = $request['plazo_cumplimiento'];
+        $riesgos_cumplimiento = $request['riesgos_cumplimiento'];
+        $supuestos_cumplimientos = $request['supuestos_cumplimientos'];
+        //dd($fecha_cumplimimento,$plazo_cumplimiento,$riesgos_cumplimiento,$supuestos_cumplimientos);
+        
+        $Solucion = Solucion::find($id);
+        //dd($Solucion);
+        $Solucion-> fecha_cumplimiento = $fecha_cumplimiento;
+        $Solucion-> plazo_cumplimiento = $plazo_cumplimiento;
+        $Solucion-> riesgos_cumplimiento = $riesgos_cumplimiento;
+        $Solucion-> supuestos_cumplimientos = $supuestos_cumplimientos;
+        $Solucion-> save();
+
+        return redirect('/institucion/home');        
+
+    }
+
+    public function vistaFinalizarPropuesta($idSolucion){
+
+        $solucion = Solucion::find($idSolucion);
+
+        $tipo_fuente = Auth::user()->tipo_fuente;
+
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','ASC')->get();
+
+        $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+        return view('institucion.actividades.createAccionFinalizarPropuesta')->with(["solucion"=>$solucion,"actividades"=>$actividades,"actoresSoluciones"=>$actoresSoluciones,"tipo_fuente"=>$tipo_fuente]);
+    }
+
+    public function finalizarPropuestaSolucion(Request $request, $tipo_fuente, $idSolucion){
+
+        $Solucion = Solucion::find($idSolucion);
+        $Solucion-> estado_id = 4;
+        $Solucion-> save();
+
+        $actividad = new Actividad;
+        $actividad-> comentario = $request-> comentario;
+        $actividad-> solucion_id = $idSolucion;
+        $actividad-> ejecutor_id = $request-> institucion_id;
+        $actividad-> tipo_fuente = $tipo_fuente;
+        if( isset($request-> fecha) ){
+            $actividad-> fecha_inicio = $request-> fecha. " 00:00:00";
+            if($request->tipo_fuente_id ==1){
+                    $solucion = Solucion::find($idSolucion);
+                    $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
+                    $solucion->save();
+                }
+                if($request->tipo_fuente_id ==2){
+                    $pajustada = Pajustada::find($idSolucion);
+
+                    $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
+                    foreach ($solucionesOriginales as $solucion) {
+                        $solucionCCPT= Solucion::find($solucion-> id);
+                        $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
+                        $solucionCCPT->save();
+                    }
+                }
+        }
+
+        $actividad-> save();
+
+        $files = $request->file('files');
+
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+
+                $nombreArchivo = $file->getClientOriginalName();
+                $nombreArchivo = strtotime("now")."_despliegue_".$idSolucion."_-_".$nombreArchivo;     // agregamos la fecha
+
+                $archivo = new Archivo;
+                $archivo-> nombre_archivo= $nombreArchivo;
+                $archivo-> actividad_id= $actividad->id;
+                $archivo->save();
+
+                /*$file = $request->file('imagen');*/
+                \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) );
+            }
+        }
+        Flash::success("Se ha creado la actividad exitosamente y ha finalizado la Propuesta");
+        if($tipo_fuente == 1){
+            return redirect()->route('verSolucion.despliegue',[1,$idSolucion]);
+        }else{
+            return redirect()->route('verSolucion.consejo',[1, $idSolucion]);
+        }
     }
 
     public function verActividadesConsejo($tipo_actor, $idSolucion){

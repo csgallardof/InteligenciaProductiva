@@ -156,8 +156,10 @@
 								<table class="table table-bordered table-striped">
 									<thead>
 										<tr>
+											<th>Codigo</th>
 											<th>Propuesta</th>
 											<th>Fuente</th>
+											<th>Estado</th>
 											<th>Acción</th>
 										</tr>
 									</thead>
@@ -167,6 +169,7 @@
 											@foreach($solucionesDespliegue as $solucionD)
 												@if($solucionD->tipo_actor == 1)
 													<tr>
+														<td class="text-justify">{{$solucionD->id}}</td>
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
@@ -175,7 +178,19 @@
 																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
+														<td>
+															@if($solucionD->nombre_estado=="Cierre")
+															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
+															@endif
 
+															@if($solucionD->nombre_estado=="En Desarrollo")
+															<span class="label label-default f-s-12" style="background-color: #CA6F1E">{{$solucionD->nombre_estado}}</span>
+															@endif
+															
+															@if($solucionD->nombre_estado=="En Análisis")
+															<span class="label label-default f-s-12" style="background-color: #A6ACAF">{{$solucionD->nombre_estado}}</span>
+															@endif
+														</td>
 														<td>
 															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle</a>
 														</td>

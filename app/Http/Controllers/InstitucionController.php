@@ -162,13 +162,14 @@ class InstitucionController extends Controller
         $totalCorresponsable = ActorSolucion::where('user_id','=',$usuario_id)
                                          ->where('tipo_actor','=','2')->count();
 
-        $solucionesDespliegue= DB::select("SELECT solucions.*, actor_solucion.tipo_actor FROM solucions 
+        $solucionesDespliegue= DB::select("SELECT solucions.*, actor_solucion.tipo_actor,estado_solucion.nombre_estado FROM solucions 
                                         INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
+                                        INNER JOIN estado_solucion ON estado_solucion.id = solucions.estado_id
                                         WHERE 
                                         ( actor_solucion.tipo_fuente = 1 AND actor_solucion.user_id = ".$usuario_id." AND tipo_actor = 1 ) OR
                                         ( actor_solucion.tipo_fuente = 1 AND actor_solucion.user_id = ".$usuario_id." AND tipo_actor = 2 ); 
                                         ");
-
+        //dd($solucionesDespliegue);
         $solucionesCCPT = DB::select("SELECT DISTINCT pajustadas.*, actor_solucion.tipo_actor, solucions.tipo_fuente 
                                     FROM pajustadas 
                                     INNER JOIN actor_solucion ON actor_solucion.solucion_id = pajustadas.id

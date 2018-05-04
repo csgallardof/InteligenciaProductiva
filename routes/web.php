@@ -207,12 +207,20 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      Route::get('home','InstitucionController@home');  //página dashboard para las instituciones
-
+ 
      Route::get('verSolucion/despliegue/{tipo_actor}/{idSolucion}',['uses'=>'ActividadesController@verActividadesDespliegue','as'=>'verSolucion.despliegue']);
+
+     Route::get('parametros-cumplimiento/create/{idSolucion}',['uses'=>'ActividadesController@vistaParametrosCumplimiento','as'=>'solucion.parametrosCumplimiento']);
+
+     Route::post('/crear-parametros-cumplimiento/{id}',['uses'=>'ActividadesController@crearParametrosCumplimiento','as'=>'crear.ParametrosCumplimiento']);
 
      Route::get('verSolucion/consejo/{tipo_actor}/{idSolucion}',['uses'=>'ActividadesController@verActividadesConsejo','as'=>'verSolucion.consejo']);
 
      Route::get('despliegue/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createDespliegue','as'=>'actividades.createDespliegue']);
+
+     Route::get('finalizar/actividad/create/{idSolucion}',['uses'=>'ActividadesController@vistaFinalizarPropuesta','as'=>'cierre.Propuesta']);
+
+     Route::post('actividad-Finalizado-propuesta/save/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@finalizarPropuestaSolucion','as'=>'actividadCierre.saveActividad']);
 
      Route::get('consejo/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createConsejo','as'=>'actividades.createConsejo']);
 

@@ -63,8 +63,12 @@
 									@if (isset($solucion) && isset($tipo_actor) )
 										@if($tipo_actor == 1)
 											<!-- <a href="#" class="btn	btn-warning pull-right">Finalizar</a> -->
-											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>
-											<a href="{{ route('actividades.createDespliegue',$solucion->id) }}" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Nueva</a>
+											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>&nbsp;&nbsp; 
+											<a href="{{ route('solucion.parametrosCumplimiento',$solucion->id) }}" class="btn btn-success "> Definir Parametros de Cumplimiento</a>
+											<a href="{{ route('actividades.createDespliegue',$solucion->id) }}" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Nueva</a>&nbsp;&nbsp;
+											@if(count($actividades) > 0)
+											<a href="{{ route('cierre.Propuesta',$solucion->id) }}" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i>Finalizar Propuesta</a>
+											@endif
 											<hr>
 											<br>
 										@endif
