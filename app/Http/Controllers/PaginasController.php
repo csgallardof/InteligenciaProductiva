@@ -222,10 +222,13 @@ class PaginasController extends Controller
     public function detalledespliegue2(Request $request, $idSolucion){
 
         $solucion = Solucion::where('id','=',$idSolucion)->first();
+        //dd($solucion);
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
+
+        //dd(count($actoresSoluciones));
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
                                             ->where('tipo_fuente','=',1)

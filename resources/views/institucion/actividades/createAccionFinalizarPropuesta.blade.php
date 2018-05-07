@@ -52,6 +52,7 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 
 							</div>
+
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva Actividad</h4>
 						</div>
 						<div class="panel-body">
@@ -60,7 +61,7 @@
 									<a href="javascript:window.history.back();" class="btn btn-default pull-right">&laquo; Regresar</a>
 									<hr>
 									<br>
-
+									@include('flash::message')
 									<form  method="POST" action="{{ route('actividadCierre.saveActividad',[ 1,$solucion->id]) }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 										<input type="hidden" name="tipo_fuente_id" value="1">

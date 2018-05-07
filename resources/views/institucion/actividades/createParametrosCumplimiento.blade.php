@@ -80,10 +80,29 @@
                                         <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-3"></div>
-                                                    <div class="col-md-3">
-                                                        <label for="fecha_cumplimimento">Fecha de Cumplimiento</label>	
-									 					<div class="input-group date" id="datepicker-disabled-past" required data-date-format="yyyy-mm-dd" data-date-start-date="Date.default">
-		                                            <input type="text" readonly name="fecha_cumplimimento" class="form-control" value="{{ date('Y-m-d') }}" placeholder="Seleccione Fecha" />
+                                                    <div class="col-md-4">
+                                                       <label for="plazo_cumplimiento">Plazo de Porpuesta</label>   
+                                                        <select name="plazo_cumplimiento" class="form-control"  required="">
+                                                     <option value="" >------Escoja un opcion----</option>
+                                                     <option value="Corto" >Corto</option>
+                                                     <option value="Mediano" >Mediano</option>
+                                                     <option value="Largo" >Largo</option>
+                                                            
+                                                       
+                                                        </select>  
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+                                                
+                                        </div>
+                                        <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-3"></div>
+                                                    <div class="col-md-4">
+                                                        <label for="fecha_cumplimimento">Fecha de Cumplimiento (Opcional)</label>	
+									 					<div class="input-group date" id="datepicker-disabled-past"  data-date-format="yyyy-mm-dd" data-date-start-date="Date.default">
+		                                            <input type="text" readonly name="fecha_cumplimimento" class="form-control" value="" placeholder="Seleccione Fecha" />
 		                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 		                                        </div>
                                                     </div>
@@ -93,25 +112,6 @@
                                                 
                                         </div>
 
-                                        <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-3">
-                                                       <label for="plazo_cumplimiento">Estado</label> 	
-									 					<select name="plazo_cumplimiento" class="form-control"  required="">
-					                                 <option value="" >------Escoja un opcion----</option>
-					                                 <option value="Corto" >Corto</option>
-					                                 <option value="Mediano" >Mediano</option>
-					                                 <option value="Largo" >Largo</option>
-					                                    	
-					                                   
-					                                	</select>  
-                                                    </div>
-                                                    
-                                                    
-                                                </div>
-                                                
-                                        </div>
 
                                         <div class="form-group">
                                                 <div class="row">

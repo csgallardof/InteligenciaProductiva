@@ -38,7 +38,9 @@
 				<!-- end col-12 -->
 			</div>
 			<!-- end row -->
+			
 			<!-- begin row -->
+			
 			<div class="row">
 				<!-- begin col-8 -->
 				<div class="col-md-8">
@@ -51,6 +53,7 @@
 								<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a> -->
 
 							</div>
+
 							<h4 class="panel-title"><i class="fa fa-list-ol" aria-hidden="true"></i> Actividades</h4>
 						</div>
 						<div class="panel-body">
@@ -64,10 +67,42 @@
 										@if($tipo_actor == 1)
 											<!-- <a href="#" class="btn	btn-warning pull-right">Finalizar</a> -->
 											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>&nbsp;&nbsp; 
+											@if($solucion->plazo_cumplimiento=="")
 											<a href="{{ route('solucion.parametrosCumplimiento',$solucion->id) }}" class="btn btn-success "> Definir Parametros de Cumplimiento</a>
+											@endif
+											@if($solucion->estado_id<=3)
 											<a href="{{ route('actividades.createDespliegue',$solucion->id) }}" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Nueva</a>&nbsp;&nbsp;
 											@if(count($actividades) > 0)
-											<a href="{{ route('cierre.Propuesta',$solucion->id) }}" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true"></i>Finalizar Propuesta</a>
+											
+											<a href="#modal-alert" class="btn btn-primary" data-toggle="modal">Finalizar Propuesta</a>
+											<!-- #modal-alert -->
+										<div class="modal fade" id="modal-alert">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+														<h4 class="modal-title"><br>ALERTA DE FINALIZAR PROPUESTA</h4>
+													
+													</div>
+													<div class="modal-body">
+														<div class="alert alert-info m-b-0">
+															<h4><i class="fa fa-info-circle"></i><strong>Usted esta seguro de  Finalizar Propuesta</strong></h4>
+															<p> <strong> Para Finalizar la Propuesta debe  registrar una última actividad.</strong> <br> <br>Clic en <strong>Continuar</strong> si desea finalizar la Propuesta. <br><br> 
+																<strong>Recuerde</strong> una vez finalizada la propuesta no podra registrar mas actividades. <br><br>
+																</p>
+														</div>
+														<p>
+															<strong>Propuesta</strong>:{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
+														</p>
+													</div>
+													<div class="modal-footer">
+														<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>
+														<a href="{{ route('cierre.Propuesta',$solucion->id) }}" class="btn btn-sm btn-danger">Continuar</a>
+													</div>
+												</div>
+											</div>
+										</div>
+											@endif
 											@endif
 											<hr>
 											<br>
@@ -171,6 +206,10 @@
 									@endif
 								</tbody>
 							</table>
+							<hr>
+							<center>
+							<a class="btn btn-primary  m-b-30 m-l-30" href="/detalle-despliegue-dialogo/{{ $solucion->id}}">Ver Propuesta</a>
+							</center>
 						</div>
 					</div>
 
