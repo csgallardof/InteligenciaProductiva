@@ -49,7 +49,7 @@ class ActividadesController extends Controller
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
-        $tipo_fuente = Auth::user()->tipo_fuente;
+        $tipo_fuente = Auth::user()->tipo_fuente; 
 
         return view('institucion.actividades.solucionDesp')->with(["actoresSoluciones"=>$actoresSoluciones,
                                                             "solucion"=>$solucion[0],
@@ -96,6 +96,7 @@ class ActividadesController extends Controller
 
     public function vistaFinalizarPropuesta($idSolucion){
 
+         Flash::success("Registre la Actividad para finalizar la Propuesta");
         $solucion = Solucion::find($idSolucion);
 
         $tipo_fuente = Auth::user()->tipo_fuente;

@@ -36,7 +36,7 @@ Route::post('/reporte',[
      'uses'=>'SolucionesController@buscar',
      'as'=>'reporte1.resultado'
 ]);
-
+ 
 Route::get('/detalle-despliegue-dialogo/{id}','PaginasController@detalledespliegue2');
 
 

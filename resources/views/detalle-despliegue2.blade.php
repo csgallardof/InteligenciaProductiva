@@ -105,12 +105,69 @@
 												@endif
 											</span>
 										</dl>
-									<label class='text-success'>
+									
+	                                <br>
+	                                <label class='text-success'>
 
-	                                	<i class="fa fa-clock-o fa-fw"></i>Creado:
-	                                	@if(isset($solucion))
-											{{ substr($solucion->created_at,0,10) }}
-										@endif
+	                                	<strong>Datos Generales:</strong>
+	                                </label>
+	                                <div>
+	                                	<table id="data-table2" class="table table-striped table-bordered"">
+	                                			<tr>
+											    <th><label class='text-default'>
+
+				                                	<i class="fa fa-clock-o fa-fw"></i>Creado:
+				                                	
+				                                </label></th>
+												    <td>
+												    	@if(isset($solucion))
+														{{ substr($solucion->created_at,0,10) }}
+														@endif
+						                             </td>
+											  </tr>
+											  <tr>
+											    <th>Fecha de Cumplimiento:</th>
+												    <td>@if($solucion->fecha_cumplimiento!="0000-00-00")
+						                                  	{{$solucion->fecha_cumplimiento}}
+						                                  	@else
+						                                  	No Definido
+						                                  	@endif
+						                             </td>
+											  </tr>
+											  <tr>
+											    <th>Plazo de Propuesta:</th>
+												    <td>@if($solucion->plazo_cumplimiento!="")
+						                                  	{{$solucion->plazo_cumplimiento}}
+						                                  	@else
+						                                  	No Definido
+						                                  	@endif
+						                            </td>
+											  	</tr>
+											  <tr>
+											    <th>Riesgos:</th>
+												    <td>@if($solucion->riesgos_cumplimiento!="")
+						                                  	{{$solucion->riesgos_cumplimiento}}
+						                                  	@else
+						                                  	No Definido
+						                                  	@endif
+						                            </td>
+											  </tr>
+											  <tr>
+											    <th>Supuestos:</th>
+												    <td>@if($solucion->supuestos_cumplimientos!="")
+						                                  	{{$solucion->supuestos_cumplimientos}}
+						                                  	@else
+						                                  	No Definido
+						                                  	@endif
+						                            </td>
+											  </tr>
+											</table>
+	                                </div>
+	                               
+									<br>
+	                                <label class='text-success'>
+
+	                                	<strong>Datos Responsables:</strong>
 	                                </label>
                                    	<div>
                                    		<table id="data-table1" class="table table-striped table-bordered">
@@ -127,10 +184,18 @@
 					                    @if(isset($actoresSoluciones))
 											@foreach($actoresSoluciones as $actorSolucion)
 												@if($actorSolucion->tipo_actor == 1)
+													
 													{{ $actorSolucion->usuario-> name }}
+										
+													
+													
 												@endif
 											@endforeach
 										@endif
+										@if(count($actoresSoluciones)==0)
+										No Asignado
+										@endif
+										
 					                                            </td>
 					                                            <td>
 					                    <dd>
@@ -139,10 +204,14 @@
 												@foreach($actoresSoluciones as $actorSolucion)
 													@if($actorSolucion->tipo_actor == 2)
 														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
+													@else
+													No Asignado
 													@endif
+													
 												@endforeach
 											</ul>
 										@endif
+
 										</dd>
 					                                            </td>
 
