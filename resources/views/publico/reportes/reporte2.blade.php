@@ -276,7 +276,7 @@
 						        		<tr>
 											@if($resultados->tipo_fuente==1)
 							                	<td class="text-left p-t-15">
-									<div class="text-justify">
+									<div class="text-justify"> 
 									<a   class="btn btn-primary pull-right m-b-30 m-l-30" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 
 									<p class="total_propuestas_estilo_1">
