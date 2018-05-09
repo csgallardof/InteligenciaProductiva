@@ -67,7 +67,7 @@
 									 				<div id="nunCaracteres" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="palabraAjustada" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea required maxlength="280" class="form-control" id="exampleTextarea" name="palabraAjustada" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 
 									  	</div>
 									  	<div class="form-group">
@@ -79,7 +79,7 @@
 									 				<div id="nunCaracteres" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<textarea maxlength="500" class="form-control" id="exampleTextarea" name="comentarioUnion" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea required maxlength="500" class="form-control" id="exampleTextarea" name="comentarioUnion" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 
 									  	</div>
 

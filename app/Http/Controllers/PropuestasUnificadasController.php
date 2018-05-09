@@ -127,7 +127,7 @@ class PropuestasUnificadasController extends Controller
 
     			//dd($solucionPajustadas);
 
-    		return view('institucion.PropuestasUnificadas.createUnificarPropuestas2')->with([
+    		return view('institucion.PropuestasUnificadas.createUnificarElegirPropuestasComboBox')->with([
     											"consulta"=>$consulta,
     											"tipo_fuente"=>$tipo_fuente,
     											"solucionPajustadas"=>$solucionPajustadas,

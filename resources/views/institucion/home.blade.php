@@ -2,6 +2,7 @@
 
 @section('title','Inicio')
 
+
 @section('content') 
 
 
@@ -10,6 +11,11 @@
 			<!-- begin breadcrumb -->
 
 			<br />
+			
+			
+			
+			
+			
 			<!-- 
 
 				@if($tipo_fuente==5 or $tipo_fuente==4)
@@ -104,7 +110,26 @@
 				<!-- end col-3 -->
 			</div>
 			<!-- end row -->
+			
+							
+                           
+							
+                      
 			<div>
+				<div class="alert alert-success fade in m-b-15" >
+							<small>
+								En caso de que una propuesta no pertenezca a su institución, contactarse a inteligencia@mipro.gob.ec con su respectiva justificación. <br>
+								Si desea actualizar su usuario contactarse inteligencia@mipro.gob.ec
+							
+								<span class="close" data-dismiss="alert">&times;</span>
+								</small>
+							</div>
+							<div class="alert alert-info fade in m-b-15">
+								<small>
+								Al momento de unificar Propuestas las acciones no se transfieren.
+								<span class="close" data-dismiss="alert">&times;</span>
+								</small>
+							</div>
 				
 					<a   class="btn btn-primary pull-left m-b-30 m-l-30" href="/institucion/unificar-propuestas">Unificar Propuestas</a>
 				
@@ -453,3 +478,5 @@
 		<!-- end #content -->
 
 		@stop
+
+
