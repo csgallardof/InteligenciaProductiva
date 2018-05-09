@@ -104,6 +104,11 @@
 				<!-- end col-3 -->
 			</div>
 			<!-- end row -->
+			<div>
+				
+					<a   class="btn btn-primary pull-left m-b-30 m-l-30" href="/institucion/unificar-propuestas">Unificar Propuestas</a>
+				
+			</div>
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
@@ -158,6 +163,7 @@
 										<tr>
 											<th>Codigo</th>
 											<th>Propuesta</th>
+											<th>Propuesta Ajustada</th>
 											<th>Fuente</th>
 											<th>Estado</th>
 											<th>Acción</th>
@@ -171,6 +177,14 @@
 													<tr>
 														<td class="text-justify">{{$solucionD->id}}</td>
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
+														<td class="text-justify">
+															@if($solucionD->pajustada_id==0)
+																No asignado
+															@else
+																{{$solucionD->nombre_pajustada}}
+															@endif
+															
+														</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
 																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
@@ -178,6 +192,7 @@
 																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
+
 														<td>
 															@if($solucionD->nombre_estado=="Cierre")
 															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
