@@ -16,6 +16,7 @@ class CreatePajustadasTable extends Migration
         Schema::create('pajustadas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre_pajustada',1000);
+            $table->string('comentario_union');
             $table->timestamps();
         });
     }

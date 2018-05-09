@@ -73,22 +73,41 @@ class ActividadesController extends Controller
     public function crearParametrosCumplimiento(Request $request, $id){
 
 
-
-
-
         $fecha_cumplimiento = $request['fecha_cumplimimento'];
         $plazo_cumplimiento = $request['plazo_cumplimiento'];
         $riesgos_cumplimiento = $request['riesgos_cumplimiento'];
         $supuestos_cumplimientos = $request['supuestos_cumplimientos'];
         //dd($fecha_cumplimimento,$plazo_cumplimiento,$riesgos_cumplimiento,$supuestos_cumplimientos);
         
-        $Solucion = Solucion::find($id);
-        //dd($Solucion);
+        $Solucion = Solucion::find($id); 
+        //dd($Solucion->pajustada_id);
+       
         $Solucion-> fecha_cumplimiento = $fecha_cumplimiento;
         $Solucion-> plazo_cumplimiento = $plazo_cumplimiento;
         $Solucion-> riesgos_cumplimiento = $riesgos_cumplimiento;
         $Solucion-> supuestos_cumplimientos = $supuestos_cumplimientos;
         $Solucion-> save();
+        if($Solucion->pajustada_id>0){
+            //dd('Si estoy en el if');
+            $SolucionesUnificadas = DB::table('solucions')->where('pajustada_id', $Solucion->pajustada_id)->get();
+            
+            
+            foreach($SolucionesUnificadas as $SolucionesUnificadas){
+                //var_dump($SolucionesUnificadas->id);
+                    if($SolucionesUnificadas->id!=$id){
+                        $Solucion = Solucion::find($SolucionesUnificadas->id); 
+                        //dd($Solucion->pajustada_id);
+                        $Solucion-> fecha_cumplimiento = $fecha_cumplimiento;
+                        $Solucion-> plazo_cumplimiento = $plazo_cumplimiento;
+                        $Solucion-> riesgos_cumplimiento = $riesgos_cumplimiento;
+                        $Solucion-> supuestos_cumplimientos = $supuestos_cumplimientos;
+                        $Solucion-> save();
+                        }
+                    //dd("no entre en el if");
+            }
+            
+            }
+
 
         return redirect('/institucion/home');        
 
@@ -144,6 +163,41 @@ class ActividadesController extends Controller
 
         $actividad-> save();
 
+        $actividadcreada = DB::table('actividades')->where('comentario', $request-> comentario)->first();
+            $solucionAsignada = Solucion::find($idSolucion);
+            
+            //dd($actividadcreada->fecha_inicio,$solucionAsignada->pajustada_id,$SolucionesUnificadas);
+            
+            if($solucionAsignada->pajustada_id>0){
+                
+            $SolucionesUnificadas = DB::table('solucions')->where('pajustada_id', $solucionAsignada->pajustada_id)->get();
+            //dd($SolucionesUnificadas);
+            foreach($SolucionesUnificadas as $SolucionesUnificadas){
+
+                //var_dump($SolucionesUnificadas->id);
+                    if($SolucionesUnificadas->id!=$idSolucion){
+
+                        $SolucionUnificadaFinalizado = Solucion::find($SolucionesUnificadas->id);
+                        $SolucionUnificadaFinalizado-> estado_id = 4;
+                        $SolucionUnificadaFinalizado-> save();
+                        //dd('entre al if');
+                        $actividadUnificada=new Actividad;
+                        $actividadUnificada-> fecha_inicio = $actividadcreada->fecha_inicio;
+                        $actividadUnificada-> comentario   = $actividadcreada->comentario;
+                        $actividadUnificada-> solucion_id = $SolucionesUnificadas->id;
+                        $actividadUnificada-> tipo_fuente = $actividadcreada->tipo_fuente;
+                        $actividadUnificada-> ejecutor_id = $actividadcreada->ejecutor_id;
+                        $actividadUnificada-> save();
+
+                        
+                    }
+                    //dd("no entre en el if");
+            }
+            }
+
+
+         $nombreArchivos="";   
+
         $files = $request->file('files');
 
         if($request->hasFile('files'))
@@ -157,11 +211,42 @@ class ActividadesController extends Controller
                 $archivo-> nombre_archivo= $nombreArchivo;
                 $archivo-> actividad_id= $actividad->id;
                 $archivo->save();
-
+                $nombreArchivos.=$nombreArchivo.",";
                 /*$file = $request->file('imagen');*/
                 \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) );
             }
         }
+
+        $nombreArchivos=substr($nombreArchivos,0,-1);
+        //dd($nombreArchivos);
+        
+
+                $actividadesUnificadas = DB::table('actividades')->where('comentario', $request-> comentario)->get();
+                //dd($actividadesUnificadas,$nombreArchivos,$actividad->id);
+
+            foreach($actividadesUnificadas as $actividadesUnificadas){
+                $array = explode(",", $nombreArchivos);
+                        
+                    if($actividadesUnificadas->id!=$actividad->id){
+                        
+                        
+                        foreach ($array as $array) {
+                           //dd('entre al 2 '); 
+                            $archivoUnificado = new Archivo;
+                            //dd('estoy 1');
+                            $archivoUnificado-> nombre_archivo= $array;
+                            //dd('estoy 2', $array);
+                            $archivoUnificado-> actividad_id= $actividadesUnificadas->id;
+                            //dd('estoy 3', $actividadesUnificadas->id);
+                            $archivoUnificado->save();
+                            //dd('Guardado 2');
+                        }
+
+                    }
+                    //dd("no entre en el if");
+            }
+
+
         Flash::success("Se ha creado la actividad exitosamente y ha finalizado la Propuesta");
         if($tipo_fuente == 1){
             return redirect()->route('verSolucion.despliegue',[1,$idSolucion]);
@@ -277,6 +362,36 @@ class ActividadesController extends Controller
 
         $actividad-> save();
 
+         $actividadcreada = DB::table('actividades')->where('comentario', $request-> comentario)->first();
+            $solucionAsignada = Solucion::find($idSolucion);
+            
+            //dd($actividadcreada->fecha_inicio,$solucionAsignada->pajustada_id,$SolucionesUnificadas);
+            
+            if($solucionAsignada->pajustada_id>0){
+
+            $SolucionesUnificadas = DB::table('solucions')->where('pajustada_id', $solucionAsignada->pajustada_id)->get();
+            //dd($SolucionesUnificadas);
+            foreach($SolucionesUnificadas as $SolucionesUnificadas){
+                //var_dump($SolucionesUnificadas->id);
+                    if($SolucionesUnificadas->id!=$idSolucion){
+                        //dd('entre al if');
+                        $actividadUnificada=new Actividad;
+                        $actividadUnificada-> fecha_inicio = $actividadcreada->fecha_inicio;
+                        $actividadUnificada-> comentario   = $actividadcreada->comentario;
+                        $actividadUnificada-> solucion_id = $SolucionesUnificadas->id;
+                        $actividadUnificada-> tipo_fuente = $actividadcreada->tipo_fuente;
+                        $actividadUnificada-> ejecutor_id = $actividadcreada->ejecutor_id;
+                        $actividadUnificada-> save();
+
+                        $solucionU = Solucion::find($SolucionesUnificadas->id);
+                        $solucionU-> estado_id = 3; // 3 = Propuesta en desarrollo
+                        $solucionU->save();
+                    }
+                    //dd("no entre en el if");
+            }
+            }
+        
+        $nombreArchivos="";
         $files = $request->file('files');
 
         if($request->hasFile('files'))
@@ -290,11 +405,43 @@ class ActividadesController extends Controller
                 $archivo-> nombre_archivo= $nombreArchivo;
                 $archivo-> actividad_id= $actividad->id;
                 $archivo->save();
+                $nombreArchivos.=$nombreArchivo.",";
 
                 /*$file = $request->file('imagen');*/
                 \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) );
             }
         }
+        //dd($nombreArchivos);
+        $nombreArchivos=substr($nombreArchivos,0,-1);
+        //dd($nombreArchivos);
+        
+
+                $actividadesUnificadas = DB::table('actividades')->where('comentario', $request-> comentario)->get();
+                //dd($actividadesUnificadas,$nombreArchivos,$actividad->id);
+
+            foreach($actividadesUnificadas as $actividadesUnificadas){
+                $array = explode(",", $nombreArchivos);
+                        
+                    if($actividadesUnificadas->id!=$actividad->id){
+                        
+                        
+                        foreach ($array as $array) {
+                           //dd('entre al 2 '); 
+                            $archivoUnificado = new Archivo;
+                            //dd('estoy 1');
+                            $archivoUnificado-> nombre_archivo= $array;
+                            //dd('estoy 2', $array);
+                            $archivoUnificado-> actividad_id= $actividadesUnificadas->id;
+                            //dd('estoy 3', $actividadesUnificadas->id);
+                            $archivoUnificado->save();
+                            //dd('Guardado 2');
+                        }
+
+                    }
+                    //dd("no entre en el if");
+            }
+
+
         Flash::success("Se ha creado la actividad exitosamente");
         if($tipo_fuente == 1){
             return redirect()->route('verSolucion.despliegue',[1,$idSolucion]);
