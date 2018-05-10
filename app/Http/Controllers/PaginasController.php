@@ -33,19 +33,46 @@ class PaginasController extends Controller
         $datosFiltroResponsable="";
        $buscar = $request-> parametro;
 
-        if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
+       //dd(strtolower($buscar));
 
-            if($buscar == 'Mesas_Competitividad' ){
+        if(strtolower($buscar) == 'mesas competitividad' || strtolower($buscar) == 'consejo consultivo' || strtolower($buscar) == 'mesas de competitividad'){
+
+            if(strtolower($buscar) == 'mesas competitividad' || strtolower($buscar) == 'mesas de competitividad'){
                 $resultados = Solucion::where('tipo_fuente','=',1)
                             ->orderBy('id','DESC')
                             ->get();
+                 $datosFiltroAmbito=0;
+                 $datosFiltroResponsable=0;
+                 $filtros = 0;           
+                 return view('publico.reportes.reporte-ccpt')->with([
+                                            "parametro"=>$buscar,
+                                            "resultados"=>$resultados,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
+                                            "filtros"=>$filtros
+                                        ]);
+
             }
 
-            if($buscar == 'Consejo_consultivo' ){
-                //dd($buscar);
+            if(strtolower($buscar) == 'consejo consultivo' ){
+                //dd(strtolower($buscar));
                  $resultados = Solucion::where('tipo_fuente','=',2)
                              ->orderBy('responsable_solucion','DESC')
                              ->get();
+                // dd($resultados);
+
+                $datosFiltroAmbito=0;
+                $datosFiltroResponsable=0;
+                $filtros = 0;          
+
+                  return view('publico.reportes.reporte-ccpt')->with([
+                                            "parametro"=>$buscar,
+                                            "resultados"=>$resultados,
+                                            "datosFiltroAmbito"=>$datosFiltroAmbito,
+                                            "datosFiltroResponsable"=>$datosFiltroResponsable,
+                                            "filtros"=>$filtros
+                                        ]);
+           
 
             }
 

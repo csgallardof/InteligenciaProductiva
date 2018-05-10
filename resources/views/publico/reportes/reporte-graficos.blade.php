@@ -59,7 +59,7 @@
 	          ]);
 
 	         var options = {
-	           title: 'Propuestas por Institución',
+	           title: 'Actividades registradas por Institución',
 	           width: 900,
 	           height: 300,
 	           legend: 'none',
@@ -181,7 +181,7 @@
 		                <div class="col-md-12">
 		                    <div class="panel panel-inverse" data-sortable-id="chart-js-2">
 		                                            <div class="panel-heading">
-		                                                    <h4 class="panel-title">PROPUESTAS POR INSTITUCIÓN</h4>
+		                                                    <h4 class="panel-title">ACTIVIDADES REGISTRADAS PROPUESTAS POR INSTITUCIÓN</h4>
 		                                            </div>
 		                        <div class="panel-body">
 		                            <div>
