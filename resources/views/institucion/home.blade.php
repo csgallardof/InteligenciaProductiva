@@ -188,7 +188,6 @@
 										<tr>
 											<th>Codigo</th>
 											<th>Propuesta</th>
-											<th>Propuesta Ajustada</th>
 											<th>Fuente</th>
 											<th>Estado</th>
 											<th>Acción</th>
@@ -202,14 +201,7 @@
 													<tr>
 														<td class="text-justify">{{$solucionD->id}}</td>
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
-														<td class="text-justify">
-															@if($solucionD->pajustada_id==0)
-																No asignado
-															@else
-																{{$solucionD->nombre_pajustada}}
-															@endif
-															
-														</td>
+														
 														<td>
 															@if($solucionD->tipo_fuente == 1)
 																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
@@ -221,14 +213,39 @@
 														<td>
 															@if($solucionD->nombre_estado=="Cierre")
 															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
+																<span class="label label-info">
+																	@if($solucionD->pajustada_id!=0)
+																		Unificado
+																	@else
+																		No Unificado
+																	@endif
+																	
+																</span>
 															@endif
 
 															@if($solucionD->nombre_estado=="En Desarrollo")
 															<span class="label label-default f-s-12" style="background-color: #CA6F1E">{{$solucionD->nombre_estado}}</span>
+																<span class="label label-info">
+																	@if($solucionD->pajustada_id!=0)
+																		Unificado
+																	@else
+																		No Unificado
+																	@endif
+																	
+																</span>
 															@endif
 															
 															@if($solucionD->nombre_estado=="En Análisis")
 															<span class="label label-default f-s-12" style="background-color: #A6ACAF">{{$solucionD->nombre_estado}}</span>
+																<span class="label label-info">
+																	@if($solucionD->pajustada_id!=0)
+																		Unificado
+																	@else
+																		No Unificado
+																	@endif
+																	
+																</span>
+																
 															@endif
 														</td>
 														<td>
