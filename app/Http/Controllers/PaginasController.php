@@ -32,6 +32,61 @@ class PaginasController extends Controller
         $datosFiltroAmbito="";
         $datosFiltroResponsable="";
        $buscar = $request-> parametro;
+       $resultadoAuxiliar[] = array();
+        $filtros[] = array();
+        $hayFiltros= false;
+       //$buscarCombo =$request-> comboBusqueda;
+       
+       if( isset($request->selectBusqueda) && $request->selectBusqueda >0 ){
+            
+            $filtros["mesas"]= $request->selectBusqueda;
+             $resultados1 = Solucion::select('solucions.*')
+                                ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
+                                ->where('provincias.nombre_provincia','LIKE','%' . $buscar . '%')
+                                ;
+
+            $resultados2 = Solucion::select('solucions.*')
+                                ->join('actor_solucion', 'solucions.id', '=', 'actor_solucion.solucion_id')
+                                ->join('users','actor_solucion.user_id','=','users.id')
+                                ->where('users.name','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados3 = Solucion::select('solucions.*')
+                                ->join('sectors', 'solucions.sector_id', '=', 'sectors.id')
+                                ->where('sectors.nombre_sector','=','%' . $buscar . '%')
+                                ;//SOLO QUERY
+                                //dd($resultados3);
+
+            $resultados5 = Solucion::select('solucions.*')
+                                ->join('estado_solucion', 'solucions.estado_id', '=', 'estado_solucion.id')
+                                ->where('estado_solucion.nombre_estado','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+            $resultados6 = Solucion::select('solucions.*')
+                                ->join('ambits', 'solucions.ambit_id', '=', 'ambits.id')
+                                ->where('ambits.nombre_ambit','LIKE','%' . $buscar . '%')
+                                ;//SOLO QUERY
+
+            $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
+                                ->orwhere('solucions.responsable_solucion','LIKE','%' . $buscar . '%')
+                                ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
+                                ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
+                                ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
+                                ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
+                                //->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
+                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR 
+                                ->union($resultados6) // UNION CON  EL QUERY5
+                               ->get();
+            foreach ($resultados as $solucion) {
+                if($solucion->tipo_fuente == $request->selectBusqueda){
+                    array_push($resultadoAuxiliar, $solucion);
+                    $hayFiltros = true;
+                    //$datosFiltroMesa=($request->sectorSelect);
+                    //dd($datosFiltroSector);
+                }
+            }
+        }
 
         if($buscar == 'Mesas_Competitividad' || $buscar == 'Consejo_consultivo'){
 
@@ -99,9 +154,7 @@ class PaginasController extends Controller
         }
 
 
-        $resultadoAuxiliar[] = array();
-        $filtros[] = array();
-        $hayFiltros= false;
+        
 
         if( isset($request->checkbox1)){
             $filtros["mesas"]= true;
