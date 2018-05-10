@@ -95,13 +95,28 @@ $(document).ready(function(){
 
                         <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
                             <div class="form-group">
+                              
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60" style="font-size: 16px" >
+
+
+                                 
+                                   <span class="input-group-btn" >
+                                        <select style="width:170px;height:48px;font-size:14px;-webkit-border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" id=""> 
+                                        <option value="0">Todas las Mesas</option>
+                                        <option value="2">Consejo Consultivo</option>
+                                        <option value="1">Mesas De Competitividad</option>
+                                    </select>
+                                    </span> 
+
+                                    <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
+
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
                                             <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
                                         </button>
                                     </span>
+
+
 
                                 </div>
                                 <p style="margin-top: 10px" class="text-white">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
@@ -111,11 +126,26 @@ $(document).ready(function(){
                         <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
 
                         <a href="{{ url('/busqueda?parametro=Mesas_Competitividad') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Mesas de Competitividad</a>
+                          
+                        <div class="panel-body text-center">
 
+                      <a target="_blank" href="reporte-home/lista-propuesta/1" class="btn btn-lg btn-inverse"  >
+                        Consejo Consultivo<br>
+                        <small>Reporte</small><br>
+                        <i class="fa fa-2x fa-download"></i>
+                      </a>
+                      <a href="/dialogo-nacional-estadisticas" class="btn btn-lg btn-inverse">
+                        Consejo Consultivo<br>
+                        <small>Estadisticas</small><br>
+                        <i class="fa fa-2x fa-line-chart"></i>
+                      </a>
+                      
+                    </div>
+        
                     </div>
                 </div>
 
-
+                
 
 
 
