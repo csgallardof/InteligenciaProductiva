@@ -96,7 +96,7 @@ $(document).ready(function(){
                         <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
                             <div class="form-group">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" style="font-size: 16px" >
+                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60" style="font-size: 16px" >
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
                                             <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
