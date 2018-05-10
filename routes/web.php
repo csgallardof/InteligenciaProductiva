@@ -338,6 +338,14 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::post('/guardarIdAgendaTerritorial/{tipo}',['uses'=>'CspPdfReportesAgendaController@crearReporteAgendaTerritorial','as'=>'guardarIdReporteHechoCsp']);
      Route::get('/tabla-excel','CspPdfReportesAgendaController@mostrarTabla');
 
+     Route::get('/unificar-propuestas','PropuestasUnificadasController@mostrarPropuestas');
+
+     Route::post('/seleccion-propuestas-unificadas',['uses'=>'PropuestasUnificadasController@obtenerPropuestasUnificadas','as'=>'guardarIdPropuestas']);
+
+     Route::post('/seleccion-propuestas-unificadas/create-pajustada-unificar',['uses'=>'PropuestasUnificadasController@guardarPajustadaUnificar','as'=>'guardarPajustadaUnificar']);
+
+     Route::post('/seleccion-propuestas-unificadas/create-pajustada-unificar/pajustadas',['uses'=>'PropuestasUnificadasController@definirPajustada','as'=>'definirPajustada']);
+
           
 });
 

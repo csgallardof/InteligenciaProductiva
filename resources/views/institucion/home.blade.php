@@ -2,6 +2,7 @@
 
 @section('title','Inicio')
 
+
 @section('content') 
 
 
@@ -10,6 +11,11 @@
 			<!-- begin breadcrumb -->
 
 			<br />
+			
+			
+			
+			
+			
 			<!-- 
 
 				@if($tipo_fuente==5 or $tipo_fuente==4)
@@ -104,6 +110,30 @@
 				<!-- end col-3 -->
 			</div>
 			<!-- end row -->
+			
+							
+                           
+							
+                      
+			<div>
+				<div class="alert alert-success fade in m-b-15" >
+							<small>
+								En caso de que una propuesta no pertenezca a su institución, contactarse a inteligencia@mipro.gob.ec con su respectiva justificación. <br>
+								Si desea actualizar su usuario contactarse inteligencia@mipro.gob.ec
+							
+								<span class="close" data-dismiss="alert">&times;</span>
+								</small>
+							</div>
+							<div class="alert alert-info fade in m-b-15">
+								<small>
+								Al momento de unificar Propuestas las acciones no se transfieren.
+								<span class="close" data-dismiss="alert">&times;</span>
+								</small>
+							</div>
+				
+					<a   class="btn btn-primary pull-left m-b-30 m-l-30" href="/institucion/unificar-propuestas">Unificar Propuestas</a>
+				
+			</div>
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
@@ -158,6 +188,7 @@
 										<tr>
 											<th>Codigo</th>
 											<th>Propuesta</th>
+											<th>Propuesta Ajustada</th>
 											<th>Fuente</th>
 											<th>Estado</th>
 											<th>Acción</th>
@@ -171,6 +202,14 @@
 													<tr>
 														<td class="text-justify">{{$solucionD->id}}</td>
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
+														<td class="text-justify">
+															@if($solucionD->pajustada_id==0)
+																No asignado
+															@else
+																{{$solucionD->nombre_pajustada}}
+															@endif
+															
+														</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
 																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
@@ -178,6 +217,7 @@
 																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
+
 														<td>
 															@if($solucionD->nombre_estado=="Cierre")
 															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
@@ -438,3 +478,5 @@
 		<!-- end #content -->
 
 		@stop
+
+

@@ -151,6 +151,7 @@ class InstitucionController extends Controller
     public function home(Request $request)
     {
         $usuario_id = Auth::user()->id;
+        //dd($usuario_id);
         $tipo_fuente = Auth::user()->tipo_fuente;
        
 
@@ -162,9 +163,10 @@ class InstitucionController extends Controller
         $totalCorresponsable = ActorSolucion::where('user_id','=',$usuario_id)
                                          ->where('tipo_actor','=','2')->count();
 
-        $solucionesDespliegue= DB::select("SELECT solucions.*, actor_solucion.tipo_actor,estado_solucion.nombre_estado FROM solucions 
+        $solucionesDespliegue= DB::select("SELECT solucions.*, actor_solucion.tipo_actor,estado_solucion.nombre_estado,pajustadas.nombre_pajustada FROM solucions 
                                         INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
                                         INNER JOIN estado_solucion ON estado_solucion.id = solucions.estado_id
+                                         LEFT JOIN pajustadas ON solucions.pajustada_id = pajustadas.id
                                         WHERE 
                                         ( actor_solucion.tipo_fuente = 1 AND actor_solucion.user_id = ".$usuario_id." AND tipo_actor = 1 ) OR
                                         ( actor_solucion.tipo_fuente = 1 AND actor_solucion.user_id = ".$usuario_id." AND tipo_actor = 2 ); 

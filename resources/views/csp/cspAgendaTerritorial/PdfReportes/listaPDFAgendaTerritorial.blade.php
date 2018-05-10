@@ -45,7 +45,7 @@
                             <h4 class="panel-title">Agenda Territorial</h4>
                         </div>
                          
-                        <div class="panel-body">
+                        <div class="panel-body"> 
                              <form target="_blank" method="POST" action="/institucion/guardarIdAgendaTerritorial/1" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                             <div class="row">

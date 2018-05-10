@@ -31,6 +31,7 @@
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
+
 </head>
 <body>
 	<!-- begin #page-loader -->
@@ -158,6 +159,7 @@
 	<script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
+
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script>
