@@ -97,20 +97,19 @@ $(document).ready(function(){
                             <div class="form-group">
                               
                                 <div class="input-group custom-search-form">
-<<<<<<< HEAD
 
-                                    
-                                    <span class="input-group-btn">
-                                        <select height="50px" class=" input-lg input-block" name="selectBusqueda" id=""> 
+
+                                 
+                                   <span class="input-group-btn" >
+                                        <select style="width:170px;height:48px;font-size:14px;-webkit-border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" id=""> 
                                         <option value="0">Todas las Mesas</option>
                                         <option value="2">Consejo Consultivo</option>
                                         <option value="1">Mesas De Competitividad</option>
                                     </select>
                                     </span> 
-                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" style="font-size: 16px;width:400px ">
-=======
-                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60" style="font-size: 16px" >
->>>>>>> e4593762ea04025604bd79f34ecb9add9f40f2e2
+
+                                    <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
+
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
                                             <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
@@ -130,13 +129,13 @@ $(document).ready(function(){
                           
                         <div class="panel-body text-center">
 
-                      <a href="javascript:;" class="btn btn-lg btn-inverse" style="background-color: transparent" >
-                        Dialogo Nacional<br>
+                      <a target="_blank" href="reporte-home/lista-propuesta/1" class="btn btn-lg btn-inverse"  >
+                        Consejo Consultivo<br>
                         <small>Reporte</small><br>
                         <i class="fa fa-2x fa-download"></i>
                       </a>
                       <a href="/dialogo-nacional-estadisticas" class="btn btn-lg btn-inverse">
-                        Dialogo Nacional<br>
+                        Consejo Consultivo<br>
                         <small>Estadisticas</small><br>
                         <i class="fa fa-2x fa-line-chart"></i>
                       </a>
@@ -146,7 +145,7 @@ $(document).ready(function(){
                     </div>
                 </div>
 
-
+                
 
 
 

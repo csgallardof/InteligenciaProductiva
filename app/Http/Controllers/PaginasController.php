@@ -822,22 +822,63 @@ class PaginasController extends Controller
         
 
     }
-
     public function crearPropuestasPDF($datos1,$datos2,$datos3,$vistaurl,$tipo){
+        
         $data1 = $datos1;
         $data2 = $datos2;
         $data3 = $datos3;
         //dd($data1);
+
         $date = date('Y-m-d');
         $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
                                                               "data3"=>$data3,
                                                               "data2"=>$data2]);
+        
         $pdf1 = \App::make('dompdf.wrapper');
         $pdf1->loadHTML($view);
+        
         if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
         if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
     }
+
+    public function crearReportePropuestasHome($tipo){
+        //dd($tipo);
+         $vistaurl="publico.reportes.pdfReportes.pdfPropuestas";
+         $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.estado_id IN(1,2) AND solucions.tipo_fuente=1
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasAnalisis=Collection::make($consutaPropuestas);
+       
+        $consutaPropuestasDesarrollo=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.estado_id IN(3) AND solucions.tipo_fuente=1
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasDesarrollo=Collection::make($consutaPropuestasDesarrollo);
+
+        $consutaPropuestasCierre=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
+            LEFT JOIN users ON users.id= actor_solucion.user_id
+            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
+            JOIN ambits ON ambits.id=solucions.ambit_id
+            WHERE solucions.estado_id IN(4) AND solucions.tipo_fuente=1
+            ORDER BY solucions.estado_id");
+        $consutaPropuestasCierre=Collection::make($consutaPropuestasCierre);
+       
+        return $this->crearPropuestasPDF($consutaPropuestasAnalisis,$consutaPropuestasDesarrollo,$consutaPropuestasCierre,$vistaurl,$tipo);
+
+    }
+
+    
+
+    
 
     public function consejosectorial(){
         return view('csp.home');
