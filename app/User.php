@@ -101,6 +101,7 @@ class User extends Authenticatable
                 $is_admin++;
             }
         }
+        //dd($is_admin);
         if($is_admin > 0){
             return true;    
         }else{

@@ -97,6 +97,7 @@ $(document).ready(function(){
                             <div class="form-group">
                               
                                 <div class="input-group custom-search-form">
+<<<<<<< HEAD
 
                                     
                                     <span class="input-group-btn">
@@ -107,6 +108,9 @@ $(document).ready(function(){
                                     </select>
                                     </span> 
                                     <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" style="font-size: 16px;width:400px ">
+=======
+                                    <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60" style="font-size: 16px" >
+>>>>>>> e4593762ea04025604bd79f34ecb9add9f40f2e2
                                     <span class="input-group-btn">
                                         <button class="btn btn-buscar btn-lg" type="submit" height="50px">
                                             <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
