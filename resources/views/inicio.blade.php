@@ -145,31 +145,21 @@ $(document).ready(function(){
                               <div class="col-md-6" style="border-right: 1px solid #FDFEFE;padding:0%">   
                               
                               <div class="stats-desc">Reportes</div>
-                              <div class="stats-desc" align="center">
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/1/1" target="_blank" class="btn">
-                                    <small>Propuestas en Analisis</small>&nbsp;
-                                    <small>
-                                    
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Análisis</small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc" align="center">
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/3/1" target="_blank" class="btn">
-                                    <small>Propuestas en Desarrollo</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Desarrollo</small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc"  align="center">
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/4/1" target="_blank" class="btn">
-                                    <small>Propuestas Finalizadas</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Finalizado</small>
                                   </a>
 
                               </div>
