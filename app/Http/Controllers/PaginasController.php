@@ -832,37 +832,50 @@ class PaginasController extends Controller
 
     }
 
-    public function crearReportePropuestasHome($tipo){
-        //dd($tipo);
-         $vistaurl="publico.reportes.pdfReportes.pdfPropuestas";
-         $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+    public function crearReportePropuestasHome($idEstado,$tipo){
+        //dd($tipo,$idEstado);
+         $vistaurl="publico.reportes.pdfReportes.pdfPropuestasHome";
+         if($idEstado==1){
+        $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
             LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
             LEFT JOIN users ON users.id= actor_solucion.user_id
             JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
             JOIN ambits ON ambits.id=solucions.ambit_id
-            WHERE solucions.estado_id IN(1,2) AND solucions.tipo_fuente=1
+            WHERE solucions.estado_id IN(1,2) and solucions.tipo_fuente=2
             ORDER BY solucions.estado_id");
-        $consutaPropuestasAnalisis=Collection::make($consutaPropuestas);
-       
-        $consutaPropuestasDesarrollo=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
-            LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
-            LEFT JOIN users ON users.id= actor_solucion.user_id
-            JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
-            JOIN ambits ON ambits.id=solucions.ambit_id
-            WHERE solucions.estado_id IN(3) AND solucions.tipo_fuente=1
-            ORDER BY solucions.estado_id");
-        $consutaPropuestasDesarrollo=Collection::make($consutaPropuestasDesarrollo);
+         $consutaPropuestas=Collection::make($consutaPropuestas);
+        //dd($consutaPropuestas);
+        }else{
 
-        $consutaPropuestasCierre=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
+            $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
             LEFT JOIN actor_solucion ON actor_solucion.solucion_id=solucions.id
             LEFT JOIN users ON users.id= actor_solucion.user_id
             JOIN estado_solucion ON estado_solucion.id=solucions.estado_id
             JOIN ambits ON ambits.id=solucions.ambit_id
-            WHERE solucions.estado_id IN(4) AND solucions.tipo_fuente=1
+            WHERE solucions.estado_id = $idEstado and solucions.tipo_fuente=2
             ORDER BY solucions.estado_id");
-        $consutaPropuestasCierre=Collection::make($consutaPropuestasCierre);
-       
-        return $this->crearPropuestasPDF($consutaPropuestasAnalisis,$consutaPropuestasDesarrollo,$consutaPropuestasCierre,$vistaurl,$tipo);
+             $consutaPropuestas=Collection::make($consutaPropuestas);
+
+        }
+        return $this->crearHomePropuestasPDF($consutaPropuestas,$idEstado,$vistaurl,$tipo);
+
+    }
+
+    public function crearHomePropuestasPDF($datos1,$idEstado,$vistaurl,$tipo){
+        
+        $data1 = $datos1;
+        
+        //dd($data1);
+
+        $date = date('Y-m-d');
+        $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
+                                                              "idEstado"=>$idEstado]);
+        
+        $pdf1 = \App::make('dompdf.wrapper');
+        $pdf1->loadHTML($view);
+        
+        if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
+        if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
     }
 
