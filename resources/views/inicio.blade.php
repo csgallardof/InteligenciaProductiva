@@ -10,6 +10,12 @@
   <link href="{{ asset('css/theme/default-front.css') }}" id="theme" rel="stylesheet" />
   <link href="{{ asset('css/inteligencia.css') }}" id="theme" rel="stylesheet" />
 
+  <link href="{{asset('plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/animate.min.css')}}" rel="stylesheet" />
+  <link href="{{asset ('css/style.min.css')}}" rel="stylesheet" />
+  <link href="{{asset('css/style-responsive.min.css')}}" rel="stylesheet" />
+  <link href="{{asset ('css/theme/default.css')}}" rel="stylesheet" id="theme" />
+
   <!-- ini script carrusel -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -127,20 +133,34 @@ $(document).ready(function(){
 
                         <a href="{{ url('/busqueda?parametro=Mesas_Competitividad') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Mesas de Competitividad</a>
                           
-                        <div class="panel-body text-center">
+                        
 
-                      <a target="_blank" href="reporte-home/lista-propuesta/1" class="btn btn-lg btn-inverse"  >
-                        Consejo Consultivo<br>
-                        <small>Reporte</small><br>
-                        <i class="fa fa-2x fa-download"></i>
-                      </a>
-                      <a href="/dialogo-nacional-estadisticas" class="btn btn-lg btn-inverse">
-                        Consejo Consultivo<br>
-                        <small>Estadisticas</small><br>
-                        <i class="fa fa-2x fa-line-chart"></i>
-                      </a>
-                      
+                  <div class="panel-body text-center">
+                      <div class="col-md-2"></div>    
+                      <div class="col-md-8">
+                        <div class="widget widget-stats bg-black">
+                            <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
+                            <div class="stats-title"> <strong>CONCEJO CONSULTIVO</strong></div>
+                            <div class="row">
+                            <div class="col-md-6">   
+                            
+                            
+                            </div>
+                            <div class="col-md-6">
+                            <div class="stats-desc">
+                                <a href="/dialogo-nacional-estadisticas" class="btn">
+                                  <small>Estadisticas</small>
+                                  <i class="fa fa-2x fa-line-chart"></i>
+                                </a>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                      
+                  
         
                     </div>
                 </div>

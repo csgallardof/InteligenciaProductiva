@@ -62,7 +62,7 @@
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
 
 
-					@if($tipo_fuente==5 or $tipo_fuente==4)
+					@if($tipo_fuente==4 or $tipo_fuente==5)
 					<li class="dropdown" ><a href="javascript:;" class="dropdown-toggle btn-primary btn-xs" style="color: #FFF;" data-toggle="dropdown">
 
 							<span class="hidden-xs ">Consejo Sectorial</span> <b class="caret"></b>
