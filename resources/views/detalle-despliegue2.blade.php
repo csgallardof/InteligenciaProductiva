@@ -354,7 +354,7 @@
 						        		<td>
 						        		<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
 						        		<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
-										{{ $actividad -> comentario}}<br>
+										{!! $actividad -> comentario!!}<br>
 										<!--ARCHIVOS-->
 											@if( count( $actividad-> archivo) > 0)
 											<hr>

@@ -84,7 +84,7 @@ $(document).ready(function(){
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
 
                 <div class="col-12">
-
+                    <br><br><br><br>
                     <div class="brand">
                         <img src="{{ asset('imagenes/inteligencia_productiva_home_white.png') }}" class="center-block img-responsive" alt="Cinque Terre" width="450px" height="73px">
                     </div>
@@ -106,12 +106,12 @@ $(document).ready(function(){
 
 
                                  
-                                   <span class="input-group-btn" >
-                                        <select style="width:170px;height:48px;font-size:14px;-webkit-border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" id=""> 
+                                   <span class="input-group-btn">
+                                        <select  style="text-align:center;width:170px;height:47px;font-size:14px;border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" > 
                                         <option value="0">Todas las Mesas</option>
                                         <option value="2">Consejo Consultivo</option>
                                         <option value="1">Mesas De Competitividad</option>
-                                    </select>
+                                        </select>
                                     </span> 
 
                                     <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
@@ -135,56 +135,51 @@ $(document).ready(function(){
                           
                         
 
-                  <div class="panel-body text-center" style="opacity:0.8;">
+                  <div class="panel-body text-center" style="opacity:0.7;">
                       <div class="col-md-2"></div>    
                       <div class="col-md-8">
-                          <div class="widget widget-stats bg-black">
+                          <div class="widget widget-stats " style="background-color: #FBFCFC">
                               <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
-                              <div class="stats-title"> <strong>CONCEJO CONSULTIVO</strong></div>
+                              <div class="stats-title" style="color: black"> <strong>CONCEJO CONSULTIVO</strong></div>
                               <div class="row">
-                              <div class="col-md-6" style="border-right: 1px solid #FDFEFE;padding:0%">   
+                              <div class="col-md-6" style="border-right: 1px solid black;padding:0%">   
                               
-                              <div class="stats-desc">Reportes</div>
-                              <div class="stats-desc" align="center">
+
+                              <div class="stats-desc" style="color: black">Reportes</div>
+
+                              
+
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/1/1" target="_blank" class="btn">
-                                    <small>Propuestas en Analisis</small>&nbsp;
-                                    <small>
-                                    
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Análisis</small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc" align="center">
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/3/1" target="_blank" class="btn">
-                                    <small>Propuestas en Desarrollo</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Desarrollo</small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc"  align="center">
+                              <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/4/1" target="_blank" class="btn">
-                                    <small>Propuestas Finalizadas</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-download"style="float: right"></i>
-                                    </small>
+                                    <small><i class="fa fa-download">&nbsp;</i>Propuestas en Finalizado</small>
                                   </a>
 
                               </div>
                             </div>
                               
-                              <div class="col-md-6">
-                                <div class="stats-desc">Estadisticas</div>
-                              <div class="stats-desc" align="left">
-                                  <a href="/dialogo-nacional-estadisticas" class="btn">
-                                    <small>Estadisticas</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-line-chart" style="float: right"></i>
-                                    </small>
+                              <div class="col-md-6" >
+                                <div class="stats-desc" style="color: black">Estadisticas</div>
+                              
+                              <div class="stats-desc pull-left">
+                                      <a href="/dialogo-nacional-estadisticas"  class="btn">
+                                    <small><i class="fa  fa-line-chart">&nbsp;</i>Estadisticas</small>
                                   </a>
+
                               </div>
+
+                            
                               </div>
                               </div>
                           </div>
