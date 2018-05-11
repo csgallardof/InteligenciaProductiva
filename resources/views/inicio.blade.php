@@ -147,8 +147,7 @@ $(document).ready(function(){
 
                               <div class="stats-desc" style="color: black">Reportes</div>
 
-                              
-
+                      
                               <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/1/1" target="_blank" class="btn">
                                     <small><i class="fa fa-download">&nbsp;</i>Propuestas en Análisis</small>
