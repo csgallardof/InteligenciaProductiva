@@ -135,27 +135,59 @@ $(document).ready(function(){
                           
                         
 
-                  <div class="panel-body text-center">
+                  <div class="panel-body text-center" style="opacity:0.8;">
                       <div class="col-md-2"></div>    
                       <div class="col-md-8">
-                        <div class="widget widget-stats bg-black">
-                            <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
-                            <div class="stats-title"> <strong>CONCEJO CONSULTIVO</strong></div>
-                            <div class="row">
-                            <div class="col-md-6">   
-                            
-                            
+                          <div class="widget widget-stats bg-black">
+                              <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
+                              <div class="stats-title"> <strong>CONCEJO CONSULTIVO</strong></div>
+                              <div class="row">
+                              <div class="col-md-6" style="border-right: 1px solid #FDFEFE;padding:0%">   
+                              
+                              <div class="stats-desc">Reportes</div>
+                              <div class="stats-desc" align="left">
+                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                                    <small>Propuestas en Analisis</small>&nbsp;
+                                    <small>
+                                  
+                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    </small>
+                                  </a>
+
+                              </div>
+                              <div class="stats-desc" align="left">
+                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                                    <small>Propuestas en Desarrollo</small>&nbsp;
+                                    <small>
+                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    </small>
+                                  </a>
+
+                              </div>
+                              <div class="stats-desc" align="left">
+                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                                    <small>Propuestas Finalizadas</small>&nbsp;
+                                    <small>
+                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    </small>
+                                  </a>
+
+                              </div>
                             </div>
-                            <div class="col-md-6">
-                            <div class="stats-desc">
-                                <a href="/dialogo-nacional-estadisticas" class="btn">
-                                  <small>Estadisticas</small>
-                                  <i class="fa fa-2x fa-line-chart"></i>
-                                </a>
-                            </div>
-                            </div>
-                            </div>
-                        </div>
+                              
+                              <div class="col-md-6">
+                                <div class="stats-desc">Estadisticas</div>
+                              <div class="stats-desc" align="left">
+                                  <a href="/dialogo-nacional-estadisticas" class="btn">
+                                    <small>Estadisticas</small>&nbsp;
+                                    <small>
+                                    <i class="fa fa-2x fa-line-chart" style="float: right"></i>
+                                    </small>
+                                  </a>
+                              </div>
+                              </div>
+                              </div>
+                          </div>
                     </div>
                 </div>
 

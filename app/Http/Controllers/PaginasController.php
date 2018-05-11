@@ -163,7 +163,6 @@ class PaginasController extends Controller
             $resultados = Solucion::orwhere('solucions.verbo_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.sujeto_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere('solucions.complemento_solucion','LIKE','%' . $buscar .'%')
-                                ->orwhere('solucions.responsable_solucion','LIKE','%' . $buscar . '%')
                                 ->orwhere( DB::raw('CONCAT( TRIM(solucions.verbo_solucion)," ",TRIM(solucions.sujeto_solucion)," ",TRIM(solucions.complemento_solucion))','concatenado'),'LIKE','%' . $buscar . '%')
                                 ->union($resultados1) // UNION CON  EL QUERY1 ANTERIOR
                                 ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
