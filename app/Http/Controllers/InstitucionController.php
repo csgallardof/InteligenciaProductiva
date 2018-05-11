@@ -189,7 +189,7 @@ class InstitucionController extends Controller
                                                     AND actividades.fecha_inicio >= DATE_SUB(CURDATE(), INTERVAL 1 WEEK)
                                                     ORDER BY actividades.fecha_inicio DESC; ");
 
-
+        //dd($tipo_fuente);
         return view('institucion.home')->with([ "solucionesDespliegue"=>$solucionesDespliegue,
                                                 "solucionesCCPT"=>$solucionesCCPT,
                                                 "totalDespliegue"=>$totalDespliegue,

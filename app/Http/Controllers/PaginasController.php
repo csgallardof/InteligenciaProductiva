@@ -177,7 +177,7 @@ class PaginasController extends Controller
             
                     //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
             
-            
+        
         }
 
 
@@ -192,7 +192,7 @@ class PaginasController extends Controller
                 }
             }
         }
-
+        //dd($resultados);
         if( isset($request->checkbox2)){
             $filtros["consejo"]= true;
             foreach ($resultados as $solucion) {
@@ -272,17 +272,8 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-            $id_propuestas="";
-            foreach($resultados as $solucion){
-                //var_dump($solucion->id);
-                $id_propuestas.=$solucion->id.",";
-            }
-            $id_propuestas=substr($id_propuestas,0,-1);
-            $actividades=DB::select("SELECT actividades.solucion_id , COUNT(solucion_id) AS actividadesRegistradas FROM actividades
-            JOIN solucions ON solucions.id=actividades.solucion_id
-            WHERE actividades.solucion_id in ($id_propuestas)
-            GROUP BY actividades.solucion_id");
-            $actividades=Collection::make($actividades);
+
+
             
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
@@ -291,7 +282,7 @@ class PaginasController extends Controller
                                             "datosFiltroEstado"=>$datosFiltroEstado,
                                             "datosFiltroAmbito"=>$datosFiltroAmbito,
                                             "datosFiltroResponsable"=>$datosFiltroResponsable,
-                                            "actividades"=>$actividades,
+                                            
                                             "filtros"=>$filtros
                                         ]);
 

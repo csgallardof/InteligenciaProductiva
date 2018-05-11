@@ -332,12 +332,19 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      })->name('descargarArchivoAlertaCsp');
 
      Route::get('/crear-agenda-territorial', 'CspAgendaTerritorialController@vistaCrearAgenda');
+     
      Route::get('/ver-agenda-territorial', 'CspAgendaTerritorialController@mostrarAgendaTerritorial');
+     
      Route::post('/guardar-agenda-territorial',['uses'=>'CspAgendaTerritorialController@crearAgenda','as'=>'guardarAgendaTerritorialCsp']);
+     
      Route::get('/editar-agenda-territorial/{id}', 'CspAgendaTerritorialController@vistaEditarAgendaTerritorial');
+     
      Route::post('/modificar-agenda-territorial/{id}',['uses'=>'CspAgendaTerritorialController@editarReporteAlertaCsp','as'=>'modificarAgendaTerritorial']);
+     
      Route::get('/lista-agenda-territorial-csp','CspPdfReportesAgendaController@listaAgendaTerritorialCsp');
+     
      Route::post('/guardarIdAgendaTerritorial/{tipo}',['uses'=>'CspPdfReportesAgendaController@crearReporteAgendaTerritorial','as'=>'guardarIdReporteHechoCsp']);
+     
      Route::get('/tabla-excel','CspPdfReportesAgendaController@mostrarTabla');
 
      Route::get('/unificar-propuestas','PropuestasUnificadasController@mostrarPropuestas');
