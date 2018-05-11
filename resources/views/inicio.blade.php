@@ -145,30 +145,30 @@ $(document).ready(function(){
                               <div class="col-md-6" style="border-right: 1px solid #FDFEFE;padding:0%">   
                               
                               <div class="stats-desc">Reportes</div>
-                              <div class="stats-desc" align="left">
-                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                              <div class="stats-desc" align="center">
+                                      <a href="/reporte-home/lista-propuesta/1/1" target="_blank" class="btn">
                                     <small>Propuestas en Analisis</small>&nbsp;
                                     <small>
-                                  
-                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    
+                                    <i class="fa fa-2x fa-download"style="float: right"></i>
                                     </small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc" align="left">
-                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                              <div class="stats-desc" align="center">
+                                      <a href="/reporte-home/lista-propuesta/3/1" target="_blank" class="btn">
                                     <small>Propuestas en Desarrollo</small>&nbsp;
                                     <small>
-                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    <i class="fa fa-2x fa-download"style="float: right"></i>
                                     </small>
                                   </a>
 
                               </div>
-                              <div class="stats-desc" align="left">
-                                      <a href="/dialogo-nacional-estadisticas" class="btn">
+                              <div class="stats-desc"  align="center">
+                                      <a href="/reporte-home/lista-propuesta/4/1" target="_blank" class="btn">
                                     <small>Propuestas Finalizadas</small>&nbsp;
                                     <small>
-                                    <i class="fa fa-2x fa-file-pdf-o"style="float: right"></i>
+                                    <i class="fa fa-2x fa-download"style="float: right"></i>
                                     </small>
                                   </a>
 

@@ -31,7 +31,7 @@ Route::get('/busquedaAvanzada',[
 
 Route::post('/lista-propuesta/{tipo}',['uses'=>'PaginasController@crearReportePropuestas','as'=>'reportePropuestas']); 
 
-Route::get('/reporte-home/lista-propuesta/{tipo}','PaginasController@crearReportePropuestasHome'); 
+Route::get('/reporte-home/lista-propuesta/{idEstado}/{tipo}','PaginasController@crearReportePropuestasHome'); 
 
 
 Route::post('/reporte',[
