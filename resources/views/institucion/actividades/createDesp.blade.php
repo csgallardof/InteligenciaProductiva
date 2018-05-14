@@ -67,13 +67,13 @@
 									 	<div class="form-group">
 									 		<div class="row">
 									 			<div class="col-md-7">
-									 				<label for="exampleTextarea">Detalle Actividad</label>
+									 				<label for="exampleTextarea">Comentario</label>
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="nunCaracteres" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<textarea maxlength="500" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 
 									  	</div>
 									  	@if( isset( $actividades ) && count($actividades) == 0)
@@ -89,18 +89,13 @@
 
 									  	<div class="form-group">
 									    	<label for="exampleSelect1">Instituci&oacute;n ejecutora</label>
-									    	
-									    	@auth {{ Auth::user()->name }}{{Auth::user()->id}} @endauth 
-									    	
 									    	<select class="form-control" name="institucion_id" id="exampleSelect1">
-									    		
-
 									      		@if( isset($actoresSoluciones) )
-													
-														<option value="{{Auth::user()->id}}">
-															{{Auth::user()->name}}
+													@foreach( $actoresSoluciones as $actorSolucion )
+														<option value="{{ $actorSolucion->usuario-> id}}">
+															{{ $actorSolucion->usuario-> name }}
 														</option>
-													
+													@endforeach
 												@endif
 									    	</select>
 									  	</div>

@@ -57,7 +57,7 @@
 							<h4 class="panel-title"><i class="fa fa-list-ol" aria-hidden="true"></i> Actividades</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							<div class="height-lg" >
 
 								@include('flash::message')
 
@@ -119,7 +119,7 @@
  												 Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
-												{{ $actividad-> comentario }}
+												{!! $actividad-> comentario !!}
 											</p>
 												<br>
 

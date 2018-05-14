@@ -69,9 +69,15 @@ class PropuestasUnificadasController extends Controller
 
     public function obtenerPropuestasUnificadas(Request $request){
 
+
+        if( is_null($request['check'])){
+            Flash::error("No a seleccionado ninguna propuesta. Seleccione 2 o mas Propuestas");
+            return redirect('/institucion/unificar-propuestas');
+
+        }else{
     	$checks = $request['check'];
     	$check="";
-     
+        
     	for ($i=0; $i <count($checks) ; $i++) { 
             $check .= $checks[$i].",";
         }
@@ -139,8 +145,10 @@ class PropuestasUnificadasController extends Controller
     		
     	}
     }
+    }
 
     public function guardarPajustadaUnificar(Request $request){
+
 		$propuestas = $request['idPropuestas'];
 		$pAjusta = $request['palabraAjustada'];
 		$comentario = $request['comentarioUnion'];

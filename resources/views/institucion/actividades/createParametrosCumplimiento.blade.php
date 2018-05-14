@@ -50,7 +50,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-7">
+                <div class="col-md-12">
                     
                     <div class="panel panel-inverse" data-sortable-id="index-5">
                         <div class="panel-heading">
@@ -65,7 +65,7 @@
                         <div class="panel-body">
                             <div class="height-lg" data-scrollbar="true">
                                 <div class="media-body">
-                                    <div class="col-md-10">
+                                    <div class="col-md-12">
                                         
                                    <a href="javascript:window.history.back();" class="btn btn-default pull-right">&laquo; Regresar</a>
                                     </div>
@@ -79,8 +79,8 @@
                                         
                                         <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-5">
                                                        <label for="plazo_cumplimiento">Plazo de Porpuesta</label>   
                                                         <select name="plazo_cumplimiento" class="form-control"  required="">
                                                      <option value="" >------Escoja un opcion----</option>
@@ -98,8 +98,8 @@
                                         </div>
                                         <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-5">
                                                         <label for="fecha_cumplimimento">Fecha de Cumplimiento (Opcional)</label>	
 									 					<div class="input-group date" id="datepicker-disabled-past"  data-date-format="yyyy-mm-dd" data-date-start-date="Date.default">
 		                                            <input type="text" readonly name="fecha_cumplimimento" class="form-control" value="" placeholder="Seleccione Fecha" />
@@ -115,8 +115,8 @@
 
                                         <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-8">
                                                        <label for="riesgos_cumplimiento">Riesgos</label> 	
 									 					<textarea  required class="form-control" id="acciones" name="riesgos_cumplimiento" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>  
                                                     </div>
@@ -128,8 +128,8 @@
 
                                         <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-3"></div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-2"></div>
+                                                    <div class="col-md-8">
                                                        <label for="supuestos_cumplimientos">Supestos</label> 	
 									 					<textarea  required class="form-control" id="acciones" name="supuestos_cumplimientos" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>  
                                                     </div>
@@ -150,7 +150,7 @@
                                             
                                         </div>
                                         <hr>
-                                        <div class="col-md-10">
+                                        <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary pull-right">Registrar</button>
                                         </div>
                                     </form>     
@@ -164,7 +164,7 @@
                 <!-- end col-8 -->
                 
             </div>
-            <div class="col-md-5" >
+            <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -184,7 +184,7 @@
 												<label class="label label-danger label-lg"><i class="fa fa-file-text-o" aria-hidden="true"></i> Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
-												{{ $actividad-> comentario }}
+												{!! $actividad-> comentario !!}
 												<br><br>
 
 												@if( $actividad-> ejecutor_id > 0 )

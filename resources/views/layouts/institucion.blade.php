@@ -10,6 +10,9 @@
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 
+
+
+
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
@@ -30,7 +33,14 @@
 
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+	
+
 	<!-- ================== END BASE JS ================== -->
+
+
+
+	
 
 </head>
 <body>
@@ -106,6 +116,8 @@
 					</li>
 				</ul>
 				<!-- end header navigation right -->
+
+				
 			</div>
 			<!-- end container-fluid -->
 		</div>
@@ -131,8 +143,7 @@
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 		<!-- end scroll to top btn -->
 	</div>
-	<!-- end page container -->
-
+		 
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/jquery/jquery-1.9.1.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
@@ -158,21 +169,32 @@
 	<script src="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 	<script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
 	<script src="{{ asset('js/dashboard.js') }}"></script>
+	<script src="{{asset ('plugins/ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js')}}"></script>
+	<script src="{{asset ('js/form-wysiwyg.demo.min.js')}}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
 
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 	<script>
 		$(document).ready(function() {
+			
 			App.init();
+			FormWysihtml5.init();
 			Dashboard.init();
+			
+			 
 		});
 	</script>
+	
 	<script>
 	function cuenta(){
     	document.getElementById('nunCaracteres').innerHTML= document.getElementById('exampleTextarea').value.length + '/280 caracteres';
 	}
 
 </script>
+
+
 </body>
 </html>

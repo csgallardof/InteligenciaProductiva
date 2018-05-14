@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reporte de Agenda Territorial {{$date}}</title>
+    <title>Reporte de Propuestas del Consejo Consultivo {{$date}}</title>
     
 </head>
 <body>
@@ -91,7 +91,7 @@
                                        <?php foreach($data1 as $consutaPropuestas){ ?>
                                             <tr bgcolor="#FDFEFE">
                                                 
-                                                <td width="100" height="10" >
+                                                <td width="100" height="10" class="text-justify">
                                                     <font   face="arial, verdana, helvetica" size=1 > 
                                                     <strong>{{ ucfirst(mb_strtolower($consutaPropuestas->verbo_solucion))}}</strong><br>
                                                     {{ucfirst(mb_strtolower($consutaPropuestas->sujeto_solucion))}} <br>
@@ -101,19 +101,19 @@
                                                     </font>
                                                 </td>
                                                 @if($consutaPropuestas->name!="")
-                                                <td width="2" height="10" align="center">
+                                                <td width="2" height="10" align="center" class="text-justify">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$consutaPropuestas->name}}
                                                     </font>
                                                 </td>
                                                 @else
-                                                <td width="2" height="10" align="center">
+                                                <td width="2" height="10" align="center" class="text-justify">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     Pendiente
                                                     </font>
                                                 </td>
                                                 @endif
-                                                <td width="2" height="10" align="center" style="font-size: 13px">
+                                                <td width="2" height="10" align="center" style="font-size: 13px" class="text-justify">
                                                     <font face="arial, verdana, helvetica" > 
                                                     {{$consutaPropuestas->nombre_estado}}
                                                     </font>

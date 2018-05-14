@@ -334,13 +334,16 @@ class ActividadesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function saveActividad(Request $request, $tipo_fuente, $idSolucion)
+    public function saveActividad(Request $request, $tipo_actor, $idSolucion)
     {
         $actividad = new Actividad;
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
-        $actividad-> tipo_fuente = $tipo_fuente;
+        $actividad-> tipo_fuente = $tipo_actor;
+        //$actividad-> tipo_actor = $tipo_fuente;
+
+        //dd($request->tipo_fuente_id);
         if( isset($request-> fecha) ){
             $actividad-> fecha_inicio = $request-> fecha. " 00:00:00";
             if($request->tipo_fuente_id ==1){
@@ -348,16 +351,20 @@ class ActividadesController extends Controller
                     $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
                     $solucion->save();
                 }
-                if($request->tipo_fuente_id ==2){
-                    $pajustada = Pajustada::find($idSolucion);
+            if($request->tipo_fuente_id ==2){
+                dd($tipo_fuente_id);
+                // $pajustada = Pajustada::find($idSolucion);
 
-                    $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
-                    foreach ($solucionesOriginales as $solucion) {
-                        $solucionCCPT= Solucion::find($solucion-> id);
-                        $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
-                        $solucionCCPT->save();
-                    }
-                }
+                // $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
+                // foreach ($solucionesOriginales as $solucion) {
+                //     $solucionCCPT= Solucion::find($solucion-> id);
+                //     $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
+                //     $solucionCCPT->save();
+                // }
+                $solucion = Solucion::find($idSolucion);
+                $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
+                $solucion->save();
+            }
         }
 
         $actividad-> save();
@@ -443,10 +450,19 @@ class ActividadesController extends Controller
 
 
         Flash::success("Se ha creado la actividad exitosamente");
-        if($tipo_fuente == 1){
-            return redirect()->route('verSolucion.despliegue',[1,$idSolucion]);
+        dd($tipo_actor);
+        if($tipo_actor == 1){
+                dd($tipo_fuente);
+            return redirect()->route('verSolucion.despliegue',[$tipo_actor,$idSolucion]);
         }else{
-            return redirect()->route('verSolucion.consejo',[1, $idSolucion]);
+            return redirect()->route('verSolucion.consejo',[$tipo_actor, $idSolucion]);
+        }
+
+        if($tipo_actor == 2){
+           // dd($tipo_fuente);
+            return redirect()->route('verSolucion.despliegue',[$tipo_actor,$idSolucion]);
+        }else{
+            return redirect()->route('verSolucion.consejo',[$tipo_actor, $idSolucion]);
         }
 
     }
