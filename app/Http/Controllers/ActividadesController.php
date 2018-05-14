@@ -450,7 +450,7 @@ class ActividadesController extends Controller
 
 
         Flash::success("Se ha creado la actividad exitosamente");
-        dd($tipo_actor);
+        
         if($tipo_actor == 1){
                 dd($tipo_fuente);
             return redirect()->route('verSolucion.despliegue',[$tipo_actor,$idSolucion]);

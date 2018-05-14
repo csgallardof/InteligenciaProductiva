@@ -64,7 +64,6 @@
 								<div class="media-body">
 
 									@if (isset($solucion) && isset($tipo_actor) )
-										
 										@if($tipo_actor == 1 or $tipo_actor == 2 )
 											<!-- <a href="#" class="btn	btn-warning pull-right">Finalizar</a> -->
 											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>&nbsp;&nbsp; 
