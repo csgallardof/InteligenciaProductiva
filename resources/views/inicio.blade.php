@@ -15,6 +15,7 @@
   <link href="{{asset ('css/style.min.css')}}" rel="stylesheet" />
   <link href="{{asset('css/style-responsive.min.css')}}" rel="stylesheet" />
   <link href="{{asset ('css/theme/default.css')}}" rel="stylesheet" id="theme" />
+  <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 
   <!-- ini script carrusel -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -84,7 +85,7 @@ $(document).ready(function(){
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
 
                 <div class="col-12">
-
+                    <br><br><br><br>
                     <div class="brand">
                         <img src="{{ asset('imagenes/inteligencia_productiva_home_white.png') }}" class="center-block img-responsive" alt="Cinque Terre" width="450px" height="73px">
                     </div>
@@ -95,56 +96,58 @@ $(document).ready(function(){
 
                 </div>
 
+                <div class="panel-body text-center">
+                  <div class="row">
+                    <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2" style="padding: 0px" > 
+                      <select  style="text-align:center;width:100%;height:47px;font-size:14px;border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" > 
+                                        <option value="0">Todas las Mesas</option>
+                                        <option value="2">Consejo Consultivo</option>
+                                        <option value="1">Mesas De Competitividad</option>
+                                        </select>
+                    </div>
+
+                    <div class="col-md-5" style="padding:0px">
+                        <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px;" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
+                    </div>
+                    <div class="col-md-1" style="padding:0px">
+
+                      <button class="btn btn-buscar btn-lg" type="submit" height="50px">
+                                            <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
+                                        </button>
+
+                    </div>
+                    <div class="col-md-1"></div>
+                    </form>
+                  </div>
+                  <p style="margin-top: 10px" class="text-white">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
+                </div>
                 <!-- <div class="col-lg-offset-3 col-lg-8 row-m-t-minus-25"> -->
                 <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
                     <div class="panel-body text-center">
 
-                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-                            <div class="form-group">
-                              
-                                <div class="input-group custom-search-form">
-
-
-                                 
-                                   <span class="input-group-btn" >
-                                        <select style="width:170px;height:48px;font-size:14px;-webkit-border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" id=""> 
-                                        <option value="0">Todas las Mesas</option>
-                                        <option value="2">Consejo Consultivo</option>
-                                        <option value="1">Mesas De Competitividad</option>
-                                    </select>
-                                    </span> 
-
-                                    <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
-
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-buscar btn-lg" type="submit" height="50px">
-                                            <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
-                                        </button>
-                                    </span>
-
-
-
-                                </div>
-                                <p style="margin-top: 10px" class="text-white">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
-                            </div>
-                        </form>
+                        
 
                         <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
 
                         <a href="{{ url('/busqueda?parametro=Mesas_Competitividad') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Mesas de Competitividad</a>
                           
-                        
+                  
 
-                  <div class="panel-body text-center" style="opacity:0.8;">
+                  <div class="panel-body text-center" style="opacity:0.7;">
                       <div class="col-md-2"></div>    
                       <div class="col-md-8">
-                          <div class="widget widget-stats bg-black">
+                          <div class="widget widget-stats " style="background-color: #FBFCFC">
                               <div class="stats-icon stats-icon-lg"><i class="fa fa-comments fa-fw"></i></div>
-                              <div class="stats-title"> <strong>CONCEJO CONSULTIVO</strong></div>
+                              <div class="stats-title" style="color: black"> <strong>CONCEJO CONSULTIVO</strong></div>
                               <div class="row">
-                              <div class="col-md-6" style="border-right: 1px solid #FDFEFE;padding:0%">   
+                              <div class="col-md-6" style="border-right: 1px solid black;padding:0%">   
                               
-                              <div class="stats-desc">Reportes</div>
+
+                              <div class="stats-desc" style="color: black">Reportes</div>
+
+                      
                               <div class="stats-desc pull-left">
                                       <a href="/reporte-home/lista-propuesta/1/1" target="_blank" class="btn">
                                     <small><i class="fa fa-download">&nbsp;</i>Propuestas en Análisis</small>
@@ -165,16 +168,17 @@ $(document).ready(function(){
                               </div>
                             </div>
                               
-                              <div class="col-md-6">
-                                <div class="stats-desc">Estadisticas</div>
-                              <div class="stats-desc" align="left">
-                                  <a href="/dialogo-nacional-estadisticas" class="btn">
-                                    <small>Estadisticas</small>&nbsp;
-                                    <small>
-                                    <i class="fa fa-2x fa-line-chart" style="float: right"></i>
-                                    </small>
+                              <div class="col-md-6" >
+                                <div class="stats-desc" style="color: black">Estadisticas</div>
+                              
+                              <div class="stats-desc pull-left">
+                                      <a href="/dialogo-nacional-estadisticas"  class="btn">
+                                    <small><i class="fa  fa-line-chart">&nbsp;</i>Estadisticas</small>
                                   </a>
+
                               </div>
+
+                            
                               </div>
                               </div>
                           </div>

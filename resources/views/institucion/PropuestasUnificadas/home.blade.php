@@ -132,6 +132,7 @@
 					<div class="tab-content" data-sortable-id="index-3">
 
 						<!--SOLUCIONES RESPONSABLE-->
+						@include('flash::message')
 						
 						<div class="tab-pane fade active in" id="responsable">
 							<div class="" data-scrollbar="false">
@@ -147,7 +148,7 @@
 											<th></th>
 											<th>Codigo</th>
 											<th>Propuesta</th>
-											<th>Propuesta Ajustada</th>
+											<th>Propuesta Unificada</th>
 											<th>Fuente</th>
 											<th>Estado</th>
 											

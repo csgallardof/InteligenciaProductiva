@@ -56,7 +56,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva Actividad</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							<div class="height-lg" >
 								<div class="media-body">
 									<a href="javascript:window.history.back();" class="btn btn-default pull-right">&laquo; Regresar</a>
 									<hr>
@@ -65,19 +65,8 @@
 									<form  method="POST" action="{{ route('actividadCierre.saveActividad',[ 1,$solucion->id]) }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 										<input type="hidden" name="tipo_fuente_id" value="1">
-									 	<div class="form-group">
-									 		<div class="row">
-									 			<div class="col-md-7">
-									 				<label for="exampleTextarea">Comentario</label>
-									 			</div>
-									 			<div class="col-md-3">
-									 				<div id="nunCaracteres" class="pull-right"></div>
-									 			</div>
-									 		</div>
-									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
-
-									  	</div>
-									  	@if( isset( $actividades ) && count($actividades) == 0)
+									 	
+														@if( isset( $actividades ) && count($actividades) == 0)
 									  		<div class="form-group">
 									 			<div class="row">
 									 				<div class="col-md-7">
@@ -100,6 +89,28 @@
 												@endif
 									    	</select>
 									  	</div>
+																		  	<!-- begin row -->
+												<div class="row">
+									                <!-- begin col-12 -->
+												    <div class="col-md-12">
+												        <!-- begin panel -->
+									                    
+									                        
+									                            
+									                        <label for="exampleTextarea">Comentario</label>
+									                        
+									                        <div class="panel-body panel-form">
+									                            
+																	<textarea class="ckeditor" id="editor1" name="comentario" rows="6"></textarea>
+									                            
+									                        </div>
+									                  
+									                    <!-- end panel -->
+									                </div>
+									                <!-- end col-12 -->
+									            </div>
+									            <!-- end row -->
+									  
 
 									  	<div class="form-group">
 									    	<label for="exampleInputFile">Agregar archivos. (Opcional)</label>
@@ -132,7 +143,7 @@
 							<h4 class="panel-title"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Actividades</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							<div class="height-lg" >
 
 								<div class="media-body">
 
@@ -143,7 +154,7 @@
 												<label class="label label-danger label-lg"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
-												{{ $actividad-> comentario }}
+												{!! $actividad-> comentario !!}
 												<br><br>
 
 												@if( $actividad-> ejecutor_id > 0 )
