@@ -15,6 +15,7 @@
   <link href="{{asset ('css/style.min.css')}}" rel="stylesheet" />
   <link href="{{asset('css/style-responsive.min.css')}}" rel="stylesheet" />
   <link href="{{asset ('css/theme/default.css')}}" rel="stylesheet" id="theme" />
+  <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 
   <!-- ini script carrusel -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -95,45 +96,44 @@ $(document).ready(function(){
 
                 </div>
 
-                <!-- <div class="col-lg-offset-3 col-lg-8 row-m-t-minus-25"> -->
-                <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
-                    <div class="panel-body text-center">
-
-                        <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-                            <div class="form-group">
-                              
-                                <div class="input-group custom-search-form">
-
-
-                                 
-                                   <span class="input-group-btn">
-                                        <select  style="text-align:center;width:170px;height:47px;font-size:14px;border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" > 
+                <div class="panel-body text-center">
+                  <div class="row">
+                    <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2" style="padding: 0px" > 
+                      <select  style="text-align:center;width:100%;height:47px;font-size:14px;border-radius: 10px 0px 0px 10px;"  name="selectBusqueda" > 
                                         <option value="0">Todas las Mesas</option>
                                         <option value="2">Consejo Consultivo</option>
                                         <option value="1">Mesas De Competitividad</option>
                                         </select>
-                                    </span> 
+                    </div>
 
-                                    <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
+                    <div class="col-md-5" style="padding:0px">
+                        <input type="text" class="form-control_2" style="-webkit-border-radius: 0px 0px 0px 0px;" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" data-parsley-range="[20,60]" maxlength="60">
+                    </div>
+                    <div class="col-md-1" style="padding:0px">
 
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-buscar btn-lg" type="submit" height="50px">
+                      <button class="btn btn-buscar btn-lg" type="submit" height="50px">
                                             <i class="fa fa-search fa-1x">&nbsp;BUSCAR</i>
                                         </button>
-                                    </span>
 
+                    </div>
+                    <div class="col-md-1"></div>
+                    </form>
+                  </div>
+                  <p style="margin-top: 10px" class="text-white">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
+                </div>
+                <!-- <div class="col-lg-offset-3 col-lg-8 row-m-t-minus-25"> -->
+                <div class="col-md-8 col-md-offset-2 row-m-t-minus-25" >
+                    <div class="panel-body text-center">
 
-
-                                </div>
-                                <p style="margin-top: 10px" class="text-white">Ej: Mesas de Competitividad, Consejo Consultivo, Innovaci&oacute;n, Ministerio de Industrias y Productitivad, etc.</p>
-                            </div>
-                        </form>
+                        
 
                         <a href="{{ url('/busqueda?parametro=Consejo_consultivo') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Consejo Consultivo</a>
 
                         <a href="{{ url('/busqueda?parametro=Mesas_Competitividad') }}" class="btn btn-home-ip-custom btn-lg m-r-5">Mesas de Competitividad</a>
                           
-                        
+                  
 
                   <div class="panel-body text-center" style="opacity:0.7;">
                       <div class="col-md-2"></div>    
