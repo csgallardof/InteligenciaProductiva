@@ -1,5 +1,5 @@
 <!-- begin #header -->
-<div id="header" class="header navbar navbar-default navbar-fixed-top">
+<div id="header" class="header navbar navbar-default navbar-fixed-top" >
 		<!-- begin container -->
 		<div class="container">
 				<!-- begin navbar-header -->

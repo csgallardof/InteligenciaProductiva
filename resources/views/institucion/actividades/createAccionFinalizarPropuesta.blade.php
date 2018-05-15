@@ -66,7 +66,7 @@
 										{{ csrf_field() }}
 										<input type="hidden" name="tipo_fuente_id" value="1">
 									 	
-														@if( isset( $actividades ) && count($actividades) == 0)
+										@if( isset( $actividades ) && count($actividades) == 0)
 									  		<div class="form-group">
 									 			<div class="row">
 									 				<div class="col-md-7">
