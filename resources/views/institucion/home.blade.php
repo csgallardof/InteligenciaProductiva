@@ -206,7 +206,7 @@
 															@if($solucionD->tipo_fuente == 1)
 																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo22" }}</label>
 															@endif
 														</td>
 
@@ -412,7 +412,7 @@
 													@if($solucionCC->tipo_fuente == 1)
 														<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 													@else
-														<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
+														<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo2" }}</label>
 													@endif
 												</td>
 												<td>
