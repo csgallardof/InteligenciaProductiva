@@ -55,7 +55,7 @@
                             </div>
                             <!-- begin nav-tabs -->
                             <div class="tab-overflow">
-                                <ul class="nav nav-tabs col-md-12">
+                                <ul class="nav nav-tabs ">
                                     <li class="prev-button"><a href="javascript:;" data-click="prev-tab" class="text-inverse"><i class="fa fa-arrow-left"></i></a></li>
                                     <li class=""><a href="#nav-tab2-1" data-toggle="tab">¿Qué son APP?</a></li>
                                     <li class=""><a href="#nav-tab2-2" data-toggle="tab">Normativa Vigente</a></li>
@@ -63,7 +63,6 @@
                                     <li class=""><a href="#nav-tab2-4" data-toggle="tab">Incentivos</a></li>
                                     <li class=""><a href="#nav-tab2-5" data-toggle="tab">Tipos de Proyectos</a></li>
                                     <li class=""><a href="#nav-tab2-6" data-toggle="tab">Comité Constitucional</a></li>
-                                    
                                     <li class="next-button"><a href="javascript:;" data-click="next-tab" class="text-inverse"><i class="fa fa-arrow-right"></i></a></li>
                                 </ul>
                             </div>
@@ -203,7 +202,7 @@
                             </div>
                             <!-- begin nav-tabs -->
                             <div class="tab-overflow">
-                                <ul class="nav nav-tabs col-md-12">
+                                <ul class="nav nav-tabs ">
                                     <li class="prev-button"><a href="javascript:;" data-click="prev-tab" class="text-inverse"><i class="fa fa-arrow-left"></i></a></li>
                                     <li class=""><a href="#nav-tab2-11" data-toggle="tab">Principios y Alineamientos</a></li>
                                     <li class=""><a href="#nav-tab2-12" data-toggle="tab">Elementos Esenciales</a></li>

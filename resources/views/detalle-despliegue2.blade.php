@@ -417,7 +417,7 @@
 
 
 
-  <<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
+  <script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
 	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
 	<script src="{{ asset('plugins/scrollMonitor/scrollMonitor.js') }}"></script>
 	<script src="{{ asset('js/custom-mipro.js" type="text/javascript') }}"></script>
