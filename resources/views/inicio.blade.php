@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Reporte')
 
 @section('start_css')
   <link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
@@ -16,6 +16,7 @@
   <link href="{{asset('css/style-responsive.min.css')}}" rel="stylesheet" />
   <link href="{{asset ('css/theme/default.css')}}" rel="stylesheet" id="theme" />
   <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
+
 
   <!-- ini script carrusel -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -379,7 +380,7 @@ $(document).ready(function(){
 
 @section('end_js')
   @parent
-  s
+  
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
 @endsection
