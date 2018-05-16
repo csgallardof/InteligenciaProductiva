@@ -79,7 +79,7 @@ $(document).ready(function(){
 @section('contenido')
 
         <!-- begin #about -->
-        <div id="about" class="content work row-m-t-3" data-scrollview="true">
+        <div id="about" class="content work row-m-t-3" style="margin-top: 10px;" data-scrollview="true">
 
 
             <!-- begin container -->
