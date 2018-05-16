@@ -111,6 +111,26 @@
                                         <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-md-3"></div>
+                                                    <div class="col-md-4">
+                                                        <label for="fecha_reporte">Tipo Comunicacional</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3"></div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-control" required="" name="tipo_comunicacional" id="">
+                                                            <option value="" disabled selected>Seleccione un tipo</option>
+                                                            <option value="Institucional">Institucional</option>
+                                                            <option value="Presidencia">Presidencia</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+    
+                                        </div>
+
+                                        <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-3"></div>
                                                     <div class="col-md-3">
                                                         <label for="tema">Tema</label>
                                                         <input type="text" required name="tema" class="form-control" value="{{$cspReportesHecho->tema}}">       

@@ -30,7 +30,14 @@
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
                            
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm ; text-transform: uppercase"  ALIGN="justify" >
-                            <strong><?= $reporteHechoMipro->tema; ?></strong><br> <br>
+                            <strong><?= $reporteHechoMipro->tema; ?></strong><br>
+                            <strong>Tipo Comunicación:</strong>
+                            @if($reporteHechoMipro->tipo_comunicacional!="")
+                            <?= $reporteHechoMipro->tipo_comunicacional; ?>
+                            @else
+                            NO DEFINIDO
+                            @endif
+                            <br> <br>
                             
                             
                             @if($reporteHechoMipro->lineas_discursivas==null)
@@ -51,7 +58,14 @@
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong><?= $reporteHechoMAG->tema; ?></strong><br> <br>
+                            <strong><?= $reporteHechoMAG->tema; ?></strong><br>
+                            <strong>Tipo Comunicación:</strong>
+                            @if($reporteHechoMAG->tipo_comunicacional!="")
+                            <?= $reporteHechoMAG->tipo_comunicacional; ?>
+                            @else
+                            NO DEFINIDO
+                            @endif
+                            <br> <br>
                             
                             @if($reporteHechoMAG->lineas_discursivas==null)
                             no existe registro    
@@ -71,7 +85,14 @@
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm;text-transform: uppercase"  ALIGN="justify" >
-                            <strong><?= $reporteHechoMAP->tema; ?></strong><br> <br>
+                            <strong><?= $reporteHechoMAP->tema; ?></strong><br>
+                            <strong>Tipo Comunicación:</strong>
+                            @if($reporteHechoMAP->tipo_comunicacional!="")
+                            <?= $reporteHechoMAP->tipo_comunicacional; ?>
+                            @else
+                            NO DEFINIDO
+                            @endif
+                            <br> <br>
                             
                             @if($reporteHechoMAP->lineas_discursivas==null)
                             no existe registro    
@@ -81,25 +102,8 @@
                             
                             <?php } ?>
 
-                        <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Secretaría Técnica para el Comité de la Reconstrucción y Reactivación Productiva</u></b> <br></p><br>
-                            
-                         @if(sizeof($data4)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
-                            </p>
-                         @endif
-                        <?php foreach($data4 as $reporteHechoSTR){ ?>
-                           
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm;text-transform: uppercase"  ALIGN="justify" >
-                            <strong><?= $reporteHechoSTR->tema; ?></strong><br> <br>
-                            
-                            @if($reporteHechoSTR->lineas_discursivas==null)
-                            no existe registro    
-                            @endif
-                            <?= $reporteHechoSTR->lineas_discursivas; ?>
-                            </p>
-                            
-                            <?php } ?>
+                        
+                        
                         </div>
                             
                         

@@ -66,7 +66,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-9">
                     
                     
                     <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
@@ -91,10 +91,26 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                 <form method="GET" action="/institucion/busquedaReporteHechos"  enctype="multipart/form-data">
+
+                                        <div class="row">
+                                            <div class="col-lg-5 ">
+                                            </div>
+                                            <div class="col-lg-3 ">
+                                            <select name="tipo_comunicacional" class="form-control" >
+                                                            <option value="">Todos los tipos de Comunicacion</option>
+                                                            
+                                                            <option value="Institucional">Institucional</option>
+                                                            <option value="Presidencia">Presidencia</option>
+                              
+                                                            
+                                                       
+                                                </select>
+                                            </div>
                                           <div class="col-lg-4 pull-right">
                                             <div class="input-group">
+                                                
                                               <select name="parametro" class="form-control" >
-                                                            <option value="">------Escoja un opcion----</option>
+                                                            <option value="">Seleccione una Semana</option>
                                                             @foreach($CspPeriodoReporte as $CspPeriodoReporte) 
                                                             <option value="{{$CspPeriodoReporte['id']}}">{{$CspPeriodoReporte['nombre']}}
                                                             </option>
@@ -109,8 +125,11 @@
                                                 </button>
                                             </span>
                                             </div><!-- /input-group -->
+
+                                            
                                           </div><!-- /.col-lg-6 -->
-                                        </form>
+                                        </div>
+                                </form>
                             <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         <hr>
@@ -133,10 +152,11 @@
                                             <th>Fecha de Atencion</th>
                                             <th>Fecha  Registro</th>
                                             <th>Tema</th>
+                                            <th>Tipo Comunicacion</th>
                                             <th>Periodo</th>
                                             <th>Fuente</th>
                                             <th>Institucion</th>  
-                                        </tr>
+                                        </tr> 
                                     </thead>
                                     <tbody>
                                                     @foreach($reportesHechos as $reportesHechos)
@@ -146,6 +166,13 @@
                                                   <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
 
                                                   <td class="text-justify">{{$reportesHechos->tema}}</td>
+                                                  <td class="text-justify">
+                                                             @if($reportesHechos->tipo_comunicacional!="")
+                                                                {{$reportesHechos->tipo_comunicacional}}
+                                                                @else
+                                                                No definido
+                                                                @endif
+                                                                                      </td>
                                                   <td class="text-justify">{{$reportesHechos->Periodo}}</td>
                                             
                                                   <td class="text-justify">{{$reportesHechos->fuente}}</td>
@@ -175,7 +202,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-3" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

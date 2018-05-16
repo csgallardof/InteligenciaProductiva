@@ -99,6 +99,13 @@
                     <div class="invoice-from">
                         
                         <address class="m-t-5 m-b-5">
+                            <strong>Tipo Comunicacional</strong><br />
+                            @if($cspReportesAlerta->tipo_comunicacional!="")
+                            {{$cspReportesAlerta->tipo_comunicacional}}
+                            @else
+                            No Definido
+                            @endif
+                            <br />
                             <strong>Fecha Reporte</strong><br />
                             {{$cspReportesAlerta->fecha_atencion}}<br />
                              <strong>Fuente</strong><br />

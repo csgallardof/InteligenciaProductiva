@@ -84,7 +84,7 @@ $(document).ready(function(){
 
             <!-- begin container -->
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
-
+                  <br><br>
                 <div class="col-12">
                     <br><br><br><br>
                     <div class="brand">

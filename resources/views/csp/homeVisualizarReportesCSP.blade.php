@@ -67,7 +67,7 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-12">
 
 
 					<ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
@@ -121,6 +121,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha  Registro</th>
 											<th>Tema</th>
+											<th>Tipo Comunicacional</th>
 											<th>Periodo</th>
 											<th>Fuente</th>
 
@@ -135,8 +136,15 @@
 
 						                          <td class="text-justify">{{$reportesHechos->fecha_reporte}}</td>
 						                          <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
-
+												
 						                          <td class="text-justify">{{$reportesHechos->tema}}</td>
+						                          <td class="text-justify">
+											                 @if($reportesHechos->tipo_comunicacional!="")
+									                            {{$reportesHechos->tipo_comunicacional}}
+									                            @else
+									                            No definido
+									                            @endif
+															                          </td>
 						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
 
 						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
@@ -195,6 +203,7 @@
 											<th>Fecha Registro</th>
 											<th>Periodo</th>
 											<th>Tema</th>
+											<th>Tipo Comunicacional</th>
 											<th>Fuente</th>
 											<th>Estado</th>
 											<th>Institución</th>
@@ -213,6 +222,13 @@
 						                            <td class="text-justify">{{ $reportesAlerta->FechaRegistro }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->Periodo }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->tema }}</td>
+						                            <td class="text-justify">
+											                 @if($reportesAlerta->tipo_comunicacional!="")
+									                            {{$reportesAlerta->tipo_comunicacional}}
+									                            @else
+									                            No definido
+									                            @endif
+															                          </td>
 						                            <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
 
 
@@ -263,7 +279,7 @@
 				</div>
 				<!-- end col-8 -->
 				<!-- begin col-4 -->
-				<div class="col-md-4" >
+				<div class="col-md-3" >
 					<div class="panel panel-inverse" data-sortable-id="index-6">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">

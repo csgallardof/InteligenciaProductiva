@@ -26,6 +26,7 @@ class CreateCspReportesAlertasTable extends Migration
             $table->text('solucion_propuesta');
             $table->text('riesgo_principal');
             $table->string('fuente');
+            $table->string('tipo_comunicacional');
             $table->string('anexo');
             $table->timestamps();
         });

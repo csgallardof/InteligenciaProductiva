@@ -63,7 +63,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse pull-right" data-sortable-id="index-1">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -77,10 +77,25 @@
                         <div class="height-lg" data-scrollbar="true"> 
                         <div class="panel-body">
                             <form method="GET" action="/institucion/busquedaReporteAlertas"  enctype="multipart/form-data">
+                                          <div class="row">
+                                            <div class="col-lg-5 ">
+                                            </div>
+                                            <div class="col-lg-3 ">
+                                            <select name="tipo_comunicacional" class="form-control" >
+                                                            <option value="">Todos los tipos de Comunicacion</option>
+                                                            
+                                                            <option value="Institucional">Institucional</option>
+                                                            <option value="Presidencia">Presidencia</option>
+                              
+                                                            
+                                                       
+                                                </select>
+                                            </div>
                                           <div class="col-lg-4 pull-right">
                                             <div class="input-group">
+                                                
                                               <select name="parametro" class="form-control" >
-                                                            <option value="">------Escoja un opcion----</option>
+                                                            <option value="">Seleccione una Semana</option>
                                                             @foreach($CspPeriodoReporte as $CspPeriodoReporte) 
                                                             <option value="{{$CspPeriodoReporte['id']}}">{{$CspPeriodoReporte['nombre']}}
                                                             </option>
@@ -90,10 +105,15 @@
                                                         </select>
 
                                               <span class="input-group-btn">
-                                                <button class="btn btn-default"  type="submit">Buscar</button>
-                                              </span>
+                                                <button class="btn btn-buscar " type="submit" height="50px">
+                                                    <span class="glyphicon glyphicon-search">&nbsp;BUSCAR</span>
+                                                </button>
+                                            </span>
                                             </div><!-- /input-group -->
+
+                                            
                                           </div><!-- /.col-lg-6 -->
+                                        </div>
                                         </form>
                             <form target="_blank" method="POST" action="/institucion/guardarIdReporteAlertasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
@@ -121,6 +141,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha  Registro</th>
 											<th>Tema</th>
+                                            <th>Tipo Comunicación</th>
 											<th>Periodo</th>
 											<th>Fuente</th>
 											
@@ -137,6 +158,13 @@
 						                          <td class="text-justify">{{$reportesAlerta->FechaRegistro}}</td>
 
 						                          <td class="text-justify">{{$reportesAlerta->tema}}</td>
+                                                  <td class="text-justify">
+                                                             @if($reportesAlerta->tipo_comunicacional!="")
+                                                                {{$reportesAlerta->tipo_comunicacional}}
+                                                                @else
+                                                                No definido
+                                                                @endif
+                                                                                      </td>
 						                          <td class="text-justify">{{$reportesAlerta->Periodo}}</td>
 						                    
 						                          <td class="text-justify">{{$reportesAlerta->fuente}}</td>
@@ -176,7 +204,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

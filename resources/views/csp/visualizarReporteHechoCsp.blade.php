@@ -101,6 +101,13 @@
                         <address class="m-t-5 m-b-5">
                             <strong>Fecha Reporte</strong><br />
                             {{$cspReportesHecho->fecha_reporte}}<br />
+                            <strong>Tipo Comunicacional</strong><br />
+                            @if($cspReportesHecho->tipo_comunicacional!="")
+                            {{$cspReportesHecho->tipo_comunicacional}}
+                            @else
+                            No definido
+                            @endif
+                            <br />
                              <strong>Fuente</strong><br />
                             {{$cspReportesHecho->fuente}}<br />
                             <strong>Lugar</strong><br />
