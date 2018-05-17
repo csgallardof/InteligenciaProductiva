@@ -32,7 +32,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
@@ -64,15 +64,17 @@
                         <hr>
                             <div class="col-md-12"> 
                             <div class="table-responsive">
-                                <table id="data-table" class="table  table-bordered">
+                                <table id="data-table" class="table  table-bordered" width="100%">
                                     <thead>
                                         <tr>
                                             <th></th>
                                             <th>Institucion</th>
                                             <th>fecha Registro</th>
                                             <th>fecha Agenda</th>
+                                            <th>Mes</th>
                                             <th>Semana</th>
                                             <th>Lugar</th>
+                                            <th>Tipo Comunicacion</th>
                                             <th>Descripcion Tipo Agenda</th>
                                             <th>Descripcion Impacto</th>
                                             <th>Responsable</th>
@@ -85,10 +87,27 @@
                                                   <td><input type="checkbox" name="check[]" id="chk{{$agendaTerritorial->id}}" value='{{$agendaTerritorial->id}}'> </td>
                                                   <td class="text-justify">{{$agendaTerritorial->Institucion}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->FechaRegistro}}</td>
+
                                                   <td class="text-justify">{{$agendaTerritorial->fecha_agenda}}</td>
+                                                  <td>
+                                                       <?php
+                                                       $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); 
+
+                                                        $mes= $meses[$agendaTerritorial->mes-1];  
+                                                        ?>
+                                                    {{$mes}}
+                                                  </td>
                                                   <td class="text-justify">{{$agendaTerritorial->semana}}</td>
                                                   
                                                    <td class="text-justify">{{$agendaTerritorial->nombre_canton}}</td>
+                                                   <td class="text-justify">
+                                                    @if($agendaTerritorial->tipo_comunicacional!="")
+                                                    {{$agendaTerritorial->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
+                                                    </td>
+                                                   
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_agenda}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_impacto}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->responsable}}</td>
@@ -109,6 +128,12 @@
                                                 <strong>Responsable: </strong> {{$agendaTerritorial->responsable}} <br> <br>
                                                 <strong>Fecha Agenda: </strong> {{$agendaTerritorial->fecha_agenda}} <br> <br>
                                                 <strong>Lugar: </strong> {{$agendaTerritorial->nombre_canton}} <br><br>
+                                                <strong>Tipo Comunicacion: </strong> @if($agendaTerritorial->tipo_comunicacional!="")
+                                                    {{$agendaTerritorial->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
+                                                    <br><br>
                                                 <strong>Tipo Agenda: </strong> {{$agendaTerritorial->TipoAgenda}} <br> <br>
                                                 <strong>Descripcion Tipo Agenda</strong> {{$agendaTerritorial->descripcion_tipo_agenda}} <br> <br>
                                                 <strong>Impacto Tecnico/Político: </strong> {{$agendaTerritorial->ImpactoAgenda}} <br> <br>
@@ -144,7 +169,7 @@
                 <!-- end col-10 -->
                 
                 <!-- begin col-4 -->
-                <div class="col-md-3" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

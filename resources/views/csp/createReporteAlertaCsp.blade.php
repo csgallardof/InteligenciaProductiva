@@ -78,8 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Alerta CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
-								<div class="media-body">
+							
 									<div class="col-md-10">
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
@@ -89,7 +88,7 @@
 
 									<hr>
 
-									<form  method="POST" action="{{ route('guardarReporteAlertaCsp') }}" enctype="multipart/form-data">
+								<form  method="POST" action="{{ route('guardarReporteAlertaCsp') }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 
 
@@ -98,7 +97,7 @@
 									 				<div class="col-md-3"></div>
 									 				<div class="col-md-3">
 									 					<label for="fecha_atencion">Fecha de Atencion de Reporte</label>
-									 					<input id="fecha_atencion" required type="date" name="fecha_atencion" value="{{ date('Y-m-d') }}">
+									 					<input id="fecha_atencion" class="form-control" required type="date" name="fecha_atencion" value="{{ date('Y-m-d') }}">
 									 				</div>
 									 				<div class="col-md-3">
 									 					<label for="tema">Tema</label>
@@ -111,7 +110,29 @@
 
 									 			</div>
 
+
 									  	</div>
+
+									  	<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-4">
+									 					<label for="fecha_reporte">Tipo Comunicacional</label>
+									 				</div>
+									 			</div>
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-3">
+									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
+									 						<option value="" disabled selected>Seleccione un tipo</option>
+									 						<option value="Institucional">Institucional</option>
+									 						<option value="Presidencia">Presidencia</option>
+									 					</select>
+									 				</div>
+									 			</div>
+	
+									  	</div>
+
 
 									  	<div class="form-group">
 									 			<div class="row">
@@ -181,7 +202,8 @@
 									 			</div>
 
 									  	</div>
-												<div class="from-group">
+										
+										<div class="from-group">
 											<div class="row"></div>
 
 										</div>
@@ -204,6 +226,7 @@
 									 			</div>
 
 									  	</div>
+
 									  	<div class="from-group">
 											<div class="row"></div>
 
@@ -223,15 +246,21 @@
 									  	</div>
 									  	</div>
 									  	</div>
+
+
+
 									  	<hr>
+
+
 									  	<div class="col-md-10">
 									  	<button type="submit" class="btn btn-primary pull-right">Registrar</button>
 									  	</div>
 									</form>
 
-								</div>
-							</div>
+								
 						</div>
+
+
 					</div>
 
 				</div>
@@ -249,7 +278,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
-                        </div>
+                        </div> 
                         <h6 align="center" style="color:green"> No existe notificaciones</h6>
                         <div class="panel-body">
 

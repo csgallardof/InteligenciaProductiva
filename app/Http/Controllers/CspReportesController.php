@@ -70,6 +70,7 @@ class CspReportesController extends Controller
         $lugar = $request['lugar'];
         $porcentaje_avance = $request['porcentaje_avance'];
         $lineas_discursivas = $request['lineas_discursivas'];
+        $tipo_comunicacional = $request['tipo_comunicacional'];
         if($request->hasFile('anexo')){
         $anexo = $request->file('anexo');   
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
@@ -88,6 +89,7 @@ class CspReportesController extends Controller
         $CspReportesHecho-> porcentaje_avance = $porcentaje_avance;
         $CspReportesHecho-> lineas_discursivas = $lineas_discursivas;
         $CspReportesHecho-> anexo = $nombreArchivo;
+        $CspReportesHecho-> tipo_comunicacional = $tipo_comunicacional;
         $CspReportesHecho-> save();
         return redirect('/institucion/consejo-sectorial-produccion');
     }
@@ -176,6 +178,8 @@ class CspReportesController extends Controller
         $solucion_propuesta = $request['solucion_propuesta'];
         $riesgo_principal = $request['riesgo_principal'];
         $fuente = $request['fuente'];
+        $tipo_comunicacional = $request['tipo_comunicacional'];
+        //dd($tipo_comunicacional);
         if($request->hasFile('anexo')){
         $anexo = $request->file('anexo');   
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
@@ -192,6 +196,7 @@ class CspReportesController extends Controller
         $CspReportesAlerta-> solucion_propuesta = $solucion_propuesta;
         $CspReportesAlerta-> riesgo_principal = $riesgo_principal;
         $CspReportesAlerta-> fuente = $fuente;
+        $CspReportesAlerta-> tipo_comunicacional = $tipo_comunicacional;
         $CspReportesAlerta-> anexo = $nombreArchivo;
         $CspReportesAlerta-> save();
         return redirect('/institucion/consejo-sectorial-produccion');
@@ -234,7 +239,7 @@ class CspReportesController extends Controller
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
+        ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
         ->orderBy('csp_reportes_hechos.id','DESC')
         ->paginate(20);
         //dd($reportesHechos);
@@ -244,7 +249,7 @@ class CspReportesController extends Controller
         ->join('csp_reporte_estados','csp_reporte_estados.id', '=','csp_reportes_alertas.estado_reporte_id')
         ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
+        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_alertas.id','DESC')
         ->paginate(20);
     
@@ -254,7 +259,7 @@ class CspReportesController extends Controller
         $reportesHechos = DB::table('csp_reportes_hechos')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
-        ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
+        ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_hechos.id','DESC')
         ->paginate(20);
         
@@ -262,7 +267,7 @@ class CspReportesController extends Controller
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_alertas.periodo_id')
         ->join('csp_reporte_estados','csp_reporte_estados.id', '=','csp_reportes_alertas.estado_reporte_id')
         ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
-        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
+        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_alertas.id','DESC')
         ->paginate(20);
         return view('csp.homeVisualizarReportesCSP',['reportesHechos'=>$reportesHechos],['reportesAlerta'=>$reportesAlerta])->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);
@@ -346,6 +351,8 @@ class CspReportesController extends Controller
         $fuente = $request->input('fuente');
         $porcentaje_avance = $request->input('porcentaje_avance');
         $lineas_discursivas = $request->input('lineas_discursivas');
+        $tipo_comunicacional = $request['tipo_comunicacional'];
+        //dd($tipo_comunicacional);
         if($request->hasFile('anexo')){
         $anexo = $request->file('anexo');   
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
@@ -361,6 +368,7 @@ class CspReportesController extends Controller
         $cspReportesHecho-> porcentaje_avance = $porcentaje_avance;
         $cspReportesHecho-> lineas_discursivas = $lineas_discursivas;
         $cspReportesHecho-> anexo = $nombreArchivo;
+        $cspReportesHecho-> tipo_comunicacional = $tipo_comunicacional;
         $cspReportesHecho-> save();
         return redirect('/institucion/consejo-sectorial-produccion');
     }
@@ -409,6 +417,8 @@ class CspReportesController extends Controller
         $solucion_propuesta = $request->input('solucion_propuesta');
         $riesgo_principal = $request->input('riesgo_principal');
         $fuente = $request->input('fuente');
+        $tipo_comunicacional = $request->input('tipo_comunicacional');
+        //dd($tipo_comunicacional);
         if($request->hasFile('anexo')){
         $anexo = $request->file('anexo');   
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
@@ -424,6 +434,7 @@ class CspReportesController extends Controller
         $cspReportesAlerta-> solucion_propuesta = $solucion_propuesta;
         $cspReportesAlerta-> riesgo_principal = $riesgo_principal;
         $cspReportesAlerta-> fuente = $fuente;
+        $cspReportesAlerta-> tipo_comunicacional = $tipo_comunicacional;
         $cspReportesAlerta-> anexo = $nombreArchivo;
         $cspReportesAlerta-> save();
         return redirect('/institucion/consejo-sectorial-produccion');

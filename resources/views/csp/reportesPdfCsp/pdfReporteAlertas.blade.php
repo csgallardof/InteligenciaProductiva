@@ -30,6 +30,13 @@
                            
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMipro->tema; ?><br>
+                            <strong >Tipo Comunicación: </strong>
+                             @if($reporteAlertaMipro->tipo_comunicacional!="")
+                            <?= $reporteAlertaMipro->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMipro->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMipro->fecha_atencion; ?><br>
                             <strong>Descripción: </strong><?= $reporteAlertaMipro->descripcion;?><br>
@@ -55,6 +62,13 @@
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAG->tema; ?><br>
+                            <strong >Tipo Comunicación: </strong>
+                            @if($reporteAlertaMAG->tipo_comunicacional!="")
+                            <?= $reporteAlertaMAG->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMAG->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAG->fecha_atencion; ?><br>
                             <strong>Descripción: </strong><?= $reporteAlertaMAG->descripcion;?><br>
@@ -79,6 +93,13 @@
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAP->tema; ?><br>
+                            <strong >Tipo Comunicación: </strong>
+                            @if($reporteAlertaMAP->tipo_comunicacional!="")
+                            <?= $reporteAlertaMAP->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMAP->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAP->fecha_atencion; ?><br>
                             <strong>Descripción: </strong><?= $reporteAlertaMAP->descripcion;?><br>
@@ -93,30 +114,7 @@
                             
                             <?php } ?>
 
-                            <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Secretaría Técnica para el Comité de la Reconstrucción y Reactivación Productiva</u></b> <br></p><br>
-                            
-                         @if(sizeof($data4)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
-                            </p>
-                         @endif
-                        <?php foreach($data4 as $reporteAlertaSTR){ ?>
-                           
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong >Tema: </strong><?= $reporteAlertaSTR->tema; ?><br>
-                            <strong>Fuente: </strong><?= $reporteAlertaSTR->fuente;?><br>
-                            <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaSTR->fecha_atencion; ?><br>
-                            <strong>Descripción: </strong><?= $reporteAlertaSTR->descripcion;?><br>
-                            <strong>Riesgo Principal: </strong><?= $reporteAlertaSTR->riesgo_principal; ?><br>
-                            <strong>Solución propuesta: </strong><?= $reporteAlertaSTR->solucion_propuesta; ?><br>
-                            <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
-                            @if($reporteAlertaSTR->acciones==null)
-                            No existe registros
-                            @endif
-                            <?= $reporteAlertaSTR->acciones; ?>
-                            </p>
-                            
-                            <?php } ?>
+                          
                         
                         </div>
                             

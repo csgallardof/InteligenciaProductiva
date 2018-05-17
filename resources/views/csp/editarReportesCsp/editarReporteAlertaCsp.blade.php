@@ -78,8 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Editar Reporte Alerta CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
-								<div class="media-body">
+							
 									<div class="col-md-10">
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
@@ -112,6 +111,25 @@
 									 				
 									 			</div>
 									 			
+									  	</div>
+									  	<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-4">
+									 					<label for="fecha_reporte">Tipo Comunicacional</label>
+									 				</div>
+									 			</div>
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-3">
+									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
+									 						<option value="" disabled selected>Seleccione un tipo</option>
+									 						<option value="Institucional">Institucional</option>
+									 						<option value="Presidencia">Presidencia</option>
+									 					</select>
+									 				</div>
+									 			</div>
+	
 									  	</div>
 
 									  	<div class="form-group">
@@ -364,8 +382,7 @@
 									  	</div>
 									</form>		
 									@endif
-								</div>
-							</div>
+								
 						</div>
 					</div>
 					

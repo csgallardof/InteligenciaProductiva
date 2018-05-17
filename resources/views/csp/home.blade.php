@@ -105,6 +105,7 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha Registro</th>
 											<th>Tema</th>
+											<th>Tipo Comunicación</th>
 											<th>Periodo</th>
 											<th>Fuente</th>
 											<th>Institución</th>
@@ -120,11 +121,15 @@
 						                          <td class="text-justify">{{$reportesHechos->fecha_reporte}}</td>
 						                          <td class="text-justify">{{$reportesHechos->FechaRegistro}}</td>
 						                          <td class="text-justify">{{$reportesHechos->tema}}</td>
+						                          <td class="text-justify">
+											                 @if($reportesHechos->tipo_comunicacional!="")
+									                            {{$reportesHechos->tipo_comunicacional}}
+									                            @else
+									                            No definido
+									                            @endif
+															                          </td>
 						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
-
-
 						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
-
 						                          <td class="text-justify">{{ $reportesHechos->Institucion}}</td>
 						                          <td class="text-justify">
 						                     		 @if(($reportesHechos->anexo)!="000Ninguno")
@@ -183,9 +188,9 @@
 											<th>Fecha de Atencion</th>
 											<th>Fecha Registro</th>
 											<th>Tema</th>
+											<th>Tipo Comunicación</th>
 											<th>Periodo</th>
 											<th>Fuente</th>
-
 											<th>Estado</th>
 											<th>Institución</th>
 											<th>Anexo</th>
@@ -201,6 +206,13 @@
 						                            <td class="text-justify">{{ $reportesAlerta->fecha_atencion }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->FechaRegistro }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->tema }}</td>
+						                            <td class="text-justify">
+											                 @if($reportesAlerta->tipo_comunicacional!="")
+									                            {{$reportesAlerta->tipo_comunicacional}}
+									                            @else
+									                            No definido
+									                            @endif
+															                          </td>
 						                            <td class="text-justify">{{ $reportesAlerta->Periodo }}</td>
 						                            <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
 

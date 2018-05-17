@@ -78,7 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Hechos CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							<div class="height-lg" >
 								<div class="media-body">
 									<div class="col-md-10">
 
@@ -97,7 +97,7 @@
 									 				<div class="col-md-3"></div>
 									 				<div class="col-md-3">
 									 					<label for="fecha_reporte">Fecha de Reporte</label>	
-									 					<input id="fecha_reporte"  type="date" name="fecha_reporte" value="{{ date('Y-m-d') }}" >
+									 					<input id="fecha_reporte" class="form-control"  type="date" name="fecha_reporte" value="{{ date('Y-m-d') }}" >
 
 
 									 				</div>
@@ -109,6 +109,26 @@
 									 				
 									 			</div>
 									 			
+									  	</div>
+
+									  	<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-4">
+									 					<label for="fecha_reporte">Tipo Comunicacional</label>
+									 				</div>
+									 			</div>
+									 			<div class="row">
+									 				<div class="col-md-3"></div>
+									 				<div class="col-md-3">
+									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
+									 						<option value="" disabled selected>Seleccione un tipo</option>
+									 						<option value="Institucional">Institucional</option>
+									 						<option value="Presidencia">Presidencia</option>
+									 					</select>
+									 				</div>
+									 			</div>
+	
 									  	</div>
 
 									  	<div class="form-group">
@@ -127,6 +147,7 @@
 									 			</div>
 									 			
 									  	</div>
+
 									  	<div class="form-group">
 									 			<div class="row">
 									 				<div class="col-md-3"></div>
@@ -141,6 +162,7 @@
 									 				<div class="col-md-3"></div>
 
 									 			</div>
+									 	
 									 			
 									  	
 									 	<div class="form-group">

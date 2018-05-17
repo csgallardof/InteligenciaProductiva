@@ -25,6 +25,7 @@ class CreateCspReportesHechosTable extends Migration
             $table->string('lugar');
             $table->integer('porcentaje_avance');
             $table->text('lineas_discursivas')->nullable();
+            $table->string('tipo_comunicacional');
             $table->string('anexo');
             $table->timestamps();
         });

@@ -30,6 +30,13 @@
                            
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMipro->tema; ?><br>
+                            <strong>Tipo Comunicacional: </strong> 
+                            @if($reporteHechoMipro->tipo_comunicacional!="")
+                            <?= $reporteHechoMipro->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMipro->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMipro->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMipro->porcentaje_avance;?>%<br>
@@ -50,6 +57,13 @@
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAG->tema; ?><br>
+                            <strong>Tipo Comunicacional: </strong> 
+                            @if($reporteHechoMAG->tipo_comunicacional!="")
+                            <?= $reporteHechoMAG->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMAG->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAG->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAG->porcentaje_avance;?>%<br>
@@ -69,6 +83,13 @@
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAP->tema; ?><br>
+                            <strong>Tipo Comunicacional: </strong> 
+                            @if($reporteHechoMAP->tipo_comunicacional!="")
+                            <?= $reporteHechoMAP->tipo_comunicacional; ?>
+                            @else
+                            No Definido
+                            @endif
+                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMAP->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAP->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAP->porcentaje_avance;?>%<br>
@@ -77,26 +98,7 @@
                             </p>
                             
                             <?php } ?>
-
-                        <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Secretaría Técnica para el Comité de la Reconstrucción y Reactivación Productiva</u></b> <br></p><br>
-                            
-                         @if(sizeof($data4)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
-                            </p>
-                         @endif
-                        <?php foreach($data4 as $reporteHechoSTR){ ?>
-                           
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>Tema: </strong>  <?= $reporteHechoSTR->tema; ?><br>
-                            <strong>Fuente: </strong><?= $reporteHechoSTR->fuente;?><br>
-                            <strong>Fecha Reporte: </strong><?= $reporteHechoSTR->fecha_reporte; ?><br>
-                            <strong>Porcentaje de avance: </strong><?= $reporteHechoSTR->porcentaje_avance;?>%<br>
-                            <strong>Lugar: </strong><?= $reporteHechoSTR->lugar; ?><br>
-                            <strong>Descripción: </strong><?= $reporteHechoSTR->descripcion; ?>
-                            </p>
-                            
-                            <?php } ?>
+                        
                         </div>
                             
                         

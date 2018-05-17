@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Collection as Collection;
-use DB; 
+use DB;
+use DateTime; 
 class CspPdfReportesAgendaController extends Controller
 {
     public function listaAgendaTerritorialCsp(){
@@ -17,9 +18,11 @@ class CspPdfReportesAgendaController extends Controller
         ->join('csp_tipo_agendas','csp_tipo_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
         ->join('csp_tipo_impacto_agendas','csp_tipo_impacto_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
         ->join('institucions','institucions.id', '=','csp_agenda_territorials.institucion_id')
-        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
+        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.id','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.responsable','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.mes','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
         ->orderBy('csp_agenda_territorials.id','DESC')
         ->get();
+
+       
         return view('csp.cspAgendaTerritorial.PdfReportes.listaPDFAgendaTerritorial')->with(["agendaTerritorial"=>$agendaTerritorial]);
     }
     public function crearReporteAgendaTerritorial(Request $request,$tipo){
@@ -35,7 +38,7 @@ class CspPdfReportesAgendaController extends Controller
         }
         $consulta=substr($check,0,-1); 
         //dd($consulta);
-        $agendaTerritorialSem1=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
+        $agendaTerritorialSem1=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.tipo_comunicacional,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
 			JOIN csp_periodo_agendas ON csp_periodo_agendas.id=csp_agenda_territorials.periodo_agenda_id
 			JOIN csp_tipo_agendas ON csp_tipo_agendas.id=csp_agenda_territorials.tipo_agenda_id
 			JOIN csp_tipo_impacto_agendas ON csp_tipo_impacto_agendas.id=csp_agenda_territorials.tipo_impacto_id
@@ -46,7 +49,7 @@ class CspPdfReportesAgendaController extends Controller
         $agendaTerritorialSem1=Collection::make($agendaTerritorialSem1);
         //dd($agendaTerritorialSem1);
 
-        $agendaTerritorialSem2=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
+        $agendaTerritorialSem2=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.tipo_comunicacional,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
             JOIN csp_periodo_agendas ON csp_periodo_agendas.id=csp_agenda_territorials.periodo_agenda_id
             JOIN csp_tipo_agendas ON csp_tipo_agendas.id=csp_agenda_territorials.tipo_agenda_id
             JOIN csp_tipo_impacto_agendas ON csp_tipo_impacto_agendas.id=csp_agenda_territorials.tipo_impacto_id
@@ -56,7 +59,7 @@ class CspPdfReportesAgendaController extends Controller
         
         $agendaTerritorialSem2=Collection::make($agendaTerritorialSem2);
 
-        $agendaTerritorialSem3=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
+        $agendaTerritorialSem3=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.tipo_comunicacional,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
             JOIN csp_periodo_agendas ON csp_periodo_agendas.id=csp_agenda_territorials.periodo_agenda_id
             JOIN csp_tipo_agendas ON csp_tipo_agendas.id=csp_agenda_territorials.tipo_agenda_id
             JOIN csp_tipo_impacto_agendas ON csp_tipo_impacto_agendas.id=csp_agenda_territorials.tipo_impacto_id
@@ -67,7 +70,7 @@ class CspPdfReportesAgendaController extends Controller
         
         $agendaTerritorialSem3=Collection::make($agendaTerritorialSem3);
 
-        $agendaTerritorialSem4=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
+        $agendaTerritorialSem4=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.tipo_comunicacional,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
             JOIN csp_periodo_agendas ON csp_periodo_agendas.id=csp_agenda_territorials.periodo_agenda_id
             JOIN csp_tipo_agendas ON csp_tipo_agendas.id=csp_agenda_territorials.tipo_agenda_id
             JOIN csp_tipo_impacto_agendas ON csp_tipo_impacto_agendas.id=csp_agenda_territorials.tipo_impacto_id
@@ -78,7 +81,7 @@ class CspPdfReportesAgendaController extends Controller
         $agendaTerritorialSem4=Collection::make($agendaTerritorialSem4);
         //dd($agendaTerritorialSem3);
 
-        $agendaTerritorialSem5=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
+        $agendaTerritorialSem5=DB::select("SELECT csp_agenda_territorials.id, csp_agenda_territorials.fecha_agenda,csp_agenda_territorials.tipo_comunicacional,csp_agenda_territorials.responsable,csp_agenda_territorials.descripcion_tipo_agenda,csp_agenda_territorials.descripcion_tipo_impacto,institucions.siglas_institucion as Institucion,csp_periodo_agendas.semana,csp_agenda_territorials.created_at as FechaRegistro,csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda,csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda, cantons.nombre_canton FROM csp_agenda_territorials
             JOIN csp_periodo_agendas ON csp_periodo_agendas.id=csp_agenda_territorials.periodo_agenda_id
             JOIN csp_tipo_agendas ON csp_tipo_agendas.id=csp_agenda_territorials.tipo_agenda_id
             JOIN csp_tipo_impacto_agendas ON csp_tipo_impacto_agendas.id=csp_agenda_territorials.tipo_impacto_id
