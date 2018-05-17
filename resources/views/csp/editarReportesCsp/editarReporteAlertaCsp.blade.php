@@ -78,8 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Editar Reporte Alerta CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
-								<div class="media-body">
+							
 									<div class="col-md-10">
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
@@ -383,8 +382,7 @@
 									  	</div>
 									</form>		
 									@endif
-								</div>
-							</div>
+								
 						</div>
 					</div>
 					

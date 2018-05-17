@@ -78,8 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Alerta CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
-								<div class="media-body">
+							
 									<div class="col-md-10">
 
 									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
@@ -89,7 +88,7 @@
 
 									<hr>
 
-									<form  method="POST" action="{{ route('guardarReporteAlertaCsp') }}" enctype="multipart/form-data">
+								<form  method="POST" action="{{ route('guardarReporteAlertaCsp') }}" enctype="multipart/form-data">
 										{{ csrf_field() }}
 
 
@@ -203,7 +202,8 @@
 									 			</div>
 
 									  	</div>
-												<div class="from-group">
+										
+										<div class="from-group">
 											<div class="row"></div>
 
 										</div>
@@ -226,6 +226,7 @@
 									 			</div>
 
 									  	</div>
+
 									  	<div class="from-group">
 											<div class="row"></div>
 
@@ -245,15 +246,21 @@
 									  	</div>
 									  	</div>
 									  	</div>
+
+
+
 									  	<hr>
+
+
 									  	<div class="col-md-10">
 									  	<button type="submit" class="btn btn-primary pull-right">Registrar</button>
 									  	</div>
 									</form>
 
-								</div>
-							</div>
+								
 						</div>
+
+
 					</div>
 
 				</div>

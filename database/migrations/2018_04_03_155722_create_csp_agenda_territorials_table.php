@@ -24,6 +24,7 @@ class CreateCspAgendaTerritorialsTable extends Migration
             $table->text('descripcion_tipo_impacto');
             $table->string('responsable');
             $table->datetime('fecha_agenda');
+            $table->string('tipo_comunicacional');
             $table->timestamps();
         });
     }

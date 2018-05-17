@@ -64,7 +64,16 @@
 									 					<label for="responsable">Responsable</label>
 									 					 <input type="text" required name="responsable" class="form-control" value="{{$CspAgendaTerritorial->responsable}}" >			
 									 				</div>
-									 				<div class="col-md-3"></div>
+									 				<div class="col-md-3">
+									 					<label for="responsable">Tipo Comunicacional</label>
+									 					 
+														<select name="tipo_comunicacional" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-default">
+			                                            <option value="" disabled selected>Seleccionar Tipo</option>
+			                                            <option value="Institucional">Institucional</option>
+			                                            <option value="Presidencia">Presidencia</option>
+			                                            
+			                                        </select>
+									 				</div>
 									 			</div>
 									 			
 									  	</div>

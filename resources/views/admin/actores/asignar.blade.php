@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">@yield('edit_titulo') Actor-Soluci&oacute;n <a href="{{ url('actores') }}" class="btn btn-primary pull-right">Regresar</a>
+                <div class="panel-heading">@yield('edit_titulo') Actor-Soluci&oacute;n <a href="{{ url('adminz/actores') }}" class="btn btn-primary pull-right">Regresar</a>
                 </div>
 
                 <div class="panel-body">

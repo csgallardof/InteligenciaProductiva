@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +26,7 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#229954"> 
-                                            <td colspan="6" align="center">
+                                            <td colspan="7" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                        <strong>Semana 1</strong>
                                                 </font>    
@@ -37,6 +37,11 @@
                                             <th align="center" width="2" height="10">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                     <b>Institución</b>
+                                                </font>
+                                            </th>
+                                            <th align="center" width="2" height="10">
+                                                <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
+                                                    <b>Tipo Cominicación</b>
                                                 </font>
                                             </th>
                                             <th align="center" width="40" height="10">
@@ -72,7 +77,7 @@
                                     <tbody>
                                         @if(sizeof($data1)==0)
                                             <tr > 
-                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                    <td colspan="7" align="center"><strong>No Existen Registros</strong></td> 
                                                  
                                             </tr>
                                         @endif
@@ -82,6 +87,15 @@
                                                 <td width="2" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$agendaTerritorialSem1->Institucion}}
+                                                    </font>
+                                                </td>
+                                                <td width="2" height="10">
+                                                    <font face="arial, verdana, helvetica" size=1>
+                                                    @if($agendaTerritorialSem1->tipo_comunicacional!="") 
+                                                    {{$agendaTerritorialSem1->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
                                                     </font>
                                                 </td>
                                                 <?php 
@@ -135,7 +149,7 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#F1C40F"> 
-                                            <td colspan="6" align="center">
+                                            <td colspan="7" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                        <strong>Semana 2</strong> 
                                                 </font>    
@@ -146,6 +160,11 @@
                                             <th align="center" width="2" height="10">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                     <b>Institución</b>
+                                                </font>
+                                            </th>
+                                            <th align="center" width="2" height="10">
+                                                <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
+                                                    <b>Tipo Cominicación</b>
                                                 </font>
                                             </th>
                                             <th align="center" width="40" height="10">
@@ -181,7 +200,7 @@
                                     <tbody>
                                         @if(sizeof($data2)==0)
                                             <tr > 
-                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                    <td colspan="7" align="center"><strong>No Existen Registros</strong></td> 
                                                  
                                             </tr>
                                         @endif
@@ -190,6 +209,15 @@
                                                 <td width="2" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$agendaTerritorialSem2->Institucion}}
+                                                    </font>
+                                                </td>
+                                                <td width="2" height="10">
+                                                    <font face="arial, verdana, helvetica" size=1> 
+                                                    @if($agendaTerritorialSem2->tipo_comunicacional!="") 
+                                                    {{$agendaTerritorialSem2->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
                                                     </font>
                                                 </td>
                                                 <?php 
@@ -242,7 +270,7 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#E67E22"> 
-                                            <td colspan="6" align="center">
+                                            <td colspan="7" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                         <strong>Semana 3</strong>
                                                 </font>    
@@ -253,6 +281,11 @@
                                             <th align="center" width="2" height="10">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                     <b>Institución</b>
+                                                </font>
+                                            </th>
+                                            <th align="center" width="2" height="10">
+                                                <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
+                                                    <b>Tipo Cominicación</b>
                                                 </font>
                                             </th>
                                             <th align="center" width="40" height="10">
@@ -288,7 +321,7 @@
                                     <tbody>
                                         @if(sizeof($data3)==0)
                                             <tr > 
-                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                    <td colspan="7" align="center"><strong>No Existen Registros</strong></td> 
                                                  
                                             </tr>
                                         @endif
@@ -297,6 +330,15 @@
                                                 <td width="2" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$agendaTerritorialSem3->Institucion}}
+                                                    </font>
+                                                </td>
+                                                <td width="2" height="10">
+                                                    <font face="arial, verdana, helvetica" size=1> 
+                                                    @if($agendaTerritorialSem3->tipo_comunicacional!="") 
+                                                    {{$agendaTerritorialSem3->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
                                                     </font>
                                                 </td>
                                                 <?php 
@@ -349,7 +391,7 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#8E44AD"> 
-                                            <td colspan="6" align="center">
+                                            <td colspan="7" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                         <strong>Semana 4</strong>
                                                 </font>    
@@ -360,6 +402,11 @@
                                             <th align="center" width="2" height="10">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                     <b>Institución</b>
+                                                </font>
+                                            </th>
+                                            <th align="center" width="2" height="10">
+                                                <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
+                                                    <b>Tipo Cominicación</b>
                                                 </font>
                                             </th>
                                             <th align="center" width="40" height="10">
@@ -395,7 +442,7 @@
                                     <tbody>
                                         @if(sizeof($data4)==0)
                                             <tr > 
-                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                    <td colspan="7" align="center"><strong>No Existen Registros</strong></td> 
                                                  
                                             </tr>
                                         @endif
@@ -404,6 +451,15 @@
                                                 <td width="2" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$agendaTerritorialSem4->Institucion}}
+                                                    </font>
+                                                </td>
+                                                <td width="2" height="10">
+                                                    <font face="arial, verdana, helvetica" size=1> 
+                                                    @if($agendaTerritorialSem4->tipo_comunicacional!="") 
+                                                    {{$agendaTerritorialSem4->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
                                                     </font>
                                                 </td>
                                                 <?php 
@@ -456,7 +512,7 @@
                                 <table width="570"  border=1 cellspacing=0 cellpadding=2 bordercolor="666633" >
                                     <thead>
                                         <tr bgcolor="#B03A2E"> 
-                                            <th colspan="6" align="center">
+                                            <th colspan="7" align="center">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                         <strong>Semana 5</strong>
                                                 </font>    
@@ -467,6 +523,11 @@
                                             <th align="center" width="2" height="10">
                                                 <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
                                                     <b>Institución</b>
+                                                </font>
+                                            </th>
+                                            <th align="center" width="2" height="10">
+                                                <font color="#FDFEFE" face="arial, verdana, helvetica" size=1> 
+                                                    <b>Tipo Cominicación</b>
                                                 </font>
                                             </th>
                                             <th align="center" width="40" height="10">
@@ -502,7 +563,7 @@
                                     <tbody>
                                         @if(sizeof($data5)==0)
                                             <tr > 
-                                                    <td colspan="6" align="center"><strong>No Existen Registros</strong></td> 
+                                                    <td colspan="7" align="center"><strong>No Existen Registros</strong></td> 
                                                  
                                             </tr>
                                         @endif
@@ -511,6 +572,15 @@
                                                 <td width="2" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
                                                     {{$agendaTerritorialSem5->Institucion}}
+                                                    </font>
+                                                </td>
+                                                <td width="2" height="10">
+                                                    <font face="arial, verdana, helvetica" size=1> 
+                                                    @if($agendaTerritorialSem5->tipo_comunicacional!="") 
+                                                    {{$agendaTerritorialSem5->tipo_comunicacional}}
+                                                    @else
+                                                    No Definido
+                                                    @endif
                                                     </font>
                                                 </td>
                                                 <?php 
