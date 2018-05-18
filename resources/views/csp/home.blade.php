@@ -97,7 +97,7 @@
 									<div class="col-md-12">
 
 
-								<table class="table" class="table nowrap" width="100%">
+								<table class="table" class="table nowrap" >
 
 									<thead>
 										{{$reportesHechos->render()}}
