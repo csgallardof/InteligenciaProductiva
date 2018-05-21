@@ -211,7 +211,7 @@ class InstitucionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexActorSolucion(Request $request)
+    public function indexActorSolucion()
     {
         //dd($request);              
         $actoresSoluciones = ActorSolucion::all();
