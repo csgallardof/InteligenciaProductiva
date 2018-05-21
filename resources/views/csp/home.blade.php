@@ -126,7 +126,7 @@
 									                            {{$reportesHechos->tipo_comunicacional}}
 									                            @else
 									                            No definido
-									                            @endif
+									                            @endif 
 															                          </td>
 						                          <td class="text-justify">{{$reportesHechos->Periodo}}</td>
 						                          <td class="text-justify">{{$reportesHechos->fuente}}</td>
