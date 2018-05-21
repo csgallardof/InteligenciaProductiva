@@ -143,6 +143,7 @@
                                         </div>
                                         </div>
                                         <hr>
+                                        @include('flash::message')
                                       <table class="table" class="table nowrap" width="100%">
 
                                     <thead>

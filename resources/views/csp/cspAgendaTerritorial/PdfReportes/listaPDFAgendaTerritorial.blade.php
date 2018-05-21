@@ -62,6 +62,8 @@
                                         </div>
                                         </div>       
                         <hr>
+                        <br>
+                                @include('flash::message')
                             <div class="col-md-12"> 
                             <div class="table-responsive">
                                 <table id="data-table" class="table  table-bordered" width="100%">

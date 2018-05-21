@@ -204,9 +204,9 @@
                             <div class="tab-overflow">
                                 <ul class="nav nav-tabs ">
                                     <li class="prev-button"><a href="javascript:;" data-click="prev-tab" class="text-inverse"><i class="fa fa-arrow-left"></i></a></li>
-                                    <li class=""><a href="#nav-tab2-11" data-toggle="tab">Principios y Alineamientos</a></li>
-                                    <li class=""><a href="#nav-tab2-12" data-toggle="tab">Elementos Esenciales</a></li>
-                                    <li class=""><a href="#nav-tab2-13" data-toggle="tab">Proyectos Aprobados</a></li>
+                                    <li class="col-md-5"><a href="#nav-tab2-11" data-toggle="tab">Principios y Alineamientos</a></li>
+                                    <li class="col-md-5"><a href="#nav-tab2-12" data-toggle="tab">Elementos Esenciales</a></li>
+                                    <li class="col-md-4"><a href="#nav-tab2-13" data-toggle="tab">Proyectos Aprobados</a></li>
                                     <li class="next-button"><a href="javascript:;" data-click="next-tab" class="text-inverse"><i class="fa fa-arrow-right"></i></a></li>
                                 </ul>
                             </div>

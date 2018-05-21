@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Collection as Collection;
+use Laracasts\Flash\Flash;
 use DB;
 use DateTime; 
 class CspPdfReportesAgendaController extends Controller
@@ -26,7 +27,11 @@ class CspPdfReportesAgendaController extends Controller
         return view('csp.cspAgendaTerritorial.PdfReportes.listaPDFAgendaTerritorial')->with(["agendaTerritorial"=>$agendaTerritorial]);
     }
     public function crearReporteAgendaTerritorial(Request $request,$tipo){
+        if(is_null($request['check'])){
+        Flash::error("Recuerde seleccionar uno o mas Registros");
+        return redirect('/institucion/reportes-lineas-discursivas-csp');
 
+     }else
         //dd($periodo_reporte);
      $vistaurl="csp.cspAgendaTerritorial.PdfReportes.pdfAgendaTerritorial";
      

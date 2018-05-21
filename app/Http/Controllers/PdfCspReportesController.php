@@ -8,6 +8,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection as Collection;
 use App\CspReportesHecho;
 use App\CspPeriodoReporte;
+use Laracasts\Flash\Flash;
 use DB;
 //use App\Pais;
 
@@ -77,6 +78,7 @@ class PdfCspReportesController extends Controller
     }
     public function crearPDF($dato1,$dato2,$dato3,$vistaurl,$tipo)
     {
+
         $hora = date("h:i");
         $semana_reporte=date("Y/m/d");
         $fecha_creacion_Reporte=$semana_reporte." ".$hora;
@@ -126,8 +128,12 @@ class PdfCspReportesController extends Controller
 
 
     public function crearReporteHechosRelevantes(Request $request,$tipo){
+        //dd( );
+     if(is_null($request['check'])){
+        Flash::error("Debe Seleccionar uno o mas Reportes");
+        return redirect('/institucion/lista-reportes-csp');
 
-     
+     }else
         //dd($periodo_reporte);
      $vistaurl="csp.reportesPdfCsp.pdf";
      
@@ -221,7 +227,11 @@ class PdfCspReportesController extends Controller
 
     public function crearReporteHechosLineasDiscursivas(Request $request,$tipo){
 
-     
+     if(is_null($request['check'])){
+        Flash::error("Recuerde seleccionar uno o mas Reportes");
+        return redirect('/institucion/reportes-lineas-discursivas-csp');
+
+     }else
         //dd($periodo_reporte);
      $vistaurl="csp.reportesPdfCsp.pdfLineasDiscursivas";
      
@@ -366,6 +376,12 @@ class PdfCspReportesController extends Controller
 
     }
      public function crearReporteAlerta(Request $request,$tipo){
+       
+        if(is_null($request['check'])){
+        Flash::error("Recuerde seleccionar uno o mas Reportes");
+        return redirect('/institucion/reportes-lineas-discursivas-csp');
+
+     }else
         //dd($periodo_reporte);
      $vistaurl="csp.reportesPdfCsp.pdfReporteAlertas";
      
