@@ -23,7 +23,7 @@
 					                <th>Acci&oacute;n</th>
 					            </tr>
 					        </thead>
-					        <tbody>
+					        <!-- <tbody>
 					        	@foreach($actoresSoluciones as $actorSolucion)
 								<tr>
 					                <td>
@@ -52,7 +52,7 @@
 					                <td></td>
 					            </tr>
 					            @endforeach		            
-					        </tbody>
+					        </tbody> -->
 					    </table>
 					</div>
 

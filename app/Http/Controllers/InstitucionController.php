@@ -213,10 +213,11 @@ class InstitucionController extends Controller
      */
     public function indexActorSolucion()
     {
-                
+        //dd($request);              
         $actoresSoluciones = ActorSolucion::all();
 
-        return view('admin.actores.home')->with(["actoresSoluciones"=>$actoresSoluciones]); 
+
+       return view('admin.actores.home')->with(["actoresSoluciones"=>$actoresSoluciones]); 
         
     }
     /**
