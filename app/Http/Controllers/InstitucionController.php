@@ -216,6 +216,8 @@ class InstitucionController extends Controller
         //dd($request);              
         $actoresSoluciones = ActorSolucion::all();
 
+        $actorSolucion = DB::SELECT("");
+
 
        return view('admin.actores.homeActores')->with(["actoresSoluciones"=>$actoresSoluciones]); 
         
