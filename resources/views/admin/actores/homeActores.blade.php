@@ -33,6 +33,14 @@
 											{{ "Consejo Consultivo" }}
 					                	@endif
 					                </td>
+					                <td>
+					                	@if( $actorSolucion-> tipo_fuente == 1)
+					                		{{ $actorSolucion->solucion-> verbo_solucion." ".$actorSolucion->solucion->sujeto_solucion ." ".$actorSolucion->solucion->complemento_solucion }}
+					                	@endif
+					                	@if( $actorSolucion-> tipo_fuente == 2)
+					                		{{ $actorSolucion-> pajustada-> nombre_pajustada}}
+					                	@endif
+					                </td>
 					                
 					            </tr>
 					            @endforeach		            
