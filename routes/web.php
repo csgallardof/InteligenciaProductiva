@@ -194,10 +194,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
           'as'=>'actorSolucion.asignar'
      ]);  //admin cruds
 
-     Route::get('actores',[
-          'uses'=>'InstitucionController@indexActorSolucion',
-          'as'=>'actores'
-     ]);  //admin cruds
+     Route::get('actores','InstitucionController@indexActorSolucion');  //admin cruds
 
      Route::get('soluciones_por_tipo/{tipo_fuente}','SolucionesController@getSolucionesByTipoFuente');
 

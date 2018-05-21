@@ -40,7 +40,7 @@
 			                        </li>
 					                <li><a class="dropdown-item" href="{{ route('participantes.index') }}">Participantes</a></li>
 			                        <li><a href="{{ route('instituciones.index') }}">Instituciones</a></li>
-			                        <li><a href="{{ route('actores') }}">Responsables</a></li>
+			                        <li><a href="/admin/actores">Responsables</a></li>
 			                    </ul>
 			                    
 
