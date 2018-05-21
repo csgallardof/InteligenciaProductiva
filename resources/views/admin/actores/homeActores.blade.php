@@ -23,7 +23,36 @@
 					                <th>Acci&oacute;n</th>
 					            </tr>
 					        </thead>
-					       
+					         <tbody>
+					        	@foreach($actoresSoluciones as $actorSolucion)
+								<tr>
+					                <td>
+					                	@if($actorSolucion-> tipo_fuente == 1)
+					                		{{ "Mesas Competitivas" }}
+					                	@else
+											{{ "Consejo Consultivo" }}
+					                	@endif
+					                </td>
+					                <td>
+					                	@if( $actorSolucion-> tipo_fuente == 1)
+					                		{{ $actorSolucion->solucion-> verbo_solucion." ".$actorSolucion->solucion->sujeto_solucion ." ".$actorSolucion->solucion->complemento_solucion }}
+					                	@endif
+					                	@if( $actorSolucion-> tipo_fuente == 2)
+					                		{{ $actorSolucion-> pajustada-> nombre_pajustada}}
+					                	@endif
+					                </td>
+					                <td>{{ $actorSolucion->usuario-> name }}</td>
+					                <td>@if($actorSolucion->tipo_actor == 1)
+					                		{{ "Responsable" }}
+					                	@endif
+					                	@if($actorSolucion->tipo_actor == 2)
+					                		{{ "Corresponsable" }}
+					                	@endif
+					                </td>
+					                <td></td>
+					            </tr>
+					            @endforeach		            
+					        </tbody> 
 					    </table>
 					</div>
 
