@@ -113,10 +113,21 @@
 	                                </label>
 	                                <div>
 	                                	<table id="data-table2" class="table table-striped table-bordered"">
+	                                			
+												<tr>
+											    <th><label class='text-default'>
+
+				                                	Codigo:
+				                                	
+				                                </label></th>
+												    <td>
+												    	{{$solucion->id}}
+						                             </td>
+											  </tr>
 	                                			<tr>
 											    <th><label class='text-default'>
 
-				                                	<i class="fa fa-clock-o fa-fw"></i>Creado:
+				                                	Creado:
 				                                	
 				                                </label></th>
 												    <td>
