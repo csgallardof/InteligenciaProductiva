@@ -336,12 +336,13 @@ class ActividadesController extends Controller
      */
     public function saveActividad(Request $request, $tipo_actor, $idSolucion)
     {
+        $tipo_fuente = Auth::user()->tipo_fuente;
         $actividad = new Actividad;
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
         $actividad-> tipo_fuente = $tipo_actor;
-        //$actividad-> tipo_actor = $tipo_fuente;
+        
 
         //dd($request->tipo_fuente_id);
         if( isset($request-> fecha) ){
@@ -353,14 +354,7 @@ class ActividadesController extends Controller
                 }
             if($request->tipo_fuente_id ==2){
                 dd($tipo_fuente_id);
-                // $pajustada = Pajustada::find($idSolucion);
-
-                // $solucionesOriginales = Solucion::where('pajustada_id','=',$idSolucion)->get();
-                // foreach ($solucionesOriginales as $solucion) {
-                //     $solucionCCPT= Solucion::find($solucion-> id);
-                //     $solucionCCPT-> estado_id = 3;  // 3 = Propuesta en desarrollo
-                //     $solucionCCPT->save();
-                // }
+                
                 $solucion = Solucion::find($idSolucion);
                 $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
                 $solucion->save();
@@ -452,7 +446,7 @@ class ActividadesController extends Controller
         Flash::success("Se ha creado la actividad exitosamente");
         
         if($tipo_actor == 1){
-                dd($tipo_fuente);
+               
             return redirect()->route('verSolucion.despliegue',[$tipo_actor,$idSolucion]);
         }else{
             return redirect()->route('verSolucion.consejo',[$tipo_actor, $idSolucion]);

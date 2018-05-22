@@ -1,4 +1,4 @@
-@extends('layouts.cspAgenda')
+@extends('layouts.cspAgenda') 
 
 @section('content')
 

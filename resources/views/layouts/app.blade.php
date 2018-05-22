@@ -73,6 +73,7 @@
             <script src="{{ asset('js/apps.js') }}"></script>
             <script src="{{ asset('js/dashboard.js') }}"></script>
             <script src="{{ asset('js/dropdown.js') }}"></script>
+            <script src="{{ asset('js/Solucion/comboSolucion.js') }}"></script>
 
         @show
 
