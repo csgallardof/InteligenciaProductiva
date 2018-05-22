@@ -1,12 +1,8 @@
-alert('HOLA');
+
 function getSelectValue(){
 				
 				var selectedValue= document.getElementById("select-tipo-fuente").value;
-				alert(selectedValue);
-				console.log(selectedValue);
 
-
-					console.log();
 				if(selectedValue==""){
 					//alert("no exite id");
 					var html_select_vacio = '<option value="">Seleccione Propuesta</option>';

@@ -36,7 +36,7 @@
 		          <ol class="breadcrumb">
 
 		            <li class="home">Filtros</li>
-		            <li class="active"><button type="submit" class="btn btn-primary m-l-20 pull-rigth">Filtrar</button></li>
+		            <li class="active"><button type="submit" class="btn btn-primary m-l-20 pull-rigth">Aplicar Filtros</button></li>
 
 		          </ol>
 		        </div>
@@ -144,10 +144,10 @@
                             <div class="form-group">
 
                                 <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-
+									
                                     <div class="input-group custom-search-form">
 
-                                        <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" required style="font-size: 16px" >
+                                        <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" value="{{$parametro}}" required style="font-size: 16px" >
                                         <span class="input-group-btn">
                                             <button class="btn btn-buscar btn-lg" style="background: #EF5D06; color: #fff; " type="submit" height="50px">
                                                 <span class="glyphicon glyphicon-search"></span>

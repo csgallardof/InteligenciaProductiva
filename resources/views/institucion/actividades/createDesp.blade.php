@@ -67,13 +67,13 @@
 									 	<div class="form-group">
 									 		<div class="row">
 									 			<div class="col-md-7">
-									 				<label for="exampleTextarea">Comentario</label>
+									 				<label for="exampleTextarea">Descripcion Actividad</label>
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="nunCaracteres" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<textarea maxlength="280" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea maxlength="280" required="" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 
 									  	</div>
 									  	@if( isset( $actividades ) && count($actividades) == 0)

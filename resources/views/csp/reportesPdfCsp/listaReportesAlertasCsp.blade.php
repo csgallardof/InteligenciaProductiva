@@ -82,10 +82,11 @@
                                             </div>
                                             <div class="col-lg-3 ">
                                             <select name="tipo_comunicacional" class="form-control" >
-                                                            <option value="">Todos los tipos de Comunicacion</option>
-                                                            
+                                                            <option value="">Todos</option>
                                                             <option value="Institucional">Institucional</option>
                                                             <option value="Presidencia">Presidencia</option>
+                                                            <option value="Institucional y Presidencia">Institucional y Presidencia</option>
+                                                            
                               
                                                             
                                                        

@@ -127,6 +127,7 @@
 									 						<option value="" disabled selected>Seleccione un tipo</option>
 									 						<option value="Institucional">Institucional</option>
 									 						<option value="Presidencia">Presidencia</option>
+									 						<option value="Institucional y Presidencia">Institucional y Presidencia</option>
 									 					</select>
 									 				</div>
 									 			</div>
