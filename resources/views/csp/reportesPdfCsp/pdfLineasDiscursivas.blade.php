@@ -23,7 +23,7 @@
                               
                               @if(sizeof($data1)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif   
                            
@@ -41,7 +41,7 @@
                             
                             
                             @if($reporteHechoMipro->lineas_discursivas==null)
-                            no existe registro    
+                            No Aplica    
                             @endif                                
                             <?= $reporteHechoMipro->lineas_discursivas; ?>
                             </p>
@@ -52,7 +52,7 @@
 
                             @if(sizeof($data3)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
@@ -68,7 +68,7 @@
                             <br> <br>
                             
                             @if($reporteHechoMAG->lineas_discursivas==null)
-                            no existe registro    
+                            No Aplica   
                             @endif
                             <?= $reporteHechoMAG->lineas_discursivas; ?>
                             
@@ -79,7 +79,7 @@
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
                             @if(sizeof($data2)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
@@ -95,7 +95,7 @@
                             <br> <br>
                             
                             @if($reporteHechoMAP->lineas_discursivas==null)
-                            no existe registro    
+                            No Aplica  
                             @endif
                             <?= $reporteHechoMAP->lineas_discursivas; ?>
                             </p>

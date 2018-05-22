@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app') 
 
 @section('start_css2')
 <style>
@@ -54,7 +54,7 @@
                             <label for="tipo_fuente" class="col-md-4 control-label">Fuente:</label>
                             <div class="col-md-6">
 
-                                <select class="form-control" name="tipo_fuente_id" id="tipo_fuente" data-size="15" data-live-search="true" data-style="btn-info" required>
+                                <select id="select-tipo-fuente" class="form-control" onchange="getSelectValue();" name="tipo_fuente_id"  data-size="15" data-live-search="true" data-style="btn-info" required>
                                     <option selected="selected" class="select_placeholder">Seleccione una fuente</option>
                                     <option value="1" > {{ "Mesas Competitivas" }}</option>
                                     <option value="2" > {{ "Consejo Consultivo" }}</option>
@@ -62,12 +62,13 @@
 
                             </div>
                             <label for="solucion" class="col-md-4 control-label">Soluci&oacute;n:</label>
-                            <div class="col-md-15">
-                                
-                                <select class="form-control" name="solucion_id" id="soluciones" data-size="200" data-live-search="true" data-style="btn-info" required>
-                                    
-                                </select>
+                            
 
+                            <div class="col-md-15">
+                                <select  id="select-Solucion" name="solucion_id" class="form-control" name="solucion_id"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
+                                            <option value="" >Seleccione propuesta</option>
+                                            
+                                </select>
                             </div>
 
                         </div>

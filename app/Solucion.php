@@ -11,6 +11,11 @@ class Solucion extends Model
 
     protected $primaryKey = 'id';
 
+    public static function propuestas($id){
+        return Solucion::Where('tipo_fuente','=',$id)
+        ->get();
+    }
+
     public function provincia(){
 
         return $this->belongsTo('App\Provincia');

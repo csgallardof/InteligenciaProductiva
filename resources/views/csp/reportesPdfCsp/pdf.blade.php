@@ -22,7 +22,7 @@
                               
                               @if(sizeof($data1)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif   
                            
@@ -50,7 +50,7 @@
 
                             @if(sizeof($data3)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
@@ -76,7 +76,7 @@
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
                             @if(sizeof($data2)==0)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No existe registros </strong> 
+                            <strong>No Aplica </strong> 
                             </p>
                          @endif
                         <?php foreach($data2 as $reporteHechoMAP){ ?>

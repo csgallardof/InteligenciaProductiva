@@ -214,9 +214,12 @@ class InstitucionController extends Controller
     public function indexActorSolucion()
     {
         //dd($request);              
-        $actoresSoluciones = ActorSolucion::all();
+        //$actoresSoluciones = ActorSolucion::all();
 
-        $actorSolucion = DB::SELECT("");
+        $actoresSoluciones = DB::SELECT("SELECT solucions.tipo_fuente,actor_solucion.tipo_actor,users.name, solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion FROM actor_solucion
+            JOIN users ON users.id=actor_solucion.user_id
+            JOIN solucions ON solucions.id=actor_solucion.solucion_id");
+        //dd($actoresSoluciones);
 
 
        return view('admin.actores.homeActores')->with(["actoresSoluciones"=>$actoresSoluciones]); 
@@ -241,6 +244,7 @@ class InstitucionController extends Controller
     public function asignarActorSolucion(Request $request)
     {
         
+        
         if( $request->tipo_actor_id == 1){   //Para registrar Responsable a una solucion
             $validacion = ActorSolucion::where('solucion_id','=',$request->solucion_id)
                                     ->where('tipo_actor','=', 1 )->get();
@@ -250,6 +254,7 @@ class InstitucionController extends Controller
                                     ->where('tipo_actor','=', 2 )->get();
 
             if( count($validacion) == 0 && count($validacion2) == 0){
+
                 $actorSolucion = new ActorSolucion;
                 $actorSolucion->user_id = $request->institucion;
                 $actorSolucion->solucion_id = $request->solucion_id;
@@ -260,31 +265,23 @@ class InstitucionController extends Controller
 
                 $user = User::find($request-> institucion);
 
-                if($request->tipo_fuente_id ==1){
+                
                     $solucion = Solucion::find($request-> solucion_id);
                     $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
                     $solucion->save();
 
                     /*$this->enviarCorreoAsignacion($user, 'Responsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );*/
-                }
-                if($request->tipo_fuente_id ==2){
-                    $pajustada = Pajustada::find($request-> solucion_id);
-                    /*$this->enviarCorreoAsignacion($user, 'Responsable', $pajustada->nombre_pajustada );*/
-
-                    $solucionesOriginales = Solucion::where('pajustada_id','=',$request->solucion_id)->get();
-                    foreach ($solucionesOriginales as $solucion) {
-                        $solucionCCPT= Solucion::find($solucion-> id);
-                        $solucionCCPT-> estado_id = 2;  // 2 = Propuesta con responsable asignado
-                        $solucionCCPT->save();
-                    }
-                }                
+                
+                               
                 
             }else{
                 if(count($validacion) > 0) {
-                    Flash::error("La solucion ya tiene un responsable");    
+                    Flash::error("La solucion ya tiene un responsable"); 
+                    //dd('nose guardo');   
                 }
                 if(count($validacion2) > 0) {
                     Flash::error("La institucion ya es actor de la solucion seleccionada");
+                    //dd('nose guardo');
                 }
                 
             }
@@ -309,28 +306,37 @@ class InstitucionController extends Controller
 
                 $user = User::find($request-> institucion);
 
-                if($request-> tipo_fuente ==1){
-                    $solucion = Solucion::find($request-> solucion_id);
+               
+                    //$solucion = Solucion::find($request-> solucion_id);
                     /*$this->enviarCorreoAsignacion($user, 'Corresponsable', $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion );*/
-                }
-                if($request-> tipo_fuente ==2){
-                    $pajustada = Pajustada::find($request-> solucion_id);
-                    /*$this->enviarCorreoAsignacion($user,'Corresponsable',$pajustada->nombre_pajustada );*/
-                }
+                
+                
             }else{
                 Flash::error("La institucion ya es actor de la solucion seleccionada");
+
+
             }
 
         }
+        //dd("Si llegue");
         
-        $actoresSoluciones = ActorSolucion::all();
-
-        return view('admin.actores.home')->with(["actoresSoluciones"=>$actoresSoluciones]); 
+        $actoresSoluciones = DB::SELECT("SELECT solucions.tipo_fuente,actor_solucion.tipo_actor,users.name, solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion FROM actor_solucion
+            JOIN users ON users.id=actor_solucion.user_id
+            JOIN solucions ON solucions.id=actor_solucion.solucion_id");
+        
+        return view('admin.actores.homeActores')->with(["actoresSoluciones"=>$actoresSoluciones]); 
 
 
     }
 
     // FIN ASIGNACION DE ACTOR SOLUCION
+
+
+    public function obtenerPropuestas(Request $request, $id){
+        
+        return Solucion::propuestas($id);
+
+    }
 
 
 

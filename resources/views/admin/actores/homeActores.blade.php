@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                 	<h4>Actores - Soluci&oacute;n </h4>
-                	
+                	@include('flash::message')
                 	<a href="{{ route('actorSolucion.create') }}" class="btn btn-primary pull-right">Nuevo</a></div>
 
 					<div class="panel-body">
@@ -34,14 +34,12 @@
 					                	@endif
 					                </td>
 					                <td>
-					                	@if( $actorSolucion-> tipo_fuente == 1)
-					                		{{ $actorSolucion->solucion-> verbo_solucion." ".$actorSolucion->solucion->sujeto_solucion ." ".$actorSolucion->solucion->complemento_solucion }}
-					                	@endif
-					                	@if( $actorSolucion-> tipo_fuente == 2)
-					                		{{ $actorSolucion->solucion-> verbo_solucion." ".$actorSolucion->solucion->sujeto_solucion ." ".$actorSolucion->solucion->complemento_solucion }}
-					                	@endif
+					                	
+					                		{{ $actorSolucion->verbo_solucion." ".$actorSolucion->sujeto_solucion ." ".$actorSolucion->complemento_solucion }}
+					                	
+					                	
 					                </td>
-					                <td>{{ $actorSolucion->usuario-> name }}</td>
+					                <td>{{ $actorSolucion->name }}</td>
 					                <td>@if($actorSolucion->tipo_actor == 1)
 					                		{{ "Responsable" }}
 					                	@endif

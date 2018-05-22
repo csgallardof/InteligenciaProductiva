@@ -72,8 +72,10 @@ class CspReportesController extends Controller
         $lineas_discursivas = $request['lineas_discursivas'];
         $tipo_comunicacional = $request['tipo_comunicacional'];
         if($request->hasFile('anexo')){
-        $anexo = $request->file('anexo');   
+        $anexo = $request->file('anexo');
+        //dd($anexo,'kjhksj');
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
+
         Storage::disk('CspReportesHechos')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
         }else
         $nombreArchivo="000Ninguno";
