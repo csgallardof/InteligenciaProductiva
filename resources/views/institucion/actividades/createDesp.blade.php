@@ -67,7 +67,7 @@
 									 	<div class="form-group">
 									 		<div class="row">
 									 			<div class="col-md-7">
-									 				<label for="exampleTextarea">Descripcion Actividad</label>
+									 				<label for="exampleTextarea">Descripción Actividad</label>
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="nunCaracteres" class="pull-right"></div>
@@ -86,6 +86,17 @@
 									 			<input id="calendar" type="date" name="fecha" value="{{ date('Y-m-d') }}">
 									  	</div>
 									  	@endif
+
+										@if( isset( $actividades ) && count($actividades) != 0)
+									  		<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-7">
+									 					<label for="calendar">Fecha de Inicio</label>
+									 				</div>
+									 			</div>
+									 			<input id="calendar" type="date" name="fecha" value="{{ date('Y-m-d') }}">
+									  	</div>
+									  	@endif									  	
 
 									  	<div class="form-group">
 									    	<label for="exampleSelect1">Instituci&oacute;n ejecutora</label>
