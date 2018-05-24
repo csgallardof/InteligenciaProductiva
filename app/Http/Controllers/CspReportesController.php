@@ -93,7 +93,7 @@ class CspReportesController extends Controller
         $CspReportesHecho-> anexo = $nombreArchivo;
         $CspReportesHecho-> tipo_comunicacional = $tipo_comunicacional;
         $CspReportesHecho-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-hechos');
     }
     public function crearAccionesAlerta(Request $request){
         $hora = date("h:i");
@@ -141,7 +141,7 @@ class CspReportesController extends Controller
         $CspAccionesAlerta-> anexo = $nombreArchivo;
          //dd($CspAccionesAlerta);
         $CspAccionesAlerta-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
     }
     public function guardarReporteAlerta(Request $request){
         $hora = date("h:i");
@@ -201,7 +201,110 @@ class CspReportesController extends Controller
         $CspReportesAlerta-> tipo_comunicacional = $tipo_comunicacional;
         $CspReportesAlerta-> anexo = $nombreArchivo;
         $CspReportesAlerta-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
+    }
+
+    public function homeReportesHechos(){
+
+         $usuario_institucion_id = Auth::user()->institucion_id;
+        //dd($usuario_institucion_id);
+        $tipofuente=Auth::user()->tipo_fuente;
+        //dd($tipofuente);
+        $hora = date("h:i");
+        $semana_reporte=date("Y/m/d");
+        $fecha_creacion_Reporte=$semana_reporte." ".$hora;
+        function check_in_range($start_date, $end_date, $evaluame) {
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($evaluame);
+        return (($user_ts >= $start_ts) && ($user_ts <= $end_ts));
+        }
+        $periodoCorrecto=False;
+        $i=1;
+        
+        while ($periodoCorrecto==False) {
+        $PeriodoCspReporte = CspPeriodoReporte::find($i);
+        $date_start = $PeriodoCspReporte->fecha_inicio;
+        $date_end = $PeriodoCspReporte->fecha_final;
+        $today = $fecha_creacion_Reporte;
+        if( check_in_range($date_start, $date_end, $today) ){
+            $periodo_id=$PeriodoCspReporte->id;
+            $periodoCorrecto=True;
+            } else {
+            $periodoCorrecto==False;
+            }
+            $i++;  
+        
+        }
+        $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+
+        if($tipofuente==4){
+        $reportesHechos = DB::table('csp_reportes_hechos')
+        ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
+        ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
+        ->where('institucions.id', '=',$usuario_institucion_id)
+        ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
+        ->orderBy('csp_reportes_hechos.id','DESC')
+        ->get();
+        //dd($reportesHechos);
+        //dd($reportesHechos);
+        return view('csp.homeReportesHechos')->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte,
+                                                    'reportesHechos'=>$reportesHechos,
+                                                
+                                                    ]);
+        }
+
+    }
+
+    public function homeReportesAlertas(){
+        $usuario_institucion_id = Auth::user()->institucion_id;
+        //dd($usuario_institucion_id);
+        $tipofuente=Auth::user()->tipo_fuente;
+        //dd($tipofuente);
+        $hora = date("h:i");
+        $semana_reporte=date("Y/m/d");
+        $fecha_creacion_Reporte=$semana_reporte." ".$hora;
+        function check_in_range($start_date, $end_date, $evaluame) {
+        $start_ts = strtotime($start_date);
+        $end_ts = strtotime($end_date);
+        $user_ts = strtotime($evaluame);
+        return (($user_ts >= $start_ts) && ($user_ts <= $end_ts));
+        }
+        $periodoCorrecto=False;
+        $i=1;
+        
+        while ($periodoCorrecto==False) {
+        $PeriodoCspReporte = CspPeriodoReporte::find($i);
+        $date_start = $PeriodoCspReporte->fecha_inicio;
+        $date_end = $PeriodoCspReporte->fecha_final;
+        $today = $fecha_creacion_Reporte;
+        if( check_in_range($date_start, $date_end, $today) ){
+            $periodo_id=$PeriodoCspReporte->id;
+            $periodoCorrecto=True;
+            } else {
+            $periodoCorrecto==False;
+            }
+            $i++;  
+        
+        }
+        $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+        //dd($PeriodoSemanaCspReporte);
+        if($tipofuente==4){
+        
+        
+        $reportesAlerta = DB::table('csp_reportes_alertas')
+        ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_alertas.periodo_id')
+        ->join('csp_reporte_estados','csp_reporte_estados.id', '=','csp_reportes_alertas.estado_reporte_id')
+        ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
+        ->where('institucions.id', '=',$usuario_institucion_id)
+        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
+        ->orderBy('csp_reportes_alertas.id','DESC')
+        ->get();
+    
+        //dd($reportesHechos);
+        return view('csp.homeReportesAlertas')->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte,
+                                                        'reportesAlerta'=>$reportesAlerta]);
+        }
     }
     public function mostrarReportes(){
         $usuario_institucion_id = Auth::user()->institucion_id;
@@ -372,7 +475,7 @@ class CspReportesController extends Controller
         $cspReportesHecho-> anexo = $nombreArchivo;
         $cspReportesHecho-> tipo_comunicacional = $tipo_comunicacional;
         $cspReportesHecho-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-hechos');
     }
     //EDITAR REPORTES ALERTA CSP
     public function vistaEditarReporteAlerta($id){
@@ -439,7 +542,7 @@ class CspReportesController extends Controller
         $cspReportesAlerta-> tipo_comunicacional = $tipo_comunicacional;
         $cspReportesAlerta-> anexo = $nombreArchivo;
         $cspReportesAlerta-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
     }
     public function editarReporteAlertaEstadoCsp(Request $request, $id){
         $estado_reporte_id = $request->input('estado_reporte_id');
@@ -462,7 +565,7 @@ class CspReportesController extends Controller
         $cspReportesAlerta-> fuente = $fuente;
         $cspReportesAlerta-> anexo = $anexo;
         $cspReportesAlerta-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
     }
      //EDITAR ACCIONES ALERTAS CSP
     public function vistaEditaraccionesAlerta($id){
@@ -486,6 +589,6 @@ class CspReportesController extends Controller
         $CspAccionesAlerta-> fecha = $fecha;
         $CspAccionesAlerta-> anexo = $nombreArchivo;
         $CspAccionesAlerta-> save();
-        return redirect('/institucion/consejo-sectorial-produccion');
+        return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
     }
 }

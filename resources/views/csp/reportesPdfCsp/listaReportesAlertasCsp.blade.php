@@ -1,4 +1,4 @@
-@extends('layouts.cspReportes')
+@extends('layouts.cspAgenda') 
 
 @section('title','Inicio')
 
@@ -72,9 +72,9 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">FICHA DE HECHOS RELEVANTES </h4>
+                            <h4 align="center" class="panel-title">FICHA DE ALERTAS </h4>
                         </div>
-                        <div class="height-lg" data-scrollbar="true"> 
+                        
                         <div class="panel-body">
                             <form method="GET" action="/institucion/busquedaReporteAlertas"  enctype="multipart/form-data">
                                           <div class="row">
@@ -119,25 +119,28 @@
                             <form target="_blank" method="POST" action="/institucion/guardarIdReporteAlertasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<hr>
-									  	<div class="row">
-									  	<div class="col-md-12">
-									  	<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									  	
 
-									  	<div class="col-md-10">  
-									  	<button type="submit"  class="btn btn-primary pull-right">Reporte De Alertas</button> 
-									  	<div class="col-md-8">
-									  	
-									  	</div>
-									  	</div>
-									  	</div>
-										</div>
+                                        <div class="form-group">
+                                    
+                                    
+
+                                        <div class="col-md-3 ">
+                                           <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning ">Regresar</a>
+                                           <button type="submit"  class="btn btn-primary ">Reporte De Alertas {{$buscarTipoComunicacional}}</button>
+
+                                        </div>
+                                    
+                                     
+                                    </div> <br>
+                                    <input type="text" hidden="" name="tipo_reporte" value="{{$buscarTipoComunicacional}}">
+                                        <input type="text" hidden=""  name="periodo_reporte" value="{{$buscar}}">
 									  	<br>
                                         @include('flash::message')
-									  <table class="table" class="table nowrap" width="100%">
+									  <table id="data-table" class="table table-striped table-bordered" width="100%">
 
 									<thead>
-										{{$reportesAlerta->render()}}
+										
 										<tr>
 											<th>Seleccionar</th>
 											<th>Fecha de Atencion</th>
@@ -186,7 +189,7 @@
 									</form>
 							</div>
 
-                        </div>
+                        
                     </div>
                     <!-- <div class="panel panel-inverse" data-sortable-id="index-7">
                         <div class="panel-heading">
@@ -217,7 +220,7 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <h6 align="center" class="notificaciones"> No existe notificaciones</h6>
                         <div class="panel-body">
                             
                         </div>

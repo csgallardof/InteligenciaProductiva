@@ -32,7 +32,7 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-12">
 					
 					<div class="panel panel-inverse" data-sortable-id="index-5">
 						<div class="panel-heading">
@@ -45,7 +45,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Agenda Territorial CSP</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							
 								<div class="media-body">
 									<div class="col-md-10">
 
@@ -59,12 +59,12 @@
 										{{ csrf_field() }}
               							<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<label for="responsable">Responsable</label>
 									 					 <input type="text" required name="responsable" class="form-control" >			
 									 				</div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					<label for="responsable">Tipo Comunicacional</label>
 									 					 
 														<select name="tipo_comunicacional" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-default">
@@ -80,8 +80,8 @@
 									  	</div>
 									  	<div class="form-group">
 									  		<div class="row">
-									  			<div class="col-md-3"> </div>
-									  			<div class="col-md-3">
+									  			<div class="col-md-2"> </div>
+									  			<div class="col-md-4">
                                    		 <label for="agenda_fecha">Fecha de Agenda</label>
 		                                    
 		                                        <div class="input-group date" id="datepicker-disabled-past" required data-date-format="yyyy-mm-dd" data-date-start-date="Date.default">
@@ -92,14 +92,14 @@
 		                                   				
 													
 		                                      	</div>
-		                                      	<div class="col-md-3">
+		                                      	<div class="col-md-4">
 														<label for="hora_agenda">Hora de Agenda</label>
-														<div class="col-md-8">
+														
 															<div class="input-group bootstrap-timepicker">
 																<input id="timepicker" type="text" name="hora_agenda" required class="form-control" />
 																<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
 															</div>
-														</div>
+														
 												</div>
 		                                      	<div class="col-md-3">
 									 					 <label for="institucion_id"></label>	
@@ -110,8 +110,8 @@
                                 		</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="select-provincia">Lugar: <br> <br> Provincia</label>
 									
 									    <select id="select-provincia" onchange="getSelectValue();" name="select-provincia" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-primary">
@@ -129,8 +129,8 @@
 
 								<div class="form-group ">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-6 ">
+									<div class="col-md-2"></div>
+									<div class="col-md-8 ">
 									<label for="select-canto">Cantones</label>
 										 
 									    <select  id="select-canto" class="form-control" name="select_canton"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
@@ -144,8 +144,8 @@
 								</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-3">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="tipo_agenda_id">Tipo Agenda</label>
 									
 									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" name="tipo_agenda_id" data-style="btn-info">
@@ -166,16 +166,16 @@
 									 		
 									 		<div class="row">
 													
-													<div class="col-md-3"></div>
-									 				<div class="col-md-4"> 
+													<div class="col-md-2"></div>
+									 				<div class="col-md-8"> 
 									 					
 									 				<label for="descripcion_tipo_agenda" class=>Descripción Tipo Agenda</label>
 									 				
 									 				</div>
 									 			
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			<textarea class="form-control" id="lineas_discursivas" name="descripcion_tipo_agenda" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 									 			</div>
 									    	
@@ -186,8 +186,8 @@
 										</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-3">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="tipo_impacto_id"><br><br>Tipo Impacto</label>
 									
 									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion"name="tipo_impacto_id" data-style="btn-info">
@@ -206,16 +206,16 @@
 								<div class="form-group">
 									 		
 									 		<div class="row">
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-7">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 				<label for="descripcion_tipo_impacto">Descripción Tipo Impacto</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion_tipo_impacto" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			<textarea required class="form-control" id="descripcion_tipo_impacto" name="descripcion_tipo_impacto" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
 									 			</div>
 									    	
@@ -245,7 +245,7 @@
 									</form>		
 
 								</div>
-							</div>
+							
 						</div>
 					</div>
 					
@@ -254,7 +254,7 @@
 				
 			</div>
 
-             <div class="col-md-4" >
+             <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

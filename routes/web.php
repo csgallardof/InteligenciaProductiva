@@ -227,7 +227,11 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
 
 //VISTA DE LOS REPORTES DEL CSP
-     Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes');
+     Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes'); 
+
+     Route::get('/consejo-sectorial-produccion/reportes-hechos','CspReportesController@homeReportesHechos'); 
+
+     Route::get('/consejo-sectorial-produccion/reportes-alertas','CspReportesController@homeReportesAlertas'); 
 
      //CREAR REPORTE HECHOS CSP
      Route::get('/consejo-sectorial-produccion-createReportesHecho','CspReportesController@vistaCrearReporteHecho');

@@ -15,16 +15,16 @@
                             <br><br>
                             
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>FICHA DE ALERTAS</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN<br> ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</strong></p><br>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN<br>
+                            @if(!is_null($PeriodoSemanaCspReporte)) 
+                            ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})
+                            @endif
+                        </strong></p><br>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+                            @if(sizeof($data1)!=0)
                              <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Industrias y Productividad </u></b> <br></p><br>
                               
-                              @if(sizeof($data1)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif   
                            
                             <?php foreach($data1 as $reporteAlertaMipro){ ?>
                            
@@ -42,22 +42,20 @@
                             <strong>Descripción: </strong><?= $reporteAlertaMipro->descripcion;?><br>
                             <strong>Riesgo Principal: </strong><?= $reporteAlertaMipro->riesgo_principal; ?><br>
                             <strong>Solución propuesta: </strong><?= $reporteAlertaMipro->solucion_propuesta; ?><br>
+                            @if($reporteAlertaMipro->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
-                            @if($reporteAlertaMipro->acciones==null)
-                            No existen acciones
-                            @endif
                             <?= $reporteAlertaMipro->acciones; ?>
+                            @endif
                             </p>
                             <?php } ?>
-
+                            @endif  
                             
+                            @if(sizeof($data3)!=0)
                             <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Agricultura y Ganadería</u></b> <br></p><br>
 
-                            @if(sizeof($data3)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
+                            
+                            
+                         
                         <?php foreach($data3 as $reporteAlertaMAG){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
@@ -74,22 +72,21 @@
                             <strong>Descripción: </strong><?= $reporteAlertaMAG->descripcion;?><br>
                             <strong>Riesgo Principal: </strong><?= $reporteAlertaMAG->riesgo_principal; ?><br>
                             <strong>Solución propuesta: </strong><?= $reporteAlertaMAG->solucion_propuesta; ?><br>
+                            @if($reporteAlertaMAG->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
-                            @if($reporteAlertaMAG->acciones==null)
-                            No existe acciones
-                            @endif
                             <?= $reporteAlertaMAG->acciones; ?>
+                            @endif
                             </p>
                             <?php } ?> 
 
+                            @endif
 
+                            @if(sizeof($data2)!=0)
                             <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
-                            @if(sizeof($data2)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
-                        <?php foreach($data2 as $reporteAlertaMAP){ ?>
+                            
+                            
+                         
+                             <?php foreach($data2 as $reporteAlertaMAP){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAP->tema; ?><br>
@@ -105,15 +102,14 @@
                             <strong>Descripción: </strong><?= $reporteAlertaMAP->descripcion;?><br>
                             <strong>Riesgo Principal: </strong><?= $reporteAlertaMAP->riesgo_principal; ?><br>
                             <strong>Solución propuesta: </strong><?= $reporteAlertaMAP->solucion_propuesta; ?><br>
+                            @if($reporteAlertaMAP->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
-                            @if($reporteAlertaMAP->acciones==null)
-                            No existen acciones
-                            @endif
                             <?= $reporteAlertaMAP->acciones; ?>
+                            @endif
                             </p>
                             
                             <?php } ?>
-
+                            @endif
                           
                         
                         </div>

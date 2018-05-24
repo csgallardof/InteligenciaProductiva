@@ -65,7 +65,7 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-12">
 					
 					<div class="panel panel-inverse" data-sortable-id="index-5">
 						<div class="panel-heading">
@@ -82,7 +82,7 @@
 								<div class="media-body">
 									<div class="col-md-10">
 
-									<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
+									<a href="/institucion/consejo-sectorial-produccion/reportes-hechos" class="btn btn-warning pull-right">Regresar</a>
 									</div>
 									
 									<br>
@@ -94,14 +94,14 @@
 									  	
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<label for="fecha_reporte">Fecha de Reporte</label>	
 									 					<input id="fecha_reporte" class="form-control"  type="date" name="fecha_reporte" value="{{ date('Y-m-d') }}" >
 
 
 									 				</div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					 <label for="institucion_id"></label>	
 					                                	<input id="institucion_id"  type="hidden" name="institucion_id" value="{{$usuario_institucion_id}}">
 					                                		
@@ -113,14 +113,14 @@
 
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
+									 				<div class="col-md-2"></div>
 									 				<div class="col-md-4">
 									 					<label for="fecha_reporte">Tipo Comunicacional</label>
 									 				</div>
 									 			</div>
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
 									 						<option value="" disabled selected>Seleccione un tipo</option>
 									 						<option value="Institucional">Institucional</option>
@@ -134,13 +134,13 @@
 
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<label for="tema">Tema</label>
 									 					<input type="text" required name="tema" class="form-control">		
 									 				</div>
 									 				
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					 <label for="fuente">Fuente</label>
 									 					 <input type="text" required name="fuente" class="form-control">		
 									 				</div>
@@ -151,12 +151,12 @@
 
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					 <label for="lugar">Lugar</label>
 									 					 <input type="text" required name="lugar" class="form-control">		
 									 				</div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					 <label for="porcentaje_avance">Avance Porcentaje</label>
 									 					 <input type="number" required min="0" max="100" name="porcentaje_avance" class="form-control">		
 									 				</div>
@@ -169,16 +169,16 @@
 									 	<div class="form-group">
 									 		
 									 		<div class="row">
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-7">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 				<label for="descripcion">Descripción</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			<textarea required class="form-control" id="descripcion" name="descripcion" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
 									 			</div>
 									    	
@@ -193,7 +193,7 @@
 									 		
 									 		<div class="row">
 													
-													<div class="col-md-3"></div>
+													<div class="col-md-2"></div>
 									 				<div class="col-md-4"> 
 									 					
 									 				<label for="lineas_discursivas" class=>Lineas Discursivas</label>
@@ -201,8 +201,8 @@
 									 				</div>
 									 			
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			<textarea class="form-control" id="lineas_discursivas" name="lineas_discursivas" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 									 			</div>
 									    	
@@ -216,8 +216,8 @@
 									  	<div class="form-group">
 
 									  		<div class="row">
-									  			<div class="col-md-3"></div>
-									  			<div class="col-md-7">
+									  			<div class="col-md-2"></div>
+									  			<div class="col-md-8">
 									    	<label for="anexo">Agregar archivos. (Opcional)</label>
 									    	
 									    	<input type="file" class="form-control-file" id="anexo" aria-describedby="fileHelp" name="anexo" >
@@ -242,7 +242,7 @@
 				
 			</div>
 
-             <div class="col-md-4" >
+             <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

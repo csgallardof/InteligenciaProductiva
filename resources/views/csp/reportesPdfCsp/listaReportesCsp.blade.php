@@ -1,4 +1,4 @@
-@extends('layouts.cspReportes')
+@extends('layouts.cspAgenda') 
 
 @section('title','Inicio')
 
@@ -66,7 +66,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     
                     
                     <ul class="nav nav-tabs nav-tabs-inverse nav-justified nav-justified-mobile" data-sortable-id="index-2">
@@ -86,7 +86,7 @@
                         
                         <!--REPORTES DE ALERTAS-->
                         <div class="tab-pane fade active in" id="hechos">
-                            <div class="height-lg" data-scrollbar="true">
+                            
 
                                 <div class="row">
                                     <div class="col-md-12">
@@ -97,7 +97,8 @@
                                             </div>
                                             <div class="col-lg-3 ">
                                             <select name="tipo_comunicacional" class="form-control" >
-                                                            <option value="">Todos</option>
+                                                            <option value="">Seleccione un tipo comunicacional</option>
+                                                            <option value="Todos">Todos</option>
                                                             <option value="Institucional">Institucional</option>
                                                             <option value="Presidencia">Presidencia</option>
                                                             <option value="Institucional y Presidencia">Institucional y Presidencia</option>
@@ -133,21 +134,28 @@
                             <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         <hr>
-                                        <div class="row">
-                                        <div class="col-md-12">
-                                        <a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
+                                <div class="form-group">
+                                    
+                                    
+
+                                    <div class="col-md-3 ">
+                                        <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning ">Regresar</a>
+                                        <button type="submit"  class="btn btn-primary">Reporte Hecho Relevantes {{$buscarTipoComunicacional}}</button>
+
+                                    </div>
+                                    
+                                     
+                                </div>
+                                <br>
                                         
-                                        <div class="col-md-10">  
-                                        <button type="submit"  class="btn btn-primary pull-right">Reporte De Hechos</button> 
-                                        </div>
-                                        </div>
-                                        </div>
                                         <hr>
                                         @include('flash::message')
-                                      <table class="table" class="table nowrap" width="100%">
+                                        <input type="text" hidden="" name="tipo_reporte" value="{{$buscarTipoComunicacional}}">
+                                        <input type="text" hidden="" name="periodo_reporte" value="{{$buscar}}">
+                                      <table id="data-table" class="table table-striped table-bordered" width="100%">
 
                                     <thead>
-                                        {{$reportesHechos->render()}}
+                                        
                                         <tr>
                                             <th>Seleccionar</th>
                                             <th>Fecha de Atencion</th>
@@ -195,7 +203,7 @@
                                 </div>
                                 </div>
                                 
-                            </div>
+                            
                         </div>
                                               
                     </div>                  
@@ -203,7 +211,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-3" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -214,7 +222,9 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
+                        <!-- Los estilos de Notificaciones esta en style-after.css -->
+                        
+                        <h6 class="notificaciones">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
                         <div class="panel-body">
                             
                         </div>

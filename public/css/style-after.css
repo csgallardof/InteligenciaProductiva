@@ -32,3 +32,22 @@ table.dataTable.nowrap th, table.dataTable.nowrap td {
 table.dataTable thead th {
     outline: none;
 }
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  padding-left: 10px;
+}
+
+.notificaciones
+{
+  color:green; 
+  padding: 1%;
+  font-size: 120%;
+}
+
+
