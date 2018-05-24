@@ -105,7 +105,7 @@
 						<div class="tab-pane fade active in" id="hechos">
 							<div class="height-lg" data-scrollbar="true">
 								<div class="col-md-12">
-								<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
+								<a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
 								</div>
 
 						<hr>

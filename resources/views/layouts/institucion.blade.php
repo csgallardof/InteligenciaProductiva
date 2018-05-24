@@ -70,21 +70,37 @@
 
 				<!-- begin header navigation right -->
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
+ 
 
-
-					@if($tipo_fuente==4 or $tipo_fuente==5)
+					@if($tipo_fuente==4 or $tipo_fuente==5) 
 					<li class="dropdown" ><a href="javascript:;" class="dropdown-toggle btn-primary btn-xs" style="color: #FFF;" data-toggle="dropdown">
 
 							<span class="hidden-xs ">Consejo Sectorial</span> <b class="caret"></b>
 						</a>
 
 						<ul class="dropdown-menu animated fadeInLeft" >
+							@if($tipo_fuente==4)
+							<li>
+								<a href="/institucion/consejo-sectorial-produccion/reportes-hechos">
+        	                		Reportes Hechos CSP
+                        		</a>
+
+                            </li>
+                            <li>
+								<a href="/institucion/consejo-sectorial-produccion/reportes-alertas">
+        	                		Reportes Alertas CSP
+                        		</a>
+
+                            </li>
+							@endif
+							@if( $tipo_fuente==5)
 							<li>
 								<a href="/institucion/consejo-sectorial-produccion">
         	                		Reportes CSP
                         		</a>
 
                             </li>
+                            @endif
                             <li >
 								<a  href="/institucion/ver-agenda-territorial">
         	                		Agenda Territorial

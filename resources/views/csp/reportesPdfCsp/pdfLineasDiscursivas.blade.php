@@ -15,20 +15,23 @@
                             <br><br>
                             
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>HECHOS RELEVANTES DE ALTO IMPACTO COMUNICACIONAL</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</strong></p><br>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>
+                            @if(!is_null($PeriodoSemanaCspReporte))
+                             ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})   
+                            @endif
+                            </strong> <br>
+                                <strong>Tipo Comunicacional: {{$tipo_reporte}}</strong>
+                          </p><br>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+                            @if(sizeof($data1)!=0)
                              <p ALIGN="justify" style="font-family:calibri; margin: 0 0cm 0 1cm"><b>LÍNEAS ARGUMENTALES DE LAS ACCIONES DE HECHOS RELEVANTES DE ALTO IMPACTO COMUNICACIONAL </b> <br></p><br>
-                             <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Industrias y Productividad </u></b> <br></p><br>
+                             <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Industrias y Productividad </u></b> <br> 
+                            
+                             </p><br>
                               
-                              @if(sizeof($data1)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif   
-                           
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
-                           
+                            @if($reporteHechoMipro->lineas_discursivas!=null)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm ; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMipro->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
@@ -37,26 +40,20 @@
                             @else
                             NO DEFINIDO
                             @endif
-                            <br> <br>
-                            
-                            
-                            @if($reporteHechoMipro->lineas_discursivas==null)
-                            No Aplica    
-                            @endif                                
+                            <br> <br>                               
                             <?= $reporteHechoMipro->lineas_discursivas; ?>
                             </p>
-                            
+                            @endif
                             <?php } ?>
-                            
+                         @endif  
+                        @if(sizeof($data3)!=0)    
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Agricultura y Ganadería</u></b> <br></p><br>
 
-                            @if(sizeof($data3)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
-                        <?php foreach($data3 as $reporteHechoMAG){ ?>
                             
+                            
+                         
+                        <?php foreach($data3 as $reporteHechoMAG){ ?>
+                            @if($reporteHechoMAG->lineas_discursivas!=null)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAG->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
@@ -65,25 +62,20 @@
                             @else
                             NO DEFINIDO
                             @endif
-                            <br> <br>
+                            <br> <br> 
                             
-                            @if($reporteHechoMAG->lineas_discursivas==null)
-                            No Aplica   
-                            @endif
                             <?= $reporteHechoMAG->lineas_discursivas; ?>
                             
                             </p>
-                            
+                            @endif
                             <?php } ?>                     
-
+                        @endif
+                       
+                        @if(sizeof($data2)!=0)
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
-                            @if(sizeof($data2)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
+                        
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
-                            
+                            @if($reporteHechoMAP->lineas_discursivas!=null)
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm;text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAP->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
@@ -94,15 +86,12 @@
                             @endif
                             <br> <br>
                             
-                            @if($reporteHechoMAP->lineas_discursivas==null)
-                            No Aplica  
-                            @endif
                             <?= $reporteHechoMAP->lineas_discursivas; ?>
                             </p>
-                            
+                            @endif
                             <?php } ?>
 
-                        
+                        @endif
                         
                         </div>
                             

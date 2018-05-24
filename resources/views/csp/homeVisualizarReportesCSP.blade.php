@@ -93,7 +93,7 @@
 
 						<!--REPORTES DE ALERTAS-->
 						<div class="tab-pane fade active in" id="hechos">
-							<div class="height-lg" data-scrollbar="true">
+							
 
 								<div class="row">
 									<div class="col-md-12">
@@ -113,7 +113,7 @@
 					        	-->
 
 
-								<table class="table" class="table nowrap" width="100%">
+								<table  class="table table-striped table-bordered" width="100%">
 
 									<thead>
 										{{$reportesHechos->render()}}
@@ -181,13 +181,13 @@
 								</div>
 								</div>
 
-							</div>
+							
 						</div>
 						<!--FIN SOLUCIONES RESPONSABLE-->
 
 						<!--SOLUCIONES Alertas-->
 						<div class="tab-pane fade" id="alerta">
-							<div class="height-lg" data-scrollbar="true" >
+							
 
 							<div class="row">
 									<div class="col-md-12">
@@ -195,7 +195,7 @@
 										<div class="col-md-12">
 								<a href="/institucion/reportes-alertas-csp" class="btn btn-primary pull-right">Reporte Alertas</a>
 								</div>
-								<table class="table" class="table nowrap" width="100%">
+								<table class="table table-striped table-bordered" width="100%">
 									<thead>
 										{{$reportesAlerta->render()}}
 										<tr>
@@ -269,7 +269,7 @@
 
 								</div>
 								</div>
-							</div>
+							
 						</div>
 						<!--FIN SOLUCIONES RESPONSABLE-->
 
@@ -279,7 +279,7 @@
 				</div>
 				<!-- end col-8 -->
 				<!-- begin col-4 -->
-				<div class="col-md-3" >
+				<div class="col-md-12" >
 					<div class="panel panel-inverse" data-sortable-id="index-6">
 						<div class="panel-heading">
 							<div class="panel-heading-btn">
@@ -290,7 +290,7 @@
 							</div>
 							<h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
 						</div>
-						<h6 class="text-justify" style="color:green">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
+						<h6 class="notificaciones">En el caso de requerir una eliminación de un hecho, alerta o acción de alerta. Por favor enviar un correo a inteligencia@mipro.gob.ec </h6>
 						<div class="panel-body">
 
 						</div>

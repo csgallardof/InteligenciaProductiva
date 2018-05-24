@@ -83,7 +83,7 @@
                                 <div class="media-body">
                                     <div class="col-md-10">
                                         
-                                    <a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
+                                    <a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
                                     </div>
                                     <br>
                                     <hr>

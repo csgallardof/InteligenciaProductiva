@@ -1,4 +1,4 @@
-@extends('layouts.cspReportes')
+@extends('layouts.cspAgenda') 
 
 @section('title','Inicio')
 
@@ -63,7 +63,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-9" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse pull-right" data-sortable-id="index-1">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -74,7 +74,7 @@
                             </div>
                             <h4 class="panel-title">FICHA DE HECHOS RELEVANTES </h4>
                         </div>
-                        <div class="height-lg" data-scrollbar="true"> 
+                        
                         <div class="panel-body">
                             <form method="GET" action="/institucion/busquedaReporteHechosLineasDiscursivas"  enctype="multipart/form-data">
                                           <div class="row">
@@ -83,7 +83,8 @@
                                             <div class="col-lg-3 ">
                                             <select name="tipo_comunicacional" class="form-control" >
                                                            
-                                                            <option value="">Todos</option>
+                                                            <option value="">Seleccione una opcion</option>
+                                                            <option value="Todos">Todos</option>
                                                             <option value="Institucional">Institucional</option>
                                                             <option value="Presidencia">Presidencia</option>
                                                             <option value="Institucional y Presidencia">Institucional y Presidencia</option>
@@ -119,24 +120,27 @@
                             <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoLineasDiscursivasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<hr>
-									  	<div class="row">
-									  	<div class="col-md-12">
-									  	<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 									  	
+                                    <div class="form-group">
+                                    
+                                    
 
-									  	<div class="col-md-10">  
-									  	<button type="submit"  class="btn btn-primary pull-right">Reporte Lineas Discursivas</button> 
-									  	<div class="col-md-8">
-									  	</div>
-									  	</div>
-									  	</div>
-										</div>
+                                        <div class="col-md-5 ">
+                                           <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning ">Regresar</a>
+                                           <button type="submit"  class="btn btn-primary ">Reporte Lineas Discursivas {{$buscarTipoComunicacional}}</button> 
+
+                                        </div>
+                                    
+                                     
+                                    </div> <br>
                                         <br>
 									  	@include('flash::message')
-									  <table class="table" class="table nowrap" width="100%">
+                                        <input type="text" hidden="" name="tipo_reporte" value="{{$buscarTipoComunicacional}}">
+                                        <input type="text" hidden="" name="periodo_reporte" value="{{$buscar}}">
+									  <table id="data-table" class="table table-striped table-bordered" width="100%">
 
 									<thead>
-										{{$reportesHechos->render()}}
+										
 										<tr>
 											<th>Seleccionar</th>
 											<th>Fecha de Atencion</th>
@@ -184,7 +188,7 @@
 									</form>
 							</div>
 
-                        </div>
+                   
                     </div>
                     <!-- <div class="panel panel-inverse" data-sortable-id="index-7">
                         <div class="panel-heading">
@@ -204,7 +208,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-3" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -215,7 +219,7 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <h6 align="center" class="notificaciones"> No existe notificaciones</h6>
                         <div class="panel-body">
                             
                         </div>

@@ -15,16 +15,22 @@
                             <br><br>
                             
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>FICHA DE HECHOS RELEVANTES</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN<br> ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</strong></p><br>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN<br> 
+                            @if(!is_null($PeriodoSemanaCspReporte))
+                             ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})   
+                            @endif
+                            </strong>   <br>
+                            <strong>Tipo Comunicacional:{{$tipo_reporte}}</strong>
+                          </p><br>
                         </div><!-- /.box-header -->
                         <div class="box-body">
+                        
+                        @if(sizeof($data1)!=0)
                              <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Industrias y Productividad </u></b> <br></p><br>
                               
-                              @if(sizeof($data1)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif   
+                              
+                            
+                           
                            
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
                            
@@ -45,14 +51,15 @@
                             </p>
                             
                             <?php } ?>
-                            
+
+                        @endif                             
+                        
+                        @if(sizeof($data3)!=0)   
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Agricultura y Ganadería</u></b> <br></p><br>
 
-                            @if(sizeof($data3)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
+                            
+                            
+                         
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
@@ -71,14 +78,15 @@
                             <strong>Descripción: </strong><?= $reporteHechoMAG->descripcion; ?>
                             </p>
                             
-                            <?php } ?>                     
+                            <?php } ?>  
 
+                        @endif                   
+                        
+                        @if(sizeof($data2)!=0)
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
-                            @if(sizeof($data2)==0)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
-                            <strong>No Aplica </strong> 
-                            </p>
-                         @endif
+                            
+                            
+                         
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
                             
                             <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
@@ -98,7 +106,7 @@
                             </p>
                             
                             <?php } ?>
-                        
+                        @endif
                         </div>
                             
                         
