@@ -45,7 +45,7 @@
 
 						 		<div >
 
-							    <label for="sectorSelect">Sector</label><a style="font-size: 12px;text-decoration:none" href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">Quitar Filtro</a><br> 
+							    <label for="sectorSelect">Sector</label><a style="font-size: 12px;text-decoration:none" href="javascript:history.back(-1);" title="Ir la página anterior" class="pull-right">Quitar Filtro</a><br>
 								 	<select class="form-group form-control" id="sectorSelect" name="sectorSelect" >
 								 		<option value="0">Seleccionar </option>
 								 		@foreach( $resultados as $solucion)
@@ -57,8 +57,8 @@
 									 			@else
 									 			<option  value="{{ $solucion->sector->id}}">{{ $solucion->sector->nombre_sector }}</option>
 									 			@endif
-									 			
-									 			
+
+
 									 			<?php array_push( $arraySectors, $solucion->sector->id ); $datosFiltroSector="";?>
 									 		@endif
 								 		@endforeach
@@ -144,7 +144,7 @@
                             <div class="form-group">
 
                                 <form class="form-horizontal" role="form" method="GET" action="{{ route('nuevaBusqueda2') }}">
-									
+
                                     <div class="input-group custom-search-form">
 
                                         <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" value="{{$parametro}}" required style="font-size: 16px" >
@@ -276,7 +276,7 @@
 						        		<tr>
 											@if($resultados->tipo_fuente==1)
 							                	<td class="text-left p-t-15">
-									<div class="text-justify"> 
+									<div class="text-justify">
 									<a   class="btn btn-primary pull-right m-b-30 m-l-30" href="/detalle-despliegue-dialogo/{{ $resultados->id}}">ver</a>
 
 									<p class="total_propuestas_estilo_1">
@@ -319,10 +319,12 @@
                 <!-- {{$resultados->problema_solucion}}<br /> -->
                 <!-- {{$solucion->ambit->nombre_ambit}}<br /> -->
 
-                <span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($solucion->verbo_solucion)); ?></span><br>
+                <?php $complemento = str_limit($resultados->complemento_solucion, 400); ?>
 
-                <font><?php echo ucfirst(mb_strtolower($solucion->sujeto_solucion)) ?></font><br>
-                <font><?php echo ucfirst(mb_strtolower($solucion->complemento_solucion)) ?></font><br>
+                <span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($complemento)) ?></span><br>
+                <font><?php echo ucfirst(mb_strtolower($resultados->sujeto_solucion)) ?></font><br>
+                <!-- <font><?php echo ucfirst(mb_strtolower($resultados->problema_solucion)) ?></font><br> -->
+                
 
                 <b><font >Fuente: </font></b>Consejo Consultivo Productivo y Tributario<br>
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
@@ -394,7 +396,7 @@
 	});
 
 	</script>
-	
+
 
 	<script>
 

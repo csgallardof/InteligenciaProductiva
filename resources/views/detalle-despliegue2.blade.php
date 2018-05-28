@@ -105,7 +105,7 @@
 												@endif
 											</span>
 										</dl>
-									
+
 	                                <br>
 	                                <label class='text-success'>
 
@@ -113,12 +113,12 @@
 	                                </label>
 	                                <div>
 	                                	<table id="data-table2" class="table table-striped table-bordered"">
-	                                			
+
 												<tr>
 											    <th><label class='text-default'>
 
 				                                	Codigo:
-				                                	
+
 				                                </label></th>
 												    <td>
 												    	{{$solucion->id}}
@@ -128,7 +128,7 @@
 											    <th><label class='text-default'>
 
 				                                	Creado:
-				                                	
+
 				                                </label></th>
 												    <td>
 												    	@if(isset($solucion))
@@ -174,7 +174,7 @@
 											  </tr>
 											</table>
 	                                </div>
-	                               
+
 									<br>
 	                                <label class='text-success'>
 
@@ -195,18 +195,18 @@
 					                    @if(isset($actoresSoluciones))
 											@foreach($actoresSoluciones as $actorSolucion)
 												@if($actorSolucion->tipo_actor == 1)
-													
+
 													{{ $actorSolucion->usuario-> name }}
-										
-													
-													
+
+
+
 												@endif
 											@endforeach
 										@endif
 										@if(count($actoresSoluciones)==0)
 										No Asignado
 										@endif
-										
+
 					                                            </td>
 					                                            <td>
 					                    <dd>
@@ -218,7 +218,7 @@
 													@else
 													No Asignado
 													@endif
-													
+
 												@endforeach
 											</ul>
 										@endif
@@ -299,7 +299,9 @@
 									<blockquote>
 										  	<p><h5>
 										  		@if(isset($solucion))
-													{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
+													{{ $solucion->verbo_solucion }} <br />
+                          {{ $solucion->sujeto_solucion }} <br />
+                          {{ $solucion->complemento_solucion }}
 												@endif
 										  	</h5>
                                    	</blockquote>
@@ -353,15 +355,15 @@
 									<hr>
 									<table id="data-table" class="table table-striped table-bordered" width="100%">
 								<thead>
-									
+
 									<th class="text-center">Actividades</th>
-					                
+
 
 								</thead>
 								<tbody>
 									@foreach($actividades as $actividad)
 						        	<tr>
-						        		
+
 						        		<td>
 						        		<b>Fecha de Inicio: </b> {{ $actividad-> created_at}}<br>
 						        		<b>Ejecutor: </b> {{ $actividad-> usuario-> name}}<br>
@@ -370,9 +372,9 @@
 											@if( count( $actividad-> archivo) > 0)
 											<hr>
 											<em> Archivos: </em> <br>
-												
+
 													@foreach($actividad-> archivo as $file)
-													
+
 														<!-- <a target="_blank" href="'../../../../../../storage/{{ $file-> nombre_archivo }} "> -->
 														<a target="_blank" href="{{ route('descargarArchivo',$file-> nombre_archivo) }} ">
 															<?php
@@ -382,23 +384,23 @@
 
 															{{$nombre_archivo}}
 														</a>
-													
+
 													@endforeach
-												
+
 											@endif
 
-											<!--FIN ARCHIVOS-->	
+											<!--FIN ARCHIVOS-->
 						        		</td>
-						        		
+
 						        	</tr>
 						       	 	@endforeach
 			     				</tbody>
-			     					
+
 							</table>
 							@else
 										No se encontraron actividades registradas.
 							@endif
-							
+
 
 								</div>
 								</div>
@@ -448,7 +450,7 @@
 		});
 
 	</script>
- 
+
   <script>
 function goBack() {
     window.history.back();
