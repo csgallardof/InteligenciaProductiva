@@ -290,7 +290,7 @@ class PaginasController extends Controller
 
     }
     public function detalledespliegue2(Request $request, $idSolucion){
-
+ 
         $solucion = Solucion::where('id','=',$idSolucion)->first();
         //dd($solucion);
 
@@ -304,10 +304,16 @@ class PaginasController extends Controller
                                             ->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')
                                             ->get();
+         $actividadUltima = Actividad::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('created_at','DESC')
+                                            ->first();
+
 
         return view('detalle-despliegue2')->with([
                                             "solucion"=>$solucion,
                                             "actoresSoluciones"=>$actoresSoluciones,
+                                            "actividadUltima"=>$actividadUltima,
                                             "actividades"=>$actividades
                                         ]);
     }

@@ -158,7 +158,7 @@
 
 						                            </td>
                                                     <td>
-                                                        @if($accionesReporteAlerta->created_at>=$PeriodoSemanaCspReporte->fecha_inicio)
+                                                        @if($accionesReporteAlerta->created_at>=$PeriodoSemanaCspReporte->fecha_inicio or $idAnteriorPeriodo==$accionesReporteAlerta->periodo_id)
                                                         <a href= "/institucion/editar-acciones-alerta/{{$accionesReporteAlerta->id}}"  title="Ver más"  >
                                                         <i class="fa fa-2x fa-edit"></i>
                                                     </a>
