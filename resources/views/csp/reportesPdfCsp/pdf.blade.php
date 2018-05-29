@@ -19,8 +19,7 @@
                             @if(!is_null($PeriodoSemanaCspReporte))
                              ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})   
                             @endif
-                            </strong>   <br>
-                            <strong>Tipo Comunicacional:{{$tipo_reporte}}</strong>
+                            </strong>   
                           </p><br>
                         </div><!-- /.box-header -->
                         <div class="box-body">

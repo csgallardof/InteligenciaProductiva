@@ -138,13 +138,19 @@
 											  </tr>
 											  <tr>
 											    <th>Fecha de Cumplimiento:</th>
-												    <td>@if($solucion->fecha_cumplimiento!="0000-00-00")
+												    <td>
+														@if($solucion->estado->nombre_estado=="Finalizado")
+															{{$actividadUltima->created_at}}
+														@else
+												    	@if($solucion->fecha_cumplimiento!="0000-00-00")
 						                                  	{{$solucion->fecha_cumplimiento}}
 						                                  	@else
 						                                  	No Definido
 						                                  	@endif
+														@endif
 						                             </td>
 											  </tr>
+											@if($solucion->estado->nombre_estado!="Finalizado")
 											  <tr>
 											    <th>Plazo de Propuesta:</th>
 												    <td>@if($solucion->plazo_cumplimiento!="")
@@ -172,6 +178,7 @@
 						                                  	@endif
 						                            </td>
 											  </tr>
+											@endif
 											</table>
 	                                </div>
 	                               

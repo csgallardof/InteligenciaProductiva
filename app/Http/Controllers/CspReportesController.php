@@ -206,6 +206,8 @@ class CspReportesController extends Controller
 
     public function homeReportesHechos(){
 
+        
+
          $usuario_institucion_id = Auth::user()->institucion_id;
         //dd($usuario_institucion_id);
         $tipofuente=Auth::user()->tipo_fuente;
@@ -236,20 +238,48 @@ class CspReportesController extends Controller
             $i++;  
         
         }
+
+       
+
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+        $periodoAnterior =CspPeriodoReporte::find($periodo_id-1);
+        //dd($periodoAnterior, $PeriodoSemanaCspReporte);
+    
+        
+        //dd($intervaloEditar);
+            $idAnteriorPeriodo=0;
+            $fechaActual=date("Y-m-d");
+            $finPeriodoAnterior= substr($periodoAnterior->fecha_final,0,10);
+            //dd($finPeriodoAnterior);
+            $datetime1 = date_create($finPeriodoAnterior);
+            $datetime2 = date_create($fechaActual);
+                                                        //dd($datetime1, $datetime2);
+            $interval = date_diff($datetime1, $datetime2);
+            $intervaloEditar= $interval->format('%R%a');
+            $intervaloEditar=$intervaloEditar+0;
+
+            if($intervaloEditar<=4 && $intervaloEditar>=0){
+
+                    $idAnteriorPeriodo= $periodoAnterior->id;
+
+            }
+                                                        //dd('intervalo',$intervaloEditar);
+                                            
+            //dd($idAnteriorPeriodo,$intervaloEditar);
 
         if($tipofuente==4){
         $reportesHechos = DB::table('csp_reportes_hechos')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
+        ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.periodo_id','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
         ->orderBy('csp_reportes_hechos.id','DESC')
         ->get();
         //dd($reportesHechos);
         //dd($reportesHechos);
         return view('csp.homeReportesHechos')->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte,
                                                     'reportesHechos'=>$reportesHechos,
+                                                    'idAnteriorPeriodo'=>$idAnteriorPeriodo,
                                                 
                                                     ]);
         }
@@ -288,6 +318,7 @@ class CspReportesController extends Controller
         
         }
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+        
         //dd($PeriodoSemanaCspReporte);
         if($tipofuente==4){
         
@@ -303,7 +334,8 @@ class CspReportesController extends Controller
     
         //dd($reportesHechos);
         return view('csp.homeReportesAlertas')->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte,
-                                                        'reportesAlerta'=>$reportesAlerta]);
+                                                        'reportesAlerta'=>$reportesAlerta
+                                                    ]);
         }
     }
     public function mostrarReportes(){
@@ -411,14 +443,41 @@ class CspReportesController extends Controller
         
         }
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+        
+        $periodoAnterior =CspPeriodoReporte::find($periodo_id-1);
+        //dd($periodoAnterior, $PeriodoSemanaCspReporte);
+    
+        
+        //dd($intervaloEditar);
+            $idAnteriorPeriodo=0;
+            $fechaActual=date("Y-m-d");
+            $finPeriodoAnterior= substr($periodoAnterior->fecha_final,0,10);
+            //dd($finPeriodoAnterior);
+            $datetime1 = date_create($finPeriodoAnterior);
+            $datetime2 = date_create($fechaActual);
+                                                        //dd($datetime1, $datetime2);
+            $interval = date_diff($datetime1, $datetime2);
+            $intervaloEditar= $interval->format('%R%a');
+            $intervaloEditar=$intervaloEditar+0;
+
+            if($intervaloEditar<=4 && $intervaloEditar>=0){
+
+                    $idAnteriorPeriodo= $periodoAnterior->id;
+
+            }
+            //dd($idAnteriorPeriodo,$intervaloEditar);
+
         $accionesReporteAlerta =DB::table('csp_acciones_alertas')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_acciones_alertas.periodo_id')
         ->join('csp_reportes_alertas','csp_reportes_alertas.id','=','csp_acciones_alertas.reporte_alerta_id')
         ->where('csp_acciones_alertas.reporte_alerta_id', '=',$id)
-        ->select('csp_acciones_alertas.anexo','csp_acciones_alertas.fecha','csp_acciones_alertas.acciones','csp_acciones_alertas.id','csp_acciones_alertas.created_at','csp_periodo_reportes.nombre as Periodo')
+        ->select('csp_acciones_alertas.anexo','csp_acciones_alertas.periodo_id','csp_acciones_alertas.fecha','csp_acciones_alertas.acciones','csp_acciones_alertas.id','csp_acciones_alertas.created_at','csp_periodo_reportes.nombre as Periodo')
         ->paginate(10);
         //dd($accionesReporteAlerta);
-        return view('csp.visualizarAccionesAlertas',compact('cspReportesAlerta'),compact('accionesReporteAlerta'))->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);    
+        return view('csp.visualizarAccionesAlertas',compact('cspReportesAlerta'),compact('accionesReporteAlerta'))->with([
+                                                                                    "PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte,
+                                                                                    "idAnteriorPeriodo"=>$idAnteriorPeriodo,
+                                                                                ]);    
     }
     public function visualizarAccionesAlertasGeneral($id){
         $cspReportesAlerta = CspReportesAlerta::find($id);
@@ -439,6 +498,7 @@ class CspReportesController extends Controller
     }
     public function visualizarReporteAlerta($id){
         $cspReportesAlerta = cspReportesAlerta::find($id);
+        
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteAlertaCsp',compact('cspReportesAlerta'));    
     }
@@ -506,12 +566,37 @@ class CspReportesController extends Controller
         
         }
         $CspPeriodoReporte = CspPeriodoReporte::find($periodo_id);
+        //$PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_id);
+        $periodoAnterior =CspPeriodoReporte::find($periodo_id-1);
+        //dd($periodoAnterior, $CspPeriodoReporte);
+    
+        
+        //dd($intervaloEditar);
+            $idAnteriorPeriodo=0;
+            $fechaActual=date("Y-m-d");
+            $finPeriodoAnterior= substr($periodoAnterior->fecha_final,0,10);
+            //dd($finPeriodoAnterior);
+            $datetime1 = date_create($finPeriodoAnterior);
+            $datetime2 = date_create($fechaActual);
+                                                        //dd($datetime1, $datetime2);
+            $interval = date_diff($datetime1, $datetime2);
+            $intervaloEditar= $interval->format('%R%a');
+            $intervaloEditar=$intervaloEditar+0;
+
+            if($intervaloEditar<=4 && $intervaloEditar>=0){
+
+                    $idAnteriorPeriodo= $periodoAnterior->id;
+
+            }
+            //dd($idAnteriorPeriodo,$intervaloEditar);
         $usuario_institucion_id = Auth::user()->institucion_id;
         $cspReportesAlerta = cspReportesAlerta::find($id);
          $estadoReporte = CspReporteEstado::all();
          
         return view('csp.editarReportesCsp.editarReporteAlertaCsp',['usuario_institucion_id'=>$usuario_institucion_id],['estadoReporte'=>$estadoReporte],['CspPeriodoReporte'=>$CspPeriodoReporte])->with(["cspReportesAlerta"=>$cspReportesAlerta,
-                                       "CspPeriodoReporte"=>$CspPeriodoReporte]); 
+                                                                            "CspPeriodoReporte"=>$CspPeriodoReporte,
+                                                                            "idAnteriorPeriodo"=>$idAnteriorPeriodo
+                                                                        ]); 
     }
     public function editarReporteAlertaCsp(Request $request, $id){
         $estado_reporte_id = $request->input('estado_reporte_id');

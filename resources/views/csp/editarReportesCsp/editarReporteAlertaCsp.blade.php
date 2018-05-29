@@ -86,7 +86,7 @@
 									
 									<br>
 									<hr>
-									@if($cspReportesAlerta->created_at>=$CspPeriodoReporte->fecha_inicio) 
+									@if($cspReportesAlerta->created_at>=$CspPeriodoReporte->fecha_inicio or $idAnteriorPeriodo==$cspReportesAlerta->periodo_id) 
 									<form  method="POST" action="/institucion/modificar-reporte-alerta/{{$cspReportesAlerta->id}}" enctype="multipart/form-data">
 										{{ csrf_field() }}
               
@@ -248,7 +248,7 @@
 									  	</div>
 									</form>		
 									@endif
-									@if($cspReportesAlerta->created_at<=$CspPeriodoReporte->fecha_inicio and $cspReportesAlerta->estado_reporte_id==2 ) 
+									@if($cspReportesAlerta->created_at<=$CspPeriodoReporte->fecha_inicio and $cspReportesAlerta->estado_reporte_id==2 and $idAnteriorPeriodo==0) 
 									<form  method="POST" action="/institucion/modificar-reporte-alerta-estado/{{$cspReportesAlerta->id}}" enctype="multipart/form-data">
 										{{ csrf_field() }}
               

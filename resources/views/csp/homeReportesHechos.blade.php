@@ -1,6 +1,6 @@
 @extends('layouts.cspAgenda')
 
-@section('title','Inicio')
+@section('title','Inicio') 
 
 @section('start_css')
   @parent
@@ -145,7 +145,10 @@
                                                         <a href= "/institucion/visualizar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
                                                         <i class="fa fa-2x fa-eye"></i>
                                                     </a>
-                                                    @if($reportesHechos->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio)
+                                                   
+                                                    
+                                                    @if($reportesHechos->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio or $idAnteriorPeriodo==$reportesHechos->periodo_id)
+
                                                     <a href= "/institucion/editar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
                                                         <i class="fa fa-2x fa-edit"></i>
                                                     </a>
