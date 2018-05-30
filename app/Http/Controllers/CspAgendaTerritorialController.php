@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -69,17 +68,19 @@ class CspAgendaTerritorialController extends Controller
     	$hora_agenda=date("H:i", strtotime($hora));
         $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
         $institucion_id = $request['institucion_id'];
+        $lugar = $request['lugar'];
         $canton_id = $request['select_canton'];
         $tipo_agenda_id = $request['tipo_agenda_id'];
         $descripcion_tipo_agenda = $request['descripcion_tipo_agenda'];
         $tipo_impacto_id = $request['tipo_impacto_id'];
         $descripcion_tipo_impacto = $request['descripcion_tipo_impacto'];
         $tipo_comunicacional = $request['tipo_comunicacional'];
-
+        //dd($lugar);
 
         $CspAgendaTerritorial = new CspAgendaTerritorial();
         $CspAgendaTerritorial-> institucion_id = $institucion_id;
         $CspAgendaTerritorial-> canton_id = $canton_id;
+        $CspAgendaTerritorial-> lugar = $lugar;
         $CspAgendaTerritorial-> tipo_agenda_id = $tipo_agenda_id;
         $CspAgendaTerritorial-> tipo_impacto_id = $tipo_impacto_id;
         $CspAgendaTerritorial-> periodo_agenda_id = $periodo_id;
@@ -109,7 +110,7 @@ class CspAgendaTerritorialController extends Controller
         ->join('csp_tipo_impacto_agendas','csp_tipo_impacto_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
         ->join('institucions','institucions.id', '=','csp_agenda_territorials.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
+        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.lugar','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
         ->orderBy('csp_agenda_territorials.id','DESC')
         ->get();
         
@@ -140,6 +141,7 @@ class CspAgendaTerritorialController extends Controller
         $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
         $institucion_id = $request['institucion_id'];
         $canton_id = $request['select_canton'];
+        $lugar = $request['lugar'];
         $tipo_agenda_id = $request['tipo_agenda_id'];
         $descripcion_tipo_agenda = $request['descripcion_tipo_agenda'];
         $tipo_impacto_id = $request['tipo_impacto_id'];
@@ -151,7 +153,7 @@ class CspAgendaTerritorialController extends Controller
         $CspAgendaTerritorial-> canton_id = $canton_id;
         $CspAgendaTerritorial-> tipo_agenda_id = $tipo_agenda_id;
         $CspAgendaTerritorial-> tipo_impacto_id = $tipo_impacto_id;
-        //$CspAgendaTerritorial-> periodo_agenda_id = $periodo_id;
+        $CspAgendaTerritorial-> lugar = $lugar;
         $CspAgendaTerritorial-> descripcion_tipo_agenda = $descripcion_tipo_agenda;
         $CspAgendaTerritorial-> descripcion_tipo_impacto = $descripcion_tipo_impacto;
         $CspAgendaTerritorial-> responsable = $responsable;

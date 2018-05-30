@@ -49,7 +49,7 @@
 								<div class="media-body">
 									<div class="col-md-10">
 
-									<a href="/institucion/ver-agenda-territorial" class="btn btn-primary pull-right">Regresar</a>
+									<a href="/institucion/ver-agenda-territorial" class="btn btn-warning pull-right">Regresar</a>
 									</div>
 									
 									<br>
@@ -108,11 +108,23 @@
 									 				</div>
 		                                    </div>
                                 		</div>
+                                		<div class="form-group">
+									 			<div class="row">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
+									 					<label for="responsable">Lugar</label>
+									 					 <input type="text" required name="lugar" class="form-control" >			
+									 				</div>
+									 				
+									 			</div>
+									 			
+									  	</div>
 								<div class="form-group">
 									<div class="row">
 									<div class="col-md-2"></div>
 									<div class="col-md-8">
-									<label for="select-provincia">Lugar: <br> <br> Provincia</label>
+										
+									<label for="select-provincia">Provincia</label>
 									
 									    <select id="select-provincia" onchange="getSelectValue();" name="select-provincia" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-primary">
                                             <option value="" selected>Seleccionar Provincia</option>
@@ -169,7 +181,7 @@
 													<div class="col-md-2"></div>
 									 				<div class="col-md-8"> 
 									 					
-									 				<label for="descripcion_tipo_agenda" class=>Descripción Tipo Agenda</label>
+									 				<label for="descripcion_tipo_agenda" class=>Descripción  Agenda</label>
 									 				
 									 				</div>
 									 			
@@ -208,7 +220,7 @@
 									 		<div class="row">
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 				<label for="descripcion_tipo_impacto">Descripción Tipo Impacto</label>		
+									 				<label for="descripcion_tipo_impacto">Descripción Impacto</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion_tipo_impacto" class="pull-right"></div>
