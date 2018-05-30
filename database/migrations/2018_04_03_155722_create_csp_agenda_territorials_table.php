@@ -17,10 +17,12 @@ class CreateCspAgendaTerritorialsTable extends Migration
             $table->increments('id');
             $table->integer('institucion_id')->index();
             $table->integer('canton_id')->index();
+            $table->string('lugar');
             $table->integer('tipo_agenda_id')->index();
             $table->integer('tipo_impacto_id')->index();
             $table->integer('periodo_agenda_id')->index();
             $table->text('descripcion_tipo_agenda');
+
             $table->text('descripcion_tipo_impacto');
             $table->string('responsable');
             $table->datetime('fecha_agenda');
