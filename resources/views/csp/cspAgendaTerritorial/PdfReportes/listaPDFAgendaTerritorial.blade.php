@@ -77,7 +77,7 @@
                                             <th>Semana</th>
                                             <th>Lugar</th>
                                             <th>Tipo Comunicacion</th>
-                                            <th>Descripcion Tipo Agenda</th>
+                                            <th>Descripcion Tipo Agenda</th> 
                                             <th>Descripcion Impacto</th>
                                             <th>Responsable</th>
                                             <th>Acciones</th>
@@ -130,8 +130,10 @@
                                             <p style="color:#212F3D;font-size:medium" align="justify">  <strong>Institucion: </strong> {{$agendaTerritorial->Institucion}} <br> <br>
                                                 <strong>Responsable: </strong> {{$agendaTerritorial->responsable}} <br> <br>
                                                 <strong>Fecha Agenda: </strong> {{$agendaTerritorial->fecha_agenda}} <br> <br>
-                                                <strong>Lugar: </strong> {{$agendaTerritorial->lugar}} <br><br>
+                                                <strong>Provincia: </strong> {{$agendaTerritorial->nombre_provincia}} <br><br>
                                                 <strong>Canton: </strong> {{$agendaTerritorial->nombre_canton}} <br><br>
+                                                <strong>Lugar: </strong> {{$agendaTerritorial->lugar}} <br><br>
+                                                
                                                 <strong>Tipo Comunicacion: </strong> @if($agendaTerritorial->tipo_comunicacional!="")
                                                     {{$agendaTerritorial->tipo_comunicacional}}
                                                     @else
