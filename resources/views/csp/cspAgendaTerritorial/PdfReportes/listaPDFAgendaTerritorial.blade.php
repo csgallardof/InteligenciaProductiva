@@ -100,6 +100,7 @@
                                                     {{$mes}}
                                                   </td>
                                                   <td class="text-justify">{{$agendaTerritorial->semana}}</td>
+
                                                   
                                                    <td class="text-justify">{{$agendaTerritorial->nombre_canton}}</td>
                                                    <td class="text-justify">

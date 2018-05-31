@@ -55,7 +55,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nueva Actividad</h4>
 						</div>
 						<div class="panel-body">
-							<div class="height-lg" data-scrollbar="true">
+							
 								<div class="media-body">
 									<a href="javascript:window.history.back();" class="btn btn-default pull-right">&laquo; Regresar</a>
 									<hr>
@@ -73,7 +73,7 @@
 									 				<div id="nunCaracteres" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<textarea maxlength="280" required="" class="form-control" id="exampleTextarea" name="comentario" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea class="ckeditor" id="editor1" name="comentario" rows="6"></textarea>
 
 									  	</div>
 									  	@if( isset( $actividades ) && count($actividades) == 0)
@@ -124,7 +124,7 @@
 									</form>
 
 								</div>
-							</div>
+							
 						</div>
 					</div>
 
@@ -153,7 +153,7 @@
 												<label class="label label-danger label-lg"> <i class="fa fa-file-text-o" aria-hidden="true"></i> Actividad {{ $count }}</label><br><br>
 											</h4>
 											<p class="text-justify">
-												{{ $actividad-> comentario }}
+												{!! $actividad-> comentario !!}
 												<br><br>
 
 												@if( $actividad-> ejecutor_id > 0 )
