@@ -20,6 +20,7 @@ class CreateCspPeriodoAgendasTable extends Migration
             $table->string('semana');
             $table->datetime('fecha_inicio');
             $table->datetime('fecha_final');
+            $table->integer('semana_anio');
             $table->timestamps();
         });
     }

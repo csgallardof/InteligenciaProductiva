@@ -18,7 +18,7 @@ class Solucion extends Model
 
     public function provincia(){
 
-        return $this->belongsTo('App\Provincia');
+        return $this->belongsTo('App\Provincia'); 
     }
 
     public function ambit(){

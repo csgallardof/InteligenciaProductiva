@@ -170,7 +170,7 @@
 						@if(isset($resultados))
 							<table id="data" class="table nowrap" width="100%" hidden="">
 								<thead>
-									<th class="text-center" hidden="">id</th>
+									<th class="text-center" hidden="">id</th> 
 									<th class="text-center">PROPUESTA</th>
 					                <th class="text-center">AMBITO</th>
 					                <th class="text-center">RESPONSABLE</th>

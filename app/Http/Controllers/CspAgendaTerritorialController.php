@@ -33,9 +33,11 @@ class CspAgendaTerritorialController extends Controller
 
     public function crearAgenda(Request $request){
 
-        $hora_registro = date("h:i");
-        $fecha_registro=date("Y/m/d");
-        $fecha_registro_agenda=$fecha_registro." ".$hora_registro;
+        
+        $fecha_agenda = $request['agenda_fecha'];
+        $hora = $request['hora_agenda'];
+        $hora_agenda=date("H:i", strtotime($hora));
+        $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
         
         function check_in_range($start_date, $end_date, $evaluame) {
         $start_ts = strtotime($start_date);
@@ -51,7 +53,7 @@ class CspAgendaTerritorialController extends Controller
         $PeriodoCspAgenda = CspPeriodoAgenda::find($i);
         $date_start = $PeriodoCspAgenda->fecha_inicio;
         $date_end = $PeriodoCspAgenda->fecha_final;
-        $today = $fecha_registro_agenda;
+        $today = $fecha_hora_agenda;
         if( check_in_range($date_start, $date_end, $today) ){
             $periodo_id=$PeriodoCspAgenda->id;
             $periodoCorrecto=True;
@@ -61,12 +63,9 @@ class CspAgendaTerritorialController extends Controller
             $i++;  
         
         }
-
+        //dd('Sipaso');
+        
     	$responsable = $request['responsable'];
-    	$fecha_agenda = $request['agenda_fecha'];
-    	$hora = $request['hora_agenda'];
-    	$hora_agenda=date("H:i", strtotime($hora));
-        $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
         $institucion_id = $request['institucion_id'];
         $lugar = $request['lugar'];
         $canton_id = $request['select_canton'];
@@ -106,14 +105,15 @@ class CspAgendaTerritorialController extends Controller
         $agendaTerritorial = DB::table('csp_agenda_territorials')
         ->join('csp_periodo_agendas','csp_periodo_agendas.id', '=','csp_agenda_territorials.periodo_agenda_id')
         ->join('cantons','cantons.id', '=','csp_agenda_territorials.canton_id')
+        ->join('provincias','provincias.id', '=','cantons.provincia_id')
         ->join('csp_tipo_agendas','csp_tipo_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
-        ->join('csp_tipo_impacto_agendas','csp_tipo_impacto_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
+        ->join('csp_tipo_impacto_agendas','csp_tipo_impacto_agendas.id', '=','csp_agenda_territorials.tipo_impacto_id')
         ->join('institucions','institucions.id', '=','csp_agenda_territorials.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.lugar','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
+        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.lugar','csp_agenda_territorials.id','csp_agenda_territorials.responsable','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','csp_periodo_agendas.mes','provincias.nombre_provincia','csp_periodo_agendas.semana_anio','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
         ->orderBy('csp_agenda_territorials.id','DESC')
         ->get();
-        
+        //dd($agendaTerritorial);
         //dd($agendaTerritorial);
         return view('csp.cspAgendaTerritorial.mostrarAgendaTerritorial')->with(["agendaTerritorial"=>$agendaTerritorial,
             "tipo_fuente"=>$tipo_fuente]);

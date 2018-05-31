@@ -783,7 +783,7 @@ class PaginasController extends Controller
      $cheches = $request['check'];
      $check="";
      for ($i=0; $i <count($cheches) ; $i++) { 
-            $check .= $cheches[$i].",";
+            $check .= $cheches[$i].","; 
         }
         $consulta=substr($check,0,-1);
         $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions

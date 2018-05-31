@@ -65,12 +65,12 @@
                                     <thead>
                                         <tr>
                                             <th>Institucion</th>
-                                            <th>fecha Registro</th>
                                             <th>fecha Agenda</th>
+                                            <th>Mes</th>
                                             <th>Semana</th>
-                                            <th>Lugar</th>
-                                            <th>Tipo Comunicion</th>
-                                            <th>Descripcion Tipo Agenda</th>
+                                            <th>Canton</th>
+                                            <th>Tipo Comunicacion</th>
+                                            <th>Descripcion Agenda</th>
                                             <th>Descripcion Impacto</th>
                                             <th>Responsable</th>
                                             <th>Acciones</th>
@@ -81,9 +81,17 @@
                                                 <tr>
 
                                                   <td class="text-justify">{{$agendaTerritorial->Institucion}}</td>
-                                                  <td class="text-justify">{{$agendaTerritorial->FechaRegistro}}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->fecha_agenda}}</td>
-                                                  <td class="text-justify">{{$agendaTerritorial->semana}}</td>
+                                                  <td class="text-justify">
+                                                     <?php
+                                                       $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"); 
+
+                                                        $mes= $meses[$agendaTerritorial->mes-1];  
+                                                        ?>
+                                                    {{$mes}}
+                                                    
+                                                </td>
+                                                  <td class="text-justify">{{$agendaTerritorial->semana_anio}}</td>
 
                                                    <td class="text-justify">{{$agendaTerritorial->nombre_canton}}</td>
                                                    <td class="text-justify">
@@ -114,10 +122,11 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             <h3 class="modal-title" style="color:red">Agenda Territorial</h3>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body"> 
                                             <p style="color:#212F3D;font-size:medium" align="justify">  <strong>Institucion: </strong> {{$agendaTerritorial->Institucion}} <br> <br>
                                                 <strong>Responsable: </strong> {{$agendaTerritorial->responsable}} <br> <br>
                                                 <strong>Fecha Agenda: </strong> {{$agendaTerritorial->fecha_agenda}} <br> <br>
+                                                <strong>Provincia: </strong> {{$agendaTerritorial->nombre_provincia}} <br><br>
                                                 <strong>Canton: </strong> {{$agendaTerritorial->nombre_canton}} <br><br>
                                                 <strong>Lugar: </strong> {{$agendaTerritorial->lugar}} <br><br>
                                                  <strong>Tipo Comunicacion: </strong> 
@@ -127,9 +136,9 @@
                                                     No Definido
                                                     @endif <br><br>
                                                 <strong>Tipo Agenda: </strong> {{$agendaTerritorial->TipoAgenda}} <br> <br>
-                                                <strong>Descripcion Tipo Agenda</strong> {{$agendaTerritorial->descripcion_tipo_agenda}} <br> <br>
+                                                <strong>Descripcion  Agenda</strong> {{$agendaTerritorial->descripcion_tipo_agenda}} <br> <br>
                                                 <strong>Impacto Tecnico/Político: </strong> {{$agendaTerritorial->ImpactoAgenda}} <br> <br>
-                                                <strong>Descripcion Tipo Impacto: </strong> {{$agendaTerritorial->descripcion_tipo_impacto}} <br>
+                                                <strong>Descripcion  Impacto: </strong> {{$agendaTerritorial->descripcion_tipo_impacto}} <br>
                                         </p>
 
                                         </div>

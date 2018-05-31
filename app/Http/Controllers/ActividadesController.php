@@ -341,7 +341,7 @@ class ActividadesController extends Controller
         $actividad-> comentario = $request-> comentario;
         $actividad-> solucion_id = $idSolucion;
         $actividad-> ejecutor_id = $request-> institucion_id;
-        $actividad-> tipo_fuente = $tipo_actor;
+        $actividad-> tipo_fuente = $tipo_actor; 
         
 
         //dd($request->tipo_fuente_id);
