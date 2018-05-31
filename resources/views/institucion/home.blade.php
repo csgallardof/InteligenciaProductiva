@@ -3,7 +3,7 @@
 @section('title','Inicio')
 
 
-@section('content') 
+@section('content')
 
 
 		<!-- begin #content -->
@@ -11,12 +11,12 @@
 			<!-- begin breadcrumb -->
 
 			<br />
-			
-			
-			
-			
-			
-			<!-- 
+
+
+
+
+
+			<!--
 
 				@if($tipo_fuente==5 or $tipo_fuente==4)
 			<ol class="breadcrumb pull-right">
@@ -25,8 +25,8 @@
 			</ol>
 			@endif
 			 -->
-			
-			
+
+
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
 			<!-- <div class="brand">
@@ -110,17 +110,17 @@
 				<!-- end col-3 -->
 			</div>
 			<!-- end row -->
-			
-							
-                           
-							
-                      
+
+
+
+
+
 			<div>
 				<div class="alert alert-success fade in m-b-15" >
 							<small>
 								En caso de que una propuesta no pertenezca a su institución, contactarse a inteligencia@mipro.gob.ec con su respectiva justificación. <br>
 								Si desea actualizar su usuario contactarse inteligencia@mipro.gob.ec
-							
+
 								<span class="close" data-dismiss="alert">&times;</span>
 								</small>
 							</div>
@@ -130,9 +130,9 @@
 								<span class="close" data-dismiss="alert">&times;</span>
 								</small>
 							</div>
-				
+
 					<a   class="btn btn-primary pull-left m-b-30 m-l-30" href="/institucion/unificar-propuestas">Unificar Propuestas</a>
-				
+
 			</div>
 			<!-- begin row -->
 			<div class="row">
@@ -201,12 +201,12 @@
 													<tr>
 														<td class="text-justify">{{$solucionD->id}}</td>
 														<td class="text-justify">{{$solucionD-> verbo_solucion." ".$solucionD-> sujeto_solucion." ".$solucionD-> complemento_solucion}}</td>
-														
+
 														<td>
 															@if($solucionD->tipo_fuente == 1)
 																<label class="label label-warning f-s-12" style="background-color: rgb(52, 143, 226)">{{ "Mesas Competitivas" }}</label>
 															@else
-																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo22" }}</label>
+																<label class="label label-warning f-s-12" style="background-color: #727cb6">{{ "Consejo Consultivo" }}</label>
 															@endif
 														</td>
 
@@ -219,7 +219,7 @@
 																	@else
 																		No Unificado
 																	@endif
-																	
+
 																</span>
 															@endif
 
@@ -231,10 +231,10 @@
 																	@else
 																		No Unificado
 																	@endif
-																	
+
 																</span>
 															@endif
-															
+
 															@if($solucionD->nombre_estado=="En Análisis")
 															<span class="label label-default f-s-12" style="background-color: #A6ACAF">{{$solucionD->nombre_estado}}</span>
 																<span class="label label-info">
@@ -243,9 +243,9 @@
 																	@else
 																		No Unificado
 																	@endif
-																	
+
 																</span>
-																
+
 															@endif
 														</td>
 														<td>
@@ -495,5 +495,3 @@
 		<!-- end #content -->
 
 		@stop
-
-
