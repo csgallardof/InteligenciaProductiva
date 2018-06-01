@@ -102,8 +102,8 @@
                                                     @endif
                                                     </td>
                                                    
-                                                  <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_agenda}}</td>
-                                                  <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_impacto}}</td>
+                                                  <td class="text-justify">{!!$agendaTerritorial->descripcion_tipo_agenda!!}</td>
+                                                  <td class="text-justify">{!!$agendaTerritorial->descripcion_tipo_impacto!!}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->responsable}}</td>
                                                   <td>
                                                     @if($tipo_fuente==4)
@@ -136,9 +136,9 @@
                                                     No Definido
                                                     @endif <br><br>
                                                 <strong>Tipo Agenda: </strong> {{$agendaTerritorial->TipoAgenda}} <br> <br>
-                                                <strong>Descripcion  Agenda</strong> {{$agendaTerritorial->descripcion_tipo_agenda}} <br> <br>
+                                                <strong>Descripcion  Agenda</strong> {!!$agendaTerritorial->descripcion_tipo_agenda!!} <br> <br>
                                                 <strong>Impacto Tecnico/Político: </strong> {{$agendaTerritorial->ImpactoAgenda}} <br> <br>
-                                                <strong>Descripcion  Impacto: </strong> {{$agendaTerritorial->descripcion_tipo_impacto}} <br>
+                                                <strong>Descripcion  Impacto: </strong> {!!$agendaTerritorial->descripcion_tipo_impacto!!} <br>
                                         </p>
 
                                         </div>

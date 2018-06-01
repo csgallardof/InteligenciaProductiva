@@ -99,7 +99,7 @@
                                                         ?>
                                                     {{$mes}}
                                                   </td>
-                                                  <td class="text-justify">{{$agendaTerritorial->semana}}</td>
+                                                  <td class="text-justify">{{$agendaTerritorial->semana_anio}}</td>
 
                                                   
                                                    <td class="text-justify">{{$agendaTerritorial->nombre_canton}}</td>
@@ -111,8 +111,8 @@
                                                     @endif
                                                     </td>
                                                    
-                                                  <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_agenda}}</td>
-                                                  <td class="text-justify">{{$agendaTerritorial->descripcion_tipo_impacto}}</td>
+                                                  <td class="text-justify">{!!$agendaTerritorial->descripcion_tipo_agenda!!}</td>
+                                                  <td class="text-justify">{!!$agendaTerritorial->descripcion_tipo_impacto!!}</td>
                                                   <td class="text-justify">{{$agendaTerritorial->responsable}}</td>
                                                   <td >
                                         <div class="col-md-0 center">
@@ -141,9 +141,9 @@
                                                     @endif
                                                     <br><br>
                                                 <strong>Tipo Agenda: </strong> {{$agendaTerritorial->TipoAgenda}} <br> <br>
-                                                <strong>Descripcion Tipo Agenda</strong> {{$agendaTerritorial->descripcion_tipo_agenda}} <br> <br>
+                                                <strong>Descripcion  Agenda</strong> {!!$agendaTerritorial->descripcion_tipo_agenda!!} <br> <br>
                                                 <strong>Impacto Tecnico/Político: </strong> {{$agendaTerritorial->ImpactoAgenda}} <br> <br>
-                                                <strong>Descripcion Tipo Impacto: </strong> {{$agendaTerritorial->descripcion_tipo_impacto}} <br>
+                                                <strong>Descripcion  Impacto: </strong> {!!$agendaTerritorial->descripcion_tipo_impacto!!} <br>
                                         </p>
                                             
                                         </div>

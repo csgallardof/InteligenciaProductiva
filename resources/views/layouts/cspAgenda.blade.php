@@ -42,6 +42,7 @@
 
 
     <link href="{{ asset('plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
 
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 		@section('start_css')
@@ -221,6 +222,10 @@
 	<script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
 	<script src="{{ asset('plugins/DataTables/js/dataTables.colReorder.js') }}"></script>
 	<script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
+	<script src="{{asset ('plugins/ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js')}}"></script>
+	<script src="{{asset ('js/form-wysiwyg.demo.min.js')}}"></script>
 
 	<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
 	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
@@ -231,6 +236,7 @@
 <script>
 		$(document).ready(function() {
 			App.init();
+			FormWysihtml5.init();
 			FormPlugins.init();
 			TableManageResponsive.init();
 		});

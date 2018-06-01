@@ -67,13 +67,13 @@
 									 				<div class="col-md-4">
 									 					<label for="responsable">Tipo Comunicacional</label>
 									 					 
-														<select name="tipo_comunicacional" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-default">
+														<select name="tipo_comunicacional"  class="form-control"  data-size="10" data-live-search="true"   required  data-style="btn-default">
 			                                            <option value="" disabled selected>Seleccionar Tipo</option>
 			                                            <option value="Institucional">Institucional</option>
 			                                            <option value="Presidencia">Presidencia</option>
 			                                            <option value="Institucional y Presidencia">Institucional y Presidencia</option>
 			                                            
-			                                        </select>
+			                                        </select> 
 									 				</div>
 									 			</div>
 									 			
@@ -188,7 +188,8 @@
 									 		</div>
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 			<textarea class="form-control" id="lineas_discursivas" name="descripcion_tipo_agenda" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			
+												<textarea class="ckeditor" id="editor1" required name="descripcion_tipo_agenda" rows="6"></textarea>	
 									 			</div>
 									    	
 									  	</div>	
@@ -202,7 +203,7 @@
 									<div class="col-md-8">
 									<label for="tipo_impacto_id"><br><br>Tipo Impacto</label>
 									
-									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion"name="tipo_impacto_id" data-style="btn-info">
+									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required name="tipo_impacto_id" data-style="btn-info">
                                             <option value="" selected>Seleccione una Opcion</option>
                                             @foreach($cspTipoImpactoAgenda as $cspTipoImpactoAgenda)
                                             <option value="{{$cspTipoImpactoAgenda['id']}}">{{$cspTipoImpactoAgenda['nombre_impacto']}}
@@ -228,8 +229,10 @@
 									 		</div>
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 			<textarea required class="form-control" id="descripcion_tipo_impacto" name="descripcion_tipo_impacto" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
+
+									 			<textarea class="ckeditor" id="editor1" required name="descripcion_tipo_impacto" rows="6"></textarea>	
 									 			</div>
+
 									    	
 								</div>
 								

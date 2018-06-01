@@ -121,12 +121,12 @@
                                                 </td>
                                                 <td width="90" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem1->descripcion_tipo_agenda}}
+                                                    {!!$agendaTerritorialSem1->descripcion_tipo_agenda!!}
                                                     </font>
                                                 </td>
                                                 <td width="100" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem1->descripcion_tipo_impacto}}
+                                                    {!!$agendaTerritorialSem1->descripcion_tipo_impacto!!}
                                                     </font>
 
                                                 </td> 
@@ -243,12 +243,12 @@
                                                 </td>
                                                 <td width="90" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem2->descripcion_tipo_agenda}}
+                                                    {!!$agendaTerritorialSem2->descripcion_tipo_agenda!!}
                                                     </font>
                                                 </td>
                                                 <td width="100" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem2->descripcion_tipo_impacto}}
+                                                    {!!$agendaTerritorialSem2->descripcion_tipo_impacto!!}
                                                     </font>
 
                                                 </td> 
@@ -364,12 +364,12 @@
                                                 </td>
                                                 <td width="90" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem3->descripcion_tipo_agenda}}
+                                                    {!!$agendaTerritorialSem3->descripcion_tipo_agenda!!}
                                                     </font>
                                                 </td>
                                                 <td width="100" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem3->descripcion_tipo_impacto}}
+                                                    {!!$agendaTerritorialSem3->descripcion_tipo_impacto!!}
                                                     </font>
 
                                                 </td> 
@@ -485,12 +485,12 @@
                                                 </td>
                                                 <td width="90" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem4->descripcion_tipo_agenda}}
+                                                    {!!$agendaTerritorialSem4->descripcion_tipo_agenda!!}
                                                     </font>
                                                 </td>
                                                 <td width="100" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem4->descripcion_tipo_impacto}}
+                                                    {!!$agendaTerritorialSem4->descripcion_tipo_impacto!!}
                                                     </font>
 
                                                 </td> 
@@ -606,12 +606,12 @@
                                                 </td>
                                                 <td width="90" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem5->descripcion_tipo_agenda}}
+                                                    {!!$agendaTerritorialSem5->descripcion_tipo_agenda!!}
                                                     </font>
                                                 </td>
                                                 <td width="100" height="10">
                                                     <font face="arial, verdana, helvetica" size=1> 
-                                                    {{$agendaTerritorialSem5->descripcion_tipo_impacto}}
+                                                    {!!$agendaTerritorialSem5->descripcion_tipo_impacto!!}
                                                     </font>
 
                                                 </td> 
