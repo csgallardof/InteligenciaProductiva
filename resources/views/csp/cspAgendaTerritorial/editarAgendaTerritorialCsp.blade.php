@@ -32,7 +32,7 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-12">
 					
 					<div class="panel panel-inverse" data-sortable-id="index-5">
 						<div class="panel-heading">
@@ -102,12 +102,12 @@
 		                                      	</div>
 		                                      	<div class="col-md-3">
 														<label for="hora_agenda">Hora de Agenda</label>
-														<div class="col-md-8">
+														
 															<div class="input-group bootstrap-timepicker">
 																<input id="timepicker" type="text" name="hora_agenda" required class="form-control" value="{{$hora_agenda}}" />
 																<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
 															</div>
-														</div>
+														
 												</div>
 		                                      	<div class="col-md-3">
 									 					 <label for="institucion_id"></label>	
@@ -195,7 +195,8 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea class="form-control" id="lineas_discursivas" name="descripcion_tipo_agenda" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$CspAgendaTerritorial->descripcion_tipo_agenda}}</textarea>
+									 			
+									 			<textarea class="ckeditor" id="editor1" name="descripcion_tipo_agenda" rows="6">{{$CspAgendaTerritorial->descripcion_tipo_agenda}}</textarea>
 									 			</div>
 									    	
 									  	</div>	
@@ -235,7 +236,8 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea required class="form-control" id="descripcion_tipo_impacto" name="descripcion_tipo_impacto" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$CspAgendaTerritorial->descripcion_tipo_impacto}}</textarea>	
+									 			
+									 			<textarea class="ckeditor" id="editor1" name="descripcion_tipo_impacto" rows="6">{{$CspAgendaTerritorial->descripcion_tipo_impacto}}</textarea>	
 									 			</div>
 									    	
 								</div>
@@ -275,7 +277,7 @@
 				
 			</div>
 
-             <div class="col-md-4" >
+             <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

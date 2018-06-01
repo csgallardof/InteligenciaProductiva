@@ -20,7 +20,7 @@ class CspPdfReportesAgendaController extends Controller
         ->join('csp_tipo_agendas','csp_tipo_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
         ->join('csp_tipo_impacto_agendas','csp_tipo_impacto_agendas.id', '=','csp_agenda_territorials.tipo_agenda_id')
         ->join('institucions','institucions.id', '=','csp_agenda_territorials.institucion_id')
-        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.lugar','csp_agenda_territorials.id','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.responsable','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','provincias.nombre_provincia','csp_periodo_agendas.mes','csp_periodo_agendas.semana','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
+        ->select('csp_agenda_territorials.fecha_agenda','csp_agenda_territorials.lugar','csp_agenda_territorials.id','csp_agenda_territorials.tipo_comunicacional','csp_agenda_territorials.responsable','csp_agenda_territorials.descripcion_tipo_agenda','csp_agenda_territorials.descripcion_tipo_impacto','cantons.nombre_canton','institucions.siglas_institucion as Institucion','provincias.nombre_provincia','csp_periodo_agendas.mes','csp_periodo_agendas.semana_anio','csp_agenda_territorials.created_at as FechaRegistro','csp_tipo_agendas.nombre_tipo_agenda as TipoAgenda','csp_tipo_impacto_agendas.nombre_impacto as ImpactoAgenda')
         ->orderBy('csp_agenda_territorials.id','DESC')
         ->get();
 

@@ -229,7 +229,19 @@
 									                            No definido
 									                            @endif
 															                          </td>
-						                            <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
+						                            <td class="text-justify">
+														<?php
+														if(strlen($reportesAlerta->fuente)>100){
+															//dd('no entre');
+														$fuente = substr($reportesAlerta->fuente, 0, 100)."..";
+														}else		
+															$fuente=$reportesAlerta->fuente;
+														?>
+														 {{$fuente}}
+						                            	
+
+
+						                            </td>
 
 
 						                             <td class="text-justify">{{ $reportesAlerta->EstadoReporte }}</td>
