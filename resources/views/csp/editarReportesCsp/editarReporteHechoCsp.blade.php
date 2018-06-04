@@ -83,7 +83,7 @@
                                 <div class="media-body">
                                     <div class="col-md-10">
 
-                                    <a href="/institucion/ver-agenda-territorial" class="btn btn-warning pull-right">Regresar</a>
+                                    <a href="/institucion/consejo-sectorial-produccion/reportes-hechos" class="btn btn-warning pull-right">Regresar</a>
                                     </div>
                                     
                                     <br>

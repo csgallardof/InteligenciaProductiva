@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
-                <a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
+                <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning pull-right">Regresar</a>
                 <div class="invoice-company"><strong>Tema: </strong>
                     {{$cspReportesAlerta->tema}}
                    

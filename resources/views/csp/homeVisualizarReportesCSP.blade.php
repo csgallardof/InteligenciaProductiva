@@ -165,7 +165,7 @@
 						                      		</td>
 
 						                      		<td class="text-justify">
-						                      			<a href= "/institucion/visualizar-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
+						                      			<a href= "/institucion/visualizar-detalle-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
 						                      		</td>
@@ -267,7 +267,7 @@
 
 						                            </td>
 						                            <td>
-						                            	<a href= "/institucion/visualizar-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
+						                            	<a href= "/institucion/visualizar-detalle-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
 														<i class="fa fa-2x fa-eye"></i>
 													</a>
 

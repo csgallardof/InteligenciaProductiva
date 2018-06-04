@@ -257,7 +257,9 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      // VISUALIZAR REPORTES CSP
      Route::get('/visualizar-reporte-hechos/{id}','CspReportesController@visualizarReporteHecho');
+     Route::get('/visualizar-detalle-reporte-hechos/{id}','CspReportesController@visualizarDetalleReporteHecho');
      Route::get('/visualizar-reporte-Alertas/{id}','CspReportesController@visualizarReporteAlerta');
+     Route::get('/visualizar-detalle-reporte-Alertas/{id}','CspReportesController@visualizarDetalleReporteAlerta');
 
      //EDITAR REPORTES HECHO CSP
      Route::get('/editar-reporte-hechos/{id}','CspReportesController@vistaEditarReporteHecho');

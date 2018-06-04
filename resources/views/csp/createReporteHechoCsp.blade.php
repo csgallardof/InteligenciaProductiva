@@ -183,7 +183,7 @@
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
 									 				<label for="descripcion">Lineas Discrusivas</label>	
-									 				<textarea  class="ckeditor" id="editor1"  name="lineas_discursivas" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
+									 				<textarea  class="ckeditor" id="editor2"  name="lineas_discursivas" rows="3" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>	
 									 			</div>
 									 			
 									 		</div>

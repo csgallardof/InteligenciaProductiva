@@ -32,8 +32,9 @@
                            
                            
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
-                           
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+
+                           <div style="margin: 0 1cm 25 2cm">
+                            <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMipro->tema; ?><br>
                             <strong>Tipo Comunicacional: </strong> 
                             @if($reporteHechoMipro->tipo_comunicacional!="")
@@ -46,8 +47,9 @@
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMipro->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMipro->porcentaje_avance;?>%<br>
                             <strong>Lugar: </strong><?= $reporteHechoMipro->lugar; ?><br>
-                            <strong>Descripción: </strong><?= $reporteHechoMipro->descripcion; ?>
+                            <strong>Descripción: </strong>{!!$reporteHechoMipro->descripcion!!}
                             </p>
+                            </div>
                             
                             <?php } ?>
 
@@ -60,8 +62,8 @@
                             
                          
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
-                            
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+                            <div style="margin: 0 1cm 25 2cm">
+                            <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAG->tema; ?><br>
                             <strong>Tipo Comunicacional: </strong> 
                             @if($reporteHechoMAG->tipo_comunicacional!="")
@@ -74,9 +76,9 @@
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAG->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAG->porcentaje_avance;?>%<br>
                             <strong>Lugar: </strong><?= $reporteHechoMAG->lugar; ?><br>
-                            <strong>Descripción: </strong><?= $reporteHechoMAG->descripcion; ?>
+                            <strong>Descripción: </strong>{!!$reporteHechoMAG->descripcion!!}
                             </p>
-                            
+                            </div>
                             <?php } ?>  
 
                         @endif                   
@@ -87,8 +89,8 @@
                             
                          
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
-                            
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+                            <div style="margin: 0 1cm 25 2cm">
+                            <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAP->tema; ?><br>
                             <strong>Tipo Comunicacional: </strong> 
                             @if($reporteHechoMAP->tipo_comunicacional!="")
@@ -101,8 +103,10 @@
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAP->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAP->porcentaje_avance;?>%<br>
                             <strong>Lugar: </strong><?= $reporteHechoMAP->lugar; ?><br>
-                            <strong>Descripción: </strong><?= $reporteHechoMAP->descripcion; ?>
-                            </p>
+                            <strong>Descripción: </strong> {!!$reporteHechoMAP->descripcion!!}
+                            
+                                
+                            </div>
                             
                             <?php } ?>
                         @endif

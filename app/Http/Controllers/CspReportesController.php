@@ -496,11 +496,25 @@ class CspReportesController extends Controller
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteHechoCsp',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
     }
+
+    public function visualizarDetalleReporteHecho($id){
+
+        $cspReportesHecho = CspReportesHecho::find($id);
+        //dd($ReporteHechoVisualizar);
+        return view('csp.vistaSecretario.visualizarReporteHechoCspSecretario',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
+    }
     public function visualizarReporteAlerta($id){
         $cspReportesAlerta = cspReportesAlerta::find($id);
         
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteAlertaCsp',compact('cspReportesAlerta'));    
+    }
+
+    public function visualizarDetalleReporteAlerta($id){
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+        
+        //dd($ReporteHechoVisualizar);
+        return view('csp.vistaSecretario.visualizarReporteAlertaCspSecretario',compact('cspReportesAlerta'));    
     }
     //EDITAR REPORTES HECHO CSP
     public function vistaEditarReporteHecho($id){
