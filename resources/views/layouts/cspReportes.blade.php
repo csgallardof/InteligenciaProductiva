@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="en"> 
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
@@ -192,6 +192,10 @@
     <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
 	<script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
+	<script src="{{asset ('plugins/ckeditor/ckeditor.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js')}}"></script>
+	<script src="{{asset ('plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js')}}"></script>
+	<script src="{{asset ('js/form-wysiwyg.demo.min.js')}}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 
