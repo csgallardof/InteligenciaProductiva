@@ -28,6 +28,8 @@ class InstitucionController extends Controller
                                     $q->where('roles.id', $rol-> id);
                             })
         ->orderBy('name','ASC')->paginate(25);
+
+        //dd($rol);
         return view('admin.institucion.home')->with(["instituciones"=>$instituciones]); 
 
     }
@@ -355,6 +357,17 @@ class InstitucionController extends Controller
             $msj->subject('Inteligencia Productiva - Notificación de asignacion de Responsabilidad');
             $msj->to( $correo);
         });
+    }
+
+    public function homeActoresV2(Request $request){
+
+
+        $actoresSoluciones = DB::SELECT("SELECT solucions.tipo_fuente,actor_solucion.tipo_actor,users.name, solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion FROM actor_solucion
+            JOIN users ON users.id=actor_solucion.user_id
+            JOIN solucions ON solucions.id=actor_solucion.solucion_id");
+
+        return view('admin.actores.homeActoresV2')->with(["actoresSoluciones"=>$actoresSoluciones]); 
+
     }
 
 }

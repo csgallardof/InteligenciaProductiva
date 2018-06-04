@@ -198,6 +198,12 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      Route::get('soluciones_por_tipo/{tipo_fuente}','SolucionesController@getSolucionesByTipoFuente');
 
+     // vista actores
+
+     Route::get('actores/v2','InstitucionController@homeActoresV2');  //admin cruds
+
+
+
 
 });
 
