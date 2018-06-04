@@ -59,15 +59,15 @@
 										{{ csrf_field() }}
               							<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<label for="responsable">Responsable</label>
 									 					 <input type="text" required name="responsable" class="form-control" value="{{$CspAgendaTerritorial->responsable}}" >			
 									 				</div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					<label for="responsable">Tipo Comunicacional</label>
 									 					 
-														<select name="tipo_comunicacional" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-default">
+														<select name="tipo_comunicacional" class="form-control " data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-default">
 			                                            <option value="" disabled selected>Seleccionar Tipo</option>
 			                                            <option value="Institucional">Institucional</option>
 			                                            <option value="Presidencia">Presidencia</option>
@@ -80,8 +80,8 @@
 									  	</div>
 									  	<div class="form-group">
 									  		<div class="row">
-									  			<div class="col-md-3"> </div>
-									  			<div class="col-md-3">
+									  			<div class="col-md-2"> </div>
+									  			<div class="col-md-4">
                                    		 <label for="agenda_fecha">Fecha de Agenda</label>
 		                                    <?php 
 												 
@@ -100,7 +100,7 @@
 		                                   				
 													
 		                                      	</div>
-		                                      	<div class="col-md-3">
+		                                      	<div class="col-md-4">
 														<label for="hora_agenda">Hora de Agenda</label>
 														
 															<div class="input-group bootstrap-timepicker">
@@ -118,8 +118,8 @@
                                 		</div>
                                 		<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-4">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-8">
 									 					<label for="responsable">Lugar</label>
 									 					 <input type="text" required name="lugar" value="{{$CspAgendaTerritorial->lugar}}" class="form-control" >			
 									 				</div>
@@ -129,8 +129,8 @@
 									  	</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-6">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="select-provincia"> Provincia</label>
 									
 									    <select id="select-provincia" onchange="getSelectValue();" name="select-provincia" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-primary">
@@ -148,8 +148,8 @@
 
 								<div class="form-group ">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-6 ">
+									<div class="col-md-2"></div>
+									<div class="col-md-8 ">
 									<label for="select-canto">Cantones</label>
 										 
 									    <select  id="select-canto" class="form-control" name="select_canton"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
@@ -163,8 +163,8 @@
 								</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-3">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="tipo_agenda_id">Tipo Agenda</label>
 									
 									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" name="tipo_agenda_id" data-style="btn-info">
@@ -179,22 +179,22 @@
 									</div>
 									
 									</div>
-									<div class="col-md-3"></div>
+									<div class="col-md-2"></div>
 								</div>
 								<div class="form-group ">
 									 		
 									 		<div class="row">
 													
-													<div class="col-md-3"></div>
-									 				<div class="col-md-4"> 
+													<div class="col-md-2"></div>
+									 				<div class="col-md-8"> 
 									 					
 									 				<label for="descripcion_tipo_agenda" class=>Descripción  Agenda</label>
 									 				
 									 				</div>
 									 			
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			
 									 			<textarea class="ckeditor" id="editor1" name="descripcion_tipo_agenda" rows="6">{{$CspAgendaTerritorial->descripcion_tipo_agenda}}</textarea>
 									 			</div>
@@ -206,8 +206,8 @@
 										</div>
 								<div class="form-group">
 									<div class="row">
-									<div class="col-md-3"></div>
-									<div class="col-md-3">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
 									<label for="tipo_impacto_id"><br><br>Tipo Impacto</label>
 									
 									    <select class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion"name="tipo_impacto_id" data-style="btn-info">
@@ -226,16 +226,16 @@
 								<div class="form-group">
 									 		
 									 		<div class="row">
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-7">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 				<label for="descripcion_tipo_impacto">Descripción  Impacto</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion_tipo_impacto" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 			
 									 			<textarea class="ckeditor" id="editor1" name="descripcion_tipo_impacto" rows="6">{{$CspAgendaTerritorial->descripcion_tipo_impacto}}</textarea>	
 									 			</div>
