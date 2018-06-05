@@ -65,7 +65,7 @@
 			<!-- begin row -->
 			<div class="row">
 				<!-- begin col-8 -->
-				<div class="col-md-8">
+				<div class="col-md-12">
 					
 					<div class="panel panel-inverse" data-sortable-id="index-5">
 						<div class="panel-heading">
@@ -81,7 +81,7 @@
 							
 									<div class="col-md-10">
 
-									<a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
+									<a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-warning pull-right">Regresar</a>
 									</div>
 									
 									<br>
@@ -93,18 +93,20 @@
 									  	
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
+									 				<div class="col-md-2"></div>
 									 				
-									 				<div class="col-md-3">
-									 					<label for="fecha_atencion">Fecha de Atencion de Reporte</label>	
+									 				<div class="col-md-4">
+									 					<label for="fecha_atencion">Fecha de Atencion de Reporte</label>
+									 					<div >
 									 					<input id="fecha_atencion" readonly="readonly" required type="text" name="fecha_atencion" value="{{$cspReportesAlerta->fecha_atencion}}">
+									 					</div>	
 									 				</div>
 													
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					<label for="tema">Tema</label>
 									 					<input type="text" required name="tema" class="form-control" value="{{$cspReportesAlerta->tema}}">
 									 				</div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2">
 									 					 <label for="institucion_id"></label>	
 					                                	<input id="institucion_id"  type="hidden" name="institucion_id" value="{{$usuario_institucion_id}}">	
 									 				</div>
@@ -114,14 +116,14 @@
 									  	</div>
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
+									 				<div class="col-md-2"></div>
 									 				<div class="col-md-4">
 									 					<label for="fecha_reporte">Tipo Comunicacional</label>
 									 				</div>
 									 			</div>
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
 									 						<option value="" disabled selected>Seleccione un tipo</option>
 									 						<option value="Institucional">Institucional</option>
@@ -134,13 +136,13 @@
 
 									  	<div class="form-group">
 									 			<div class="row">
-									 				<div class="col-md-3"></div>
-									 				<div class="col-md-3">
+									 				<div class="col-md-2"></div>
+									 				<div class="col-md-4">
 									 					<label for="fuente">Fuente</label>
 									 					 <input type="text" required name="fuente" class="form-control" value="{{$cspReportesAlerta->fuente}}">			
 									 				</div>
 									 				
-									 				<div class="col-md-3">
+									 				<div class="col-md-4">
 									 					 <label for="estado_reporte_id">Estado</label>
 									 					 <select name="estado_reporte_id" class="form-control"  required="">
 					                                    	<option value="" >------Escoja un opcion----</option>
@@ -163,17 +165,17 @@
 									 	<div class="form-group">
 									 		
 									 		<div class="row">
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-7">
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
 									 				<label for="descripcion">Descripcion</label>		
 									 			</div>
 									 			<div class="col-md-3">
 									 				<div id="descripcion" class="pull-right"></div>
 									 			</div>
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
-									 			<textarea required class="form-control" id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->descripcion}}</textarea>	
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
+									 			<textarea class="ckeditor" id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->descripcion!!}</textarea>	
 									 			</div>
 									    	
 									  	</div>
@@ -186,7 +188,7 @@
 									 		
 									 		<div class="row">
 													
-													<div class="col-md-3"></div>
+													<div class="col-md-2"></div>
 									 				<div class="col-md-4"> 
 									 					
 									 				<label for="solucion_propuesta" class=>Solucion Propuesta</label>
@@ -194,9 +196,9 @@
 									 				</div>
 									 			
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
-									 			<textarea required class="form-control" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->solucion_propuesta}}</textarea>
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
+									 			<textarea  class="ckeditor" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->solucion_propuesta!!}</textarea>
 									 			</div>
 									    	
 									  	</div>
@@ -209,7 +211,7 @@
 									 		
 									 		<div class="row">
 													
-													<div class="col-md-3"></div>
+													<div class="col-md-2"></div>
 									 				<div class="col-md-4"> 
 									 					
 									 				<label for="riesgo_principal" class=>Riesgo Principal</label>
@@ -217,9 +219,9 @@
 									 				</div>
 									 			
 									 		</div>
-									 			<div class="col-md-3"></div>
-									 			<div class="col-md-6">
-									 			<textarea required class="form-control" id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->riesgo_principal}}</textarea>
+									 			<div class="col-md-2"></div>
+									 			<div class="col-md-8">
+									 			<textarea class="ckeditor" id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->riesgo_principal!!}</textarea>
 									 			</div>
 									    	
 									  	</div>	  
@@ -232,8 +234,8 @@
 									  	<div class="form-group">
 
 									  		<div class="row">
-									  			<div class="col-md-3"></div>
-									  			<div class="col-md-7">
+									  			<div class="col-md-2"></div>
+									  			<div class="col-md-8">
 									    	<label for="anexo">Agregar archivos. (Opcional)</label>
 									    	
 									    	<input type="file" class="form-control-file" id="anexo" aria-describedby="fileHelp" name="anexo" >
@@ -316,7 +318,7 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea required class="form-control" readonly="readonly" id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->descripcion}}</textarea>	
+									 			<textarea required class="form-control" readonly="readonly" id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->descripcion!!}</textarea>	
 									 			</div>
 									    	
 									  	</div>
@@ -339,7 +341,7 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea required class="form-control" readonly="readonly" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->solucion_propuesta}}</textarea>
+									 			<textarea required class="form-control" readonly="readonly" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->solucion_propuesta!!}</textarea>
 									 			</div>
 									    	
 									  	</div>
@@ -362,7 +364,7 @@
 									 		</div>
 									 			<div class="col-md-3"></div>
 									 			<div class="col-md-6">
-									 			<textarea required class="form-control" readonly="readonly" id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{{$cspReportesAlerta->riesgo_principal}}</textarea>
+									 			<textarea required class="form-control" readonly="readonly" id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()">{!!$cspReportesAlerta->riesgo_principal!!}</textarea>
 									 			</div>
 									    	
 									  	</div>	  
@@ -391,7 +393,7 @@
 				
 			</div>
 
-             <div class="col-md-4" >
+             <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

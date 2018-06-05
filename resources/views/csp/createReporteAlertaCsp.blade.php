@@ -176,7 +176,8 @@
 									 		</div>
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 			<textarea required class="form-control" id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea class="ckeditor"   id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			
 									 			</div>
 
 									  	</div>
@@ -199,7 +200,7 @@
 									 		</div>
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 			<textarea required class="form-control" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea class="ckeditor" id="solucion_propuesta" name="solucion_propuesta" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 									 			</div>
 
 									  	</div>
@@ -223,7 +224,7 @@
 									 		</div>
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
-									 			<textarea required class="form-control" id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
+									 			<textarea class="ckeditor"  id="riesgo_principal" name="riesgo_principal" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
 									 			</div>
 
 									  	</div>

@@ -28,10 +28,10 @@
                              <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Industrias y Productividad </u></b> <br> 
                             
                              </p><br>
-                              
+                        <div style="margin: 0 1cm 25 2cm">   
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
                             @if($reporteHechoMipro->lineas_discursivas!=null)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm ; text-transform: uppercase"  ALIGN="justify" >
+                            <p style=" font-family: calibri; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMipro->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
                             @if($reporteHechoMipro->tipo_comunicacional!="")
@@ -44,16 +44,17 @@
                             </p>
                             @endif
                             <?php } ?>
+                        </div>
                          @endif  
                         @if(sizeof($data3)!=0)    
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Agricultura y Ganadería</u></b> <br></p><br>
 
                             
                             
-                         
+                        <div style="margin: 0 1cm 25 2cm"> 
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
                             @if($reporteHechoMAG->lineas_discursivas!=null)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm; text-transform: uppercase"  ALIGN="justify" >
+                            <p style=" font-family: calibri; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAG->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
                             @if($reporteHechoMAG->tipo_comunicacional!="")
@@ -61,21 +62,22 @@
                             @else
                             NO DEFINIDO
                             @endif
-                            <br> <br> 
+                            <br> 
                             
-                            <?= $reporteHechoMAG->lineas_discursivas; ?>
+                            {!!$reporteHechoMAG->lineas_discursivas!!}
                             
                             </p>
                             @endif
-                            <?php } ?>                     
+                            <?php } ?> 
+                        </div>                    
                         @endif
                        
                         @if(sizeof($data2)!=0)
                         <p ALIGN="left" style="font-family:calibri; margin: 0 0cm 0 1cm"><b> <u>Ministerio de Acuacultura y Pesca </u></b> <br></p><br>
-                        
+                        <div style="margin: 0 1cm 25 2cm">
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
                             @if($reporteHechoMAP->lineas_discursivas!=null)
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm;text-transform: uppercase"  ALIGN="justify" >
+                            <p style=" font-family: calibri;text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAP->tema; ?></strong><br>
                             <strong>Tipo Comunicación:</strong>
                             @if($reporteHechoMAP->tipo_comunicacional!="")
@@ -83,13 +85,14 @@
                             @else
                             NO DEFINIDO
                             @endif
-                            <br> <br>
+                            <br>
                             
-                            <?= $reporteHechoMAP->lineas_discursivas; ?>
+                            {!! $reporteHechoMAP->lineas_discursivas!!}
                             </p>
+
                             @endif
                             <?php } ?>
-
+                            </div>
                         @endif
                         
                         </div>

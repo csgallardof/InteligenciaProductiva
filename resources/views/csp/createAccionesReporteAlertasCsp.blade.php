@@ -1,4 +1,4 @@
-@extends('layouts.cspReportes')
+@extends('layouts.cspReportes') 
 
 @section('content')
 
@@ -66,7 +66,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-12">
                     
                     <div class="panel panel-inverse" data-sortable-id="index-5">
                         <div class="panel-heading">
@@ -79,11 +79,11 @@
                             <h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Editar Reporte Hechos CSP</h4>
                         </div>
                         <div class="panel-body">
-                            <div class="height-lg" data-scrollbar="true">
+                           
                                 <div class="media-body">
                                     <div class="col-md-10">
                                         
-                                    <a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
+                                    <a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-warning pull-right">Regresar</a>
                                     </div>
                                     <br>
                                     <hr>
@@ -129,7 +129,7 @@
                                             </div>
                                                 <div class="col-md-3"></div>
                                                 <div class="col-md-6">
-                                                <textarea  required class="form-control" id="acciones" name="acciones" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>   
+                                                <textarea  class="ckeditor"  id="acciones" name="acciones" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>   
                                                 </div>
                                             
                                         </div>
@@ -162,7 +162,7 @@
                                     </form>     
 
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
                     
@@ -170,7 +170,7 @@
                 <!-- end col-8 -->
                 
             </div>
-            <div class="col-md-4" >
+            <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">

@@ -105,7 +105,7 @@
 						<div class="tab-pane fade active in" id="hechos">
 							<div class="height-lg" data-scrollbar="true">
 								<div class="col-md-12">
-								<a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
+								<a href="/institucion/consejo-sectorial-produccion" class="btn btn-primary pull-right">Regresar</a>
 								</div>
 
 						<hr>
@@ -144,7 +144,7 @@
 						                            <td class="text-justify">{{ $accionesReporteAlerta->fecha }}</td>
 						                            <td class="text-justify">{{ $accionesReporteAlerta->created_at }}</td>
                                                     <td class="text-justify">{{ $accionesReporteAlerta->Periodo }}</td>
-						                            <td class="text-justify">{{ $accionesReporteAlerta->acciones }}</td>
+						                            <td class="text-justify">{!! $accionesReporteAlerta->acciones !!}</td>
 													<td class="text-justify">
                                                     @if(($accionesReporteAlerta->anexo)!="000Ninguno")
 														<a target="_blank" href="{{ route('descargarAccionAlertaCsp',$accionesReporteAlerta-> anexo) }} ">

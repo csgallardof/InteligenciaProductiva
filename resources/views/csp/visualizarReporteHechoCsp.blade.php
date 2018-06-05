@@ -125,13 +125,13 @@
                     <div class="media-body">
 
                         <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {{$cspReportesHecho->descripcion}}</p>
+                       <p> {!!$cspReportesHecho->descripcion!!}</p>
                         
                     </div>
                     <hr></hr>
                     <div class="media-body">
                         <h6 class="media-heading"><strong>Lineas Discursivas</strong></h6>
-                        <p align="justify">{{$cspReportesHecho->lineas_discursivas}}</p>
+                        <p align="justify">{!!$cspReportesHecho->lineas_discursivas!!}</p>
                         
                        
                     </div>
