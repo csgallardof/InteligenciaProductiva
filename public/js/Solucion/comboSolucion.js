@@ -6,14 +6,14 @@ function getSelectValue(){
 				if(selectedValue==""){
 					//alert("no exite id");
 					var html_select_vacio = '<option value="">Seleccione Propuesta</option>';
-					document.getElementById("select-Solucion").innerHTML = html_select_vacio;
+					document.getElementById("select-solucion").innerHTML = html_select_vacio;
 					console.log(html_select_vacio);
 					
 				}else
 			$.get('/api/propuestas/'+selectedValue,function(data){
 				
 				
-				//console.log(data)
+				console.log(data)
 				//alert(selectedValue);
 				
 
@@ -25,8 +25,8 @@ function getSelectValue(){
 					 //html_select += '<option value="'+data[i].id+'">'+data[i].nombre_canton+'</option>';
 				}
 
-				document.getElementById("select-Solucion").innerHTML = html_select;
-				//console.log(html_select);
+				document.getElementById("select-solucion").innerHTML = html_select;
+				console.log(html_select);
 				
 				
 

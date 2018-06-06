@@ -73,13 +73,50 @@
             <script src="{{ asset('js/apps.js') }}"></script>
             <script src="{{ asset('js/dashboard.js') }}"></script>
             <script src="{{ asset('js/dropdown.js') }}"></script>
-            <script src="{{ asset('js/Solucion/comboSolucion.js') }}"></script>
+            
 
-        @show
+    @show
+
+
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('plugins/masked-input/masked-input.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ asset('plugins/password-indicator/js/password-indicator.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-combobox/js/bootstrap-combobox.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-select/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.js') }}"></script>
+    <script src="{{ asset('plugins/jquery-tag-it/js/tag-it.min.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-daterangepicker/moment.js') }}"></script>
+    <script src="{{ asset('plugins/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
+    <script src="{{ asset('js/apps.min.js') }}"></script>
+    <script src="{{ asset('js/Solucion/comboSolucion.js') }}"></script>
+    
+    <script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('plugins/DataTables/js/dataTables.colReorder.js') }}"></script>
+    <script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>
+    <script src="{{asset ('plugins/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset ('plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js')}}"></script>
+    <script src="{{asset ('plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js')}}"></script>
+    <script src="{{asset ('js/form-wysiwyg.demo.min.js')}}"></script>
+
+    <script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
+    <script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+
+    
 
     <script>
         $(document).ready(function() {
             App.init();
+            FormWysihtml5.init();
+            FormPlugins.init();
+            TableManageResponsive.init();
         });
     </script>
     @yield('init_scripts')

@@ -28,6 +28,8 @@ class InstitucionController extends Controller
                                     $q->where('roles.id', $rol-> id);
                             })
         ->orderBy('name','ASC')->paginate(25);
+
+        //dd($rol);
         return view('admin.institucion.home')->with(["instituciones"=>$instituciones]); 
 
     }
@@ -241,9 +243,9 @@ class InstitucionController extends Controller
         return view('admin.actores.asignar')->with(["instituciones"=>$instituciones]);
     }
 
-    public function asignarActorSolucion(Request $request)
+    public function asignarActorSolucionAll(Request $request)
     {
-        
+        dd($request);
         
         if( $request->tipo_actor_id == 1){   //Para registrar Responsable a una solucion
             $validacion = ActorSolucion::where('solucion_id','=',$request->solucion_id)
@@ -334,6 +336,7 @@ class InstitucionController extends Controller
 
     public function obtenerPropuestas(Request $request, $id){
         
+        
         return Solucion::propuestas($id);
 
     }
@@ -355,6 +358,96 @@ class InstitucionController extends Controller
             $msj->subject('Inteligencia Productiva - Notificación de asignacion de Responsabilidad');
             $msj->to( $correo);
         });
+    }
+
+    public function homeActoresAsignados(Request $request){
+
+
+        $actoresSoluciones = DB::SELECT("SELECT solucions.id ,solucions.verbo_solucion, solucions.sujeto_solucion, 
+        solucions.complemento_solucion,
+        solucions.estado_id, estado_solucion.nombre_estado, actor_solucion.tipo_actor, solucions.tipo_fuente, users.name
+        from  solucions
+        join actor_solucion
+        on solucions.id = actor_solucion.solucion_id
+        join users
+        on users.id = actor_solucion.user_id
+        join estado_solucion
+        on estado_solucion.id = solucions.estado_id");
+
+        return view('admin.actores.homeActoresAsignados')->with(["actoresSoluciones"=>$actoresSoluciones]); 
+
+    }
+
+    public function homeActoresPorAsignar(Request $request){
+
+
+        $actoresSolucionesPorAsignar = DB::SELECT("SELECT solucions.id, solucions.tipo_fuente ,solucions.verbo_solucion, solucions.sujeto_solucion, solucions.complemento_solucion, solucions.estado_id, estado_solucion.nombre_estado,solucions.responsable_solucion
+        from  solucions
+        join estado_solucion
+        on estado_solucion.id = solucions.estado_id
+        where solucions.estado_id = 1");
+
+        return view('admin.actores.homeActoresPorAsignar')->with(["actoresSolucionesPorAsignar"=>$actoresSolucionesPorAsignar]); 
+
+    }
+
+    public function createAsignar(Request $request, $idSolucion )
+    {
+        
+        
+
+        $instituciones = DB::table('users')
+                        ->select('users.id','name')
+                        ->join('role_user','users.id','=','role_user.user_id')
+                        ->where('role_user.role_id','=',3)
+                        ->orderBy('name')->get();
+
+        $soluciones =  Solucion::find($idSolucion);
+
+       // dd($soluciones);
+
+
+
+        return view('admin.actores.createAsignar')->with(["instituciones"=>$instituciones,
+                                                           "soluciones" =>$soluciones ]);
+    }
+
+
+
+    public function asignarActorSolucion(Request $request)
+    {
+        //dd($request);
+        
+        //dd($request->tipo_actor_id);
+
+        $actorSolucion = new ActorSolucion;
+        $actorSolucion->user_id = $request->institucion;
+        $actorSolucion->solucion_id = $request->solucion_id;
+        $actorSolucion->tipo_actor = $request->tipo_actor_id;
+        $actorSolucion->tipo_fuente = $request->tipo_fuente;
+        $actorSolucion->save();    
+        Flash::success("Asignación exitosa");
+
+         $solucion = Solucion::find($request-> solucion_id);
+                    $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
+                    $solucion->save();
+
+        $user = User::find($request-> institucion);
+
+        
+        // $solucion = Solucion::find($request-> solucion_id);
+        // $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
+        // $solucion->save();
+
+     $actoresSolucionesPorAsignar = DB::SELECT("SELECT solucions.id, solucions.tipo_fuente ,solucions.verbo_solucion, solucions.sujeto_solucion, solucions.complemento_solucion, solucions.estado_id, estado_solucion.nombre_estado
+        from  solucions
+        join estado_solucion
+        on estado_solucion.id = solucions.estado_id
+        where solucions.estado_id = 1");
+
+        return view('admin.actores.homeActoresPorAsignar')->with(["actoresSolucionesPorAsignar"=>$actoresSolucionesPorAsignar]); 
+
+
     }
 
 }
