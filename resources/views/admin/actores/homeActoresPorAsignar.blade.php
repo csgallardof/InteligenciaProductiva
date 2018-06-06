@@ -18,9 +18,9 @@
             <div class="row">
                 <!-- begin col-8 -->
                 <div class="col-md-12">
-                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas <strong>Asignadas</strong></a>
+                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas <strong>POR ASIGNAR</strong></a>
                     &nbsp;&nbsp;&nbsp;
-                    <a href="{{ url('admin/actores/asignados') }}" class="btn btn-primary pull-right">Propuestas <strong>Por Asignar</strong></a>
+                    <a href="{{ url('admin/actores/asignados') }}" class="btn btn-primary pull-right">Propuestas <strong>ASIGNADOS</strong></a>
                     &nbsp;&nbsp;
                     
                 </div>
