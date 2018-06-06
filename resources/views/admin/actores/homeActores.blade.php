@@ -18,8 +18,8 @@
 					            <tr>
 					                <th>Fuente</th>
 					                <th>Soluci&oacute;n</th>
-					                <th>Actor</th>
-					                <th>Responsabilidad</th>
+					                <th>Responsable</th>
+					                <th>Tipo</th>
 					                <th>Acci&oacute;n</th>
 					            </tr>
 					        </thead>

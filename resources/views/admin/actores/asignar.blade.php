@@ -65,8 +65,8 @@
                             
 
                             <div class="col-md-15">
-                                <select  id="select-Solucion" name="solucion_id" class="form-control" name="solucion_id"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
-                                            <option value="" >Seleccione propuesta</option>
+                                <select  id="select-solucion" name="solucion_id" class="form-control" name="solucion_id"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
+                                            <option value="" >Seleccione propuestas</option>
                                             
                                 </select>
                             </div>

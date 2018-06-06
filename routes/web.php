@@ -189,7 +189,12 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
           'as'=>'actorSolucion.create'
      ]);  //admin cruds
 
-     Route::post('actor_solucion',[
+     // Route::get('actor_solucion/create',[
+     //      'uses'=>'InstitucionController@createForm2',
+     //      'as'=>'actorSolucion.create'
+     // ]);
+
+     Route::post('actores/porasignar',[
           'uses'=>'InstitucionController@asignarActorSolucion',
           'as'=>'actorSolucion.asignar'
      ]);  //admin cruds
@@ -200,7 +205,19 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      // vista actores
 
-     Route::get('actores/v2','InstitucionController@homeActoresV2');  //admin cruds
+     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds
+
+     Route::get('actores/porasignar','InstitucionController@homeActoresPorAsignar');
+
+     //Route::get('actores/asignar-responsable','InstitucionController@vistaCrearResponsable');
+
+     //Route::get('/editar-reporte-alerta/{id}','CspReportesController@vistaEditarReporteAlerta');
+
+
+     Route::get('actores/asignar-responsable/{idSolucion}',[
+          'uses'=>'InstitucionController@createAsignar',
+          'as'=>'actorSolucion.create'
+     ]);
 
 
 

@@ -73,7 +73,7 @@
             <script src="{{ asset('js/apps.js') }}"></script>
             <script src="{{ asset('js/dashboard.js') }}"></script>
             <script src="{{ asset('js/dropdown.js') }}"></script>
-            <script src="{{ asset('js/Solucion/comboSolucion.js') }}"></script>
+            
 
     @show
 
@@ -95,7 +95,8 @@
     <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
     <script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
     <script src="{{ asset('js/apps.min.js') }}"></script>
-    <script src="{{ asset('js/Canton/comboCanton.js') }}"></script>
+    <script src="{{ asset('js/Solucion/comboSolucion.js') }}"></script>
+    
     <script src="{{ asset('plugins/DataTables/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('plugins/DataTables/js/dataTables.colReorder.js') }}"></script>
     <script src="{{ asset('plugins/gritter/js/jquery.gritter.js') }}"></script>

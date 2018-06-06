@@ -162,19 +162,6 @@
 		</div>
 		<!-- end #header -->
 
-		<!-- begin #sidebar -->
-
-
-
-		<!-- html comment -->
-
-
-
-
-
-		<!-- end #sidebar -->
-
-
 
 		@yield('content')
 

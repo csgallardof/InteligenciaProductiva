@@ -18,6 +18,13 @@
             <div class="row">
                 <!-- begin col-8 -->
                 <div class="col-md-12">
+                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas <strong>POR ASIGNAR</strong></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="{{ url('admin/actores/asignados') }}" class="btn btn-primary pull-right">Propuestas <strong>ASIGNADOS</strong></a>
+                    &nbsp;&nbsp;
+                    
+                </div>
+                <div class="col-md-12">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
@@ -27,7 +34,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a> -->
                             </div>
-                            <h3 align="left" class="panel-title">Propuestas de Solución</h3>
+                            <h3 align="left" class="panel-title">Propuestas de Solución - ASIGNADAS</h3>
                         </div>
 
                         <div class="panel-body">
@@ -36,6 +43,7 @@
                                 <table id="data-table" class="table table-striped table-bordered" width="100%">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Fuente</th>
                                             <th>Soluci&oacute;n</th>
                                             <th>Actor</th>
@@ -47,6 +55,9 @@
                                     <tbody>
                                         @foreach($actoresSoluciones as $actorSolucion)
                                         <tr>
+                                            <td class="text-justify">
+                                                {{$actorSolucion->id}}
+                                            </td>
                                             <td class="text-justify">
                                                 @if($actorSolucion-> tipo_fuente == 1)
                                                     {{ "Mesas Competitivas" }}
@@ -68,7 +79,9 @@
                                                     {{ "Corresponsable" }}
                                                 @endif
                                             </td>
-                                            <td class="text-justify"></td>
+                                            <td class="text-justify">
+                                                {{ $actorSolucion->nombre_estado }}
+                                            </td>
                                             <td class="text-justify"></td>
                                             
 

@@ -18,6 +18,13 @@
             <div class="row">
                 <!-- begin col-8 -->
                 <div class="col-md-12">
+                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas <strong>Asignadas</strong></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="{{ url('admin/actores/asignados') }}" class="btn btn-primary pull-right">Propuestas <strong>Por Asignar</strong></a>
+                    &nbsp;&nbsp;
+                    
+                </div>
+                <div class="col-md-12">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
                         <div class="panel-heading">
@@ -27,7 +34,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a> -->
                             </div>
-                            <h3 align="left" class="panel-title">Propuestas de Solución</h3>
+                            <h3 align="left" class="panel-title">Propuestas de Solución - POR ASIGNAR</h3>
                         </div>
 
                         <div class="panel-body">
@@ -36,17 +43,20 @@
                                 <table id="data-table" class="table table-striped table-bordered" width="100%">
                                     <thead>
                                         <tr>
+                                            <th>ID</th>
                                             <th>Fuente</th>
                                             <th>Soluci&oacute;n</th>
-                                            <th>Actor</th>
-                                            <th>Responsabilidad</th>
+                                            <th style="align-content: center;">Responsable <small>(sugeridos en mesas)</small></th>
                                             <th>Estado</th>
                                             <th>Acci&oacute;n</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($actoresSoluciones as $actorSolucion)
+                                        @foreach($actoresSolucionesPorAsignar as $actorSolucion)
                                         <tr>
+                                            <td class="text-justify">
+                                                {{$actorSolucion->id}}
+                                            </td>
                                             <td class="text-justify">
                                                 @if($actorSolucion-> tipo_fuente == 1)
                                                     {{ "Mesas Competitivas" }}
@@ -58,18 +68,18 @@
                                                 {{ $actorSolucion->verbo_solucion." ".$actorSolucion->sujeto_solucion ." ".$actorSolucion->complemento_solucion }}
                                             </td>
                                             <td class="text-justify">
-                                                {{ $actorSolucion->name }}
+                                               {{ $actorSolucion->responsable_solucion }}
+                                            </td>
+                                           
+                                            <td class="text-justify">
+                                                {{ $actorSolucion->nombre_estado }}
                                             </td>
                                             <td class="text-justify">
-                                                @if($actorSolucion->tipo_actor == 1)
-                                                    {{ "Responsable" }}
-                                                @endif
-                                                @if($actorSolucion->tipo_actor == 2)
-                                                    {{ "Corresponsable" }}
-                                                @endif
+                                                <a href= "../actores/asignar-responsable/{{$actorSolucion->id}}"  title="Asignar"  >
+                                                        <i class="fa fa-2x fa-mail-forward"></i>
+                                                </a>
+
                                             </td>
-                                            <td class="text-justify"></td>
-                                            <td class="text-justify"></td>
                                             
 
                                         </tr>
