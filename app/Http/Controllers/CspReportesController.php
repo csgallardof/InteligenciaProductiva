@@ -271,7 +271,7 @@ class CspReportesController extends Controller
         $reportesHechos = DB::table('csp_reportes_hechos')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
         ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
-        ->where('institucions.id', '=',$usuario_institucion_id)
+        ->where('institucions.id', '=',$usuario_institucion_id) 
         ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.periodo_id','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
         ->orderBy('csp_reportes_hechos.id','DESC')
         ->get();
@@ -379,7 +379,7 @@ class CspReportesController extends Controller
         ->select('csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.id','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_periodo_reportes.nombre as Periodo','csp_reportes_hechos.created_at as FechaRegistro')
         ->orderBy('csp_reportes_hechos.id','DESC')
         ->paginate(20);
-        //dd($reportesHechos);
+        //dd($reportesHechos); 
         
         $reportesAlerta = DB::table('csp_reportes_alertas')
         ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_alertas.periodo_id')
@@ -496,11 +496,25 @@ class CspReportesController extends Controller
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteHechoCsp',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
     }
+
+    public function visualizarDetalleReporteHecho($id){
+
+        $cspReportesHecho = CspReportesHecho::find($id);
+        //dd($ReporteHechoVisualizar);
+        return view('csp.vistaSecretario.visualizarReporteHechoCspSecretario',compact('cspReportesHecho'),compact('ReporteHechoVisualizar'));    
+    }
     public function visualizarReporteAlerta($id){
         $cspReportesAlerta = cspReportesAlerta::find($id);
         
         //dd($ReporteHechoVisualizar);
         return view('csp.visualizarReporteAlertaCsp',compact('cspReportesAlerta'));    
+    }
+
+    public function visualizarDetalleReporteAlerta($id){
+        $cspReportesAlerta = cspReportesAlerta::find($id);
+        
+        //dd($ReporteHechoVisualizar);
+        return view('csp.vistaSecretario.visualizarReporteAlertaCspSecretario',compact('cspReportesAlerta'));    
     }
     //EDITAR REPORTES HECHO CSP
     public function vistaEditarReporteHecho($id){

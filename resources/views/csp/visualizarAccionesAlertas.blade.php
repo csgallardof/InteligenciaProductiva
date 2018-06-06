@@ -142,7 +142,7 @@
 						                            <td class="text-justify">{{ $accionesReporteAlerta->fecha }}</td>
 						                            <td class="text-justify">{{ $accionesReporteAlerta->created_at }}</td>
                                                     <td class="text-justify">{{ $accionesReporteAlerta->Periodo }}</td>
-						                            <td class="text-justify">{{ $accionesReporteAlerta->acciones }}</td>
+						                            <td class="text-justify">{!! $accionesReporteAlerta->acciones !!}</td>
 													<td class="text-justify">
                                                     @if(($accionesReporteAlerta->anexo)!="000Ninguno")
 														<a target="_blank" href="{{ route('descargarAccionAlertaCsp',$accionesReporteAlerta-> anexo) }} ">

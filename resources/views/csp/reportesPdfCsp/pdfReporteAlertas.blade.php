@@ -27,8 +27,8 @@
                               
                            
                             <?php foreach($data1 as $reporteAlertaMipro){ ?>
-                           
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+                           <div style="margin: 0 1cm 25 2cm"></div>
+                            <p style=" font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMipro->tema; ?><br>
                             <strong >Tipo Comunicación: </strong>
                              @if($reporteAlertaMipro->tipo_comunicacional!="")
@@ -39,9 +39,9 @@
                             <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMipro->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMipro->fecha_atencion; ?><br>
-                            <strong>Descripción: </strong><?= $reporteAlertaMipro->descripcion;?><br>
-                            <strong>Riesgo Principal: </strong><?= $reporteAlertaMipro->riesgo_principal; ?><br>
-                            <strong>Solución propuesta: </strong><?= $reporteAlertaMipro->solucion_propuesta; ?><br>
+                            <strong>Descripción: </strong>{!!$reporteAlertaMipro->descripcion!!}<br>
+                            <strong>Riesgo Principal: </strong>{!!$reporteAlertaMipro->riesgo_principal!!}<br>
+                            <strong>Solución propuesta: </strong>{!! $reporteAlertaMipro->solucion_propuesta!!}<br>
                             @if($reporteAlertaMipro->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
                             <?= $reporteAlertaMipro->acciones; ?>
@@ -57,8 +57,8 @@
                             
                          
                         <?php foreach($data3 as $reporteAlertaMAG){ ?>
-                            
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+                            <div style="margin: 0 1cm 25 2cm"></div>
+                            <p style="font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAG->tema; ?><br>
                             <strong >Tipo Comunicación: </strong>
                             @if($reporteAlertaMAG->tipo_comunicacional!="")
@@ -69,9 +69,9 @@
                             <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMAG->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAG->fecha_atencion; ?><br>
-                            <strong>Descripción: </strong><?= $reporteAlertaMAG->descripcion;?><br>
-                            <strong>Riesgo Principal: </strong><?= $reporteAlertaMAG->riesgo_principal; ?><br>
-                            <strong>Solución propuesta: </strong><?= $reporteAlertaMAG->solucion_propuesta; ?><br>
+                            <strong>Descripción: </strong>{!! $reporteAlertaMAG->descripcion!!}<br>
+                            <strong>Riesgo Principal: </strong>{!!$reporteAlertaMAG->riesgo_principal!!}<br>
+                            <strong>Solución propuesta: </strong>{!! $reporteAlertaMAG->solucion_propuesta!!}<br>
                             @if($reporteAlertaMAG->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
                             <?= $reporteAlertaMAG->acciones; ?>
@@ -87,8 +87,8 @@
                             
                          
                              <?php foreach($data2 as $reporteAlertaMAP){ ?>
-                            
-                            <p style="margin: 50px; font-family: calibri;margin: 0 1cm 25 2cm"  ALIGN="justify" >
+                            <div style="margin: 0 1cm 25 2cm">
+                            <p style=" font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAP->tema; ?><br>
                             <strong >Tipo Comunicación: </strong>
                             @if($reporteAlertaMAP->tipo_comunicacional!="")
@@ -99,15 +99,15 @@
                             <br>
                             <strong>Fuente: </strong><?= $reporteAlertaMAP->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAP->fecha_atencion; ?><br>
-                            <strong>Descripción: </strong><?= $reporteAlertaMAP->descripcion;?><br>
-                            <strong>Riesgo Principal: </strong><?= $reporteAlertaMAP->riesgo_principal; ?><br>
-                            <strong>Solución propuesta: </strong><?= $reporteAlertaMAP->solucion_propuesta; ?><br>
+                            <strong>Descripción: </strong>{!! $reporteAlertaMAP->descripcion!!}<br>
+                            <strong>Riesgo Principal: </strong>{!!$reporteAlertaMAP->riesgo_principal!!}<br>
+                            <strong>Solución propuesta: </strong>{!!$reporteAlertaMAP->solucion_propuesta!!}<br>
                             @if($reporteAlertaMAP->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
                             <?= $reporteAlertaMAP->acciones; ?>
                             @endif
                             </p>
-                            
+                            </div>
                             <?php } ?>
                             @endif
                           

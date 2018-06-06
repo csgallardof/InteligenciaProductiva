@@ -73,7 +73,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
-                            <h4 class="panel-title">Reporte Alerta<br> </h4>
+                            <h4 class="panel-title">Reporte Hecho<br> </h4>
                         </div>
                         <div class="panel-body">  
                         <div id="content" class="content">
@@ -90,26 +90,31 @@
                 <div class="row">
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
-                <a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-primary pull-right">Regresar</a>
+                <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning pull-right">Regresar</a>
                 <div class="invoice-company"><strong>Tema: </strong>
-                    {{$cspReportesAlerta->tema}}
+                    {{$cspReportesHecho->tema}}
                    
                 </div>
                 <div class="invoice-header">
                     <div class="invoice-from">
                         
                         <address class="m-t-5 m-b-5">
+                            <strong>Fecha Reporte</strong><br />
+                            {{$cspReportesHecho->fecha_reporte}}<br />
                             <strong>Tipo Comunicacional</strong><br />
-                            @if($cspReportesAlerta->tipo_comunicacional!="")
-                            {{$cspReportesAlerta->tipo_comunicacional}}
+                            @if($cspReportesHecho->tipo_comunicacional!="")
+                            {{$cspReportesHecho->tipo_comunicacional}}
                             @else
-                            No Definido
+                            No definido
                             @endif
                             <br />
-                            <strong>Fecha Reporte</strong><br />
-                            {{$cspReportesAlerta->fecha_atencion}}<br />
                              <strong>Fuente</strong><br />
-                            {{$cspReportesAlerta->fuente}}<br />
+                            {{$cspReportesHecho->fuente}}<br />
+                            <strong>Lugar</strong><br />
+                            {{$cspReportesHecho->lugar}}<br />
+                            <strong>Porcentaje de Avance</strong><br />
+                            {{$cspReportesHecho->porcentaje_avance}}<br />
+                            
                         </address>
                     </div>
                     
@@ -120,33 +125,26 @@
                     <div class="media-body">
 
                         <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {!!$cspReportesAlerta->descripcion!!}</p>
+                       <p> {!!$cspReportesHecho->descripcion!!}</p>
                         
                     </div>
                     <hr></hr>
                     <div class="media-body">
-
-                        <h6 class="media-heading"><strong>Solucion Propuesta</strong></h6>
-                       <p> {!!$cspReportesAlerta->solucion_propuesta!!}</p>
-                        
-                    </div>
-                    <hr></hr>
-                    <div class="media-body">
-                        <h6 class="media-heading"><strong>Riesgo Principal</strong></h6>
-                        <p align="justify">{!!$cspReportesAlerta->riesgo_principal!!}</p>
+                        <h6 class="media-heading"><strong>Lineas Discursivas</strong></h6>
+                        <p align="justify">{!!$cspReportesHecho->lineas_discursivas!!}</p>
                         
                        
                     </div>
                      <hr></hr>
                     <div class="media-body">
                         <h6 class="media-heading"><strong>Anexo</strong></h6>
-                        @if(($cspReportesAlerta->anexo)!="000Ninguno")
-                        <a target="_blank" href="{{ route('descargarArchivoAlertaCsp',$cspReportesAlerta-> anexo) }} ">
+                        @if(($cspReportesHecho->anexo)!="000Ninguno")
+                        <a  href="{{ route('descargarArchivoHechosCsp',$cspReportesHecho-> anexo) }} ">
                                                             <?php
-                                                                $pos = strpos($cspReportesAlerta-> anexo, "_-_");
-                                                                $anexo = substr($cspReportesAlerta-> anexo, $pos+3, strlen($cspReportesAlerta-> anexo)); // devuelve "d"
+                                                                $pos = strpos($cspReportesHecho-> anexo, "_-_");
+                                                                $anexo = substr($cspReportesHecho-> anexo, $pos+3, strlen($cspReportesHecho-> anexo)); // devuelve "d"
                                                             ?>
-                                                            
+
                                                             <i class="fa fa-2x fa-download"></i>
                                                         </a>
                         @endif
