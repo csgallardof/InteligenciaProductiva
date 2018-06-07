@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">@yield('edit_titulo') Actor-Soluci&oacute;n <a href="{{ url('adminz/actores') }}" class="btn btn-primary pull-right">Regresar</a>
+                <div class="panel-heading">@yield('edit_titulo') Actor-Soluci&oacute;n <a href="{{ url('admin/actores') }}" class="btn btn-primary pull-right">Regresar</a>
                 </div>
 
                 <div class="panel-body">
@@ -65,8 +65,8 @@
                             
 
                             <div class="col-md-15">
-                                <select  id="select-Solucion" name="solucion_id" class="form-control" name="solucion_id"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
-                                            <option value="" >Seleccione propuesta</option>
+                                <select  id="select-solucion" name="solucion_id" class="form-control" name="solucion_id"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
+                                            <option value="" >Seleccione propuestas</option>
                                             
                                 </select>
                             </div>
