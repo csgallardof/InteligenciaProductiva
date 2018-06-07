@@ -42,7 +42,7 @@
                                             <th>Responsabilidad</th>
                                             <th>Estado</th>
                                             <th>Acci&oacute;n</th>
-                                        </tr>
+                                        </tr> 
                                     </thead>
                                     <tbody>
                                         @foreach($actoresSoluciones as $actorSolucion)
