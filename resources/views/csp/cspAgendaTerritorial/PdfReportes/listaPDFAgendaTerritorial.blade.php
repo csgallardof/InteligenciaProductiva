@@ -46,23 +46,25 @@
                         </div>
                          
                         <div class="panel-body"> 
-                             <form target="_blank" method="POST" action="/institucion/guardarIdAgendaTerritorial/1" enctype="multipart/form-data">
+                             <form target="_blank" method="POST" id="f1" name="f1"  action="/institucion/guardarIdAgendaTerritorial/1" enctype="multipart/form-data">
                                         {{ csrf_field() }}
-                            <div class="row">
-                                        <div class="col-md-12">
-                                        <a href="/institucion/home" class="btn btn-primary pull-right">Regresar</a>
-                                        
+                                        <hr>
+                                         <div class="form-group">
 
-                                        <div class="col-md-10">  
-                                        <button type="submit"  class="btn btn-primary pull-right">Reporte Agenda Territorial</button> 
-                                        <div class="col-md-8">
-                                        
+
+
+                                        <div class="col-md-6 ">
+                                            <a href="/institucion/home" class="btn btn-warning ">Regresar</a>
+                                            <a class="btn btn-info" id="seleccionar" onclick="seleccionar_todo();">Seleccionar todos</a>
+                                            <a class="btn btn-info" id="deseleccionar" style="display: none" onclick="deseleccionar_todo();">Deseleccionar todos</a>
+                                           <button type="submit"  class="btn btn-primary">Reporte Agenda Territorial</button> 
+
                                         </div>
-                                        </div>
-                                        </div>
-                                        </div>       
-                        <hr>
-                        <br>
+
+
+                                    </div> <br>
+                     
+                        
                                 @include('flash::message')
                             <div class="col-md-12"> 
                             <div class="table-responsive">

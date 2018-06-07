@@ -1,4 +1,4 @@
-@extends('layouts.cspAgenda') 
+@extends('layouts.cspAgenda')  
 
 @section('title','Inicio')
 
@@ -90,7 +90,7 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                <form method="GET" action="/institucion/busquedaReporteHechos"  enctype="multipart/form-data">
+                                <form method="GET" action="/institucion/busquedaReporteHechos"   enctype="multipart/form-data">
 
                                         <div class="row">
                                             <div class="col-lg-5 ">
@@ -131,15 +131,17 @@
                                           </div><!-- /.col-lg-6 -->
                                         </div>
                                 </form>
-                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
+                            <form target="_blank" method="POST" id="f1" name="f1" action="/institucion/guardarIdReporteHechoCsp/1" enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         <hr>
                                 <div class="form-group">
                                     
                                     
 
-                                    <div class="col-md-3 ">
+                                    <div class="col-md-6 ">
                                         <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning ">Regresar</a>
+                                        <a class="btn btn-info" id="seleccionar" onclick="seleccionar_todo();">Seleccionar todos</a>
+                                        <a class="btn btn-info" id="deseleccionar" style="display: none" onclick="deseleccionar_todo();">Deseleccionar todos</a>
                                         <button type="submit"  class="btn btn-primary">Reporte Hecho Relevantes {{$buscarTipoComunicacional}}</button>
 
                                     </div>

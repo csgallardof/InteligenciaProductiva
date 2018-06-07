@@ -455,7 +455,7 @@
 								<ul>
 									@foreach($notificaciones as $notificacion)
 										<li>
-											{{ substr($notificacion-> comentario,0,65).'..' }} <br>
+											{!! substr($notificacion-> comentario,0,65).'..' !!} <br>
 											{{ substr($notificacion-> fecha_inicio,0,10) }}
 											@if($notificacion->tipo_fuente == 1)
 												<a href="{{ route('verSolucion.despliegue',[2,$notificacion-> solucion_id]) }}" class="pull-right f-s-13 f-w-500">Ver m&aacute;s</a><br><br>

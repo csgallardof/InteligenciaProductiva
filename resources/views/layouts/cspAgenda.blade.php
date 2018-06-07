@@ -229,11 +229,13 @@
 
 	<script src="{{ asset('plugins/DataTablesv2/datatables.js') }}"></script>
 	<script src="{{ asset('js/table-manage-responsive.demo.js') }}"></script>
+	<script src="{{ asset('js/Checkbox/chechBoxReportesCSP.js') }}"></script>
 	<!-- ================== END PAGE LEVEL JS ================== -->
 
 
 
 <script>
+	
 		$(document).ready(function() {
 			App.init();
 			FormWysihtml5.init();
