@@ -14,7 +14,7 @@
 
         <!-- begin #content -->
         <div id="content" class="content" width="10%">
-            <!-- begin row -->
+            <!-- begin row --> 
             <div class="row">
                 <!-- begin col-8 -->
                 <div class="col-md-12">
@@ -24,6 +24,8 @@
                     &nbsp;&nbsp;
                     
                 </div>
+                <br><br>
+                @include('flash::message')
                 <div class="col-md-12">
                     <!-- begin panel -->
                     <div class="panel panel-inverse">
@@ -82,7 +84,11 @@
                                             <td class="text-justify">
                                                 {{ $actorSolucion->nombre_estado }}
                                             </td>
-                                            <td class="text-justify"></td>
+                                            <td class="text-justify">
+                                                <a href= "/admin/actividad/create/{{$actorSolucion->id}}"  >
+                                                        <i class="fa fa-2x fa-plus-circle"></i>
+                                                </a>
+                                            </td>
                                             
 
                                         </tr>

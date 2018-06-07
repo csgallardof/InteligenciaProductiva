@@ -125,6 +125,10 @@ Route::get('/descargar/CCPT', 'ExcelController@exportConsejo');
 */
 Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
+     Route::get('/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createDespliegueAdmin','as'=>'actividades.createDespliegue']);
+     Route::post('/actividad/save-admin/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@saveActividadAdmin','as'=>'actividades.saveAdminActividad']);
+
+
      Route::get('/home', 'HomeController@index')->name('home');
      
      Route::resource('sipocs','SipocsController');
@@ -205,7 +209,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      // vista actores
 
-     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds
+     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds 
 
      Route::get('actores/porasignar','InstitucionController@homeActoresPorAsignar');
 

@@ -36,13 +36,6 @@
                            <div style="margin: 0 1cm 25 2cm">
                             <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMipro->tema; ?><br>
-                            <strong>Tipo Comunicacional: </strong> 
-                            @if($reporteHechoMipro->tipo_comunicacional!="")
-                            <?= $reporteHechoMipro->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMipro->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMipro->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMipro->porcentaje_avance;?>%<br>
@@ -65,13 +58,6 @@
                             <div style="margin: 0 1cm 25 2cm">
                             <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAG->tema; ?><br>
-                            <strong>Tipo Comunicacional: </strong> 
-                            @if($reporteHechoMAG->tipo_comunicacional!="")
-                            <?= $reporteHechoMAG->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMAG->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAG->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAG->porcentaje_avance;?>%<br>
@@ -92,13 +78,6 @@
                             <div style="margin: 0 1cm 25 2cm">
                             <p style="font-family: calibri"  ALIGN="justify" >
                             <strong>Tema: </strong>  <?= $reporteHechoMAP->tema; ?><br>
-                            <strong>Tipo Comunicacional: </strong> 
-                            @if($reporteHechoMAP->tipo_comunicacional!="")
-                            <?= $reporteHechoMAP->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
                             <strong>Fuente: </strong><?= $reporteHechoMAP->fuente;?><br>
                             <strong>Fecha Reporte: </strong><?= $reporteHechoMAP->fecha_reporte; ?><br>
                             <strong>Porcentaje de avance: </strong><?= $reporteHechoMAP->porcentaje_avance;?>%<br>
@@ -119,7 +98,7 @@
                 <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
-                <strong >Dr. Claudio Arcos</strong> <br>
+                <strong >Sr. Felipe Altamirano</strong> <br>
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>

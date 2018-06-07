@@ -33,14 +33,8 @@
                             @if($reporteHechoMipro->lineas_discursivas!=null)
                             <p style=" font-family: calibri; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMipro->tema; ?></strong><br>
-                            <strong>Tipo Comunicación:</strong>
-                            @if($reporteHechoMipro->tipo_comunicacional!="")
-                            <?= $reporteHechoMipro->tipo_comunicacional; ?>
-                            @else
-                            NO DEFINIDO
-                            @endif
-                            <br> <br>                               
-                            <?= $reporteHechoMipro->lineas_discursivas; ?>
+                                                          
+                            {!! $reporteHechoMipro->lineas_discursivas!!}
                             </p>
                             @endif
                             <?php } ?>
@@ -56,13 +50,7 @@
                             @if($reporteHechoMAG->lineas_discursivas!=null)
                             <p style=" font-family: calibri; text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAG->tema; ?></strong><br>
-                            <strong>Tipo Comunicación:</strong>
-                            @if($reporteHechoMAG->tipo_comunicacional!="")
-                            <?= $reporteHechoMAG->tipo_comunicacional; ?>
-                            @else
-                            NO DEFINIDO
-                            @endif
-                            <br> 
+                           
                             
                             {!!$reporteHechoMAG->lineas_discursivas!!}
                             
@@ -79,13 +67,7 @@
                             @if($reporteHechoMAP->lineas_discursivas!=null)
                             <p style=" font-family: calibri;text-transform: uppercase"  ALIGN="justify" >
                             <strong><?= $reporteHechoMAP->tema; ?></strong><br>
-                            <strong>Tipo Comunicación:</strong>
-                            @if($reporteHechoMAP->tipo_comunicacional!="")
-                            <?= $reporteHechoMAP->tipo_comunicacional; ?>
-                            @else
-                            NO DEFINIDO
-                            @endif
-                            <br>
+                            
                             
                             {!! $reporteHechoMAP->lineas_discursivas!!}
                             </p>
@@ -104,7 +86,7 @@
                 <br><br><br> <br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
-                <strong >Dr. Claudio Arcos</strong> <br>
+                <strong >Sr. Felipe Altamirano</strong> <br>
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>

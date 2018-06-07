@@ -27,16 +27,10 @@
                               
                            
                             <?php foreach($data1 as $reporteAlertaMipro){ ?>
-                           <div style="margin: 0 1cm 25 2cm"></div>
+                           <div style="margin: 0 1cm 25 2cm">
                             <p style=" font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMipro->tema; ?><br>
-                            <strong >Tipo Comunicación: </strong>
-                             @if($reporteAlertaMipro->tipo_comunicacional!="")
-                            <?= $reporteAlertaMipro->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
+                            
                             <strong>Fuente: </strong><?= $reporteAlertaMipro->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMipro->fecha_atencion; ?><br>
                             <strong>Descripción: </strong>{!!$reporteAlertaMipro->descripcion!!}<br>
@@ -47,6 +41,7 @@
                             <?= $reporteAlertaMipro->acciones; ?>
                             @endif
                             </p>
+                            </div>
                             <?php } ?>
                             @endif  
                             
@@ -57,16 +52,10 @@
                             
                          
                         <?php foreach($data3 as $reporteAlertaMAG){ ?>
-                            <div style="margin: 0 1cm 25 2cm"></div>
+                            <div style="margin: 0 1cm 25 2cm">
                             <p style="font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAG->tema; ?><br>
-                            <strong >Tipo Comunicación: </strong>
-                            @if($reporteAlertaMAG->tipo_comunicacional!="")
-                            <?= $reporteAlertaMAG->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
+                            
                             <strong>Fuente: </strong><?= $reporteAlertaMAG->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAG->fecha_atencion; ?><br>
                             <strong>Descripción: </strong>{!! $reporteAlertaMAG->descripcion!!}<br>
@@ -77,6 +66,7 @@
                             <?= $reporteAlertaMAG->acciones; ?>
                             @endif
                             </p>
+                            </div>
                             <?php } ?> 
 
                             @endif
@@ -90,13 +80,7 @@
                             <div style="margin: 0 1cm 25 2cm">
                             <p style=" font-family: calibri"  ALIGN="justify" >
                             <strong >Tema: </strong><?= $reporteAlertaMAP->tema; ?><br>
-                            <strong >Tipo Comunicación: </strong>
-                            @if($reporteAlertaMAP->tipo_comunicacional!="")
-                            <?= $reporteAlertaMAP->tipo_comunicacional; ?>
-                            @else
-                            No Definido
-                            @endif
-                            <br>
+                            
                             <strong>Fuente: </strong><?= $reporteAlertaMAP->fuente;?><br>
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAP->fecha_atencion; ?><br>
                             <strong>Descripción: </strong>{!! $reporteAlertaMAP->descripcion!!}<br>
@@ -121,7 +105,7 @@
                 <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
-                <strong >Dr. Claudio Arcos</strong> <br>
+                <strong >Sr. Felipe Altamirano</strong> <br>
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>
