@@ -2,7 +2,7 @@
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en"> 
-<!--<![endif]-->
+<!--<![endif]-->  
 <head>
 	<meta charset="utf-8" />
 	<title>Inteligencia Productiva - @yield('title')</title>

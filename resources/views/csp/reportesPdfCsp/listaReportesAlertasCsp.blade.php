@@ -116,7 +116,7 @@
                                           </div><!-- /.col-lg-6 -->
                                         </div>
                                         </form>
-                            <form target="_blank" method="POST" action="/institucion/guardarIdReporteAlertasCsp/1" enctype="multipart/form-data">
+                            <form target="_blank" method="POST" id="f1" name="f1"  action="/institucion/guardarIdReporteAlertasCsp/1" enctype="multipart/form-data">
 										{{ csrf_field() }}
               							<hr>
 
@@ -125,8 +125,10 @@
 
 
 
-                                        <div class="col-md-3 ">
+                                        <div class="col-md-6 ">
                                            <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning ">Regresar</a>
+                                            <a class="btn btn-info" id="seleccionar" onclick="seleccionar_todo();">Seleccionar todos</a>
+                                            <a class="btn btn-info" id="deseleccionar" style="display: none" onclick="deseleccionar_todo();">Deseleccionar todos</a>
                                            <button type="submit"  class="btn btn-primary ">Reporte De Alertas {{$buscarTipoComunicacional}}</button>
 
                                         </div>

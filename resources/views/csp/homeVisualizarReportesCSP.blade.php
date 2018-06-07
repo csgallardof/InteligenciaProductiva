@@ -100,13 +100,21 @@
 									<!-- <form class="navbar-form navbar-left pull-right">
 
 									-->
+									<hr>
 
-								<div class="col-md-12">
-								<a href="/institucion/lista-reportes-csp" class="btn btn-primary pull-right">Reporte Hechos Relevantes</a>
-								<div class="col-md-8">
-								<a href="/institucion/reportes-lineas-discursivas-csp" class="btn btn-primary pull-right">Reporte Lineas Discursivas</a>
-								</div>
-								</div>
+
+                                        <div class="form-group pull-right">
+
+
+
+                                        <div class="col-md-12" >
+                                        	<a href="/institucion/lista-reportes-csp" class="btn btn-info">Reporte Hechos Relevantes</a>
+                                        	<a href="/institucion/reportes-lineas-discursivas-csp" class="btn btn-primary">Reporte Lineas Discursivas</a>
+                                        </div>
+
+
+                                    </div> <br>
+								
 
 					        	<!-- </form>
 
@@ -192,8 +200,22 @@
 							<div class="row">
 									<div class="col-md-12">
 
+									<hr>
+
+
+                                        <div class="form-group pull-right">
+
+
+
+                                        <div class="col-md-12 pull-right" >
+                                        	<a href="/institucion/reportes-alertas-csp" class="btn btn-info">Reporte Alertas</a>
+                                        </div>
+
+
+                                    </div> <br>
+
 										<div class="col-md-12">
-								<a href="/institucion/reportes-alertas-csp" class="btn btn-primary pull-right">Reporte Alertas</a>
+								
 								</div>
 								<table class="table table-striped table-bordered" width="100%">
 									<thead>
