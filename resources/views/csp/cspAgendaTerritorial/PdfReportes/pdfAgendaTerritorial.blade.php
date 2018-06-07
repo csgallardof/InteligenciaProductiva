@@ -638,7 +638,7 @@
                 <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
-                <strong >Dr. Claudio Arcos</strong> <br>
+                <strong >Sr. Felipe Altamirano</strong> <br>
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
                 <br><br><span><u>Esta información ha sido obtenida del módulo de Agenda Territorial de la plataforma de Inteligencia Productiva.</u></span>
                 <span><br><br> <b>Ministerio de Industrias y Productividad</b></span>
