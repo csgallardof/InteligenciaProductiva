@@ -60,7 +60,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-12">
                     
                     
                     
@@ -91,12 +91,12 @@
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
                 <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning pull-right">Regresar</a>
-                <div class="invoice-company"><strong>Tema: </strong>
+                <div class="invoice-company lead"><strong>Tema: </strong>
                     {{$cspReportesHecho->tema}}
                    
                 </div>
                 <div class="invoice-header">
-                    <div class="invoice-from">
+                    <div class="invoice-from lead">
                         
                         <address class="m-t-5 m-b-5">
                             <strong>Fecha Reporte</strong><br />
@@ -120,24 +120,24 @@
                     
                     
                 </div>
-                <div class="invoice-content">
+                <div class="invoice-content lead">
                    
                     <div class="media-body">
 
-                        <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {!!$cspReportesHecho->descripcion!!}</p>
+                        <h5 class="media-heading"><strong>Descripcion</strong></h5>
+                       <p align="justify"> {!!$cspReportesHecho->descripcion!!}</p>
                         
                     </div>
                     <hr></hr>
                     <div class="media-body">
-                        <h6 class="media-heading"><strong>Lineas Discursivas</strong></h6>
+                        <h5 class="media-heading"><strong>Lineas Discursivas</strong></h5>
                         <p align="justify">{!!$cspReportesHecho->lineas_discursivas!!}</p>
                         
                        
                     </div>
                      <hr></hr>
                     <div class="media-body">
-                        <h6 class="media-heading"><strong>Anexo</strong></h6>
+                        <h5 class="media-heading"><strong>Anexo</strong></h5>
                         @if(($cspReportesHecho->anexo)!="000Ninguno")
                         <a  href="{{ route('descargarArchivoHechosCsp',$cspReportesHecho-> anexo) }} ">
                                                             <?php
@@ -181,7 +181,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -192,7 +192,7 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <h6 align="center" class="lead" style="color:green"> No existe notificaciones</h6>
                         <div class="panel-body">
                             
                         </div>
