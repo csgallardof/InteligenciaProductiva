@@ -18,7 +18,7 @@
             <div class="row">
                 <!-- begin col-8 -->
                 <div class="col-md-12">
-                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas <strong>POR ASIGNAR</strong></a>
+                    <a href="{{ url('admin/actores/porasignar') }}" class="btn btn-warning pull-right">Propuestas<strong>POR ASIGNAR</strong></a>
                     &nbsp;&nbsp;&nbsp;
                     <a href="{{ url('admin/actores/asignados') }}" class="btn btn-primary pull-right">Propuestas <strong>ASIGNADOS</strong></a>
                     &nbsp;&nbsp;
@@ -86,7 +86,11 @@
                                             </td>
                                             <td class="text-justify">
                                                 <a href= "/admin/actividad/create/{{$actorSolucion->id}}"  >
-                                                        <i class="fa fa-2x fa-plus-circle"></i>
+                                                  <i class="fa fa-2x fa-plus-circle"></i>      
+                                                </a>
+                                                <a href= "/admin/actor/editar-actor-solucion/{{$actorSolucion->id}}"  >
+
+                                                       <i class="fa fa-2x fa-long-arrow-right"></i>
                                                 </a>
                                             </td>
                                             
