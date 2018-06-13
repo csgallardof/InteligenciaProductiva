@@ -60,7 +60,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-12">
                     
                     
                     
@@ -90,29 +90,29 @@
                 <div class="row">
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
-                <a href="/institucion/consejo-sectorial-produccion/reportes-hechos" class="btn btn-primary pull-right">Regresar</a>
-                <div class="invoice-company"><strong>Tema: </strong>
+                <a href="/institucion/consejo-sectorial-produccion/reportes-hechos" class="btn btn-warning pull-right">Regresar</a>
+                <div class="invoice-company lead"><strong>Tema: </strong>
                     {{$cspReportesHecho->tema}}
                    
                 </div>
                 <div class="invoice-header">
                     <div class="invoice-from">
                         
-                        <address class="m-t-5 m-b-5">
-                            <strong>Fecha Reporte</strong><br />
+                        <address class="m-t-5 m-b-5 lead">
+                            <strong class="lead">Fecha Reporte</strong><br />
                             {{$cspReportesHecho->fecha_reporte}}<br />
-                            <strong>Tipo Comunicacional</strong><br />
+                            <strong class="lead">Tipo Comunicacional</strong><br />
                             @if($cspReportesHecho->tipo_comunicacional!="")
                             {{$cspReportesHecho->tipo_comunicacional}}
                             @else
                             No definido
                             @endif
                             <br />
-                             <strong>Fuente</strong><br />
+                             <strong class="lead">Fuente</strong><br />
                             {{$cspReportesHecho->fuente}}<br />
-                            <strong>Lugar</strong><br />
+                            <strong class="lead">Lugar</strong><br />
                             {{$cspReportesHecho->lugar}}<br />
-                            <strong>Porcentaje de Avance</strong><br />
+                            <strong class="lead">Porcentaje de Avance</strong><br />
                             {{$cspReportesHecho->porcentaje_avance}}<br />
                             
                         </address>
@@ -120,24 +120,25 @@
                     
                     
                 </div>
+                          
                 <div class="invoice-content">
                    
                     <div class="media-body">
 
-                        <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {!!$cspReportesHecho->descripcion!!}</p>
+                        <h5 class="media-heading lead"><strong>Descripción</strong></h5>
+                       <p  class="text-justify lead"> {!!$cspReportesHecho->descripcion!!}</p>
                         
                     </div>
                     <hr></hr>
-                    <div class="media-body">
-                        <h6 class="media-heading"><strong>Lineas Discursivas</strong></h6>
-                        <p align="justify">{!!$cspReportesHecho->lineas_discursivas!!}</p>
+                    <div class="media-body ">
+                        <h6 class="media-heading lead"><strong>Lineas Discursivas</strong></h6>
+                        <p class="text-justify lead">{!!$cspReportesHecho->lineas_discursivas!!}</p>
                         
                        
                     </div>
                      <hr></hr>
                     <div class="media-body">
-                        <h6 class="media-heading"><strong>Anexo</strong></h6>
+                        <h6 class="media-heading lead"><strong>Anexo</strong></h6>
                         @if(($cspReportesHecho->anexo)!="000Ninguno")
                         <a  href="{{ route('descargarArchivoHechosCsp',$cspReportesHecho-> anexo) }} ">
                                                             <?php
@@ -181,7 +182,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -192,7 +193,7 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <h6 class="lead" align="center" style="color:green"> No existe notificaciones</h6>
                         <div class="panel-body">
                             
                         </div>

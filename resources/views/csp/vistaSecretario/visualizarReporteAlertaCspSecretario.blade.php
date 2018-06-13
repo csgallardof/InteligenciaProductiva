@@ -60,7 +60,7 @@
             <!-- begin row -->
             <div class="row">
                 <!-- begin col-8 -->
-                <div class="col-md-8">
+                <div class="col-md-12">
                     
                     
                     
@@ -91,12 +91,12 @@
                     <div class="col-md-1"> </div>
                     <div class="col-md-10">
                 <a href="/institucion/consejo-sectorial-produccion" class="btn btn-warning pull-right">Regresar</a>
-                <div class="invoice-company"><strong>Tema: </strong>
+                <div class="invoice-company lead"><strong>Tema: </strong>
                     {{$cspReportesAlerta->tema}}
                    
                 </div>
                 <div class="invoice-header">
-                    <div class="invoice-from">
+                    <div class="invoice-from lead">
                         
                         <address class="m-t-5 m-b-5">
                             <strong>Tipo Comunicacional</strong><br />
@@ -115,31 +115,31 @@
                     
                     
                 </div>
-                <div class="invoice-content">
+                <div class="invoice-content lead">
                    
                     <div class="media-body">
 
-                        <h6 class="media-heading"><strong>Descripcion</strong></h6>
-                       <p> {!!$cspReportesAlerta->descripcion!!}</p>
+                        <h5 class="media-heading"><strong>Descripcion</strong></h5>
+                       <p align="justify"> {!!$cspReportesAlerta->descripcion!!}</p>
                         
                     </div>
                     <hr></hr>
                     <div class="media-body">
 
-                        <h6 class="media-heading"><strong>Solucion Propuesta</strong></h6>
-                       <p> {!!$cspReportesAlerta->solucion_propuesta!!}</p>
+                        <h5 class="media-heading"><strong>Solucion Propuesta</strong></h5>
+                       <p align="justify" {!!$cspReportesAlerta->solucion_propuesta!!}</p>
                         
                     </div>
                     <hr></hr>
                     <div class="media-body">
-                        <h6 class="media-heading"><strong>Riesgo Principal</strong></h6>
+                        <h5 class="media-heading"><strong>Riesgo Principal</strong></h5>
                         <p align="justify">{!!$cspReportesAlerta->riesgo_principal!!}</p>
                         
                        
                     </div>
                      <hr></hr>
                     <div class="media-body">
-                        <h6 class="media-heading"><strong>Anexo</strong></h6>
+                        <h5 class="media-heading"><strong>Anexo</strong></h5>
                         @if(($cspReportesAlerta->anexo)!="000Ninguno")
                         <a target="_blank" href="{{ route('descargarArchivoAlertaCsp',$cspReportesAlerta-> anexo) }} ">
                                                             <?php
@@ -183,7 +183,7 @@
                 </div>
                 <!-- end col-8 -->
                 <!-- begin col-4 -->
-                <div class="col-md-4" >
+                <div class="col-md-12" >
                     <div class="panel panel-inverse" data-sortable-id="index-6">
                         <div class="panel-heading">
                             <div class="panel-heading-btn">
@@ -194,7 +194,7 @@
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
                         </div>
-                        <h6 align="center" style="color:green"> No existe notificaciones</h6>
+                        <h6 align="center" class="lead" style="color:green"> No existe notificaciones</h6>
                         <div class="panel-body">
                             
                         </div>

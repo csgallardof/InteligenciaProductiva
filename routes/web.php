@@ -209,7 +209,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      // vista actores
 
-     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds 
+     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds  
 
      Route::get('actores/porasignar','InstitucionController@homeActoresPorAsignar');
 
@@ -222,6 +222,10 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
           'uses'=>'InstitucionController@createAsignar',
           'as'=>'actorSolucion.create'
      ]);
+
+     Route::get('/actor/editar-actor-solucion/{solucion_id}','InstitucionController@transferirActorSolucion');
+
+     Route::post('/actor/editar-actor-solucion/{actorSolucionID}','InstitucionController@ActualizarActorSolucion');
 
 
 
