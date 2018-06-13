@@ -154,11 +154,16 @@
 															?>
 
 															<i class="fa fa-2x fa-download"></i>
-
+ 
 														</a>
                                                         @endif
 
 						                            </td>
+                                                    <td>
+                                                        <a href= "/institucion/editar-acciones-alerta/{{$accionesReporteAlerta->id}}"  title="Ver más"  >
+                                                            <i class="fa fa-2x fa-edit"></i>
+                                                        </a>
+                                                    </td>
                                                     
 						                            				                            
 						                        </tr>

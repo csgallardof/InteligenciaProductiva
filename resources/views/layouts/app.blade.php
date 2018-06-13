@@ -24,6 +24,8 @@
             <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
             <link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
             <link href="{{ asset('css/inteligencia.css') }}" rel="stylesheet" />
+
+            <link href="{{ asset('css/style-front.css') }}" rel="stylesheet" />
             
                 @show
         <!-- ================== END BASE JS ================== -->

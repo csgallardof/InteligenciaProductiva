@@ -167,8 +167,8 @@
  
                                                         @if($reportesAlerta->FechaRegistro>=$PeriodoSemanaCspReporte->fecha_inicio or $reportesAlerta->EstadoReporte!="Resuelto")
                                                         <a href= "/institucion/editar-reporte-alerta/{{$reportesAlerta->id}}"  title="Ver más"  >
-                                                        <i class="fa fa-2x fa-edit"></i>
-                                                    </a>
+                                                            <i class="fa fa-2x fa-edit"></i>
+                                                        </a>
                                                     @endif
 
                                                     </td>

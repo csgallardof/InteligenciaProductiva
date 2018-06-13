@@ -89,7 +89,7 @@
                                     <br>
                                     <hr>
 
-                                    <form  method="POST" action="/institucion/modificar-reporte-hechos/{{$cspReportesHecho->id}}" enctype="multipart/form-data">
+                                    <form  method="POST" action="/institucion/modificar-reporte-hechos-secretario/{{$cspReportesHecho->id}}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
               
                                         
@@ -103,7 +103,7 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                          <label for="institucion_id"></label>   
-                                                        <input id="institucion_id"  type="hidden" name="institucion_id" value="{{$usuario_institucion_id}}">   
+                                                        
                                                     </div>
                                                     
                                                 </div>
