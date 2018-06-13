@@ -65,7 +65,7 @@ Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPubli
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
-Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
+Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos'); 
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
 
@@ -296,10 +296,16 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::get('/editar-reporte-hechos/{id}','CspReportesController@vistaEditarReporteHecho');
      Route::post('/modificar-reporte-hechos/{id}',['uses'=>'CspReportesController@editarReporteHechoCsp','as'=>'modificarReporteHecho']);
 
+     Route::get('/editar-reporte-hechos-secretario/{id}','CspReportesController@vistaEditarReporteHechoSecretario');
+     Route::post('/modificar-reporte-hechos-secretario/{id}',['uses'=>'CspReportesController@editarReporteHechoCspSecretario','as'=>'modificarReporteHechoSecretario']);
+
      //EDITAR REPORTES ALERTAS CSP
      Route::get('/editar-reporte-alerta/{id}','CspReportesController@vistaEditarReporteAlerta');
      Route::post('/modificar-reporte-alerta/{id}',['uses'=>'CspReportesController@editarReporteAlertaCsp','as'=>'modificarReporteAlerta']); 
      Route::post('/modificar-reporte-alerta-estado/{id}',['uses'=>'CspReportesController@editarReporteAlertaEstadoCsp','as'=>'modificarReporteAlertaEstado']);
+
+     Route::get('/editar-reporte-alerta-secretario/{id}','CspReportesController@vistaEditarReporteAlertaSecretario');
+     Route::post('/modificar-reporte-alerta-secretario/{id}',['uses'=>'CspReportesController@editarReporteAlertaCspSecretario','as'=>'modificarReporteAlertaSecretario']);
      
      //EDITAR REPORTES ACCIONES ALERTAS CSP
      Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');

@@ -174,8 +174,11 @@
 
 						                      		<td class="text-justify">
 						                      			<a href= "/institucion/visualizar-detalle-reporte-hechos/{{$reportesHechos->id}}"  title="Ver más"  >
-														<i class="fa fa-2x fa-eye"></i>
-													</a>
+															<i class="fa fa-2x fa-eye"></i>
+														</a>
+														<a href= "/institucion/editar-reporte-hechos-secretario/{{$reportesHechos->id}}"  title="Ver más"  >
+	                                                        <i class="fa fa-2x fa-edit"></i>
+	                                                    </a>
 						                      		</td>
 
 						                        </tr>
@@ -185,7 +188,7 @@
 									</tbody>
 
 								</table>
-
+ 
 								</div>
 								</div>
 
@@ -290,8 +293,11 @@
 						                            </td>
 						                            <td>
 						                            	<a href= "/institucion/visualizar-detalle-reporte-Alertas/{{$reportesAlerta->id}}"  title="Ver más"  >
-														<i class="fa fa-2x fa-eye"></i>
-													</a>
+															<i class="fa fa-2x fa-eye"></i>
+														</a>
+														<a href= "/institucion/editar-reporte-alerta-secretario/{{$reportesAlerta->id}}"  title="Ver más"  >
+                                                            <i class="fa fa-2x fa-edit"></i>
+                                                        </a>
 
 						                            </td>
 
