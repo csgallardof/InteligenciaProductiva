@@ -26,6 +26,16 @@ use App\Auth\Login;
 
 class PaginasController extends Controller
 {
+     
+    public function home(){
+        dd('hola');
+    }
+    public function homedialogo(){
+
+        return view('dialogo.home-dialogo');
+    }
+
+
      public function busquedaAvanzada(Request $request){
         $datosFiltroSector="";
         $datosFiltroEstado="";
@@ -408,9 +418,7 @@ class PaginasController extends Controller
     }
 
 
-    public function inicio(){
-    	return view('inicio');
-    }
+    
 
     public function reportegeneralccpt(){
     	return view('reportes.reportegeneralccpt');
@@ -887,11 +895,10 @@ class PaginasController extends Controller
 
     
 
-    
-
     public function consejosectorial(){
         return view('csp.home');
     }
+
 
     public function ReporteDialogoGrafico(){
 
@@ -946,6 +953,9 @@ class PaginasController extends Controller
         
         
     }
+
+
+   
 
 
 
