@@ -37,7 +37,8 @@
                             <strong>Riesgo Principal: </strong>{!!$reporteAlertaMipro->riesgo_principal!!}<br>
                             <strong>Solución propuesta: </strong>{!! $reporteAlertaMipro->solucion_propuesta!!}<br>
                             @if($reporteAlertaMipro->acciones!=null)
-                            <strong>Acciones emprendidas para solucionar esta alerta: </strong>  
+                            <strong>Acciones emprendidas para solucionar esta alerta: </strong> 
+                            <?php strip_tags($reporteAlertaMipro->acciones); ?>
                             <?= $reporteAlertaMipro->acciones; ?>
                             @endif
                             </p>
