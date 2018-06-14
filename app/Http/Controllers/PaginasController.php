@@ -26,6 +26,16 @@ use App\Auth\Login;
 
 class PaginasController extends Controller
 {
+     
+    public function home(){
+        dd('hola');
+    }
+    public function homedialogo(){
+
+        return view('dialogo.home-dialogo');
+    }
+
+
      public function busquedaAvanzada(Request $request){
         $datosFiltroSector="";
         $datosFiltroEstado="";
@@ -291,11 +301,13 @@ class PaginasController extends Controller
     }
     public function detalledespliegue2(Request $request, $idSolucion){
  
+        //dd($idSolucion);
+
         $solucion = Solucion::where('id','=',$idSolucion)->first();
-        //dd($solucion);
+        //dd($idSolucion);
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            ->where('tipo_actor','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
         //dd(count($actoresSoluciones));
@@ -408,9 +420,7 @@ class PaginasController extends Controller
     }
 
 
-    public function inicio(){
-    	return view('inicio');
-    }
+    
 
     public function reportegeneralccpt(){
     	return view('reportes.reportegeneralccpt');
@@ -887,11 +897,10 @@ class PaginasController extends Controller
 
     
 
-    
-
     public function consejosectorial(){
         return view('csp.home');
     }
+
 
     public function ReporteDialogoGrafico(){
 
@@ -946,6 +955,9 @@ class PaginasController extends Controller
         
         
     }
+
+
+   
 
 
 
