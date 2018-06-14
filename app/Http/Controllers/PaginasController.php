@@ -313,11 +313,12 @@ class PaginasController extends Controller
         //dd(count($actoresSoluciones));
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            //->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')
                                             ->get();
+
          $actividadUltima = Actividad::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            //->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')
                                             ->first();
 
