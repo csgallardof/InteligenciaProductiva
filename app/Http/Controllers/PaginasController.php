@@ -301,11 +301,13 @@ class PaginasController extends Controller
     }
     public function detalledespliegue2(Request $request, $idSolucion){
  
+        //dd($idSolucion);
+
         $solucion = Solucion::where('id','=',$idSolucion)->first();
-        //dd($solucion);
+        //dd($idSolucion);
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            ->where('tipo_actor','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
         //dd(count($actoresSoluciones));
