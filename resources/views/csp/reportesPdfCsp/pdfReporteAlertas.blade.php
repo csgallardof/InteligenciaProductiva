@@ -35,13 +35,13 @@
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMipro->fecha_atencion; ?><br>
 
                             <strong>Descripción: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMipro->descripcion))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMipro->descripcion); ?><br>
 
                             <strong>Riesgo Principal: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMipro->riesgo_principal))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMipro->riesgo_principal); ?><br>
 
                             <strong>Solución propuesta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMipro->solucion_propuesta))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMipro->solucion_propuesta); ?><br>
 
                             @if($reporteAlertaMipro->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
@@ -68,13 +68,13 @@
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAG->fecha_atencion; ?><br>
 
                             <strong>Descripción: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAG->descripcion))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAG->descripcion); ?><br>
 
                             <strong>Riesgo Principal: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAG->riesgo_principal))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAG->riesgo_principal); ?><br>
 
                             <strong>Solución propuesta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAG->solucion_propuesta))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAG->solucion_propuesta); ?><br>
 
                             @if($reporteAlertaMAG->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
@@ -101,13 +101,13 @@
                             <strong>Fecha de identificación de la alerta: </strong><?= $reporteAlertaMAP->fecha_atencion; ?><br>
 
                             <strong>Descripción: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAP->descripcion))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAP->descripcion); ?><br>
 
                             <strong>Riesgo Principal: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAP->riesgo_principal))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAP->riesgo_principal); ?><br>
 
                             <strong>Solución propuesta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAP->solucion_propuesta))); ?><br>
+                            <?php echo strip_tags($reporteAlertaMAP->solucion_propuesta); ?><br>
 
                             @if($reporteAlertaMAP->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
