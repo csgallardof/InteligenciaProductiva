@@ -33,7 +33,7 @@
 
                             <?php foreach($data1 as $reporteHechoMipro){ ?>
 
-                           <div style="margin: 0 1cm 5 2cm">
+                           <div style="margin: 0 0.6cm 2 0.6cm">
                               <p style="font-family: calibri;text-align: justify;text-justify: inter-word;" >
                                 <strong>Tema: </strong>  <?= $reporteHechoMipro->tema; ?><br>
                                 <strong>Fuente: </strong><?= $reporteHechoMipro->fuente;?><br>
@@ -56,7 +56,7 @@
 
 
                         <?php foreach($data3 as $reporteHechoMAG){ ?>
-                            <div style="margin: 0 1cm 5 2cm">
+                            <div style="margin: 0 0.6cm 2 0.6cm">
                               <p style="font-family: calibri;text-align: justify;text-justify: inter-word;" >
                                 <strong>Tema: </strong>  <?= $reporteHechoMAG->tema; ?><br>
                                 <strong>Fuente: </strong><?= $reporteHechoMAG->fuente;?><br>
@@ -77,7 +77,7 @@
 
 
                         <?php foreach($data2 as $reporteHechoMAP){ ?>
-                            <div style="margin: 0 1cm 5 2cm">
+                            <div style="margin: 0 0.6cm 2 0.6cm">
                               <p style="font-family: calibri;text-align: justify;text-justify: inter-word;" >
                                 <strong>Tema: </strong>  <?= $reporteHechoMAP->tema; ?><br>
                                 <strong>Fuente: </strong><?= $reporteHechoMAP->fuente;?><br>
@@ -95,8 +95,8 @@
 
 
 
-            <p style="margin: 50px; font-family: calibri"  ALIGN="justify" >
-                <br><br><br>
+            <p style="margin: 30px; font-family: calibri"  ALIGN="justify" >
+                <br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Sr. Felipe Altamirano</strong> <br>

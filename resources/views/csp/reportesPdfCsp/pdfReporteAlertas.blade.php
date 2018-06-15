@@ -125,7 +125,7 @@
 
 
 
-            <p style="margin: 50px; font-family: calibri"  ALIGN="justify" >
+            <p style="margin: 40px; font-family: calibri"  ALIGN="justify" >
                 <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
