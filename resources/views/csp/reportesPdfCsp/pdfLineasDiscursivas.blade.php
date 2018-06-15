@@ -11,7 +11,7 @@
         <div class="col-md-8">
                       <div class="box">
                         <div align="center"  >
-                            
+
                             <br><br><img  src="img/logo_presidencia_2.png" width="150" height="60" alt="">
                             <br><br>
 
@@ -87,8 +87,8 @@
 
 
 
-            <p style="margin: 50px; font-family: calibri"  ALIGN="justify" >
-                <br><br><br> <br><br>
+            <p style="margin: 40px; font-family: calibri"  ALIGN="justify" >
+                <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Sr. Felipe Altamirano</strong> <br>
