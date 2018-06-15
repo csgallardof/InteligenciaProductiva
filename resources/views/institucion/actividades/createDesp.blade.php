@@ -70,7 +70,7 @@
 									 				<label for="exampleTextarea">Descripción Actividad</label>
 									 			</div>
 									 			<div class="col-md-3">
-									 				<div id="nunCaracteres" class="pull-right"></div>
+									 				<div id="" class="pull-right"></div>
 									 			</div>
 									 		</div>
 									 			<textarea class="ckeditor" id="editor1" name="comentario" rows="6"></textarea>
