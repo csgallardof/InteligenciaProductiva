@@ -41,7 +41,7 @@
                                 <strong>Porcentaje de avance: </strong><?= $reporteHechoMipro->porcentaje_avance;?>%<br>
                                 <strong>Lugar: </strong><?= $reporteHechoMipro->lugar; ?><br>
                                 <strong>Descripción: </strong>
-                                <?php echo ucfirst(strtolower(strip_tags($reporteHechoMipro->descripcion))); ?>
+                                <?php echo strip_tags($reporteHechoMipro->descripcion); ?>
                               </p>
                             </div>
 
@@ -64,7 +64,7 @@
                                 <strong>Porcentaje de avance: </strong><?= $reporteHechoMAG->porcentaje_avance;?>%<br>
                                 <strong>Lugar: </strong><?= $reporteHechoMAG->lugar; ?><br>
                                 <strong>Descripción: </strong>
-                                <?php echo ucfirst(strtolower(strip_tags($reporteHechoMAG->descripcion))); ?>
+                                <?php echo strip_tags($reporteHechoMAG->descripcion); ?>
                               </p>
                             </div>
                             <?php } ?>
@@ -85,7 +85,7 @@
                                 <strong>Porcentaje de avance: </strong><?= $reporteHechoMAP->porcentaje_avance;?>%<br>
                                 <strong>Lugar: </strong><?= $reporteHechoMAP->lugar; ?><br>
                                 <strong>Descripción: </strong>
-                                <?php echo ucfirst(strtolower(strip_tags($reporteHechoMAP->descripcion))); ?>
+                                <?php echo strip_tags($reporteHechoMAP->descripcion); ?>
                               </p>
                             </div>
                             <?php } ?>
