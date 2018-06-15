@@ -40,10 +40,10 @@ class PdfCspReportesController extends Controller
 
          $buscarTipoComunicacional = $request-> tipo_comunicacional;
 
-         //dd($buscarTipoComunicacional); 
+         //dd($buscarTipoComunicacional);
          //dd($buscar);
          $CspPeriodoReporte = CspPeriodoReporte::all();
-        
+
         if($buscarTipoComunicacional!=null&& $buscar!=null&& $buscarTipoComunicacional!="Todos"){
 
             $reportesHechos = DB::table('csp_reportes_hechos')
@@ -89,7 +89,7 @@ class PdfCspReportesController extends Controller
             ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
             ->orderBy('csp_reportes_hechos.id','DESC')
             ->get();
-             //dd('Aqui',$reportesHechos);   
+             //dd('Aqui',$reportesHechos);
         return view("csp.reportesPdfCsp.listaReportesCsp")->with(["reportesHechos"=>$reportesHechos,
                                                                 "CspPeriodoReporte"=>$CspPeriodoReporte,
                                                                 "buscar"=>$buscar,
@@ -99,28 +99,28 @@ class PdfCspReportesController extends Controller
          }else
         //$buscarTipoComunicacional="Todos";
             //dd($buscarTipoComunicacional);
-         return redirect('/institucion/lista-reportes-csp'); 
+         return redirect('/institucion/lista-reportes-csp');
     }
     public function crearPDF($dato1,$dato2,$dato3,$periodo_reporte,$tipo_reporte,$vistaurl,$tipo)
     {
-        
+
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_reporte);
 
         $data1 = $dato1;
         $data2 = $dato2;
         $data3 = $dato3;
-         
+
         //$elementos= sizeof($data1);
         //dd($elementos);
         $date = date('Y-m-d');
         $view = \View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
                                                                "data2"=>$data2,
                                                                "data3"=>$data3,
-                                                               "tipo_reporte"=>$tipo_reporte,                
+                                                               "tipo_reporte"=>$tipo_reporte,
                                                                "PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        
+
         if($tipo==1){return $pdf->stream('reporteHechosRelevaltes.pdf');}
         if($tipo==2){return $pdf->download('reporte.pdf'); }
     }
@@ -129,7 +129,7 @@ class PdfCspReportesController extends Controller
     public function crearReporteHechosRelevantes(Request $request,$tipo){
         //dd(  );
      if(is_null($request['check'])){
-        
+
             Flash::error("Debe Seleccionar uno o más  Reportes");
             return redirect('/institucion/lista-reportes-csp');
 
@@ -143,61 +143,61 @@ class PdfCspReportesController extends Controller
      $cheches = $request['check'];
      $check="";
      if($tipo_reporte=="Todos"){
-        for ($i=0; $i <count($cheches) ; $i++) { 
+        for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
         }
-        $consulta=substr($check,0,-1); 
+        $consulta=substr($check,0,-1);
         $reporteHechoMipro=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.tipo_comunicacional,csp_reportes_hechos.fecha_reporte, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=3");
-        
+
         $reporteHechoMipro=Collection::make($reporteHechoMipro);
         //dd($reporteHechoMipro);
 
         $reporteHechoMAP=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=2");
-        
+
         $reporteHechoMAP=Collection::make($reporteHechoMAP);
-        
+
         $reporteHechoMAG=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=1");
-        
+
         $reporteHechoMAG=Collection::make($reporteHechoMAG);
-        
+
         //dd($reporteHechoSTR);
 
         return $this->crearPDF($reporteHechoMipro,$reporteHechoMAP,$reporteHechoMAG,$periodo_reporte,$tipo_reporte, $vistaurl,$tipo);
      }else
-     
-     
+
+
      //dd($tipo_reporte);
-     
-     
-    	for ($i=0; $i <count($cheches) ; $i++) { 
+
+
+    	for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
         }
-        $consulta=substr($check,0,-1); 
+        $consulta=substr($check,0,-1);
         $reporteHechoMipro=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.tipo_comunicacional,csp_reportes_hechos.fecha_reporte, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=3 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte' ");
-        
+
         $reporteHechoMipro=Collection::make($reporteHechoMipro);
         //dd($reporteHechoMipro);
 
         $reporteHechoMAP=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=2 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte'");
-        
+
         $reporteHechoMAP=Collection::make($reporteHechoMAP);
-        
+
         $reporteHechoMAG=DB::select("SELECT csp_reportes_hechos.id,csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.descripcion, csp_reportes_hechos.lugar,csp_reportes_hechos.porcentaje_avance, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=1 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte'");
-        
+
         $reporteHechoMAG=Collection::make($reporteHechoMAG);
-        
+
         //dd($reporteHechoSTR);
 
         return $this->crearPDF($reporteHechoMipro,$reporteHechoMAP,$reporteHechoMAG,$periodo_reporte,$tipo_reporte, $vistaurl,$tipo);
@@ -223,12 +223,12 @@ class PdfCspReportesController extends Controller
          $buscar = $request-> parametro;
 
          $buscarTipoComunicacional = $request-> tipo_comunicacional;
-         //dd($buscarTipoComunicacional); 
+         //dd($buscarTipoComunicacional);
          //dd($buscar);
          $CspPeriodoReporte = CspPeriodoReporte::all();
-        
+
         if($buscarTipoComunicacional!=null&& $buscar!=null&& $buscarTipoComunicacional!="Todos"){
-            
+
             $reportesHechos = DB::table('csp_reportes_hechos')
             ->join('csp_periodo_reportes','csp_periodo_reportes.id', '=','csp_reportes_hechos.periodo_id')
             ->join('institucions','institucions.id', '=','csp_reportes_hechos.institucion_id')
@@ -268,7 +268,7 @@ class PdfCspReportesController extends Controller
             ->select('csp_reportes_hechos.id','csp_reportes_hechos.fecha_reporte','csp_reportes_hechos.tipo_comunicacional','csp_reportes_hechos.tema','csp_reportes_hechos.descripcion','csp_reportes_hechos.lugar','csp_reportes_hechos.fuente','institucions.siglas_institucion as Institucion','csp_reportes_hechos.anexo','csp_reportes_hechos.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
             ->orderBy('csp_reportes_hechos.id','DESC')
             ->get();
-             //dd('Aqui',$reportesHechos);   
+             //dd('Aqui',$reportesHechos);
        return view("csp.reportesPdfCsp.listaReportesLineasDiscursivasCsp")->with(["reportesHechos"=>$reportesHechos,
                                                                                 "CspPeriodoReporte"=>$CspPeriodoReporte,
                                                                                 "buscar"=>$buscar,
@@ -278,7 +278,7 @@ class PdfCspReportesController extends Controller
 
          }else
          return redirect('/institucion/reportes-lineas-discursivas-csp');
-        
+
     }
 
     public function crearReporteHechosLineasDiscursivas(Request $request,$tipo){
@@ -296,67 +296,67 @@ class PdfCspReportesController extends Controller
      $cheches = $request['check'];
      $check="";
      if($tipo_reporte=="Todos"){
-         for ($i=0; $i <count($cheches) ; $i++) { 
+         for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
         }
-        $consulta=substr($check,0,-1); 
+        $consulta=substr($check,0,-1);
         $reporteHechoMipro=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=3");
-        
+
         $reporteHechoMipro=Collection::make($reporteHechoMipro);
 
         $reporteHechoMAP=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=2");
-        
+
         $reporteHechoMAP=Collection::make($reporteHechoMAP);
-        
+
         $reporteHechoMAG=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=1");
-        
+
         $reporteHechoMAG=Collection::make($reporteHechoMAG);
-       
-       
+
+
 
         return $this->crearLineaDiscursivasPDF($reporteHechoMipro,$reporteHechoMAP,$reporteHechoMAG,$periodo_reporte,$tipo_reporte, $vistaurl,$tipo);
      }else
-     
-        for ($i=0; $i <count($cheches) ; $i++) { 
+
+        for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
         }
-        $consulta=substr($check,0,-1); 
+        $consulta=substr($check,0,-1);
         $reporteHechoMipro=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=3 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte'");
-        
+
         $reporteHechoMipro=Collection::make($reporteHechoMipro);
 
         $reporteHechoMAP=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=2 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte'");
-        
+
         $reporteHechoMAP=Collection::make($reporteHechoMAP);
-        
+
         $reporteHechoMAG=DB::select("SELECT csp_reportes_hechos.fecha_reporte,csp_reportes_hechos.tipo_comunicacional, csp_reportes_hechos.tema, csp_reportes_hechos.fuente, csp_reportes_hechos.lineas_discursivas, institucions.siglas_institucion as Institucion FROM csp_reportes_hechos
-            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id 
+            JOIN institucions ON institucions.id= csp_reportes_hechos.institucion_id
             WHERE csp_reportes_hechos.id in ($consulta) and csp_reportes_hechos.institucion_id=1 and csp_reportes_hechos.tipo_comunicacional='$tipo_reporte'");
-        
+
         $reporteHechoMAG=Collection::make($reporteHechoMAG);
-       
-       
+
+
 
         return $this->crearLineaDiscursivasPDF($reporteHechoMipro,$reporteHechoMAP,$reporteHechoMAG,$periodo_reporte,$tipo_reporte, $vistaurl,$tipo);
     }
     public function crearLineaDiscursivasPDF($dato1,$dato2,$dato3,$periodo_reporte,$tipo_reporte,$vistaurl,$tipo)
     {
-        
+
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_reporte);
         $data1 = $dato1;
         $data2 = $dato2;
         $data3 = $dato3;
-        
+
         //$elementos= sizeof($data1);
         //dd($data1);
         $date = date('Y-m-d');
@@ -364,15 +364,15 @@ class PdfCspReportesController extends Controller
                                                                "data2"=>$data2,
                                                                "data3"=>$data3,
                                                                "tipo_reporte"=>$tipo_reporte,
-                                                                               
+
                                                                "PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
-        
+
         if($tipo==1){return $pdf->stream('reporteHechosLineasDiscursivas.pdf');}
         if($tipo==2){return $pdf->download('reporteHechosLineasDiscursivas.pdf'); }
     }
-   
+
 
 
 
@@ -450,14 +450,14 @@ class PdfCspReportesController extends Controller
                                                                          "buscar"=>$buscar,
                                                                 "buscarTipoComunicacional"=>$buscarTipoComunicacional
                                                                     ]);
-        }else 
-        return redirect('/institucion/reportes-alertas-csp'); 
+        }else
+        return redirect('/institucion/reportes-alertas-csp');
 
-        
+
 
     }
      public function crearReporteAlerta(Request $request,$tipo){
-       
+
         if(is_null($request['check'])){
         Flash::error("Recuerde seleccionar uno o mas Reportes");
         return redirect('/institucion/reportes-alertas-csp');
@@ -467,42 +467,42 @@ class PdfCspReportesController extends Controller
      $vistaurl="csp.reportesPdfCsp.pdfReporteAlertas";
       $tipo_reporte=$request['tipo_reporte'];
       $periodo_reporte=$request['periodo_reporte'];
-     
+
      $cheches = $request['check'];
      $check="";
      if($tipo_reporte=="Todos"){
-        for ($i=0; $i <count($cheches) ; $i++) { 
+        for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
             //$acciones = DB::select
 
         }
         $consulta=substr($check,0,-1);
 
-        DB::statement('SET GLOBAL group_concat_max_len = 9000000'); 
+        DB::statement('SET GLOBAL group_concat_max_len = 9000000');
 
-        $reporteAlertaMipro= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion,group_concat(csp_acciones_alertas.acciones SEPARATOR '<br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=3 group by csp_reportes_alertas.id");
+        $reporteAlertaMipro= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion, group_concat(CONCAT('<li>',csp_acciones_alertas.acciones,'</li>') separator '<br><br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=3 group by csp_reportes_alertas.id");
         $reporteAlertaMipro=Collection::make($reporteAlertaMipro);
 
-        $reporteAlertaMAP= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion,group_concat(csp_acciones_alertas.acciones SEPARATOR '<br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=2 group by csp_reportes_alertas.id");
+        $reporteAlertaMAP= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion, group_concat(CONCAT('<li>',csp_acciones_alertas.acciones,'</li>') separator '<br><br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=2 group by csp_reportes_alertas.id");
         $reporteAlertaMAP=Collection::make($reporteAlertaMAP);
 
-           
-                   
-        $reporteAlertaMAG= DB::select( "SELECT  csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion,group_concat(csp_acciones_alertas.acciones SEPARATOR '<br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=1 group by csp_reportes_alertas.id");
+
+
+        $reporteAlertaMAG= DB::select( "SELECT  csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion, group_concat(CONCAT('<li>',csp_acciones_alertas.acciones,'</li>') separator '<br><br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=1 group by csp_reportes_alertas.id");
         $reporteAlertaMAG=Collection::make($reporteAlertaMAG);
             //dd($reporteAlertaMAG);
-        
+
         //dd($reporteAlertaMipro);
         return $this->crearAlertasPDF($reporteAlertaMipro,$reporteAlertaMAP,$reporteAlertaMAG,$periodo_reporte,$tipo_reporte,$vistaurl,$tipo);
      }else
-        for ($i=0; $i <count($cheches) ; $i++) { 
+        for ($i=0; $i <count($cheches) ; $i++) {
             $check .= $cheches[$i].",";
             //$acciones = DB::select
 
         }
         $consulta=substr($check,0,-1);
 
-        DB::statement('SET GLOBAL group_concat_max_len = 9000000'); 
+        DB::statement('SET GLOBAL group_concat_max_len = 9000000');
 
         $reporteAlertaMipro= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion,group_concat(csp_acciones_alertas.acciones SEPARATOR '<br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=3 and csp_reportes_alertas.tipo_comunicacional='$tipo_reporte' group by csp_reportes_alertas.id");
         $reporteAlertaMipro=Collection::make($reporteAlertaMipro);
@@ -513,38 +513,38 @@ class PdfCspReportesController extends Controller
         $reporteAlertaMAG= DB::select("SELECT csp_reportes_alertas.id,csp_reportes_alertas.solucion_propuesta,csp_reportes_alertas.fecha_atencion,csp_reportes_alertas.tipo_comunicacional, csp_reportes_alertas.tema, csp_reportes_alertas.fuente,csp_reportes_alertas.descripcion, csp_reportes_alertas.riesgo_principal, institucions.siglas_institucion as Institucion,group_concat(csp_acciones_alertas.acciones SEPARATOR '<br>') as acciones FROM csp_reportes_alertas JOIN institucions ON institucions.id= csp_reportes_alertas.institucion_id LEFT JOIN csp_acciones_alertas on csp_acciones_alertas.reporte_alerta_id = csp_reportes_alertas.id WHERE csp_reportes_alertas.id in ($consulta) and csp_reportes_alertas.institucion_id=1  and csp_reportes_alertas.tipo_comunicacional='$tipo_reporte' group by csp_reportes_alertas.id");
         $reporteAlertaMAG=Collection::make($reporteAlertaMAG);
 
-        
+
         //dd($reporteAlertaMipro);
         return $this->crearAlertasPDF($reporteAlertaMipro,$reporteAlertaMAP,$reporteAlertaMAG,$periodo_reporte,$tipo_reporte,$vistaurl,$tipo);
     }
     public function crearAlertasPDF($dato1,$dato2,$dato3,$periodo_reporte,$tipo_reporte,$vistaurl,$tipo)
     {
-        
+
         $PeriodoSemanaCspReporte = CspPeriodoReporte::find($periodo_reporte);
         $data1 = $dato1;
         $data2 = $dato2;
         $data3 = $dato3;
-        
-        
+
+
         //dd($data1);
-        
+
         //$elementos= sizeof($data1);
         //dd($data1);
         $date = date('Y-m-d');
         $view = \View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
                                                                 "data2"=>$data2,
                                                                 "data3"=>$data3,
-                                                                "tipo_reporte"=>$tipo_reporte,                
+                                                                "tipo_reporte"=>$tipo_reporte,
                                                                "PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);
-        
+
         $pdf = \App::make('dompdf.wrapper');
 
         $pdf->loadHTML($view);
         //dd($data1);
-        
+
         if($tipo==1){return $pdf->stream('reporteAlertas.pdf');}
         if($tipo==2){return $pdf->download('reporteAlertas.pdf'); }
     }
-      
+
 
 }
