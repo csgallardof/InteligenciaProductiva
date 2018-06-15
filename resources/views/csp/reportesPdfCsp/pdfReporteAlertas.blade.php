@@ -45,7 +45,7 @@
 
                             @if($reporteAlertaMipro->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMipro->acciones))); ?><br>
+                            <br><br><ul><?php echo $reporteAlertaMipro->acciones; ?></ul><br>
                             @endif
 
                             </p>
@@ -78,7 +78,7 @@
 
                             @if($reporteAlertaMAG->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAG->acciones))); ?><br>
+                            <br><br><ul><?php echo $reporteAlertaMAG->acciones; ?></ul><br>
                             @endif
 
                             </p>
@@ -111,7 +111,7 @@
 
                             @if($reporteAlertaMAP->acciones!=null)
                             <strong>Acciones emprendidas para solucionar esta alerta: </strong>
-                            <?php echo ucfirst(strtolower(strip_tags($reporteAlertaMAP->acciones))); ?><br>
+                            <br><br><ul><?php echo $reporteAlertaMAP->acciones; ?></ul><br>
                             @endif
 
                             </p>
