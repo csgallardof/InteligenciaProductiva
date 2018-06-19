@@ -211,10 +211,12 @@ label {
 
 /* 2.1 Page Options */
 
+
 .page-header-fixed {
     padding-top: 54px;
 }
 .page-without-sidebar .content {
+   
     margin-left: 0;
 }
 .page-with-right-sidebar .sidebar,
@@ -226,6 +228,7 @@ label {
     position: fixed;
 }
 .page-with-right-sidebar .content {
+
     margin-left: 0;
     margin-right: 220px;
 }

@@ -455,7 +455,7 @@ class InstitucionController extends Controller
     {
         //dd($request);
         
-        //dd($request->tipo_actor_id);
+        //dd($request->institucion);
 
         $actorSolucion = new ActorSolucion;
         $actorSolucion->user_id = $request->institucion;
@@ -476,13 +476,16 @@ class InstitucionController extends Controller
         // $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
         // $solucion->save();
 
+
      $actoresSolucionesPorAsignar = DB::SELECT("SELECT solucions.id, solucions.tipo_fuente ,solucions.verbo_solucion, solucions.sujeto_solucion, solucions.complemento_solucion, solucions.estado_id, estado_solucion.nombre_estado
         from  solucions
         join estado_solucion
         on estado_solucion.id = solucions.estado_id
         where solucions.estado_id = 1");
 
-        return view('admin.actores.homeActoresPorAsignar')->with(["actoresSolucionesPorAsignar"=>$actoresSolucionesPorAsignar]); 
+    // dd($actoresSolucionesPorAsignar);
+
+       return redirect ('admin/actores/porasignar'); 
 
 
     }

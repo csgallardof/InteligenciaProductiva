@@ -16,7 +16,7 @@ use App\Ambit;
 use App\EstadoSolucion;
 use DB;
 use Illuminate\Support\Collection as Collection;
-    
+
 
 use App\Provincia;
 use App\Sipoc;
@@ -26,6 +26,16 @@ use App\Auth\Login;
 
 class PaginasController extends Controller
 {
+
+    public function home(){
+        dd('hola');
+    }
+    public function homedialogo(){
+
+        return view('dialogo.home-dialogo');
+    }
+
+
      public function busquedaAvanzada(Request $request){
         $datosFiltroSector="";
         $datosFiltroEstado="";
@@ -36,9 +46,9 @@ class PaginasController extends Controller
         $filtros[] = array();
         $hayFiltros= false;
        //$buscarCombo =$request-> comboBusqueda;
-       
+
        if( isset($request->selectBusqueda) && $request->selectBusqueda >0 ){
-            
+
             $filtros["mesas"]= $request->selectBusqueda;
              $resultados1 = Solucion::select('solucions.*')
                                 ->join('provincias', 'solucions.provincia_id', '=', 'provincias.id')
@@ -75,7 +85,7 @@ class PaginasController extends Controller
                                 ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
                                 ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
                                 //->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
-                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR 
+                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR
                                 ->union($resultados6) // UNION CON  EL QUERY5
                                ->get();
             foreach ($resultados as $solucion) {
@@ -98,7 +108,7 @@ class PaginasController extends Controller
                             ->get();
                  $datosFiltroAmbito=0;
                  $datosFiltroResponsable=0;
-                 $filtros = 0;           
+                 $filtros = 0;
                  return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
@@ -118,7 +128,7 @@ class PaginasController extends Controller
 
                 $datosFiltroAmbito=0;
                 $datosFiltroResponsable=0;
-                $filtros = 0;          
+                $filtros = 0;
 
                   return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
@@ -127,7 +137,7 @@ class PaginasController extends Controller
                                             "datosFiltroResponsable"=>$datosFiltroResponsable,
                                             "filtros"=>$filtros
                                         ]);
-           
+
 
             }
 
@@ -168,19 +178,19 @@ class PaginasController extends Controller
                                 ->union($resultados2) // UNION CON  EL QUERY2 ANTERIOR
                                 ->union($resultados3) // UNION CON  EL QUERY3 ANTERIOR
                                 //->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
-                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR 
+                                ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR
                                 ->union($resultados6) // UNION CON  EL QUERY5
                                ->get();
 
                               // dd($resultados);
-            
+
                     //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
-            
-        
+
+
         }
 
 
-        
+
 
         if( isset($request->checkbox1)){
             $filtros["mesas"]= true;
@@ -231,7 +241,7 @@ class PaginasController extends Controller
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
                     $datosFiltroAmbito=($request->ambitoSelect);
-                    
+
                 }
             }
         }
@@ -243,7 +253,7 @@ class PaginasController extends Controller
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
                         $datosFiltroResponsable=($request->responsableSelect);
-                        
+
                     }
                 }
             }
@@ -256,7 +266,7 @@ class PaginasController extends Controller
                     if($actor_solucion-> user_id == $request->corresponsableSelect && $actor_solucion->tipo_actor == 2){
                         array_push($resultadoAuxiliar, $solucion);
                         $hayFiltros = true;
-                        
+
                     }
                 }
             }
@@ -273,7 +283,7 @@ class PaginasController extends Controller
         unset($filtros[0]);
 
 
-            
+
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
@@ -281,31 +291,34 @@ class PaginasController extends Controller
                                             "datosFiltroEstado"=>$datosFiltroEstado,
                                             "datosFiltroAmbito"=>$datosFiltroAmbito,
                                             "datosFiltroResponsable"=>$datosFiltroResponsable,
-                                            
+
                                             "filtros"=>$filtros
                                         ]);
 
 
-        
+
 
     }
     public function detalledespliegue2(Request $request, $idSolucion){
- 
+
+        //dd($idSolucion);
+
         $solucion = Solucion::where('id','=',$idSolucion)->first();
-        //dd($solucion);
+        //dd($idSolucion);
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            // ->where('tipo_actor','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
         //dd(count($actoresSoluciones));
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            //->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')
                                             ->get();
+
          $actividadUltima = Actividad::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
+                                            //->where('tipo_fuente','=',1)
                                             ->orderBy('created_at','DESC')
                                             ->first();
 
@@ -408,9 +421,7 @@ class PaginasController extends Controller
     }
 
 
-    public function inicio(){
-    	return view('inicio');
-    }
+
 
     public function reportegeneralccpt(){
     	return view('reportes.reportegeneralccpt');
@@ -711,8 +722,8 @@ class PaginasController extends Controller
                 if($solucion->sector_id == $request->sectorSelect){
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
-                    
-                    
+
+
                 }
             }
         }
@@ -724,7 +735,7 @@ class PaginasController extends Controller
                     array_push($resultadoAuxiliar, $solucion);
                     $hayFiltros = true;
                     $datosFiltroAmbito=($request->ambitoSelect);
-                    
+
                 }
             }
         }
@@ -763,7 +774,7 @@ class PaginasController extends Controller
         }
 
         unset($filtros[0]);
-        
+
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
@@ -775,15 +786,15 @@ class PaginasController extends Controller
 
 
     }
-    
- 
+
+
     public function crearReportePropuestas(Request $request,$tipo){
 
       $vistaurl="publico.reportes.pdfReportes.pdfPropuestas";
      $cheches = $request['check'];
      $check="";
-     for ($i=0; $i <count($cheches) ; $i++) { 
-            $check .= $cheches[$i].","; 
+     for ($i=0; $i <count($cheches) ; $i++) {
+            $check .= $cheches[$i].",";
         }
         $consulta=substr($check,0,-1);
         $consutaPropuestas=DB::select("SELECT solucions.id,solucions.verbo_solucion,solucions.sujeto_solucion,solucions.complemento_solucion, users.name, estado_solucion.nombre_estado, ambits.nombre_ambit FROM solucions
@@ -812,14 +823,14 @@ class PaginasController extends Controller
             WHERE solucions.id IN ($consulta) AND solucions.estado_id IN(4)
             ORDER BY solucions.estado_id");
         $consutaPropuestasCierre=Collection::make($consutaPropuestasCierre);
-       
+
         return $this->crearPropuestasPDF($consutaPropuestasAnalisis,$consutaPropuestasDesarrollo,$consutaPropuestasCierre,$vistaurl,$tipo);
-        
-        
+
+
 
     }
     public function crearPropuestasPDF($datos1,$datos2,$datos3,$vistaurl,$tipo){
-        
+
         $data1 = $datos1;
         $data2 = $datos2;
         $data3 = $datos3;
@@ -829,10 +840,10 @@ class PaginasController extends Controller
         $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
                                                               "data3"=>$data3,
                                                               "data2"=>$data2]);
-        
+
         $pdf1 = \App::make('dompdf.wrapper');
         $pdf1->loadHTML($view);
-        
+
         if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
         if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
@@ -868,30 +879,29 @@ class PaginasController extends Controller
     }
 
     public function crearHomePropuestasPDF($datos1,$idEstado,$vistaurl,$tipo){
-        
+
         $data1 = $datos1;
-        
+
         //dd($data1);
 
         $date = date('Y-m-d');
         $view =\View::make($vistaurl, compact('date'))->with(["data1"=>$data1,
                                                               "idEstado"=>$idEstado]);
-        
+
         $pdf1 = \App::make('dompdf.wrapper');
         $pdf1->loadHTML($view);
-        
+
         if($tipo==1){return $pdf1->stream($date.'_Reporte-Propuestas.pdf');}
         if($tipo==2){return $pdf1->download('reporte.pdf'); }
 
     }
 
-    
 
-    
 
     public function consejosectorial(){
         return view('csp.home');
     }
+
 
     public function ReporteDialogoGrafico(){
 
@@ -934,18 +944,21 @@ class PaginasController extends Controller
 
 
 
-                            
+
         return view('publico.reportes.reporte-graficos')->with([
                                                 "sipoc"=>$sipoc,
                                                 "verbo_solucion" =>$verbo_solucion,
                                                 "propuestas_estado" =>$propuestas_estado,
                                                 "propuestas_ambito" =>$propuestas_ambito,
                                                 "propuestas_institucion" => $propuestas_institucion
-                                                
+
                                                 ]);
-        
-        
+
+
     }
+
+
+
 
 
 

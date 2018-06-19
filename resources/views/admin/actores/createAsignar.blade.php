@@ -68,7 +68,7 @@
                                 <select class="form-control" name = "institucion" data-size="15" data-live-search="true" data-style="btn-info" required>
                                     <option selected="selected" class="select_placeholder">Seleccione una Instituci&oacute;n</option>
                                     @foreach($instituciones as $institucion)
-                                        <option value="{{ $institucion->id }}" > {{ $institucion->name }}</option>
+                                        <option value="{{ $institucion->id }}" >{{ $institucion->id }} - {{ $institucion->name }}</option>
                                     @endforeach
                                 </select>
 
