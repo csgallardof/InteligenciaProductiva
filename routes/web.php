@@ -259,7 +259,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      // EDITAR ACTIVIDADES
 
      Route::get('/editar-actividades/{actividad_id}/{solucion_id}','ActividadesController@vistaEditarActividad');
-     Route::post('/editar-actividades-solucion/{id}',['uses'=>'ActividadesController@editarActividad','as'=>'verSolucion.despliegue']);
+     Route::post('/editar-actividades-solucion/{id}',['uses'=>'ActividadesController@editarActividad','as'=>'modificarActividades']);
 
 
 
@@ -315,7 +315,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      
      //EDITAR REPORTES ACCIONES ALERTAS CSP
      Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');
-     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'verSolucion.despliegue']);
+     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'verSolucion']);
      
      //Reportes csp
      Route::get('/lista-reportes-csp','PdfCspReportesController@listaReportesCsp');
