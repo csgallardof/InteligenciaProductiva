@@ -11,7 +11,7 @@
         <div class="col-md-8">
                       <div class="box">
                         <div align="center"  >
-                            <br><br><img  src="img/logo_presidencia_2.png" width="150" height="60" alt="">
+                            <br><br><img  src="img/logo_mipro.jpg" width="150" height="150" alt="">
                             <br><br>
 
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>FICHA DE ALERTAS</strong></p>
@@ -125,7 +125,7 @@
 
 
 
-            <p style="margin: 40px; font-family: calibri"  ALIGN="justify" >
+            <!-- <p style="margin: 40px; font-family: calibri"  ALIGN="justify" >
                 <br><br><br>
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
@@ -133,7 +133,7 @@
                 <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>
-            </p>
+            </p> -->
             </div>
 
 </body>
