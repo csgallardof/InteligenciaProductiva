@@ -624,12 +624,14 @@ class ActividadesController extends Controller
 
     public function editarActividad( Request $request, $id){
         
-       // dd($id);
+        //dd($request);
+
         $comentario = $request->comentario;
         $fecha_inicio = $request->fecha;
         $solucion_id = $request->solucion_id;
         $tipo_fuente = $request->tipo_fuente_id;
         $ejecutor_id = $request->institucion_id;
+        
 
         $actividad = Actividad::find($id);
         $actividad -> fecha_inicio = $fecha_inicio;
@@ -639,6 +641,19 @@ class ActividadesController extends Controller
         $actividad -> ejecutor_id = $ejecutor_id;
         $actividad ->save();
 
+        $nombreArchivos="";
+        $files = $request->file('files');
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+                $nombreArchivo = $file->getClientOriginalName();
+               // dd($nombreArchivo);
+            }
+
+            $archivo = DB::select("DELETE FROM archivos WHERE actividad_id = ".$id);
+        
+        }
+        
         $nombreArchivos="";
         $files = $request->file('files');
 

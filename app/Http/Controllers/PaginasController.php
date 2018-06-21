@@ -41,13 +41,13 @@ class PaginasController extends Controller
         $datosFiltroEstado="";
         $datosFiltroAmbito="";
         $datosFiltroResponsable="";
-       $buscar = $request-> parametro;
-       $resultadoAuxiliar[] = array();
+        $buscar = $request-> parametro;
+        $resultadoAuxiliar[] = array();
         $filtros[] = array();
         $hayFiltros= false;
        //$buscarCombo =$request-> comboBusqueda;
 
-       if( isset($request->selectBusqueda) && $request->selectBusqueda >0 ){
+       if( isset($request->selectBusqueda) && $request->selectBusqueda >0 ) {
 
             $filtros["mesas"]= $request->selectBusqueda;
              $resultados1 = Solucion::select('solucions.*')
@@ -100,7 +100,7 @@ class PaginasController extends Controller
 
        //dd(strtolower($buscar));
 
-        if(strtolower($buscar) == 'mesas competitividad' || strtolower($buscar) == 'consejo consultivo' || strtolower($buscar) == 'mesas de competitividad'){
+        if(strtolower($buscar) == 'mesas competitividad' || strtolower($buscar) == 'consejo consultivo' || strtolower($buscar) == 'mesas de competitividad') {
 
             if(strtolower($buscar) == 'mesas competitividad' || strtolower($buscar) == 'mesas de competitividad'){
                 $resultados = Solucion::where('tipo_fuente','=',1)
@@ -141,7 +141,7 @@ class PaginasController extends Controller
 
             }
 
-        }else{
+        } else {
 
 
             $resultados1 = Solucion::select('solucions.*')
@@ -180,17 +180,13 @@ class PaginasController extends Controller
                                 //->union($resultados4) // UNION CON  EL QUERY4 ANTERIOR
                                 ->union($resultados5) // UNION CON  EL QUERY5 ANTERIOR
                                 ->union($resultados6) // UNION CON  EL QUERY5
-                               ->get();
-
-                              // dd($resultados);
-
-                    //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
-
+                                ->orderBy('estado_id', 'desc')
+                                ->get();
+                                //->toSql();
+                                //dd($resultados);
+                                //dd($totalMesasCom,$totalCCTP,$totalPropuesta);
 
         }
-
-
-
 
         if( isset($request->checkbox1)){
             $filtros["mesas"]= true;
@@ -201,7 +197,7 @@ class PaginasController extends Controller
                 }
             }
         }
-        //dd($resultados);
+
         if( isset($request->checkbox2)){
             $filtros["consejo"]= true;
             foreach ($resultados as $solucion) {
@@ -223,6 +219,7 @@ class PaginasController extends Controller
                 }
             }
         }
+
         if( isset($request->estadoSelect) && $request->estadoSelect > 0 ){
             $filtros["sector"]= $request->estadoSelect;
             foreach ($resultados as $solucion) {
@@ -245,6 +242,7 @@ class PaginasController extends Controller
                 }
             }
         }
+
         if( isset($request->responsableSelect) && $request->responsableSelect > 0 ){
             $filtros["responsable"]= $request->responsableSelect;
             foreach ($resultados as $solucion) {
@@ -282,8 +280,6 @@ class PaginasController extends Controller
 
         unset($filtros[0]);
 
-
-
         return view('publico.reportes.reporte2')->with([
                                             "parametro"=>$buscar,
                                             "resultados"=>$resultados,
@@ -291,14 +287,11 @@ class PaginasController extends Controller
                                             "datosFiltroEstado"=>$datosFiltroEstado,
                                             "datosFiltroAmbito"=>$datosFiltroAmbito,
                                             "datosFiltroResponsable"=>$datosFiltroResponsable,
-
                                             "filtros"=>$filtros
                                         ]);
 
-
-
-
     }
+
     public function detalledespliegue2(Request $request, $idSolucion){
 
         //dd($idSolucion);
