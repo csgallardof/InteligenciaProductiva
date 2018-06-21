@@ -115,7 +115,7 @@
 										@foreach( $actividades as $actividad)
 											<h4>
 												<label class="label label-danger label-lg"><i class="fa fa-file-text-o" aria-hidden="true"></i>
- 												 Actividad {{ $count }}</label><br><br>
+ 												 Actividad {{ $count }}</label>&nbsp;&nbsp; <a href="/institucion/editar-actividades/{{$actividad->id}}/{{$actividad->solucion_id}}" title="Editar Actividad"> <i class="fa fa-1x fa-edit"></i></a> <br><br>
 											</h4>
 											<p class="text-justify">
 												{!! $actividad-> comentario !!}

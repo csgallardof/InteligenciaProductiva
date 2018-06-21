@@ -256,6 +256,12 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      Route::post('actividad/save/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@saveActividad','as'=>'actividades.saveActividad']);
 
+     // EDITAR ACTIVIDADES
+
+     Route::get('/editar-actividades/{actividad_id}/{solucion_id}','ActividadesController@vistaEditarActividad');
+     Route::post('/editar-actividades-solucion/{id}',['uses'=>'ActividadesController@editarActividad','as'=>'verSolucion.despliegue']);
+
+
 
 //VISTA DE LOS REPORTES DEL CSP
      Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes'); 
@@ -309,7 +315,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      
      //EDITAR REPORTES ACCIONES ALERTAS CSP
      Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');
-     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'modificarAccionesAlerta']);
+     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'verSolucion.despliegue']);
      
      //Reportes csp
      Route::get('/lista-reportes-csp','PdfCspReportesController@listaReportesCsp');
