@@ -296,10 +296,10 @@
   								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
 
 
-								@if($resultados->estado_id==1)
+								@if($resultados->estado_id>=1)
 								<div class="progress progress-striped active " style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
-                                        @if($resultados->estado_id==3)
+                                        @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
                                         @if($resultados->estado_id==4)
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
@@ -336,10 +336,10 @@
                 <b><font >Fuente: </font></b>Consejo Consultivo Productivo y Tributario<br>
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
 
-                                @if($resultados->estado_id==1)
+                                @if($resultados->estado_id>=1)
 								<div class="progress progress-striped active" style="width:50%">
                                         <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
-                                        @if($resultados->estado_id==3)
+                                        @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
                                         @if($resultados->estado_id==4)
                                         <div class="progress-bar progress-bar-success" style="width: 34%">Finalizado</div>
