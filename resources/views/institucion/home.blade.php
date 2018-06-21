@@ -249,7 +249,7 @@
 															@endif
 														</td>
 														<td>
-															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalle</a>
+															<a href="{{ route('verSolucion.despliegue',[1,$solucionD->id]) }}" class="btn btn-link f-s-13 f-w-500">Ver detalless</a>
 														</td>
 													</tr>
 												@endif
