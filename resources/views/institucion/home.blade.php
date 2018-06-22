@@ -211,7 +211,7 @@
 														</td>
 
 														<td>
-															@if($solucionD->nombre_estado=="Cierre")
+															@if($solucionD->nombre_estado=="Finalizado")
 															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
 																<span class="label label-info">
 																	@if($solucionD->pajustada_id!=0)
