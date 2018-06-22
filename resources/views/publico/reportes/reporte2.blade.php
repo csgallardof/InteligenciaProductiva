@@ -15,7 +15,7 @@
 <br><br><br><br>
 	<!-- begin row -->
 	<div id="about" class="content work" data-scrollview="true">
-		<div class="container" data-animation="true" data-animation-type="fadeInDown">
+		<div class="container-fluid" data-animation="true" data-animation-type="fadeInDown">
 
 
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
@@ -409,7 +409,7 @@
 
 		$(document).ready(function() {
 			App.init();
-			TablaCCPTHome.init();
+			TablaCCPTHomelistado.init();
 		});
 
 	</script>
