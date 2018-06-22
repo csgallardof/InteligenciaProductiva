@@ -149,7 +149,7 @@
 
                                         <input type="text" class="form-control_2" placeholder="Busca todo sobre el diálogo con el sector productivo" name="parametro" value="{{$parametro}}" required style="font-size: 16px" >
                                         <span class="input-group-btn">
-                                            <button class="btn btn-buscar btn-lg" style="background: #EF5D06; color: #fff; " type="submit" height="50px">
+                                            <button class="btn btn-buscar btn-lg" style="background: #348fe2; color: #fff; " type="submit" height="50px">
                                                 <span class="glyphicon glyphicon-search"></span>
                                             </button>
                                         </span>
@@ -190,74 +190,81 @@
 							"
 						@endif --}}
 
+                <br><br>
+
           			</div>
 
-					<!-- inicio cuadrados -->
-					<br>
 
-					<div class="col-md-12">
-						<br>
+                <?php
+
+                    // Calculo de Resultados Totales
+
+    	    					$totalMesasCom=0;
+    	            			$totalCCTP=0;
+    	            			$estadoAsignado1=0;
+    				            $estadoDesarrollo1=0;
+                        $estadoFinalizado1=0;
+    				            $estadoAsignado2=0;
+    				            $estadoDesarrollo2=0;
+                        $estadoFinalizado2=0;
+    	                     foreach($resultados as $solucion ) {
+
+                            if($solucion->tipo_fuente==1) {
+    	                        $totalMesasCom=$totalMesasCom+1;
+    	                        if($solucion->estado_id==1) {
+      	                    	    $estadoAsignado1=$estadoAsignado1+1;
+      	                    	} elseif($solucion->estado_id==3) {
+      	                    	    $estadoDesarrollo1=$estadoDesarrollo1+1;
+                              } elseif($solucion->estado_id==4) {
+      	                    	    $estadoFinalizado1=$estadoFinalizado1+1;
+      	                    	}
+    	                    	} else {
+    	                        $totalCCTP=$totalCCTP+1;
+    	                        if($solucion->estado_id==1) {
+    	                    	$estadoAsignado2=$estadoAsignado2+1;
+    	                    	}elseif($solucion->estado_id==3){
+    	                    	$estadoDesarrollo2=$estadoDesarrollo2+1;
+                            }elseif($solucion->estado_id==4){
+    	                    	$estadoFinalizado2=$estadoFinalizado2+1;
+    	                    	}
+    	                        }
+    	                    }
+    	                    $totalPropuesta=$totalMesasCom+$totalCCTP;
+    	                    $totalEstadoAsignado=$estadoAsignado1+$estadoAsignado2;
+    	                    $totalEstadoDesarrollo=$estadoDesarrollo1+$estadoDesarrollo2;
+                          $totalEstadoFinalizado=$estadoFinalizado1+$estadoFinalizado2;
+    	    				?>
+
+					<!-- inicio cuadrados de resultados-->
+					<br><br>
+					<!-- <div class="col-md-12"> <br> -->
 						<!-- begin col-3 -->
-				<div class="col-md-4 col-sm-6">
+				<!-- <div class="col-md-4 col-sm-6">
 					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
-						<?php
-	    					$totalMesasCom=0;
-	            			$totalCCTP=0;
-	            			$estadoAsignado1=0;
-				            $estadoDesarrollo1=0;
-				            $estadoAsignado2=0;
-				            $estadoDesarrollo2=0;
-	                     foreach($resultados as $solucion ) {
-
-	                        if($solucion->tipo_fuente==1){
-	                        $totalMesasCom=$totalMesasCom+1;
-	                        if($solucion->estado_id==2){
-	                    	$estadoAsignado1=$estadoAsignado1+1;
-	                    	}elseif($solucion->estado_id==3){
-	                    	$estadoDesarrollo1=$estadoDesarrollo1+1;
-	                    	}
-	                    	}
-	                        else {
-	                        $totalCCTP=$totalCCTP+1;
-	                        if($solucion->estado_id==2){
-	                    	$estadoAsignado2=$estadoAsignado2+1;
-	                    	}elseif($solucion->estado_id==3){
-	                    	$estadoDesarrollo2=$estadoDesarrollo2+1;
-	                    	}
-	                        }
-	                    }
-	                    $totalPropuesta=$totalMesasCom+$totalCCTP;
-	                    $totalEstadoAsignado=$estadoAsignado1+$estadoAsignado2;
-	                    $totalEstadoDesarrollo=$estadoDesarrollo1+$estadoDesarrollo2;
-	    				?>
               <b class="f-s-19">{{$totalPropuesta}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas Registradas</b>
 						</div>
-
 					</div>
-				</div>
+				</div> -->
 				<!-- end col-3 -->
-				<!-- begin col-3 -->
-				<div class="col-md-4 col-sm-6">
+				<!-- <div class="col-md-4 col-sm-6">
 					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
-              <b class="f-s-19">{{$totalEstadoAsignado}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas Asignadas</b>
+              <b class="f-s-19">{{$totalEstadoFinalizado}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas Finalizadas</b>
 						</div>
-
 					</div>
-				</div>
+				</div> -->
 				<!-- end col-3 -->
 				<!-- begin col-3 -->
-				<div class="col-md-4 col-sm-6">
+				<!-- <div class="col-md-4 col-sm-6">
 					<div class="widget widget-stats" style="background-color:#214974; color:white;">
 						<div class="stats-info">
 							<b class="f-s-19">{{$totalEstadoDesarrollo}}</b><b class="f-s-15">&nbsp;&nbsp;Propuestas en Desarrollo</b>
 						</div>
-
 					</div>
-				</div>
+				</div> -->
 				<!-- end col-3 -->
-					</div>
+					<!-- </div> -->
 					<!-- Final cuadrados -->
 
 				<!-- Inicio col-8 tabla -->
@@ -324,7 +331,7 @@
                 <span class="total_propuestas_estilo_heading"><?php echo ucfirst(mb_strtolower($complemento)) ?></span><br>
                 <font><?php echo ucfirst(mb_strtolower($resultados->sujeto_solucion)) ?></font><br>
                 <!-- <font><?php echo ucfirst(mb_strtolower($resultados->problema_solucion)) ?></font><br> -->
-                
+
 
                 <b><font >Fuente: </font></b>Consejo Consultivo Productivo y Tributario<br>
 								<font ><strong>Responsable: </strong>{{$resultados->responsable_solucion}}</font><br>
