@@ -326,7 +326,7 @@
 									</a>
 								</h3>
 							</div>
-							<div id="collapseFour" class="panel-collapse collapse in">
+							<div id="collapseFour" class="panel-collapse collapse">
 								<div class="panel-body">
 
 									      <h5>
