@@ -114,8 +114,6 @@ var handleDataTableResponsiveCCPTlistado = function() {
             responsive: true,
 						dom: 'lBfrtip',
 						"searching": true,
-						"paging": true,
-						// "order": [[ 1, 'desc' ]],
 						buttons: [],
 						select: false,
 						"language": {
