@@ -386,18 +386,12 @@ class ActividadesController extends Controller
         //dd($request->tipo_fuente_id);
         if( isset($request-> fecha) ){
             $actividad-> fecha_inicio = $request-> fecha. " 00:00:00";
-            if($request->tipo_fuente_id ==1){
+            
                     $solucion = Solucion::find($idSolucion);
                     $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
                     $solucion->save();
-                }
-            if($request->tipo_fuente_id ==2){
-                dd($tipo_fuente_id);
-                
-                $solucion = Solucion::find($idSolucion);
-                $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
-                $solucion->save();
-            }
+            
+            
         }
 
         $actividad-> save();
