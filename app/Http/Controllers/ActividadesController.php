@@ -7,6 +7,7 @@ use App\Pajustada;
 use App\Actividad;
 use App\ActorSolucion;
 use App\Archivo;
+use App\EstadoSolucion;
 
 use DB;
 use File;
@@ -34,30 +35,34 @@ class ActividadesController extends Controller
             return abort(404);
         }
 
-        $solucion = DB::select("SELECT solucions.* FROM solucions
+        $solucion = DB::select("SELECT solucions.*, estado_solucion.nombre_estado FROM solucions
                                 INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
+                                INNER JOIN estado_solucion ON estado_solucion.id = solucions.estado_id
                                 WHERE actor_solucion.user_id = ". Auth::user()->id." AND actor_solucion.solucion_id = ".$idSolucion." AND actor_solucion.tipo_actor = ". $tipo_actor."
                                 ;");
 
         $this->notFound($solucion);  //REDIRECCIONA AL ERROR 404  SI EL OBJETO NO EXISTE
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
-                                ->where('tipo_fuente','=', 1)
                                 ->orderBy('created_at','DESC')->get();
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
+
+       
+
+        //dd($solucion);
 
         $tipo_fuente = Auth::user()->tipo_fuente;
 
-
+        //dd($actividades);
 
         return view('institucion.actividades.solucionDesp')->with(["actoresSoluciones"=>$actoresSoluciones,
                                                             "solucion"=>$solucion[0],
                                                             "actividades"=>$actividades,
                                                             "tipo_actor"=>$tipo_actor,
-                                                            "tipo_fuente"=>$tipo_fuente
+                                                            "tipo_fuente"=>$tipo_fuente,
+                                                            
                                                         ]);
     }
 
@@ -69,6 +74,21 @@ class ActividadesController extends Controller
         $solucion = DB::table('solucions')->where('id', $idSolucion )->first();
         //dd($solucion);
         return view('institucion.actividades.createParametrosCumplimiento')->with(["idSolucion"=>$idSolucion,"tipo_fuente"=>$tipo_fuente,"actividades"=>$actividades,"solucion"=>$solucion]);
+
+    }
+
+    public function vistaEditParametrosCumplimiento($idSolucion){
+
+        $tipo_fuente = Auth::user()->tipo_fuente;
+        
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','DESC')->get();
+        $solucion = DB::table('solucions')->where('id', $idSolucion )->first();
+
+
+        //dd($solucion);
+        return view('institucion.actividades.editParametrosCumplimiento')->with(["idSolucion"=>$idSolucion,"tipo_fuente"=>$tipo_fuente,"actividades"=>$actividades,"solucion"=>$solucion]);
 
     }
 
