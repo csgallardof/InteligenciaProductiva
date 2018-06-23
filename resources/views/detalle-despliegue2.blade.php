@@ -97,7 +97,7 @@
 							<div class="panel-heading" style="background-color:#214974">
 								<h3 class="panel-title" style="color:white">
                   <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfoGeneral">
-									    <i class="fa fa-plus-circle pull-right"></i>
+                      <i class="fa fa-plus-circle pull-right"></i>
 									    <strong>Informacion General</strong>
                   </a>
 								</h3>
