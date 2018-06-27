@@ -466,7 +466,7 @@ class InstitucionController extends Controller
         Flash::success("Asignación exitosa");
 
          $solucion = Solucion::find($request-> solucion_id);
-                    $solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
+                    //$solucion-> estado_id = 2; // 2 = Propuesta con responsable asignado
                     $solucion->save();
 
         $user = User::find($request-> institucion);
