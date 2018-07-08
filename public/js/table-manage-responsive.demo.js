@@ -159,13 +159,14 @@ var handleDataTableResponsiveCCPTlistado = function() {
 var handleDataTableResponsiveBasica = function() {
 	"use strict";
 
-    if ($('#data-table').length !== 0) {
-        $('#data-table').DataTable({
+        $('table.tablasgenerales').DataTable({
             responsive: true,
 						dom: 'lBfrtip',
 						"searching": false,
-						buttons: ['excel','print'],
+						"ordering": false,
+						buttons: [],
 						"paging": false,
+						"info": false,
 						"language": {
 							"sProcessing":     "Procesando...",
 							"sLengthMenu":     "Mostrar _MENU_ registros",
@@ -191,9 +192,9 @@ var handleDataTableResponsiveBasica = function() {
 							},
 							buttons: {
 								copy: 'Copiar Tabla',
-								excel: 'Descargar',
+								excel: '<i class="fa fa-cloud-download"></i>',
 								csv: 'Exportar a CSV',
-								print: 'Imprimir',
+								print: '<i class="fa fa-print"></i>',
 								copyTitle: 'Se copiaron',
 								pdf: 'Exportar a PDF',
                 copySuccess: {
@@ -203,7 +204,7 @@ var handleDataTableResponsiveBasica = function() {
             }
 						}
         });
-    }
+
 };
 
 var TableManageResponsive = function () {
