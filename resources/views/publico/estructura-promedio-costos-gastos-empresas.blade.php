@@ -64,7 +64,7 @@
                     </div>
                     <div class="panel-body panel-general-tabla-basica">
                       <table class="tablasgenerales table nowrap table-striped table-bordered">
-                        <thead><th></th><th>Unidad de medida</th><th>30 junio 2018</th></thead>
+                        <thead><th></th><th>Unidad de medida</th><th>30 junio 2018*</th></thead>
                         <tbody>
                          <tr><td>Cemento Selva Alegre</td><td>50kg</td><td>8.11</td></tr>
                          <tr><td>Arena cribada hormigón</td><td>m3</td><td>20.20</td></tr>
@@ -81,7 +81,7 @@
                     <div class="panel-footer text-right">
                       <div class="h5" style="text-align: justify;">
                         <div><span><strong>Fuente:&nbsp;</strong></span>Cámara de la Construcción, ANDEC</div>
-                        <div><em>Expresado en USD</em></div>
+                        <div><em>*Expresado en USD</em></div>
                       </div>
                     </div>
                 </div>
@@ -292,7 +292,7 @@
           <div class="col-md-12 col-xs-12 panel-footer text-right">
             <div class="h5" style="text-align: justify;">
               <div><span><strong>Fuente:&nbsp;</strong></span>INEC</div>
-              <div><em>*Valor Provisional</em></div>
+              <div><em>Valor Provisional</em></div>
             </div>
           </div>
         </div>
@@ -501,17 +501,17 @@
       <div class="row">
         <div class="panel custom-constos-panel-properties panel-inverse panel-custom-tables-3">
         <div class="panel-heading">
-            <h4 class=" text-center panel-title">SECTOR INDUSTRIAL (Julio 2018)</h4>
+            <h4 class=" text-center panel-title">Combustibles</h4>
         </div>
         <div class="panel-custom-tables-1 col-md-6 col-xs-12" align="center">
           <div class="panel custom-constos-panel-properties panel-inverse">
               <div class="panel-heading">
-                  <h4 class="panel-title">Apertura de Negocio (2018)</h4>
+                  <h4 class="panel-title">SECTOR INDUSTRIAL (Julio 2018)</h4>
               </div>
               <div class="panel-body panel-general-tabla-basica">
                 <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio**</th></tr></thead>
+                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
                    <tr><td>Diésel 1 Industrial</td><td>Galones</td><td>2.25 </td></tr>
                    <tr><td>Diésel 2  Industrial</td><td>Galones</td><td>2.25 </td></tr>
@@ -538,7 +538,7 @@
               <div class="panel-body panel-general-tabla-basica">
                 <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio**</th></tr></thead>
+                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
                    <tr><td>Diésel carga internacional</td><td>Galones</td><td>3.81</td></tr>
                   </tbody>
@@ -551,7 +551,7 @@
               <div class="panel-body panel-general-tabla-basica">
                 <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio**</th></tr></thead>
+                  <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
                    <tr><td>Diésel Premium Automotriz</td><td>Galones</td><td>0.90</td></tr>
                    <tr><td>Diésel Premium Tr. Público</td><td>Galones</td><td>0.90</td></tr>
@@ -568,7 +568,7 @@
         <div class="col-md-12 col-xs-12 panel-footer text-right">
           <div class="h5" style="text-align: justify;">
             <div><span><strong>Fuente:&nbsp;</strong></span>EP Petroecuador. Decreto Ejecutivo 338, 352 y 779. </div>
-            <div><em>Precio en terminal, expresado en USD. (Incluye el  12% del I.V.A.) </em></div>
+            <div><em>*Precio en terminal, expresado en USD. (Incluye el  12% del I.V.A.) </em></div>
           </div>
         </div>
       </div>
@@ -580,7 +580,7 @@
        <div class="panel-custom-tables-2 col-md-12 col-xs-12" align="center">
          <div class="panel custom-constos-panel-properties panel-inverse">
              <div class="panel-heading">
-                 <h4 class="panel-title">Energía Eléctrica Industrial*</h4>
+                 <h4 class="panel-title">Energía Eléctrica Industrial</h4>
              </div>
              <div class="panel-body panel-general-tabla-basica">
                <table class="big-tablasgenerales tablasgenerales table nowrap">
@@ -627,7 +627,7 @@
       <div class="panel-custom-tables-2 col-md-12 col-xs-12" align="center">
         <div class="panel custom-constos-panel-properties panel-inverse">
             <div class="panel-heading">
-                <h4 class="panel-title">Energía Eléctrica Comercial*</h4>
+                <h4 class="panel-title">Energía Eléctrica Comercial</h4>
             </div>
             <div class="panel-body panel-general-tabla-basica">
               <table class="big-tablasgenerales tablasgenerales table nowrap">
@@ -665,7 +665,7 @@
      <div class="panel-custom-tables-2 col-md-12 col-xs-12" align="center">
        <div class="panel custom-constos-panel-properties panel-inverse">
            <div class="panel-heading">
-               <h4 class="panel-title">Energía Eléctrica Residencial*</h4>
+               <h4 class="panel-title">Energía Eléctrica Residencial</h4>
            </div>
            <div class="panel-body panel-general-tabla-basica">
              <table class="big-tablasgenerales tablasgenerales table nowrap">
