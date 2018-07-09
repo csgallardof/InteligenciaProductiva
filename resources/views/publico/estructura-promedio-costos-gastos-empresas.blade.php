@@ -151,16 +151,16 @@
                   <div class="panel-body panel-general-tabla-basica">
                     <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                      <thead><th></th><th>Unidad de medida</th><th>31 mayo 2018</th><th>30 junio 2018</th><th>Variación</th></thead>
+                      <thead><th></th><th>Unidad de medida</th><th>31 mayo 2018*</th><th>30 junio 2018*</th><th>Variación</th></thead>
                       <tbody>
-                       <tr><td>Petróleo</td><td>USD Barril</td><td>70.10</td><td>67.50</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-3.7%</td></tr>
-                       <tr><td>Oro</td><td>USD Onza</td><td>1303.61</td><td>1282.27</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.6%</td></tr>
-                       <tr><td>Plata</td><td>USD Onza</td><td>16.47</td><td>16.52</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.3%</td></tr>
-                       <tr><td>Cobre</td><td>USD Libra</td><td>309.43</td><td>315.46</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.9%</td></tr>
-                       <tr><td>Maíz</td><td>USD Tonelada</td><td>174.68</td><td>179.33</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>2.7%</td></tr>
-                       <tr><td>Banano</td><td>USD Caja (43 lb)</td><td>6.20</td><td>6.20</td><td><span class="arrow-color-amarillo"><i class="fa fa-arrow-right"></i></span>0.0%</td></tr>
-                       <tr><td>Trigo</td><td>USD Tonelada</td><td>240.25</td><td>249.60</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>3.9%</td></tr>
-                       <tr><td>Cacao</td><td>USD Tonelada</td><td>1872.00</td><td>1726.14</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-7.8%</td></tr>
+                       <tr><td>Petróleo</td><td>Barril</td><td>70.10</td><td>67.50</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-3.7%</td></tr>
+                       <tr><td>Oro</td><td>Onza</td><td>1303.61</td><td>1282.27</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.6%</td></tr>
+                       <tr><td>Plata</td><td>Onza</td><td>16.47</td><td>16.52</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.3%</td></tr>
+                       <tr><td>Cobre</td><td>Libra</td><td>309.43</td><td>315.46</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.9%</td></tr>
+                       <tr><td>Maíz</td><td>Tonelada</td><td>174.68</td><td>179.33</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>2.7%</td></tr>
+                       <tr><td>Banano</td><td>Caja (43 lb)</td><td>6.20</td><td>6.20</td><td><span class="arrow-color-amarillo"><i class="fa fa-arrow-right"></i></span>0.0%</td></tr>
+                       <tr><td>Trigo</td><td>Tonelada</td><td>240.25</td><td>249.60</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>3.9%</td></tr>
+                       <tr><td>Cacao</td><td>Tonelada</td><td>1872.00</td><td>1726.14</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-7.8%</td></tr>
                       </tbody>
 
                     </table>
@@ -168,6 +168,7 @@
                   <div class="panel-footer text-right">
                     <div class="h5" style="text-align: justify;">
                       <div><span><strong>Fuente:&nbsp;</strong></span>BCE, FAO, PORTAL MINERO, ICCO</div>
+                      <div><em>*Expresado en USD</em></div>
                     </div>
                   </div>
               </div>
@@ -244,19 +245,19 @@
                 <div class="panel-body panel-general-tabla-basica">
                   <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                    <thead><th></th><th>IPC</th><th>Variación mensual</th><th>Variación anual</th></tr></thead><tbody>
-                     <tr><td>Jan-17</td><td>105.30</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.9%</td></tr>
-                     <tr><td>Feb-17</td><td>105.51</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.0%</td></tr>
-                     <tr><td>Mar-17</td><td>105.66</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.0%</td></tr>
-                     <tr><td>Apr-17</td><td>106.12</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.4%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.1%</td></tr>
-                     <tr><td>May-17</td><td>106.17</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.0%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.1%</td></tr>
-                     <tr><td>Jun-17</td><td>105.55</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.6%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td></tr>
-                     <tr><td>Jan-18</td><td>105.20</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1%</td></tr>
-                     <tr><td>Feb-18</td><td>105.37</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1%</td></tr>
-                     <tr><td>Mar-18</td><td>105.43</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2%</td></tr>
-                     <tr><td>Apr-18</td><td>105.29</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.8%</td></tr>
-                     <tr><td>May-18</td><td>105.09</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.0%</td></tr>
-                     <tr><td>Jun-18</td><td>104.81</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.3%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.7%</td></tr>
+                    <thead><th></th><th>IPC</th><th>Variación mensual*</th><th>Variación anual*</th></tr></thead><tbody>
+                     <tr><td>Jan-17</td><td>105.30</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.9</td></tr>
+                     <tr><td>Feb-17</td><td>105.51</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.0</td></tr>
+                     <tr><td>Mar-17</td><td>105.66</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.0</td></tr>
+                     <tr><td>Apr-17</td><td>106.12</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.4</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.1</td></tr>
+                     <tr><td>May-17</td><td>106.17</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.0</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>1.1</td></tr>
+                     <tr><td>Jun-17</td><td>105.55</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.6</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td></tr>
+                     <tr><td>Jan-18</td><td>105.20</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1</td></tr>
+                     <tr><td>Feb-18</td><td>105.37</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1</td></tr>
+                     <tr><td>Mar-18</td><td>105.43</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2</td></tr>
+                     <tr><td>Apr-18</td><td>105.29</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.8</td></tr>
+                     <tr><td>May-18</td><td>105.09</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.0</td></tr>
+                     <tr><td>Jun-18</td><td>104.81</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.3</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.7</td></tr>
                     </tbody>
 
                   </table>
@@ -271,18 +272,18 @@
                 <div class="panel-body panel-general-tabla-basica">
                   <table class="tablasgenerales table nowrap table-striped table-bordered">
 
-                    <thead><th></th><th>IPC</th><th>Variación mensual</th><th>Variación anual</th></tr></thead>
+                    <thead><th></th><th>IPC</th><th>Variación mensual*</th><th>Variación anual*</th></tr></thead>
                     <tbody>
-                     <tr><td>Jan-17</td><td>235.14</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-3.4%</td></tr>
-                     <tr><td>Feb-17</td><td>236.95</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.8%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-2.0%</td></tr>
-                     <tr><td>Mar-17</td><td>237.43</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.6%</td></tr>
-                     <tr><td>Apr-17</td><td>236.70</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.3%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td></tr>
-                     <tr><td>May-17</td><td>235.04</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.7%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.4%</td></tr>
-                     <tr><td>Jan-18</td><td>236.02</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.4%</td></tr>
-                     <tr><td>Feb-18</td><td>236.42</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2%</td></tr>
-                     <tr><td>Mar-18</td><td>236.88</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2%</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2%</td></tr>
-                     <tr><td>Apr-18</td><td>236.99</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.0%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1%</td></tr>
-                     <tr><td>May-18</td><td>236,79**</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1%</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.7%</td></tr>
+                     <tr><td>Jan-17</td><td>235.14</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-3.4</td></tr>
+                     <tr><td>Feb-17</td><td>236.95</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.8</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-2.0</td></tr>
+                     <tr><td>Mar-17</td><td>237.43</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-1.6</td></tr>
+                     <tr><td>Apr-17</td><td>236.70</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.3</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td></tr>
+                     <tr><td>May-17</td><td>235.04</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.7</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.4</td></tr>
+                     <tr><td>Jan-18</td><td>236.02</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.4</td></tr>
+                     <tr><td>Feb-18</td><td>236.42</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2</td></tr>
+                     <tr><td>Mar-18</td><td>236.88</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.2</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.2</td></tr>
+                     <tr><td>Apr-18</td><td>236.99</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.0</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1</td></tr>
+                     <tr><td>May-18</td><td>236,79**</td><td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-0.1</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.7</td></tr>
                     </tbody>
 
                   </table>
@@ -292,7 +293,8 @@
           <div class="col-md-12 col-xs-12 panel-footer text-right">
             <div class="h5" style="text-align: justify;">
               <div><span><strong>Fuente:&nbsp;</strong></span>INEC</div>
-              <div><em>Valor Provisional</em></div>
+              <div><em>*Valor Provisional</em></div>
+              <div><em>**Variación porcentual</em></div>
             </div>
           </div>
         </div>
