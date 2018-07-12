@@ -92,7 +92,7 @@
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Sr. Felipe Altamirano</strong> <br>
-                <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
+                <strong>Secretario AD-HOC del Consejo Sectorial Económico y Productivo</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>
             </p> -->
