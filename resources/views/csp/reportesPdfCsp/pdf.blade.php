@@ -15,7 +15,7 @@
                             <br><br>
 
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>FICHA DE HECHOS RELEVANTES</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN<br>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>Consejo Sectorial Económico y Productivo<br>
                             @if(!is_null($PeriodoSemanaCspReporte))
                              ({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})
                             @endif
@@ -100,7 +100,7 @@
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Sr. Felipe Altamirano</strong> <br>
-                <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
+                <strong>Secretario AD-HOC del Consejo Sectorial Económico y Productivo</strong>
                 <br><br><span>Esta información ha sido obtenida del módulo de Hechos Relevantes y Alertas de la plataforma de Inteligencia Productiva</span>
                 <span><br><br>Ministerio de Industrias y Productividad</span>
             </p> -->

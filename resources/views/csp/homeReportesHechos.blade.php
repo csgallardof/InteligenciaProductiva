@@ -21,7 +21,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="widget widget-stats bg-green-darker">
                         <div class="stats-info">
-                            <h4 class="modal-title"> <strong>Reportes Consejo Sectorial de la Producción</strong> </h4>
+                            <h4 class="modal-title"> <strong>Reportes Consejo Sectorial Económico y Productivo</strong> </h4>
                             <h4 class="modal-title">{{$PeriodoSemanaCspReporte->nombre}}</h4>
                             <h4 class="modal-title">({{$PeriodoSemanaCspReporte->fecha_inicio}} a {{$PeriodoSemanaCspReporte->fecha_final}})</h4>
                             <div class="col-md-0 pull-right">
