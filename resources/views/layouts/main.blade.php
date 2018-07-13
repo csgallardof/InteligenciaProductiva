@@ -46,6 +46,7 @@
 	<body>
 
     <div id="page-container" class="fade">
+    		
 			@include ('layouts.menu')
 			@yield ('contenido')
 			@include ('layouts.common_modals')

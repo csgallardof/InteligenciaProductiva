@@ -12,6 +12,8 @@
 */
 
 
+Route::get('/cifras-nacionales','CnCifrasNacionalesController@graficaPibActividadEconomica');
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -94,7 +96,7 @@ Route::post('/consejoconsultivo',[
      'as'=>'consejo.resultado'
 ]);
 
-
+ 
 Route::get('/busqueda',[
      'uses'=>'PaginasController@busquedaGeneral', 
      'as'=>'nuevaBusqueda'

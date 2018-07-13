@@ -16,7 +16,6 @@ class CreateCnProvinciasTable extends Migration
         Schema::create('cn_provincias', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre_provincia');
-            $table->string('nombre_zona');
             $table->timestamps();
         });
     }

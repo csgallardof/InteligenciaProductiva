@@ -773,7 +773,7 @@ class PaginasController extends Controller
             $resultados = $resultadoAuxiliar;
         }
 
-        unset($filtros[0]);
+        unset($filtros[0]); 
 
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,
