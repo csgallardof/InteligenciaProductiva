@@ -7,6 +7,7 @@ use App\Pajustada;
 use App\Actividad;
 use App\ActorSolucion;
 use App\Archivo;
+use App\EstadoSolucion;
 
 use DB;
 use File;
@@ -34,28 +35,34 @@ class ActividadesController extends Controller
             return abort(404);
         }
 
-        $solucion = DB::select("SELECT solucions.* FROM solucions
+        $solucion = DB::select("SELECT solucions.*, estado_solucion.nombre_estado FROM solucions
                                 INNER JOIN actor_solucion ON actor_solucion.solucion_id = solucions.id
+                                INNER JOIN estado_solucion ON estado_solucion.id = solucions.estado_id
                                 WHERE actor_solucion.user_id = ". Auth::user()->id." AND actor_solucion.solucion_id = ".$idSolucion." AND actor_solucion.tipo_actor = ". $tipo_actor."
                                 ;");
 
         $this->notFound($solucion);  //REDIRECCIONA AL ERROR 404  SI EL OBJETO NO EXISTE
 
         $actividades = Actividad::where('solucion_id','=',$idSolucion)
-                                ->where('tipo_fuente','=', 1)
                                 ->orderBy('created_at','DESC')->get();
 
         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
-                                            ->where('tipo_fuente','=',1)
                                             ->orderBy('tipo_actor','ASC')->get();
 
-        $tipo_fuente = Auth::user()->tipo_fuente; 
+       
+
+        //dd($solucion);
+
+        $tipo_fuente = Auth::user()->tipo_fuente;
+
+        //dd($actividades);
 
         return view('institucion.actividades.solucionDesp')->with(["actoresSoluciones"=>$actoresSoluciones,
                                                             "solucion"=>$solucion[0],
                                                             "actividades"=>$actividades,
                                                             "tipo_actor"=>$tipo_actor,
-                                                            "tipo_fuente"=>$tipo_fuente
+                                                            "tipo_fuente"=>$tipo_fuente,
+                                                            
                                                         ]);
     }
 
@@ -67,6 +74,21 @@ class ActividadesController extends Controller
         $solucion = DB::table('solucions')->where('id', $idSolucion )->first();
         //dd($solucion);
         return view('institucion.actividades.createParametrosCumplimiento')->with(["idSolucion"=>$idSolucion,"tipo_fuente"=>$tipo_fuente,"actividades"=>$actividades,"solucion"=>$solucion]);
+
+    }
+
+    public function vistaEditParametrosCumplimiento($idSolucion){
+
+        $tipo_fuente = Auth::user()->tipo_fuente;
+        
+        $actividades = Actividad::where('solucion_id','=',$idSolucion)
+                                ->where('tipo_fuente','=', 1)
+                                ->orderBy('created_at','DESC')->get();
+        $solucion = DB::table('solucions')->where('id', $idSolucion )->first();
+
+
+        //dd($solucion);
+        return view('institucion.actividades.editParametrosCumplimiento')->with(["idSolucion"=>$idSolucion,"tipo_fuente"=>$tipo_fuente,"actividades"=>$actividades,"solucion"=>$solucion]);
 
     }
 
@@ -364,18 +386,12 @@ class ActividadesController extends Controller
         //dd($request->tipo_fuente_id);
         if( isset($request-> fecha) ){
             $actividad-> fecha_inicio = $request-> fecha. " 00:00:00";
-            if($request->tipo_fuente_id ==1){
+            
                     $solucion = Solucion::find($idSolucion);
                     $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
                     $solucion->save();
-                }
-            if($request->tipo_fuente_id ==2){
-                dd($tipo_fuente_id);
-                
-                $solucion = Solucion::find($idSolucion);
-                $solucion-> estado_id = 3; // 3 = Propuesta en desarrollo
-                $solucion->save();
-            }
+            
+            
         }
 
         $actividad-> save();
@@ -478,7 +494,7 @@ class ActividadesController extends Controller
 
     }
 
-     public function saveActividadAdmin(Request $request, $tipo_actor, $idSolucion) 
+    public function saveActividadAdmin(Request $request, $tipo_actor, $idSolucion) 
     {
         $tipo_fuente = Auth::user()->tipo_fuente;
         $actividad = new Actividad;
@@ -590,6 +606,124 @@ class ActividadesController extends Controller
         Flash::success("Se ha creado la actividad exitosamente");
 
             return redirect('/admin/actores/asignados');
+    }
+
+    public function vistaEditarActividad($actividad_id, $solucion_id){
+
+        //dd($actividad_id);
+
+        $idSolucion = $solucion_id;
+
+
+        $soluciones = Solucion::find($idSolucion);
+        $actividades = Actividad::find($actividad_id);
+        $tipo_fuente = Auth::user()->tipo_fuente;
+        $user = Auth::user();
+        $archivos = Archivo::all();
+
+
+         $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+                                            ->where('tipo_fuente','=',1)
+                                            ->orderBy('tipo_actor','ASC')->get();
+
+
+
+        //dd($actividades);
+
+
+        return view('institucion.actividades.editDesp')->with(["actividades"=>$actividades,"user"=>$user, "archivos"=>$archivos, 'tipo_fuente'=>$tipo_fuente, 'actoresSoluciones'=>$actoresSoluciones, 'soluciones' =>$soluciones ]); 
+
+        
+    }
+
+    public function editarActividad( Request $request, $id){
+        
+        //dd($request);
+
+        $comentario = $request->comentario;
+        $fecha_inicio = $request->fecha;
+        $solucion_id = $request->solucion_id;
+        $tipo_fuente = $request->tipo_fuente_id;
+        $ejecutor_id = $request->institucion_id;
+        
+
+        $actividad = Actividad::find($id);
+        $actividad -> fecha_inicio = $fecha_inicio;
+        $actividad -> comentario = $comentario;
+        $actividad -> solucion_id =$solucion_id;
+        $actividad -> tipo_fuente = $tipo_fuente;
+        $actividad -> ejecutor_id = $ejecutor_id;
+        $actividad ->save();
+
+        $nombreArchivos="";
+        $files = $request->file('files');
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+                $nombreArchivo = $file->getClientOriginalName();
+               // dd($nombreArchivo);
+            }
+
+            $archivo = DB::select("DELETE FROM archivos WHERE actividad_id = ".$id);
+        
+        }
+        
+        $nombreArchivos="";
+        $files = $request->file('files');
+
+        if($request->hasFile('files'))
+        {
+            foreach ($files as $file) {
+
+                $nombreArchivo = $file->getClientOriginalName();
+                $nombreArchivo = strtotime("now")."_despliegue_".$solucion_id."_-_".$nombreArchivo;     // agregamos la fecha
+
+                $archivo = new Archivo;
+                $archivo-> nombre_archivo= $nombreArchivo;
+                $archivo-> actividad_id= $actividad->id;
+                $archivo->save();
+                $nombreArchivos.=$nombreArchivo.",";
+
+                /*$file = $request->file('imagen');*/
+                \Storage::disk('local3')->put($nombreArchivo,  \File::get($file) );
+            }
+        }
+        //dd($nombreArchivos);
+        $nombreArchivos=substr($nombreArchivos,0,-1);
+        //dd($nombreArchivos);
+        
+
+                $actividadesUnificadas = DB::table('actividades')->where('comentario', $request-> comentario)->get();
+                //dd($actividadesUnificadas,$nombreArchivos,$actividad->id);
+
+            foreach($actividadesUnificadas as $actividadesUnificadas){
+                $array = explode(",", $nombreArchivos);
+                        
+                    if($actividadesUnificadas->id!=$actividad->id){
+                        
+                        
+                        foreach ($array as $array) {
+                           //dd('entre al 2 '); 
+                            $archivoUnificado = new Archivo;
+                            //dd('estoy 1');
+                            $archivoUnificado-> nombre_archivo= $array;
+                            //dd('estoy 2', $array);
+                            $archivoUnificado-> actividad_id= $actividadesUnificadas->id;
+                            //dd('estoy 3', $actividadesUnificadas->id);
+                            $archivoUnificado->save();
+                            //dd('Guardado 2');
+                        }
+
+                    }
+                    //dd("no entre en el if");
+            }
+
+        return redirect('/institucion/verSolucion/despliegue/1/'.$solucion_id);
+
+        
+
+
+
     }
 
     /**

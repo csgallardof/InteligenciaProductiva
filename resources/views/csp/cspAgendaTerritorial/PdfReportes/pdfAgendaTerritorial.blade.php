@@ -16,7 +16,7 @@
                             <br><br>
                             
                           <p style="margin:0; font-family: calibri;color:#2874A6"><strong>AGENDA TERRITORIAL</strong></p>
-                          <p style="margin-top:0 ; font-family: calibri"><strong>CONSEJO SECTORIAL DE LA PRODUCCIÓN</strong><br><b>Fecha:</b> {{$date}}</p><br>
+                          <p style="margin-top:0 ; font-family: calibri"><strong>Consejo Sectorial Económico y Productivo</strong><br><b>Fecha:</b> {{$date}}</p><br>
                           
                         </div><!-- /.box-header -->
                         <div class="box-body">
@@ -639,7 +639,7 @@
                 <strong>Consolidado por:</strong><br><br><br>
                 <strong><u>_______________________________________</u></strong><br>
                 <strong >Sr. Felipe Altamirano</strong> <br>
-                <strong>Secretario AD-HOC del Consejo Sectorial de la Producción</strong>
+                <strong>Secretario AD-HOC del Consejo Sectorial Económico y Productivo</strong>
                 <br><br><span><u>Esta información ha sido obtenida del módulo de Agenda Territorial de la plataforma de Inteligencia Productiva.</u></span>
                 <span><br><br> <b>Ministerio de Industrias y Productividad</b></span>
             </p>

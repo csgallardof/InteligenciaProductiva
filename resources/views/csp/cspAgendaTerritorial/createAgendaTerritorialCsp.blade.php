@@ -18,7 +18,7 @@
 					<div class="widget widget-stats bg-green-darker">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
-							<h4 class="modal-title">Reportes Consejo Sectorial de la Producción</h4>
+							<h4 class="modal-title">Reportes Consejo Sectorial Económico y Productivo</h4>
 							<br>	
 						</div>
 						<div class="stats-link">

@@ -10,12 +10,12 @@
 
 @section('contenido')
 
-<br><br><br><br>
+<br><br><br>
 
 		<!-- begin #about -->
 		<div class="content row-m-t-2" data-scrollview="true">
 				<!-- begin container -->
-			<div class="container" data-animation="true" data-animation-type="fadeInDown">
+			<div class="container-fluid" data-animation="true" data-animation-type="fadeInDown">
 
         <div class="toolbar title_ip_breadcrumb fit-m-b-10">
           <ol class="breadcrumb">
@@ -28,6 +28,8 @@
           </ol>
         </div>
 
+        <br />
+
 				<!-- begin row -->
 				<div class="row">
 					<!-- begin col-5 -->
@@ -35,41 +37,50 @@
 						<div class="panel panel-inverse" data-sortable-id="index-6" style="border: #D7DBDD 1px solid; padding: 1%">
 
 
+                <h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Estado de Compromiso:</strong></h5>
+
+
+									<p style="padding-left:12%" class="m-b-20">
+                    <span class="label label-warning f-s-14">
+                      @if(isset($solucion))
+                        {{ $solucion->estado->nombre_estado }}
+                      @endif
+                    </span>
+									</p>
 
 								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Eslabon de la cadena productiva</strong></h5>
 
 
-									<p style="padding-left:15%">
+									<p style="padding-left:12%">
 										@if(isset($solucion))
 											{{ $solucion->sipoc->nombre_sipoc }}
 										@endif
 									</p>
 
-							<br>
-
 								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Instrumentos Necesario</strong></h4>
-
-
-								<p style="padding-left:15%">
+								<p style="padding-left:12%">
 										@if(isset($solucion))
 											{{ $solucion->instrumento->nombre_instrumento }}
 										@endif
 								</p>
+
 								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Clasificación Empresa</strong></h4>
-								<p style="padding-left:15%">
+								<p style="padding-left:12%">
 									@if(isset($solucion))
 											{{ $solucion->tipoEmpresa->nombre_tipo_empresa }}
 										@endif
 								</p>
-								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Ámbito</strong></h4>
-								<p style="padding-left:15%">
+
+                <h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Ámbito</strong></h4>
+								<p style="padding-left:12%">
 									@if(isset($solucion))
 											{{ $solucion->ambit->nombre_ambit }}
 
 										@endif
 								</p >
+
 								<h4 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Sector</strong></h4>
-								<p style="padding-left:15%">
+								<p style="padding-left:12%">
 									@if(isset($solucion))
             								{{ $solucion->sector->nombre_sector }}
             							@endif
@@ -82,31 +93,20 @@
 					<!-- inicio acciones -->
 					<div class="col-md-9">
 
-
-
-			        <div class="panel-group" id="accordion">
-						<div class="panel panel-inverse overflow-hidden" >
+						<div class="panel panel-inverse overflow-hidden">
 							<div class="panel-heading" style="background-color:#214974">
 								<h3 class="panel-title" style="color:white">
-									 <strong>
-										Informacion General
-									</strong>
+                  <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseInfoGeneral">
+                      <i class="fa fa-plus-circle pull-right"></i>
+									    <strong>Informacion General</strong>
+                  </a>
 								</h3>
 							</div>
-							<div >
+            <div id="collapseInfoGeneral" class="panel-collapse collapse">
+
 								<div class="panel-body">
 
-									<div class="media-body"><br />
-									<dl class="dl-horizontal">
-											<label class='text-success'>Estado de Compromiso:</label> &nbsp;&nbsp;&nbsp;
-											<span class="label label-warning f-s-13">
-												@if(isset($solucion))
-													{{ $solucion->estado->nombre_estado }}
-												@endif
-											</span>
-										</dl>
-
-	                                <br>
+									<div class="media-body">
 	                                <label class='text-success'>
 
 	                                	<strong>Datos Generales:</strong>
@@ -137,18 +137,27 @@
 						                             </td>
 											  </tr>
 											  <tr>
-											    <th>Fecha de Cumplimiento:</th>
-												    <td>
-														@if($solucion->estado->nombre_estado=="Finalizado")
-															{{$actividadUltima->created_at}}
+
+                          @if($solucion->estado->nombre_estado=="Finalizado")
+
+											        <th>Fecha de Cumplimiento:</th>
+												      <td> {{$actividadUltima->created_at}} </td>
+
 														@else
+
+                              <th>Fecha de Cumplimiento Propuesta:</th>
+                              <td>
+
 												    	@if($solucion->fecha_cumplimiento!="0000-00-00")
-						                                  	{{$solucion->fecha_cumplimiento}}
-						                                  	@else
-						                                  	No Definido
-						                                  	@endif
+                              	   {{$solucion->fecha_cumplimiento}}
+                              	@else
+                              	   No Definido
+                            	@endif
+
+                              </td>
+
 														@endif
-						                             </td>
+
 											  </tr>
 											@if($solucion->estado->nombre_estado!="Finalizado")
 											  <tr>
@@ -218,16 +227,12 @@
 					                                            <td>
 					                    <dd>
 										@if(isset($actoresSoluciones))
-											<ul>
 												@foreach($actoresSoluciones as $actorSolucion)
 													@if($actorSolucion->tipo_actor == 2)
-														<li>{{ " ".$actorSolucion->usuario-> name }}</li>
-													@else
-													No Asignado
+														{{ "- ".$actorSolucion->usuario-> name }} <br />
 													@endif
 
 												@endforeach
-											</ul>
 										@endif
 
 										</dd>
@@ -300,21 +305,18 @@
 							</div>
 							<div id="collapse3" class="panel-collapse collapse in">
 								<div class="panel-body">
-									<label class='text-success'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Solución</strong>
-                                	</label>
-									<blockquote>
-										  	<p><h5>
+
+										  	<h5>
 										  		@if(isset($solucion))
 													{{ $solucion->verbo_solucion }} <br />
                           {{ $solucion->sujeto_solucion }} <br />
                           {{ $solucion->complemento_solucion }}
 												@endif
 										  	</h5>
-                                   	</blockquote>
 								</div>
 							</div>
 						</div>
+
 						<div class="panel panel-inverse overflow-hidden">
 							<div class="panel-heading" style="background-color:#214974" >
 								<h3 class="panel-title" style="color:#ffffff">
@@ -324,22 +326,17 @@
 									</a>
 								</h3>
 							</div>
-							<div id="collapseFour" class="panel-collapse collapse in">
+							<div id="collapseFour" class="panel-collapse collapse">
 								<div class="panel-body">
-									<label class='text-success'>
-                                		<i class="fa fa-cheked-o fa-fw"></i><strong>Problematica</strong>
-                                	</label>
-									<blockquote>
-										  	<p><h5>
+
+									      <h5>
 										  		@if(isset($solucion))
 													{{ $solucion->problema_solucion }}
 												@endif
 										  	</h5>
-                                   	</blockquote>
 								</div>
 							</div>
 						</div>
-
 
 						<div class="panel panel-inverse  overflow-hidden">
 							<div class="panel-heading" style="background-color:#214974" >

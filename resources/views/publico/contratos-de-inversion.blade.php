@@ -97,7 +97,7 @@
               3. Ingreso oficial del proceso de inversión<br />
               4. Verificación de anexos<br />
               5. Elaboración de informe<br />
-              6. Decisión del Consejo Sectorial de la Producción<br />
+              6. Decisión del Consejo Sectorial Económico y Productivo<br />
               7. Firma del contrato
             </p>
 

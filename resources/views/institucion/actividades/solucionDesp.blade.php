@@ -23,15 +23,19 @@
 					<div class="widget widget-stats bg-green-darker">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
-							<h4>Soluci&oacute;n</h4>
+							<h4 class="">Soluci&oacute;n</h4>
 							<p class="f-s-20">
 								@if (isset($solucion) )
 									{{ $solucion->verbo_solucion." ".$solucion->sujeto_solucion." ".$solucion->complemento_solucion }}
 								@endif
 							</p>
 						</div>
-						<div class="stats-link">
-							<a href="javascript:;">&nbsp;</a>
+						<div class="pull-right">
+							<div class="p-t-10">
+								<small>La propuesta se encuentra en estado  <label class="label label-warning f-s-13">{{ $solucion->nombre_estado }}</label>	
+								</small>
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -63,15 +67,28 @@
 
 								<div class="media-body">
 
+									
+									
+
+									<?php //dd($tipo_actor) ?>
+
 									@if (isset($solucion) && isset($tipo_actor) )
 										@if($tipo_actor == 1 or $tipo_actor == 2 )
 											<!-- <a href="#" class="btn	btn-warning pull-right">Finalizar</a> -->
 											<a href="{{ url('institucion/home') }}" class="btn btn-default pull-left">&laquo; Regresar</a>&nbsp;&nbsp; 
-											@if($solucion->plazo_cumplimiento=="")
+											@if($solucion->plazo_cumplimiento=="" && $solucion->estado_id != 1 )
 											<a href="{{ route('solucion.parametrosCumplimiento',$solucion->id) }}" class="btn btn-success "> Definir Parametros de Cumplimiento</a>
+											@endif
+											@if($solucion->plazo_cumplimiento!="")
+											<a href="{{ route('solucion.EditparametrosCumplimiento',$solucion->id) }}" class="btn btn-success "> editar actividades Parametros de Cumplimiento</a>
 											@endif
 											@if($solucion->estado_id<=3)
 											<a href="{{ route('actividades.createDespliegue',$solucion->id) }}" class="btn btn-primary pull-right"><i class="fa fa-plus" aria-hidden="true"></i> Nueva</a>&nbsp;&nbsp;
+
+											<?php 
+												//dd($actividades);
+												//echo  $actividad = count($actividades) ?>
+
 											@if(count($actividades) > 0)
 											
 											<a href="#modal-alert" class="btn btn-primary" data-toggle="modal">Finalizar Propuesta</a>
@@ -109,13 +126,16 @@
 										@endif
 									@endif
 
-									<h3>LISTA DE ACTIVIDADES</h3><hr>
+									<h3>LISTA DE ACTIVIDADES</h3>
+									
+									<hr>
+
 									@if( isset( $actividades ) && count($actividades) > 0)
 										<?php $count=count($actividades) ; ?>
 										@foreach( $actividades as $actividad)
 											<h4>
 												<label class="label label-danger label-lg"><i class="fa fa-file-text-o" aria-hidden="true"></i>
- 												 Actividad {{ $count }}</label><br><br>
+ 												 Actividad {{ $count }}</label>&nbsp;&nbsp; <a href="/institucion/editar-actividades/{{$actividad->id}}/{{$actividad->solucion_id}}" title="Editar Actividad"> <i class="fa fa-1x fa-edit"></i></a> <br><br>
 											</h4>
 											<p class="text-justify">
 												{!! $actividad-> comentario !!}

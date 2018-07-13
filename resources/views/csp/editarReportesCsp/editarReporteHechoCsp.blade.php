@@ -19,7 +19,7 @@
                     <div class="widget widget-stats bg-green-darker">
                         <div class="stats-icon"><i class="fa fa-desktop"></i></div>
                         <div class="stats-info">
-                            <h4 class="modal-title">Reportes Consejo Sectorial de la Producción</h4>
+                            <h4 class="modal-title">Reportes Consejo Sectorial Económico y Productivo</h4>
                             <br><br>
                             <div class="col-md-0 pull-right">
                                         <a href="#modal-without-animation"  data-toggle="modal"><i class="fa fa-2x fa-info-circle " style="color :#F7F9F9"></i></a>

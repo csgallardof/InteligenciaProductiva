@@ -244,6 +244,8 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      Route::get('parametros-cumplimiento/create/{idSolucion}',['uses'=>'ActividadesController@vistaParametrosCumplimiento','as'=>'solucion.parametrosCumplimiento']);
 
+      Route::get('parametros-cumplimiento/edit/{idSolucion}',['uses'=>'ActividadesController@vistaEditParametrosCumplimiento','as'=>'solucion.EditparametrosCumplimiento']);
+
      Route::post('/crear-parametros-cumplimiento/{id}',['uses'=>'ActividadesController@crearParametrosCumplimiento','as'=>'crear.ParametrosCumplimiento']);
 
      Route::get('verSolucion/consejo/{tipo_actor}/{idSolucion}',['uses'=>'ActividadesController@verActividadesConsejo','as'=>'verSolucion.consejo']);
@@ -257,6 +259,12 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      Route::get('consejo/actividad/create/{idSolucion}',['uses'=>'ActividadesController@createConsejo','as'=>'actividades.createConsejo']);
 
      Route::post('actividad/save/{tipo_fuente}/{idSolucion}',['uses'=>'ActividadesController@saveActividad','as'=>'actividades.saveActividad']);
+
+     // EDITAR ACTIVIDADES
+
+     Route::get('/editar-actividades/{actividad_id}/{solucion_id}','ActividadesController@vistaEditarActividad');
+     Route::post('/editar-actividades-solucion/{id}',['uses'=>'ActividadesController@editarActividad','as'=>'modificarActividades']);
+
 
 
 //VISTA DE LOS REPORTES DEL CSP
@@ -311,7 +319,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      
      //EDITAR REPORTES ACCIONES ALERTAS CSP
      Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');
-     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'modificarAccionesAlerta']);
+     Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'verSolucion']);
      
      //Reportes csp
      Route::get('/lista-reportes-csp','PdfCspReportesController@listaReportesCsp');
