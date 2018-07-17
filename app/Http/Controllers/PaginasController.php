@@ -449,8 +449,12 @@ class PaginasController extends Controller
     }
 
 
-    public function estructuraCostosGastos(){
+    public function estructuraCostosGastos(){ 
         return view('publico.estructura-promedio-costos-gastos-empresas');
+    }
+
+    public function estructuraCostosGastos2(){ 
+        return view('publico.estructura-promedio-costos-gastos-empresas2');
     }
 
 

@@ -67,7 +67,9 @@ Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPubli
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
-Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos'); 
+Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');  
+
+Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');  
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
 

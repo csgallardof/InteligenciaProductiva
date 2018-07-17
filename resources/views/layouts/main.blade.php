@@ -16,7 +16,7 @@
 			<!-- ================== BEGIN BASE CSS STYLE ================== -->
 			<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 			<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
-			<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
+			<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" /> 
 			<!-- ================== END BASE CSS STYLE ================== -->
 		@show
 
@@ -40,15 +40,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+		
 	</head>
 
-	<body>
+	<body  >
 
     <div id="page-container" class="fade">
     		
 			@include ('layouts.menu')
+			
 			@yield ('contenido')
+			
+		
 			@include ('layouts.common_modals')
 			@include ('layouts.footer')
     </div>
