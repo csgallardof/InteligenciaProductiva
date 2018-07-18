@@ -333,6 +333,7 @@ label {
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     transition: all .2s linear;
+
 }
 .header.navbar .navbar-nav > li > a {
     font-size: 12px;
@@ -6341,6 +6342,27 @@ body.flat-black {
 /* -------------------------------
    13.0 Footer Setting
 ------------------------------- */
+/*Menu Vertical*/
+
+.menuVertical {
+    position: fixed;
+    padding-bottom: 700px;
+    height: 100%;
+    max-width: 20%;
+    overflow-y: scroll;
+
+}
+
+.lista{
+	list-style-type: none;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.sublista{
+	list-style-type: none;
+	padding-left: 18px;
+}
 
 /* 13.1 Footer Element Setting */
 
@@ -6349,6 +6371,7 @@ body.flat-black {
     background: #0c3c55;
     text-align: center;
     margin-top: 100px;
+    position: relative;
 }
 .footer .footer-brand-logo {
     display: block;
@@ -6574,16 +6597,16 @@ table.dataTable thead th {
 .big-tablasgenerales > tbody > tr > td {font-size: 11px !important;}
 .big-tablasgenerales > tbody > tr > th {font-size: 11px !important;}
 .big-tablasgenerales-header > th {background-color: #e6e6e6; border: 1.5px solid #fff !important;}
-.tablasgenerales > tbody > tr > td:not(:first-child) {text-align: center !important;font-size: 13px;}
-.tablasgenerales > tbody > tr > td {padding: 0.05em !important;font-size: 13px;}
-.tablasgenerales > thead > tr > th {padding: 0.05em !important;text-align: center !important;font-size: 13px;}
+.tablasgenerales > tbody > tr > td:not(:first-child) {text-align: center !important;font-size: 12px;}
+.tablasgenerales > tbody > tr > td {padding: 0.05em !important;font-size: 12px;}
+.tablasgenerales > thead > tr > th {padding: 0.05em !important;text-align: center !important;font-size: 12px;}
 .panel-custom-tables-1 {padding: 0px !important;border: none;}
 .panel-custom-tables-2 {border: none;}
 .panel-custom-tables-3 {border: none;}
 .panel-custom-tables-4 {margin-top: 10px;border: none;}
 .panel-custom-tables-1 .panel-heading {background: #e2e2e2;color: #000000;height: 34px;padding: 7px;}
 .panel-custom-tables-1 .panel-footer {background-color: #ffffff;padding: 0px 0px 0px 10px !important;}
-.panel-custom-tables-1 .panel-heading .panel-title {font-size: 13px;}
+.panel-custom-tables-1 .panel-heading .panel-title {font-size: 12px;}
 .panel-custom-tables-4 .panel-footer {background-color: #ffffff;padding: 0px 0px 0px 10px !important;}
 .panel-custom-tables-2 .panel-footer {background-color: #ffffff;padding: 0px 0px 0px 10px !important;}
 .panel-custom-tables-3 .panel-footer {background-color: #ffffff; padding: 0px 20px 0px 20px !important;}
@@ -6601,4 +6624,86 @@ table.dataTable thead th {
 
 .panel-titulo-custom-page > .modal-title {
     line-height: 1 !important;
+}
+
+/* Main content */
+
+.main-content {
+  margin-top: 100px;
+}
+
+/* Scrollbar */
+
+.menu-lateral-general::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.menu-lateral-general::-webkit-scrollbar-track {
+    background: rgb(12, 60, 85);
+    border: 4px solid transparent;
+    background-clip: content-box;   /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+.menu-lateral-general::-webkit-scrollbar-thumb {
+    background: rgb(12, 60, 85);
+    border: 1px solid rgb(0,0,0);
+}
+
+@media(max-width: 979px) {
+
+  /*Titulos*/
+  .titulo{
+      font-size: 13px;
+  }
+
+  .subtitulo{
+      font-size: 12px;
+  }
+
+}
+
+@media(min-width: 979px) {
+
+  /*Titulos*/
+  .titulo{
+      font-size: 15px;
+  }
+
+  .subtitulo{
+      font-size: 14px;
+  }
+
+}
+
+/* Pagina Noticias Titulos */
+
+/* Lista */
+
+.site-page-content-list {
+  letter-spacing: -.5px !important;
+  line-height: 1.8 !important;
+  font-size: 16px;
+}
+
+/* Parrafo */
+
+.site-page-content-paragraph {
+  letter-spacing: -.5px !important;
+  line-height: 1.8 !important;
+  font-size: 16px;
+}
+
+/* code */
+
+.code-site-page {
+  border-radius: .2rem;
+  background-color: hsla(0, 0%, 72%, 0.5);
+  padding: .07353em 0;
+  color: black;
+}
+
+.panel-body {
+    padding: 20px 0px 0px 0px !important;
 }

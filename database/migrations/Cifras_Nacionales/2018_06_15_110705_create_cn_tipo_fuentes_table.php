@@ -15,7 +15,7 @@ class CreateCnTipoFuentesTable extends Migration
     {
         Schema::create('cn_tipo_fuentes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_tipo_fuente');
+            $table->string('nombre_fuente');
             $table->timestamps();
         });
     }

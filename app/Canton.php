@@ -10,7 +10,7 @@ class Canton extends Model
 	   return Canton::Where('provincia_id','=',$id)
 		->get();
 
-	}
+	} 
     public function provincia(){
     	return $this->belongsTo('App\Provincia');
     }

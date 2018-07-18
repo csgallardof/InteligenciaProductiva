@@ -30,7 +30,7 @@ class CspAgendaTerritorialController extends Controller
     public function obtenerCantones(Request $request, $id){
         return Canton::cantones($id);
     }
-
+ 
     public function crearAgenda(Request $request){
 
         

@@ -17,7 +17,7 @@ class CreateCnCifrasNacionalesTable extends Migration
             $table->increments('id');
             $table->string('nombre_cifra_nacional');
             $table->integer('año');
-            $table->string('valor');
+            $table->integer('valor');
 
             /*RELACION CON LA TABLA TIPOIMPUESTO*/
             $table->integer('tipo_impuesto_id')->unsigned();
@@ -42,6 +42,14 @@ class CreateCnCifrasNacionalesTable extends Migration
             /*RELACION CON LA TABLA TIPO FUENTE*/
             $table->integer('tipo_fuente_id')->unsigned();
             $table->foreign('tipo_fuente_id')->references('id')->on('cn_tipo_fuentes')->onDelete('cascade');
+            
+            /*RELACION CON LA TABLA TIPO FUENTE*/
+            $table->integer('zona_id')->unsigned();
+            $table->foreign('zona_id')->references('id')->on('cn_zonas')->onDelete('cascade');
+
+            /*RELACION CON LA TABLA Subsector*/
+            $table->integer('subsector_id')->unsigned();
+            $table->foreign('subsector_id')->references('id')->on('cn_subsectors')->onDelete('cascade');
 
             $table->timestamps();
         });
