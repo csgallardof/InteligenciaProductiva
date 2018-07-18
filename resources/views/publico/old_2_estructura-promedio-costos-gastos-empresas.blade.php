@@ -1,5 +1,5 @@
 @extends('layouts.main')
- 
+
 @section('title', 'Inicio')
 
 @section('start_css')
@@ -9,7 +9,7 @@
 
     <style>
         @media print {
-          
+
           #costosindustriales * {
             visibility: visible;
           }
@@ -25,34 +25,10 @@
 
 @section('contenido')
 
-    <!-- begin #about -->
-    <div id="about" class="content row-m-t-2" data-scrollview="true">
-        <!-- begin container -->
-      <div class="container" data-animation="true" data-animation-type="fadeInDown">
-          <!-- begin row -->
-        <div class="row">
-          <div class="col-md-12">
-            <!-- begin breadcrumb -->
-            <ol class="breadcrumb pull-right">
-              <li><a href="dashboard.php">Home</a></li>
-              <li class="active">Fichas</li>
-            </ol>
-            <!-- end breadcrumb -->
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="content row main-content">
 
-
-                       
-
-    <div class="content row">
-      <div class="col-md-3" >
-        
-        
-          <div class="form-grou hidden-xs menuVertical" >
-            
-             
+      <div class="col-sm-3 hidden-xs">
+          <div class="menu-lateral-general form-group menuVertical" >
                <ul class="nav">
                    <li class="has-sub"><a href="#descarga" class="titulo"> Costos para el Sector Industrial en el Ecuador </a> </li>
                    <li class="has-sub"><a href="#materialesConstruccion" class="titulo">Precios del mercado - Materiales de Construcción</a> </li>
@@ -73,7 +49,33 @@
                               <li ><a href="#resolucionInsolvencias" class="subtitulo">Resolución de insolvencias (2018)</a></li>
                             </ul>
                    </li>
-
+                   <li class="has-sub"><a href="#combustibles" class="titulo">Combustibles</a></li>
+                            <ul class="sub-menu">
+                              <li ><a href="#sectorIndustrial" class="subtitulo">Sector Industrial (Julio 2018)</a></li>
+                              <li ><a href="#transCargaPesadaInternacional" class="subtitulo">Trans Carga Pesada Internacional (Julio 2018)</a></li>
+                            </ul>
+                   <li class="has-sub"><a href="#energiaElectricaIndustrial" class="titulo">Energía Eléctrica Industrial</a></li>
+                   <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">Energía Eléctrica Comercial</a></li>
+                   <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">Energía Eléctrica Residencial</a></li>
+                   <li class="has-sub"><a href="#descarga" class="titulo"> Costos para el Sector Industrial en el Ecuador </a> </li>
+                   <li class="has-sub"><a href="#materialesConstruccion" class="titulo">Precios del mercado - Materiales de Construcción</a> </li>
+                   <li class="has-sub"><a href="#aguaPotable" class="titulo"> Agua Potable</a>
+                   <li class="has-sub"><a href="#materiasPrimas" class="titulo"> Materias Primas</a></li>
+                   <li class="has-sub"><a href="#salarioMinimo" class="titulo">Salario Mínimo</a></li>
+                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios al consumidor</a></li>
+                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios de la Construcción</a></li>
+                   <li class="has-sub"><a href="#comercioTransfronterizo" class="titulo">Comercio Transfronterizo</a>
+                            <ul class="sub-menu">
+                              <li ><a href="#costoTiempoExportar" class="subtitulo">Costos y tiempo para exportar (2018)</a></li>
+                              <li ><a href="#costoTiempoImportar" class="subtitulo">Costos y tiempo para importar (2018)</a></li>
+                              <li ><a href="#aperturaNegocio" class="subtitulo">Apertura de Negocio (2018)</a></li>
+                              <li ><a href="#manejoPermisosContruccion" class="subtitulo">Manejo de permisos de construcción (2018)</a></li>
+                              <li ><a href="#registroPropiedad" class="subtitulo">Registro de Propiedad (2018)</a></li>
+                              <li ><a href="#pagoImpuestos" class="subtitulo">Pago de Impuestos (2018)</a></li>
+                              <li ><a href="#cumplimientoContratos" class="subtitulo">Cumplimiento de Contratos (2018)</a></li>
+                              <li ><a href="#resolucionInsolvencias" class="subtitulo">Resolución de insolvencias (2018)</a></li>
+                            </ul>
+                   </li>
                    <li class="has-sub"><a href="#combustibles" class="titulo">Combustibles</a></li>
                             <ul class="sub-menu">
                               <li ><a href="#sectorIndustrial" class="subtitulo">Sector Industrial (Julio 2018)</a></li>
@@ -83,14 +85,38 @@
                    <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">Energía Eléctrica Comercial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">Energía Eléctrica Residencial</a></li>
                 </ul>
-              
-          
         </div>
-
-      
       </div>
-      <div id="costosindustriales" class="col-md-9">
-        <div class="panel-heading panel-titulo-custom-page" >
+
+      <div id="costosindustriales" class="col-sm-9 col-xs-12 p-l-0 p-r-30">
+
+      <div class="site-page-content" >
+        <h1 id="">Authentication &amp; Authorization<a href="#" title=""></a></h1>
+        <p class="site-page-content-paragraph">The most important aspects of authentication and authorization within the MindSphere platform will be presented to you. This introduction is intended to get you up and running quickly when working with MindSphere APIs.
+If you are interested in the concepts and more information, please check the <a href="#">Related Links</a> section. After reading this introduction you will be able to do the following:</p>
+        <ul class="site-page-content-list">
+        <li>Call MindSphere APIs from Cloud Foundry applications.</li>
+        <li>Call MindSphere APIs from frontend applications (e.g. AJAX call from JavaScript).</li>
+        <li>Secure your application by an application specific scope.</li>
+        </ul>
+        <h2 id="">Introduction<a href="#" title=""></a></h2>
+        <p class="site-page-content-paragraph">All MindSphere Endpoints are secured and can only be reached after a successful authentication. You will then be provided with a token that can be obtained by different ways described in this introduction.
+        The token will contain information about what you are allowed to do, e.g. what APIs you are allowed to use.</p>
+
+        <h3>Logging of Tokens</h3><hr />
+        <p>Ensure that your production code does not contain any log outputs of secrets like tokens!<code class="code-site-page">authorization</code></p>
+
+        <div class="note note-info site-page-content-alert">
+        	<h4>Some header text here!</h4>
+        	<p>
+        	    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Maecenas id gravida libero. Etiam semper id sem a ultricies. Donec id consequat magna.
+              Suspendisse tincidunt blandit metus, eu pretium nibh tincidunt eget.
+          </p>
+        </div>
+      </div>
+
+            <div class="panel-heading panel-titulo-custom-page" >
                 <div class="btn-group pull-right">
                   <a href="{{ asset('archivos/costos_de_produccion_en_el_ecuador_julio_2018.xlsx') }}" class="btn btn-primary btn-sm">Descargar</a>
                 </div>
@@ -105,7 +131,7 @@
                         <h4 class="panel-title" id="materialesConstruccion">Precios del mercado - Materiales de Construcción</h4>
                     </div>
                     <div class="panel-body panel-general-tabla-basica">
-                      <table class="tablasgenerales table nowrap table-striped table-bordered">
+                      <table class="tablasgenerales table table-striped table-bordered">
                         <thead><th></th><th>Unidad de medida</th><th>30 junio 2018*</th></thead>
                         <tbody>
                          <tr><td>Cemento Selva Alegre</td><td>50kg</td><td>8.11</td></tr>
@@ -143,7 +169,7 @@
                        <h4 class="panel-title">Consumo Doméstico</h4>
                    </div>
                    <div class="panel-body panel-general-tabla-basica">
-                     <table class="tablasgenerales table nowrap table-striped table-bordered">
+                     <table class="tablasgenerales table table-striped table-bordered">
 
                        <thead><th></th><th>T. Básico  </th><th>T. Adicional</th></thead>
                        <tbody>
@@ -162,7 +188,7 @@
                        <h4 class="panel-title">Consumo Industrial</h4>
                    </div>
                    <div class="panel-body panel-general-tabla-basica">
-                     <table class="tablasgenerales table nowrap table-striped table-bordered">
+                     <table class="tablasgenerales table table-striped table-bordered">
 
                        <thead><th></th><th>Tarifa Única</th></thead>
                        <tbody>
@@ -185,13 +211,13 @@
 
            <!-- Tabla 12 size -->
           <div class="row">
-            <div class="panel-custom-tables-2 col-md-12 col-xs-12" align="center">
+            <div class="panel-custom-tables-2 col-sm-12 col-xs-12" align="center">
               <div class="panel custom-constos-panel-properties panel-inverse">
                   <div class="panel-heading">
                       <h4 class="panel-title" id="materiasPrimas">Materias Primas</h4>
                   </div>
                   <div class="panel-body panel-general-tabla-basica">
-                    <table class="tablasgenerales table nowrap table-striped table-bordered">
+                    <table class="tablasgenerales table table-striped table-bordered">
 
                       <thead><th></th><th>Unidad de medida</th><th>31 mayo 2018*</th><th>30 junio 2018*</th><th>Variación</th></thead>
                       <tbody>
@@ -216,7 +242,7 @@
               </div>
             </div>
          </div>
-         <!-- Fin Tabla 12 size --> 
+         <!-- Fin Tabla 12 size -->
 
          <!-- Tablas 6 size No Second Headings -->
          <div class="row">
@@ -227,7 +253,7 @@
            <div class="panel-custom-tables-1 col-md-6 col-xs-12" align="center">
              <div class="panel custom-constos-panel-properties panel-inverse">
                  <div class="panel-body panel-general-tabla-basica">
-                   <table class="tablasgenerales table nowrap table-striped table-bordered">
+                   <table class="tablasgenerales table table-striped table-bordered">
 
                      <thead><th>País</th><th>2018</th></thead><tbody>
                       <tr><td>Panamá</td><td>744</td></tr>
@@ -248,7 +274,7 @@
            <div class="panel-custom-tables-1 col-md-6 col-xs-12" align="center">
              <div class="panel custom-constos-panel-properties panel-inverse">
                  <div class="panel-body panel-general-tabla-basica">
-                   <table class="tablasgenerales table nowrap table-striped table-bordered">
+                   <table class="tablasgenerales table table-striped table-bordered">
 
                      <thead><th>País</th><th>2018</th></thead><tbody>
                       <tr><td>El Salvador</td><td>300</td></tr>
@@ -285,7 +311,7 @@
                     <h4 class="panel-title" id="indicePrecioConsuminor">Índice de Precios al consumidor</h4>
                 </div>
                 <div class="panel-body panel-general-tabla-basica">
-                  <table class="tablasgenerales table nowrap table-striped table-bordered">
+                  <table class="tablasgenerales table table-striped table-bordered">
 
                     <thead><th></th><th>IPC</th><th>Variación mensual*</th><th>Variación anual*</th></tr></thead><tbody>
                      <tr><td>Jan-17</td><td>105.30</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.1</td><td><span class="arrow-color-verde"><i class="fa fa-arrow-up"></i></span>0.9</td></tr>
@@ -312,7 +338,7 @@
                     <h4 class="panel-title" id="indicePrecioConstruccion">Índice de Precios de la Construcción</h4>
                 </div>
                 <div class="panel-body panel-general-tabla-basica">
-                  <table class="tablasgenerales table nowrap table-striped table-bordered">
+                  <table class="tablasgenerales table table-striped table-bordered">
 
                     <thead><th></th><th>IPC</th><th>Variación mensual*</th><th>Variación anual*</th></tr></thead>
                     <tbody>
@@ -354,7 +380,7 @@
                    <h4 class="panel-title" id="costoTiempoExportar">Costos y tiempo para exportar (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><th></th><th>Ecuador </th><th>América Latina </th></thead>
                    <tbody>
@@ -374,7 +400,7 @@
                    <h4 class="panel-title" id="costoTiempoImportar">Costos y tiempo para importar (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><th></th><th>Ecuador </th><th>América Latina</th></thead>
                    <tbody>
@@ -400,7 +426,7 @@
                    <h4 class="panel-title" id="aperturaNegocio">Apertura de Negocio (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina</th></tr></thead>
                    <tbody>
@@ -418,7 +444,7 @@
                    <h4 class="panel-title" id="manejoPermisosContruccion">Manejo de permisos de construcción (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina </th></tr></thead>
                    <tbody>
@@ -442,7 +468,7 @@
                    <h4 class="panel-title" id="registroPropiedad">Registro de Propiedad (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina</th></tr></thead>
                    <tbody>
@@ -466,7 +492,7 @@
                    <h4 class="panel-title" id="pagoImpuestos">Pago de impuestos (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina</th></tr></thead>
                    <tbody>
@@ -490,7 +516,7 @@
                    <h4 class="panel-title" id="cumplimientoContratos">Cumplimiento de contratos (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina</th></tr></thead>
                    <tbody>
@@ -513,7 +539,7 @@
                    <h4 class="panel-title" id="resolucionInsolvencias">Resolución de insolvencias (2018)</h4>
                </div>
                <div class="panel-body panel-general-tabla-basica">
-                 <table class="tablasgenerales table nowrap table-striped table-bordered">
+                 <table class="tablasgenerales table table-striped table-bordered">
 
                    <thead><tr class=""><th></th><th>Ecuador</th><th>América Latina</th></tr></thead>
                    <tbody>
@@ -551,7 +577,7 @@
                   <h4 class="panel-title" id="sectorIndustrial">SECTOR INDUSTRIAL (Julio 2018)</h4>
               </div>
               <div class="panel-body panel-general-tabla-basica">
-                <table class="tablasgenerales table nowrap table-striped table-bordered">
+                <table class="tablasgenerales table table-striped table-bordered">
 
                   <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
@@ -578,7 +604,7 @@
                   <h4 class="panel-title" id="transCargaPesadaInternacional">TRANS.CARGA PESADA INTERNACIONAL (Julio 2018)</h4>
               </div>
               <div class="panel-body panel-general-tabla-basica">
-                <table class="tablasgenerales table nowrap table-striped table-bordered">
+                <table class="tablasgenerales table table-striped table-bordered">
 
                   <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
@@ -591,7 +617,7 @@
                   <h4 class="panel-title">SECTOR USO PARTICULAR Y PESCA DEP. (Julio 2018)</h4>
               </div>
               <div class="panel-body panel-general-tabla-basica">
-                <table class="tablasgenerales table nowrap table-striped table-bordered">
+                <table class="tablasgenerales table table-striped table-bordered">
 
                   <thead><tr class=""><th>Producto</th><th>Unidad </th><th>Precio*</th></tr></thead>
                   <tbody>
@@ -625,31 +651,31 @@
                  <h4 class="panel-title" id="energiaElectricaIndustrial">Energía Eléctrica Industrial</h4>
              </div>
              <div class="panel-body panel-general-tabla-basica">
-               <table class="big-tablasgenerales tablasgenerales table nowrap">
+               <table class="big-tablasgenerales tablasgenerales table">
 
                  <thead>
                    <tr class="big-tablasgenerales-header"><th colspan='3'></th><th colspan='3'>QUITO</th><th colspan='3'>GUAYAQUIL</th></tr>
                    <tr class=""><th>Nivel de tensión</th><th>Categoría</th><th>Rango de consumo</th><th>Demanda<br />(USD/kW-mes)</th><th>Energía<br />(USD/kWh)</th><th>Comercialización<br />(USD/<br />Consumidor)</th><th>Demanda<br />(USD/kW-mes)</th><th>Energía<br />(USD/kWh)</th><th>Comercialización<br />(USD/<br />Consumidor)</th></tr>
                  </thead>
                  <tbody>
-                    <tr><td>Baja tensión sin demanda</td><td>Industrial Artesanal</td><td>1 a 300</td><td>&nbsp;</td><td>0.062</td><td>1.414</td><td>&nbsp;</td><td>0.064</td><td class="text-center" style="vertical-align: middle;" rowspan="14">CONSUMOS kWh-mes:<br />0-300: 1,414<br />301-500: 2,826<br />501-1000: 4,240<br />> 1000: 7,066</td></tr> 
-                    <tr><td>Baja tensión sin demanda</td><td>Industrial Artesanal</td><td>Superior</td><td>&nbsp;</td><td>0.094</td><td>1.414</td><td>&nbsp;</td><td>0.100</td> <td></td></tr> 
-                    <tr><td>Baja tensión con demanda</td><td>Industriales</td><td>&nbsp;</td><td>4.182</td><td>0.078</td><td>1.414</td><td>4.055</td><td>0.082</td><td></td></tr>
-                    <tr><td>Baja tensión con demanda horaria</td><td>Industriales</td><td>07h00 a 22h00</td><td>4.182</td><td>0.063</td><td>1.414</td><td>4.055</td><td>0.067</td> <td></td></tr>
-                    <tr><td>Baja tensión con demanda horaria</td><td>Industriales</td><td>22h00 a 07h00</td><td>4.182</td><td>0.067</td><td>1.414</td><td>4.055</td><td>0.081</td> <td></td></tr>
-                    <tr><td>Media tensión con demanda</td><td>Industriales</td><td>&nbsp;</td><td>4.129</td><td>0.081</td><td>1.414</td><td>4.003</td><td>0.075</td> <td></td></tr>
-                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 08h00 hasta 18h00</td><td>4.129</td><td>0.0875</td><td>1.414</td><td>4.003</td><td>0.0815</td> <td></td></tr>
-                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 18h00 hasta 22h00</td><td>4.129</td><td>0.1015</td><td>1.414</td><td>4.003</td><td>0.0935</td><td></td></tr>
-                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 22h00 hasta 08h00</td><td>4.129</td><td>0.0491</td><td>1.414</td><td>4.003</td><td>0.0456</td><td></td></tr>
-                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>4.129</td><td>0.0875</td><td>1.414</td><td>4.003</td><td>0.0815</td><td></td></tr>
-                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 08h00 hasta 18h00</td><td>4.053</td><td>0.0805</td><td>1.414</td><td>3.930</td><td>0.0755</td> <td></td></tr>
-                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 18h00 hasta 22h00</td><td>4.053</td><td>0.0925</td><td>1.414</td><td>3.930</td><td>0.0865</td><td></td></tr>
-                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 22h00 hasta 08h00</td><td>4.053</td><td>0.0481</td><td>1.414</td><td>3.930</td><td>0.0446</td><td></td></tr>
-                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>4.053</td><td>0.0805</td><td>1.414</td><td>3.930</td><td>0.0755</td><td></td></tr> 
+                    <tr><td>Baja tensión sin demanda</td><td>Industrial Artesanal</td><td>1 a 300</td><td>&nbsp;</td><td>0.062</td><td>1.414</td><td>&nbsp;</td><td>0.064</td><td class="text-center" style="vertical-align: middle;" rowspan="14">CONSUMOS kWh-mes:<br />0-300: 1,414<br />301-500: 2,826<br />501-1000: 4,240<br />> 1000: 7,066</td></tr>
+                    <tr><td>Baja tensión sin demanda</td><td>Industrial Artesanal</td><td>Superior</td><td>&nbsp;</td><td>0.094</td><td>1.414</td><td>&nbsp;</td><td>0.100</td> </tr>
+                    <tr><td>Baja tensión con demanda</td><td>Industriales</td><td>&nbsp;</td><td>4.182</td><td>0.078</td><td>1.414</td><td>4.055</td><td>0.082</td></tr>
+                    <tr><td>Baja tensión con demanda horaria</td><td>Industriales</td><td>07h00 a 22h00</td><td>4.182</td><td>0.063</td><td>1.414</td><td>4.055</td><td>0.067</td> </tr>
+                    <tr><td>Baja tensión con demanda horaria</td><td>Industriales</td><td>22h00 a 07h00</td><td>4.182</td><td>0.067</td><td>1.414</td><td>4.055</td><td>0.081</td> </tr>
+                    <tr><td>Media tensión con demanda</td><td>Industriales</td><td>&nbsp;</td><td>4.129</td><td>0.081</td><td>1.414</td><td>4.003</td><td>0.075</td> </tr>
+                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 08h00 hasta 18h00</td><td>4.129</td><td>0.0875</td><td>1.414</td><td>4.003</td><td>0.0815</td> </tr>
+                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 18h00 hasta 22h00</td><td>4.129</td><td>0.1015</td><td>1.414</td><td>4.003</td><td>0.0935</td></tr>
+                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 22h00 hasta 08h00</td><td>4.129</td><td>0.0491</td><td>1.414</td><td>4.003</td><td>0.0456</td></tr>
+                    <tr><td>Media tensión con demanda horaria diferenciada</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>4.129</td><td>0.0875</td><td>1.414</td><td>4.003</td><td>0.0815</td></tr>
+                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 08h00 hasta 18h00</td><td>4.053</td><td>0.0805</td><td>1.414</td><td>3.930</td><td>0.0755</td> </tr>
+                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 18h00 hasta 22h00</td><td>4.053</td><td>0.0925</td><td>1.414</td><td>3.930</td><td>0.0865</td></tr>
+                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>L-V 22h00 hasta 08h00</td><td>4.053</td><td>0.0481</td><td>1.414</td><td>3.930</td><td>0.0446</td></tr>
+                    <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>4.053</td><td>0.0805</td><td>1.414</td><td>3.930</td><td>0.0755</td></tr>
                     <tr><td>Alta tensión con demanda horaria diferenciada (Grupo - AT1)</td><td>Industriales</td><td>L-V 08h00 hasta 18h00</td><td>3.940</td><td>0.0678</td><td>7.066</td><td>3.940</td><td>0.0678</td><td>7.066</td></tr>
                     <tr><td>Alta tensión con demanda horaria diferenciada (Grupo - AT1)</td><td>Industriales</td><td>L-V 18h00 hasta 22h00</td><td>3.940</td><td>0.0814</td><td>7.066</td><td>3.940</td><td>0.0814</td><td>7.066</td></tr>
                     <tr><td>Alta tensión con demanda horaria diferenciada (Grupo - AT1)</td><td>Industriales</td><td>L-V 22h00 hasta 08h00</td><td>3.940</td><td>0.0543</td><td>7.066</td><td>3.940</td><td>0.0543</td><td>7.066</td></tr>
-                  <tr><td>Alta tensión con demanda horaria diferenciada (Grupo - AT1)</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>3.940</td><td>0.0678</td><td>7.066</td><td>3.940</td><td>0.0678</td><td>7.066</td></tr>                   
+                  <tr><td>Alta tensión con demanda horaria diferenciada (Grupo - AT1)</td><td>Industriales</td><td>S,D,F 18h00 hasta 22h00</td><td>3.940</td><td>0.0678</td><td>7.066</td><td>3.940</td><td>0.0678</td><td>7.066</td></tr>
 
                  </tbody>
 
@@ -673,23 +699,20 @@
                 <h4 class="panel-title" id="energiaElectricaComercial">Energía Eléctrica Comercial</h4>
             </div>
             <div class="panel-body panel-general-tabla-basica">
-              <table class="big-tablasgenerales tablasgenerales table nowrap">
-
+              <table class="big-tablasgenerales tablasgenerales table">
                 <thead>
                   <tr class="big-tablasgenerales-header"><th colspan='3'></th><th colspan='3'>QUITO</th><th colspan='3'>GUAYAQUIL</th></tr>
                   <tr class=""><th>Nivel de tensión</th><th>Categoría</th><th>Rango de consumo</th><th>Demanda<br />(USD/kW-mes)</th><th>Energía<br />(USD/kWh)</th><th>Comercialización<br />(USD/<br />Consumidor)</th><th>Demanda<br />(USD/kW-mes)</th><th>Energía<br />(USD/kWh)</th><th>Comercialización<br />(USD/<br />Consumidor)</th></tr>
                 </thead>
                 <tbody>
                    <tr><td>Baja tensión sin demanda</td><td>Comercial</td><td>Superior</td><td>&nbsp;</td><td>0.104</td><td>1.414</td><td>&nbsp;</td><td>0.110</td><td class="text-center" style="vertical-align: middle;" rowspan="10">CONSUMOS kWh-mes:<br />0-300: 1,414<br />301-500: 2,826<br />501-1000: 4,240<br />> 1000: 7,066</td></tr>
-                   <tr><td>Baja tensión con demanda</td><td>Comercial</td><td>&nbsp;</td><td>4.182</td><td>0.088</td><td>1.414</td><td>4.055</td><td>0.092</td><td></td></tr>
-                   <tr><td>Baja tensión con demanda horaria</td><td>Comercial</td><td>07h00 a 22h00</td><td>4.182</td><td>0.088</td><td>1.414</td><td>4.055</td><td>0.092</td><td></td></tr>
-                   <tr><td>Baja tensión con demanda horaria</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.182</td><td>0.07</td><td>1.414</td><td>4.055</td><td>0.074</td><td></td></tr><tr><td>Media tensión con demanda</td><td>Comercial</td><td>&nbsp;</td><td>4.129</td><td>0.095</td><td>1.414</td><td>4.003</td><td>0.09</td><td>&nbsp;</td></tr>
-                   <tr><td>Media tensión con demanda horaria diferenciada</td><td>Comercial</td><td>07h00 hasta 22h00</td><td>4.129</td><td>0.095</td><td>1.414</td><td>4.003</td><td>0.09</td><td></td></tr><tr><td>Media tensión con demanda horaria diferenciada</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.129</td><td>0.077</td><td>1.414</td><td>4.003</td><td>0.073</td><td></td></tr>
-                   <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Comercial</td><td>07h00 hasta 22h00</td><td>4.053</td><td>0.089</td><td>1.414</td><td>3.930</td><td>0.084</td><td></td></tr>
-                   <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.053</td><td>0.081</td><td>1.414</td><td>3.930</td><td>0.075</td><td></td></tr>
-                   
+                   <tr><td>Baja tensión con demanda</td><td>Comercial</td><td>&nbsp;</td><td>4.182</td><td>0.088</td><td>1.414</td><td>4.055</td><td>0.092</td></tr>
+                   <tr><td>Baja tensión con demanda horaria</td><td>Comercial</td><td>07h00 a 22h00</td><td>4.182</td><td>0.088</td><td>1.414</td><td>4.055</td><td>0.092</td></tr>
+                   <tr><td>Baja tensión con demanda horaria</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.182</td><td>0.07</td><td>1.414</td><td>4.055</td><td>0.074</td><td></td></tr><tr><td>Media tensión con demanda</td><td>Comercial</td><td>&nbsp;</td><td>4.129</td><td>0.095</td><td>1.414</td><td>4.003</td><td>0.09</td></tr>
+                   <tr><td>Media tensión con demanda horaria diferenciada</td><td>Comercial</td><td>07h00 hasta 22h00</td><td>4.129</td><td>0.095</td><td>1.414</td><td>4.003</td><td>0.09</td><td></td></tr><tr><td>Media tensión con demanda horaria diferenciada</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.129</td><td>0.077</td><td>1.414</td><td>4.003</td><td>0.073</td></tr>
+                   <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Comercial</td><td>07h00 hasta 22h00</td><td>4.053</td><td>0.089</td><td>1.414</td><td>3.930</td><td>0.084</td></tr>
+                   <tr><td>Alta tensión con demanda horaria diferenciada</td><td>Comercial</td><td>22h00 a 07h00</td><td>4.053</td><td>0.081</td><td>1.414</td><td>3.930</td><td>0.075</td></tr>
                 </tbody>
-
               </table>
             </div>
             <div class="panel-footer text-right">
@@ -701,6 +724,7 @@
       </div>
    </div>
    <!-- Fin Tabla 12 size -->
+
       <!-- Tabla 12 size -->
    <div class="row">
      <div class="panel-custom-tables-2 col-md-12 col-xs-12" align="center">
@@ -709,7 +733,7 @@
                <h4 class="panel-title" id="energiaElectricaResidencial" >Energía Eléctrica Residencial</h4>
            </div>
            <div class="panel-body panel-general-tabla-basica">
-             <table class="big-tablasgenerales tablasgenerales table nowrap">
+             <table class="big-tablasgenerales tablasgenerales table">
 
                <thead>
                  <tr class="big-tablasgenerales-header"><th colspan='3'></th><th colspan='2'>QUITO</th><th colspan='2'>GUAYAQUIL</th></tr>
@@ -717,18 +741,18 @@
                </thead>
                <tbody>
                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>51-100</td><td>0.081</td><td>1.414</td><td>0.081</td><td class="text-center" style="vertical-align: middle;" rowspan="14">CONSUMOS kWh-mes:<br />0-300: 1,414<br />301-500: 2,826<br />501-1000: 4,240<br />> 1000: 7,066</td></tr>
-                 <tr><td>Baja y media tensión</td><td>Residencial</td><td>101-150</td><td>0.083</td><td>1.414</td><td>0.083</td><td></td></tr>
-                 <tr><td>Baja y media tensión</td><td>Residencial</td><td>151-200</td><td>0.097</td><td>1.414</td><td>0.097</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>201-250</td><td>0.099</td><td>1.414</td><td>0.099</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>251-300</td><td>0.101</td><td>1.414</td><td>0.101</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>301-350</td><td>0.103</td><td>1.414</td><td>0.103</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>351-500</td><td>0.105</td><td>1.414</td><td>0.105</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>501-700</td><td>0.129</td><td>1.414</td><td>0.129</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>701-1000</td><td>0.145</td><td>1.414</td><td>0.145</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>1001-1500</td><td>0.171</td><td>1.414</td><td>0.171</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>1501-2500</td><td>0.275</td><td>1.414</td><td>0.275</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>2501-3500</td><td>0.436</td><td>1.414</td><td>0.436</td><td></td></tr>
-                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>Superior</td><td>0.681</td><td>1.414</td><td>0.681</td><td></td></tr>
+                 <tr><td>Baja y media tensión</td><td>Residencial</td><td>101-150</td><td>0.083</td><td>1.414</td><td>0.083</td></tr>
+                 <tr><td>Baja y media tensión</td><td>Residencial</td><td>151-200</td><td>0.097</td><td>1.414</td><td>0.097</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>201-250</td><td>0.099</td><td>1.414</td><td>0.099</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>251-300</td><td>0.101</td><td>1.414</td><td>0.101</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>301-350</td><td>0.103</td><td>1.414</td><td>0.103</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>351-500</td><td>0.105</td><td>1.414</td><td>0.105</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>501-700</td><td>0.129</td><td>1.414</td><td>0.129</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>701-1000</td><td>0.145</td><td>1.414</td><td>0.145</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>1001-1500</td><td>0.171</td><td>1.414</td><td>0.171</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>1501-2500</td><td>0.275</td><td>1.414</td><td>0.275</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>2501-3500</td><td>0.436</td><td>1.414</td><td>0.436</td></tr>
+                  <tr><td>Baja y media tensión</td><td>Residencial</td><td>Superior</td><td>0.681</td><td>1.414</td><td>0.681</td></tr>
 
                </tbody>
 
@@ -749,12 +773,12 @@
         <div><span><strong>Elaborado por:&nbsp;</strong></span>Coordinación General de Estudios Prospectivos y Macroeconómicos para la Industria - Ministerio de Industrias y Productividad</div>
       </div>
     </div>
-           
+
       </div>
-      
+
     </div>
 
-      
+
 
 @endsection
 
@@ -773,7 +797,7 @@
   <!-- ================== END PAGE LEVEL JS ================== -->
 
 
-  
+
 
 
 @endsection
@@ -791,13 +815,12 @@
 
     $(document).ready(function() {
       App.init();
-      
-      TablaBasica.init();
-      
+
+      //TablaBasica.init();
+
       //tablasgenerales
     });
 
   </script>
 
 @endsection
-
