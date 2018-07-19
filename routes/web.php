@@ -31,16 +31,16 @@ Route::get('/busquedaAvanzada',[
      'as'=>'nuevaBusqueda2'
 ]);
 
-Route::post('/lista-propuesta/{tipo}',['uses'=>'PaginasController@crearReportePropuestas','as'=>'reportePropuestas']); 
+Route::post('/lista-propuesta/{tipo}',['uses'=>'PaginasController@crearReportePropuestas','as'=>'reportePropuestas']);
 
-Route::get('/reporte-home/lista-propuesta/{idEstado}/{tipo}','PaginasController@crearReportePropuestasHome'); 
+Route::get('/reporte-home/lista-propuesta/{idEstado}/{tipo}','PaginasController@crearReportePropuestasHome');
 
 
 Route::post('/reporte',[
      'uses'=>'SolucionesController@buscar',
      'as'=>'reporte1.resultado'
 ]);
- 
+
 Route::get('/detalle-despliegue-dialogo/{id}','PaginasController@detalledespliegue2');
 
 
@@ -67,9 +67,9 @@ Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPubli
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
-Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');  
+Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
 
-Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');  
+// Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');  
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
 
@@ -98,9 +98,9 @@ Route::post('/consejoconsultivo',[
      'as'=>'consejo.resultado'
 ]);
 
- 
+
 Route::get('/busqueda',[
-     'uses'=>'PaginasController@busquedaGeneral', 
+     'uses'=>'PaginasController@busquedaGeneral',
      'as'=>'nuevaBusqueda'
 ]);
 
@@ -115,7 +115,7 @@ Route::get('storage/{archivo}', function ($archivo) {
      }
      //si no se encuentra lanzamos un error 404.
      abort(404);
-      
+
 })->name('descargarArchivo');
 
 Route::get('/descargar/Mesas', 'ExcelController@exportMesas');
@@ -134,9 +134,9 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
 
      Route::get('/home', 'HomeController@index')->name('home');
-     
+
      Route::resource('sipocs','SipocsController');
-     
+
      Route::resource('instrumentos','InstrumentosController');
 
      Route::resource('thematics','ThematicsController');
@@ -189,7 +189,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      Route::resource('ccpt','ConsejoConsultivoController');  //J. Arcos -- rutas para UsersController
 
-     
+
      Route::get('actor_solucion','InstitucionController@indexActorSolucion');  //admin cruds
 
      Route::get('actor_solucion/create',[
@@ -213,7 +213,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 
      // vista actores
 
-     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds  
+     Route::get('actores/asignados','InstitucionController@homeActoresAsignados');  //admin cruds
 
      Route::get('actores/porasignar','InstitucionController@homeActoresPorAsignar');
 
@@ -241,7 +241,7 @@ Route::group(['prefix' => 'admin','middleware'=>['auth','admin'] ], function(){
 Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      Route::get('home','InstitucionController@home');  //página dashboard para las instituciones
- 
+
      Route::get('verSolucion/despliegue/{tipo_actor}/{idSolucion}',['uses'=>'ActividadesController@verActividadesDespliegue','as'=>'verSolucion.despliegue']);
 
      Route::get('parametros-cumplimiento/create/{idSolucion}',['uses'=>'ActividadesController@vistaParametrosCumplimiento','as'=>'solucion.parametrosCumplimiento']);
@@ -270,11 +270,11 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
 
 //VISTA DE LOS REPORTES DEL CSP
-     Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes'); 
+     Route::get('/consejo-sectorial-produccion','CspReportesController@mostrarReportes');
 
-     Route::get('/consejo-sectorial-produccion/reportes-hechos','CspReportesController@homeReportesHechos'); 
+     Route::get('/consejo-sectorial-produccion/reportes-hechos','CspReportesController@homeReportesHechos');
 
-     Route::get('/consejo-sectorial-produccion/reportes-alertas','CspReportesController@homeReportesAlertas'); 
+     Route::get('/consejo-sectorial-produccion/reportes-alertas','CspReportesController@homeReportesAlertas');
 
      //CREAR REPORTE HECHOS CSP
      Route::get('/consejo-sectorial-produccion-createReportesHecho','CspReportesController@vistaCrearReporteHecho');
@@ -313,23 +313,23 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      //EDITAR REPORTES ALERTAS CSP
      Route::get('/editar-reporte-alerta/{id}','CspReportesController@vistaEditarReporteAlerta');
-     Route::post('/modificar-reporte-alerta/{id}',['uses'=>'CspReportesController@editarReporteAlertaCsp','as'=>'modificarReporteAlerta']); 
+     Route::post('/modificar-reporte-alerta/{id}',['uses'=>'CspReportesController@editarReporteAlertaCsp','as'=>'modificarReporteAlerta']);
      Route::post('/modificar-reporte-alerta-estado/{id}',['uses'=>'CspReportesController@editarReporteAlertaEstadoCsp','as'=>'modificarReporteAlertaEstado']);
 
      Route::get('/editar-reporte-alerta-secretario/{id}','CspReportesController@vistaEditarReporteAlertaSecretario');
      Route::post('/modificar-reporte-alerta-secretario/{id}',['uses'=>'CspReportesController@editarReporteAlertaCspSecretario','as'=>'modificarReporteAlertaSecretario']);
-     
+
      //EDITAR REPORTES ACCIONES ALERTAS CSP
      Route::get('/editar-acciones-alerta/{id}','CspReportesController@vistaEditaraccionesAlerta');
      Route::post('/modificar-acciones-alerta/{id}',['uses'=>'CspReportesController@editarAccionesAlertaCsp','as'=>'verSolucion']);
-     
+
      //Reportes csp
      Route::get('/lista-reportes-csp','PdfCspReportesController@listaReportesCsp');
      //Generar Reporte
     // Route::get('/crear_reporte_porpais/{tipo}','PdfCspReportesController@crear_reporte_porpais');
      //Route::post('/guardarIdReporteHechoCsp','PdfCspReportesController@obtenerReportesHechos');
      Route::post('/guardarIdReporteHechoCsp/{tipo}',['uses'=>'PdfCspReportesController@crearReporteHechosRelevantes','as'=>'guardarIdReporteHechoCsp']);
-     
+
      Route::get('/reportes-lineas-discursivas-csp','PdfCspReportesController@listaLineasDiscursivasCsp');
      Route::post('/guardarIdReporteHechoLineasDiscursivasCsp/{tipo}',['uses'=>'PdfCspReportesController@crearReporteHechosLineasDiscursivas','as'=>'guardarIdReporteHechoLineasDiscurisvasCsp']);
 
@@ -351,7 +351,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      }
      //si no se encuentra lanzamos un error 404.
      abort(404);
-      
+
      })->name('descargarArchivoHechosCsp');
 
 
@@ -366,7 +366,7 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      }
      //si no se encuentra lanzamos un error 404.
      abort(404);
-      
+
      })->name('descargarAccionAlertaCsp');
 
      //DESCARGAR ARCHIVO ALERTA CSP
@@ -380,23 +380,23 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
      }
      //si no se encuentra lanzamos un error 404.
      abort(404);
-      
+
      })->name('descargarArchivoAlertaCsp');
 
      Route::get('/crear-agenda-territorial', 'CspAgendaTerritorialController@vistaCrearAgenda');
-     
+
      Route::get('/ver-agenda-territorial', 'CspAgendaTerritorialController@mostrarAgendaTerritorial');
-     
+
      Route::post('/guardar-agenda-territorial',['uses'=>'CspAgendaTerritorialController@crearAgenda','as'=>'guardarAgendaTerritorialCsp']);
-     
+
      Route::get('/editar-agenda-territorial/{id}', 'CspAgendaTerritorialController@vistaEditarAgendaTerritorial');
-     
+
      Route::post('/modificar-agenda-territorial/{id}',['uses'=>'CspAgendaTerritorialController@editarReporteAlertaCsp','as'=>'modificarAgendaTerritorial']);
-     
+
      Route::get('/lista-agenda-territorial-csp','CspPdfReportesAgendaController@listaAgendaTerritorialCsp');
-     
+
      Route::post('/guardarIdAgendaTerritorial/{tipo}',['uses'=>'CspPdfReportesAgendaController@crearReporteAgendaTerritorial','as'=>'guardarIdReporteHechoCsp']);
-     
+
      Route::get('/tabla-excel','CspPdfReportesAgendaController@mostrarTabla');
 
      Route::get('/unificar-propuestas','PropuestasUnificadasController@mostrarPropuestas');
@@ -407,9 +407,5 @@ Route::group(['prefix' => 'institucion','middleware'=>['auth'] ], function(){
 
      Route::post('/seleccion-propuestas-unificadas/create-pajustada-unificar/pajustadas',['uses'=>'PropuestasUnificadasController@definirPajustada','as'=>'definirPajustada']);
 
-          
+
 });
-
-
-
-

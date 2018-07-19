@@ -13,45 +13,44 @@
 		<meta content="Ministerio de Industrias y Productividad" name="author" />
 
 		@section('head')
-			<!-- ================== BEGIN BASE CSS STYLE ================== -->
-			<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-			<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
-			<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" /> 
-			<!-- ================== END BASE CSS STYLE ================== -->
 		@show
 
 		<!-- ================== BEGIN BASE CSS STYLE ================== -->
 		@section('start_css')
 			<link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
 			<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
-			<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+			<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+			<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
-            <link href="{{ asset('css/inteligencia.css') }}" rel="stylesheet" />
+      <link href="{{ asset('css/inteligencia.css') }}" rel="stylesheet" />
+			<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 		@show
 		<!-- ================== END BASE CSS STYLE ================== -->
 
 		<!-- ================== BEGIN BASE JS ================== -->
 		@section('start_js')
-			<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 		@show
 		<!-- ================== END BASE JS ================== -->
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-		
+
+
 	</head>
 
 	<body  >
 
     <div id="page-container" class="fade">
-    		
+
 			@include ('layouts.menu')
-			
+
 			@yield ('contenido')
-			
-		
+
+
 			@include ('layouts.common_modals')
 			@include ('layouts.footer')
     </div>
@@ -88,7 +87,7 @@
 	</script>
 
 	<script type="text/javascript">
-		
+
 		function botonesRequeridos(){
 			var sipoc =  document.getElementById('selectSipoc').value;
 			var ambit = document.getElementById('selectAmbit').value;
@@ -100,7 +99,7 @@
 			if( sipoc > 0 || ambit > 0){
 				return true;
 			}
-			
+
 		}
 
 	</script>
