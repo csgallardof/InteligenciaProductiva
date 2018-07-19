@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; 
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,6 +19,11 @@ class CnCifrasNacionalesController extends Controller
         return CnCifrasNacionales::cnCifrasNacionalesPibZona($id, $anio);
     }
 
+    public function obtenerPibPorZona($id){
+        //dd('hola');
+        return CnCifrasNacionales::cnCifrasNacionalesPibPorZona($id);
+    }
+
     public function graficaPibActividadEconomica(){
 
     	$tiposCifrasNacionalesPIBActividadEconomica= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
@@ -27,10 +32,14 @@ class CnCifrasNacionalesController extends Controller
         $tiposCifrasNacionalesPIBZonas= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
                                                     ->take(4)
                                                     ->get();
-    	//dd($tiposCifrasNacionalesPIBZonas);
+        $tiposCifrasNacionalesPIBProvincia= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
+                                                    ->take(4)
+                                                    ->get();
+    	//dd($tiposCifrasNacionalesPIBProvincia);
 
     	return view('publico.cifras_nacionales.cifras_nacionales')->with(["tiposCifrasNacionalesPIBActividadEconomica"=>$tiposCifrasNacionalesPIBActividadEconomica,
-                                                    "tiposCifrasNacionalesPIBZonas"=>$tiposCifrasNacionalesPIBZonas
+                                                    "tiposCifrasNacionalesPIBZonas"=>$tiposCifrasNacionalesPIBZonas,
+                                                    "tiposCifrasNacionalesPIBProvincia"=>$tiposCifrasNacionalesPIBProvincia
                                                 ]);
     }
 

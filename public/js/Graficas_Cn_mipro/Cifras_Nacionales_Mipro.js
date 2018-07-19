@@ -125,78 +125,83 @@ var handleBarHorizontalChart =function(){
 
 }
 
+
+
 var handleBarChart = function() {
     "use strict";
     
     //var datos=$.getJSON('/api/cifras-nacionales/pib-actividad-economica/1');
+    var valorAnio= document.getElementById("select-anio-pib-provincias").value;
+    var valorTipoCifraNacional= document.getElementById("select-tipo-cifra-nacional-pib-provincia").value;
+
     
-   $.get('/api/cifras-nacionales/pib-provincia/1/2007',function (data){
+
+   $.get('/api/cifras-nacionales/pib-provincia/'+valorTipoCifraNacional +'/'+valorAnio,function (data){
  
-                var datosJSON=[{
-                     key: 'Pib Por Provincia',
-                     values:data
-                     
-                }];
+               if(valorTipoCifraNacional==1){
+                                var datosJSON=[
+                                      
+                                      {
+                                        "key": "Millones de USD",
+                                        "color": "#1D8348",
+                                        "values": data
+                                      }
+                                    ];
+                            }else if(valorTipoCifraNacional==2){
+                                 var datosJSON=[
+                                      
+                                      {
+                                        "key": "Participacion %",
+                                        "color": "#DC7633",
+                                        "values": data
+                                      }
+                                    ];
 
-                
+                            }else if(valorTipoCifraNacional==3){
+                                var datosJSON=[
+                                      
+                                      {
+                                        "key": "Variación anual %",
+                                        "color": "#884EA0",
+                                        "values": data
+                                      }
+                                    ];
+                            }else{
+                                var datosJSON=[
+                                      
+                                      {
+                                        "key": "Contribucion Variación anual %",
+                                        "color": "#E74C3C",
+                                        "values": data
+                                      }
+                                    ];
+                            }
+
                 nv.addGraph(function() {
-                var barChart = nv.models.discreteBarChart()
-                        .x(function(d) { return d.key })
-                        .y(function(d) { return d.value })
-                        //.labelType(function(d){ return d.data.label; })
-                        .staggerLabels(true) 
-                        .showValues(true)
+                    //console.log('si entro');
+                        //location.reload();
+                      var chart = nv.models.multiBarHorizontalChart()
+                          .x(function(d) { return d.label })
+                          .y(function(d) { return d.value })
+                          .showValues(true)
+                          .duration(500)
+                          .margin({top: 30, right: 20, bottom: 50, left: 475})
 
-                        .duration(250);
-                    //barChart.xAxis.rotateLabels(500);
-                    barChart.yAxis.axisLabel("vALOR");
-                    barChart.xAxis.axisLabel('CÓDIGO PROVINCIA');
-                
-                    d3.select('#nv-bar-chart svg')
-                    .datum(datosJSON)
-                    
-                    .call(barChart);
-                    nv.utils.windowResize(barChart.update);
-                    
-                
-                    return barChart;
-                });
+                      chart.yAxis
+                          .tickFormat(d3.format(',.2f'));
+
+                      d3.select('#nv-bar-chart svg')
+                            
+                          .datum(datosJSON)
+                          .call(chart);
+
+                      nv.utils.windowResize(chart.update);
+
+                      return chart;
+                    });
+               
             });
    
-
-
-   /*var barChartData = [{
-        key: 'Pib Por Actividad Economica',
-        values: [
-            { 'label' : 'A', 'value' : 29}, 
-            { 'label' : 'B', 'value' : 15 }, 
-            { 'label' : 'C', 'value' : 32 }, 
-            { 'label' : 'D', 'value' : 196 },  
-            { 'label' : 'E', 'value' : 44 },  
-            { 'label' : 'F', 'value' : 98 },  
-            { 'label' : 'G', 'value' : 13 },  
-            { 'label' : 'H', 'value' : 5 }
-        ]
-    }];
-    
-    
-    
-    
-    nv.addGraph(function() {
-        var barChart = nv.models.discreteBarChart()
-            .x(function(d) { return d.label })
-            .y(function(d) { return d.value })
-            .showValues(true)
-            .duration(250);
-        
-        barChart.yAxis.axisLabel("vALOR");
-        barChart.xAxis.axisLabel('CIIUS');
-    
-        d3.select('#nv-bar-chart').append('svg').datum(barChartData).call(barChart);
-        nv.utils.windowResize(barChart.update);
-    
-        return barChart;
-    });*/
 }
 
 
@@ -331,45 +336,155 @@ var handlePieAndDonutChart = function() {
 var handleStackedAreaChart = function() {
     "use strict";
     
+        $.get('/api/cifras-nacionales/pib-zona/1',function (data){
+
+
+          //console.log(data);
+          var datos_zona_5_8  = [];
+          var datos_zona_2_9  = [];
+          var datos_zona_4  = [];
+          var datos_zona_1  = [];
+          var datos_zona_3  = [];
+          var datos_zona_6  = [];
+          var datos_zona_7  = [];
+          var datos_zona_OE_PIB  = [];
+        
+
+          for (var i = 0; i <data.length; i++) {
+            if(data[i].label=="Pichincha, Orellana y Napo"){
+            datos_zona_2_9.push( data[i]);
+                        
+            }
+
+            if(data[i].label=="Bolívar,Guayas,Los Ríos, Santa Elena y Galápagos"){
+            datos_zona_5_8.push( data[i]);
+                        
+            }
+            if(data[i].label=="Manabí y  Santo Domingo de los Tsáchilas"){
+            datos_zona_4.push( data[i]);
+                        
+            }
+
+            if(data[i].label=="Esmeraldas, Carchi, Imbabura y Sucumbíos"){
+            datos_zona_1.push( data[i]);
+                        
+            }
+
+            if(data[i].label=="Cotopaxi, Chimborazo, Tungurahua y Pastaza"){
+            datos_zona_3.push( data[i]);
+                        
+            }
+
+            if(data[i].label=="Azuay, Cañar y Morona Santiago"){
+            datos_zona_6.push( data[i]);
+                        
+            }
+            if(data[i].label=="El Oro, Loja y Zamora Chinchipe"){
+            datos_zona_7.push( data[i]);
+                        
+            }
+            if(data[i].label=="Otros elementos del PIB"){
+            datos_zona_OE_PIB.push( data[i]);
+                        
+            }
+
+          
+        }
+          //console.log(datos_zona_2_9);
 
           var stackedAreaChartData = [{
-        'key' : 'Bolívar,Guayas,Los Ríos, Santa Elena y Galápagos',
+        'key' : 'Pichincha, Orellana y Napo',
         'color' : COLOR_RED,
-        'values' : [ [ 2007 , 13.356778764352] , [ 2008 , 13.611196863271] , [ 2009 , 6.895903006119] , [ 2010 , 6.9939633271352] , [ 2011 , 6.7241510257675] , [ 2012 , 5.5611293669516] , [ 2013 , 5.6086488714041] , [ 2014 , 5.4962849907033] , [ 2015 , 6.9193153169279] , [ 2016 , 7.0016334389777] ] 
-        }];
+        'values' : datos_zona_2_9
+        },{
+          'key' : 'Bolívar,Guayas,Los Ríos, Santa Elena y Galápagos',
+        'color' : "#28B463",
+        'values' : datos_zona_5_8
 
-    console.log(stackedAreaChartData);
+        },
+        {
+          'key' : 'Manabí y  Santo Domingo de los Tsáchilas',
+        'color' : "#AF7AC5",
+        'values' : datos_zona_4
+
+        },
+        {
+        
+        'key' : 'Esmeraldas, Carchi, Imbabura y Sucumbíos',
+        'color' : "#2E86C1",
+        'values' : datos_zona_1
+
+        },
+        {
+        
+        'key' : 'Cotopaxi, Chimborazo, Tungurahua y Pastaza',
+        'color' : "#B7950B",
+        'values' : datos_zona_3
+
+        },
+        {
+        
+        'key' : 'Azuay, Cañar y Morona Santiago',
+        'color' : "#CA6F1E",
+        'values' : datos_zona_6
+
+        },
+        {
+        
+        'key' : 'El Oro, Loja y Zamora Chinchipe',
+        'color' : "#58D68D",
+        'values' : datos_zona_7
+
+        },
+        {
+        
+        'key' : 'Otros elementos del PIB',
+        'color' : "#58D68D",
+        'values' : datos_zona_OE_PIB
+
+        }
+
+
+        ];
+          //console.log(stackedAreaChartData);
+
+                  nv.addGraph(function() {
+                          var stackedAreaChart = nv.models.stackedAreaChart()
+                              .useInteractiveGuideline(true)
+                              .x(function(d) { return d.año })
+                              .y(function(d) { return d.value })
+                              .controlLabels({stacked: 'Stacked'})
+                              .showControls(false)
+                              .duration(300);
+
+                          stackedAreaChart.xAxis.tickFormat(function(d) {  return d });
+
+                          stackedAreaChart.yAxis.tickFormat(d3.format(',.2f'));
+
+                          d3.select('#nv-stacked-area-chart')
+                              .append('svg')
+                              .datum(stackedAreaChartData)
+                              .transition().duration(1000)
+                              .call(stackedAreaChart)
+                              .each('start', function() {
+                                  setTimeout(function() {
+                                      d3.selectAll('#nv-stacked-area-chart *').each(function() {
+                                          if(this.__transition__)
+                                              this.__transition__.duration = 1;
+                                      })
+                                  }, 0)
+                              });
+
+                          nv.utils.windowResize(stackedAreaChart.update);
+                          return stackedAreaChart;
+                      }); 
+
+        });
+          
+    
    
     
-    nv.addGraph(function() {
-        var stackedAreaChart = nv.models.stackedAreaChart()
-            .useInteractiveGuideline(true)
-            .x(function(d) { return d[0] })
-            .y(function(d) { return d[1] })
-            .controlLabels({stacked: 'Stacked'})
-            .showControls(false)
-            .duration(300);
-
-        stackedAreaChart.xAxis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)) });
-        stackedAreaChart.yAxis.tickFormat(d3.format(',.4f'));
-
-        d3.select('#nv-stacked-area-chart')
-            .append('svg')
-            .datum(stackedAreaChartData)
-            .transition().duration(1000)
-            .call(stackedAreaChart)
-            .each('start', function() {
-                setTimeout(function() {
-                    d3.selectAll('#nv-stacked-area-chart *').each(function() {
-                        if(this.__transition__)
-                            this.__transition__.duration = 1;
-                    })
-                }, 0)
-            });
-
-        nv.utils.windowResize(stackedAreaChart.update);
-        return stackedAreaChart;
-    });
+    
 
   
     
