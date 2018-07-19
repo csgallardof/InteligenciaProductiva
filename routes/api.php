@@ -11,4 +11,6 @@ Route::get('/cifras-nacionales/pib-actividad-economica/{tipo_cifra_id}/{anio}','
 
 Route::get('/cifras-nacionales/pib-zona/{tipo_cifra_id}/{anio}','CnCifrasNacionalesController@obtenerPibZona');
 
+Route::get('/cifras-nacionales/pib-zona/{tipo_cifra_id}','CnCifrasNacionalesController@obtenerPibPorZona');
+
 Route::get('/cifras-nacionales/pib-provincia/{tipo_cifra_id}/{anio}','CnCifrasNacionalesController@obtenerPibProvincia');

@@ -21,8 +21,17 @@ class CnCifrasNacionales extends Model
                                 ->Where('nombre_cifra_nacional','=','PIB por Zonas')
                                 ->where('tipo_cifra_nacional_id','=',$id)
                                 ->Where('año','=',$anio)
-                                ->select('cn_zonas.descripcion_zona as label','cn_cifras_nacionales.valor as value','cn_zonas.nombre_zona as key')
+                                ->select('cn_zonas.descripcion_zona as label','cn_cifras_nacionales.año as año','cn_cifras_nacionales.valor as value','cn_zonas.nombre_zona as key')
                                 ->orderBy('cn_cifras_nacionales.valor', 'desc')
+                                ->get();
+
+    }
+
+    public static function cnCifrasNacionalesPibPorZona($id){
+       return CnCifrasNacionales::join('cn_zonas','cn_zonas.id', '=','cn_cifras_nacionales.zona_id')
+                                ->Where('nombre_cifra_nacional','=','PIB por Zonas')
+                                ->where('tipo_cifra_nacional_id','=',$id)
+                                ->select('cn_zonas.descripcion_zona as label','cn_cifras_nacionales.año as año','cn_cifras_nacionales.valor as value','cn_zonas.nombre_zona as key')
                                 ->get();
 
     }
@@ -33,7 +42,7 @@ class CnCifrasNacionales extends Model
                                 ->where('tipo_cifra_nacional_id','=',$id)
                                 ->Where('año','=',$anio)
                                 ->select('cn_provincias.nombre_provincia as label','cn_cifras_nacionales.valor as value','cn_cifras_nacionales.provincia_id as key')
-                                ->orderBy('cn_cifras_nacionales.valor', 'desc')
+                                ->orderBy('cn_cifras_nacionales.valor', 'desc') 
                                 ->get();
 
     }
