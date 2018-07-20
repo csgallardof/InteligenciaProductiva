@@ -28,7 +28,7 @@
 														Reportes<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
-														<li><a href="/reporte-home/lista-propuesta/1/1">Propuestas en Análisis</a></li>
+														<li><a href="/reporte-home/lista-propuesta/1/1">Propuestas en Revisión</a></li>
 														<li><a href="/reporte-home/lista-propuesta/3/1">Propuestas en Desarrollo</a></li>
 														<li><a href="/reporte-home/lista-propuesta/4/1">Propuestas en Finalizado</a></li>
 														<li><a href="/dialogo-nacional-estadisticas">Estadisticas</a></li>
@@ -122,7 +122,7 @@
 						<span>Reportes</span>
 					</a>
 				<ul class="sub-menu">
-					<li><a href="/reporte-home/lista-propuesta/1/1">Propuestas en Análisis</a></li>
+					<li><a href="/reporte-home/lista-propuesta/1/1">Propuestas en Revisión</a></li>
 					<li><a href="/reporte-home/lista-propuesta/3/1">Propuestas en Desarrollo</a></li>
 					<li><a href="/reporte-home/lista-propuesta/4/1">Propuestas en Finalizado</a></li>
 					<li><a href="/dialogo-nacional-estadisticas">Estadisticas</a></li>
