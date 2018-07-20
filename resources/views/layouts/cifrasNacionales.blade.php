@@ -11,7 +11,7 @@
 	@section('head')
 			<!-- ================== BEGIN BASE CSS STYLE ================== -->
 			<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-			<link href="/cn-assets/css/default/style.min.css" rel="stylesheet" />
+			
 			<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" />
 			<!-- ================== END BASE CSS STYLE ================== -->
@@ -21,10 +21,12 @@
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 
 		@section('start_css')
+			<link href="/cn-assets/css/default/style.min.css" rel="stylesheet" />
 			<link href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
 			<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
 			<!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 			<link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+
 			
 			
             

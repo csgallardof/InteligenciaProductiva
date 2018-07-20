@@ -892,6 +892,16 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     }
 
 }
+
+@media(max-width: 979px) {
+
+  /*Titulos*/
+  .main-content {
+    padding: 20px 20px 0px 20px !important;
+  }
+
+}
+
 @media (max-width: 480px) {
     .profile-left {
         width: 100%;
