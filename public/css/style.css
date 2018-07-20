@@ -1110,12 +1110,12 @@ legend {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-    background: #edf0f5;
+    background: #ffffff;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-    background: #348fe2;
+    background: #ffffff;
 }
 .dropdown-menu .divider {
     border-color: #eee;
@@ -5706,18 +5706,23 @@ body.flat-black {
 }
 .pace-progress {
     position: fixed;
-    top: 80px;
+    top: 0px;
     left: 0;
     right: 0;
     text-align: center;
     height: 3px;
-    background: #00acac;
+    background: #000000;
     -webkit-transition: width 1s;
     -moz-transition: width 1s;
     -o-transition: width 1s;
     transition: width 1s;
     z-index: 2000;
 }
+
+.pace-progress {
+    background: #000000 !important;
+}
+
 .pace:before {
     content: '';
     background: none;
@@ -5731,13 +5736,13 @@ body.flat-black {
     display: block;
     position: fixed;
     z-index: 2000;
-    top: 65px;
+    top: 0px;
     right: 8px;
     width: 14px;
     height: 14px;
     border: solid 2px transparent;
-    border-top-color: #00acac;
-    border-left-color: #00acac;
+    border-top-color: #000000;
+    border-left-color: #000000;
     border-radius: 10px;
     -webkit-animation: pace-spinner 400ms linear infinite;
     -moz-animation: pace-spinner 400ms linear infinite;
@@ -6869,8 +6874,36 @@ select option {
   margin-bottom: 25px;
 }
 
-.SandboxRoot.env-bp-970 .timeline-Tweet-text .twtr-tweet-text .timeline-Tweet-text {
+p.timeline-Tweet-text a {
   font-size: 20px !important;
   line-height: 25px !important;
   font-weight: 200 !important;
+}
+
+/* Twitter Feed */
+
+.twitter-timeline {
+  max-width: 100%;
+}
+.twitter-fa {
+  font-size: 25px;
+  color: #FFFFFF;
+}
+.twitter-panel-title {
+ font-size: 18px !important;
+ margin: 0;
+ color: #FFFFFF;
+}
+.twitter-panel-heading {
+
+  padding: 10px 10px 10px 15px;
+
+  background-image:    -moz-radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
+  background-image: -webkit-radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
+  background-image:      -o-radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
+  background-image:     -ms-radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
+  background-image:         radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
+}
+.twitter-panel {
+ margin-top: 25px;
 }

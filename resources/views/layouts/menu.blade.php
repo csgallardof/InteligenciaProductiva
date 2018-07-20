@@ -53,7 +53,7 @@
 														Herramientas<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
-														<li><a href="http://servicios.industrias.gob.ec/site_rue/rue.html">Registro Único de Empresas</a></li>
+														<!-- <li><a href="http://servicios.industrias.gob.ec/site_rue/rue.html">Registro Único de Empresas</a></li>
 														<li><a href="http://servicios.industrias.gob.ec/site_rum/rum.html">Registro Único de MiPymes</a></li>
 														<li><a href="http://servicios.industrias.gob.ec/site_rua/rua.html">Registro Único Artesanal</a></li>
 														<li><a href="http://servicios.industrias.gob.ec/site_rpn/rpn.html">Registro de Producción Nacional</a></li>
@@ -64,7 +64,8 @@
 														<li><a href="https://ecuapass.aduana.gob.ec/">Sistema de Importadores y Exportadores</a></li>
 														<li><a href="http://servicios.industrias.gob.ec/siipro">Sistema de Información Industrial y Productiva</a></li>
 														<li><a href="http://servicios.industrias.gob.ec/tramites/">Ficha de Trámites Institucionales</a></li>
-														<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li>
+														<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li> -->
+														<li><a href="http://servicios.industrias.gob.ec/tramites/">Mipro Trámites</a></li>
 														<li><a href="http://www.exportafacil.gob.ec/">Exporta Facil</a></li>
 														<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li>
 												</ul>
@@ -74,7 +75,8 @@
 														Biblioteca<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
-													<li><a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank">Consultorias & Estudios</a></li>
+													<li><a href="http://servicios.industrias.gob.ec/biblioteca/">Consultorias & Estudios</a></li>
+													<li><a href="http://servicios.industrias.gob.ec/siipro/informes.html">Sistema de Información Industrial y Productiva</a></li>
 													<li><a href="/foro-de-la-produccion-impulso-innovacion">I Foro de la Producción e Impulso a la Innovación</a></li>
 													<li><a href="http://servicios.industrias.gob.ec/site_foro_empresarial/foro_empresarial.html">I Foro Empresarial Andino 2018</a></li>
 												</ul>
@@ -117,7 +119,6 @@
 			<li class="has-sub">
 				<a href="javascript:;">
 						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
 						<span>Reportes</span>
 					</a>
 				<ul class="sub-menu">
@@ -130,7 +131,6 @@
 			<li class="has-sub">
 				<a href="javascript:;">
 						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
 						<span>Información para el Inversionista</span>
 					</a>
 				<ul class="sub-menu">
@@ -146,11 +146,10 @@
 			<li class="has-sub">
 				<a href="javascript:;">
 						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
 						<span>Herramientas</span>
 					</a>
 				<ul class="sub-menu">
-					<li><a href="http://servicios.industrias.gob.ec/site_rue/rue.html">Registro Único de Empresas</a></li>
+					<!-- <li><a href="http://servicios.industrias.gob.ec/site_rue/rue.html">Registro Único de Empresas</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_rum/rum.html">Registro Único de MiPymes</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_rua/rua.html">Registro Único Artesanal</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_rpn/rpn.html">Registro de Producción Nacional</a></li>
@@ -161,7 +160,8 @@
 					<li><a href="https://ecuapass.aduana.gob.ec/">Sistema de Importadores y Exportadores</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/siipro">Sistema de Información Industrial y Productiva</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/tramites/">Ficha de Trámites Institucionales</a></li>
-					<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li>
+					<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li> -->
+					<li><a href="http://servicios.industrias.gob.ec/tramites/">Mipro Trámites</a></li>
 					<li><a href="http://www.exportafacil.gob.ec/">Exporta Facil</a></li>
 					<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li>
 				</ul>
@@ -169,11 +169,11 @@
 			<li class="has-sub">
 				<a href="javascript:;">
 						<b class="caret pull-right"></b>
-						<i class="fa fa-laptop"></i>
 						<span>Biblioteca</span>
 					</a>
 				<ul class="sub-menu">
-					<li><a href="http://servicios.industrias.gob.ec/biblioteca/" target="_blank">Consultorias & Estudios</a></li>
+					<li><a href="http://servicios.industrias.gob.ec/biblioteca/">Consultorias & Estudios</a></li>
+					<li><a href="http://servicios.industrias.gob.ec/siipro/informes.html">Sistema de Información Industrial y Productiva</a></li>
 					<li><a href="/foro-de-la-produccion-impulso-innovacion">I Foro de la Producción e Impulso a la Innovación</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_foro_empresarial/foro_empresarial.html">I Foro Empresarial Andino 2018</a></li>
 				</ul>
