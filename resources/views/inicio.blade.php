@@ -2,10 +2,22 @@
 
 @section('title', 'Home')
 
+
+
 @section('start_css')
   @parent
 @endsection
+@push('css')
+  <link href="plugins/nvd3/nvd3.min.css" rel="stylesheet" />
+  <style>
 
+#chart svg {
+  height: 100%;
+}
+
+</style>
+
+@endpush
 @section('start_js')
   @parent
 @endsection
@@ -133,20 +145,40 @@
         <!-- end #team -->
 
         <!-- begin #team -->
-        <!-- <div id="team" class="content team" data-scrollview="true">
+        <div id="team" class="content team" data-scrollview="true">
 
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
 
                 <div class="row">
 
-                  <h2 id=""><a href="/cifras-nacionales">Cifras Económicas</a></h2><hr />
-                  <p class="site-page-content-paragraph">Texto</p>
+                  <h2 id="">Vizualizaciones</h2><hr />
+                  <p class="site-page-content-paragraph">PIB por Zonas</p>
+                  <div class="panel-body">
+                      <div class="row">
+                          
+                          <div class="col-lg-3">
+                            <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
+                              <option value="" disabled>Seleccione Tipo de Cifra</option>
+                              @foreach($tiposCifrasNacionalesPIBZonas1 as $tiposCifrasNacionalesPIBZonas1)
 
+                                <option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
+                              @endforeach
+                              
+                          </select>
+                          </div>
+                          
+                      </div>
+                      <br><br>
+                      <div id="nv-stacked-area-chart" class="height-lg">
+                        <svg></svg>
+                      </div>
+                    </div>
+                    <h5 id=""><a href="/cifras-nacionales">Ver mas Vizualizaciones</a></h5><hr />
                 </div>
 
             </div>
 
-        </div> -->
+        </div>
         <!-- end #team -->
 
         <div class="row">
@@ -164,22 +196,23 @@
                     </div>
                  </div>
               </div>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            </div>
         </div>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
 
 @endsection
 
 @section('end_js')
   @parent
-
+  
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
 
 @endsection
 
 @section('init_scripts')
-
+  
   <script>
 
       $(document).ready(function() {
@@ -189,6 +222,7 @@
       $(window).on('load', function () {
        $('iframe[id^=twitter-widget-0]').each(function () {
          var head = $(this).contents().find('head');
+         $(this).append('<style>#twitter-widget-0 {height: 448.8px !important;}</style>');
          if (head.length) {
            setTimeout(function(){
              head.append('<style>'+

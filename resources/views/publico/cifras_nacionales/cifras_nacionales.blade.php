@@ -210,10 +210,26 @@
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
 					</div>
-					<h4 class="panel-title">PIB por Zona Millones USD</h4>
+					<h4 class="panel-title">PIB por Zona </h4>
 				</div>
 				<div class="panel-body">
-					<div id="nv-stacked-area-chart" class="height-lg"></div>
+					<div class="row">
+							
+							<div class="col-lg-3">
+								<select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
+									<option value="" disabled>Seleccione Tipo de Cifra</option>
+									@foreach($tiposCifrasNacionalesPIBZonas1 as $tiposCifrasNacionalesPIBZonas1)
+
+										<option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
+									@endforeach
+									
+							</select>
+							</div>
+							
+					</div>
+					<div id="nv-stacked-area-chart" class="height-lg">
+						<svg></svg>
+					</div>
 				</div>
 			</div>
 			<!-- end panel -->

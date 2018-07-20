@@ -335,10 +335,12 @@ var handlePieAndDonutChart = function() {
 
 var handleStackedAreaChart = function() {
     "use strict";
-    
-        $.get('/api/cifras-nacionales/pib-zona/1',function (data){
 
+        var valorTipoCifra= document.getElementById("select-tipo-cifra-pib-zona1").value;
+        console.log(valorTipoCifra); 
+        $.get('/api/cifras-nacionales/pib-zona/'+valorTipoCifra,function (data){
 
+          console.log('entre', data)
           //console.log(data);
           var datos_zona_5_8  = [];
           var datos_zona_2_9  = [];
@@ -461,8 +463,7 @@ var handleStackedAreaChart = function() {
 
                           stackedAreaChart.yAxis.tickFormat(d3.format(',.2f'));
 
-                          d3.select('#nv-stacked-area-chart')
-                              .append('svg')
+                          d3.select('#nv-stacked-area-chart svg')
                               .datum(stackedAreaChartData)
                               .transition().duration(1000)
                               .call(stackedAreaChart)

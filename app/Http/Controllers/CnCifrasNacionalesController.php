@@ -32,6 +32,9 @@ class CnCifrasNacionalesController extends Controller
         $tiposCifrasNacionalesPIBZonas= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
                                                     ->take(4)
                                                     ->get();
+        $tiposCifrasNacionalesPIBZonas1= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
+                                                    ->take(4)
+                                                    ->get();
         $tiposCifrasNacionalesPIBProvincia= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
                                                     ->take(4)
                                                     ->get();
@@ -39,6 +42,7 @@ class CnCifrasNacionalesController extends Controller
 
     	return view('publico.cifras_nacionales.cifras_nacionales')->with(["tiposCifrasNacionalesPIBActividadEconomica"=>$tiposCifrasNacionalesPIBActividadEconomica,
                                                     "tiposCifrasNacionalesPIBZonas"=>$tiposCifrasNacionalesPIBZonas,
+                                                    "tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1,
                                                     "tiposCifrasNacionalesPIBProvincia"=>$tiposCifrasNacionalesPIBProvincia
                                                 ]);
     }

@@ -1,5 +1,6 @@
 <?php
-
+use App\CnCifrasNacionales;
+use App\CnTipoCifraNacional; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,10 @@ Route::get('/cifras-nacionales','CnCifrasNacionalesController@graficaPibActivida
 Auth::routes();
 
 Route::get('/', function () {
-     return view('inicio');
+     $tiposCifrasNacionalesPIBZonas1= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
+                                                    ->take(4)
+                                                    ->get();
+     return view('inicio')->with(["tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1]);
 });
 
 Route::get('/reporte','SolucionesController@reporte1');
