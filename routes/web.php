@@ -1,6 +1,6 @@
 <?php
 use App\CnCifrasNacionales;
-use App\CnTipoCifraNacional; 
+use App\CnTipoCifraNacional;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +17,15 @@ Route::get('/cifras-nacionales','CnCifrasNacionalesController@graficaPibActivida
 
 Auth::routes();
 
+// Route::get('/', function () {
+//      $tiposCifrasNacionalesPIBZonas1= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
+//                                                     ->take(4)
+//                                                     ->get();
+//      return view('inicio')->with(["tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1]);
+// });
+
 Route::get('/', function () {
-     $tiposCifrasNacionalesPIBZonas1= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
-                                                    ->take(4)
-                                                    ->get();
-     return view('inicio')->with(["tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1]);
+     return view('inicio');
 });
 
 Route::get('/reporte','SolucionesController@reporte1');
@@ -73,7 +77,7 @@ Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador'
 
 Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
 
-// Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');  
+// Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
 
