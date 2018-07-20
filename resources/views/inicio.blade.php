@@ -8,7 +8,7 @@
   @parent
 @endsection
 @push('css')
-  <link href="plugins/nvd3/nvd3.min.css" rel="stylesheet" />
+  <!-- <link href="plugins/nvd3/nvd3.min.css" rel="stylesheet" /> -->
   <style>
 
 #chart svg {
@@ -206,7 +206,7 @@
   @parent
 
   <!-- <script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script> -->
-  <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script>
+  <!-- <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script> -->
 
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
