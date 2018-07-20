@@ -2,7 +2,7 @@
 
 @section('title','Inicio')
 
-@section('content')  
+@section('content')
 
 
 		<!-- begin #content -->
@@ -10,7 +10,7 @@
 			<!-- begin breadcrumb -->
 
 			<br />
-			<!-- 
+			<!--
 
 				@if($tipo_fuente==5 or $tipo_fuente==4)
 			<ol class="breadcrumb pull-right">
@@ -19,8 +19,8 @@
 			</ol>
 			@endif
 			 -->
-			
-			
+
+
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
 			<!-- <div class="brand">
@@ -105,9 +105,9 @@
 			</div>
 			<!-- end row -->
 			<div>
-				
-					
-				
+
+
+
 			</div>
 			<!-- begin row -->
 			<div class="row">
@@ -126,18 +126,18 @@
 								@endif
 							</a>
 						</li>
-						
-						
+
+
 					</ul>
 					<div class="tab-content" data-sortable-id="index-3">
 
 						<!--SOLUCIONES RESPONSABLE-->
 						@include('flash::message')
-						
+
 						<div class="tab-pane fade active in" id="responsable">
 							<div class="" data-scrollbar="false">
 								<div>
-									
+
 								</div>
 								<form  method="POST" action="/institucion/seleccion-propuestas-unificadas" enctype="multipart/form-data">
 									{{ csrf_field() }}
@@ -151,7 +151,7 @@
 											<th>Propuesta Unificada</th>
 											<th>Fuente</th>
 											<th>Estado</th>
-											
+
 										</tr>
 									</thead>
 									<tbody>
@@ -169,7 +169,7 @@
 															@else
 																{{$solucionD->nombre_pajustada}}
 															@endif
-															
+
 														</td>
 														<td>
 															@if($solucionD->tipo_fuente == 1)
@@ -179,23 +179,23 @@
 															@endif
 														</td>
 														<td>
-															@if($solucionD->nombre_estado=="Cierre")
+															@if($solucionD->nombre_estado=="Finalizado")
 															<span class="label label-success f-s-12" style="background-color: #28B463">{{$solucionD->nombre_estado}}</span>
 															@endif
 
 															@if($solucionD->nombre_estado=="En Desarrollo")
 															<span class="label label-default f-s-12" style="background-color: #CA6F1E">{{$solucionD->nombre_estado}}</span>
 															@endif
-															
-															@if($solucionD->nombre_estado=="En Análisis")
+
+															@if($solucionD->nombre_estado=="En Revisión")
 															<span class="label label-default f-s-12" style="background-color: #A6ACAF">{{$solucionD->nombre_estado}}</span>
 															@endif
 														</td>
-														
+
 													</tr>
 												@endif
 											@endforeach
-											
+
 										@endif
 
 
@@ -213,7 +213,7 @@
 															@endif
 														</td>
 
-														
+
 													</tr>
 												@endif
 											@endforeach
@@ -228,9 +228,9 @@
 
 						<!--FIN SOLUCIONES RESPONSABLE-->
 
-						
 
-						
+
+
 
 					</div>
 

@@ -235,7 +235,7 @@
 																</span>
 															@endif
 
-															@if($solucionD->nombre_estado=="En Análisis")
+															@if($solucionD->nombre_estado=="En Revisión")
 															<span class="label label-default f-s-12" style="background-color: #A6ACAF">{{$solucionD->nombre_estado}}</span>
 																<span class="label label-info">
 																	@if($solucionD->pajustada_id!=0)
