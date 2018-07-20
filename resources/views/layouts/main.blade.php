@@ -27,7 +27,6 @@
 			<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
       <link href="{{ asset('css/inteligencia.css') }}" rel="stylesheet" />
 			<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-			<link href="{{ asset('plugins/nvd3/nvd3.min.css') }}" rel="stylesheet">
 		@show
 		<!-- ================== END BASE CSS STYLE ================== -->
 
@@ -90,7 +89,7 @@
 	<script>
 	    $(document).ready(function() {
 	        App.init();
-	        
+
 	    });
 	</script>
 	@stack('scripts')
