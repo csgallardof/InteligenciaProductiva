@@ -298,7 +298,7 @@
 
 								@if($resultados->estado_id>=1)
 								<div class="progress progress-striped active " style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
+                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Revisión</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
                                         @if($resultados->estado_id==4)
@@ -338,7 +338,7 @@
 
                                 @if($resultados->estado_id>=1)
 								<div class="progress progress-striped active" style="width:50%">
-                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Análisis</div>
+                                        <div class="progress-bar progress-bar-primary" style="width: 33%">En Revisión</div>
                                         @if($resultados->estado_id>=3)
                                         <div class="progress-bar progress-bar-info" style="width: 33%">En Desarrollo</div>
                                         @if($resultados->estado_id==4)
