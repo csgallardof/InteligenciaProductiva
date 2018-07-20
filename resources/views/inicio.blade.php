@@ -143,43 +143,6 @@
         </div>
         <!-- end #team -->
 
-        <!-- begin #team -->
-        <!-- <div id="team" class="content team" data-scrollview="true">
-
-            <div class="container" data-animation="true" data-animation-type="fadeInDown">
-
-                <div class="row">
-
-                  <h2 id="">Visualizaciones</h2><hr />
-                  <p class="site-page-content-paragraph">PIB por Zonas</p>
-                  <div class="panel-body">
-                      <div class="row">
-
-                          <div class="col-lg-3">
-                            <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
-                              <option value="" disabled>Seleccione Tipo de Cifra</option>
-                              @foreach($tiposCifrasNacionalesPIBZonas1 as $tiposCifrasNacionalesPIBZonas1)
-
-                                <option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
-                              @endforeach
-
-                          </select>
-                          </div>
-
-                      </div>
-                      <br><br>
-                      <div id="nv-stacked-area-chart" class="height-lg">
-                        <svg></svg>
-                      </div>
-                    </div>
-                    <h5 id=""><a href="/cifras-nacionales">Ver mas Visualizaciones</a></h5><hr />
-                </div>
-
-            </div>
-
-        </div> -->
-        <!-- end #team -->
-
         <div class="row">
            <div class="container">
               <div class="col-md-12">
