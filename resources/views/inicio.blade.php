@@ -16,7 +16,6 @@
 }
 
 </style>
-
 @endpush
 @section('start_js')
   @parent
@@ -145,17 +144,17 @@
         <!-- end #team -->
 
         <!-- begin #team -->
-        <div id="team" class="content team" data-scrollview="true">
+        <!-- <div id="team" class="content team" data-scrollview="true">
 
             <div class="container" data-animation="true" data-animation-type="fadeInDown">
 
                 <div class="row">
 
-                  <h2 id="">Vizualizaciones</h2><hr />
+                  <h2 id="">Visualizaciones</h2><hr />
                   <p class="site-page-content-paragraph">PIB por Zonas</p>
                   <div class="panel-body">
                       <div class="row">
-                          
+
                           <div class="col-lg-3">
                             <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
                               <option value="" disabled>Seleccione Tipo de Cifra</option>
@@ -163,22 +162,22 @@
 
                                 <option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
                               @endforeach
-                              
+
                           </select>
                           </div>
-                          
+
                       </div>
                       <br><br>
                       <div id="nv-stacked-area-chart" class="height-lg">
                         <svg></svg>
                       </div>
                     </div>
-                    <h5 id=""><a href="/cifras-nacionales">Ver mas Vizualizaciones</a></h5><hr />
+                    <h5 id=""><a href="/cifras-nacionales">Ver mas Visualizaciones</a></h5><hr />
                 </div>
 
             </div>
 
-        </div>
+        </div> -->
         <!-- end #team -->
 
         <div class="row">
@@ -199,24 +198,28 @@
               <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            </div>
         </div>
-        
+
 
 @endsection
 
 @section('end_js')
   @parent
-  
+
+  <script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script>
+  <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script>
+
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
 
 @endsection
 
 @section('init_scripts')
-  
+
   <script>
 
       $(document).ready(function() {
           Notification.init();
+          // ChartNvd3.init();
       });
 
       $(window).on('load', function () {

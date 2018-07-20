@@ -38,7 +38,7 @@
 		<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 		@show
 		<!-- ================== END BASE JS ================== -->
-		
+
     <!-- Styles -->
 
 	@stack('css')
@@ -59,8 +59,8 @@
 
 		@section('end_js')
 			<!-- ================== BEGIN BASE JS ================== -->
-			
-		    
+
+
 			<script src="/cn-assets/js/theme/default.js"></script>
 			<script src="{{ asset('plugins/jquery/jquery-1.9.1.min.js') }}"></script>
 			<script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
@@ -70,8 +70,7 @@
 			  <script src="{{ asset('crossbrowserjs/respond.min.js') }}"></script>
 			  <script src="{{ asset('crossbrowserjs/excanvas.min.js') }}"></script>
 			<![endif]-->
-			<script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script>
-  			<script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script>
+
 			<script src="{{ asset('plugins/jquery-cookie/jquery.cookie.js') }}"></script>
 			<script src="{{ asset('plugins/scrollMonitor/scrollMonitor.js') }}"></script>
 			<!-- ================== END BASE JS ================== -->
@@ -84,14 +83,14 @@
 		    <script src="{{ asset('js/custom-mipro.js') }}"></script>
 		    <script src="{{ asset('js/apps.js') }}"></script>
 		    <script src="{{ asset('js/dashboard.js') }}"></script>
-  			
+
 
 		@show
 
 	<script>
 	    $(document).ready(function() {
 	        App.init();
-	        ChartNvd3.init();
+	        
 	    });
 	</script>
 	@stack('scripts')
