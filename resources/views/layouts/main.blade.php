@@ -8,6 +8,7 @@
 
 		<meta charset="utf-8" />
 		<title>Inteligencia Productiva - @yield('title')</title>
+		<link rel="shortcut icon" href="{{ asset('imagenes/favicon.ico') }}">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 		<meta content="Sistema de Inteligencia Productiva MIPRO" name="description" />
 		<meta content="Ministerio de Industrias y Productividad" name="author" />
