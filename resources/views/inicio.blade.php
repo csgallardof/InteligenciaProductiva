@@ -39,7 +39,7 @@
 
                                   <div class="row">
                                       <div class="col-xs-8 col-xs-offset-2">
-                                          <form method="GET" action="{{ route('nuevaBusqueda2') }}" id="searchForm" class="search-home input-group">
+                                          <form method="GET" action="{{ route('nuevaBusquedaInteligencia') }}" id="searchForm" class="search-home input-group">
                                               <div class="input-group-btn search-panel hidden-xs">
                                                   <select name="selectBusqueda" id="tipo_dialogo" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                       <option value="no">Filtrar por tipo de diálogo</option>
