@@ -15,18 +15,17 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         Model::unguard();
 
-        /*$this->call(cn_ciiusTableSeeder::class);
-        $this->call(cn_tipo_cifra_nacionalesTableSeeder::class);
-        $this->call(cn_provinciasTableSeeder::class);
-        $this->call(cn_zonasTableSeeder::class);
-        $this->call(cn_tipo_impuestoTableSeeder::class);
-        $this->call(cn_tipo_fuenteTableSeeder::class);
-        $this->call(cn_tipo_empresaTableSeeder::class);
-        $this->call(cn_subsectorsTableSeeder::class);*/
+        // $this->call(cn_ciiusTableSeeder::class);
+        // $this->call(cn_tipo_cifra_nacionalesTableSeeder::class);
+        // $this->call(cn_provinciasTableSeeder::class);
+        // $this->call(cn_zonasTableSeeder::class);
+        // $this->call(cn_tipo_impuestoTableSeeder::class);
+        // $this->call(cn_tipo_fuenteTableSeeder::class);
+        // $this->call(cn_tipo_empresaTableSeeder::class);
+        // $this->call(cn_subsectorsTableSeeder::class);
 
 
         /*SEEDER PARA  LA TABLA cn_cifras_nacionals */
-
 
         $this->call(cn_cifras_nacionalsTableSeeder::class);
         $this->call(PibSegunActividadEconomicaParticipacionTableSeeder::class);
@@ -39,6 +38,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PibPorProvinciasVariacionAnunalTableSeeder::class);
         $this->call(PibPorProvinciasParticipacionTableSeeder::class);
         $this->call(PibPorProvinciasContribucionVariacionAnualTableSeeder::class);
+        
+        
 
         Model::reguard();
     }
