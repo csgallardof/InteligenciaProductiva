@@ -102,7 +102,7 @@ var handleBarHorizontalChart =function(){
                           .y(function(d) { return d.value })
                           .showValues(true)
                           .duration(500)
-                          .margin({top: 30, right: 20, bottom: 50, left: 475})
+                          .margin({left: 375})
 
                       chart.yAxis
                           .tickFormat(d3.format(',.2f'));
@@ -185,7 +185,7 @@ var handleBarChart = function() {
                           .y(function(d) { return d.value })
                           .showValues(true)
                           .duration(500)
-                          .margin({top: 30, right: 20, bottom: 50, left: 475})
+                          .margin({left: 175})
 
                       chart.yAxis
                           .tickFormat(d3.format(',.2f'));
@@ -205,132 +205,6 @@ var handleBarChart = function() {
 }
 
 
-var handlePieAndDonutChart = function() {
-    "use strict";
-
-    var valorAnio= document.getElementById("select-anio-pib-zona").value;
-
-    var valorTipoCifra= document.getElementById("select-tipo-cifra-pib-zona").value;
-
-    
-
-    $.get('/api/cifras-nacionales/pib-zona/'+valorTipoCifra+'/'+valorAnio,function (data){
-      
-                      var pieChartData1 = data;
-                   if (valorTipoCifra==1) {
-                      nv.addGraph(function() {
-
-                          var pieChart = nv.models.pieChart()
-
-                            .x(function(d) {return d.key+": "+d.label })
-                            .y(function(d) { return d.value })
-                            .labelType(function(d){ return d.data.key; })
-                            .showLabels(true)
-                            .labelSunbeamLayout(true)
-                            .labelThreshold(.05)
-                            .donut(true) 
-                            .donutRatio(0.05)
-                            .margin({top: 100, right: 50, bottom: 5})
-                            .labelThreshold(0.05);
-                            /*Eliminar la grafica anterior*/
-                           var svg = d3.select("#nv-pie-chart svg");
-                            svg.selectAll("*").remove(); 
-
-                          d3.select('#nv-pie-chart svg')
-                              .datum(pieChartData1)
-                              .transition().duration(1200)
-                              .call(pieChart);
-
-                        return pieChart;
-
-                      });
-                  }else{
-                       
-                    if(valorTipoCifra==2){
-
-                                var datosJSON=[
-                                      
-                                      {
-                                        "key": "Participacion %",
-                                        "color": "#2ECC71",
-                                        "values": data
-                                      }
-                                    ];
-                            }else if(valorTipoCifra==3){
-                                 console.log('estoy aqui');
-                                 var datosJSON=[
-                                      
-                                      {
-                                        "key": "Variacion Anual %",
-                                        "color": "#F4D03F",
-                                        "values": data
-                                      }
-                                    ];
-
-                            }else{
-                                var datosJSON=[
-                                      
-                                      {
-                                        "key": "Contribucion a la Variación anual %",
-                                        "color": "#C0392B",
-                                        "values": data
-                                      }
-                                    ];
-                            }
-                            //console.log(datosJSON);
-                    nv.addGraph(function() {
-                    //console.log('si entro');
-                        //location.reload();
-
-                      var pieChart = nv.models.multiBarHorizontalChart()
-                          .x(function(d) { return d.label })
-                          .y(function(d) { return d.value })
-                          .showValues(true)
-                          .duration(500)
-                          .margin({top: 30, right: 20, bottom: 50, left: 475})
-
-                      pieChart.yAxis
-                          .tickFormat(d3.format(',.2f'));
-                          /*Eliminar la grafica anterior*/
-                          var svg = d3.select("#nv-pie-chart svg");
-                            svg.selectAll("*").remove(); 
-
-                      d3.select('#nv-pie-chart svg')
-                          .datum(datosJSON)
-                          .call(pieChart);
-
-                      nv.utils.windowResize(pieChart.update);
-
-                      return pieChart;
-                    });
-                  }
-
-                      nv.addGraph(function() {
-
-                        var chart = nv.models.pieChart()
-                            .x(function(d) { return d.label })
-                            .y(function(d) { return d.value })
-                            .showLabels(true)
-                            .labelThreshold(.05)
-                            .labelType("percent")
-                            .donut(true) 
-                            .donutRatio(0.35);
-
-
-
-                          d3.select('#nv-donut-chart svg')
-                              .datum(pieChartData1)
-                              .transition().duration(1200)
-                              .call(chart);
-
-                          return chart;
-                      });
-
-
-
-    });
-   
-};
 
 
 var handleStackedAreaChart = function() {
@@ -531,6 +405,132 @@ var handleStackedBarChart = function() {
     });
 };
 
+/*var handlePieAndDonutChart = function() {
+    "use strict";
+
+    var valorAnio= document.getElementById("select-anio-pib-zona").value;
+
+    var valorTipoCifra= document.getElementById("select-tipo-cifra-pib-zona").value;
+
+    
+
+    $.get('/api/cifras-nacionales/pib-zona/'+valorTipoCifra+'/'+valorAnio,function (data){
+      
+                      var pieChartData1 = data;
+                   if (valorTipoCifra==1) {
+                      nv.addGraph(function() {
+
+                          var pieChart = nv.models.pieChart()
+
+                            .x(function(d) {return d.key+": "+d.label })
+                            .y(function(d) { return d.value })
+                            .labelType(function(d){ return d.data.key; })
+                            .showLabels(true)
+                            .labelSunbeamLayout(true)
+                            .labelThreshold(.05)
+                            .donut(true) 
+                            .donutRatio(0.05)
+                            .margin({top: 100, right: 50, bottom: 5})
+                            .labelThreshold(0.05);
+                            //Eliminar la grafica anterior
+                           var svg = d3.select("#nv-pie-chart svg");
+                            svg.selectAll("*").remove(); 
+
+                          d3.select('#nv-pie-chart svg')
+                              .datum(pieChartData1)
+                              .transition().duration(1200)
+                              .call(pieChart);
+
+                        return pieChart;
+
+                      });
+                  }else{
+                       
+                    if(valorTipoCifra==2){
+
+                                var datosJSON=[
+                                      
+                                      {
+                                        "key": "Participacion %",
+                                        "color": "#2ECC71",
+                                        "values": data
+                                      }
+                                    ];
+                            }else if(valorTipoCifra==3){
+                                 console.log('estoy aqui');
+                                 var datosJSON=[
+                                      
+                                      {
+                                        "key": "Variacion Anual %",
+                                        "color": "#F4D03F",
+                                        "values": data
+                                      }
+                                    ];
+
+                            }else{
+                                var datosJSON=[
+                                      
+                                      {
+                                        "key": "Contribucion a la Variación anual %",
+                                        "color": "#C0392B",
+                                        "values": data
+                                      }
+                                    ];
+                            }
+                          
+                    nv.addGraph(function() {
+                  
+
+                      var pieChart = nv.models.multiBarHorizontalChart()
+                          .x(function(d) { return d.label })
+                          .y(function(d) { return d.value })
+                          .showValues(true)
+                          .duration(500)
+                          .margin({top: 30, right: 20, bottom: 50, left: 475})
+
+                      pieChart.yAxis
+                          .tickFormat(d3.format(',.2f'));
+                          //Eliminar la grafica anterior
+                          var svg = d3.select("#nv-pie-chart svg");
+                            svg.selectAll("*").remove(); 
+
+                      d3.select('#nv-pie-chart svg')
+                          .datum(datosJSON)
+                          .call(pieChart);
+
+                      nv.utils.windowResize(pieChart.update);
+
+                      return pieChart;
+                    });
+                  }
+
+                      nv.addGraph(function() {
+
+                        var chart = nv.models.pieChart()
+                            .x(function(d) { return d.label })
+                            .y(function(d) { return d.value })
+                            .showLabels(true)
+                            .labelThreshold(.05)
+                            .labelType("percent")
+                            .donut(true) 
+                            .donutRatio(0.35);
+
+
+
+                          d3.select('#nv-donut-chart svg')
+                              .datum(pieChartData1)
+                              .transition().duration(1200)
+                              .call(chart);
+
+                          return chart;
+                      });
+
+
+
+    });
+   
+};
+*/
 
 
 var ChartNvd3 = function () {
@@ -541,7 +541,7 @@ var ChartNvd3 = function () {
             handleLineChart();
             handleBarChart();
             handleBarHorizontalChart();
-            handlePieAndDonutChart();
+            //handlePieAndDonutChart();
             handleStackedAreaChart();
             handleStackedBarChart();
             

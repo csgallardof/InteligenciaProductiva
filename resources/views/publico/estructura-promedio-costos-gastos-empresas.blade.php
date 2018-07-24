@@ -7,6 +7,7 @@
     <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 
+
     <style>
         @media print {
 
@@ -29,6 +30,7 @@
 
       <div class="col-sm-3 hidden-xs">
           <div class="menu-lateral-general form-group menuVertical" >
+            
                <ul class="nav">
                    <li class="has-sub"><a href="#costosparaelsectorindustrial" class="titulo"> Costos para el Sector Industrial en el Ecuador </a> </li>
                    <li class="has-sub"><a href="#materialesConstruccion" class="titulo">Precios del mercado - Materiales de Construcción</a> </li>
@@ -37,7 +39,7 @@
                    <li class="has-sub"><a href="#salarioMinimo" class="titulo">Salario Mínimo</a></li>
                    <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios al consumidor</a></li>
                    <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios de la Construcción</a></li>
-                   <li class="has-sub"><a href="#comercioTransfronterizo" class="titulo">Comercio Transfronterizo</a>
+                   <li class="has-sub"><b class="caret pull-right"></b><a href="#comercioTransfronterizo" class="titulo">Comercio Transfronterizo</a>
                             <ul class="sub-menu">
                               <li ><a href="#costoTiempoExportar" class="subtitulo">Costos y tiempo para exportar (2018)</a></li>
                               <li ><a href="#costoTiempoImportar" class="subtitulo">Costos y tiempo para importar (2018)</a></li>
@@ -58,6 +60,7 @@
                    <li class="has-sub"><a href="#energiaElectricaIndustrial" class="titulo">Energía Eléctrica Industrial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">Energía Eléctrica Comercial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">Energía Eléctrica Residencial</a></li>
+                  
                 </ul>
         </div>
       </div>

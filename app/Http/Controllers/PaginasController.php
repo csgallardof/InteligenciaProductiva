@@ -16,7 +16,8 @@ use App\Ambit;
 use App\EstadoSolucion;
 use DB;
 use Illuminate\Support\Collection as Collection;
-
+use App\CnCifrasNacionales;
+use App\CnTipoCifraNacional;
 
 use App\Provincia;
 use App\Sipoc;
@@ -27,8 +28,13 @@ use App\Auth\Login;
 class PaginasController extends Controller
 {
 
-    public function home(){
-        dd('hola');
+    public function inicio(){
+
+        $tiposCifrasNacionalesPIBZonas1= CnTipoCifraNacional::select('id','nombre_tipo_cifra_nacional')
+                                                     ->take(4)
+                                                     ->get();
+      return view('inicio')->with(["tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1]);
+        
     }
     public function homedialogo(){
 
