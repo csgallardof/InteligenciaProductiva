@@ -135,7 +135,7 @@ var handleStackedAreaChart = function() {
                               .x(function(d) { return d.año })
                               .y(function(d) { return d.value })
                               .controlLabels({stacked: 'Stacked'})
-                              .showControls(false)
+                              .showControls(true)
                               .duration(300);
 
                           stackedAreaChart.xAxis.tickFormat(function(d) {  return d });

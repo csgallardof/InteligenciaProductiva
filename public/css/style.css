@@ -806,6 +806,7 @@ label {
     margin: 0;
     background: #1a2229;
 }
+
 .page-sidebar-minified .sidebar .nav > li.has-sub:hover > a,
 .page-sidebar-minified .sidebar .nav > li.has-sub:focus > a {
     background: #232a2f;
@@ -824,6 +825,7 @@ label {
 .page-sidebar-minified .sidebar .nav > li.has-sub li.has-sub .sub-menu {
     margin-top: -10px;
 }
+
 .sidebar-minify-btn {
     margin: 10px 0;
     float: right;
@@ -6396,6 +6398,15 @@ body.flat-black {
     overflow-y: scroll;
 
 }
+/*
+.menuVertical .nav li ul {
+    display: none;  
+}
+
+.menuVertical .nav li:hover > ul {
+    display: block;  
+}
+*/
 
 .lista{
 	list-style-type: none;

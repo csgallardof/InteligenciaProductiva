@@ -6,17 +6,9 @@
 
 @section('start_css')
   @parent
+  <link href="plugins/nvd3/nv.d3.min.css" rel="stylesheet" /> 
 @endsection
-@push('css')
-  <!-- <link href="plugins/nvd3/nvd3.min.css" rel="stylesheet" /> -->
-  <style>
 
-#chart svg {
-  height: 100%;
-}
-
-</style>
-@endpush
 @section('start_js')
   @parent
 @endsection
@@ -142,6 +134,35 @@
             </div>
         </div>
         <!-- end #team -->
+        <div class="row">
+           <div class="container">
+              <div class="col-md-12">
+                <hr />
+                 <div class="panel-body">
+                      <div class="row">
+                          <h2>Visualizaciones</h2>
+                          <div class="col-lg-3">
+                            <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
+                              <option value="" disabled>Seleccione Tipo de Cifra</option>
+                              @foreach($tiposCifrasNacionalesPIBZonas1 as $tiposCifrasNacionalesPIBZonas1)
+
+                                <option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
+                              @endforeach
+                              
+                          </select>
+                          </div>
+                          
+                      </div>
+                          <br><br>
+                      <div id="nv-stacked-area-chart" class="height-lg">
+                        <svg></svg>
+                      </div>
+                      <a href="/cifras-nacionales">Mas visualizaciones</a>
+                </div>
+              </div>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+           </div>
+        </div>
 
         <div class="row">
            <div class="container">
@@ -168,8 +189,8 @@
 @section('end_js')
   @parent
 
-  <!-- <script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script> -->
-  <!-- <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script> -->
+  <script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script>
+  <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script> 
 
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
@@ -182,7 +203,7 @@
 
       $(document).ready(function() {
           Notification.init();
-          // ChartNvd3.init();
+           ChartNvd3.init();
       });
 
       $(window).on('load', function () {
