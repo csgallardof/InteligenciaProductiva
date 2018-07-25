@@ -6,6 +6,7 @@
   @parent
     <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
+    
 
 
     <style>
@@ -29,38 +30,47 @@
     <div class="content row main-content">
 
       <div class="col-sm-3 hidden-xs">
-          <div class="menu-lateral-general form-group menuVertical" >
+          <div class="menu-lateral-general form-group menuVertical">
             
+            <div class="input-group" style="padding-right: 10px;padding-bottom: 10px">
+                <input type="text" class="form-control" placeholder="Buscar Menu" id="buscar"/>
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                </span>
+            </div>
+                                                              
+                                            
+                                        
                <ul class="nav">
-                   <li class="has-sub"><a href="#costosparaelsectorindustrial" class="titulo"> Costos para el Sector Industrial en el Ecuador </a> </li>
-                   <li class="has-sub"><a href="#materialesConstruccion" class="titulo">Precios del mercado - Materiales de Construcción</a> </li>
-                   <li class="has-sub"><a href="#aguaPotable" class="titulo"> Agua Potable</a>
-                   <li class="has-sub"><a href="#materiasPrimas" class="titulo"> Materias Primas</a></li>
-                   <li class="has-sub"><a href="#salarioMinimo" class="titulo">Salario Mínimo</a></li>
-                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios al consumidor</a></li>
-                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">Índice de Precios de la Construcción</a></li>
-                   <li class="has-sub"><b class="caret pull-right"></b><a href="#comercioTransfronterizo" class="titulo">Comercio Transfronterizo</a>
+                   <li class="has-sub"><a href="#costosparaelsectorindustrial" class="titulo">1. Costos para el Sector Industrial en el Ecuador </a> </li>
+                   <li class="has-sub"><a href="#materialesConstruccion" class="titulo">2. Precios del mercado - Materiales de Construcción</a> </li>
+                   <li class="has-sub"><a href="#aguaPotable" class="titulo">3. Agua Potable</a>
+                   <li class="has-sub"><a href="#materiasPrimas" class="titulo">4. Materias Primas</a></li>
+                   <li class="has-sub"><a href="#salarioMinimo" class="titulo">5. Salario Mínimo</a></li>
+                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">6. Índice de Precios al consumidor</a></li>
+                   <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">7. Índice de Precios de la Construcción</a></li>
+                   <li class="has-sub"><a href="#comercioTransfronterizo" class="titulo">8. Comercio Transfronterizo</a>
                             <ul class="sub-menu">
-                              <li ><a href="#costoTiempoExportar" class="subtitulo">Costos y tiempo para exportar (2018)</a></li>
-                              <li ><a href="#costoTiempoImportar" class="subtitulo">Costos y tiempo para importar (2018)</a></li>
-                              <li ><a href="#aperturaNegocio" class="subtitulo">Apertura de Negocio (2018)</a></li>
-                              <li ><a href="#manejoPermisosContruccion" class="subtitulo">Manejo de permisos de construcción (2018)</a></li>
-                              <li ><a href="#registroPropiedad" class="subtitulo">Registro de Propiedad (2018)</a></li>
-                              <li ><a href="#pagoImpuestos" class="subtitulo">Pago de Impuestos (2018)</a></li>
-                              <li ><a href="#cumplimientoContratos" class="subtitulo">Cumplimiento de Contratos (2018)</a></li>
-                              <li ><a href="#resolucionInsolvencias" class="subtitulo">Resolución de insolvencias (2018)</a></li>
+                              <li ><a href="#costoTiempoExportar" class="subtitulo">8.1. Costos y tiempo para exportar (2018)</a></li>
+                              <li ><a href="#costoTiempoImportar" class="subtitulo">8.2. Costos y tiempo para importar (2018)</a></li>
+                              <li ><a href="#aperturaNegocio" class="subtitulo">8.3. Apertura de Negocio (2018)</a></li>
+                              <li ><a href="#manejoPermisosContruccion" class="subtitulo">8.4. Manejo de permisos de construcción (2018)</a></li>
+                              <li ><a href="#registroPropiedad" class="subtitulo">8.5. Registro de Propiedad (2018)</a></li>
+                              <li ><a href="#pagoImpuestos" class="subtitulo">8.6. Pago de Impuestos (2018)</a></li>
+                              <li ><a href="#cumplimientoContratos" class="subtitulo">8.7. Cumplimiento de Contratos (2018)</a></li>
+                              <li ><a href="#resolucionInsolvencias" class="subtitulo">8.8. Resolución de insolvencias (2018)</a></li>
                             </ul>
                    </li>
-                   <li class="has-sub"><a href="#combustibles" class="titulo">Combustibles</a></li>
+                   <li class="has-sub"><a href="#combustibles" class="titulo">9. Combustibles</a>
                             <ul class="sub-menu">
-                              <li ><a href="#sectorIndustrial" class="subtitulo">Sector Industrial (Julio 2018)</a></li>
-                              <li ><a href="#transCargaPesadaInternacional" class="subtitulo">Trans Carga Pesada Internacional (Julio 2018)</a></li>
-                              <li ><a href="#sectorusoparticular" class="subtitulo">Sector Uso Particular y Pesca DEP (Julio 2018)</a></li>
+                              <li ><a href="#sectorIndustrial" class="subtitulo">9.1. Sector Industrial (Julio 2018)</a></li>
+                              <li ><a href="#transCargaPesadaInternacional" class="subtitulo">9.2. Trans Carga Pesada Internacional (Julio 2018)</a></li>
+                              <li ><a href="#sectorusoparticular" class="subtitulo">9.3. Sector Uso Particular y Pesca DEP (Julio 2018)</a></li>
                             </ul>
-                   <li class="has-sub"><a href="#energiaElectricaIndustrial" class="titulo">Energía Eléctrica Industrial</a></li>
-                   <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">Energía Eléctrica Comercial</a></li>
-                   <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">Energía Eléctrica Residencial</a></li>
-                  
+                  </li>
+                   <li class="has-sub"><a href="#energiaElectricaIndustrial" class="titulo">10. Energía Eléctrica Industrial</a></li>
+                   <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">11. Energía Eléctrica Comercial</a></li>
+                   <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">12. Energía Eléctrica Residencial</a></li>
                 </ul>
         </div>
       </div>
@@ -745,6 +755,7 @@
   <script src="{{ asset('js/apps.js') }}"></script>
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/Animacion_Enlaces-Internos/animacion_enlaces_internos.js') }}"></script>
+  <script src="{{ asset('js/BuscadorMenu/buscadorMenu.js') }}"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->
 
 
@@ -759,19 +770,4 @@
 
 @endsection
 
-@section('end_js')
-  @parent
 
-  <script>
-
-    $(document).ready(function() {
-      App.init();
-
-      //TablaBasica.init();
-
-      //tablasgenerales
-    });
-
-  </script>
-
-@endsection
