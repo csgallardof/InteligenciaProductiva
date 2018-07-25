@@ -141,6 +141,7 @@
                  <div class="panel-body">
                       <div class="row">
                           <h2>Visualizaciones</h2>
+                          <p class="site-page-content-paragraph">Producto Interno Bruto (PIB) por zonas de desarrollo</p>
                           <div class="col-lg-3">
                             <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
                               <option value="" disabled>Seleccione Tipo de Cifra</option>
@@ -157,7 +158,7 @@
                       <div id="nv-stacked-area-chart" class="height-lg">
                         <svg></svg>
                       </div>
-                      <a href="/cifras-nacionales">Mas visualizaciones</a>
+                      <h4><a href="/cifras-nacionales">Más visualizaciones</a></h4>
                 </div>
               </div>
               <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
