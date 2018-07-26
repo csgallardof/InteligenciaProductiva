@@ -6398,15 +6398,13 @@ body.flat-black {
     overflow-y: scroll;
 
 }
-/*
-.menuVertical .nav li ul {
-    display: none;  
-}
 
-.menuVertical .nav li:hover > ul {
-    display: block;  
-}
-*/
+
+ .menuVertical .nav>li>a{
+    
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+ }
 
 .lista{
 	list-style-type: none;
@@ -6430,6 +6428,7 @@ body.flat-black {
     background-image:         radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 450px);
 
     height: 300px;
+    position: relative;
 
 }
 
@@ -6712,6 +6711,7 @@ table.dataTable thead th {
   /*Titulos*/
   .titulo{
       font-size: 13px;
+
   }
 
   .subtitulo{
