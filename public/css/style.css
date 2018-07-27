@@ -6396,6 +6396,7 @@ body.flat-black {
     max-width: 20%;
     overflow-y: scroll;
     padding-right: 12px;
+    z-index: -100;
 }
 
 
@@ -6706,6 +6707,18 @@ table.dataTable thead th {
 
 @media(max-width: 979px) {
 
+  h1 {
+    font-size: 170% !important;
+  }
+
+  .menuVertical {
+      margin-top: 15px;
+  }
+
+  .input-buscar-sidebar-news {
+        font-size: 10px !important;
+  }
+
   /*Titulos*/
   .titulo{
       font-size: 13px;
@@ -6719,6 +6732,20 @@ table.dataTable thead th {
   .main-content {
     margin-top: 50px;
     /* padding: 20px 50px 0px 50px !important; */
+  }
+
+  .menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    margin-right: 5px !important;
+  }
+
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a {
+    font-size: 10px !important;
+    color: #2b73b7 !important;
+    line-height: normal;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    text-decoration: none;
+    cursor: pointer;
   }
 
 }
@@ -6737,6 +6764,20 @@ table.dataTable thead th {
   .main-content {
     margin-top: 100px;
     /* padding: 20px 50px 0px 50px !important; */
+  }
+
+  .menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    margin-right: 10px !important;
+  }
+
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a {
+    font: normal 87.5%/1.4 Arial,sans-serif;
+    color: #2b73b7 !important;
+    line-height: normal;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    text-decoration: none;
+    cursor: pointer;
   }
 
 }
@@ -6919,20 +6960,16 @@ p.timeline-Tweet-text a {
   background-image:     -ms-radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
   background-image:         radial-gradient(50px 100px, circle farthest-corner, #0061a2, #193b68 550px);
 }
+
 .twitter-panel {
  margin-top: 25px;
 }
 
-.menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child) {
-  border-bottom: 1px solid #eee;
-  margin-right: 10px !important;
+.social_network {
+  background-color: #ffffff;
+  height: 120px;
 }
 
-.menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a {
-  font: normal 87.5%/1.4 Arial,sans-serif;
-  color: #2b73b7 !important;
-  line-height: normal;
-  font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
-  text-decoration: none;
-  cursor: pointer;
+.social_network > div {
+  top: 80px;
 }

@@ -33,13 +33,11 @@
           <div class="menu-lateral-general form-group menuVertical">
 
             <div class="input-group" style="padding-right: 10px;padding-bottom: 10px">
-                <input type="text" class="form-control" placeholder="Buscar Menu" id="buscar"/>
+                <input type="text" class="form-control input-buscar-sidebar-news" placeholder="Buscar Menu" id="buscar"/>
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
             </div>
-
-
 
                <ul class="nav menu-contenido-varios">
                    <li class="has-sub"><a href="#costosparaelsectorindustrial" class="titulo">1. Costos para el Sector Industrial en el Ecuador </a> </li>

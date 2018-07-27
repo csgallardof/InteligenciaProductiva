@@ -1,5 +1,4 @@
 <!-- begin #footer -->
-<br /><br />
 
 <div id="social_network" class="social_network">
     <div class="col-md-12">
@@ -9,8 +8,6 @@
       <a href="https://www.flickr.com/photos/IndustriasEcuador"><img src="{{ asset('imagenes/flicker.png') }}" width="30px" height="30px" /></a>
     </div>
 </div>
-
-<br /><br />
 
 <div id="footer" class="footer p-0">
     <div class="col-md-12">
