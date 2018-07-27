@@ -6,7 +6,7 @@
 
 @section('start_css')
   @parent
-  <link href="plugins/nvd3/nv.d3.min.css" rel="stylesheet" /> 
+  <link href="plugins/nvd3/nv.d3.min.css" rel="stylesheet" />
 @endsection
 
 @section('start_js')
@@ -70,6 +70,11 @@
 
                 <div class="row">
 
+                  <div class="col-sm-1 col-xs-1 box">
+                      <div class="container2 text-center">
+                      </div>
+                  </div>
+
                     <div class="col-sm-2 col-xs-2 box">
                         <div class="container2 text-center">
                           <a href="/cifras"><img class="home_part1_size_images" src="{{ asset('imagenes/homeiconos/cifras.png') }}"></a>
@@ -120,7 +125,12 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-2 col-xs-2 box">
+                    <div class="col-sm-1 col-xs-1 box">
+                        <div class="container2 text-center">
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-sm-2 col-xs-2 box">
                         <div class="container2 text-center">
                           <a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#"><img class="home_part1_size_images" src="{{ asset('imagenes/homeiconos/tramites.png') }}"></a>
                           <div class="text-block2 img-over text-center">
@@ -128,53 +138,51 @@
                             <p class="home_iconos_text_2">SIMPLIFICACIÓN</p>
                           </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
         </div>
+
+        <br /><br />
         <!-- end #team -->
         <div class="row">
            <div class="container">
               <div class="col-md-12">
-                <hr />
                  <div class="panel-body">
                       <div class="row">
-                          <h2>Visualizaciones</h2>
+                          <h2>Visualizaciones</h2><hr />
                           <p class="site-page-content-paragraph">Producto Interno Bruto (PIB) por zonas de desarrollo</p>
                           <div class="col-lg-3">
-                            <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart()" class="form-control">
+                            <select id="select-tipo-cifra-pib-zona1" onchange="handleStackedAreaChart();" class="form-control">
                               <option value="" disabled>Seleccione Tipo de Cifra</option>
                               @foreach($tiposCifrasNacionalesPIBZonas1 as $tiposCifrasNacionalesPIBZonas1)
-
                                 <option value="{{$tiposCifrasNacionalesPIBZonas1->id}}">{{$tiposCifrasNacionalesPIBZonas1->nombre_tipo_cifra_nacional}}</option>
                               @endforeach
-                              
                           </select>
                           </div>
-                          
                       </div>
                           <br><br>
-                      <div id="nv-stacked-area-chart" class="height-lg">
+                      <div id="nv-stacked-area-chart" class="mipro-nv-chart height-lg">
                         <svg></svg>
                       </div>
                       <h4><a href="/cifras-nacionales">Más visualizaciones</a></h4>
                 </div>
               </div>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            </div>
         </div>
 
+        <br />
         <div class="row">
            <div class="container">
               <div class="col-md-12">
-                <hr />
                  <div class="twitter-panel twitter-panel-danger">
                     <div class="twitter-panel-heading">
                        <h3 class="twitter-panel-title"><i class="twitter-fa fa fa-twitter-square" aria-hidden="true"></i>
                           Ministerio de Industrias y Productividad - @IndustriasEc
                        </h3>
                     </div>
+                    <hr />
                     <div class="panel-body">
                        <a class="twitter-timeline" data-lang="es" data-chrome="noheader nofooter noborders transparent" data-height="400" data-theme="light" data-tweet-limit="3" href="https://twitter.com/IndustriasEc?ref_src=twsrc%5Etfw">Tweets by IndustriasEc</a>
                     </div>
@@ -191,7 +199,7 @@
   @parent
 
   <script src="{{ asset('js/Graficas_Cn_mipro/Cifras_Nacionales_Mipro-inicio.js') }}"></script>
-  <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script> 
+  <script src="{{ asset('plugins/nvd3/nvd3.min.js') }}"></script>
 
   <script src="{{ asset('js/apps.min.js')}}"></script>
   <script src="{{ asset('js/ui-modal-notification.demo.js') }}"></script>
@@ -203,14 +211,31 @@
   <script>
 
       $(document).ready(function() {
+
           Notification.init();
-           ChartNvd3.init();
+          ChartNvd3.init();
+
+          // Fix nvd3 issue repeated tooltip on some charts
+          $("div.mipro-nv-chart")
+          .mouseleave(function() {
+            var tooltips_elements = d3.selectAll('[id^=nvtooltip]');
+            tooltips_elements.each(function (i, v) {
+              $(this).hide();
+              if (v == 1) $(this).prev().remove();
+            });
+          })
+          .mouseenter(function() {
+            var tooltips_elements = d3.selectAll('[id^=nvtooltip]');
+            tooltips_elements.each(function (i, v) { $(this).show(); });
+          });
+          // End Fix nvd3 issue repeated tooltip on some charts
+
       });
 
       $(window).on('load', function () {
        $('iframe[id^=twitter-widget-0]').each(function () {
          var head = $(this).contents().find('head');
-         $(this).append('<style>#twitter-widget-0 {height: 448.8px !important;}</style>');
+         $(this).append('<style>#twitter-widget-0 {height: 500px !important;}</style>');
          if (head.length) {
            setTimeout(function(){
              head.append('<style>'+
