@@ -6756,6 +6756,15 @@ table.dataTable thead th {
   font-size: 16px;
 }
 
+/* Referencia */
+
+.referencia{
+    letter-spacing: -.5px !important;
+    line-height: 1.8 !important;
+    color: red;
+    font-size: 10px;
+}
+
 /* code */
 
 .code-site-page {

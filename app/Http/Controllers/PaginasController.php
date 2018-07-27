@@ -673,6 +673,11 @@ class PaginasController extends Controller
     public function zedes(){
         return view('publico.zedes');
     }
+
+    public function zedes1(){
+        return view('publico.zonas-especiales-desarrollo-economico');
+    }
+
     public function asociacionesPublicoPrivada(){
         return view('publico.asociaciones-publico-privadas');
     }

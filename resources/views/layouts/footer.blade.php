@@ -1,16 +1,17 @@
 <!-- begin #footer -->
 <br /><br />
 
-<div id="social_network" class="social_network">
-    <div class="col-md-12">
+<div id="social_network" class="social_network" style="padding-bottom: 40px;">
+    <div class="col-md-12" style="background-color: whiTe; height: 40px">
       <a href="https://www.facebook.com/IndustriasEcuador/"><img src="{{ asset('imagenes/facebook.png') }}" width="30px" height="30px" /></a>
       <a href="https://twitter.com/industriasec"><img src="{{ asset('imagenes/twitter.png') }}" width="30px" height="30px" /></a>
       <a href="https://www.youtube.com/user/IndustriasEcuador"><img src="{{ asset('imagenes/youtube.png') }}" width="30px" height="30px" /></a>
       <a href="https://www.flickr.com/photos/IndustriasEcuador"><img src="{{ asset('imagenes/flicker.png') }}" width="30px" height="30px" /></a>
+        
     </div>
+
 </div>
 
-<br /><br />
 
 <div id="footer" class="footer p-0">
     <div class="col-md-12">
