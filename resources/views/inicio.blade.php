@@ -184,7 +184,7 @@
                     </div>
                     <hr />
                     <div class="panel-body">
-                       <a class="twitter-timeline" data-lang="es" data-chrome="noheader nofooter noborders transparent" data-height="400" data-theme="light" data-tweet-limit="3" href="https://twitter.com/IndustriasEc?ref_src=twsrc%5Etfw">Tweets by IndustriasEc</a>
+                       <a class="twitter-timeline" data-lang="es" data-chrome="noheader nofooter noborders transparent" data-height="500" data-theme="light" data-tweet-limit="3" href="https://twitter.com/IndustriasEc?ref_src=twsrc%5Etfw">Tweets by IndustriasEc</a>
                     </div>
                  </div>
               </div>
@@ -235,6 +235,7 @@
       $(window).on('load', function () {
        $('iframe[id^=twitter-widget-0]').each(function () {
          var head = $(this).contents().find('head');
+         //$(this).css("background-color", "white");
          $(this).append('<style>#twitter-widget-0 {height: 500px !important;}</style>');
          if (head.length) {
            setTimeout(function(){
@@ -248,7 +249,7 @@
       '.SandboxRoot.env-bp-660 .timeline-Tweet-text{font-size:13px; line-height: 15px; } ' +
       '.SandboxRoot.env-bp-820 .timeline-Tweet-text{font-size:14px; line-height: 18px; } ' +
       '.SandboxRoot.env-bp-970 .timeline-Tweet-text{font-size:15px; line-height: 21px; } ' +
-      '.MediaCard-media {max-width:400px;} </style>');}, 20);
+      '.MediaCard-media {max-width:500px;} </style>');}, 20);
          }
        });
       });

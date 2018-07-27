@@ -351,7 +351,7 @@ label {
     font-weight: 375;
     line-height: 20px;
     color: #ffffff;
-    padding: 25px 25px;
+    padding: 24px 24px;
 }
 
 .header.navbar .navbar-nav > li.active > a,
@@ -6392,16 +6392,15 @@ body.flat-black {
 
 .menuVertical {
     position: fixed;
-    padding-bottom: 700px;
     height: 100%;
     max-width: 20%;
     overflow-y: scroll;
-
+    padding-right: 12px;
 }
 
 
  .menuVertical .nav>li>a{
-    
+
     padding-top: 5px !important;
     padding-bottom: 5px !important;
  }
@@ -6690,7 +6689,7 @@ table.dataTable thead th {
 /* Scrollbar */
 
 .menu-lateral-general::-webkit-scrollbar {
-    width: 10px;
+    width: inherit;
 }
 
 /* Track */
@@ -6702,8 +6701,7 @@ table.dataTable thead th {
 
 /* Handle */
 .menu-lateral-general::-webkit-scrollbar-thumb {
-    background: rgb(12, 60, 85);
-    border: 1px solid rgb(0,0,0);
+    background: rgb(134, 134, 134);
 }
 
 @media(max-width: 979px) {
@@ -6716,6 +6714,11 @@ table.dataTable thead th {
 
   .subtitulo{
       font-size: 12px;
+  }
+
+  .main-content {
+    margin-top: 50px;
+    /* padding: 20px 50px 0px 50px !important; */
   }
 
 }
@@ -6733,7 +6736,7 @@ table.dataTable thead th {
 
   .main-content {
     margin-top: 100px;
-    padding: 20px 50px 0px 50px !important;
+    /* padding: 20px 50px 0px 50px !important; */
   }
 
 }
@@ -6918,4 +6921,18 @@ p.timeline-Tweet-text a {
 }
 .twitter-panel {
  margin-top: 25px;
+}
+
+.menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  margin-right: 10px !important;
+}
+
+.menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a {
+  font: normal 87.5%/1.4 Arial,sans-serif;
+  color: #2b73b7 !important;
+  line-height: normal;
+  font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+  text-decoration: none;
+  cursor: pointer;
 }
