@@ -6,7 +6,7 @@
   @parent
     <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
-    
+
 
 
     <style>
@@ -31,20 +31,18 @@
 
       <div class="col-sm-3 hidden-xs">
           <div class="menu-lateral-general form-group menuVertical">
-            
+
             <div class="input-group" style="padding-right: 10px;padding-bottom: 10px">
-                <input type="text" class="form-control" placeholder="Buscar Menu" id="buscar"/>
+                <input type="text" class="form-control input-buscar-sidebar-news" placeholder="Buscar Menu" id="buscar"/>
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-search"></i>
                 </span>
             </div>
-                                                              
-                                            
-                                        
-               <ul class="nav">
+
+               <ul class="nav menu-contenido-varios">
                    <li class="has-sub"><a href="#costosparaelsectorindustrial" class="titulo">1. Costos para el Sector Industrial en el Ecuador </a> </li>
                    <li class="has-sub"><a href="#materialesConstruccion" class="titulo">2. Precios del mercado - Materiales de Construcción</a> </li>
-                   <li class="has-sub"><a href="#aguaPotable" class="titulo">3. Agua Potable</a>
+                   <li class="has-sub"><a href="#aguaPotable" class="titulo">3. Agua Potable</a></li>
                    <li class="has-sub"><a href="#materiasPrimas" class="titulo">4. Materias Primas</a></li>
                    <li class="has-sub"><a href="#salarioMinimo" class="titulo">5. Salario Mínimo</a></li>
                    <li class="has-sub"><a href="#indicePrecioConsuminor" class="titulo">6. Índice de Precios al consumidor</a></li>
@@ -769,5 +767,3 @@
 
 
 @endsection
-
-

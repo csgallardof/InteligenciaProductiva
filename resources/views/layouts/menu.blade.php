@@ -67,7 +67,7 @@
 														<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li> -->
 														<li><a href="http://servicios.industrias.gob.ec/tramites/">Mipro Trámites</a></li>
 														<li><a href="http://www.exportafacil.gob.ec/">Exporta Facil</a></li>
-														<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li>
+														<!-- <li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li> -->
 												</ul>
 										</li>
 										<li class="dropdown">
@@ -163,7 +163,7 @@
 					<li><a href="http://servicios.industrias.gob.ec/site_encuesta/encuesta.html">Encuestas en Línea</a></li> -->
 					<li><a href="http://servicios.industrias.gob.ec/tramites/">Mipro Trámites</a></li>
 					<li><a href="http://www.exportafacil.gob.ec/">Exporta Facil</a></li>
-					<li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li>
+					<!-- <li><a href="http://encuestas.administracionpublica.gob.ec/index.php/887844/lang-es#">Encuesta de Simplificación de Trámites Productivos</a></li> -->
 				</ul>
 			</li>
 			<li class="has-sub">

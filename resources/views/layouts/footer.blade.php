@@ -1,5 +1,4 @@
 <!-- begin #footer -->
-<br /><br />
 
 <div id="social_network" class="social_network" style="padding-bottom: 40px;">
     <div class="col-md-12" style="background-color: whiTe; height: 40px">
@@ -12,7 +11,10 @@
 
 </div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5cdd055bfbb6b72b28df623e915642251b250e3c
 <div id="footer" class="footer p-0">
     <div class="col-md-12">
         <div class="ecuador_footer_img col-md-9 p-t-10">
