@@ -4,10 +4,9 @@
 
 @section('start_css')
   @parent
+
     <link href="{{ asset('plugins/DataTablesv2/datatables.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
-
-
 
     <style>
         @media print {

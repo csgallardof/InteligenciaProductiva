@@ -6771,7 +6771,7 @@ table.dataTable thead th {
     margin-right: 10px !important;
   }
 
-  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a {
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
     font: normal 87.5%/1.4 Arial,sans-serif;
     color: #2b73b7 !important;
     line-height: normal;
@@ -6811,11 +6811,19 @@ table.dataTable thead th {
 
 /* code */
 
-.code-site-page {
+.code-site-page-2 {
   border-radius: .2rem;
   background-color: hsla(0, 0%, 72%, 0.5);
   padding: .07353em 0;
   color: black;
+}
+
+.code-site-page {
+  border-radius: .2rem;
+  background-color: #ffffff;
+  padding: .07353em 0;
+  color: black;
+  font-style: italic;
 }
 
 .panel-body {
@@ -6983,4 +6991,8 @@ p.timeline-Tweet-text a {
 
 .social_network > div {
   top: 80px;
+}
+
+.site-page-content > h4 {
+  font-weight: 550 !important;
 }

@@ -7,7 +7,7 @@
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great! 
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -73,7 +73,6 @@ Route::get('/zonas-especiales-de-desarrollo-economico1', 'PaginasController@zede
 
 Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
 
-
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
 Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
@@ -81,8 +80,6 @@ Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@est
 // Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
-
-
 
 // rutas pruebas usuarios
 

@@ -13,7 +13,7 @@ $(function(){
 
                  var targetOffset = $target.offset().top;
 
-                 $('html,body').animate({scrollTop: targetOffset - 130}, 1000);
+                 $('html,body').animate({scrollTop: targetOffset - 130}, 650);
 
                  return false;
 
