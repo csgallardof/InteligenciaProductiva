@@ -678,6 +678,14 @@ class PaginasController extends Controller
         return view('publico.zonas-especiales-desarrollo-economico');
     }
 
+    public function polosdesarrollo(){
+        return view('publico.polos-desarrollo');
+    }
+
+    public function insentivostributarios(){
+        return view('publico.insentivos-tributarios');
+    }
+
     public function asociacionesPublicoPrivada(){
         return view('publico.asociaciones-publico-privadas');
     }

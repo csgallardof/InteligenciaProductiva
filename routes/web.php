@@ -71,6 +71,10 @@ Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zede
 
 Route::get('/zonas-especiales-de-desarrollo-economico1', 'PaginasController@zedes1');
 
+Route::get('/polos-de-desarrollo', 'PaginasController@polosdesarrollo');
+
+Route::get('/insentivos-tributarios-y-arancelacios', 'PaginasController@insentivostributarios');
+
 Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
