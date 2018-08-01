@@ -69,6 +69,8 @@
                    <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">11. Energía Eléctrica Comercial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">12. Energía Eléctrica Residencial</a></li>
                 </ul>
+                <!-- Fix Firefox Position Fixed Bottom Problem -->
+                <div class="fixed-sidebar-wrapper"></div>
         </div>
       </div>
 

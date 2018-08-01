@@ -75,7 +75,8 @@
                    </li>
                    <li class="has-sub"><a href="#contacto" class="titulo">9. Contacto</a> </li>
                 </ul>
-
+                <!-- Fix Firefox Position Fixed Bottom Problem -->
+                <div class="fixed-sidebar-wrapper"></div>
         </div>
       </div>
 
@@ -295,9 +296,9 @@
                     </a>
 
                     <h4 id="estadoactual">Estado Actual</h4><hr />
-                    <h4 id="estadozede">ZEDE</h4>
-                    <table class="tableizer-table">
-                    <thead><tr class="tableizer-firstrow"><th>ZEDE</th><th>Ubicación</th><th>Fecha</th><th>Tipología</th><th>Administrador</th><th>Operador</th><th>Área (ha)</th></tr></thead><tbody>
+                    <h4 id="estadozede">ZEDE</h4><hr />
+                    <table class="table table-striped table-bordered">
+                    <thead><tr><th>ZEDE</th><th>Ubicación</th><th>Fecha</th><th>Tipología</th><th>Administrador</th><th>Operador</th><th>Área (ha)</th></tr></thead><tbody>
                      <tr><td>Eloy Alfaro</td><td>Manta, Manabí.</td><td>11/7/2013</td><td>Industrial y Logística.</td><td>Yachay EP</td><td>Refinería del Pacífico</td><td>1.665</td></tr>
                      <tr><td>Yachay</td><td>Urcuquí, Imbabura.</td><td>20-09-2013</td><td>Tecnológica, Industrial y Logística.</td><td>Yachay EP</td><td>Pendiente</td><td>4.27</td></tr>
                      <tr><td>Posorja</td><td>Posorja, Guayaquil, Guayas.</td><td>22-08-2016</td><td>Logística.</td><td>Pendiente</td><td>Pendiente</td><td>127</td></tr>
@@ -305,15 +306,16 @@
                      <tr><td>Quito</td><td>Tababela, Quito, Pichincha</td><td>5/7/2018</td><td>Industrial y Logística</td><td>Pendiente</td><td>Pendiente</td><td>205</td></tr>
                     </tbody></table>
 
-                    <h4 id="estadozonasfrancas">Zonas Francas</h4>
-                    <table class="tableizer-table">
-                    <thead><tr class="tableizer-firstrow"><th>ZONA FRANCA</th><th>AREA    (ha)</th><th>TIPO</th><th>ACTIVIDAD</th><th>AÑO DE VIGENCIA</th><th>UBICACIÓN</th></tr></thead><tbody>
+                    <h4 id="estadozonasfrancas">Zonas Francas</h4><hr />
+                    <table class="table table-striped table-bordered">
+                    <thead><tr><th>ZONA FRANCA</th><th>AREA    (ha)</th><th>TIPO</th><th>ACTIVIDAD</th><th>AÑO DE VIGENCIA</th><th>UBICACIÓN</th></tr></thead><tbody>
                      <tr><td>ZOFRAPORT</td><td>37.39</td><td>Industrial, Comercial, Servicios</td><td>Exportación de atún</td><td>2023</td><td>Guayaquil, Parroquia Posorja</td></tr>
                      <tr><td>TAGSA</td><td>21.44</td><td>Servicios</td><td>Aeropuerto GYE</td><td>2025</td><td>Guayaquil</td></tr>
                      <tr><td>TURISFRANCA</td><td>146.2</td><td>Turística</td><td>Teleférico Quito</td><td>2025</td><td>Quito</td></tr>
                      <tr><td>EMPSA</td><td>1448</td><td>Servicios</td><td>Aeropuerto UIO</td><td>2025</td><td>Quito, Tababela</td></tr>
                      <tr><td>METROZONA</td><td>14.81</td><td>Industrial, Comercial, Servicios</td><td>Exportación de flores y tecnología</td><td>2019</td><td>Quito, Parroquia Yaruquí</td></tr>
                     </tbody></table>
+                    <br />
 
                     <h3 id="regulaZede">¿Cómo se regulan las ZEDE en el país?</h3> <hr>
 
