@@ -39,13 +39,16 @@
 														Información para el Inversionista<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
+													
 														<li><a href="/estructura-promedio-costos-gastos-empresas">Costos y Gastos Industriales</a></li>
-														<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
 														<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
 														<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
+														<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
+														<li><a href="/incentivos-tributarios-y-arancelacios">Incentivos para el Inversionista</a></li>
+														<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
 														<li><a href="/cifras">Cifras Económicas</a></li>
 														<li><a href="/vocaciones">Vocaciones Productivas</a></li>
-														<li><a href="/por-que-invertir-en-ecuador">Incentivos</a></li>
+
 												</ul>
 										</li>
 										<li class="dropdown">

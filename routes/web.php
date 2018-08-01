@@ -24,6 +24,10 @@ Route::get('/inicio2', function () {
      return view('inicio2');
 });
 
+Route::get('/old2', function () {
+     return view('publico.old_2_estructura-promedio-costos-gastos-empresas');
+});
+
 // Route::get('/busquedaAvanzada',[
 //      'uses'=>'PaginasController@busquedaAvanzada',
 //      'as'=>'nuevaBusqueda2'
@@ -63,10 +67,15 @@ Route::get('/indice', 'PaginasController@indices');
 
 Route::get('/por-que-invertir-en-ecuador', 'PaginasController@contratosinversion');
 
-Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
+// Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
+
+Route::get('/zonas-especiales-de-desarrollo-economico', 'PaginasController@zedes1');
+
+Route::get('/polos-de-desarrollo', 'PaginasController@polosdesarrollo');
+
+Route::get('/incentivos-tributarios-y-arancelacios', 'PaginasController@incentivostributarios');
 
 Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
-
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
@@ -75,8 +84,6 @@ Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@est
 // Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
-
-
 
 // rutas pruebas usuarios
 

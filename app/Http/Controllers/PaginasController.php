@@ -34,7 +34,7 @@ class PaginasController extends Controller
                                                      ->take(4)
                                                      ->get();
       return view('inicio')->with(["tiposCifrasNacionalesPIBZonas1"=>$tiposCifrasNacionalesPIBZonas1]);
-        
+
     }
     public function homedialogo(){
 
@@ -43,7 +43,7 @@ class PaginasController extends Controller
 
 
     public function busquedaAvanzadaInteligencia(Request $request){
-        
+
         $datosFiltroSector="";
         $datosFiltroEstado="";
         $datosFiltroAmbito="";
@@ -109,7 +109,7 @@ class PaginasController extends Controller
 
        //dd(strtolower($buscar));
 
-        
+
          else {
 
 
@@ -673,6 +673,19 @@ class PaginasController extends Controller
     public function zedes(){
         return view('publico.zedes');
     }
+
+    public function zedes1(){
+        return view('publico.zonas-especiales-desarrollo-economico');
+    }
+
+    public function polosdesarrollo(){
+        return view('publico.polos-desarrollo');
+    }
+
+    public function incentivostributarios(){
+        return view('publico.incentivos-tributarios');
+    }
+
     public function asociacionesPublicoPrivada(){
         return view('publico.asociaciones-publico-privadas');
     }
@@ -682,12 +695,12 @@ class PaginasController extends Controller
     }
 
 
-    public function estructuraCostosGastos(){ 
+    public function estructuraCostosGastos(){
         return view('publico.estructura-promedio-costos-gastos-empresas');
     }
 
-    public function estructuraCostosGastos2(){ 
-        return view('publico.estructura-promedio-costos-gastos-empresas2');
+    public function estructuraCostosGastos2(){
+        return view('publico.old_2_estructura-promedio-costos-gastos-empresas');
     }
 
 
@@ -1003,7 +1016,7 @@ class PaginasController extends Controller
             $resultados = $resultadoAuxiliar;
         }
 
-        unset($filtros[0]); 
+        unset($filtros[0]);
 
         return view('publico.reportes.reporte-ccpt')->with([
                                             "parametro"=>$buscar,

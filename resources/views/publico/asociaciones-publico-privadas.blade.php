@@ -45,13 +45,13 @@
 			<!-- end page-header -->
 			 <!-- begin panel -->
 					<div class="row" style="padding-left:7%">
-						
+
 						<div class="col-md-7" >
-							
+
                     <div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
                         <div class="panel-heading p-0">
                             <div class="panel-heading-btn m-r-0 m-t-0">
-                                
+
                             </div>
                             <!-- begin nav-tabs -->
                             <div class="tab-overflow">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="nav-tab2-1">
                                 <h4 class="m-t-10"><strong>¿Qué son Asociaciones Público Privadas?</strong></h4>
@@ -107,35 +107,35 @@
 					                                        <tr>
 					                                            <th>Para el Estado</th>
 					                                            <th>Para el Privado</th>
-					                                            
+
 					                                        </tr>
 					                                    </thead>
 					                                    <tbody>
 					                                        <tr class="odd gradeX">
 					                                            <td>Satisfacer servicio u obra pública.</td>
 					                                            <td>Nuevas oportunidades de Inversión antes no disponibles.</td>
-					                                           
+
 					                                        </tr>
 					                                        <tr class="even gradeC">
 					                                            <td>Riesgo compartido,  transferencia de riesgos.</td>
 					                                            <td>Patrocinio Estatal para proyectos de inversión privada.</td>
-					                                            
+
 					                                        </tr>
 					                                        <tr class="odd gradeA">
 					                                            <td>Alivio fiscal.</td>
 					                                            <td>Independencia en financiamiento y progreso en la obra u operación.</td>
-					                                           
+
 					                                        </tr>
 					                                        <tr class="even gradeA">
 					                                            <td>Posibilidad de acceder indirectamente a financiamiento.</td>
 					                                            <td>Beneficios fiscales atractivos.</td>
-					                                           
+
 					                                        </tr>
 					                                        <tr class="odd gradeA">
 					                                            <td>Garantía de cobertura de servicios públicos a largo plazo.</td>
 					                                            <td>Seguridad jurídica en su relación contractual.</td>
-					                                   
-					                                        </tr>   
+
+					                                        </tr>
 					                                    </tbody>
 					                                </table>
 					                            </div>
@@ -160,7 +160,7 @@
 					              	<li>Estabilidad sobre los aspectos esenciales del desarrollo de la inversión e incentivos aplicables.</li>
 					              	<li>Posibilidad de recurrir a arbitraje nacional o internacional en el caso de controversias.</li>
 					              </ul>
-					              
+
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-5">
@@ -176,29 +176,29 @@
 					              	<li align="justify">El desarrollo de actividades productivas, de investigación y desarrollo y en general en las que participe el Estado directamente y en concurrencia con el sector privado, siempre que sean calificados como prioritarios por el Comité APP. </li><br>
 					              	<li>Otros calificados como prioritarios por el Comité Interinstitucional.</li>
 
-					              </ul>        
+					              </ul>
 					            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-6">
                                 <h4 class="m-t-10">Comité Constitucional de Asociaciones Público Privadas</h4>
                                 <p>
-                                	De acuerdo a la normativa vigente, incluyendo el Decreto Ejecutivo 187, la estructura del Comité Interinstitucional de APP está establecida de la siguiente manera: <br>	
-                                	
+                                	De acuerdo a la normativa vigente, incluyendo el Decreto Ejecutivo 187, la estructura del Comité Interinstitucional de APP está establecida de la siguiente manera: <br>
+
 					              <img class="center" width="60%" src="{{ asset('imagenes/APP/comite.PNG') }}" alt="Azuay">
-					            
+
                                 </p>
-                                
+
 					        </div>
-            
-                            
+
+
                         </div>
-			
+
                     </div>
 
                     	<div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
                         <div class="panel-heading p-0">
                             <div class="panel-heading-btn m-r-0 m-t-0">
-                                
+
                             </div>
                             <!-- begin nav-tabs -->
                             <div class="tab-overflow">
@@ -212,7 +212,7 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="nav-tab2-11">
                                 <h4 class="m-t-10"><strong>Principios y Alineamientos</strong></h4>
@@ -227,7 +227,7 @@
 									<li>Cobertura e Inclusión Social (No se podrán excluir áreas geográficas, grupos sociales y pueblos).</li>
 									<li>Derechos de Propiedad.</li>
 								</ul>
-				              
+
 				            </p>
                             </div>
                             <div class="tab-pane fade" id="nav-tab2-12">
@@ -252,31 +252,31 @@
 					                                        <tr>
 					                                            <th>PROYECTO</th>
 					                                            <th>DESCRIPCIÓN</th>
-					                                            
+
 					                                        </tr>
 					                                    </thead>
 					                                    <tbody>
 					                                        <tr class="odd gradeX">
 					                                            <td>Proyecto Puerto Bolívar <br>(May 2016).</td>
 					                                            <td>Socio: Yilport (Turquía), perteneciente a YILDRIM. <br> Inversión: 750 MM <br>Empleo: 600  directos, 1800 indirectos</td>
-					                                           
+
 					                                        </tr>
 					                                        <tr class="even gradeC">
 					                                            <td>Proyecto Puerto Posorja <br>(May 2016)</td>
 					                                            <td>Socio: DP World (Dubai) <br> Inversión: 1.200 MM <br> Empleo: 1.000 directos, 2.000 indirectos</td>
-					                                            
+
 					                                        </tr>
 					                                        <tr class="odd gradeA">
 					                                            <td>Proyecto Carretera Río 7 – Huaquillas <br> (Jun 2016)</td>
 					                                            <td>Socio: CONSUR, Consorcio (Colombo–Ecuatoriano) <br> Inversión: 665 MM <br>Empleo: 1.000 directos, 3.000 indirectos</td>
-					                                           
+
 					                                        </tr>
 					                                        <tr class="even gradeA">
 					                                            <td>Proyecto Viaducto Sur de Guayaquil <br> (Nov 2017)</td>
 					                                            <td>Socio: Diamond Consultants and Advisory (EE.UU) <br> Inversión: 1.100 MM <br> Empleo: 10.000 entre directos e indirectos.</td>
-					                                           
+
 					                                        </tr>
-					                                           
+
 					                                    </tbody>
 					                                </table>
 					                            </div>
@@ -285,31 +285,31 @@
 
                             </div>
 
-                            
+
                         </div>
                     </div>
                     <div class="panel panel-default panel-with-tabs " data-sortable-id="ui-unlimited-tabs-2">
                         <div class="panel-heading p-0">
-                           
-                            
+
+
                         </div>
 
-                        
+
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="nav-tab2-21">
                                 <h4 align="justify"><strong>Acciones MIPRO en la promoción de la ley de incentivos para Asociaciones Público Privadas y construcción de portafolio de proyectos</strong></h4>
-							
+
 
             			<p align="justify">
                                 A partir de la reciente expedición del <strong><u> Decreto Ejecutivo 187</u></strong> de 13 oct de 2017, en el cual se delega a la máxima autoridad del MIPRO presidir el Comité APP en desarrollo de MIPYMES en artesanías, industrias básicas, intermedias y finales, agroindustria, procesamiento acuícola, desarrollo territorial industrial, sistema de calidad y competencias propias. A continuación se detallan la gestión del MIPRO en el desarrollo de las APP: <br>
-                                <br><strong>Actividades Principales:<br></strong> 
+                                <br><strong>Actividades Principales:<br></strong>
                                 <br>El Ministerio de Industrias y Productividad (MIPRO) con apoyo del Banco Interamericano de Desarrollo (BID) y la Alianza para el Emprendimiento e Innovación (AEI), realizaron el <strong><i>1er Foro de la Producción e Impulso a la Innovación y Competitividad</i></strong>, para promover, estimular y fortalecer el diálogo Estado-Sector Productivo. Este Foro permitió articular acciones conjuntas para que el sector empresarial exponga, a través de un conversatorio, su visión acerca del desarrollo productivo en el Ecuador y el sector público, para fortalecer la construcción de políticas públicas de fomento productivo. En este contexto, el 29 de enero se reunieron expertos del BID, representantes de Embajadas y Empresas, y Autoridades de las distintas Carteras de Estado del país, para trabajar en diferentes estrategias para impulsar la innovación, las cuales permitan promover la competitividad de los sectores productivos, tales como: viajes de captura tecnológicas, desafíos de innovación a partir de necesidades empresariales públicas y/o privadas, financiamiento de emprendimientos, entre otros. <br>
                                 <br>Adicionalmente, el 19 y 20 de febrero de 2018, el Ministerio de Comercio Exterior, la Embajada de Canadá y el Banco de Desarrollo de América Latina CAF, realizaron el taller “Desafíos y factores de éxito en la formulación y análisis de Alianzas Público Privadas”, el cual contó con la participación de Instituciones del Estado como: Ministerio de Industrias y Productividad, Ministerio de Transportes y Obras Públicas, Finanzas, SENPLADES, SENESCYT, Secretaría General de la Administración, Municipios de Quito y Guayaquil, así como representantes de Infrastructure Ontario (IO), quienes presentaron el entorno normativo, legislativo y de gobernanza que han hecho de IO, un ejemplo exitoso en planeación, adquisición, y entrega de proyectos APP. <br>
                                 <br>Finalmente, el Ministerio de Industrias y Productividad cuenta con el apoyo de la cooperación técnica de organismos multilaterales, que tienen interés en impulsar proyectos bajo el esquema de APP, que permitan modernizar y ampliar la infraestructura y productividad del país en sus diferentes sectores contribuyendo a mejorar su competitividad, entregando a los usuarios un servicio adecuado a sus necesidades. Así, actualmente el MIPRO analiza varias propuestas de iniciativas tanto públicas como privadas, de nuevos proyectos de interés general bajo el esquema  APP.
                                 </p>
                             </div>
-                           
-                            
+
+
                         </div>
                     </div>
 
@@ -333,10 +333,10 @@
 									</div>
 									<div id="collapseOne" class="panel-collapse collapse in">
 										<div class="panel-body">
-						
+
 						<a href="#modal-message"class="btn btn-sm" data-toggle="modal" style='width:75%; height:25%'><img class="img-responsive center-block"  src="{{ asset('imagenes/APP/fase_precontraactual.PNG') }}" alt="Azuay"></a>
 						<div class="modal modal-message fade" id="modal-message">
-								<div class="modal-dialog"> 
+								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header" >
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -350,12 +350,12 @@
 										</div>
 										<div class="modal-footer">
 											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
-											
+
 										</div>
 									</div>
 								</div>
 							</div>
-                      
+
 
 										</div>
 									</div>
@@ -380,19 +380,19 @@
 											<h4 class="modal-title"> Proceso detallado de una APP de INICIATIVA PRIVADA</h4>
 										</div>
 										<div class="modal-body">
-											
+
 											<div class="col-md-12">
 					                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/proceso-mapa.PNG') }}" alt="Azuay">
 					                      </div>
 										</div>
 										<div class="modal-footer">
 											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
-											
+
 										</div>
 									</div>
 								</div>
 							</div>
-                        
+
 
 										</div>
 									</div>
@@ -417,24 +417,24 @@
 											<h4 class="modal-title">  Proceso detallado de una APP de INICIATIVA PÚBLICA</h4>
 										</div>
 										<div class="modal-body">
-											
+
 											<div class="col-md-12">
 					                        <img class="img-responsive center-block"  src="{{ asset('imagenes/APP/app-iniciativa-publica.PNG') }}" alt="Azuay">
 					                      </div>
 										</div>
 										<div class="modal-footer">
 											<a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Salir</a>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-                      
 
 										</div>
 									</div>
 								</div>
-								
+							</div>
+
+
+										</div>
+									</div>
+								</div>
+
 							</div>
 					    </div>
 					  <div>
@@ -447,9 +447,23 @@
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/1040 APP_2017_MTOP_ESP_DECRETO-1040-REGLAMENTO-DE-APP.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Réglamento de Alianzas Público y Privadas</a><br><br>
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/Decreto_No._187_MIPRO.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Decreto Nº 187 MIPRO</a><br><br>
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/DECRETO-EJECUTIVO-582-REGLAMENTO-DEL-REGIMEN-DE-COLABORACION-PUBLICO-PRIVADA.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Reglamento del Regimen de Colaboración Público Privada</a><br><br>
-					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/LEY-ORGANICA-DE-INCENTIVOS-PARA-ASOCIACIONES-PUBLICAS-Y-PRIVADAS.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Ley Orgánica de Incentivos para Alianzas Público Privadas</a><br><br> 
-					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/Asociaciones Público Privadas v7.0 everyone.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Asociaciones Público Privadas v7.0</a>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/LEY-ORGANICA-DE-INCENTIVOS-PARA-ASOCIACIONES-PUBLICAS-Y-PRIVADAS.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Ley Orgánica de Incentivos para Alianzas Público Privadas</a><br><br>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/Asociaciones Público Privadas v7.0 everyone.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Asociaciones Público Privadas v7.0</a><br><br>
+              <a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/guia-apps-final.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Guía metodológica para presentación y aprobación de proyectos</a>
 					  </div>
+            <div>
+              <div class="modal-header">
+              <h5 class="modal-title"><strong></strong></h5>
+            </div>
+            <div class="modal-header">
+              <h5 class="modal-title alert detalle_evento_info_adicional fade in m-b-15"  style="background-color:#154360  ;color:#FDFEFE" ><strong>Contacto</strong></h5>
+            </div>
+              <p class="p-l-20"><span class="glyphicon glyphicon-user one" style="width:50px;"></span>Felipe Alejandro Altamirano Barriga</p>
+              <p class="p-l-20">Coordinador General de Proyectos Estratégicos</p>
+              <p class="p-l-20"><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760 ext. 2460</p>
+              <p class="p-l-20"><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:faltamirano@mipro.gob.ec">faltamirano@mipro.gob.ec</a></p>
+              <p class="p-l-20"><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
+            </div>
 					  <br><br>
 			        </div>
 

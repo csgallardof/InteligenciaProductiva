@@ -838,6 +838,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 /* Profile Page Setting */
 
 @media (max-width: 1024px) {
+
     .profile-left {
         width: 150px;
     }
@@ -856,7 +857,75 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
       padding: 20px 20px;
     }
 
+    .fixed-sidebar-wrapper {
+      height: 500px;
+    }
+
+    .menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child), .sub-menu-level-3 > li:not(:last-child) {
+      margin-right: 5px !important;
+    }
+
+    .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
+      font-size: 10px !important;
+    }
+
 }
+
+@media (min-width: 1024px) {
+
+  .fixed-sidebar-wrapper {
+    height: 500px;
+  }
+
+  .menu-contenido-varios > .has-sub, .menu-contenido-varios > .has-sub > .sub-menu > li:not(:last-child), .sub-menu-level-3 > li:not(:last-child) {
+    margin-right: 10px !important;
+  }
+
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
+    font: normal 87.5%/1.4 Arial,sans-serif;
+  }
+
+}
+
+@media (min-width : 1224px) {
+/* Styles */
+
+  .menu-lateral-general {
+      padding-bottom: 0px !important;
+  }
+
+  .menuVertical {
+    overflow-y: hidden !important;
+  }
+
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
+    font: normal 92.5%/1.4 Arial,sans-serif;
+  }
+
+}
+
+/* Large screens ----------- */
+@media (min-width : 1824px) {
+/* Styles */
+
+  .menu-lateral-general {
+      padding-bottom: 0px !important;
+  }
+
+  .menuVertical {
+    overflow-y: hidden !important;
+  }
+
+  .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
+    font: normal 97.5%/1.4 Arial,sans-serif;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+}
+
 @media (max-width: 767px) {
     .profile-left {
         width: 180px;
@@ -919,7 +988,16 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
 
 }
 
+@media (min-width: 480px) {
+
+    html {
+      overflow-x: hidden !important;
+    }
+
+}
+
 @media (max-width: 480px) {
+
     .profile-left {
         width: 100%;
         margin-bottom: 15px;
