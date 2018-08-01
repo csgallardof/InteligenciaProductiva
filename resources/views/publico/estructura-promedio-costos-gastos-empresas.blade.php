@@ -68,6 +68,7 @@
                    <li class="has-sub"><a href="#energiaElectricaIndustrial" class="titulo">10. Energía Eléctrica Industrial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaComercial" class="titulo">11. Energía Eléctrica Comercial</a></li>
                    <li class="has-sub"><a href="#energiaElectricaResidencial" class="titulo">12. Energía Eléctrica Residencial</a></li>
+                   <li class="has-sub"><a href="#contacto" class="titulo">13. Contacto</a> </li>
                 </ul>
                 <!-- Fix Firefox Position Fixed Bottom Problem -->
                 <div class="fixed-sidebar-wrapper"></div>
@@ -728,11 +729,21 @@
   </div>
   <!-- Fin Tabla 12 size -->
 
-    <div class="panel-footer text-right">
-      <div class="h5" style="text-align: justify;">
-        <div><span><strong>Elaborado por:&nbsp;</strong></span>Coordinación General de Estudios Prospectivos y Macroeconómicos para la Industria - Ministerio de Industrias y Productividad</div>
-      </div>
+  <div class="panel-footer text-right">
+    <div class="h5" style="text-align: justify;">
+      <div><span><strong>Elaborado por:&nbsp;</strong></span>Coordinación General de Estudios Prospectivos y Macroeconómicos para la Industria - Ministerio de Industrias y Productividad</div>
     </div>
+  </div>
+
+
+  <h3 id="contacto">Contacto</h3><hr>
+
+    <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>María Alexandra Palacios Bernal - Coordinadora General de Estudios Prospectivos y Macroeconómicos para la Industria</p>
+    <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760</p>
+    <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:mpalacios@mipro.gob.ec">mpalacios@mipro.gob.ec</a></p>
+    <p><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
+
+
 
       </div>
 

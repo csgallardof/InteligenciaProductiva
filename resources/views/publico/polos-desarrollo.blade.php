@@ -38,26 +38,31 @@
             </div>
 
                <ul class="nav menu-contenido-varios" >
-                   <li class="has-sub"><a href="#diagnostico" class="titulo">1. Diagnóstico </a> </li>
+                   <li class="has-sub"><a href="#diagnostico" class="titulo">1. Diagnóstico </a>
                     <ul class="sub-menu">
                       <li><a href="#lineamiento" class="subtitulo">1.1. Lineamiento</a></li>
-                    </ul>  
+                    </ul>
+                    </li>
                    <li class="has-sub"><a href="#porquepolo" class="titulo">2. ¿Por qué polos de desarrollo?</a> </li>
-                   <li class="has-sub"><a href="#conseptoytipologia" class="titulo">3. Concepto y tipologías</a> </li>
+                   <li class="has-sub"><a href="#conseptoytipologia" class="titulo">3. Concepto y tipologías</a>
                    <ul class="sub-menu">
                       <li><a href="#conseptoytipologia" class="subtitulo">3.1. Concepto</a></li>
                       <li><a href="#conseptoytipologia" class="subtitulo">3.2. Tipología</a></li>
-                    </ul> 
-                   <li class="has-sub"><a href="#requisitosybeneficios" class="titulo">4. Requisitos y beneficios</a> </li>
-                   <ul class="sub-menu">
-                      <li><a href="#requisitosybeneficios" class="subtitulo">4.1. Requisitos</a></li>
-                      <li><a href="#requisitosybeneficios" class="subtitulo">4.2. Beneficios</a></li>
-                   </ul> 
-                   <li class="has-sub"><a href="#objetivoimpacto" class="titulo">5. Objetivo e impacto</a> </li>
-                   <ul class="sub-menu">
-                      <li><a href="#objetivoimpacto" class="subtitulo">4.1. Objetivo</a></li>
-                      <li><a href="#objetivoimpacto" class="subtitulo">4.2. Impacto</a></li>
                     </ul>
+                    </li>
+                   <li class="has-sub"><a href="#requisitosybeneficios" class="titulo">4. Requisitos y beneficios</a>
+                     <ul class="sub-menu">
+                        <li><a href="#requisitosybeneficios" class="subtitulo">4.1. Requisitos</a></li>
+                        <li><a href="#requisitosybeneficios" class="subtitulo">4.2. Beneficios</a></li>
+                     </ul>
+                   </li>
+                   <li class="has-sub"><a href="#objetivoimpacto" class="titulo">5. Objetivo e impacto</a>
+                     <ul class="sub-menu">
+                        <li><a href="#objetivoimpacto" class="subtitulo">5.1. Objetivo</a></li>
+                        <li><a href="#objetivoimpacto" class="subtitulo">5.2. Impacto</a></li>
+                      </ul>
+                    </li>
+                    <li class="has-sub"><a href="#contacto" class="titulo">6. Contacto</a> </li>
                 </ul>
                 <!-- Fix Firefox Position Fixed Bottom Problem -->
                 <div class="fixed-sidebar-wrapper"></div>
@@ -71,7 +76,7 @@
         <div class="site-page-content" >
 
             <h1 id="diagnostico">Polos de desarrollo</h1><hr>
-            
+
             <a href="javascript:;" >
                 <img src="{{ asset('imagenes/ZEDE/nivel-de-asociatividad.png') }}" align="center" alt="" class="img-responsive" width="75%" height="75%" />
             </a>
@@ -97,10 +102,10 @@
                         <div class="panel panel-primary">
                                 <div class="panel-heading bg-blue">
                                   <p  class="site-page-content-paragraph" align="center">
-                                    INFRAESTRUCTURA: 
+                                    INFRAESTRUCTURA:
                                   </p>
                                 </div>
-                                
+
                                 <div class="panel-body ">
                                     <ul class="site-page-content-list">
                                       <li>Eficiencia logística</li>
@@ -140,7 +145,7 @@
                                     ENCADENAMIENTO:<br>
                                   </p>
                                 </div>
-                                
+
                                 <div class="panel-body ">
                                   <ul class="site-page-content-list">
                                     <li>Cercanía geográfica optimiza y promueve interacción industrial y productiva</li>
@@ -176,7 +181,7 @@
                 <li>Zonificación, ordenamiento territorial y uso de suelo</li>
                 <li>Vocación y potencialidad productiva</li>
                 <li>Incentivos tributarios y no tributarios</li>
-                
+
               </ul>
 
               <hr>
@@ -189,7 +194,7 @@
                 <li>Ordenamiento territorial</li>
                 <li>Atracción de divisas, distribución de riqueza</li>
                 <li>Generación de fuentes de empleo</li>
-                
+
               </ul>
 
             <h3 id="objetivoimpacto">Objetivo e impacto</h3> <hr>
@@ -207,10 +212,17 @@
                 <li>Reducción de las asimetrías productivas y competitivas</li>
                 <li>Acceso a nuevos mercados</li>
                 <li>Mejoramiento de la competitividad local y territorial</li>
-                
+
               </ul>
 
-              
+              <h3 id="contacto">Contacto</h3><hr>
+
+                <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>Ricardo Zambrano - Subsecretario de Desarrollo Territorial Industrial</p>
+                <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760 ext. 2274</p>
+                <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:rzambrano@mipro.gob.ec">rzambrano@mipro.gob.ec</a></p>
+                <p><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
+
+
 
       </div>
 

@@ -38,15 +38,16 @@
             </div>
 
               <ul class="nav menu-contenido-varios" >
-                 <li class="has-sub"><a href="#incentivosgenerales" class="titulo">1. Incentivos Generales </a> </li>
-                 <ul class="sub-menu">
-                      <li><a href="#impuetoalarenta" class="subtitulo">Impuesto a la renta</a></li>
-                 </ul>
+                 <li class="has-sub"><a href="#incentivosgenerales" class="titulo">1. Incentivos Generales </a>
+                   <ul class="sub-menu">
+                        <li><a href="#impuetoalarenta" class="subtitulo">1.1. Impuesto a la renta</a></li>
+                   </ul>
+                 </li>
                  <li class="has-sub"><a href="#incentivossectoriales" class="titulo">2. Incentivos Sectoriales</a> </li>
+                 <li class="has-sub"><a href="#contacto" class="titulo">3. Contacto</a> </li>
               </ul>
-
                <!-- Fix Firefox Position Fixed Bottom Problem -->
-                <div class="fixed-sidebar-wrapper"></div>
+              <div class="fixed-sidebar-wrapper"></div>
 
         </div>
       </div>
@@ -58,7 +59,7 @@
 
             <h1 id="incentivosgenerales">Incentivos Tributarios y Arancelarios</h1><hr>
 
-            <h3 id="incentivosgenerales">Incentivos Generales</h3><hr>          
+            <h3 id="incentivosgenerales">Incentivos Generales</h3><hr>
             <h4 id="impuetoalarenta">Impuesto a la Renta</h4><hr>
             <ul class="site-page-content-list">
               <li>Exoneración por 10 años en inversiones en sector industrial. (Ampliable 5 años adicionales si la inversión se realiza en cantones fronterizos).</li>
@@ -92,6 +93,13 @@
               <li>Durante el plazo de 5 años tienen derecho a la deducción del 100% adicional de los gastos incurridos en los siguientes rubros: Capacitación técnica dirigida a la (I+D+i), Gastos en la mejora de la productividad y Gastos de viaje, estadía y promoción comercial para el acceso a mercados internacionales.</li>
 
             </ul>
+
+            <h3 id="contacto">Contacto</h3><hr>
+
+              <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>Felipe Alejandro Altamirano Barriga - Coordinador General de Proyectos Estratégicos</p>
+              <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760 ext. 2460</p>
+              <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:faltamirano@mipro.gob.ec">faltamirano@mipro.gob.ec</a></p>
+              <p><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
 
        </div>
 

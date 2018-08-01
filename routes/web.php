@@ -67,9 +67,9 @@ Route::get('/indice', 'PaginasController@indices');
 
 Route::get('/por-que-invertir-en-ecuador', 'PaginasController@contratosinversion');
 
-Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
+// Route::get('/zonas-especiales-de-desarrollo-economico ', 'PaginasController@zedes');
 
-Route::get('/zonas-especiales-de-desarrollo-economico1', 'PaginasController@zedes1');
+Route::get('/zonas-especiales-de-desarrollo-economico', 'PaginasController@zedes1');
 
 Route::get('/polos-de-desarrollo', 'PaginasController@polosdesarrollo');
 

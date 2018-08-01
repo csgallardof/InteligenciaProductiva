@@ -479,6 +479,14 @@
                     </ol>
                     <h5 class="code-site-page">Fuente: Art. 48 del Reglamento COPCI. Requisitos para operadores en una ZEDE</h5>
 
+                    <h3 id="contacto">Contacto</h3><hr>
+
+                      <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>Ricardo Zambrano - Subsecretario de Desarrollo Territorial Industrial</p>
+                      <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760 ext. 2274</p>
+                      <p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:rzambrano@mipro.gob.ec">rzambrano@mipro.gob.ec</a></p>
+                      <p><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
+
+
       </div>
 
       </div>
