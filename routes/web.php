@@ -73,7 +73,7 @@ Route::get('/zonas-especiales-de-desarrollo-economico1', 'PaginasController@zede
 
 Route::get('/polos-de-desarrollo', 'PaginasController@polosdesarrollo');
 
-Route::get('/insentivos-tributarios-y-arancelacios', 'PaginasController@insentivostributarios');
+Route::get('/incentivos-tributarios-y-arancelacios', 'PaginasController@incentivostributarios');
 
 Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
 

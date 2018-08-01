@@ -59,6 +59,8 @@
                       <li><a href="#objetivoimpacto" class="subtitulo">4.2. Impacto</a></li>
                     </ul>
                 </ul>
+                <!-- Fix Firefox Position Fixed Bottom Problem -->
+                <div class="fixed-sidebar-wrapper"></div>
 
         </div>
       </div>

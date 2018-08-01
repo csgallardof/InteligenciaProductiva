@@ -47,6 +47,7 @@
 														<li><a href="/vocaciones">Vocaciones Productivas</a></li>
 														<li><a href="/por-que-invertir-en-ecuador">Incentivos</a></li>
 														<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
+														<li><a href="/incentivos-tributarios-y-arancelacios">Incentivos Tributarios</a></li>
 												</ul>
 										</li>
 										<li class="dropdown">
