@@ -895,7 +895,7 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
   }
 
   .menuVertical {
-    overflow-y: hidden !important;
+    /* overflow-y: hidden !important; */
   }
 
   .menu-contenido-varios > .has-sub > a, .menu-contenido-varios > .has-sub > .sub-menu > li > a, .sub-menu-level-3 > li > a {
@@ -1018,4 +1018,5 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     .profile-section .title {
         margin-top: 20px;
     }
+
 }
