@@ -6993,3 +6993,12 @@ p.timeline-Tweet-text a {
 .site-page-content > h3 {
   margin-top: 30px !important;
 }
+
+.titulo-sidebar-pagina-noticias {
+  padding: 10px 20px 10px 20px !important;
+  background-color: #055995 !important;
+  color: #FDFEFE;
+  margin-top: 15px;
+  border: 2px solid #055995;
+  border-radius: 3px;
+}
