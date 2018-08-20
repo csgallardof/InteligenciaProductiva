@@ -81,7 +81,7 @@
                 <div class="btn-group pull-right">
                   <a href="{{ asset('archivos/costos_de_produccion_en_el_ecuador_julio_2018.xlsx') }}" class="btn btn-primary btn-sm">Descargar</a>
                 </div>
-                <h1 id="costosparaelsectorindustrial">Costos para el Sector Industrial en el Ecuador</h1>
+                <h1 id="costosparaelsectorindustrial">Costos para el Sector Industrial en el Ecuador  - Julio 2018</h1>
             </div>
 
             <!-- Tabla 12 size -->
