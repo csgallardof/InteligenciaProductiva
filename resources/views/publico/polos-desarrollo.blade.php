@@ -25,7 +25,7 @@
 
 @section('contenido')
 
-    <div class="content row main-content">
+    <div class="content row main-content header-fix-mobile">
 
       <div class="col-sm-3 hidden-xs">
           <div class="menu-lateral-general form-group menuVertical">
@@ -64,6 +64,17 @@
                     </li>
                     <li class="has-sub"><a href="#contacto" class="titulo">6. Contacto</a> </li>
                 </ul>
+
+                <!-- Share Social Network -->
+                <h5 class="titulo-sidebar-pagina-noticias m-b-15"  style="background-color:#154360;color:#FDFEFE" ><strong>Contacto</strong></h5>
+
+                <a href=""><button type="button" class="btn btn-fb"><i class="fa fa-facebook pr-1"></i> Facebook</button></a><br /><br />
+                <a href=""><button type="button" class="btn btn-tw"><i class="fa fa-twitter pr-1"></i> Twitter</button></a><br /><br />
+                <a href=""><button type="button" class="btn btn-li"><i class="fa fa-linkedin pr-1"></i> Linkedin</button></a><br /><br />
+                <a href=""><button type="button" class="btn btn-gplus"><i class="fa fa-google-plus pr-1"></i> Google +</button></a><br /><br />
+                <a href=""><button type="button" class="btn btn-email"><i class="fa fa-envelope pr-1"></i> Email</button></a>
+                <!-- Fin Share Social Network -->
+
                 <!-- Fix Firefox Position Fixed Bottom Problem -->
                 <div class="fixed-sidebar-wrapper"></div>
 
@@ -72,7 +83,6 @@
 
       <div id="zedes" class="col-sm-9 col-xs-12 p-l-0 p-r-30">
 
-
         <div class="site-page-content" >
 
             <h1 id="diagnostico">Polos de desarrollo</h1><hr>
@@ -80,7 +90,6 @@
             <a href="javascript:;" >
                 <img src="{{ asset('imagenes/ZEDE/nivel-de-asociatividad.png') }}" align="center" alt="" class="img-responsive" width="75%" height="75%" />
             </a>
-
 
             <h3 id="lineamiento">Lineamientos</h3><hr>
             <ul class="site-page-content-list">
