@@ -24,9 +24,9 @@ Route::get('/inicio2', function () {
      return view('inicio2');
 });
 
-Route::get('/old2', function () {
-     return view('publico.old_2_estructura-promedio-costos-gastos-empresas');
-});
+// Route::get('/old2', function () {
+//      return view('publico.old_2_estructura-promedio-costos-gastos-empresas');
+// });
 
 // Route::get('/busquedaAvanzada',[
 //      'uses'=>'PaginasController@busquedaAvanzada',
@@ -79,9 +79,7 @@ Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPubli
 
 Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador');
 
-Route::get('/estructura-promedio-costos-gastos-empresas', 'PaginasController@estructuraCostosGastos');
-
-// Route::get('/estructura-promedio-costos-gastos-empresas2', 'PaginasController@estructuraCostosGastos2');
+Route::get('/costosindustriales/{opcion}', ['uses' =>'PaginasController@estructuraCostosGastos']);
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
 
@@ -107,7 +105,6 @@ Route::post('/consejoconsultivo',[
      'uses'=>'ConsejoConsultivoController@buscar',
      'as'=>'consejo.resultado'
 ]);
-
 
 Route::get('/busqueda',[
      'uses'=>'PaginasController@busquedaGeneral',

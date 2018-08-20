@@ -39,8 +39,13 @@
 														Información para el Inversionista<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
-													
-														<li><a href="/estructura-promedio-costos-gastos-empresas">Costos y Gastos Industriales</a></li>
+														<li class="menu-item dropdown dropdown-submenu">
+																<a href="#" class="dropdown-toggle" data-toggle="dropdown">Costos y Gastos Industriales</a>
+																<ul class="dropdown-menu">
+																		<li class="menu-item"><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>
+																		<li class="menu-item"><a href="/costosindustriales/julio2018">Boletín de Costos Nro. 2 - Julio 2018</a></li>
+																</ul>
+														</li>
 														<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
 														<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
 														<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
@@ -48,7 +53,6 @@
 														<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
 														<li><a href="/cifras">Cifras Económicas</a></li>
 														<li><a href="/vocaciones">Vocaciones Productivas</a></li>
-
 												</ul>
 										</li>
 										<li class="dropdown">
@@ -137,13 +141,23 @@
 						<span>Información para el Inversionista</span>
 					</a>
 				<ul class="sub-menu">
-					<li><a href="/estructura-promedio-costos-gastos-empresas">Costos y Gastos Industriales</a></li>
-					<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
+					<li class="has-sub">
+						<a href="javascript:;">
+				            <b class="caret pull-right"></b>
+				            Costos y Gastos Industriales
+				        </a>
+						<ul class="sub-menu" style="display: none;">
+							<li><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>
+							<li><a href="/costosindustriales/julio2018">Boletín de Costos Nro. 2 - Julio 2018</a></li>
+						</ul>
+					</li>					
 					<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
 					<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
+					<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
+					<li><a href="/incentivos-tributarios-y-arancelacios">Incentivos para el Inversionista</a></li>
+					<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
 					<li><a href="/cifras">Cifras Económicas</a></li>
 					<li><a href="/vocaciones">Vocaciones Productivas</a></li>
-					<li><a href="/por-que-invertir-en-ecuador">Incentivos</a></li>
 				</ul>
 			</li>
 			<li class="has-sub">
@@ -179,6 +193,7 @@
 					<li><a href="http://servicios.industrias.gob.ec/siipro/informes.html">Sistema de Información Industrial y Productiva</a></li>
 					<li><a href="/foro-de-la-produccion-impulso-innovacion">I Foro de la Producción e Impulso a la Innovación</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_foro_empresarial/foro_empresarial.html">I Foro Empresarial Andino 2018</a></li>
+					<li><a href="http://servicios.industrias.gob.ec/site_industria_4/">Congreso Internacional Industria 4.0</a></li>
 				</ul>
 			</li>
 

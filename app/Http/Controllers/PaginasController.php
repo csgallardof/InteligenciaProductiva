@@ -694,17 +694,10 @@ class PaginasController extends Controller
         return view('publico.foro-de-la-produccion');
     }
 
-
-    public function estructuraCostosGastos(){
-        return view('publico.estructura-promedio-costos-gastos-empresas');
+    public function estructuraCostosGastos(Request $request){
+      if ($request->opcion == 'junio2018') return view('publico.costosindustriales-junio2018');
+      elseif ($request->opcion == 'julio2018') return view('publico.costosindustriales-julio2018');
     }
-
-    public function estructuraCostosGastos2(){
-        return view('publico.old_2_estructura-promedio-costos-gastos-empresas');
-    }
-
-
-
 
     // Modelo Usuarios
     public function usuarios(){

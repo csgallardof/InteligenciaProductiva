@@ -984,7 +984,26 @@ Website: http://www.seantheme.com/color-admin-v1.7/admin/
     padding: 9px 9px;
   }
 
+  .header-fix-mobile {
+    margin-top: 70px;
+  }
 
+  .big-tablasgenerales > tbody > tr > td {
+      font-size: 11px !important;
+  }
+
+  .big-tablasgenerales > tbody > tr > td:first-child {
+      min-width: 315px;
+  }
+
+  .big-tablasgenerales > thead > tr > th {
+      font-size: 11px !important;
+      min-width: 125px;
+  }
+
+  .big-table-div {
+    overflow-x:scroll;
+  }
 
 }
 

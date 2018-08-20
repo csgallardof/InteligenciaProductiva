@@ -25,7 +25,7 @@
 
 @section('contenido')
 
-    <div class="content row main-content">
+    <div class="content row main-content header-fix-mobile">
 
       <div class="col-sm-3 hidden-xs">
           <div class="menu-lateral-general form-group menuVertical">
