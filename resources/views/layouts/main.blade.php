@@ -47,13 +47,13 @@
 
     <div id="page-container" class="fade">
 
+			<?php Visitor::log_page(); ?>
+
 			@include ('layouts.menu')
-
 			@yield ('contenido')
-
-
 			@include ('layouts.common_modals')
 			@include ('layouts.footer')
+
     </div>
 
 		@section('end_js')
