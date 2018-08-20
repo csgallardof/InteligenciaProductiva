@@ -121,17 +121,18 @@ class Visitor implements Countable
         $this->cache->destroy('weboap.visitor');
     }
 
-    public function log_page()
-    {
-        $ip = $this->ip->get();
+    public function log_page() {
 
-        if (!$this->ip->isValid($ip)) {
-            return;
+        //$ip = $this->ip->get();
+        $ip = $this->get_client_ip_server();
+        //dd($ip);
+
+        $country = "N/A";
+
+        if ($this->ip->isValid($ip)) {
+            $geo = $this->geo->locate($ip);
+            $country = array_key_exists('country_code', $geo) ? $geo['country_code'] : null;
         }
-
-        $geo = $this->geo->locate($ip);
-
-        $country = array_key_exists('country_code', $geo) ? $geo['country_code'] : null;
 
         //ip doesnt exist  in db
         $data = [
@@ -146,6 +147,28 @@ class Visitor implements Countable
 
         // Clear the database cache
         $this->cache->destroy('weboap.visitor');
+
+    }
+
+    //Averiguar la ip real del servidor
+    function get_client_ip_server() {
+      $ipaddress = '';
+      if (getenv('HTTP_CLIENT_IP'))
+          $ipaddress = getenv('HTTP_CLIENT_IP');
+      else if(getenv('HTTP_X_FORWARDED_FOR'))
+          $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+      else if(getenv('HTTP_X_FORWARDED'))
+          $ipaddress = getenv('HTTP_X_FORWARDED');
+      else if(getenv('HTTP_FORWARDED_FOR'))
+          $ipaddress = getenv('HTTP_FORWARDED_FOR');
+      else if(getenv('HTTP_FORWARDED'))
+          $ipaddress = getenv('HTTP_FORWARDED');
+      else if(getenv('REMOTE_ADDR'))
+          $ipaddress = getenv('REMOTE_ADDR');
+      else
+          $ipaddress = 'UNKNOWN';
+
+      return $ipaddress;
     }
 
     /**
