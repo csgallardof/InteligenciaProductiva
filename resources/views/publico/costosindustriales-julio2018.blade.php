@@ -744,7 +744,7 @@
 
     <p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>María Alexandra Palacios Bernal - Coordinadora General de Estudios Prospectivos y Macroeconómicos para la Industria</p>
     <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760</p>
-    <p><span class="glyphicon glyphicon-cloud one" style="width:50px;"></span><strong>Equipo de Trabajo:</strong>Geovanna Espin | Juan Francisco Aguirre | Estefania Enriquez Katy Medina
+    <p><span class="glyphicon glyphicon-cloud one" style="width:50px;"></span><strong>Equipo de Trabajo: </strong>Geovanna Espin | Juan Francisco Aguirre | Estefania Enriquez Katy Medina
     </p>
     
     <p><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
