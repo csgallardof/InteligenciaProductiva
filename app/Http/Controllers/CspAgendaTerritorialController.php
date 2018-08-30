@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ use DB;
 
 class CspAgendaTerritorialController extends Controller
 {
-    public function vistaCrearAgenda(){
+    public function vistaCrearAgenda() {
     	$usuario_institucion_id = Auth::user()->institucion_id;
     	$cspTipoAgenda = CspTipoAgenda::all();
     	$cspTipoImpactoAgenda = CspTipoImpactoAgenda::all();
@@ -27,18 +27,19 @@ class CspAgendaTerritorialController extends Controller
     		"provincias"=>$provincias,
     		"cspTipoAgenda"=>$cspTipoAgenda]);
     }
+
     public function obtenerCantones(Request $request, $id){
         return Canton::cantones($id);
     }
- 
+
     public function crearAgenda(Request $request){
 
-        
+
         $fecha_agenda = $request['agenda_fecha'];
         $hora = $request['hora_agenda'];
         $hora_agenda=date("H:i", strtotime($hora));
         $fecha_hora_agenda=$fecha_agenda." ".$hora_agenda.":00";
-        
+
         function check_in_range($start_date, $end_date, $evaluame) {
         $start_ts = strtotime($start_date);
         $end_ts = strtotime($end_date);
@@ -48,7 +49,7 @@ class CspAgendaTerritorialController extends Controller
 
         $periodoCorrecto=False;
         $i=1;
-        
+
         while ($periodoCorrecto==False) {
         $PeriodoCspAgenda = CspPeriodoAgenda::find($i);
         $date_start = $PeriodoCspAgenda->fecha_inicio;
@@ -60,11 +61,11 @@ class CspAgendaTerritorialController extends Controller
             } else {
             $periodoCorrecto==False;
             }
-            $i++;  
-        
+            $i++;
+
         }
         //dd('Sipaso');
-        
+
     	$responsable = $request['responsable'];
         $institucion_id = $request['institucion_id'];
         $lugar = $request['lugar'];
@@ -90,7 +91,7 @@ class CspAgendaTerritorialController extends Controller
         $CspAgendaTerritorial-> tipo_comunicacional = $tipo_comunicacional;
         $CspAgendaTerritorial-> save();
         return redirect('/institucion/ver-agenda-territorial');
-        
+
         //dd($responsable,$fecha_hora_agenda,$institucion_id,$canton_id,$tipo_agenda_id,$descripcion_tipo_agenda,$tipo_impacto_id,$descripcion_tipo_impacto);
 
 
@@ -147,7 +148,7 @@ class CspAgendaTerritorialController extends Controller
         $tipo_impacto_id = $request['tipo_impacto_id'];
         $descripcion_tipo_impacto = $request['descripcion_tipo_impacto'];
         $tipo_comunicacional = $request['tipo_comunicacional'];
-        
+
         $CspAgendaTerritorial = CspAgendaTerritorial::find($id);
         $CspAgendaTerritorial-> institucion_id = $institucion_id;
         $CspAgendaTerritorial-> canton_id = $canton_id;
@@ -160,11 +161,11 @@ class CspAgendaTerritorialController extends Controller
         $CspAgendaTerritorial-> fecha_agenda = $fecha_hora_agenda;
         $CspAgendaTerritorial-> tipo_comunicacional = $tipo_comunicacional;
         $CspAgendaTerritorial-> save();
-        
+
         return redirect('/institucion/ver-agenda-territorial');
     }
 
-    
 
-    
+
+
 }

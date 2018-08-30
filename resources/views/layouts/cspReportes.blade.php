@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if !IE]><!-->
-<html lang="en"> 
-<!--<![endif]-->  
+<html lang="en">
+<!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
 	<title>Inteligencia Productiva - @yield('title')</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN BASE CSS STYLE ================== -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="{{ asset('plugins/jquery-ui/themes/base/minified/jquery-ui.min.css') }}" rel="stylesheet" />
@@ -21,7 +21,7 @@
 	<link href="{{ asset('css/theme/default.css') }}" rel="stylesheet" id="theme" />
 	<link href="{{ asset('css/style-after.css') }}" rel="stylesheet" />
 	<!-- ================== END BASE CSS STYLE ================== -->
-	
+
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
 	<link href="{{ asset('plugins/jquery-jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet" />
@@ -42,7 +42,7 @@
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
 
 
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/pace/pace.min.js') }}"></script>
 	<!-- ================== END BASE JS ================== -->
@@ -51,7 +51,7 @@
 	<!-- begin #page-loader -->
 	<div id="page-loader" class="fade in"><span class="spinner"></span></div>
 	<!-- end #page-loader -->
-	
+
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 		<!-- begin #header -->
@@ -70,11 +70,11 @@
 					</button>
 				</div>
 				<!-- end mobile sidebar expand / collapse button -->
-				
+
 				<!-- begin header navigation right -->
 				<ul class="nav navbar-nav navbar-right" style="margin-right: 30px">
 					<?php
-					 
+
 					 $tipo_fuente= Auth::user()->tipo_fuente;
     				?>
 					@if($tipo_fuente==4 or $tipo_fuente==5)
@@ -141,22 +141,22 @@
 			<!-- end container-fluid -->
 		</div>
 		<!-- end #header -->
-		
+
 		<!-- begin #sidebar -->
-		
-		
+
+
 		<!-- end #sidebar -->
 
 
-		
+
 		@yield('content')
-		
+
 		<!-- begin scroll to top btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
 		<!-- end scroll to top btn -->
 	</div>
 	<!-- end page container -->
-	
+
 	<!-- ================== BEGIN BASE JS ================== -->
 	<script src="{{ asset('plugins/jquery/jquery-1.9.1.min.js') }}"></script>
 	<script src="{{ asset('plugins/jquery/jquery-migrate-1.1.0.min.js') }}"></script>
@@ -174,7 +174,7 @@
 
 
 	<!-- ================== END BASE JS ================== -->
-	
+
 	<!-- ================== BEGIN PAGE LEVEL JS ================== -->
 		<script src="{{ asset('plugins/ionRangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js') }}"></script>
 	<script src="{{ asset('plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
@@ -192,6 +192,7 @@
     <script src="{{ asset('plugins/select2/dist/js/select2.min.js') }}"></script>
 	<script src="{{ asset('js/form-plugins.demo.min.js') }}"></script>
 	<script src="{{ asset('js/apps.min.js') }}"></script>
+	<script src="{{ asset('js/Canton/comboCanton.js') }}"></script>
 	<script src="{{asset ('plugins/ckeditor/ckeditor.js')}}"></script>
 	<script src="{{asset ('plugins/bootstrap-wysihtml5/lib/js/wysihtml5-0.3.0.js')}}"></script>
 	<script src="{{asset ('plugins/bootstrap-wysihtml5/src/bootstrap-wysihtml5.js')}}"></script>
@@ -200,7 +201,7 @@
 
 
 
-	
+
 	<script>
 		$(document).ready(function() {
 			App.init();
@@ -217,7 +218,7 @@
 			FormPlugins.init();
 		});
 	</script>
-	
-</script> 
+
+</script>
 </body>
 </html>

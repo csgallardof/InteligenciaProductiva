@@ -78,7 +78,7 @@
 							<h4 class="panel-title"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Reporte Alerta CSP</h4>
 						</div>
 						<div class="panel-body">
-							
+
 									<div class="col-md-10">
 
 									<a href="/institucion/consejo-sectorial-produccion/reportes-alertas" class="btn btn-warning pull-right">Regresar</a>
@@ -131,7 +131,7 @@
 									 					</select>
 									 				</div>
 									 			</div>
-	
+
 									  	</div>
 
 
@@ -162,6 +162,41 @@
 									  	<div class="form-group">
 
 
+												<div class="form-group">
+													<div class="row">
+													<div class="col-md-2"></div>
+													<div class="col-md-8">
+
+													<label for="select-provincia">Provincia</label>
+
+													    <select id="select-provincia" onchange="getSelectValue();" name="select-provincia" class="form-control selectpicker" data-size="10" data-live-search="true" required="Seleccione una opcion" data-style="btn-primary">
+				                                            <option value="" selected>Seleccionar Provincia</option>
+				                                            @foreach($provincias as $provincias)
+				                                            <option value="{{$provincias['id']}}">{{$provincias['nombre_provincia']}}
+									                        </option>
+									                         @endforeach
+				                                        </select>
+													</div>
+
+													</div>
+												</div>
+
+
+												<div class="form-group ">
+													<div class="row">
+													<div class="col-md-2"></div>
+													<div class="col-md-8 ">
+													<label for="select-canto">Cantones</label>
+
+													    <select  id="select-canto" class="form-control" name="select_canton"  data-size="10" required="" data-live-search="true" data-style="btn-inverse">
+				                                            <option value="" >Seleccione Canton</option>
+
+				                                        </select>
+
+													</div>
+
+													</div>
+												</div>
 
 									 	<div class="form-group">
 
@@ -177,7 +212,7 @@
 									 			<div class="col-md-2"></div>
 									 			<div class="col-md-8">
 									 			<textarea class="ckeditor"   id="descripcion" name="descripcion" rows="6" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea>
-									 			
+
 									 			</div>
 
 									  	</div>
@@ -204,7 +239,7 @@
 									 			</div>
 
 									  	</div>
-										
+
 										<div class="from-group">
 											<div class="row"></div>
 
@@ -259,7 +294,7 @@
 									  	</div>
 									</form>
 
-								
+
 						</div>
 
 
@@ -280,7 +315,7 @@
                                 <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                             </div>
                             <h4 class="panel-title">Notificaciones<br> (&uacute;ltima semana)</h4>
-                        </div> 
+                        </div>
                         <h6 align="center" style="color:green"> No existe notificaciones</h6>
                         <div class="panel-body">
 
