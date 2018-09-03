@@ -39,11 +39,43 @@
 														Información para el Inversionista<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
+														<li><a href="{{ asset('archivos/beneficios_ley_organica_para_el_fomento_productivo.pdf') }}">Beneficios de la Ley Orgánica para el Fomento Productivo</a></li>
 														<li class="menu-item dropdown dropdown-submenu">
 																<a href="#" class="dropdown-toggle" data-toggle="dropdown">Costos y Gastos Industriales</a>
 																<ul class="dropdown-menu">
 																		<li class="menu-item"><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>
 																		<li class="menu-item"><a href="/costosindustriales/julio2018">Boletín de Costos Nro. 2 - Julio 2018</a></li>
+																</ul>
+														</li>
+														<li class="menu-item dropdown dropdown-submenu">
+																<a href="#" class="dropdown-toggle" data-toggle="dropdown">Datos Caracterización por Provincia</a>
+																<ul class="dropdown-menu">
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_azuay.pdf') }}">Caracterización de la provincia de Azuay</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_cotopaxi.pdf') }}">Caracterización de la provincia de Cotopaxi</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_cotopaxi_mana.pdf') }}">Caracterización de la provincia de Cotopaxi-Maná</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_guayas_canton_milagro.pdf') }}">Caracterización de la provincia de Guayas, Cantón Milagro</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_manabi.pdf') }}">Caracterización de la provincia de Manabí</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_morona_santiago_macas.pdf') }}">Caracterización de la provincia de Morona Santiago-Macas</a></li>
+																		<li class="menu-item"><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_pichincha.pdf') }}">Caracterización de la provincia de Pichincha</a></li>
+																</ul>
+														</li>
+														<li class="menu-item dropdown dropdown-submenu">
+																<a href="#" class="dropdown-toggle" data-toggle="dropdown">Informes de Economía Internacional</a>
+																<ul class="dropdown-menu">
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_apec.pdf') }}">Informe de economía internacional Ecuador - APEC</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_argentina.pdf') }}">Informe de economía internacional Ecuador - Argentina</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_china.pdf') }}">Informe de economía internacional Ecuador - China</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_colombia.pdf') }}">Informe de economía internacional Ecuador - Colombia</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_corea_del_sur.pdf') }}">Informe de economía internacional Ecuador - Corea del Sur</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_eeuu.pdf') }}">Informe de economía internacional Ecuador - EEUU</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_espana.pdf') }}">Informe de economía internacional Ecuador - España</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_israel.pdf') }}">Informe de economía internacional Ecuador - Israel</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_japon.pdf') }}">Informe de economía internacional Ecuador - Japón</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_mexico.pdf') }}">Informe de economía internacional Ecuador - México</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_mundo.pdf') }}">Informe de economía internacional Ecuador - Mundo</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_turquia.pdf') }}">Informe de economía internacional Ecuador - Turquía</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_union_europea.pdf') }}">Informe de economía internacional Ecuador - Unión Europea</a></li>
+																	<li class="menu-item"><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_uruguay.pdf') }}">Informe de economía internacional Ecuador - Uruguay</a></li>
 																</ul>
 														</li>
 														<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
@@ -86,6 +118,8 @@
 													<li><a href="http://servicios.industrias.gob.ec/siipro/informes.html">Sistema de Información Industrial y Productiva</a></li>
 													<li><a href="/foro-de-la-produccion-impulso-innovacion">I Foro de la Producción e Impulso a la Innovación</a></li>
 													<li><a href="http://servicios.industrias.gob.ec/site_foro_empresarial/foro_empresarial.html">I Foro Empresarial Andino 2018</a></li>
+													<li><a href="{{ asset('archivos/foros/foro_inclusion_financiera.pdf') }}">Foro Inclusión Financiera</a></li>
+													<li><a href="http://servicios.industrias.gob.ec/site_industria_4/">Congreso Internacional Industria 4.0</a></li>
 												</ul>
 										</li>
 								</ul>
@@ -141,6 +175,7 @@
 						<span>Información para el Inversionista</span>
 					</a>
 				<ul class="sub-menu">
+					<li><a href="{{ asset('archivos/beneficios_ley_organica_para_el_fomento_productivo.pdf') }}">Beneficios de la Ley Orgánica para el Fomento Productivo</a></li>
 					<li class="has-sub">
 						<a href="javascript:;">
 				            <b class="caret pull-right"></b>
@@ -150,7 +185,44 @@
 							<li><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>
 							<li><a href="/costosindustriales/julio2018">Boletín de Costos Nro. 2 - Julio 2018</a></li>
 						</ul>
-					</li>					
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;">
+				            <b class="caret pull-right"></b>
+				            Datos Caracterización por Provincia
+				        </a>
+						<ul class="sub-menu" style="display: none;">
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_azuay.pdf') }}">Caracterización de la provincia de Azuay</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_cotopaxi.pdf') }}">Caracterización de la provincia de Cotopaxi</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_cotopaxi_mana.pdf') }}">Caracterización de la provincia de Cotopaxi-Maná</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_guayas_canton_milagro.pdf') }}">Caracterización de la provincia de Guayas, Cantón Milagro</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_manabi.pdf') }}">Caracterización de la provincia de Manabí</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_morona_santiago_macas.pdf') }}">Caracterización de la provincia de Morona Santiago-Macas</a></li>
+							<li><a href="{{ asset('archivos/datos_caracterizacion_por_provincia/caracterizacion_de_la_provincia_de_pichincha.pdf') }}">Caracterización de la provincia de Pichincha</a></li>
+						</ul>
+					</li>
+					<li class="has-sub">
+						<a href="javascript:;">
+				            <b class="caret pull-right"></b>
+				            Informes de Economía Internacional
+				        </a>
+						<ul class="sub-menu" style="display: none;">
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_apec.pdf') }}">Informe de economía internacional Ecuador - APEC</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_argentina.pdf') }}">Informe de economía internacional Ecuador - Argentina</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_china.pdf') }}">Informe de economía internacional Ecuador - China</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_colombia.pdf') }}">Informe de economía internacional Ecuador - Colombia</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_corea_del_sur.pdf') }}">Informe de economía internacional Ecuador - Corea del Sur</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_eeuu.pdf') }}">Informe de economía internacional Ecuador - EEUU</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_espana.pdf') }}">Informe de economía internacional Ecuador - España</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_israel.pdf') }}">Informe de economía internacional Ecuador - Israel</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_japon.pdf') }}">Informe de economía internacional Ecuador - Japón</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_mexico.pdf') }}">Informe de economía internacional Ecuador - México</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_mundo.pdf') }}">Informe de economía internacional Ecuador - Mundo</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_turquia.pdf') }}">Informe de economía internacional Ecuador - Turquía</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_union_europea.pdf') }}">Informe de economía internacional Ecuador - Unión Europea</a></li>
+							<li><a href="{{ asset('archivos/informes_de_economia_internacional/informe_economia_internacional_ecuador_uruguay.pdf') }}">Informe de economía internacional Ecuador - Uruguay</a></li>
+						</ul>
+					</li>
 					<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
 					<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
 					<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
@@ -193,6 +265,7 @@
 					<li><a href="http://servicios.industrias.gob.ec/siipro/informes.html">Sistema de Información Industrial y Productiva</a></li>
 					<li><a href="/foro-de-la-produccion-impulso-innovacion">I Foro de la Producción e Impulso a la Innovación</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_foro_empresarial/foro_empresarial.html">I Foro Empresarial Andino 2018</a></li>
+					<li><a href="{{ asset('archivos/foros/foro_inclusion_financiera.pdf') }}">Foro Inclusión Financiera</a></li>
 					<li><a href="http://servicios.industrias.gob.ec/site_industria_4/">Congreso Internacional Industria 4.0</a></li>
 				</ul>
 			</li>
