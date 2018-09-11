@@ -44,7 +44,7 @@
 
 					<div class="modal-header">
 							<h4 class="modal-title" style="display: inline;">Vocaciones Provinciales</h4>
-              <a class="p-l-20" target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/vocaciones_productivas_todas.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Descargar Archivo Consolidado</a>
+              <a class="p-l-20" target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/vocaciones_productivas_todas_2018.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Descargar Archivo Consolidado</a>
 					</div>
 
 					<!-- begin row -->
@@ -164,7 +164,7 @@
                             			<!-- Fin Header Provincia -->
 									    <div class="row fit-m-t-4">
 									    	<div class="col-md-12">
-									    		<img id="imagenvp" class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_eloro.jpg') }}" alt="El Oro">
+									    		<img id="imagenvp" class="img-responsive center-block"  src="{{ asset('imagenes/vocaciones_productivas_ecuador/vp_eloro.png') }}" alt="El Oro">
 									    	</div>
 									    </div>
 									</div>
@@ -311,7 +311,7 @@
             if(num == 24){
                 valor =  'zamorachinchipe';
             }
-            $('#imagenvp').prop("src", "imagenes/vocaciones_productivas_ecuador/vocaciones_productivas_" + valor + ".jpg");
+            $('#imagenvp').prop("src", "imagenes/vocaciones_productivas_ecuador/vp_" + valor + ".png");
         	$("#dw_pdf").attr("href", "imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_" + valor + ".pdf");
         	$("#nombreProvincia").html("<i class='fa fa-2x fa-map-marker'><strong class='f-s-19'>&nbsp;&nbsp;"+ nombreProvincia +"</strong></i>");
         } 
