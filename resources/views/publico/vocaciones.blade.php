@@ -157,7 +157,7 @@
                               			<div class="col-md-6">
                                 			<div class="pull-right">
 
-                                				<a id="dw_pdf" target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_eloro.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div>
+                                				<!-- <a id="dw_pdf" target="_blank" href="{{ asset('imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_eloro.pdf') }}"><i class="fa fa-3x fa-file-pdf-o"></i>&nbsp;Descargar Archivo de la Provincia</a></div> -->
                               				</div>
                             			</div>
                             			<hr />
