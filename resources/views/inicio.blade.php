@@ -97,7 +97,7 @@
 
                     <div class="col-sm-2 col-xs-2 box">
                         <div class="container2 text-center">
-                          <a href="/vocaciones"><img class="home_part1_size_images" src="{{ asset('imagenes/homeiconos/vocaciones.png') }}"></a>
+                          <a href="/vocaciones-productivas"><img class="home_part1_size_images" src="{{ asset('imagenes/homeiconos/vocaciones.png') }}"></a>
                           <div class="text-block2 img-over text-center">
                             <h3 class="home_iconos_text_1">VOCACIONES</h3>
                             <p class="home_iconos_text_2">PRODUCTIVAS</p>
