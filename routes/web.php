@@ -61,7 +61,7 @@ Route::get('/reportegeneralccpt', 'PaginasController@reportegeneralccpt');
 
 Route::get('/cifras', 'PaginasController@cifrasccpt');
 
-Route::get('/vocaciones', 'PaginasController@vocaciones');
+Route::get('/vocaciones-productivas', 'PaginasController@vocaciones');
 
 Route::get('/indice', 'PaginasController@indices');
 
