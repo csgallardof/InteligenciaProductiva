@@ -34,6 +34,7 @@
 																<ul class="dropdown-menu">
 																		<li class="menu-item"><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>
 																		<li class="menu-item"><a href="/costosindustriales/julio2018">Boletín de Costos Nro. 2 - Julio 2018</a></li>
+																		<li class="menu-item"><a href="/costosindustriales/agosto2018">Boletín de Costos Nro. 3 - Agosto 2018</a></li>
 																</ul>
 														</li>
 														<li class="menu-item dropdown dropdown-submenu">
@@ -175,7 +176,7 @@
 					<li class="has-sub">
 						<a href="javascript:;">
 				            <b class="caret pull-right"></b>
-				            Costos y Gastos Industriales
+				            Costos y Gastos Industrialesss
 				        </a>
 						<ul class="sub-menu" style="display: none;">
 							<li><a href="/costosindustriales/junio2018">Boletín de Costos Nro. 1 - Junio 2018</a></li>

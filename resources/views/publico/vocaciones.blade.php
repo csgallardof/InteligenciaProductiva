@@ -311,7 +311,7 @@
             if(num == 24){
                 valor =  'zamorachinchipe';
             }
-            $('#imagenvp').prop("src", "imagenes/vocaciones_productivas_ecuador/vp_" + valor + ".png");
+            $('#imagenvp').prop("src", "imagenes/vocaciones_productivas_ecuador/vp_" + valor + ".jpg");
         	$("#dw_pdf").attr("href", "imagenes/vocaciones_productivas_ecuador/vocaciones_pdf/pdf_por_provincia/vocaciones_productivas_" + valor + ".pdf");
         	$("#nombreProvincia").html("<i class='fa fa-2x fa-map-marker'><strong class='f-s-19'>&nbsp;&nbsp;"+ nombreProvincia +"</strong></i>");
         } 

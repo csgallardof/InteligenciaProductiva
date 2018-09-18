@@ -695,8 +695,11 @@ class PaginasController extends Controller
     }
 
     public function estructuraCostosGastos(Request $request){
+
+    //dd($request->opcion);
       if ($request->opcion == 'junio2018') return view('publico.costosindustriales-junio2018');
-      elseif ($request->opcion == 'julio2018') return view('publico.costosindustriales-julio2018');
+      if ($request->opcion == 'julio2018') return view('publico.costosindustriales-julio2018');
+      if ($request->opcion == 'agosto2018') return view('publico.costosindustriales-agosto2018');
     }
 
     // Modelo Usuarios
