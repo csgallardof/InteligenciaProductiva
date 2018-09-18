@@ -217,7 +217,7 @@
                           <td>Tonelada</td>
                           <td>386.50</td>
                           <td>365,75</td>
-                          <td><span class="arrow-color-verde"><i class="fa fa-arrow-down"></i></span>-5,4%</td>
+                          <td><span class="arrow-color-rojo"><i class="fa fa-arrow-down"></i></span>-5,4%</td>
                         </tr>
                         <tr>
                           <td>Banano</td>
