@@ -42,11 +42,11 @@
 
 									<p style="padding-left:12%" class="m-b-20">
                     <span class="label label-warning f-s-14">
-                     
+                     En revisión
                     </span>
 									</p>
 
-								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>Eslabon de la cadena productiva</strong></h5>
+								<h5 class="panel-title alert detalle_evento_info_adicional fade in m-b-15" style="padding: 5px 5px 5px 15px;"><strong>ObjetivosF</strong></h5>
 
 
 									<p style="padding-left:12%">
@@ -171,35 +171,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading" style="background-color:#214974">
-								<h3 class="panel-title" style="color:#ffffff">
-									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-									    <i class="fa fa-plus-circle pull-right"></i>
-										<strong>Datos de la Mesa de Dialogo</strong>
-									</a>
-								</h3>
-							</div>
-							<div id="collapseTwo" class="panel-collapse collapse">
-								<div class="panel-body">
-									<label class='text-success'>
-                                		<strong>Fuente</strong>
-                                	</label>
-
-									<p>
-                          				<strong>Evento:</strong>
-            							
-            							<br /><strong>Provincia:</strong>
-            							
-            							<br /><strong>Líder de Mesa:</strong>
-            							
-            							<br /><strong>Sistematizador de Mesa:</strong>
-            							
-
-                                   	</p>
-								</div>
-							</div>
-						</div>
+						
 						<div class="panel panel-inverse overflow-hidden">
 							<div class="panel-heading" style="background-color:#214974" >
 								<h3 class="panel-title" style="color:#17202A">
@@ -214,31 +186,14 @@
 								<div class="panel-body">
 
 										  	<h5>
-										  		
+										  		Elaborar informe técnico de estado y problemas de aplicación de RTE INEN
+
 										  	</h5>
 								</div>
 							</div>
 						</div>
 
-						<div class="panel panel-inverse overflow-hidden">
-							<div class="panel-heading" style="background-color:#214974" >
-								<h3 class="panel-title" style="color:#ffffff">
-									<a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-									    <i class="fa fa-plus-circle pull-right"></i>
-										<strong>Problematica</strong>
-									</a>
-								</h3>
-							</div>
-							<div id="collapseFour" class="panel-collapse collapse">
-								<div class="panel-body">
-
-									      <h5>
-										  		
-										  	</h5>
-								</div>
-							</div>
-						</div>
-
+						
 						<div class="panel panel-inverse  overflow-hidden">
 							<div class="panel-heading" style="background-color:#214974" >
 								<h3 class="panel-title" style="color:#ffffff">
@@ -270,11 +225,34 @@
 						        	<tr>
 
 						        		<td>
-						        		<b>Fecha de Inicio: </b> <br>
-						        		<b>Ejecutor: </b> <br>
+						        		<b>Fecha de Inicio: </b>2018-11-09 <br>
+						        		<b>Ejecutor: </b> Secretaria de Calidad<br>
 										<br>
 										<!--ARCHIVOS-->
-											
+											Se ejecuta la actividad 1 
+											<hr>
+											<em> Archivos: </em> <br>
+
+													
+														<a target="_blank" href=" ">
+															
+														</a>
+
+													
+
+											<!--FIN ARCHIVOS-->
+						        		</td>
+
+						        	</tr>
+
+						        	<tr>
+
+						        		<td>
+						        		<b>Fecha de Inicio: </b>2018-11-09 <br>
+						        		<b>Ejecutor: </b> Secretaria de Calidad<br>
+										<br>
+										<!--ARCHIVOS-->
+											Se ejecuta la actividad 2
 											<hr>
 											<em> Archivos: </em> <br>
 
