@@ -20,6 +20,7 @@ use App\CnCifrasNacionales;
 use App\CnTipoCifraNacional;
 
 use App\Provincia;
+use App\Canton;
 use App\Sipoc;
 use App\Sector;
 
@@ -41,6 +42,22 @@ class PaginasController extends Controller
         return view('dialogo.home-dialogo');
     }
 
+
+    public function ejeCalidad(){
+
+        return view('publico.reportes.reporteCalidad');
+    }
+
+    public function ejeMercado(){
+
+        return view('publico.reportes.reporteMercado');
+    }
+
+
+    public function detalleCalidad(){
+
+        return view('detalle-propuestas-institucion');
+    }
 
     public function busquedaAvanzadaInteligencia(Request $request){
 
@@ -556,6 +573,42 @@ class PaginasController extends Controller
                                             "actividades"=>$actividades
                                         ]);
     }
+
+    public function detallePropuestaInstitucion(Request $request, $idSolucion){
+
+        //dd($idSolucion);
+
+        // $solucion = Solucion::where('id','=',$idSolucion)->first();
+        // //dd($idSolucion);
+
+        // $actoresSoluciones = ActorSolucion::where('solucion_id','=',$idSolucion)
+        //                                     // ->where('tipo_actor','=',1)
+        //                                     ->orderBy('tipo_actor','ASC')->get();
+
+        // //dd(count($actoresSoluciones));
+
+        // $actividades = Actividad::where('solucion_id','=',$idSolucion)
+        //                                     //->where('tipo_fuente','=',1)
+        //                                     ->orderBy('created_at','DESC')
+        //                                     ->get();
+
+        //  $actividadUltima = Actividad::where('solucion_id','=',$idSolucion)
+        //                                     //->where('tipo_fuente','=',1)
+        //                                     ->orderBy('created_at','DESC')
+        //                                     ->first();
+
+
+        // return view('detalle-despliegue2')->with([
+        //                                     "solucion"=>$solucion,
+        //                                     "actoresSoluciones"=>$actoresSoluciones,
+        //                                     "actividadUltima"=>$actividadUltima,
+        //                                     "actividades"=>$actividades
+        //                                 ]);
+
+        return view('detalle-propuesta-institucion');
+    }
+
+
      public function despliegueterritorial(){
 
 
@@ -1195,6 +1248,39 @@ class PaginasController extends Controller
 
 
     }
+
+    public function SimuladorInversiones(){
+
+        $provincias = Provincia::all();
+        //dd($date_start,$date_end,$today);
+        return view('publico.simulador.simulador-inversiones',['provincias'=>$provincias]);
+
+
+    }
+
+    public function guardarSimuladorInversiones(Request $request){
+
+
+        $tipo_empresa = $request['tipo_empresa'];
+        $sector = $request['sector'];
+        $select_provincia = $request['select-provincia'];
+        $select_canton = $request['select_canton'];
+        $monto_radio = $request['monto_radio'];
+        $mercado_radio = $request['mercado_radio'];
+        $reduccion_radios = $request['reduccion_radios'];
+        $app_radio = $request['app_radio'];
+        
+
+        return view('publico.simulador.recomendacion-simulador-inversiones',['provincias'=>$provincias]);
+
+        
+
+    }
+
+
+   
+
+
 
 
 

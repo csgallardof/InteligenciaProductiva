@@ -1410,10 +1410,10 @@ legend {
     box-shadow: none;
 }
 .progress-bar.progress-bar-success {
-    background-color: #00acac;
+    background-color: #23ac00;
 }
 .progress-bar.progress-bar-info {
-    background-color: #49b6d6;
+    background-color: #d6ca49;
 }
 .progress-bar.progress-bar-warning {
     background-color: #f59c1a;
@@ -1423,6 +1423,10 @@ legend {
 }
 .progress-bar.progress-bar-inverse {
     background-color: #2d353c;
+}
+
+.progress-bar.progress-bar-primary {
+    background-color: #f93414 !important ;
 }
 
 

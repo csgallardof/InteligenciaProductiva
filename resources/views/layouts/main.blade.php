@@ -43,7 +43,7 @@
 	@stack('css')
 	</head>
 
-	<body  >
+	<body>
 
     <div id="page-container" class="fade">
 
