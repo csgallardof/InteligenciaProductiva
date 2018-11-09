@@ -38,6 +38,17 @@ Route::get('/busquedaAvanzada',[
      'as'=>'nuevaBusquedaInteligencia'
 ]);
 
+
+Route::get('/busqueda-eje-calidad',['uses'=>'PaginasController@ejeCalidad','as'=>'EjeCalidad']);
+
+Route::get('/busqueda-eje-mercado',['uses'=>'PaginasController@ejeMercado','as'=>'EjeMercado']);
+
+Route::get('/detalle-propuesta-eje-calidad',['uses'=>'PaginasController@detalleCalidad','as'=>'EjeMercado']);
+
+
+
+
+
 Route::post('/lista-propuesta/{tipo}',['uses'=>'PaginasController@crearReportePropuestas','as'=>'reportePropuestas']);
 
 Route::get('/reporte-home/lista-propuesta/{idEstado}/{tipo}','PaginasController@crearReportePropuestasHome');
@@ -48,8 +59,14 @@ Route::post('/reporte',[
      'as'=>'reporte1.resultado'
 ]);
 
-Route::get('/detalle-despliegue-dialogo/{id}','PaginasController@detalledespliegue2');
+// Inicio Propuestas polítca de estado para la produccion //
 
+Route::get('/detalle-propuesta-institucion/{id}','PaginasController@detallePropuestaInstitucion');
+
+// Fin Propuestas polítca de estado para la produccion //
+
+
+Route::get('/detalle-despliegue-dialogo/{id}','PaginasController@detalledespliegue2');
 
 Route::get('/foro-de-la-produccion-impulso-innovacion', 'PaginasController@foroproduccion');
 
@@ -82,6 +99,13 @@ Route::get('/invertir_en_el_ecuador', 'PaginasController@invertir_en_el_ecuador'
 Route::get('/costosindustriales/{opcion}', ['uses' =>'PaginasController@estructuraCostosGastos']);
 
 Route::get('/dialogo-nacional-estadisticas','PaginasController@ReporteDialogoGrafico');
+
+Route::get('/simulador-para-inversiones','PaginasController@SimuladorInversiones');
+
+Route::get('/simulador-para-inversiones-prueba','PaginasController@SimuladorInversionesPrueba');
+
+Route::post('/consultar-simulador-para-inversiones',['uses'=>'PaginasController@guardarSimuladorInversiones', 'as' =>'consultar.simulador']);
+
 
 // rutas pruebas usuarios
 
