@@ -77,7 +77,7 @@
 																</ul>
 														</li>
 														<li><a href="/zonas-especiales-de-desarrollo-economico">Zonas Especiales de Desarrollo Económico</a></li>
-														<li><a href="/asociaciones-publico-privadas">Alianzas Público Privadas</a></li>
+														<li><a href="/asociaciones-publico-privadas">Asociaciones Público Privadas</a></li>
 														<li><a href="/polos-de-desarrollo">Polos de Desarrollo</a></li>
 														<li><a href="/incentivos-tributarios-y-arancelacios">Incentivos para el Inversionista</a></li>
 														<li><a href="/indice">&Iacute;ndice Único de Competitividad</a></li>
@@ -133,7 +133,7 @@
 										</li>
 										<li class="dropdown">
 												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-														Política de estado para la producción<b class="caret"></b>
+														Política de Estado para la Producción<b class="caret"></b>
 												</a>
 												<ul class="dropdown-menu" role="menu">
 													<li><a href="busqueda-eje-calidad">Calidad</a></li>
