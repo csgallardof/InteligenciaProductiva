@@ -6853,6 +6853,7 @@ select option {
 .background-home {
   background-image: url(../imagenes/background_home_inteligencia_productiva-2.jpg);
   background-size: cover;
+  background-color: #000;
   /* background-size: 1500px 800px; */
   display: block;
   max-width: 100%;
