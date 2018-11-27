@@ -38,7 +38,7 @@
 			<div class="toolbar title_ip_breadcrumb fit-m-b-10" style="padding-left:7%;padding-right:7%" >
           <ol class="breadcrumb">
             <li class="home"><a href="{{ url('/') }}"><i class="fa fa-home fa-lg"></i><span></span></a></li>
-            <li class="home"><a href="/asociaciones-publico-privadas"> <strong><span>Proyectos de Alianzas Público Privadas</span></strong></a></li>
+            <li class="home"><a href="/asociaciones-publico-privadas"> <strong><span>Proyectos de Asociaciones Público Privadas</span></strong></a></li>
           </ol>
         </div>
         <br>
