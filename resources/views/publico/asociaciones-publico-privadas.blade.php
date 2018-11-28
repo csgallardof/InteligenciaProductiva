@@ -419,7 +419,7 @@
 						</div>
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/1040 APP_2017_MTOP_ESP_DECRETO-1040-REGLAMENTO-DE-APP.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Réglamento de Alianzas Público y Privadas</a><br><br>
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/Decreto_No._187_MIPRO.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Decreto Nº 187 MIPRO</a><br><br>
-					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/DECRETO-EJECUTIVO-582-REGLAMENTO-DEL-REGIMEN-DE-COLABORACION-PUBLICO-PRIVADA.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Reglamento del Regimen de Colaboración Público Privada</a><br><br>
+					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/DECRETO-EJECUTIVO-582-REGLAMENTO-DEL-REGIMEN-DE-COLABORACION-PUBLICO-PRIVADA.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp; Decreto Ejecutivo N° 582 - Reglamento del Regimen de Colaboración Público Privada</a><br><br>
 					  	<a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/LEY-ORGANICA-DE-INCENTIVOS-PARA-ASOCIACIONES-PUBLICAS-Y-PRIVADAS.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Ley Orgánica de Incentivos para Alianzas Público Privadas</a><br><br>
 					  	<br>
               <a class="p-l-20" target="_blank" href="{{ asset('imagenes/APP/guia-apps-final.pdf') }}"><i class="fa fa-2x fa-file-pdf-o"></i>&nbsp;Guía metodológica para presentación y aprobación de proyectos</a>
