@@ -90,6 +90,8 @@ Route::get('/zonas-especiales-de-desarrollo-economico', 'PaginasController@zedes
 
 Route::get('/polos-de-desarrollo', 'PaginasController@polosdesarrollo');
 
+Route::get('/postulacion-polos-de-desarrollo', 'PaginasController@postulacionpolosdesarrollo');
+
 Route::get('/incentivos-tributarios-y-arancelacios', 'PaginasController@incentivostributarios');
 
 Route::get('/asociaciones-publico-privadas','PaginasController@asociacionesPublicoPrivada');
@@ -152,6 +154,9 @@ Route::get('storage/{archivo}', function ($archivo) {
 Route::get('/descargar/Mesas', 'ExcelController@exportMesas');
 
 Route::get('/descargar/CCPT', 'ExcelController@exportConsejo');
+
+
+
 
 /*
 *

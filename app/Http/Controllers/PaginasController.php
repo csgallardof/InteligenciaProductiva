@@ -735,6 +735,10 @@ class PaginasController extends Controller
         return view('publico.polos-desarrollo');
     }
 
+    public function postulacionpolosdesarrollo(){
+        return view('publico.postulacion-polos-desarrollo');
+    }
+
     public function incentivostributarios(){
         return view('publico.incentivos-tributarios');
     }

@@ -105,6 +105,7 @@ class CspReportesController extends Controller
         return redirect('/institucion/consejo-sectorial-produccion/reportes-hechos');
     }
     public function crearAccionesAlerta(Request $request){
+
         $hora = date("h:i");
         $creacion_reporte=date("Y/m/d");
         $fecha_creacion_Reporte=$creacion_reporte." ".$hora;
@@ -116,7 +117,6 @@ class CspReportesController extends Controller
         }
         $periodoCorrecto=False;
         $i=1;
-
         while ($periodoCorrecto==False) {
         $PeriodoCspReporte = CspPeriodoReporte::find($i);
         $date_start = $PeriodoCspReporte->fecha_inicio;
@@ -129,20 +129,19 @@ class CspReportesController extends Controller
             $periodoCorrecto==False;
             }
             $i++;
-
         }
-        $reporte_alerta_id = $request['reporte_alerta_id'];
+        $reporte_alerta_id = $request->reporte_alerta_id;
+        $porcentaje_avance = $request->porcentaje_avance;
+        //dd($reporte_alerta_id);
         $acciones = $request['acciones'];
         $fecha = $request['fecha'];
         $fecha_hora_Accion=$fecha." ".$hora;
-
         if($request->hasFile('anexo')){
         $anexo = $request->file('anexo');
         $nombreArchivo = strtotime("now").'-'.$anexo->getClientOriginalName();
         Storage::disk('CspReportesAlerta')->put($nombreArchivo,file_get_contents($anexo->getRealPath()));
         }else
         $nombreArchivo="000Ninguno";
-
         $CspAccionesAlerta = new CspAccionesAlerta();
         $CspAccionesAlerta-> reporte_alerta_id = $reporte_alerta_id;
         $CspAccionesAlerta-> periodo_id = $periodo_id;
@@ -151,9 +150,19 @@ class CspReportesController extends Controller
         $CspAccionesAlerta-> anexo = $nombreArchivo;
          //dd($CspAccionesAlerta);
         $CspAccionesAlerta-> save();
+
+        $CspReportesAlerta = CspReportesAlerta::find($reporte_alerta_id);
+        $CspReportesAlerta-> porcentaje_avance = $porcentaje_avance;
+        $CspReportesAlerta->save();
+
+        
         return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
+        
     }
     public function guardarReporteAlerta(Request $request){
+
+        //dd($request->porcentaje_avance);
+
         $hora = date("h:i");
         $creacion_reporte=date("Y/m/d");
         $fecha_creacion_Reporte=$creacion_reporte." ".$hora;
@@ -216,6 +225,7 @@ class CspReportesController extends Controller
         $CspReportesAlerta-> fuente = $fuente;
         $CspReportesAlerta-> tipo_comunicacional = $tipo_comunicacional;
         $CspReportesAlerta-> anexo = $nombreArchivo;
+        $CspReportesAlerta-> porcentaje_avance = $request->porcentaje_avance;
         $CspReportesAlerta-> save();
         return redirect('/institucion/consejo-sectorial-produccion/reportes-alertas');
     }
@@ -344,7 +354,7 @@ class CspReportesController extends Controller
         ->join('csp_reporte_estados','csp_reporte_estados.id', '=','csp_reportes_alertas.estado_reporte_id')
         ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
         ->where('institucions.id', '=',$usuario_institucion_id)
-        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
+        ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.porcentaje_avance','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
         ->orderBy('csp_reportes_alertas.id','DESC')
         ->get();
 
@@ -426,9 +436,17 @@ class CspReportesController extends Controller
         return view('csp.homeVisualizarReportesCSP',['reportesHechos'=>$reportesHechos],['reportesAlerta'=>$reportesAlerta])->with(["PeriodoSemanaCspReporte"=>$PeriodoSemanaCspReporte]);
     }
     public function AccionesAlertas($id){
+
+       // dd($id);
+
         $cspReportesAlerta = CspReportesAlerta::find($id);
-       // dd(cspReportesAlerta);
-        return view('csp.createAccionesReporteAlertasCsp',compact('cspReportesAlerta'));
+        //dd($cspReportesAlerta->porcentaje_avance);
+        return view('csp.createAccionesReporteAlertasCsp')->with(["cspReportesAlerta"=>$cspReportesAlerta,
+                                                                    ]);
+
+
+
+
     }
     public function visualizarAccionesAlertas($id){
         $cspReportesAlerta = CspReportesAlerta::find($id);

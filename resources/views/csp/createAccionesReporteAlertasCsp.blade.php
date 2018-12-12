@@ -100,8 +100,15 @@
                                                         <label for="fecha">Fecha de Reporte</label> 
                                                         <input id="fecha" type="date" style="width:115px;height:25px" name="fecha" value="{{ date('Y-m-d') }}">
                                                     </div>
+                                                    
+                                                    
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3"></div>
                                                     <div class="col-md-3">
-                                                         <input type="hidden"name="reporte_alerta_id" value="{{$cspReportesAlerta->id}}">   
+                                                        <label for="fecha">Avance</label> 
+                                                        <input type="number" required min="0" max="100" name="porcentaje_avance" class="form-control" value="{{$cspReportesAlerta->porcentaje_avance}}">
+                                                        <input type="hidden" name="reporte_alerta_id" value="{{$cspReportesAlerta->id}}">
                                                     </div>
                                                     
                                                 </div>

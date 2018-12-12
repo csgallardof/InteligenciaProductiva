@@ -395,7 +395,7 @@ class PdfCspReportesController extends Controller
         ->join('csp_reporte_estados','csp_reporte_estados.id', '=','csp_reportes_alertas.estado_reporte_id')
         ->join('institucions','institucions.id', '=','csp_reportes_alertas.institucion_id')
         ->select('csp_reportes_alertas.id','csp_reportes_alertas.fecha_atencion','csp_reportes_alertas.tipo_comunicacional','csp_reportes_alertas.tema','csp_reportes_alertas.descripcion','csp_reportes_alertas.fuente','csp_reportes_alertas.riesgo_principal','csp_reporte_estados.nombre as EstadoReporte','csp_reportes_alertas.anexo','institucions.siglas_institucion as Institucion','csp_reportes_alertas.created_at as FechaRegistro','csp_periodo_reportes.nombre as Periodo')
-        ->orderBy('csp_reportes_alertas.id','DESC')
+        ->orderBy('csp_reportes_alertas.periodo_id','DESC')
         ->get();
         return view("csp.reportesPdfCsp.listaReportesAlertasCsp")->with(["reportesAlerta"=>$reportesAlerta,
                                                                         "CspPeriodoReporte"=>$CspPeriodoReporte,

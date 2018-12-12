@@ -104,6 +104,7 @@
                                             <th>Periodo</th>
                                             <th>Fuente</th>
                                             <th>Estado</th>
+                                            <th>Avance %</th>
                                             <th>Institución</th>
                                             <th>Anexo</th>
                                             <th>Acciones</th>
@@ -127,8 +128,9 @@
                                                     <td class="text-justify">{{ $reportesAlerta->Periodo }}</td>
                                                     <td class="text-justify">{{ $reportesAlerta->fuente }}</td>
 
-                                                     <td class="text-justify">{{ $reportesAlerta->EstadoReporte }}</td>
-                                                     <td class="text-justify">{{ $reportesAlerta->Institucion }}</td>
+                                                    <td class="text-justify">{{ $reportesAlerta->EstadoReporte }}</td>
+                                                    <td class="text-justify">{{ $reportesAlerta->porcentaje_avance }}</td>
+                                                    <td class="text-justify">{{ $reportesAlerta->Institucion }}</td>
                                                     <td class="text-justify">
                                                         @if(($reportesAlerta->anexo)!="000Ninguno")
                                                         <a target="_blank" href="{{ route('descargarArchivoAlertaCsp',$reportesAlerta-> anexo) }} ">

@@ -114,27 +114,22 @@
 									  	</div>
 
 									  	<div class="form-group">
-									 			<div class="row">
-									 				<div class="col-md-2"></div>
-									 				<div class="col-md-4">
-									 					<label for="fecha_reporte">Tipo Comunicacional</label>
-									 				</div>
-									 			</div>
-									 			<div class="row">
-									 				<div class="col-md-2"></div>
-									 				<div class="col-md-4">
-									 					<select class="form-control" required="" name="tipo_comunicacional" id="">
-									 						<option value="" disabled selected>Seleccione un tipo</option>
-									 						<option value="Institucional">Institucional</option>
-									 						<option value="Presidencia">Presidencia</option>
-									 						<option value="Institucional y Presidencia">Institucional y Presidencia</option>
-									 					</select>
-									 				</div>
-									 			</div>
-
-									  	</div>
-
-
+								 			<div class="row">
+								 				<div class="col-md-2"></div>
+								 				<div class="col-md-4">
+								 					<label for="fecha_reporte">Tipo Comunicacional</label>
+								 					<select class="form-control" required="" name="tipo_comunicacional" id="">
+								 						<option value="" disabled selected>Seleccione un tipo</option>
+								 						<option value="Institucional">Institucional</option>
+								 						<option value="Presidencia">Presidencia</option>
+								 					</select>
+								 				</div>
+								 				<div class="col-md-4">
+								 					<label for="porcentaje_avance">Avance Porcentaje</label>
+									 				<input type="number" required min="0" max="100" name="porcentaje_avance" class="form-control">
+								 				</div>
+								 			</div>
+									 	</div>
 									  	<div class="form-group">
 									 			<div class="row">
 									 				<div class="col-md-2"></div>
