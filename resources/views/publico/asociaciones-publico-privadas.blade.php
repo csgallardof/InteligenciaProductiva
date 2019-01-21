@@ -434,8 +434,8 @@
               <p class="p-l-20"><span class="glyphicon glyphicon-user one" style="width:50px;"></span>Felipe Alejandro Altamirano Barriga</p>
               <p class="p-l-20">Secretario del Comité Interinstitucional de Asociaciones Público Privadas</p>
               <p class="p-l-20"><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+593-2-3948760 ext. 2460 / +593-999-413-556</p>
-              <p class="p-l-20"><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:faltamirano@mipro.gob.ec">faltamirano@mipro.gob.ec</a></p>
-              <p class="p-l-20"><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.industrias.gob.ec</a></p>
+              <p class="p-l-20"><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span><a href="mailto:faltamirano@produccion.gob.ec">faltamirano@produccion.gob.ec</a></p>
+              <p class="p-l-20"><span class="glyphicon glyphicon-globe one" style="width:50px;"></span><a href="https://www.industrias.gob.ec/">https://www.produccion.gob.ec</a></p>
             </div>
 					  <br><br>
 			        </div>

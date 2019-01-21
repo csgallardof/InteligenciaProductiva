@@ -47,7 +47,7 @@
 
         <div class="site-page-content" >
 
-            <h1 id="incentivosgenerales">Postulación a Polos de Dasarollo</h1><hr>
+            <h1 id="incentivosgenerales">Postulación a Polos de Desarrollo</h1><hr>
 
             <!-- begin col-6 -->
             <div class="col-md-12">
@@ -143,34 +143,26 @@
                     <div class="form-group">
                       <label class="control-label col-md-4 col-sm-4">DIRECCIÓN:</label>
                       <div class="col-md-3 col-sm-3">
-                        <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="distancia en km" data-required="true" /> 
+                        <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" /> 
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-4 col-sm-4">DESCRIPCIÓN BREVE DEL PROYECTO:</label>
                       <div class="col-md-3 col-sm-3">
-                        <textarea rows="4" cols="50" name="comment" form="usrform">Descripcion</textarea>
+                        <textarea rows="4" cols="50" name="comment" form="usrform">Descripción</textarea>
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-md-4 col-sm-4">Area:</label>
+                      <label class="control-label col-md-4 col-sm-4">Área:</label>
                       <div class="col-md-3 col-sm-3">
-                        <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="distancia en km" data-required="true" /> 
+                        <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" /> 
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-md-4 col-sm-4">Area total de construcción:</label>
                       <div class="col-md-6 col-sm-6">
                         <div class="upload-btn-wrapper">
-                              
-                            <div style="position:relative;">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                subir archivo
-                                <input type="file" class="file" name="file_source" size="40"  onchange='$("#upload-file-info2").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info2"></span>
-                            </div>
+                          <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" />      
                         </div>
                       </div>
                     </div>
@@ -178,15 +170,7 @@
                       <label class="control-label col-md-4 col-sm-4">Area Insdustrial ocupada:</label>
                       <div class="col-md-6 col-sm-6">
                         <div class="upload-btn-wrapper">
-                              
-                            <div style="position:relative;">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                subir archivo
-                                <input type="file" class="file" name="file_source" size="40"  onchange='$("#upload-file-info3").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info3"></span>
-                            </div>
+                          <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" />
                         </div>
                       </div>
                     </div>
@@ -194,15 +178,7 @@
                       <label class="control-label col-md-4 col-sm-4">Area Verde:</label>
                       <div class="col-md-6 col-sm-6">
                         <div class="upload-btn-wrapper">
-                              
-                            <div style="position:relative;">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                subir archivo
-                                <input type="file" class="file" name="file_source" size="40"  onchange='$("#upload-file-info4").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info4"></span>
-                            </div>
+                          <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" />
                         </div>
                       </div>
                     </div>
@@ -210,15 +186,7 @@
                       <label class="control-label col-md-4 col-sm-4">Número Total de Lotes:</label>
                       <div class="col-md-6 col-sm-6">
                         <div class="upload-btn-wrapper">
-                              
-                            <div style="position:relative;">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                subir archivo
-                                <input type="file" class="file" name="file_source" size="40"  onchange='$("#upload-file-info4").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info4"></span>
-                            </div>
+                          <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" />
                         </div>
                       </div>
                     </div>
@@ -226,15 +194,7 @@
                       <label class="control-label col-md-4 col-sm-4">Número Total de Lotes disponibles:</label>
                       <div class="col-md-6 col-sm-6">
                         <div class="upload-btn-wrapper">
-                              
-                            <div style="position:relative;">
-                              <a class='btn btn-primary' href='javascript:;'>
-                                subir archivo
-                                <input type="file" class="file" name="file_source" size="40"  onchange='$("#upload-file-info4").html($(this).val());'>
-                              </a>
-                              &nbsp;
-                              <span class='label label-info' id="upload-file-info4"></span>
-                            </div>
+                          <input class="form-control parsley-validated" type="text" id="data-regexp" data-parsley-pattern="#[A-Fa-f0-9]{6}" placeholder="" data-required="true" />
                         </div>
                       </div>
                     </div>
@@ -479,7 +439,7 @@
                     <div class="form-group">
                       <label class="control-label col-md-4 col-sm-4">Descripción de encadenamientos productivos que conlleva desde la producción e materia prima, elaboración del producto, logística y transporte.:</label>
                       <div class="col-md-6 col-sm-6">
-                        <textarea rows="4" cols="50" name="comment" form="usrform">Descripcion</textarea>
+                        <textarea rows="4" cols="50" name="comment" form="usrform">Descripción</textarea>
                       </div>
                     </div>
                     <div class="form-group">
