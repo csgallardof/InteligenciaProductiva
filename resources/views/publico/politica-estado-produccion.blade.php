@@ -65,7 +65,7 @@
               <li><a href="/storage/Politica-Estado-Produccion-Comercio.pptx" target="_blank"><span class="fa fa-download"></span></a> Comercio para todos </li>
 
             </ul>
-          <h3 id="incentivosgenerales">avances en la Política Sectorial</h3><hr>
+          <h3 id="incentivosgenerales">Avances en la Política Sectorial</h3><hr>
           <ul class="site-page-content-list">
             <li><a href="/storage/Politica-Estado-Produccion-Lacteo.pptx" target="_blank"><span class="fa fa-download"></span></a> Lácteo</li>
             <li><a href="/storage/Politica-Estado-Produccion-Cacao.pptx" target="_blank"><span class="fa fa-download"></span></a> Cacao y Derivados</li>
