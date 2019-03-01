@@ -1262,6 +1262,14 @@ class PaginasController extends Controller
 
     }
 
+
+    public function politicaEstado(){
+        return view('publico.politica-estado-produccion');
+    }
+
+
+    
+
     public function guardarSimuladorInversiones(Request $request){
 
 

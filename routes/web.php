@@ -127,6 +127,8 @@ Route::get('/indice/indicadoresProvincia', 'PaginasController@indicadoresProvinc
 
 Route::get('/consejoconsultivo', 'ConsejoConsultivoController@consejoconsultivo');
 
+Route::get('/politica-de-estado-para-la-produccion', 'PaginasController@politicaEstado');
+
 Route::post('/consejoconsultivo',[
      'uses'=>'ConsejoConsultivoController@buscar',
      'as'=>'consejo.resultado'

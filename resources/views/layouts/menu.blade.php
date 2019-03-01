@@ -132,19 +132,11 @@
 												</ul>
 										</li>
 										<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												<a href="politica-de-estado-para-la-produccion" class="dropdown-toggle">
 														Política de Estado para la Producción<b class="caret"></b>
 												</a>
-												<ul class="dropdown-menu" role="menu">
-													<li><a href="busqueda-eje-calidad">Calidad</a></li>
-													<li><a href="busqueda-eje-mercado">Mercados</a></li>
-													<li><a href="#">Financiamiento</a></li>
-													<li><a href="#">Emprendimiento</a></li>
-													<li><a href="#">Innovación</a></li>
-													<li><a href="#">Inversión</a></li>
-													<li><a href="#">Compras públicas</a></li>
-
-												</ul>
+												
+												
 										</li>
 								</ul>
 						</div>
