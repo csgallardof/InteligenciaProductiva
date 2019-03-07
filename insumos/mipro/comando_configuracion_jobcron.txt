@@ -1,0 +1,6 @@
+
+58,59,0,1,2,3,4,5 23 * * * php /var/www/html/PlataformaDialogo/artisan schedule:run >> /dev/null 2>&1
+
+
+*/5 * * * * php /var/www/html/PlataformaDialogo/artisan schedule:run >> /dev/null 2>&1
+
